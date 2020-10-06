@@ -1,0 +1,26 @@
+\documentclass[]{tuftebook}
+
+\input{preamble.tex}
+\input{symbols.tex}
+
+\usepackage{lipsum}
+
+
+\title{}
+\begin{document}
+    \renewcommand{\thepage}{\roman{page}}
+    \maketitle
+    \input{preface.tex}
+    \input{summary.tex}
+    \listofsymbols
+    \tableofcontents
+    \cleardoublepage
+    \pagestyle{fancy}
+    \renewcommand{\thepage}{\arabic{page}}
+    \setcounter{page}{1}
+    \input{chap0.tex}
+    \input{chap1.tex}
+    \input{conclusion.tex}
+
+    \printbibliography
+\end{document}
