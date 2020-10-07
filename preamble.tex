@@ -58,12 +58,15 @@
 \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false, }, qed=\qedsymbol ]{thmproofbox}
 \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
 
+\declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
+
 
 \declaretheorem[numberwithin=chapter, style=thmgreenbox, name=Definition]{definition}
 \declaretheorem[sibling=definition, style=thmredbox, name=Corollary]{corollary}
 \declaretheorem[sibling=definition, style=thmredbox, name=Proposition]{prop}
 \declaretheorem[sibling=definition, style=thmredbox, name=Theorem]{theorem}
 \declaretheorem[sibling=definition, style=thmredbox, name=Lemma]{lemma}
+
 
 
 
@@ -74,7 +77,7 @@
 \declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
 
-\renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
+% \renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
 
 \AtEndEnvironment{eg}{\null\hfill$\diamond$}%
 
@@ -85,6 +88,17 @@
 \newtheorem*{observe}{Observe}
 \newtheorem*{property}{Property}
 \newtheorem*{intuition}{Intuition}
+
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, backgroundcolor=RawSienna!5,
+    }
+]{todo}
+\declaretheorem[numbered=no, style=todo, name=TODO]{TODO}
 
 
 \usepackage{etoolbox}

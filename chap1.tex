@@ -1,5 +1,315 @@
-\chapter{The first chapter}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\chapter{Morse theory}
+
+\begin{definition}[Critical point]
+    Let $M$ and $N$ be a manifolds and  $f$ a map from $M$ to $N$.
+    The critical points of $f$ are
+    \[
+    \Crit f = \{p \in M  \mid \text{$df_p$ is not surjective}\} 
+    .\] 
+    In particular, if $N = \R$ we have that
+    \[
+    \Crit f = \{ p \in M  \mid  df_p = 0\} 
+    .\] 
+\end{definition}
+
+\begin{definition}[Morse function]
+    Let $M$ be a manifold. A function $f: M \to  \R$ a \emph{Morse function} if for all critical points $p$, there exists coordinates centred around $p$ such that $f$ is locally given by
+    \[
+        f(x) = f(p) -x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
+    .\] 
+    We call $k$ the index of $p$, which we also denote with $\Ind p$.
+    
+\end{definition}
+Intuitively, the index of a critical point $p$ is ``the number of downward directions''.
+Let us first give some examples.
+
+\begin{eg}
+    
+\end{eg}
+
+\begin{marginfigure}
+    \centering
+    \incfig{examples-of-morse-functions}
+    \caption{Example of Morse function on the torus. }
+    \label{fig:examples-of-morse-functions}
+\end{marginfigure}
+
+So what then are examples of functions that are not Morse?
+
+\begin{eg}
+    Let $M = \R^2$ and $f: \R^2 \to  \R: (x, y) \mapsto  x^2$.
+    Then $(0, 0)$ is a critical point, but clearly $f$ is not Morse.
+\end{eg}
+\begin{eg}
+    Let $M = \R$ and $f : \R \to  \R: x \mapsto x^3$.
+    Then $x = 0$ is a critical point, but $f$ is not Morse.
+    Note however that if we add a small perturbation to $f$, say $g_t: x\mapsto x^3+ tx$, then for small non-zero $t$, $g$ is Morse. For $t < 0$, $g_t$  has two critical points: one of index $1$ and one of index $0$.
+    If $t > 0$,  $g_t$ has no critical points.
+\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{non-examples-of-morse-functions}
+    \caption{An example of a function that is not Morse: $f: \R \to  \R: x \mapsto  x^3$.
+        Small perturbations of $f$ are Morse.
+    }
+    \label{fig:non-examples-of-morse-functions}
+\end{marginfigure}
+
+Note that this last case where $f$ has no critical points cannot happen if $M$ is compact.
+Indeed, any function attains it maximum and minimum on a compact manifold, so we have at least two critical points.
+We will later show that a Morse function $f$ on a compact manifold $M$ has at most a finite number of critical points.
+
+
+\section{Handle decompositions}
+
+\begin{figure}[H]
+    \centering
+    \incfig{morse-chart}
+    \caption{morse chart}
+    \label{fig:morse-chart}
+\end{figure}
+
+
+We can also define Morse functions on manifolds with boundary
+
+% \begin{prop}
+%     Let $M$ be a compact manifold and $f: M \to  \R$ a Morse function.
+%     Then  $f$ has a finite number of critical points.
+% \end{prop}
+
+
+\section{}
+
+
+The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
+To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate free definition. For this, we first need to define the Hessian at a critical point.
+
+\begin{definition}
+    Let $M$ be a manifold and $f: M \to  \R$ a function.
+    Let $p$ be a critical point of $f$.
+    Then we define the Hessian $H_p$ to be the bilinear form
+    \begin{align*}
+        H_p: T_pM \times T_pM &\longrightarrow  \R\\
+        (X, Y) &\longmapsto X (\tilde{Y} f)|_p
+    ,\end{align*} 
+    where $\tilde{Y}$ is a local extension of $Y$.
+\end{definition}
+This is a well defined symmetric bilinear form.
+\[
+    H_p(X, Y) - H_p(Y, X) = X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p = [\tilde{X}, \tilde{Y}] f |_p = df_p [\tilde{X}, \tilde{Y}]|_p = 0
+.\]
+The value of $H_p$ also does not depend on the extension of the vector field.
+Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $Y$. Then by symmetry of $H_p$, we have
+\[
+    X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
+.\] 
+
+In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
+\[
+    H_p = - dx_1 \otimes dx_1 - \cdots - dx_k \otimes dx_k + dx_{k+1} \otimes dx_{k+1} + \cdots + dx_n \otimes dx_n
+.\] 
+Note that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
+As the signature of a symmetric bilinear form is coordinate independent, this shows that the index of a critical point is as well.
+
+
+Interestingly, the reverse is also true: if $H_p$ is non-degenerate for all critical points  $p$ of $f$, then  $f$ is a Morse function.
+Many authors take this to be the definition of a Morse function.
+
+\begin{lemma}[Morse Lemma]
+    Let $M$ be a manifold and $f: M \to  \R$ a map.
+    If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+
+\section{Existence and abundance}
+
+Let $M$ be a compact manifold.
+Then we can embed $M$ in $\R^{n}$ for some big enough $n$.
+
+\begin{marginfigure}[-5cm]
+    \centering
+    \incfig{level-sets-of-distance-function-torus}
+    \caption{TODO level sets of distance function torus}
+    \label{fig:level-sets-of-distance-function-torus}
+\end{marginfigure}
+
+\begin{prop}
+    Let $V \subset \R^{n}$ be a submanifold.
+    Then for almost every point $p \in \R^{n}$, we have that
+    \[
+    f_p : V \to \R: x \mapsto  \|x - p\|^2
+    \] 
+    is a Morse function.
+\end{prop}
+
+First, let us give an example of when $f_p$ is \emph{not} a Morse function.
+
+\begin{marginfigure}
+    \centering
+    \incfig{example-when-fp-is-not-a-morse-function}
+    \caption{When $p$ is the center of a circle, $f_p$ is not a Morse function}
+    \label{fig:example-when-fp-is-not-a-morse-function}
+\end{marginfigure}
+\begin{eg}
+    Let $V = S^1 = \{\|x\|^2 = 1  \mid  x \in \R^2\} $.
+    Then $f_{(0, 0)}$ is not a Morse function.
+    Indeed, $f_{(0, 0)} \equiv 1$, so in particular the second derivative is non-degenerate (it vanishes everywhere).
+\end{eg}
+
+
+More generally, $f_p$ is not a Morse function when infinitesimally close normals intersect in $p$, because then $f_p$ is constant (until ??) second order (in a certain direction \ldots ).
+To make this exact, we will show that $H_p$ is non-degenerate if $p$ is a critical value of the map
+\[
+    E: NV \to  \R^{n}: (x, v) \mapsto x + v
+,\]
+where $N$ is the normal bundle of $V$.
+Then Sard's theorem\sidecite{todo} will immediately imply that $f_p$ is Morse for almost all $p$.
+
+\begin{figure}[H]
+    \centering
+    \sidecaption{TODO: existence of morse functions normal bundle map}
+    \incfig{existence-of-morse-functions-normal-bundle-map}
+    \label{fig:existence-of-morse-functions-normal-bundle-map}
+\end{figure}
+
+\begin{proof}
+    Given our realisation, the proof now reduces to a straightforward calculation.
+    First note that $x$ is a critical point of $f_p$ only if $x-p \perp T_x V$.
+    Indeed:
+    \[
+        d f_p = \sum d(x_i - p_i)^2 = 2 \sum (x_i-p_i) dx_i = 0 \qquad \text{if $x-p \perp T_x V$}
+    .\] 
+    Let $d = \dim V$ and $(u_1, \ldots, u_d) \mapsto x(u_1, \ldots, u_d)$ be a local parametrization of $V$.
+    Then we have
+    \[
+        \partial_i f_p = 2(x-p) \cdot  \partial_i  x
+    \] 
+    and for the hessian we have
+    \[
+    H_p = \partial_{ij} f_p = 2 \left(\partial_j x \cdot \partial_i x  + (x-p) \partial_{ij} x \right)
+    ,\] 
+    where we denoted $\partial_i = \frac{\partial }{\partial u_i}$.
+    We will show that $H_p$ is not of full rank if and only if $p$ is a critical value of  
+    \[
+        E: NV \to  \R^n: (x, v) \mapsto x + v
+    ,\] 
+    where $NV$ is the normal bundle to $V$ w.r.t.\ the Euclidean metric on $\R^n$.
+
+    First we define a local parametrization of $NV$:
+    \[
+        (u_1, \ldots, u_d, t_1, \ldots, t_{n-d}) \mapsto \Big(x(u_1, \ldots, u_d), \sum_{i=1}^{n-d} t_i v_i(u_1, \ldots, u_{d})\Big)
+    ,\] 
+    where the $v_i$ form a local orthonormal basis at each point, normal to $TV$.
+
+\begin{marginfigure}
+    \centering
+    \incfig{abundance-of-morse-functions-parametrization-of-the-normal-bundle}
+    \caption{TODO: abundance of morse functions parametrization of the normal bundle}
+    \label{fig:abundance-of-morse-functions-parametrization-of-the-normal-bundle}
+\end{marginfigure}
+
+    \begin{TODO}
+        In Audin and Damien $ v_i(u_1, \ldots, u_{n-d})?$
+        orthonormal basis of $(T_xV)^{\perp}$? Orientable?
+    \end{TODO}
+
+    Then in these coordinates,
+    \[
+        \partial_i E = \partial_i x  + \sum_{k=1}^{n-d} t_k \partial_i v_k 
+        \qquad
+        \qquad
+        \partial_{t_j} E  = v_j
+    .\]
+    To see whether these vectors are independent, we compute the inner products with the $n$ independent vectors
+    \[
+    \partial_1 x , \ldots, \partial_d x , v_1, \ldots, v_{n-d}
+    .\] 
+    This gives the following matrix with the same rank as $E_*$:
+     \[
+    \begin{pmatrix}
+        (\partial_i x\cdot \partial_j x + \sum_k t_k \partial_iv_{k} \cdot \partial_j x) &  \sum_k \partial_i v_{k} \cdot  v_\ell\\
+        0 & \operatorname{Id}
+    \end{pmatrix}
+    .\] 
+    Therefore,
+    \[
+    \Rank E_* = \Rank \left(\partial_i x\cdot \partial_j x + \sum_k t_k \partial_iv_{k} \cdot \partial_j x\right)  
+    .\] 
+    Now in the second term, we can move $\partial_i$ from $v_k$ to $x$ and get a minus sign in return:
+    \begin{align*}
+        \partial_iv_{k} \cdot \partial_j x &= \partial_i (v_k \cdot \partial_j x)  - v_k \cdot  \partial_i \partial_j x\\
+                               &= - v_k \cdot  \partial_i \partial_j x
+    ,\end{align*} 
+    as $v_k \perp \partial_j x$.
+    So finally, we have
+    \begin{align*}
+    \Rank {E_*}_{(x, v)}
+        &= \Rank \left(\partial_i x\cdot \partial_j x - \sum_k t_k v_{k} \cdot \partial_i \partial_j x\right)  \\
+        &= \Rank \left(\partial_i x\cdot \partial_j x - v \cdot \partial_i \partial_j x\right)  \\
+        &= \Rank \left(\partial_i x\cdot \partial_j x + (x-p) \cdot \partial_i \partial_j x\right)  \\
+        &= \Rank H_p
+    .\end{align*} 
+    This concludes the proof.
+\end{proof}
+
+
+
+
+\begin{prop}
+    Let $V$ be a manifold that can be embedded as a submanifold into a Euclidean space.
+    Let $f: V \to  \R$ be a function.
+    Let $k$ be an integer.
+    Then $f$ and all its derivatives of order $\le k$ can be uniformly
+    approximated by Morse functions on every compact subset.
+\end{prop}
+
+The idea of the proof goes as follows.
+We choose an embedding of $V$ where $f$ is the first coordinate on $V$, so we can think of $f$ as a simple projection: $x \mapsto x_1$.
+Then this function can be approximated in the following way:
+\[
+    x_1 \approx \frac{(x_1+c)^2 - c^2}{2c} \qquad \text{as $c \to  \infty$,}
+\]
+and even when considering the other dimensions, the approximation still works:
+\[
+    x_1 \approx \frac{\|x - p\|^2 - c^2}{2c} \qquad \text{with $p = (-c, 0, \ldots, 0)$ and $c\to  \infty$}
+.\] 
+Note that the right hand side is almost always a Morse function.
+
+\begin{proof}
+    Embed $V$ in $\R^{n}$ for $n$ sufficiently large such that $f$ is the first coordinate:
+    \[
+        h(x) = (f(x), h_2(x), \ldots, h_n(x))
+    .\] 
+    Let $c \in \R$. For almost every point $p = (-c + \epsilon_1, \epsilon_2, \ldots, \epsilon_n)$, the function
+    \[
+        g_c(x) = \frac{\|x - p\|^2 - c^2}{2c} 
+    \] 
+    is Morse.
+    Then
+    \begin{align*}
+        g_c(x) &= \frac{1}{2c}  \sum (x_i - p_i)^2 - c^2\\
+             &= \frac{1}{2c} \left((f(x) + c - \epsilon_1 )^2 + (h_2(x) - \epsilon_2)^2 + \cdots + (h_n(x) - \epsilon_n)^2\right)\\
+             &= f(x) +  \frac{f(x)^2 + \sum h_i(x)^2}{2c} - \frac{\epsilon_1 f(x)  + \sum \epsilon_i h_i(x)}{c}  + \sum \epsilon_i^2 - \epsilon_1
+    .\end{align*} 
+
+    This concludes the proof.
+    Indeed, let $K$ be a compact subset of $V$.
+    The functions $\frac{d^{j}}{dx^{j}} (f(x)^2 + \sum h_i(x)^2)$ for $j = 1, \ldots,k$ all attain their maximum on $K$, so by choosing $c$ big enough, we can make them simultaneously arbitrarily small in a uniform way. Similarly for the third term.
+    Lastly, we can also $\epsilon_i$ arbitrarily small while still retaining that $g$ is a Morse function.
+\end{proof}
+
+\begin{figure}
+    \centering
+    \sidecaption{
+        We can approximate any smooth function with a Morse function.
+        On the left, we plotted the level sets of $f$ itself.
+        Because the coordinates are $f$ and $h_2$, these level sets are vertical planes.
+        The two right plots show level sets of $g_c$ for $c=10$ and $c=100$, which are circles.
+        We see that $g_c$ approximates $f$ if $c \to  \infty$.
+    }
+    \incfig{approximate-morse-functions}
+    \label{fig:approximate-morse-functions}
+\end{figure}

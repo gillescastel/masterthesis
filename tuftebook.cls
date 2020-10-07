@@ -17,7 +17,17 @@
 % this means a (portrait) paper size of 170mm x 240mm
 %
 \RequirePackage{geometry}
-\geometry{paperwidth=170mm, paperheight=240mm, left=42pt, top=40pt, textwidth=280pt, marginparsep=20pt, marginparwidth=100pt, textheight=560pt, footskip=40pt}
+\geometry{
+paperwidth=215mm,
+paperheight=297mm,
+left=42pt,
+top=40pt,
+textwidth=340pt,
+marginparsep=20pt,
+marginparwidth=180pt,
+textheight=560pt,
+footskip=40pt,
+}
 %
 % fontsize is 10pt with a leading (line spacing) of 13pt for book 
 %
@@ -155,4 +165,8 @@
 \sidecaptionvpos{figure}{t} 
 \captionsetup{labelfont={sf,bf,footnotesize}}
 \DeclareCaptionStyle{marginfigure}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
+\DeclareCaptionStyle{sidecaption}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
 \DeclareCaptionStyle{widefigure}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
+
+\renewcommand{\normalsize}{\fontsize{10pt}{13pt}\selectfont}%
+\renewcommand{\footnotesize}{\fontsize{8pt}{10pt}\selectfont}%
