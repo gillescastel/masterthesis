@@ -138,7 +138,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1418"
+     inkscape:current-layer="layer1"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -271,7 +271,7 @@
          sodipodi:role="line"
          x="69.840546"
          y="289.45584"
-         style="stroke-width:0.26458332">\footnotesize$(u_i, t_1)\mapsto (x(u_i), t_1 v(u_1))$</tspan></text>
+         style="stroke-width:0.26458332">\footnotesize$(u, t)\mapsto (x(u), t_i v(u_i))$</tspan></text>
     <g
        id="g1418"
        transform="matrix(1.3665654,0,0,1.3667831,-48.049616,-94.661143)"

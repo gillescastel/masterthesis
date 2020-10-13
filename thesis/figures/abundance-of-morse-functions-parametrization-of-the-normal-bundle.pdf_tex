@@ -57,7 +57,7 @@
     \put(0.04636344,0.08627054){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$u_1$\end{tabular}}}}%
     \put(0.20375443,0.4580819){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$t_1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{abundance-of-morse-functions-parametrization-of-the-normal-bundle.pdf}}%
-    \put(0.38307317,0.43816785){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$(u_i, t_1)\mapsto (x(u_i), t_1 v(u_1))$\end{tabular}}}}%
+    \put(0.38307317,0.43816785){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$(u, t)\mapsto (x(u), t_i v(u_i))$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{abundance-of-morse-functions-parametrization-of-the-normal-bundle.pdf}}%
     \put(0.7320925,0.99057795){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize $\partial_2 x$\end{tabular}}}}%
     \put(0.59851896,0.79921013){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize $\partial_1 x$\end{tabular}}}}%
