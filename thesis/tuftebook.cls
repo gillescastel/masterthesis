@@ -6,6 +6,9 @@
 \RequirePackage{sidenotes}% put annotations, tables and figures in the margin
 \captionsetup{font=footnotesize, skip=4pt}
 \RequirePackage[maxfloats=45]{morefloats}% a lot of marginals need more float 'memory'
+% VERY IMPORTANT: use latest version of marginfix!
+% https://github.com/shicks/marginfix/releases/tag/v1.2
+% Otherwise, some sidenotes get dropped!!!
 \RequirePackage{marginfix}% automatically adjust the side-floats nicely 
 \newcommand{\caesar@letterspace}[1]{#1}% allow LuaLaTeX, LaTeX letterspacing
 \RequirePackage[letterspace=150]{microtype}% microtypography
