@@ -12,15 +12,15 @@
     We denote this by $ N_1 \tcap N_2$.\sidenotemark[1]
 \end{definition}
 \sidenotetext[1][]{The notation is suggestive: the line $\cap$ intersects $|$ transversally: $\tcap$.}
-
 Note in particular that this depends on the ambient manifold $M$, and that if $N_1$ and $N_2$ do not intersect, their intersection is vacuously transverse.
+
 A useful result is that when two manifolds intersect transversely, the codimensions of their intersection is the sum of their codimensions.
 \begin{prop}
     Let $M$ be a manifold and $N_1, N_2$ be two submanifold. If $ N_1 \tcap N_2$, then 
     \[
         \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
     ,\] 
-    where the codimensions are of course relative to $M$.
+    where the codimensions relative to $M$.
 \end{prop}
 \begin{proof}[Proof. TODO]
     As this is a local statement, we prove it for $M = \R^{m}$.
@@ -43,12 +43,17 @@ A useful result is that when two manifolds intersect transversely, the codimensi
                            &= m - (n_1 + n_2)
     .\end{align*} 
 \end{proof}
+Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which cannot be guaranteed when the intersection is not transverse.
 
-Note that this proof also shows that $ N_1 \tcap  N_2$ is a manifold and that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$.
+\begin{marginfigure}
+    \centering
+    \incfig{intersection-of-manifolds-is-not-always-a-manifold}
+    \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and a closed interval.}
+    \label{fig:intersection-of-manifolds-is-not-always-a-manifold}
+\end{marginfigure}
 
 
 \todo{Give examples of transverse / non-transverse intersection and show that it is dependent of the ambient manifold}
-\todo{Show that intersections of two manifolds is not always a manifold (can consists of parts of different dimensions. But this is not the only obstruction. You could end up with manifold with boundary!)}
 
 
 \begin{theorem}[Sard's theorem]

@@ -13,7 +13,7 @@
 \end{definition}
 
 \begin{definition}[Morse function]
-    Let $M$ be a manifold. A function $f: M \to  \R$ a \emph{Morse function} if for all critical points $p$, there exists coordinates centred around $p$ such that $f$ is locally given by
+    Let $M$ be a manifold. A function $f: M \to  \R$ a \emph{Morse function} if for all critical points $p$, there exists a chart centred around $p$ such that $f$ is locally given by
     \[
         f(x) = f(p) -x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
     .\] 
@@ -22,30 +22,33 @@
 \end{definition}
 Intuitively, the index of a critical point $p$ is ``the number of downward directions''.
 Let us first give some examples.
-
-\begin{eg}
-    
-\end{eg}
-
 \begin{marginfigure}
     \centering
     \incfig{examples-of-morse-functions}
     \caption{Example of Morse function on the torus. }
     \label{fig:examples-of-morse-functions}
 \end{marginfigure}
-
-So what then are examples of functions that are not Morse?
+\begin{eg}
+    Let $M$ be the torus  $T^2$ embedded in $\R^3$ as illustrated in \cref{fig:examples-of-morse-functions}.
+    Then the height function $h: T^2 \to  \R$ which is the projection on the $z$-axis is a smooth map with four critical points:
+    \begin{itemize}
+        \item A minimum $m$, where $h(x) = h(m) + x_1^2 + x_2^2$.
+        \item Two saddle points $s_1, s_2$ where $h(x) = h(s_i) + x_1^2 - x_2^2$.
+        \item A maximum $p$ where $h(x) = h(p) - x_1^2 - x_2^2$.
+    \end{itemize}
+\end{eg}
 
 \begin{eg}
     Let $M = \R^2$ and $f: \R^2 \to  \R: (x, y) \mapsto  x^2$.
-    Then $(0, 0)$ is a critical point, but clearly $f$ is not Morse.
+    Then all points $(0, y)$ for  $y \in \R$ are critical points of this function.
+    In particular, $(0, 0)$ is a critical point, but clearly $f$ is not Morse.
 \end{eg}
-\begin{eg}
-    Let $M = \R$ and $f : \R \to  \R: x \mapsto x^3$.
-    Then $x = 0$ is a critical point, but $f$ is not Morse.
-    Note however that if we add a small perturbation to $f$, say $g_t: x\mapsto x^3+ tx$, then for small non-zero $t$, $g$ is Morse. For $t < 0$, $g_t$  has two critical points: one of index $1$ and one of index $0$.
-    If $t > 0$,  $g_t$ has no critical points.
-\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{non-example-of-morse-function}
+    \caption{}
+    \label{fig:non-example-of-morse-function}
+\end{marginfigure}
 \begin{marginfigure}
     \centering
     \incfig{non-examples-of-morse-functions}
@@ -54,11 +57,18 @@ So what then are examples of functions that are not Morse?
     }
     \label{fig:non-examples-of-morse-functions}
 \end{marginfigure}
+\begin{eg}
+    Let $M = \R$ and $f : \R \to  \R: x \mapsto x^3$.
+    Then $x = 0$ is a critical point, but $f$ is not Morse.
+    Note however that if we add a small perturbation to $f$, say $g_t: x\mapsto x^3+ tx$, then for small non-zero $t$, $g$ is Morse. For $t < 0$, $g_t$  has two critical points: one of index $1$ and one of index $0$.
+    If $t > 0$,  $g_t$ has no critical points.
+\end{eg}
 
 Note that this last case where $f$ has no critical points cannot happen if $M$ is compact.
 Indeed, any function attains it maximum and minimum on a compact manifold, so we have at least two critical points.
-We will later show that a Morse function $f$ on a compact manifold $M$ has at most a finite number of critical points.
-
+On the other hand, the number of critical points is at most finite.
+Indeed, the definition of a Morse function implies that critical points are isolated, which on a compact manifold implies that their number is finite.
+This also immediately rules out the situation we had in the other example, where the set of critical points was a straight line.
 
 \section{Handle decompositions}
 
@@ -78,7 +88,7 @@ We can also define Morse functions on manifolds with boundary
 % \end{prop}
 
 
-\section{}
+\section{Coordinate free definition of a Morse function}
 
 
 The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
@@ -94,8 +104,7 @@ To show that it is and that $\Ind p$ does not depend on the choice of coordinate
     ,\end{align*} 
     where $\tilde{Y}$ is a local extension of $Y$.
 \end{definition}
-This is a well defined symmetric bilinear form.\sidenote{%
-         The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
+This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
 \begin{align*}
     H_p(X, Y) - H_p(Y, X) &= X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p\\
                           &= [\tilde{X}, \tilde{Y}] f |_p\\
@@ -109,9 +118,9 @@ Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $
 }
 In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
 \[
-    H_p = - dx_1 \otimes dx_1 - \cdots - dx_k \otimes dx_k + dx_{k+1} \otimes dx_{k+1} + \cdots + dx_n \otimes dx_n
+    H_p = - dx_1^2 - \cdots - dx_k^2 + dx_{k+1}^2  + \cdots + dx_n^2
 .\] 
-Note that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
+Note in particular that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
 As the signature of a symmetric bilinear form is coordinate independent, this shows that the index of a critical point is as well.
 
 
@@ -123,19 +132,63 @@ Many authors take this to be the definition of a Morse function.
     If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
 \end{lemma}
 \begin{proof}
-    
-\end{proof}
+    We follow the proof of Milnor\sidecite{milnor}.
+    We may assume that $M = \R^{n}$, $p$ is the origin and $f(p) = 0$.
+    Then by a version of Taylor's theorem, we can write
+    \begin{align*}
+        f(x)  &= f(p) + \sum_{i=1}^{n} (x_i - p_i) g_i (x)\\
+              &= \sum_{i=1}^{n} x_i g_i(x)
+    ,\end{align*} 
+    where $g_i$ are smooth functions. 
+    Now, as $g_i(0) = \partial_i f (0) = 0$, we can repeat this for each  $g_i$, giving us the following:
+    \[
+        f(x) = \sum_{i, j= 1}^{n} x_i x_j h_{ij}(x)
+    .\] 
+    Because this sum is symmetric in $i$ and  $j$, we may assume that  $h_{ij}$ is symmetric as well.\sidenote{If $h_{ij}$ is not symmetric, we can define $h_{(ij)} = \frac{1}{2}(h_{ij} + h_{ji})$. Then $h_{(ij)}$ is symmetric and we still have $\sum x_{i}x_{j}h_{ij} = \sum x_{i}x_{j}h_{(ij)}$.}
+    Note that
+    \[
+        h_{(ij)}(0) = \frac{1}{2} \partial_{ij} f(0)
+    ,\]
+    which is non-degenerate.
 
+    Now we imitate the proof of diagonalization of a non-degenerate quadratic form.
+    We do this by induction.
+    Suppose we have coordinates $u_1, \cdots, u_n$ in a neighbourhood of $0$ such that
+    \[
+        f = \pm u_1^2 \pm \cdots \pm u_{r-1}^2 + \sum_{i,j\ge r} u_i u_j H_{ij}(u)
+    ,\] 
+    where $H_{ij}$ is a symmetric matrix.
+    After a linear change, we may assume that $H_{rr} \neq 0$.
+    Then define new coordinates $ v_1, \ldots, v_r$ as follows:
+    \[
+        v_i = \begin{cases}
+            u_i & \text{if $i \neq r$}\\
+            \sqrt{|H_{rr}|} (u_r + \sum_{i > r} u_i H_{ir} / H_{rr}) & \text{if $i = r$.}
+        \end{cases}
+    \] 
+    Note that we may need to restrict the neighbourhood such that $\sqrt{H_rr} \neq 0$.
+    Then we have that
+    \[
+        f = \sum_{i\le r} \pm v_i^2 + \sum_{i,j > r} v_i v_j H_{ij}'(v)
+    .\] 
+    for some symmetric matrix $H_{ij}'$.
+    Indeed,
+    \begin{align*}
+        v_r^2 &= |H_{rr}| \left(u_r^2 + \sum_{i>r} 2 u_r u_i H_{ir} / H_{rr} + \left(\sum_{i>r} u_i H_{ir} / H_{rr}\right)^2\right)\\
+              &= TODO
+    .\end{align*} 
+
+\end{proof}
 
 \section{Existence and abundance}
 
 Let $M$ be a compact manifold.
 Then we can embed $M$ in $\R^{n}$ for some big enough $n$.
 
-\begin{marginfigure}[-5cm]
+\begin{marginfigure}
     \centering
     \incfig{level-sets-of-distance-function-torus}
-    \caption{TODO level sets of distance function torus}
+    \caption{An embedding of the torus $T^2$ in $\R^3$. The level sets of $f_p$ are spheres. We see that $f_p$ has four critical points: a maximum, a minimum and two saddle points.}
     \label{fig:level-sets-of-distance-function-torus}
 \end{marginfigure}
 
