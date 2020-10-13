@@ -94,16 +94,19 @@ To show that it is and that $\Ind p$ does not depend on the choice of coordinate
     ,\end{align*} 
     where $\tilde{Y}$ is a local extension of $Y$.
 \end{definition}
-This is a well defined symmetric bilinear form.
-\[
-    H_p(X, Y) - H_p(Y, X) = X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p = [\tilde{X}, \tilde{Y}] f |_p = df_p [\tilde{X}, \tilde{Y}]|_p = 0
-.\]
+This is a well defined symmetric bilinear form.\sidenote{%
+         The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
+\begin{align*}
+    H_p(X, Y) - H_p(Y, X) &= X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p\\
+                          &= [\tilde{X}, \tilde{Y}] f |_p\\
+                          &= df_p [\tilde{X}, \tilde{Y}]|_p = 0
+.\end{align*}
 The value of $H_p$ also does not depend on the extension of the vector field.
 Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $Y$. Then by symmetry of $H_p$, we have
 \[
     X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
 .\] 
-
+}
 In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
 \[
     H_p = - dx_1 \otimes dx_1 - \cdots - dx_k \otimes dx_k + dx_{k+1} \otimes dx_{k+1} + \cdots + dx_n \otimes dx_n
@@ -234,7 +237,7 @@ Then Sard's theorem\sidecite{todo} will immediately imply that $f_p$ is Morse fo
         0 & \operatorname{Id}
     \end{pmatrix}
     .\] 
-    Therefore,
+    Therefore,\todo{This is wrong? Should be something along the lines of $+ \Rank I$?}
     \[
     \Rank E_* = \Rank \left(\partial_i x\cdot \partial_j x + \sum_k t_k \partial_iv_{k} \cdot \partial_j x\right)  
     .\] 

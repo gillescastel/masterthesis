@@ -16,7 +16,9 @@
   {\ooalign{$#1\@firstoftwo#2$\cr\hfil$#1\@secondoftwo#2$\hfil\cr}}}
 \makeatother
 
-\newcommand{\tcap}{\mathrel{\mathpalette\superimpose{{\raise0.15ex\hbox{$\top$}}{\cap}}}}
+% https://tex.stackexchange.com/questions/134863/command-for-transverse-and-not-pitchfork-as-used-in-guillemin-and-pollack
+% \newcommand{\tcap}{\mathrel{\mathpalette\superimpose{{\raise0.15ex\hbox{$\top$}}{\cap}}}}
+\newcommand{\tcap}{\pitchfork}
 
 \newcommand\traj[2]{\mathcal M(#1, #2)}
 \renewcommand\L[2]{\mathcal L(#1, #2)}
@@ -24,6 +26,10 @@
 \DeclareMathOperator{\Ind}{Ind}
 \DeclareMathOperator{\Rank}{Rank}
 
+\DeclareMathOperator{\codim}{codim}
+
+\DeclareMathOperator{\Ker}{Ker}
+\renewcommand{\Im}{\operatorname{Im}}
 
 \newcommand\sphere[1]{S^#1}
 \newcommand\disk[1]{D^#1}
@@ -35,6 +41,8 @@
         \symbolentry{Critk}{$\Crit_k f$}{Critical points of $f$ of index $k$}
         \symbolentry{Crit}{$\Crit f$}{Critical points of $f$}
         \symbolentry{C}{$\Cinfty(M, N)$}{Smooth functions from $M$ to  $N$}
+        \symbolentry{Codim}{$\codim N$}{Codimension of $N$}
+        \symbolentry{Codim}{$\dim N$}{Dimension of $N$}
         \symbolentry{D}{$\disk{n}$}{Disk of dimension $n$}
         \symbolentry{Ind}{$\Ind a$}{Index of critical point $a$}
         \symbolentry{L}{$\L{a}{b}$}{$\traj{a}{b} / \R$, where $\R$ acts by time translations}

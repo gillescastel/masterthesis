@@ -1,0 +1,60 @@
+\setcounter{chapter}{-1}
+\chapter{Preliminaries}
+
+\todo{Should I define what a manifold is?}
+
+
+% TODO: spell check in brackets in vim!
+\begin{definition}[Transversality]
+    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds.
+    Then $N_1$ intersects $N_2$ \emph{transversely} if and only if for all points of intersection $p \in N_1 \cap N_2$, we have
+    $T_pM = T_pN_1 + T_p N_2$.
+    We denote this by $ N_1 \tcap N_2$.\sidenotemark[1]
+\end{definition}
+\sidenotetext[1][]{The notation is suggestive: the line $\cap$ intersects $|$ transversally: $\tcap$.}
+
+Note in particular that this depends on the ambient manifold $M$, and that if $N_1$ and $N_2$ do not intersect, their intersection is vacuously transverse.
+A useful result is that when two manifolds intersect transversely, the codimensions of their intersection is the sum of their codimensions.
+\begin{prop}
+    Let $M$ be a manifold and $N_1, N_2$ be two submanifold. If $ N_1 \tcap N_2$, then 
+    \[
+        \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
+    ,\] 
+    where the codimensions are of course relative to $M$.
+\end{prop}
+\begin{proof}[Proof. TODO]
+    As this is a local statement, we prove it for $M = \R^{m}$.
+    We may assume that $N_1 = f_1^{-1}(0)$ and $ N_2 = f_2^{-1}(0)$ where $f_i$ are submersions from $\R^{p}$ to $\R^{n_i}$, where $n_i$ is the codimension of $N_i$.
+    % i.e. $(f_i)_*$ has full rank everywhere.
+    \begin{marginfigure}
+        \centering
+        \incfig{codimensions-transverse}
+        \caption{When $N_1 \tcap N_2$, the codimension of the intersection is the sum of their codimensions. By using the implicit function theorem, we straighten the situation.}
+        \label{fig:codimensions-transverse}
+    \end{marginfigure}
+    Then we can also consider $F= (f_1, f_2): \R^{m} \to  \R^{n_1} \times \R^{n_2}$.
+    Notice that $ N_1 \cap N_2 = F^{-1}(0)$.
+    Then
+    \begin{align*}
+        \dim N_1 \cap  N_2 &= \dim \Ker d_0F\\
+                           &= \dim(\Ker d_0 f_1 \cap \Ker d_0 f_2)\\
+                           &= \dim \Ker d_0 f_1 + \dim \Ker d_0 f_2 - \dim (\Ker d_0 f_1 + \Ker d_0 f_2)\\
+                           &= (m - n_1) + (m - n_2) - m\\
+                           &= m - (n_1 + n_2)
+    .\end{align*} 
+\end{proof}
+
+Note that this proof also shows that $ N_1 \tcap  N_2$ is a manifold and that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$.
+
+
+\todo{Give examples of transverse / non-transverse intersection and show that it is dependent of the ambient manifold}
+\todo{Show that intersections of two manifolds is not always a manifold (can consists of parts of different dimensions. But this is not the only obstruction. You could end up with manifold with boundary!)}
+
+
+\begin{theorem}[Sard's theorem]
+    Let $f: M \to  N$ be a $\Cinfty$ map. Then the set of critical values of  $f$ has measure zero in $N$.
+\end{theorem}
+\begin{proof}
+    Omitted.
+\end{proof}
+
