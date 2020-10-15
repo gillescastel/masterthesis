@@ -12,8 +12,8 @@ Done:
    - Cancelation of critical points
    - Every 3-manifold is boundary of some 4-manifold (under certain conditions)
    - Some results needed for Heegaard decompositions
-* Watched talk on Floer homology: (https://www.youtube.com/watch?v=hcggpesZ_kA)[Morse homology] (https://www.youtube.com/watch?v=SoLPZbLiAVo)[Floer homology]
-* Made a dependency chart for the first chapter(s): https://drive.google.com/file/d/1LSyxkRDMp2VspcCA4x9pddb7uIP2q3kl/view?usp=sharing
+* Watched talk on Floer homology: [Morse homology](https://www.youtube.com/watch?v=hcggpesZ_kA) [Floer homology](https://www.youtube.com/watch?v=SoLPZbLiAVo)
+* Made a [dependency chart for the first chapter(s)](https://drive.google.com/file/d/1LSyxkRDMp2VspcCA4x9pddb7uIP2q3kl/view?usp=sharing)
 * Wrote a bit (WIP):
   - Introduction to transversally
   - Morse Lemma
