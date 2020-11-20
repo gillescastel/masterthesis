@@ -70,7 +70,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -163,6 +163,12 @@
        inkscape:transform-center-y="-17.503993"
        transform="rotate(30,145.77408,238.30849)"
        clip-path="url(#clipPath1073)">
+      <path
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+         d="m 100.7331,234.03587 c -1.979243,1.19101 -3.064634,2.69809 -3.064584,4.25523 1.92e-4,3.64796 5.835284,6.60518 13.033294,6.60527 7.19838,4e-5 13.03384,-2.95737 13.03376,-6.60552 -4.8e-4,-3.64794 -5.83576,-6.60505 -13.03374,-6.60501 -3.84413,-3e-5 -7.49223,0.85998 -9.96873,2.35003 z m 2.27346,4.14864 0.28692,-0.26099 c 0.36831,-0.31994 0.77066,-0.60888 1.20316,-0.86471 3.65118,-2.15979 9.36719,-2.01886 13.35934,0.67013 l 0.57735,0.41417 c -4.99695,3.2639 -10.93972,3.38184 -15.42677,0.0414 z"
+         id="ellipse854"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccc" />
       <ellipse
          ry="6.6054463"
          rx="13.033612"

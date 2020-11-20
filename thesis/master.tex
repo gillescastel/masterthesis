@@ -5,6 +5,13 @@
 
 \usepackage{lipsum}
 
+\newcommand\circled[1]{
+    \begin{tikzpicture}[baseline=(char.base)]%
+        \node[circle,draw,inner sep=1pt] (char) {\textsf{#1}};%
+\end{tikzpicture}}
+
+\usepackage{cmbright}
+\usepackage{bm}
 
 \title{}
 \begin{document}
@@ -21,6 +28,8 @@
     % \input{chaptest.tex}
     \input{chap0.tex}
     \input{chap1.tex}
+    \input{chap2.tex}
+
     \input{conclusion.tex}
 
     \printbibliography

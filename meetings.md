@@ -43,3 +43,5 @@ Takeaways:
 Want to discuss:
 
 * Doing a PhD at Leuven / ... (what's your experience in Leuven, Cambridge?)
+* Compilation problems: using BibLaTeX instead of BiBTeX
+* * Google Jamboard?

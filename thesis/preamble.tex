@@ -123,13 +123,21 @@
 \usepackage{transparent}
 
 \newcommand{\incfig}[2][1]{%
+    {\scriptsize\textsf{#2}}
     \def\svgwidth{#1\textwidth}
     \import{./figures/}{#2.pdf_tex}
+}
+
+\newcommand{\minifig}[2]{%
+    \def\svgwidth{#1}%
+    \begingroup%
+    \setbox0=\hbox{\import{./figures/}{#2.pdf_tex}}%
+    \parbox{\wd0}{\box0}\endgroup%
 }
 
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
 
-\usepackage{todonotes}
+\newcommand\todo[1]{{\color{red}{#1}}}
 
 \author{Gilles Castel}

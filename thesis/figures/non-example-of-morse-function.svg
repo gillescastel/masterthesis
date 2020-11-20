@@ -147,6 +147,12 @@
      id="layer1"
      transform="translate(-74.74215,-225.73992)">
     <path
+       id="path885"
+       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+       d="m 113.57996,251.50282 c -8.8762,31.98935 -18.59339,40.11545 -30.29682,-8.11801 l 37.25125,-13.5701 c 1.67229,6.892 3.30402,12.63331 4.89854,17.31872 l 25.39875,-9.20119 v 0 c -4.01075,14.45453 -8.19321,24.03685 -12.65303,25.74895 l 0.009,-0.009 -37.49222,13.65788"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc" />
+    <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        d="m 83.283143,243.38481 c 11.703432,48.23346 21.420617,40.10736 30.296817,8.11801"
        id="path818"

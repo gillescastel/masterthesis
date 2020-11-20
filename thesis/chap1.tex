@@ -1,5 +1,10 @@
 \chapter{Morse theory}
 
+When studying manifolds is often proves useful to study simple structures that live on manifolds. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study functions from the manifold to $\R$, some of the most simple functions you can imagine. You can think of them as projections  to one dimension.
+While these projections seem to lose much information, we will see that they actually can provide great insight in the structure of the manifold itself.
+
+We will not consider arbitrary maps $M \to \R$, but rather maps that have nice behaviour at their critical points. Let us first recall what a critical point is.
+
 \begin{definition}[Critical point]
     Let $M$ and $N$ be a manifolds and  $f$ a map from $M$ to $N$.
     The critical points of $f$ are
@@ -11,13 +16,13 @@
     \Crit f = \{ p \in M  \mid  df_p = 0\} 
     .\] 
 \end{definition}
-
+The maps we are to consider are called `Morse functions' and are defined as follows.
 \begin{definition}[Morse function]
     Let $M$ be a manifold. A function $f: M \to  \R$ a \emph{Morse function} if for all critical points $p$, there exists a chart centred around $p$ such that $f$ is locally given by
     \[
         f(x) = f(p) -x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
     .\] 
-    We call $k$ the index of $p$, which we also denote with $\Ind p$.
+    We call such a chart a \emph{Morse chart} and we call $k$ the index of $p$, which we also denote with $\Ind p$.
     
 \end{definition}
 Intuitively, the index of a critical point $p$ is ``the number of downward directions''.
@@ -25,7 +30,7 @@ Let us first give some examples.
 \begin{marginfigure}
     \centering
     \incfig{examples-of-morse-functions}
-    \caption{Example of Morse function on the torus. }
+    \caption{Example of a Morse function on the torus. At each critical point, the index $k$, the number of downward directions is indicated. }
     \label{fig:examples-of-morse-functions}
 \end{marginfigure}
 \begin{eg}
@@ -41,7 +46,7 @@ Let us first give some examples.
 \begin{eg}
     Let $M = \R^2$ and $f: \R^2 \to  \R: (x, y) \mapsto  x^2$.
     Then all points $(0, y)$ for  $y \in \R$ are critical points of this function.
-    In particular, $(0, 0)$ is a critical point, but clearly $f$ is not Morse.
+    In particular, $(0, 0)$ is a critical point, but $f$ is clearly not Morse.
 \end{eg}
 \begin{marginfigure}
     \centering
@@ -71,28 +76,332 @@ Indeed, the definition of a Morse function implies that critical points are isol
 This also immediately rules out the situation we had in the other example, where the set of critical points was a straight line.
 
 \section{Handle decompositions}
+\todo{Introduction}
 
+\begin{definition}
+A cobordism between two compact manifolds $M_1$ and $M_2$ is a compact manifold $M$  with boundary $\partial M = M_1 \sqcup M_2$.
+\end{definition}
+
+
+The term `cobordism' comes from the fact that $M_1 \sqcup M_2$ are the boundary of $M$, so you can think of $M$ as the `co-boundary' of $M_1$ and $M_2$.
+Cobordisms are an interesting topic in its own right.
+For example, they define an equivalence relation on all compact manifolds of same dimension. Two manifolds $ M_1$ and $M_2$ are then said to be equivalent (cobordant) if there exists a cobordism $M$ connecting the two.
+This equivalence relation is coarser than diffeomorphism and is generally easier to study.
+Cobordisms also form a category where the objects are manifolds and the arrows are cobordisms.
+
+We have illustrated some examples below.
+Note that we may also take $M_1$ or $M_2 = \O$.
+In particular, any closed manifold is a cobordism from $\O$ to $\O$.
 \begin{figure}[H]
     \centering
-    \incfig{morse-chart}
-    \caption{morse chart}
-    \label{fig:morse-chart}
+    \sidecaption{Some examples of cobordisms. 
+        When the height function has critical points, the topology changes.
+    \label{fig:examples-of-cobordisms} }
+    \incfig{examples-of-cobordisms}
+\end{figure}
+
+When we consider the height function $f: M \to  [0, 1]$ on these examples,
+we observe that the topology of the bottom is different than that of the top if the height function has critical points.
+This is indeed in general true.
+If $f$ is a Morse function (which is the case in our examples), it will turn out we can very concretely describe \emph{how} this topology changes.
+This will give rise to handle decompositions.
+
+\newthought{Let us first consider} the case where $f: M \to [0, 1]$ has no critical points. 
+
+\begin{prop}
+    Suppose $M$ is a cobordism from $M_0$ to $ M_1$ and $f : X \to [0, 1] $ such that $M_0 = f^{-1}(0)$ and $M_1 = f^{-1}(1)$.
+    Suppose $f$ has no critical points. Then $X$ is diffeomorphic to $[0, 1] \times  M_0$.
+\end{prop}
+\begin{proof}
+    \begin{marginfigure}
+        \centering
+        \incfig{proof-of-cobordism-without-critical-points}
+        \caption{TODO proof of cobordism without critical points}
+        \label{fig:proof-of-cobordism-without-critical-points}
+    \end{marginfigure}
+    Consider a Riemannian metric $\left<\cdot ,\cdot  \right>$ on $M$.
+    Because  $f$ has no critical points, the vector field $W = (df)^{\sharp}$ never vanishes.
+    Consider the normalized vector field
+    \[
+    V = \frac{1}{\left<W, W \right>} W
+    .\] 
+    Then $df(V) = \frac{1}{\left<W, W \right>} df(W) = 1$.
+    Consider
+    \begin{align*}
+        \phi: [0, 1] \times M_0&\longrightarrow M \\
+        (t, p) &\longmapsto \theta_V^{t}(p)
+    ,\end{align*}
+    where $\theta_V^{t}$ is the flow along $V$.
+    Then $f(\phi(t, p)) = t$ for all $p \in M_0$, as $df(V) = 1$.
+    The map $\phi$ is injective because of the uniqueness of flows, and surjective because given a point $p$ in $M$, we can always flow back along $V$ for a time $t$ to find a $p_0 \in M_0$ which then satisfy $\phi(t, p_0) = p$. 
+    This also proves that $\phi$ is a diffeomorphism.
+\end{proof}
+
+In the case in which $f$ does have a critical point, the previous proof fails because $df = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
+
+
+\newthought{Let us now investigate} the situation when a Morse function $f$ does have a single critical point, say $p$ and assume $f(p) = 0$.
+Then we know $f$ is locally of the following form:
+\[
+    f(x_1, \ldots, x_n) = - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
+.\] 
+In Figure~\ref{fig:morse-chart}, we have plotted the first $k$ variables (the `downward directions') on the horizontal axis, and the last $n-k$ variables on the vertical axis.
+Then the level set $f^{-1}(0)$ is given by
+\[
+x_1^2 + \cdots + x_k^2 = x_{k+1} ^2 + \cdots + x_n^2
+,\] 
+which consists of the two crossing lines in the figure, corresponding to the crossing part of the figure-eight on the right.
+Level sets of values slightly above an below $0$ look locally like hyperbolas on our figure, but remembering that that the axes consist of multiple dimensions, we should call them hyperboloids.
+\begin{figure}[H]
+    \centering
+    \sidecaption{TODO: morse chart 
+    \label{fig:morse-chart}}
+\incfig{morse-chart}
+\end{figure}
+
+To contain the behaviour of the critical point, it is useful to cut out the area bounded by the level sets $f = \pm \epsilon$ in order to make it compact.\todo{wording}.
+A natural way to do this, is to cut along gradient flow lines of $f$ (Figure~\ref{fig:morse-chart-flow-lines}), by which we mean gradient lines for the standard metric on $\R^{n}$.\sidenote{More explicitly, if $f$ is Morse, we know that locally around a critical point $p$, $f$ is given by
+    \begin{align*}
+        f(x_1, \ldots, x_n) &= f(p) - x_1^2 - \cdots - x_k^2\\
+                            & \qquad + x_{k+1}^2 + \cdots + x_n^2
+    .\end{align*} 
+    Then the gradient of $f$ w.r.t.\ the standard metric on $\R^n$ is
+    \begin{align*}
+        \grad f &= - 2 x_1 \partial_{1} - \cdots - 2 x_k \partial_{k}\\
+                & \qquad + 2 x_{k+1} \partial_{k+1} + \cdots + 2 x_n \partial_{n},
+    \end{align*}
+    where $\partial_i = \partial_{x_i}$.
+}
+\begin{marginfigure}
+    \centering
+    \incfig{morse-chart-flow-lines}
+    \caption{TODO morse-chart-flow-lines}
+    \label{fig:morse-chart-flow-lines}
+\end{marginfigure}
+In Figure~\ref{fig:morse-chart-zoomed-in}, the cut out area is coloured in gray.
+The advantage of cutting along gradient flow lines, is that we have split up the cobordism in three parts which we understand well.
+\begin{itemize}
+    \item[\circled{A}] The part below $-\epsilon$ and the part above $\epsilon$ have a product structure, because we assumed the only critical value was $0$.
+    \item[\circled{B}] The part of $M$ that lies between $-\epsilon$  and $\epsilon$ without $\circled{H}$ also has a product structure.
+        To see this, extend the metric on $\circled{H}$ to the whole manifold. Then, because $f$ has no critical values outside $\circled{H}$, we can flow along gradient lines giving us product structure.
+        This is why we cut in this way: we want the boundary of this region to consist of gradient lines, or the proof would fail.
+
+        Riemannian metrics are an extension of standard metrics around critical points are called adapted Riemannian metrics.
+        Using a partition of unity argument, one can show any manifold admits such metrics.
+        \begin{definition}[Adapted Riemannian metric]
+            A Riemannian  metric is called \emph{adapted} to a Morse function $f$ if near all its critical points $p \in \Crit f$, the metric is locally, in each Morse chart given by
+            \[
+            \left<
+            (x_1, \ldots, x_n), 
+            (y_1, \ldots, y_n)
+            \right> = \sum x_i y_i
+            .\] 
+        \end{definition}
+        \todo{Convention: positive or negative gradient?}
+        In most cases, we often forget about the metric itself and simply consider vector fields which are gradient-like.
+
+        \begin{definition}[Pseudo-gradient]
+            Let $f: M \to  \R$ be a Morse function on a manifold $M$. A pseudo-gradient is a vector field $X$ such that
+            \begin{itemize}
+                \item $df(X) \le 0$ and $df(X) = 0$ only at critical points
+                \item $X$ coincides in Morse charts with the usual negative gradient for the standard metric on $\R^{n}$.
+            \end{itemize}
+        \end{definition}
+
+
+
+
+    \item[\circled{H}]  The gray part is what we call a \emph{handle of index $k$}, and is homeomorphic to $B^{k} \times B^{n-k}$.
+        This is the only non-trivial part of our cobordism.
+        We call the bottom part of the border the \emph{attachment region}, i.e. $S^{k-1} \times B^{n-k}$.
+\end{itemize}
+\begin{marginfigure}
+    \centering
+    \incfig{morse-chart-zoomed-in}
+    \caption{morse-chart-zoomed-in TODO}
+    \label{fig:morse-chart-zoomed-in}
+\end{marginfigure}
+
+
+
+
+
+
+\newthought{If a Morse function} on a cobordism has multiple critical points, then we can always assume that the critical values are distinct and isolated.
+We can do this by adding a small perturbation to $f$.\todo{prove this}.
+Then we can split up the cobordism in parts having only one or zero critical points, and decompose each part in products and handles like before.
+
+As any closed manifold can be viewed as a cobordism from $\O$ to $\O$, we have proved the following
+
+\begin{theorem}
+    Any closed manifold has a handle decomposition.
+\end{theorem}
+
+Before discussing some examples, let us first discus some of the different ways to look at handles.
+\todo{Add subtleties about corners, \ldots
+Thickened up intervals.
+Instead of having morse function and decomposing, you can also ask question how you can build a manifold?
+
+Embed attachment region in the manifold you already have.}
+
+
+Let us now look at examples in low dimensions.
+\subsection{Handles in low dimensions}
+In this section, we will consider some examples of handle decompositions in dimension one, two and three.
+
+\newthought{Handles in dimension one} are the most simple ones. We only have two types:
+
+\begin{description}
+    \item[$0$-handle] $B^0 \times B^{1} = [-1, 1]$, with attachment region $\O$. \todo{These should probably be open intervals\ldots} \hfill \minifig{1cm}{handle-1-0} 
+        
+    \item[$1$-handle]   $B^{1} \times  B^{0} = [-1, 1]$ with attachment region $S^{0} = \{-1, 1\}$.  \hfill \minifig{1cm}{handle-1-1}
+\end{description}
+
+\begin{eg}
+    In Figure~\ref{fig:one-dimensional-handle-decomposition-examples}, two handle decompositions of $S^{1}$ are illustrated.
+    The first one is based on the height function $f$ when embedding $S^{1}$ in $\R^2$.
+    For the second decomposition, $g$ is again defined as a height function, but this time we embedded $S^{1}$ in $ \R^2$ in a non-standard way.
+    This way, we get two different handle decompositions of the same manifold.
+\end{eg}
+\begin{figure}[H]
+    \centering
+    \sidecaption{Two handle decompositions of $S^{1}$.
+    \label{fig:one-dimensional-handle-decomposition-examples}}
+    \incfig{one-dimensional-handle-decomposition-examples}
+\end{figure}
+This example illustrates that handle decompositions are not unique.
+However, we can construct an isotopy from the second to the first embedding that cancels the two critical points.
+Interestingly, the height function is Morse for all $t$, except at the exact moment when the cancellation happens.
+A local model for this is $t\mapsto x^3 + tx$ as in Figure~\ref{fig:non-examples-of-morse-functions}.
+\begin{figure}[H]
+    \centering
+    \sidecaption{TODO isotopy between circle and other circle
+    \label{fig:isotopy-between-circle-and-other-circle}}
+    \incfig{isotopy-between-circle-and-other-circle}
 \end{figure}
 
 
-We can also define Morse functions on manifolds with boundary
+\paragraph{Handles in dimension two}
+In dimension two, things get more interesting.
+We have three types of handles:
+\todo{Mention somewhere homology group changes when adding handles. But handle decomposition is not unique, if we could mod out these critical points which can cancel, then it is unique? Giving rise to Morse complex.}
 
-% \begin{prop}
-%     Let $M$ be a compact manifold and $f: M \to  \R$ a Morse function.
-%     Then  $f$ has a finite number of critical points.
-% \end{prop}
+\begin{description}
+    \item[$0$-handle] $B^{0} \times B^{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
+    \item[$1$-handle] $B^{1} \times B^{1}$ with attachment region $B^1 \times S^{0}$. \hfill\minifig{1cm}{handle-2-1}
+    \item[$2$-handle] $B^{2} \times B^{0}$ with attachment region $B_0 \times S_1$. \hfill\minifig{1cm}{handle-2-2}
+\end{description}
+
+\begin{eg}[Handle decomposition of the torus]
+    Consider the height function on the torus embedded in $\R^3$. This Morse function gives rise to the handle decomposition in Figure~\ref{fig:handles-in-dimension-two-torus-decomposition}: a $0$-handle, two $1$-handles and one $2$-handle.
+\end{eg}
+
+\begin{marginfigure}
+    \centering
+    \incfig{handles-in-dimension-two-torus-decomposition}
+    \caption{TODO handles in dimension two torus decomposition}
+    \label{fig:handles-in-dimension-two-torus-decomposition}
+\end{marginfigure}
+
+\begin{eg}[The `other sphere']
+    In Figure~\ref{fig:handles-in-dimension-two-other-sphere}, an embedding of $S^2$ in $\R^3$ is given, and we again consider the height function.
+    This function is Morse, and gives rise to a handle decomposition with a $0$-handle, a $1$-handle and two $2$-handles.
+\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{handles-in-dimension-two-other-sphere}
+    \caption{TODO handles in dimension two other sphere}
+    \label{fig:handles-in-dimension-two-other-sphere}
+\end{marginfigure}
 
 
-\section{Coordinate free definition of a Morse function}
+
+\paragraph{Handles in dimension three}
+
+\todo{Mention that sometimes you cannot attach handle before other one. When \emph{is} it possible? Hint to descending manifold, \ldots}
+
+\begin{description}
+    \item[$0$-handle] $ B^0 \times B^{3}$ with attachment region $\O$ 
+        \hfill\minifig{1cm}{handle-3-0}
+    \item[$1$-handle] $ B^1 \times B^{2}$ with attachment region $ B^2 \times S^{0}$
+        \hfill\minifig{1cm}{handle-3-1}
+    \item[$2$-handle] $ B^2 \times B^{1}$ with attachment region $ B_1 \times S_1$
+        \hfill\minifig{1cm}{handle-3-2}
+    \item[$3$-handle] $ B^3 \times B^{0}$ with attachment region $S^{2}$
+        \hfill\minifig{1cm}{handle-3-3}
+\end{description}
+
+Drawing three-dimensional handle decompositions is a bit harder. Most of the times we suppress the $0$-handle, and also the $3$-handle is not drawn. If a $3$-handle is to be attached, we usually write ``$\cup $ $3$-handle''
+
+\begin{eg}[Handle decomposition of $S^{3}$]
+    Consider $S^{3} \subset \R^{4}$ and the height function $f$, the projection on the last coordinate.
+    Then $f$ has two critical points: $(0, 0, 0, \pm 1)$ of index $0$ and $3$.
+    Then handle decomposition is then a $0$-handle ($B^{3}$) glued to a $3$-handle (which is also diffeomorphic to $B^{3}$).
+\end{eg}
+
+\begin{eg}[Handle decomposition of $ S^1\times S^{2}$]
+    An example of a handle decomposition of $S^{1} \times S^{2}$ is illustrated in Figure~\ref{fig:handles-in-dimension-three-s1-x-s2}.
+    The construction starts with a $0$-handle, which is just a three dimensional ball.
+    Then we glue on a $2$-handle.
+    The resulting manifold is then a thickened-up \todo{spelling}  two sphere, $I \times S^{2}$.
+    Then we add a $1$-handle connecting the inside to the outside and we cap of with a $3$-handle, which has the effect of identifying the end points of $I$, i.e. this transforms  $I \times S^{2}$ into $ S^1 \times S^{2}$.
+\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{handles-in-dimension-three-s1-x-s2}
+    \caption{TODO: Handle decomposition of $S^{1} \times S^{2}$}
+    \label{fig:handles-in-dimension-three-s1-x-s2}
+\end{marginfigure}
+
+\begin{eg}[$T^{3} = S^{1} \times S^{1} \times S^{2}$]
+    To find a handle decomposition of $T^3$, identify $T^{3}$ with $\R^3 / \Z^{3}$ and consider
+    \begin{align*}
+        f: T^{3} &\longrightarrow \R \\
+        (x, y, z) &\longmapsto \cos (2 \pi x) + \cos ( 2 \pi y) + \cos(2 \pi z)
+    .\end{align*}
+    Then
+    \[
+        df = -2\pi (\sin (2 \pi x) dx+ \sin ( 2 \pi y) dy + \sin(2 \pi z) dz)
+    ,\] 
+    so critical points are all $(x, y, z) \in \R^3 / \Z^3$ for which  $x, y, z \in \left\{0, \frac{1}{2}\right\}$.
+    In total we have $8$ critical points, and they all are non-degenerate, because the Hessian of $f$
+    \[
+        H_{(x, y, z)} f = - (2 \pi)^2  (\cos (2 \pi x) dx^2 + \cos ( 2 \pi y) dy^2 + \cos(2 \pi z) dz^2)
+    \] 
+    is non-degenerate at each of the critical points.
+    \todo{We need to discuss non-degeneracy and hessian before this!}
+
+    \begin{tabular}{ccccr}
+        $x$ & $y$ & $z$ & $f(x, y, z)$ &  Index\\ \hline
+        $0$ & $0$ & $0$ & $todo$ & $3$ \\
+        $0$ & $0$ & $\frac{1}{2}$ & $todo$ & $2$ \\
+        $0$ & $\frac{1}{2}$ & $0$ & $todo$ & $2$ \\
+        $0$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $todo$ & $1$ \\
+        $\frac{1}{2}$ & $0$ & $0$ & $todo$ & $2$ \\
+        $\frac{1}{2}$ & $0$ & $\frac{1}{2}$ & $todo$ & $1$ \\
+        $\frac{1}{2}$ & $\frac{1}{2}$ & $0$ & $todo$ & $1$ \\
+        $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $todo$ & $0$ \\
+    \end{tabular}
+
+    So we can decompose $T^3$ in one $0$-handle, three $1$-handles, three $2$-handles and one $3$-handle.
+
+    A natural question that arises is: `Can we build $T^{3}$ using less handles'?
+    \todo{Mention that values of critical points are not distinct}
+
+\end{eg}
+
+
+
+\todo{Why can we cap off with a top-handle?}
+
+\section{Operations on handles}
+\subsection{Cancellation of critical points}
+
+\section{Coordinate-free definition of a Morse function}
 
 
 The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
-To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate free definition. For this, we first need to define the Hessian at a critical point.
+To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate-free definition. For this, we first need to define the Hessian at a critical point.
 
 \begin{definition}
     Let $M$ be a manifold and $f: M \to  \R$ a function.
@@ -102,7 +411,7 @@ To show that it is and that $\Ind p$ does not depend on the choice of coordinate
         H_p: T_pM \times T_pM &\longrightarrow  \R\\
         (X, Y) &\longmapsto X (\tilde{Y} f)|_p
     ,\end{align*} 
-    where $\tilde{Y}$ is a local extension of $Y$.
+    where $\tilde{Y}$ is a local extension of $Y$ around $p$.
 \end{definition}
 This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
 \begin{align*}
@@ -115,6 +424,7 @@ Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $
 \[
     X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
 .\] 
+\todo{Why linear in second component?}
 }
 In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
 \[
@@ -167,7 +477,7 @@ Many authors take this to be the definition of a Morse function.
             \sqrt{|H_{rr}|} (u_r + \sum_{i > r} u_i H_{ir} / H_{rr}) & \text{if $i = r$.}
         \end{cases}
     \] 
-    Note that we may need to restrict the neighbourhood such that $\sqrt{H_rr} \neq 0$.
+    Note that we may need to restrict the neighbourhood such that $\sqrt{H_{rr}} \neq 0$.
     Then we have that
     \[
         f = \sum_{i\le r} \pm v_i^2 + \sum_{i,j > r} v_i v_j H_{ij}'(v)
@@ -182,9 +492,15 @@ Many authors take this to be the definition of a Morse function.
 \end{proof}
 
 \section{Existence and abundance}
+One might think that Morse functions are very specific functions and hence they form a small subset of all smooth maps $M \to  \R$.
+However, in this section we show that this is not the case. We will show that any manifold admits uncountably many Morse functions and that the set of Morse function form a dense subset of all smooth maps $M \to  \R$.
 
-Let $M$ be a compact manifold.
-Then we can embed $M$ in $\R^{n}$ for some big enough $n$.
+Let us first recall the following result, due to Withney\cite{todo}.
+\begin{theorem}[Withney Embedding Theorem]
+    Any smooth manifold $M$ of dimension $m$ can be embedded into  $\R^{2m+1}$
+\end{theorem}
+This allows us to assume that $M$ is diffeomorphic to a submanifold $V$ of $\R^{n}$, making the constructions  more straightforward.
+The following theorem says that there is an abundance of Morse functions on any manifold.
 
 \begin{marginfigure}
     \centering
@@ -217,7 +533,7 @@ First, let us give an example of when $f_p$ is \emph{not} a Morse function.
 \end{eg}
 
 
-More generally, $f_p$ is not a Morse function when infinitesimally close normals intersect in $p$, because then $f_p$ is constant (until ??) second order (in a certain direction \ldots ).
+More generally, $f_p$ is not a Morse function when infinitesimally close normals intersect in $p$, because then $f_p$ is constant up to second order (in a certain direction \ldots ).
 To make this exact, we will show that $H_p$ is non-degenerate if $p$ is a critical value of the map
 \[
     E: NV \to  \R^{n}: (x, v) \mapsto x + v
@@ -363,3 +679,18 @@ Note that the right hand side is almost always a Morse function.
     \incfig{approximate-morse-functions}
     \label{fig:approximate-morse-functions}
 \end{figure}
+
+
+% Smale condition: tilted torus!
+
+% CV:
+% seminar
+% courses relevant courses
+% motivation letter:
+% symplectic geometry,
+% contact geometry research papers, 
+% poisson geometry advanced reading course
+
+
+% PHD students: Stephane Geudens geometry
+% PHD students: Karandeep Singh phd

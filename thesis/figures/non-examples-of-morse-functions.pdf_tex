@@ -57,5 +57,6 @@
     \put(0.80623793,0.90090462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{non-examples-of-morse-functions.pdf}}%
     \put(0.76064826,0.35595474){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3 + tx$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{non-examples-of-morse-functions.pdf}}%
   \end{picture}%
 \endgroup%
