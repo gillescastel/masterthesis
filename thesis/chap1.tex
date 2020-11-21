@@ -211,9 +211,9 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 
 
 
-    \item[\circled{H}]  The gray part is what we call a \emph{handle of index $k$}, and is homeomorphic to $B^{k} \times B^{n-k}$.
+    \item[\circled{H}]  The gray part is what we call a \emph{handle of index $k$}, and is homeomorphic to $\disk{k} \times \disk{n-k}$.
         This is the only non-trivial part of our cobordism.
-        We call the bottom part of the border the \emph{attachment region}, i.e. $S^{k-1} \times B^{n-k}$.
+        We call the bottom part of the border the \emph{attachment region}, i.e. $S^{k-1} \times \disk{n-k}$.
 \end{itemize}
 \begin{marginfigure}
     \centering
@@ -252,9 +252,9 @@ In this section, we will consider some examples of handle decompositions in dime
 \newthought{Handles in dimension one} are the most simple ones. We only have two types:
 
 \begin{description}
-    \item[$0$-handle] $B^0 \times B^{1} = [-1, 1]$, with attachment region $\O$. \todo{These should probably be open intervals\ldots} \hfill \minifig{1cm}{handle-1-0} 
+    \item[$0$-handle] $\disk0 \times \disk{1} = [-1, 1]$, with attachment region $\O$. \todo{These should probably be open intervals\ldots} \hfill \minifig{1cm}{handle-1-0} 
         
-    \item[$1$-handle]   $B^{1} \times  B^{0} = [-1, 1]$ with attachment region $S^{0} = \{-1, 1\}$.  \hfill \minifig{1cm}{handle-1-1}
+    \item[$1$-handle]   $\disk{1} \times  \disk{0} = [-1, 1]$ with attachment region $S^{0} = \{-1, 1\}$.  \hfill \minifig{1cm}{handle-1-1}
 \end{description}
 
 \begin{eg}
@@ -287,9 +287,9 @@ We have three types of handles:
 \todo{Mention somewhere homology group changes when adding handles. But handle decomposition is not unique, if we could mod out these critical points which can cancel, then it is unique? Giving rise to Morse complex.}
 
 \begin{description}
-    \item[$0$-handle] $B^{0} \times B^{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
-    \item[$1$-handle] $B^{1} \times B^{1}$ with attachment region $B^1 \times S^{0}$. \hfill\minifig{1cm}{handle-2-1}
-    \item[$2$-handle] $B^{2} \times B^{0}$ with attachment region $B_0 \times S_1$. \hfill\minifig{1cm}{handle-2-2}
+    \item[$0$-handle] $\disk{0} \times \disk{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
+    \item[$1$-handle] $\disk{1} \times \disk{1}$ with attachment region $\disk1 \times S^{0}$. \hfill\minifig{1cm}{handle-2-1}
+    \item[$2$-handle] $\disk{2} \times \disk{0}$ with attachment region $\disk{0} \times S^1$. \hfill\minifig{1cm}{handle-2-2}
 \end{description}
 
 \begin{eg}[Handle decomposition of the torus]
@@ -321,13 +321,13 @@ We have three types of handles:
 \todo{Mention that sometimes you cannot attach handle before other one. When \emph{is} it possible? Hint to descending manifold, \ldots}
 
 \begin{description}
-    \item[$0$-handle] $ B^0 \times B^{3}$ with attachment region $\O$ 
+    \item[$0$-handle] $ \disk0 \times \disk{3}$ with attachment region $\O$ 
         \hfill\minifig{1cm}{handle-3-0}
-    \item[$1$-handle] $ B^1 \times B^{2}$ with attachment region $ B^2 \times S^{0}$
+    \item[$1$-handle] $ \disk1 \times \disk{2}$ with attachment region $ \disk2 \times S^{0}$
         \hfill\minifig{1cm}{handle-3-1}
-    \item[$2$-handle] $ B^2 \times B^{1}$ with attachment region $ B_1 \times S_1$
+    \item[$2$-handle] $ \disk2 \times \disk{1}$ with attachment region $ \disk1 \times S^1$
         \hfill\minifig{1cm}{handle-3-2}
-    \item[$3$-handle] $ B^3 \times B^{0}$ with attachment region $S^{2}$
+    \item[$3$-handle] $ \disk3 \times \disk{0}$ with attachment region $S^{2}$
         \hfill\minifig{1cm}{handle-3-3}
 \end{description}
 
@@ -336,7 +336,7 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 \begin{eg}[Handle decomposition of $S^{3}$]
     Consider $S^{3} \subset \R^{4}$ and the height function $f$, the projection on the last coordinate.
     Then $f$ has two critical points: $(0, 0, 0, \pm 1)$ of index $0$ and $3$.
-    Then handle decomposition is then a $0$-handle ($B^{3}$) glued to a $3$-handle (which is also diffeomorphic to $B^{3}$).
+    Then handle decomposition is then a $0$-handle ($\disk{3}$) glued to a $3$-handle (which is also diffeomorphic to $\disk{3}$).
 \end{eg}
 
 \begin{eg}[Handle decomposition of $ S^1\times S^{2}$]

@@ -1,5 +1,174 @@
 \chapter{TODO}
 
+In this chapter, we want to address some of the natural questions that came up when discussing some examples.
+Two important questions: `Can we attach handles in a different order' and `Can we find an isotopy that cancels two critical points'?
+To answer these questions, we introduce the concept of stable and unstable manifolds.
+They will allow us see handles not only as a local phenomenon and allow us to see how handles can interact.
+
 \section{Stable and unstable manifold}
 
 
+\begin{definition}
+    Let $p$ be a critical point of a morse function $f$.
+    Denote by $\psi^{t}$ the flow of a pseudo-gradient.\todo{convention downwards flow}.
+    Then the unstable manifold is defined to be
+    \[
+        \unstable{p} = \big\{x \in M  \mid  \lim_{t \to \infty} \psi^{t} (x)  = p\big\} 
+    ,\] 
+    and its stable manifold is defined as
+    \[
+        \stable{p} = \big\{x \in M  \mid  \lim_{t \to -\infty} \psi^{t} (x)  = p\big\} 
+    ,\] 
+\end{definition}
+\begin{marginfigure}
+    \centering
+    \incfig{stable-and-unstable-manifolds-are-manifiolds}
+    \caption{TODO stable and unstable manifolds are manifiolds}
+    \label{fig:stable-and-unstable-manifolds-are-manifiolds}
+\end{marginfigure}
+Let us first confirm that these objects are indeed manifolds. 
+Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to $\disk{k}$.
+The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\disk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all, when gluing this to $\disk{k}$, we end up with something that is indeed a manifold, and diffeomorphic to $\disk{k}$.
+A similar reasoning for the stable manifold shows that $\stable{p} \cong \disk{n - k}$.
+We have attained the following:
+
+\begin{prop}
+    Stable and unstable manifolds of a critical points are submanifolds diffeomorphic to open disks. Moreover,
+    \[
+        \dim \unstable{p} = \codim \stable{p} = \Ind p
+    .\] 
+\end{prop}
+
+\todo{Here $\disk{k}$ is an open disk, earlier $\disk{1} = [-1, 1]$ was used as closed?}
+
+
+
+
+\begin{eg}
+    Let us consider $T^{2}$ embedded in $\R^3$ in the standard way and consider the height function. 
+    This function has $4$ critical points and is clearly Morse.
+    Let $X = \grad f$ be the gradient of $f$ w.r.t.\ standard metric on $\R^{3}$.
+    Then the stable and unstable manifolds of $X$ are illustrated in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
+    \label{eg:torus-stable-unstable-manifolds-standard-gradient}
+\end{eg}
+    \begin{figure}[H]
+        \centering
+        \incfig{torus-height-function-stable-and-unstable-manifolds}
+        \caption{
+        Stable and unstable manifolds for all critical points of the height function on the torus. All of them are diffeomorphic to either $\disk{2}$, $\disk{1}$ or  $\disk{0}$.}
+        \label{fig:torus-height-function-stable-and-unstable-manifolds}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \incfig{other-sphere-definition-of-mathcal-m}
+        \caption{TODO other sphere definition of mathcal M}
+        \label{fig:other-sphere-definition-of-mathcal-m}
+    \end{figure}
+
+
+    \begin{marginfigure}
+        \centering
+        \incfig{when-can-we-attach-multiple-handles-at-the-same-time}
+        \caption{TODO when can we attach multiple handles at the same time}
+        \label{fig:when-can-we-attach-multiple-handles-at-the-same-time}
+    \end{marginfigure}
+    The stable and unstable manifolds give us information about interaction of handles.
+    For example, consider the situation in Figure~\ref{fig:when-can-we-attach-multiple-handles-at-the-same-time}.
+    Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
+    Here, `flowing of handle structures' means flowing along unstable manifolds.
+    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds.
+    %TODO: figure.
+    %TODO: check for use of descending/ascending.
+    We are therefore lead to investigate intersections of stable and unstable manifolds.
+
+    Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$.
+    Let's consider $\stable{p} \cap \unstable{q}$.
+    % If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$. TODO: add in somewhere
+    If we assume that the intersection is transverse, Proposition~\ref{prop:transverse-codimensions-add} implies that the codimensions add in the following sense:
+    \[
+        \codim(\stable{p} \tcap  \unstable{q}) = \codim \stable p + \codim \unstable q
+    ,\] 
+    so we have
+    \[
+        \dim \stable p \tcap \unstable q = \Ind q - \Ind p
+    .\]
+    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which means we can always attach lower index handles before higher index ones.
+    This transversality condition has a name:
+    \todo{History}
+    \begin{definition}[Smale condition]
+        A pseudo-gradient field addapted to a Morse function $f$ is said to satisfie the \emph{Smale condition} if all for all pairs of critical points $ \{p, q\}  \subset \Crit f$, we have that $\stable{p}$ intersects  $\unstable{q}$ transversally, i.e. 
+        \[
+            \stable{q} \cap  \unstable{p} \text{ for all $p, q \in \Crit f$}
+        .\] 
+    \end{definition}
+    Later we will prove that this condition is not at all restricting: we can always perturb ate the pseudo-gradient field such that it satisfies the Smale condition.
+
+    \begin{eg}
+        The gradient vector field in Example~\ref{eg:torus-stable-unstable-manifolds-standard-gradient} does not satisfy the Smale condition: the intersection of $\stable{b}$ and  $\unstable{c}$ is not transverse.
+        Even more, if this condition would be true, there should be no trajectories connecting $b$ and $c$, because both have index $1$, so $\dim (\stable{b} \tcap \unstable{c}) = 0$.
+    \end{eg}
+
+    \begin{eg}
+        Tilted torus. TODO
+    \end{eg}
+    \begin{eg}
+        As illustrated in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}, other sphere with standard gradient $\R^3$ does satisfy Smale condition. TODO
+    \end{eg}
+\begin{figure}[H]
+    \centering
+    \incfig{torus-tilted-height-function-stable-and-unstable-manifolds}
+    \caption{TODO torus tilted height function stable and unstable manifolds}
+    \label{fig:torus-tilted-height-function-stable-and-unstable-manifolds}
+\end{figure}
+
+The Smale condition also has another interesting consequence, which we have not touched upon.
+If stable and unstable manifolds intersect transversely, we know that the intersection is again a submanifold.
+So $\stable{q} \tcap \unstable{p}$ is a manifold for all critical points $p, q \in \Crit f$.
+This submanifold contains of all points on the trajectories connecting $p$ to $q$.
+ \begin{definition}
+    Let $f: M \to  \R$ be a Morse function and $\psi^{t}$ the flow of a pseudo-gradient that satisfies the Smale condition.
+    Then we define
+    \begin{align*}
+        \traj{p}{q} &= \stable{q} \tcap \unstable{p}\\
+                    &= \big\{
+            x \in M 
+            \mid 
+            \lim_{t \to -\infty} \psi^{t}(x) = p, \ 
+            \lim_{t \to \infty} \psi^{t}(x) = q
+        \big\} 
+    ,\end{align*} 
+    which is a submanifold of dimension $\Ind p - \Ind q$.
+\end{definition}
+
+\begin{eg}
+    Consider the other sphere. 
+    We have illustrated $\traj{p}{q}$ for some of the critical points of the height function.
+    Here we see that these type of submanifolds do not need to be connected. For example, $\traj{b}{a}$ is diffeomorphic to the disjoint union of two open intervals.
+\end{eg}
+
+Instead of considering set of points lying on all trajectories from $p$ to $q$, $\traj{p}{q}$, we can also construct a set where each point corresponds to exactly one trajectory.
+We do this by modding out $\traj{p}{q}$ by $\R$-action of translations in time. We denote the resulting space with $\L{p}{q}$.
+More explicitly, we have the following:
+
+\begin{prop}
+    Let $f: M \to  \R$ be a Morse function and $\psi^{t}$ the flow of a pseudo-gradient field satisfying the Smale condition.
+    Then group $(\R, +)$ of time translations acts on $\traj{p}{q}$ by  $t \cdot x = \psi^{t}(x)$.  If $p \neq q$ then the action is free and we can define $ \L{p}{q} = \traj{p}{q} / \R $. The dimension of $\L{p}{q} = \Ind p - \Ind q - 1$.
+\end{prop}
+\begin{proof}
+    It is clear that $\R$ acts on $\traj{p}{q}$ by time translations. 
+    If $p \neq q$,  $\traj{p}{q}$ does not contain any critical point, so flowing along a pseudo-gradient field, the value of $f$ is strictly decreasing. This proves freeness.
+\end{proof}
+
+\begin{remark}
+    If the index of two points only differs by one, say $\Ind p = \Ind q + 1$, then the dimension of $\L{p}{q}$ is $0$, so it is a discrete set.
+    This proves that the number of trajectories from $p$ to $q$ is always finite, and the number is given by $| \L{p}{q}|$.
+\end{remark}
+
+
+\begin{figure}[H]
+    \centering
+    \incfig{mathcal-m-trajectories-other-sphere}
+    \caption{TODO mathcal M trajectories other sphere}
+    \label{fig:mathcal-m-trajectories-other-sphere}
+\end{figure}
