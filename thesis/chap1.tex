@@ -78,6 +78,7 @@ This also immediately rules out the situation we had in the other example, where
 \section{Handle decompositions}
 \todo{Introduction}
 
+\todo{Check definition Milnor $h$-cobordism and fix definition Morse function}
 \begin{definition}
 A cobordism between two compact manifolds $M_1$ and $M_2$ is a compact manifold $M$  with boundary $\partial M = M_1 \sqcup M_2$.
 \end{definition}
@@ -113,6 +114,7 @@ This will give rise to handle decompositions.
     Suppose $f$ has no critical points. Then $X$ is diffeomorphic to $[0, 1] \times  M_0$.
 \end{prop}
 \begin{proof}
+    Check proof $h$-cobordism milnor
     \begin{marginfigure}
         \centering
         \incfig{proof-of-cobordism-without-critical-points}
@@ -137,6 +139,11 @@ This will give rise to handle decompositions.
     This also proves that $\phi$ is a diffeomorphism.
 \end{proof}
 
+\todo{This is sometimes used to prove that two things are diffeomorphic!}
+
+\todo{Corollary: collar and bicollar theorem. Milnor $h$-coboridsm.}
+\todo{Corollary: we can glue two cobordisms together and get a manifold un a unique way. Milnor $h$-coboridsm.}
+
 In the case in which $f$ does have a critical point, the previous proof fails because $df = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
 
 
@@ -152,6 +159,8 @@ x_1^2 + \cdots + x_k^2 = x_{k+1} ^2 + \cdots + x_n^2
 ,\] 
 which consists of the two crossing lines in the figure, corresponding to the crossing part of the figure-eight on the right.
 Level sets of values slightly above an below $0$ look locally like hyperbolas on our figure, but remembering that that the axes consist of multiple dimensions, we should call them hyperboloids.
+
+\todo{Add figure movie: two hyperbolas switching, hyperboloids, one handle in three dimensions that joins, \ldots}
 \begin{figure}[H]
     \centering
     \sidecaption{TODO: morse chart 
@@ -353,7 +362,11 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
     \label{fig:handles-in-dimension-three-s1-x-s2}
 \end{marginfigure}
 
+\begin{eg}
+    \todo{Example of a $1$ and $2$-handle that collapse. }
+\end{eg}
 \begin{eg}[$T^{3} = S^{1} \times S^{1} \times S^{2}$]
+    \label{eg:handle-decomposition-three-torus}
     To find a handle decomposition of $T^3$, identify $T^{3}$ with $\R^3 / \Z^{3}$ and consider
     \begin{align*}
         f: T^{3} &\longrightarrow \R \\

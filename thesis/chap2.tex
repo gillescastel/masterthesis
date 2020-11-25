@@ -1,5 +1,6 @@
 \chapter{TODO}
 
+
 In this chapter, we want to address some of the natural questions that came up when discussing some examples.
 Two important questions: `Can we attach handles in a different order' and `Can we find an isotopy that cancels two critical points'?
 To answer these questions, we introduce the concept of stable and unstable manifolds.
@@ -13,11 +14,11 @@ They will allow us see handles not only as a local phenomenon and allow us to se
     Denote by $\psi^{t}$ the flow of a pseudo-gradient.\todo{convention downwards flow}.
     Then the unstable manifold is defined to be
     \[
-        \unstable{p} = \big\{x \in M  \mid  \lim_{t \to \infty} \psi^{t} (x)  = p\big\} 
+        \unstable{p} = \big\{x \in M  \mid  \lim_{t \to -\infty} \psi^{t} (x)  = p\big\} 
     ,\] 
     and its stable manifold is defined as
     \[
-        \stable{p} = \big\{x \in M  \mid  \lim_{t \to -\infty} \psi^{t} (x)  = p\big\} 
+        \stable{p} = \big\{x \in M  \mid  \lim_{t \to \infty} \psi^{t} (x)  = p\big\} 
     ,\] 
 \end{definition}
 \begin{marginfigure}
@@ -39,7 +40,7 @@ We have attained the following:
     .\] 
 \end{prop}
 
-\todo{Here $\disk{k}$ is an open disk, earlier $\disk{1} = [-1, 1]$ was used as closed?}
+\todo{Here $\disk{k}$ is an open disk, earlier $\disk{1} = [-1, 1]$ was used as closed? Fix this!}
 
 
 
@@ -93,16 +94,21 @@ We have attained the following:
     \[
         \dim \stable p \tcap \unstable q = \Ind q - \Ind p
     .\]
-    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which means we can always attach lower index handles before higher index ones.
+    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which means we can always attach lower index handles before higher index ones.\todo{Explain this more in detail!
+        Mention self indexing morse function (Milnor, notes on the h-cobordism theorem)
+    }
+
+
+
     This transversality condition has a name:
     \todo{History}
     \begin{definition}[Smale condition]
         A pseudo-gradient field addapted to a Morse function $f$ is said to satisfie the \emph{Smale condition} if all for all pairs of critical points $ \{p, q\}  \subset \Crit f$, we have that $\stable{p}$ intersects  $\unstable{q}$ transversally, i.e. 
         \[
-            \stable{q} \cap  \unstable{p} \text{ for all $p, q \in \Crit f$}
+            \stable{q} \tcap  \unstable{p} \text{ for all $p, q \in \Crit f$}
         .\] 
     \end{definition}
-    Later we will prove that this condition is not at all restricting: we can always perturb ate the pseudo-gradient field such that it satisfies the Smale condition.
+    Later we will prove that this condition is not at all restricting: we can always perturbate the pseudo-gradient field such that it satisfies the Smale condition.
 
     \begin{eg}
         The gradient vector field in Example~\ref{eg:torus-stable-unstable-manifolds-standard-gradient} does not satisfy the Smale condition: the intersection of $\stable{b}$ and  $\unstable{c}$ is not transverse.
@@ -153,7 +159,7 @@ More explicitly, we have the following:
 
 \begin{prop}
     Let $f: M \to  \R$ be a Morse function and $\psi^{t}$ the flow of a pseudo-gradient field satisfying the Smale condition.
-    Then group $(\R, +)$ of time translations acts on $\traj{p}{q}$ by  $t \cdot x = \psi^{t}(x)$.  If $p \neq q$ then the action is free and we can define $ \L{p}{q} = \traj{p}{q} / \R $. The dimension of $\L{p}{q} = \Ind p - \Ind q - 1$.
+    Then group $(\R, +)$ of time translations acts on $\traj{p}{q}$ by  $t \cdot x = \psi^{t}(x)$.  If $p \neq q$ then the action is free and we can define $ \L{p}{q} = \traj{p}{q} / \R $. The dimension of $\L{p}{q}$ is $\Ind p - \Ind q - 1$.
 \end{prop}
 \begin{proof}
     It is clear that $\R$ acts on $\traj{p}{q}$ by time translations. 
@@ -165,6 +171,10 @@ More explicitly, we have the following:
     This proves that the number of trajectories from $p$ to $q$ is always finite, and the number is given by $| \L{p}{q}|$.
 \end{remark}
 
+\todo{We can view $\L{p}{q}$ as the intersection of $\traj{p}{q}$ and $f^{-1}(\alpha)$ where $\alpha$ is some regular value of  $f$ lying between $f(p)$ and $f(q)$}
+
+
+
 
 \begin{figure}[H]
     \centering
@@ -172,3 +182,82 @@ More explicitly, we have the following:
     \caption{TODO mathcal M trajectories other sphere}
     \label{fig:mathcal-m-trajectories-other-sphere}
 \end{figure}
+
+
+
+\todo{Mention that handles are thickened up descending manifolds.}
+\todo{Also give examples in 3 dimensions}
+
+
+\section{Smale condition is generic (proof)}
+\section{Cancellation of critical points}
+\todo{$h$-cobordism Milnor page 37}
+
+
+\section{Heegaard splittings}
+
+\begin{marginfigure}
+    \centering
+    \incfig{heegaard-splittings-schemattically}
+    \caption{TODO heegaard splittings schematically}
+    \label{fig:heegaard-splittings-schemattically}
+\end{marginfigure}
+
+As we showed earlier, any $3$-manifold $M$ has a Morse function that is self-indexing, giving rise to a handle decomposition schematically shown in Figure~\ref{fig:heegaard-splittings-schemattically}. When splitting the manifold along $f^{-1}(\frac{3}{2})$, we decompose $M$ in two parts: a part that consists of $0$- and $1$-handles glued along its boundary to a part consisting only of $2$- and  $3$-handles.
+However the latter can also be seen as being constructed of $0$- and $1$-handles, simply by building $M$ from top to bottom by considering the Morse function $-f$ instead of $f$. This then interchanges $k$-and $n-k$-handles, or in the case of $n=3$, $2$-handles  become $1$-handles and $3$-handles become $0$-handles.
+All things considered, we have a decomposition of $M$ in two so-called handlebodies:
+\begin{definition}[Handlebody\sidenotemark]
+    A handlebody is a compact connected orientable $3$-manifold with boundary that possesses a handle decomposition consisting of $0$-handles and $1$-handles. The \emph{genus} of a handlebody is the genus of its boundary.
+\end{definition}
+\begin{definition}[Heegaard splitting\sidenotemark]
+    A \emph{Heegaard splitting} of a closed $3$-manifold $M$ is a decomposition $M = V \cup _S W$ such that $V$ and $W$ are handlebodies and  $S = \partial V = \partial W$. Here  $S$ is called the \emph{splitting surface of $M$}.
+    Two Heegaard splittings are considered \emph{equivalent} if their splitting surfaces are isotopic. The \emph{genus} of a Heegaard splitting is the genus of $S$.
+\end{definition}
+\sidenotetext[][-2cm]{\fullcite{schultens2014introduction}}
+
+With these definitions, our findings can be summarized as follows:
+\begin{theorem}[Moise \todo{citation}]
+    Every closed orientable $3$-manifold admits a Heegaard splitting.
+\end{theorem}
+\begin{proof}
+    Let $f$ be a self-indexing Morse function on $M$.
+    Then $M = f^{-1}\left[0, \tfrac{3}{2}\right] \cup f^{-1}\left[\tfrac{3}{2}, 3\right]$ is a Heegaard splitting of $M$ by duality of $k$- and $n-k$-handles.
+\end{proof}
+
+\begin{eg}
+    As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \disk{2} \cup \disk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
+\end{eg}
+\begin{eg}
+    \begin{marginfigure}
+        \centering
+        \incfig{genus-four-heegaard-splitting-of-s3}
+        \caption{TODO genus four heegaard splitting of S3}
+        \label{fig:genus-four-heegaard-splitting-of-s3}
+    \end{marginfigure}
+    The previous example is not the only way to decompose $S^{3}$.
+    Indeed, we can arbitrarily add cancelable $1$- and $2$-handles to increase the genus. 
+    For example a genus four Heegaard splitting of $S^{3}$ is illustrated in Figure\ref{fig:genus-four-heegaard-splitting-of-s3}.
+    Here, we visualized $S^{3}$ as the one point compactification of $\R^3$.
+    \label{eg:s3-heegaard-four-genus}
+\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{three-torus-heegaard-splitting}
+    \caption{TODO three torus heegaard splitting}
+    \label{fig:three-torus-heegaard-splitting}
+\end{marginfigure}
+\begin{eg}
+    If we split the handle decomposition of $T^{3}$ given in Example~\ref{eg:handle-decomposition-three-torus} between index $1$ and $2$ critical points, then we find the surface illustrated in Figure~\ref{fig:three-torus-heegaard-splitting}, were we identified $T^{3} = \R^3 / \Z^{3}$.
+    We see that the splitting surface has genus three.
+\end{eg}
+
+\subsection{Stabilization and destabilization}
+
+The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
+
+\begin{marginfigure}
+    \centering
+    \incfig{stabilization}
+    \caption{TODO stabilization}
+    \label{fig:stabilization}
+\end{marginfigure}
