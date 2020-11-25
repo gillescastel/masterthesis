@@ -128,7 +128,7 @@ footskip=40pt,
   \@xympar}
 \renewcommand*{\marginfont}{\marginparstyle}
 % setup itemize and enumerate  
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \setlist[itemize]{leftmargin=*}
 %\renewcommand{\labelitemi}{}
 % compatibility with T-L
