@@ -4,7 +4,7 @@
 In this chapter, we want to address some of the natural questions that came up when discussing some examples.
 Two important questions: `Can we attach handles in a different order' and `Can we find an isotopy that cancels two critical points'?
 To answer these questions, we introduce the concept of stable and unstable manifolds.
-They will allow us see handles not only as a local phenomenon and allow us to see how handles can interact.
+\todo{They will allow us see handles not only as a local phenomenon but also how they interact.}
 
 \section{Stable and unstable manifold}
 
@@ -27,11 +27,11 @@ They will allow us see handles not only as a local phenomenon and allow us to se
     \caption{TODO stable and unstable manifolds are manifiolds}
     \label{fig:stable-and-unstable-manifolds-are-manifiolds}
 \end{marginfigure}
-Let us first confirm that these objects are indeed manifolds. 
+Let us first verify that these objects are indeed manifolds. 
 Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to $\disk{k}$.
 The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\disk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all, when gluing this to $\disk{k}$, we end up with something that is indeed a manifold, and diffeomorphic to $\disk{k}$.
 A similar reasoning for the stable manifold shows that $\stable{p} \cong \disk{n - k}$.
-We have attained the following:
+We have obtained the following result:
 
 \begin{prop}
     Stable and unstable manifolds of a critical points are submanifolds diffeomorphic to open disks. Moreover,
@@ -79,10 +79,16 @@ We have attained the following:
     Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
     Here, `flowing of handle structures' means flowing along unstable manifolds.
     An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds.
+
+    Let us make this more precise.
+
+
+    \section{Reordering critical points}
+
+    \section{Intersection of stable and unstable manifolds}
     %TODO: figure.
     %TODO: check for use of descending/ascending.
-    We are therefore lead to investigate intersections of stable and unstable manifolds.
-
+    Let us now investigate the condition under which stable and unstable manifolds do not intersect.
     Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$.
     Let's consider $\stable{p} \cap \unstable{q}$.
     % If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$. TODO: add in somewhere
@@ -254,6 +260,7 @@ With these definitions, our findings can be summarized as follows:
 \subsection{Stabilization and destabilization}
 
 The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
+It can be done in as in Figure~\ref{fig:stabilization}.
 
 \begin{marginfigure}
     \centering
