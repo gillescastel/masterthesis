@@ -113,7 +113,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="g951"
+     inkscape:current-layer="layer1"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -343,7 +343,7 @@
          sodipodi:role="line"
          x="78.600616"
          y="216.35574"
-         style="stroke-width:0.26458332">$f(p) = 0$</tspan></text>
+         style="stroke-width:0.26458332">$f(x) = 0$</tspan></text>
     <text
        x="82.550888"
        y="223.69469"
@@ -354,7 +354,7 @@
          y="223.69469"
          x="82.550888"
          sodipodi:role="line"
-         id="tspan1219">$f(p) = -\epsilon$</tspan></text>
+         id="tspan1219">$f(x) = -\epsilon$</tspan></text>
     <text
        id="text1225"
        xml:space="preserve"
@@ -365,7 +365,7 @@
          sodipodi:role="line"
          x="71.480362"
          y="208.57524"
-         style="stroke-width:0.26458332">$f(p) = \epsilon$</tspan></text>
+         style="stroke-width:0.26458332">$f(x) = \epsilon$</tspan></text>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044085;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        d="m 207.36497,215.30602 -0.006,46.82838"

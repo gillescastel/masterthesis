@@ -315,5 +315,27 @@
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2808817;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        id="path860"
        d="m 75.298828,232.54102 c -2.260321,-0.001 -4.63712,0.39266 -7.111328,1.32421 -9.89683,3.72622 -7.975355,18.21115 -10.921875,26.58399 -2.94652,8.37284 -12.446528,12.9632 -10.800781,19.76758 1.64575,6.80438 12.062831,8.8826 21.425781,7.32422 9.36295,-1.55838 16.443611,-4.78102 23.707031,-10.33985 7.26342,-5.55883 11.185214,-12.99799 10.865234,-19.90625 -0.31998,-6.90826 -4.818053,-13.32107 -10.433593,-17.81054 -4.211655,-3.36712 -9.949507,-6.93913 -16.730469,-6.94336 z" />
+    <text
+       id="text864"
+       xml:space="preserve"
+       style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-53.693974"
+       y="249.79884"><tspan
+         id="tspan862"
+         sodipodi:role="line"
+         x="-53.693974"
+         y="249.79884"
+         style="stroke-width:0.26458332">$NV$</tspan></text>
+    <text
+       id="text878"
+       xml:space="preserve"
+       style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="44.333664"
+       y="268.61356"><tspan
+         id="tspan876"
+         sodipodi:role="line"
+         x="44.333664"
+         y="268.61356"
+         style="stroke-width:0.26458332">$V$</tspan></text>
   </g>
 </svg>

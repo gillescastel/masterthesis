@@ -57,7 +57,6 @@
     \put(0.66575468,1.45747469){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{handles-in-dimension-three-s1-x-s2.pdf}}%
     \put(0.69676404,0.61035234){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
-    \put(0.45739122,0.74027361){\color[rgb]{0,0,0}\rotatebox{-90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cong$\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{handles-in-dimension-three-s1-x-s2.pdf}}%
   \end{picture}%
 \endgroup%
