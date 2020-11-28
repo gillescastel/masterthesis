@@ -367,36 +367,43 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 \end{eg}
 \begin{eg}[$T^{3} = S^{1} \times S^{1} \times S^{2}$]
     \label{eg:handle-decomposition-three-torus}
-    To find a handle decomposition of $T^3$, identify $T^{3}$ with $\R^3 / \Z^{3}$ and consider
+    To find a handle decomposition of $T^3$, we identify $T^{3}$ with $\R^3 / \Z^{3}$ and consider the following map
     \begin{align*}
         f: T^{3} &\longrightarrow \R \\
-        (x, y, z) &\longmapsto \cos (2 \pi x) + \cos ( 2 \pi y) + \cos(2 \pi z)
+        (x, y, z) &\longmapsto 2\cos (2 \pi x) + 3\cos ( 2 \pi y) + 4 \cos(2 \pi z)
     .\end{align*}
-    Then
+    Then we have
     \[
-        df = -2\pi (\sin (2 \pi x) dx+ \sin ( 2 \pi y) dy + \sin(2 \pi z) dz)
+        df =
+        -4\pi \sin (2 \pi x) dx
+        -6 \pi \sin ( 2 \pi y) dy
+        - 8 \pi \sin(2 \pi z) dz
     ,\] 
-    so critical points are all $(x, y, z) \in \R^3 / \Z^3$ for which  $x, y, z \in \left\{0, \frac{1}{2}\right\}$.
-    In total we have $8$ critical points, and they all are non-degenerate, because the Hessian of $f$
+    so critical points are all $(x, y, z) \in \R^3 / \Z^3$ for which  $x, y, z \in \left\{\Z, \frac{1}{2} + \Z\right\}$.
+    In total we have $8$ distinct critical points, and they all are non-degenerate, because the Hessian of $f$, given by
     \[
-        H_{(x, y, z)} f = - (2 \pi)^2  (\cos (2 \pi x) dx^2 + \cos ( 2 \pi y) dy^2 + \cos(2 \pi z) dz^2)
+        H_{(x, y, z)} f =
+        - 8 \pi^2  \cos (2 \pi x) dx^2
+        -12\pi^2 \cos ( 2 \pi y) dy^2
+        -16 \pi^2 \cos(2 \pi z) dz^2
     \] 
     is non-degenerate at each of the critical points.
     \todo{We need to discuss non-degeneracy and hessian before this!}
-
-    \begin{tabular}{ccccr}
-        $x$ & $y$ & $z$ & $f(x, y, z)$ &  Index\\ \hline
-        $0$ & $0$ & $0$ & $todo$ & $3$ \\
-        $0$ & $0$ & $\frac{1}{2}$ & $todo$ & $2$ \\
-        $0$ & $\frac{1}{2}$ & $0$ & $todo$ & $2$ \\
-        $0$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $todo$ & $1$ \\
-        $\frac{1}{2}$ & $0$ & $0$ & $todo$ & $2$ \\
-        $\frac{1}{2}$ & $0$ & $\frac{1}{2}$ & $todo$ & $1$ \\
-        $\frac{1}{2}$ & $\frac{1}{2}$ & $0$ & $todo$ & $1$ \\
-        $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $todo$ & $0$ \\
-    \end{tabular}
-
-    So we can decompose $T^3$ in one $0$-handle, three $1$-handles, three $2$-handles and one $3$-handle.
+    To find the handle decomposition induced by $f$, we have to determine the index of the critical points.
+    As discussed earlier, the index is the number of downward directions, which is also equivalent to the number of negative eigenvalues of $H_{(x, y, z)}f$.
+    As $\cos(2 \pi \frac{1}{2}) < 0$ and $\cos(2 \pi 0) > 1$, we find that the index of a critical point $(x, y, z)$ is the amount of zeros occurring in the triplet $(x, y, z)$. Hence, we get the following table:
+    \[\begin{array}{cccccc}
+  & x & y  & z & f(x, y, z) & \text{Index}\\ \hline
+  & 0 & 0 & 0 & 9 & 3 \\
+& \frac{1}{2} & 0 & 0 & 5 & 2 \\
+& 0 & \frac{1}{2} & 0 & 3 & 2 \\
+& 0 & 0 & \frac{1}{2} & 1 & 2 \\
+& \frac{1}{2} & \frac{1}{2} & 0 & -1 & 1 \\
+& \frac{1}{2} & 0 & \frac{1}{2} & -3 & 1 \\
+& 0 & \frac{1}{2} & \frac{1}{2} & -5 & 1 \\
+& \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & -9 & 0 \\
+    \end{array}\]
+    We conclude that we can decompose $T^3$ in one $0$-handle, three $1$-handles, three $2$-handles and one $3$-handle.
 
     A natural question that arises is: `Can we build $T^{3}$ using less handles'?
     \todo{Mention that values of critical points are not distinct}
