@@ -24,7 +24,7 @@ To answer these questions, we introduce the concept of stable and unstable manif
 \begin{marginfigure}
     \centering
     \incfig{stable-and-unstable-manifolds-are-manifiolds}
-    \caption{TODO stable and unstable manifolds are manifiolds}
+    \caption{Locally in a Morse chart, stable and unstable manifolds are given by the horizontal and vertical axis, i.e.\ $ x_1= \cdots= x_k = 0$ and $x_{k+1}= \cdots= x_n = 0$.}
     \label{fig:stable-and-unstable-manifolds-are-manifiolds}
 \end{marginfigure}
 Let us first verify that these objects are indeed manifolds. 
@@ -56,14 +56,19 @@ We have obtained the following result:
         \centering
         \incfig{torus-height-function-stable-and-unstable-manifolds}
         \caption{
-        Stable and unstable manifolds for all critical points of the height function on the torus. All of them are diffeomorphic to either $\disk{2}$, $\disk{1}$ or  $\disk{0}$.}
+        Stable and unstable manifolds for all critical points of the height function on the torus with the standard gradient on $\R^3$.
+    All of them are diffeomorphic to either $\disk{2}$, $\disk{1}$ or  $\disk{0}$.
+    Note that $\stable{b}$ and  $\unstable{c}$ do not intersect transversally.
+}
         \label{fig:torus-height-function-stable-and-unstable-manifolds}
     \end{figure}
 
     \begin{figure}[H]
         \centering
         \incfig{other-sphere-definition-of-mathcal-m}
-        \caption{TODO other sphere definition of mathcal M}
+        \caption{
+            Stable and unstable manifolds of the other sphere with standard gradient on $\R^3$.  Note that all of them intersect transversally.
+        }
         \label{fig:other-sphere-definition-of-mathcal-m}
     \end{figure}
 
@@ -71,7 +76,10 @@ We have obtained the following result:
     \begin{marginfigure}
         \centering
         \incfig{when-can-we-attach-multiple-handles-at-the-same-time}
-        \caption{TODO when can we attach multiple handles at the same time}
+        \caption{
+            A cobordism from $S^{1}$ to $S^{1} \sqcup S^1 \sqcup S^1$.
+            Stable and unstable manifolds do not intersect, which implies we can reorder the critical points $p$ and $q$, i.e.\ make $q$ lie lower than  $p$.
+        }
         \label{fig:when-can-we-attach-multiple-handles-at-the-same-time}
     \end{marginfigure}
     The stable and unstable manifolds give us information about interaction of handles.
@@ -100,7 +108,9 @@ We have obtained the following result:
     \begin{marginfigure}
         \centering
         \incfig{reordening-theorem-milnor-h-cobordism}
-        \caption{TODO reordening theorem milnor h cobordism}
+        \caption{
+            Construction of $\overline{\mu}$ and $\pi$ in the proof on reordening critical points.
+        }
         \label{fig:reordening-theorem-milnor-h-cobordism}
     \end{marginfigure}
     \begin{proof}
@@ -123,7 +133,7 @@ We have obtained the following result:
         \begin{marginfigure}
             \centering
             \incfig{proof-reordening-properties-of-g}
-            \caption{TODO proof reordening properties of G}
+            \caption{Necessary properties of $G$ in the proof on reordering critical points are indicated in yellow.}
             \label{fig:proof-reordening-properties-of-g}
         \end{marginfigure}
         \begin{enumerate}
@@ -184,7 +194,9 @@ We have obtained the following result:
 \begin{figure}[H]
     \centering
     \incfig{torus-tilted-height-function-stable-and-unstable-manifolds}
-    \caption{TODO torus tilted height function stable and unstable manifolds}
+    \caption{
+        When embedding the torus in $\R^3$ tilted, the Smale condition is satisfied. All stable and unstable manifolds intersect transversally, which per definition also includes not intersecting at all.
+    }
     \label{fig:torus-tilted-height-function-stable-and-unstable-manifolds}
 \end{figure}
 
@@ -239,7 +251,9 @@ More explicitly, we have the following:
 \begin{figure}[H]
     \centering
     \incfig{mathcal-m-trajectories-other-sphere}
-    \caption{TODO mathcal M trajectories other sphere}
+    \caption{
+        Illustration of $\traj{p}{q}$ and $\L{p}{q}$ for critical points of the other sphere.
+    }
     \label{fig:mathcal-m-trajectories-other-sphere}
 \end{figure}
 
@@ -259,7 +273,9 @@ More explicitly, we have the following:
 \begin{marginfigure}
     \centering
     \incfig{heegaard-splittings-schemattically}
-    \caption{TODO heegaard splittings schematically}
+    \caption{Schematic visualization of a self-indexing Morse function on a $3$-manifold $M$.
+        The manifold $S = f^{-1}(\frac{3}{2})$ is called the splitting surface of $M$.
+    }
     \label{fig:heegaard-splittings-schemattically}
 \end{marginfigure}
 
@@ -291,7 +307,9 @@ With these definitions, our findings can be summarized as follows:
     \begin{marginfigure}
         \centering
         \incfig{genus-four-heegaard-splitting-of-s3}
-        \caption{TODO genus four heegaard splitting of S3}
+        \caption{A genus four Heegaard splitting of $S^{3}$, seen as the one point compactification of $\R^3$.
+            This way, we can obtain a Heegaard splitting of $S^{3}$ of any genus.
+        }
         \label{fig:genus-four-heegaard-splitting-of-s3}
     \end{marginfigure}
     The previous example is not the only way to decompose $S^{3}$.
@@ -303,7 +321,11 @@ With these definitions, our findings can be summarized as follows:
 \begin{marginfigure}
     \centering
     \incfig{three-torus-heegaard-splitting}
-    \caption{TODO three torus heegaard splitting}
+    \caption{
+        Illustration of the splitting surface of the Morse function defined earlier.
+        Here we identify $T^{3} = \R^3 / \Z^3$ and draw $[0,1]^3$.
+        This Heegaard splitting has genus $3$.
+    }
     \label{fig:three-torus-heegaard-splitting}
 \end{marginfigure}
 \begin{eg}
@@ -319,6 +341,7 @@ It can be done in as in Figure~\ref{fig:stabilization}.
 \begin{marginfigure}
     \centering
     \incfig{stabilization}
-    \caption{TODO stabilization}
+    \caption{
+        The act of stabilization is replacing a ball near the boundary as illustrated, increasing the genus of the splitting surface by one.}
     \label{fig:stabilization}
 \end{marginfigure}
