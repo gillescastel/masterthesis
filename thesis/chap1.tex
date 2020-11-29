@@ -3,6 +3,8 @@
 When studying manifolds is often proves useful to study simple structures that live on manifolds. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study functions from the manifold to $\R$, some of the most simple functions possible. You can think of them as projections  to one dimension.
 While these projections seem to lose much information, we will see that they actually can provide great insight in the structure of the manifold itself.
 
+\section{Morse functions}
+
 We will not consider arbitrary maps $M \to \R$, but rather maps that have nice behaviour at their critical points. Let us first recall what a critical point is.
 
 \begin{definition}[Critical point]
@@ -76,6 +78,100 @@ Indeed, any function attains it maximum and minimum on a compact manifold, so we
 On the other hand, the number of critical points is at most finite.
 This is because of the definition of a Morse function: it implies that critical points are isolated, which on a compact manifold implies that their number is finite.
 This also immediately rules out the situation we had in the other example, where the set of critical points was a straight line.
+
+\section{Coordinate-free definition of a Morse function}
+
+The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
+To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate-free definition. For this, we first need to define the Hessian at a critical point.
+
+\begin{definition}
+    Let $M$ be a manifold and $f: M \to  \R$ a function.
+    Let $p$ be a critical point of $f$.
+    Then we define the Hessian $H_p$ to be the bilinear form
+    \begin{align*}
+        H_p: T_pM \times T_pM &\longrightarrow  \R\\
+        (X, Y) &\longmapsto X (\tilde{Y} f)|_p
+    ,\end{align*} 
+    where $\tilde{Y}$ is a local extension of $Y$ around $p$.
+\end{definition}
+This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
+\begin{align*}
+    H_p(X, Y) - H_p(Y, X) &= X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p\\
+                          &= [\tilde{X}, \tilde{Y}] f |_p\\
+                          &= df_p [\tilde{X}, \tilde{Y}]|_p = 0
+.\end{align*}
+The value of $H_p$ also does not depend on the extension of the vector field.
+Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $Y$. Then by symmetry of $H_p$, we have
+\[
+    X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
+.\] 
+\todo{Why linear in second component?}
+}
+In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
+\[
+    H_p = - dx_1^2 - \cdots - dx_k^2 + dx_{k+1}^2  + \cdots + dx_n^2
+,\] 
+where $dx_i^2 = dx_i \otimes dx_i$.
+Note in particular that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
+As the signature of a symmetric bilinear form is coordinate independent, this shows that the index of a critical point is as well.
+
+
+Interestingly, the reverse is also true: if $H_p$ is non-degenerate for all critical points  $p$ of $f$, then  $f$ is a Morse function.
+Many authors take this to be the definition of a Morse function.
+
+\begin{lemma}[Morse Lemma]
+    Let $M$ be a manifold and $f: M \to  \R$ a map.
+    If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
+\end{lemma}
+\begin{proof}
+    We follow the proof of Milnor\sidecite{milnor}.
+    We may assume that $M = \R^{n}$, $p$ is the origin and $f(p) = 0$.
+    Then by a version of Taylor's theorem, we can write
+    \begin{align*}
+        f(x)  &= f(p) + \sum_{i=1}^{n} (x_i - p_i) g_i (x)\\
+              &= \sum_{i=1}^{n} x_i g_i(x)
+    ,\end{align*} 
+    where $g_i$ are smooth functions. 
+    Now, as $g_i(0) = \partial_i f (0) = 0$, we can repeat this for each  $g_i$, giving us the following:
+    \[
+        f(x) = \sum_{i, j= 1}^{n} x_i x_j h_{ij}(x)
+    .\] 
+    Because this sum is symmetric in $i$ and  $j$, we may assume that  $h_{ij}$ is symmetric as well.\sidenote{If $h_{ij}$ is not symmetric, we can define $h_{(ij)} = \frac{1}{2}(h_{ij} + h_{ji})$. Then $h_{(ij)}$ is symmetric and we still have $\sum x_{i}x_{j}h_{ij} = \sum x_{i}x_{j}h_{(ij)}$.}
+    Note that
+    \[
+        h_{(ij)}(0) = \frac{1}{2} \partial_{ij} f(0)
+    ,\]
+    which is non-degenerate.
+
+    Now we imitate the proof of diagonalization of a non-degenerate quadratic form.
+    We do this by induction.
+    Suppose we have coordinates $u_1, \cdots, u_n$ in a neighbourhood of $0$ such that
+    \[
+        f = \pm u_1^2 \pm \cdots \pm u_{r-1}^2 + \sum_{i,j\ge r} u_i u_j H_{ij}(u)
+    ,\] 
+    where $H_{ij}$ is a symmetric matrix.
+    After a linear change, we may assume that $H_{rr} \neq 0$.
+    Then define new coordinates $ v_1, \ldots, v_r$ as follows:
+    \[
+        v_i = \begin{cases}
+            u_i & \text{if $i \neq r$}\\
+            \sqrt{|H_{rr}|} (u_r + \sum_{i > r} u_i H_{ir} / H_{rr}) & \text{if $i = r$.}
+        \end{cases}
+    \] 
+    Note that we may need to restrict the neighbourhood such that $\sqrt{H_{rr}} \neq 0$.
+    Then we have that
+    \[
+        f = \sum_{i\le r} \pm v_i^2 + \sum_{i,j > r} v_i v_j H_{ij}'(v)
+    .\] 
+    for some symmetric matrix $H_{ij}'$.
+    \todo{Explain better}
+    % Indeed,
+    % \begin{align*}
+    %     v_r^2 &= |H_{rr}| \left(u_r^2 + \sum_{i>r} 2 u_r u_i H_{ir} / H_{rr} + \left(\sum_{i>r} u_i H_{ir} / H_{rr}\right)^2\right)\\
+    %           &= TODO
+    % .\end{align*} 
+
+\end{proof}
 
 \section{Handle decompositions}
 \todo{Introduction}
@@ -434,100 +530,6 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 
 
 
-\section{Coordinate-free definition of a Morse function}
-
-
-The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
-To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate-free definition. For this, we first need to define the Hessian at a critical point.
-
-\begin{definition}
-    Let $M$ be a manifold and $f: M \to  \R$ a function.
-    Let $p$ be a critical point of $f$.
-    Then we define the Hessian $H_p$ to be the bilinear form
-    \begin{align*}
-        H_p: T_pM \times T_pM &\longrightarrow  \R\\
-        (X, Y) &\longmapsto X (\tilde{Y} f)|_p
-    ,\end{align*} 
-    where $\tilde{Y}$ is a local extension of $Y$ around $p$.
-\end{definition}
-This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
-\begin{align*}
-    H_p(X, Y) - H_p(Y, X) &= X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p\\
-                          &= [\tilde{X}, \tilde{Y}] f |_p\\
-                          &= df_p [\tilde{X}, \tilde{Y}]|_p = 0
-.\end{align*}
-The value of $H_p$ also does not depend on the extension of the vector field.
-Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $Y$. Then by symmetry of $H_p$, we have
-\[
-    X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
-.\] 
-\todo{Why linear in second component?}
-}
-In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
-\[
-    H_p = - dx_1^2 - \cdots - dx_k^2 + dx_{k+1}^2  + \cdots + dx_n^2
-,\] 
-where $dx_i^2 = dx_i \otimes dx_i$.
-Note in particular that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
-As the signature of a symmetric bilinear form is coordinate independent, this shows that the index of a critical point is as well.
-
-
-Interestingly, the reverse is also true: if $H_p$ is non-degenerate for all critical points  $p$ of $f$, then  $f$ is a Morse function.
-Many authors take this to be the definition of a Morse function.
-
-\begin{lemma}[Morse Lemma]
-    Let $M$ be a manifold and $f: M \to  \R$ a map.
-    If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
-\end{lemma}
-\begin{proof}
-    We follow the proof of Milnor\sidecite{milnor}.
-    We may assume that $M = \R^{n}$, $p$ is the origin and $f(p) = 0$.
-    Then by a version of Taylor's theorem, we can write
-    \begin{align*}
-        f(x)  &= f(p) + \sum_{i=1}^{n} (x_i - p_i) g_i (x)\\
-              &= \sum_{i=1}^{n} x_i g_i(x)
-    ,\end{align*} 
-    where $g_i$ are smooth functions. 
-    Now, as $g_i(0) = \partial_i f (0) = 0$, we can repeat this for each  $g_i$, giving us the following:
-    \[
-        f(x) = \sum_{i, j= 1}^{n} x_i x_j h_{ij}(x)
-    .\] 
-    Because this sum is symmetric in $i$ and  $j$, we may assume that  $h_{ij}$ is symmetric as well.\sidenote{If $h_{ij}$ is not symmetric, we can define $h_{(ij)} = \frac{1}{2}(h_{ij} + h_{ji})$. Then $h_{(ij)}$ is symmetric and we still have $\sum x_{i}x_{j}h_{ij} = \sum x_{i}x_{j}h_{(ij)}$.}
-    Note that
-    \[
-        h_{(ij)}(0) = \frac{1}{2} \partial_{ij} f(0)
-    ,\]
-    which is non-degenerate.
-
-    Now we imitate the proof of diagonalization of a non-degenerate quadratic form.
-    We do this by induction.
-    Suppose we have coordinates $u_1, \cdots, u_n$ in a neighbourhood of $0$ such that
-    \[
-        f = \pm u_1^2 \pm \cdots \pm u_{r-1}^2 + \sum_{i,j\ge r} u_i u_j H_{ij}(u)
-    ,\] 
-    where $H_{ij}$ is a symmetric matrix.
-    After a linear change, we may assume that $H_{rr} \neq 0$.
-    Then define new coordinates $ v_1, \ldots, v_r$ as follows:
-    \[
-        v_i = \begin{cases}
-            u_i & \text{if $i \neq r$}\\
-            \sqrt{|H_{rr}|} (u_r + \sum_{i > r} u_i H_{ir} / H_{rr}) & \text{if $i = r$.}
-        \end{cases}
-    \] 
-    Note that we may need to restrict the neighbourhood such that $\sqrt{H_{rr}} \neq 0$.
-    Then we have that
-    \[
-        f = \sum_{i\le r} \pm v_i^2 + \sum_{i,j > r} v_i v_j H_{ij}'(v)
-    .\] 
-    for some symmetric matrix $H_{ij}'$.
-    \todo{Explain better}
-    % Indeed,
-    % \begin{align*}
-    %     v_r^2 &= |H_{rr}| \left(u_r^2 + \sum_{i>r} 2 u_r u_i H_{ir} / H_{rr} + \left(\sum_{i>r} u_i H_{ir} / H_{rr}\right)^2\right)\\
-    %           &= TODO
-    % .\end{align*} 
-
-\end{proof}
 
 \section{Existence and abundance}
 One might think that Morse functions are very specific functions and hence they form a small subset of all smooth maps $M \to  \R$.
