@@ -248,7 +248,7 @@ For simplicity, we introduce the following refined definition of a Morse functio
     ,\end{align*}
     where $\theta_V^{t}$ is the flow along $V$.
     Then $f(\phi(t, p)) = t$ for all $p \in M_0$, as $df(V) = 1$.
-    The map $\phi$ is injective because of the uniqueness of flows, and surjective because given a point $p$ in $M$, we can always flow back along $V$ for a time $t$ to find a $p_0 \in M_0$ which then satisfy $\phi(t, p_0) = p$. 
+    The map $\phi$ is injective because of the uniqueness of flows, and surjective because given a point $p$ in $M$, we can always flow back along $V$ for a time $t$ to find a $p_0 \in M_0$ which then satisfies $\phi(t, p_0) = p$. 
     This also proves that $\phi$ is a diffeomorphism.
 \end{proof}
 This result is very useful and is sometimes used to prove that two manifolds $M_0$ $M_1$ are diffeomorphic: if we can construct a cobordism from $M_0$ to $M_1$ and we can prove the existence of a Morse function without critical points, then $M_0 \cong M_1$.
@@ -257,7 +257,7 @@ This result is very useful and is sometimes used to prove that two manifolds $M_
 \todo{Corollary: collar and bicollar theorem. Milnor $h$-coboridsm.}
 \todo{Corollary: we can glue two cobordisms together and get a manifold un a unique way. Milnor $h$-coboridsm.}
 
-In the case in which $f$ does have a critical point, the previous proof fails because $df = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
+In the case in which $f$ does have a critical point $p$, the previous proof fails because $d_pf = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
 
 
 \newthought{Let us now investigate} the situation when a Morse function $f$ does have a single critical point, say $p$ and assume $f(p) = 0$.
@@ -312,8 +312,9 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 \end{marginfigure}
 \begin{itemize}
     \item[\circled{A}] The part below $-\epsilon$ and the part above $\epsilon$ have a product structure, because we assumed the only critical value was $0$.
+        We can simply repeat the proof above.
     \item[\circled{B}] The part of $M$ that lies between $-\epsilon$  and $\epsilon$ without $\circled{H}$ also has a product structure.
-        To see this, extend the metric on $\circled{H}$ to the whole manifold. Then, because $f$ has no critical values outside $\circled{H}$, we can flow along gradient lines giving us product structure.
+        To see this, extend the metric on $\circled{H}$ to the whole manifold. Then, because $f$ has no critical values outside $\circled{H}$, we can flow along gradient lines giving us a product structure.
         This is why we cut in this way: we want the boundary of this region to consist of gradient lines, or the proof would fail.
 
         Riemannian metrics are an extension of standard metrics around critical points are called adapted Riemannian metrics.
@@ -342,7 +343,7 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 
     \item[\circled{H}]  The yellow part is what we call a \emph{handle of index $k$}, and is homeomorphic to $\disk{k} \times \disk{n-k}$.
         This is the only non-trivial part of our cobordism.
-        We call the bottom part of the border the \emph{attachment region}, i.e. $S^{k-1} \times \disk{n-k}$.
+        We call the bottom part of the border the \emph{attachment region}, which is homeomorphic to $S^{k-1} \times \disk{n-k}$.
 \end{itemize}
 
 
@@ -354,7 +355,7 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 We can do this by adding a small perturbation to $f$.\todo{prove this}.
 Then we can split up the cobordism in parts having only one or zero critical points, and decompose each part in products and handles like before.
 
-As any closed manifold can be viewed as a cobordism from $\O$ to $\O$, we have proved the following
+As any closed manifold can be viewed as a cobordism from $\O$ to $\O$, we have proved the following:
 
 \begin{theorem}
     Any closed manifold has a handle decomposition.
@@ -504,10 +505,9 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
         -16 \pi^2 \cos(2 \pi z) dz^2
     \] 
     is non-degenerate at each of the critical points.
-    \todo{We need to discuss non-degeneracy and hessian before this!}
     To find the handle decomposition induced by $f$, we have to determine the index of the critical points.
     As discussed earlier, the index is the number of downward directions, which is also equivalent to the number of negative eigenvalues of $H_{(x, y, z)}f$.
-    As $\cos(2 \pi \frac{1}{2}) < 0$ and $\cos(2 \pi 0) > 1$, we find that the index of a critical point $(x, y, z)$ is the amount of zeros occurring in the triplet $(x, y, z)$. Hence, we get the following table:
+    As $\cos(2 \pi \frac{1}{2}) < 0$ and $\cos(2 \pi 0) > 1$, we find that the index of a critical point $(x, y, z)$ is the number of zeros occurring in the triplet $(x, y, z)$. Hence, we get the following table:
     \[\begin{array}{cccccc}
   & x & y  & z & f(x, y, z) & \text{Index}\\ \hline
   & 0 & 0 & 0 & 9 & 3 \\
@@ -547,9 +547,9 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 
 \section{Existence and abundance of Morse functions}
 One might think that Morse functions are very specific functions and hence they form a small subset of all smooth maps $M \to  \R$.
-However, in this section we show that this is not the case. We will show that any manifold admits uncountably many Morse functions and that the set of Morse function form a dense subset of all smooth maps $M \to  \R$.
+In this section we show that this is not the case. We will show that any manifold admits uncountably many Morse functions and that the set of Morse function form a dense subset of all smooth maps $M \to  \R$.
 
-Let us first recall the following result, due to Withney\cite{todo}.
+Let us first recall the following result, due to Withney\sidecite{todo}.
 \begin{theorem}[Withney Embedding Theorem]
     Any smooth manifold $M$ of dimension $m$ can be embedded into  $\R^{2m+1}$
 \end{theorem}

@@ -78,7 +78,7 @@ We have obtained the following result:
         \incfig{when-can-we-attach-multiple-handles-at-the-same-time}
         \caption{
             A cobordism from $S^{1}$ to $S^{1} \sqcup S^1 \sqcup S^1$.
-            Stable and unstable manifolds do not intersect, which implies we can reorder the critical points $p$ and $q$, i.e.\ make $q$ lie lower than  $p$.
+            Stable and unstable manifolds do not intersect, which implies we can reorder the critical points $p$ and $q$.
         }
         \label{fig:when-can-we-attach-multiple-handles-at-the-same-time}
     \end{marginfigure}
@@ -86,14 +86,15 @@ We have obtained the following result:
     For example, consider the situation in Figure~\ref{fig:when-can-we-attach-multiple-handles-at-the-same-time}.
     Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
     Here, `flowing of handle structures' means flowing along unstable manifolds.
-    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds. We will make this more precies in the next section.
+    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds. We will make this more precise later.
     \section{Intersections of stable and unstable manifolds}
     %TODO: figure.
     %TODO: check for use of descending/ascending.
     Let us now investigate the condition under which stable and unstable manifolds do not intersect.
     Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$.
     Let's consider $\stable{p} \cap \unstable{q}$.
-    % If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$. TODO: add in somewhere
+    If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$.
+    What can we say if $f(p) \le  f(q)$?
     If we assume that the intersection is transverse, Proposition~\ref{prop:transverse-codimensions-add} implies that the codimensions add in the following sense:
     \[
         \codim(\stable{p} \tcap  \unstable{q}) = \codim \stable p + \codim \unstable q
@@ -102,10 +103,7 @@ We have obtained the following result:
     \[
         \dim \stable p \tcap \unstable q = \Ind q - \Ind p
     .\]
-    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which means we can always attach lower index handles before higher index ones.\todo{Explain this more in detail!
-        Mention self indexing morse function (Milnor, notes on the h-cobordism theorem)
-    }
-
+    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which will turn out to mean that we can always attach lower index handles before higher index ones.
 
 
     This transversality condition has a name:
