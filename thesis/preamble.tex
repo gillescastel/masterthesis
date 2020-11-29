@@ -123,8 +123,14 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 
+
+\makeatletter
+\newif\ifworking
+\@ifclasswith{tuftebook}{working}{\workingtrue}{\workingfalse}
+\makeatother
+
 \newcommand{\incfig}[2][1]{%
-    {\scriptsize\textsf{#2}}
+    \ifworking {\scriptsize\textsf{#2}} \fi
     \def\svgwidth{#1\textwidth}
     \import{./figures/}{#2.pdf_tex}
 }
@@ -140,6 +146,6 @@
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
 
-\newcommand\todo[1]{{\color{red}{#1}}}
+\newcommand\todo[1]{\ifworking {{\color{red}{#1}}} \else {}\fi}
 
 \author{Gilles Castel}
