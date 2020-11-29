@@ -3,7 +3,7 @@
 When studying manifolds is often proves useful to study simple structures that live on manifolds. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study functions from the manifold to $\R$, some of the most simple functions possible. You can think of them as projections  to one dimension.
 While these projections seem to lose much information, we will see that they actually can provide great insight in the structure of the manifold itself.
 
-\section{Morse functions}
+\section{Definition of a Morse function}
 
 We will not consider arbitrary maps $M \to \R$, but rather maps that have nice behaviour at their critical points. Let us first recall what a critical point is.
 
@@ -105,7 +105,7 @@ Indeed, suppose $\tilde{Y}$ and $\overline{Y}$ are two different extensions of $
 \[
     X(\tilde{Y} f)|_p = Y(\tilde{X} f)|_p = X(\overline{Y}f )|_p
 .\] 
-\todo{Why linear in second component?}
+This also shows linearly of the second component.
 }
 In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
 \[
@@ -120,7 +120,7 @@ Interestingly, the reverse is also true: if $H_p$ is non-degenerate for all crit
 Many authors take this to be the definition of a Morse function.
 
 \begin{lemma}[Morse Lemma]
-    Let $M$ be a manifold and $f: M \to  \R$ a map.
+    Let $M$ be a manifold and $f: M \to  \R$ a smooth map.
     If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
 \end{lemma}
 \begin{proof}
@@ -136,12 +136,12 @@ Many authors take this to be the definition of a Morse function.
     \[
         f(x) = \sum_{i, j= 1}^{n} x_i x_j h_{ij}(x)
     .\] 
-    Because this sum is symmetric in $i$ and  $j$, we may assume that  $h_{ij}$ is symmetric as well.\sidenote{If $h_{ij}$ is not symmetric, we can define $h_{(ij)} = \frac{1}{2}(h_{ij} + h_{ji})$. Then $h_{(ij)}$ is symmetric and we still have $\sum x_{i}x_{j}h_{ij} = \sum x_{i}x_{j}h_{(ij)}$.}
+    Because this sum is symmetric in $i$ and  $j$, we may assume that  $h_{ij}$ is symmetric as well.\sidenote{If $h_{ij}$ is not symmetric, we can replace it by $h_{(ij)} = \frac{1}{2}(h_{ij} + h_{ji})$. Then $h_{(ij)}$ is symmetric and we still have $\sum x_{i}x_{j}h_{ij} = \sum x_{i}x_{j}h_{(ij)}$.}
     Note that
     \[
-        h_{(ij)}(0) = \frac{1}{2} \partial_{ij} f(0)
+        h_{ij}(0) = \frac{1}{2} \partial_{ij} f(0)
     ,\]
-    which is non-degenerate.
+    which is non-degenerate by assumption.
 
     Now we imitate the proof of diagonalization of a non-degenerate quadratic form.
     We do this by induction.
