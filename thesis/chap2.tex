@@ -1,4 +1,4 @@
-\chapter{TODO}
+\chapter{Stable and unstable manifolds}
 
 
 In this chapter, we want to address some of the natural questions that came up when discussing some examples.
@@ -86,69 +86,7 @@ We have obtained the following result:
     For example, consider the situation in Figure~\ref{fig:when-can-we-attach-multiple-handles-at-the-same-time}.
     Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
     Here, `flowing of handle structures' means flowing along unstable manifolds.
-    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds.
-
-    Let us make this more precise.
-
-
-    \section{Reordering critical points}
-
-    \todo{Theorem of Milnor $h$-cobordism:}
-    \begin{theorem}
-        Let $f: M \to  \R$ be a morse function on a cobordism $M = M_0 \sqcup M_1$ such that $ M_0 = f^{-1}(0)$ and $ M_1 = f^{-1}(1)$ with two critical points $p$ and  $p'$.
-        Suppose that for some choice of pseudo-gradient field $X$, the stable and unstable manifolds do not intersect.
-        Let $a, a' \in (0,1)$ be arbitrary.
-        Then there exists a new Morse function $g$ such that
-        \begin{enumerate}[(a)]
-            \item $X$ is a gradient-like vector field for  $g$
-            \item The critical points of  $g$ are still $p, p'$ and $g(p) = a$,  $g(p') = a'$.
-            \item $g$ agrees with  $f$ near $M_0 \sqcup M_1$ and equals $f$ plus a constant in some neighborhood of  $p$ and some neighborhood of  $p'$.
-        \end{enumerate}
-    \end{theorem}
-    \begin{marginfigure}
-        \centering
-        \incfig{reordening-theorem-milnor-h-cobordism}
-        \caption{
-            Construction of $\overline{\mu}$ and $\pi$ in the proof on reordening critical points.
-        }
-        \label{fig:reordening-theorem-milnor-h-cobordism}
-    \end{marginfigure}
-    \begin{proof}
-        We want to mask out the area around the descending and ascending manifold of one of the critical points.
-        Let $\mu: M_0 \to  [0,1]$ be a smooth map that is $0$ around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
-        Then we can smoothly extend this to a function on the whole manifold $M$.
-        Define $\pi: M \to  M_0$ by flowing along the pseudo-gradient field until we reach $M_0$.
-        Then we can extend $\mu$ uniquely to a smooth function that is constant on each trajectory as follows:
-        \begin{align*}
-            \overline{\mu}: M &\longrightarrow [0,1] \\
-            x &\longmapsto \begin{cases}
-                0 & \text{if $x$ in stable or unstable manifold of $p$}\\
-                1 & \text{if $x$ in stable or unstable manifold of $p'$}\\ 
-                \mu(\pi(x)) & \text{else}
-            \end{cases}
-        .\end{align*}
-        We have illustrated this in the figure by colouring regions where $\mu$ is high with red.
-
-        Define a new Morse function $g: M \to  [0,1]$ by $g(q) = G_{\overline{\mu}(q)}(f(q))$, where $G_{s}(x)$ is a smooth family of smooth functions $G_s: [0,1] \to  [0,1]$ with $s \in [0,1]$ that has the following properties, also indicated in Figure~\ref{fig:proof-reordening-properties-of-g}.
-        \begin{marginfigure}
-            \centering
-            \incfig{proof-reordening-properties-of-g}
-            \caption{Necessary properties of $G$ in the proof on reordering critical points are indicated in yellow.}
-            \label{fig:proof-reordening-properties-of-g}
-        \end{marginfigure}
-        \begin{enumerate}
-            \item For all $s$, $G_s' > 0$ and $G_s$ increases from $0$ to  $1$ as $x$ increases from  $0$ to  $1$
-            \item  $G_0(f(p)) = a$\\ $G_1(f(p')) = a'$
-            \item  $G_s(x) = x$ for $x$ near  $0$ or  $1$ and for all $s$ 
-            \item  $G_0'(x) = 1$ for $x$  in a neighborhood of $f(p)$\\
-            $G_1'(x) = 1$ for $x$  in a neighborhood of $f(p')$
-        \end{enumerate}
-        \todo{Check that this $g$ works!}
-    \end{proof}
-
-    \todo{Works for multiple!\\}
-    \todo{Implies self indexing morse function if not intersecting!}
-
+    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds. We will make this more precies in the next section.
     \section{Intersections of stable and unstable manifolds}
     %TODO: figure.
     %TODO: check for use of descending/ascending.
@@ -261,6 +199,67 @@ More explicitly, we have the following:
 
 \todo{Mention that handles are thickened up descending manifolds.}
 \todo{Also give examples in 3 dimensions}
+
+
+
+\section{Reordering critical points}
+
+\todo{Theorem of Milnor $h$-cobordism:}
+\begin{theorem}
+    Let $f: M \to  \R$ be a morse function on a cobordism $M = M_0 \sqcup M_1$ such that $ M_0 = f^{-1}(0)$ and $ M_1 = f^{-1}(1)$ with two critical points $p$ and  $p'$.
+    Suppose that for some choice of pseudo-gradient field $X$, the stable and unstable manifolds do not intersect.
+    Let $a, a' \in (0,1)$ be arbitrary.
+    Then there exists a new Morse function $g$ such that
+    \begin{enumerate}[(a)]
+        \item $X$ is a gradient-like vector field for  $g$
+        \item The critical points of  $g$ are still $p, p'$ and $g(p) = a$,  $g(p') = a'$.
+        \item $g$ agrees with  $f$ near $M_0 \sqcup M_1$ and equals $f$ plus a constant in some neighborhood of  $p$ and some neighborhood of  $p'$.
+    \end{enumerate}
+\end{theorem}
+\begin{marginfigure}
+    \centering
+    \incfig{reordening-theorem-milnor-h-cobordism}
+    \caption{
+        Construction of $\overline{\mu}$ and $\pi$ in the proof on reordening critical points.
+    }
+    \label{fig:reordening-theorem-milnor-h-cobordism}
+\end{marginfigure}
+\begin{proof}
+    We want to mask out the area around the descending and ascending manifold of one of the critical points.
+    Let $\mu: M_0 \to  [0,1]$ be a smooth map that is $0$ around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
+    Then we can smoothly extend this to a function on the whole manifold $M$.
+    Define $\pi: M \to  M_0$ by flowing along the pseudo-gradient field until we reach $M_0$.
+    Then we can extend $\mu$ uniquely to a smooth function that is constant on each trajectory as follows:
+    \begin{align*}
+        \overline{\mu}: M &\longrightarrow [0,1] \\
+        x &\longmapsto \begin{cases}
+            0 & \text{if $x$ in stable or unstable manifold of $p$}\\
+            1 & \text{if $x$ in stable or unstable manifold of $p'$}\\ 
+            \mu(\pi(x)) & \text{else}
+        \end{cases}
+    .\end{align*}
+    We have illustrated this in the figure by colouring regions where $\mu$ is high with red.
+
+    Define a new Morse function $g: M \to  [0,1]$ by $g(q) = G_{\overline{\mu}(q)}(f(q))$, where $G_{s}(x)$ is a smooth family of smooth functions $G_s: [0,1] \to  [0,1]$ with $s \in [0,1]$ that has the following properties, also indicated in Figure~\ref{fig:proof-reordening-properties-of-g}.
+    \begin{marginfigure}
+        \centering
+        \incfig{proof-reordening-properties-of-g}
+        \caption{Necessary properties of $G$ in the proof on reordering critical points are indicated in yellow.}
+        \label{fig:proof-reordening-properties-of-g}
+    \end{marginfigure}
+    \begin{enumerate}
+        \item For all $s$, $G_s' > 0$ and $G_s$ increases from $0$ to  $1$ as $x$ increases from  $0$ to  $1$
+        \item  $G_0(f(p)) = a$\\ $G_1(f(p')) = a'$
+        \item  $G_s(x) = x$ for $x$ near  $0$ or  $1$ and for all $s$ 
+        \item  $G_0'(x) = 1$ for $x$  in a neighborhood of $f(p)$\\
+        $G_1'(x) = 1$ for $x$  in a neighborhood of $f(p')$
+    \end{enumerate}
+    \todo{Check that this $g$ works!}
+\end{proof}
+
+\todo{Works for multiple!\\}
+\todo{Implies self indexing morse function if not intersecting!}
+
 
 
 % \section{Smale condition is generic (proof)}
