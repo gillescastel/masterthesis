@@ -1,6 +1,6 @@
 \chapter{Morse theory}
 
-When studying manifolds is often proves useful to study simple structures that live on manifolds. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study functions from the manifold to $\R$, some of the most simple functions possible. You can think of them as projections  to one dimension.
+When studying manifolds is often proves useful to study simple structures that live on them. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study some of the most simple maps: maps from the manifold $M$ to $\R$. A prototypical example of such a map is a projection.
 While these projections seem to lose much information, we will see that they actually can provide great insight in the structure of the manifold itself.
 
 \section{Definition of a Morse function}
@@ -18,9 +18,7 @@ We will not consider arbitrary maps $M \to \R$, but rather maps that have nice b
     \Crit f = \{ p \in M  \mid  df_p = 0\} 
     .\] 
 \end{definition}
-The maps we will be considering are have nice behaviour around their critical points.
-More concretely, they are defined as follows:
-
+The maps we will be considering are then characterised as follows:
 \begin{definition}[Morse function]
     Let $M$ be a manifold. A function $f: M \to  \R$ a \emph{Morse function} if for all critical points $p$, there exists a chart centred around $p$ such that $f$ is locally given by
     \[
@@ -39,7 +37,7 @@ Let us first give some examples.
 \end{marginfigure}
 \begin{eg}
     Let $M$ be the torus  $T^2$ embedded in $\R^3$ as illustrated in Figure~\ref{fig:examples-of-morse-functions}.
-    Then the height function $h: T^2 \to  \R$ which is the projection on the $z$-axis is a smooth map with four critical points:
+    Then the height function $h: T^2 \to  \R$ which is the projection on the $z$-axis is a Morse function with four critical points:
     \begin{itemize}
         \item A minimum $p$, where $h(x) = h(p) + x_1^2 + x_2^2$.
         \item Two saddle points $s_1, s_2$ where $h(x) = h(s_i) + x_1^2 - x_2^2$.
@@ -50,7 +48,7 @@ Let us first give some examples.
 \begin{noneg}
     Let $M = \R^2$ and $f: \R^2 \to  \R: (x, y) \mapsto  x^2$.
     Then all points $(0, y)$ for  $y \in \R$ are critical points of this function.
-    In particular, $(0, 0)$ is a critical point, but $f$ is clearly not Morse.
+    In particular, $(0, 0)$ is a critical point. Locally, we cannot write $f$ as  $ \pm x_1^2 \pm x_2^2$ for some coordinates $(x_1, x_2)$, so $f$ is not Morse.
 \end{noneg}
 \begin{marginfigure}
     \centering
@@ -94,7 +92,7 @@ To show that it is and that $\Ind p$ does not depend on the choice of coordinate
     ,\end{align*} 
     where $\tilde{Y}$ is a local extension of $Y$ around $p$.
 \end{definition}
-This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is
+This is a well defined symmetric bilinear form.\sidenote{The difference between $H_p(X, Y)$ and  $H_p(Y, X)$ is given by
 \begin{align*}
     H_p(X, Y) - H_p(Y, X) &= X(\tilde{Y} f)|_p - Y (\tilde{X} f)|_p\\
                           &= [\tilde{X}, \tilde{Y}] f |_p\\
@@ -109,10 +107,10 @@ This also shows linearly of the second component.
 }
 In case of a Morse function given locally by $f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2$, the Hessian at $p$ is 
 \[
-    H_p = - dx_1^2 - \cdots - dx_k^2 + dx_{k+1}^2  + \cdots + dx_n^2
+    H_p = 2(- dx_1^2 - \cdots - dx_k^2 + dx_{k+1}^2  + \cdots + dx_n^2)
 ,\] 
 where $dx_i^2 = dx_i \otimes dx_i$.
-Note in particular that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$.
+Note in particular that $H_p$ is non-degenerate and its signature is $(i_-, i_{+}) = (k, n-k)$, as we have $k$ negative eigenvalues, $n-k$ positive eigenvalues.
 As the signature of a symmetric bilinear form is coordinate independent, this shows that the index of a critical point is as well.
 
 
@@ -124,7 +122,7 @@ Many authors take this to be the definition of a Morse function.
     If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
 \end{lemma}
 \begin{proof}
-    We follow the proof of Milnor\sidecite{milnor}.
+    We follow the proof of Milnor\sidecite[6]{milnor}.
     We may assume that $M = \R^{n}$, $p$ is the origin and $f(p) = 0$.
     Then by a version of Taylor's theorem, we can write
     \begin{align*}
@@ -150,7 +148,7 @@ Many authors take this to be the definition of a Morse function.
         f = \pm u_1^2 \pm \cdots \pm u_{r-1}^2 + \sum_{i,j\ge r} u_i u_j H_{ij}(u)
     ,\] 
     where $H_{ij}$ is a symmetric matrix.
-    After a linear change, we may assume that $H_{rr} \neq 0$.
+    After a linear change, we may assume by non-degeneracy that $H_{rr} \neq 0$.
     Then define new coordinates $ v_1, \ldots, v_r$ as follows:
     \[
         v_i = \begin{cases}
@@ -183,7 +181,7 @@ A cobordism between two compact manifolds $M_1$ and $M_2$ is a compact manifold 
 
 
 The term `cobordism' comes from the fact that $M_1 \sqcup M_2$ are the boundary of $M$, so we can think of $M$ as the `co-boundary' of $M_1$ and $M_2$.
-Cobordisms are an interesting topic in its own right.
+Cobordisms are an interesting topic in their own right.
 For example, they define an equivalence relation on all compact manifolds of same dimension. Two manifolds $ M_1$ and $M_2$ are then said to be equivalent (cobordant) if there exists a cobordism $M$ connecting the two.
 This equivalence relation is coarser than diffeomorphism and is generally easier to study.
 Cobordisms also form a category where the objects are manifolds and the arrows are cobordisms.
@@ -203,13 +201,23 @@ When we consider the height function $f: M \to  [0, 1]$ on these examples,
 we observe that the topology of the bottom is different than that of the top if the height function has critical points.
 This is indeed in general true.
 If $f$ is a Morse function (as is the case in our examples), it will turn out we can very concretely describe \emph{how} this topology changes.
-This will give rise to handle decompositions.
+This will give rise to the concept of handle decompositions.
 
 \newthought{Let us first consider} the case where $f: M \to [0, 1]$ has no critical points. 
+For simplicity, we introduce the following refined definition of a Morse function on a cobordism:
+\begin{definition}[Morse function on a cobordism\sidenotemark]
+    Let $M$ be a cobordism from $M_0$ to $M_1$.
+    A function $f: M \to  [a, b]$ is said to be \emph{Morse} if 
+    \begin{itemize}
+        \item $M_0 = f^{-1}(a)$, $M_1 = f^{-1}(b)$
+        \item All critical points lie interior in $M$ and are non-degenerate.
+    \end{itemize}
+\end{definition}
+\sidenotetext{\fullcite[8]{hcobord}}
 
 \begin{prop}
-    Suppose $M$ is a cobordism from $M_0$ to $ M_1$ and $f : X \to [0, 1] $ such that $M_0 = f^{-1}(0)$ and $M_1 = f^{-1}(1)$.
-    Suppose $f$ has no critical points. Then $X$ is diffeomorphic to $[0, 1] \times  M_0$.
+    Suppose $f: M \to  [a, b]$ is a Morse function on a cobordism $M$ from  $ M_0$ to $ M_1$.
+    If $f$ has no critical points, then $M$ is diffeomorphic to $[a, b] \times  M_0$.
 \end{prop}
 \begin{proof}
     \todo{Check proof $h$-cobordism milnor}
@@ -221,7 +229,13 @@ This will give rise to handle decompositions.
         \label{fig:proof-of-cobordism-without-critical-points}
     \end{marginfigure}
     Consider a Riemannian metric $\left<\cdot ,\cdot  \right>$ on $M$.
-    Because  $f$ has no critical points, the vector field $W = (df)^{\sharp}$ never vanishes.
+    Because  $f$ has no critical points, the vector field $W = (df)^{\sharp}$ never vanishes.\sidenote{Here and hereafter, we use $\sharp$ and $\flat$ for the `musical isomorphisms' induced by metric $\left< \cdot, \cdot \right>$, given by
+        \begin{align*}
+            \flat: TM \longrightarrow T^*M: &\:X \longmapsto X^{\flat} = \left<X, - \right>\\
+            \sharp: T^*M \longrightarrow TM :&\:\alpha \longmapsto \alpha^{\sharp}
+        ,\end{align*}
+        where $\alpha^\sharp$ is uniquely defined by $\langle\alpha^\sharp, X\rangle = \alpha(X)$.
+    }
     Consider the normalized vector field
     \[
     V = \frac{1}{\left<W, W \right>} W
@@ -237,8 +251,8 @@ This will give rise to handle decompositions.
     The map $\phi$ is injective because of the uniqueness of flows, and surjective because given a point $p$ in $M$, we can always flow back along $V$ for a time $t$ to find a $p_0 \in M_0$ which then satisfy $\phi(t, p_0) = p$. 
     This also proves that $\phi$ is a diffeomorphism.
 \end{proof}
+This result is very useful and is sometimes used to prove that two manifolds $M_0$ $M_1$ are diffeomorphic: if we can construct a cobordism from $M_0$ to $M_1$ and we can prove the existence of a Morse function without critical points, then $M_0 \cong M_1$.
 
-\todo{This is sometimes used to prove that two things are diffeomorphic!}
 
 \todo{Corollary: collar and bicollar theorem. Milnor $h$-coboridsm.}
 \todo{Corollary: we can glue two cobordisms together and get a manifold un a unique way. Milnor $h$-coboridsm.}

@@ -14,7 +14,16 @@
 \end{definition}
 \sidenotetext{The notation is suggestive: the line $\cap$ intersects $|$ transversally: $\tcap$.}
 Note in particular that this depends on the ambient manifold $M$, and that if $N_1$ and $N_2$ do not intersect, their intersection is vacuously transverse.
-
+We give some examples below.
+\begin{figure}[H]
+    \centering
+    \sidecaption{
+        Examples and non-examples of transverse intersections.
+        Multiple configurations of two circles are shown: thrice with ambient manifold $\R^2$, and once embedded in $\R^3$.
+    \label{fig:transversality-examples}
+    }
+    \incfig{transversality-examples}
+\end{figure}
 A useful result is that when two manifolds intersect transversely, the codimensions of their intersection is the sum of their codimensions.
 \begin{prop}
     Let $M$ be a manifold and $N_1, N_2$ be two submanifold. If $ N_1 \tcap N_2$, then 
@@ -24,9 +33,9 @@ A useful result is that when two manifolds intersect transversely, the codimensi
     where the codimensions relative to $M$.
     \label{prop:transverse-codimensions-add}
 \end{prop}
-\begin{proof}[Proof. TODO]
+\begin{proof}
     As this is a local statement, we prove it for $M = \R^{m}$.
-    We may assume that $N_1 = f_1^{-1}(0)$ and $ N_2 = f_2^{-1}(0)$ where $f_i$ are submersions from $\R^{p}$ to $\R^{n_i}$, where $n_i$ is the codimension of $N_i$.
+    We may assume that $N_1 = f_1^{-1}(0)$ and $ N_2 = f_2^{-1}(0)$ where $f_i$ are submersions from $\R^{m}$ to $\R^{n_i}$, where $n_i$ is the codimension of $N_i$.
     % i.e. $(f_i)_*$ has full rank everywhere.
     \begin{marginfigure}
         \centering
@@ -44,8 +53,9 @@ A useful result is that when two manifolds intersect transversely, the codimensi
                            &= (m - n_1) + (m - n_2) - m\\
                            &= m - (n_1 + n_2)
     .\end{align*} 
+    This completes the proof.
 \end{proof}
-Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which cannot be guaranteed when the intersection is not transverse.
+Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which is not always the case when the intersection is not transverse.
 
 \begin{marginfigure}
     \centering
@@ -53,10 +63,6 @@ Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ 
     \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and a closed interval.}
     \label{fig:intersection-of-manifolds-is-not-always-a-manifold}
 \end{marginfigure}
-
-
-\todo{Give examples of transverse / non-transverse intersection and show that it is dependent of the ambient manifold}
-
 
 \begin{theorem}[Sard's theorem]
     Let $f: M \to  N$ be a $\Cinfty$ map. Then the set of critical values of  $f$ has measure zero in $N$.
@@ -66,10 +72,9 @@ Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ 
 \end{proof}
 
 
-\sidecite[23]{schultens2014introduction}
 
-\begin{definition}[Isotopy]
+\begin{definition}[Isotopy\sidenotemark]
     Two embeddings $f_0, f_1: M \to  N$ are \emph{isotopic} if there is a continuous map $H: M \times  [0, 1] \to  N$ such that $H(x, 0) = f_0$ and $H(x, 1) = f_1(x)$ for all $x \in M$ and such that for all $t \in [0, 1]$, the map $f_t$ defined by $H(\cdot , t)$ is an embedding. The map $H$ is called an \emph{isotopy between} $f_0$ and $f_1$.
-
     Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
 \end{definition}
+\sidenotetext{\fullcite[23]{schultens2014introduction}}

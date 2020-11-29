@@ -55,13 +55,13 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{examples-of-cobordisms.pdf}}%
     \put(0.69240575,0.01930048){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\O$\end{tabular}}}}%
-    \put(0.69765063,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1$\end{tabular}}}}%
+    \put(0.69216731,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{examples-of-cobordisms.pdf}}%
     \put(0.08001362,0.01930048){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1$\end{tabular}}}}%
     \put(0.07556444,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{examples-of-cobordisms.pdf}}%
     \put(0.27944562,0.01930048){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{1}$\end{tabular}}}}%
-    \put(0.26104297,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1\sqcup S^1$\end{tabular}}}}%
+    \put(0.25738738,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^1\sqcup S^1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{examples-of-cobordisms.pdf}}%
     \put(0.49445324,0.01930048){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\O$\end{tabular}}}}%
     \put(0.50192687,0.22924273){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\O$\end{tabular}}}}%

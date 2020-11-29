@@ -29,7 +29,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="g953"
+     inkscape:current-layer="layer1"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -144,10 +144,10 @@
          xml:space="preserve"
          style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          y="205.93675"
-         x="212.66817"><tspan
+         x="211.08069"><tspan
            id="tspan1075"
            sodipodi:role="line"
-           x="212.66817"
+           x="211.08069"
            y="205.93675"
            style="stroke-width:0.26458332">$S^1$</tspan></text>
       <g
@@ -289,14 +289,14 @@
          y="266.71732"
          style="stroke-width:0.26458332">$S^{1}$</tspan></text>
     <text
-       x="87.852051"
+       x="86.793716"
        y="205.93675"
        style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"
        id="text1085"><tspan
          style="stroke-width:0.26458332"
          y="205.93675"
-         x="87.852051"
+         x="86.793716"
          sodipodi:role="line"
          id="tspan1083">$S^1\sqcup S^1$</tspan></text>
     <g
