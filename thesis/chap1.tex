@@ -203,7 +203,8 @@ This is indeed in general true.
 If $f$ is a Morse function (as is the case in our examples), it will turn out we can very concretely describe \emph{how} this topology changes.
 This will give rise to the concept of handle decompositions.
 
-\newthought{Let us first consider} the case where $f: M \to [0, 1]$ has no critical points. 
+\subsubsection*{Cobordisms without critical points}
+Let us first consider the case where $f: M \to [0, 1]$ has no critical points. 
 For simplicity, we introduce the following refined definition of a Morse function on a cobordism:
 \begin{definition}[Morse function on a cobordism\sidenotemark]
     Let $M$ be a cobordism from $M_0$ to $M_1$.
@@ -229,7 +230,7 @@ For simplicity, we introduce the following refined definition of a Morse functio
         \label{fig:proof-of-cobordism-without-critical-points}
     \end{marginfigure}
     Consider a Riemannian metric $\left<\cdot ,\cdot  \right>$ on $M$.
-    Because  $f$ has no critical points, the vector field $W = (df)^{\sharp}$ never vanishes.\sidenote{Here and hereafter, we use $\sharp$ and $\flat$ for the `musical isomorphisms' induced by metric $\left< \cdot, \cdot \right>$, given by
+    Because  $f$ has no critical points, the vector field $W = (df)^{\sharp}$ never vanishes.\sidenote{Here and hereafter, we use $\sharp$ and $\flat$ for the `musical isomorphisms' induced by a metric $\left< \cdot, \cdot \right>$, given by
         \begin{align*}
             \flat: TM \longrightarrow T^*M: &\:X \longmapsto X^{\flat} = \left<X, - \right>\\
             \sharp: T^*M \longrightarrow TM :&\:\alpha \longmapsto \alpha^{\sharp}
@@ -253,14 +254,17 @@ For simplicity, we introduce the following refined definition of a Morse functio
 \end{proof}
 This result is very useful and is sometimes used to prove that two manifolds $M_0$ $M_1$ are diffeomorphic: if we can construct a cobordism from $M_0$ to $M_1$ and we can prove the existence of a Morse function without critical points, then $M_0 \cong M_1$.
 
+An important corollary is the existence of a so-called collar neighbourhood of $M_0$ and $M_1$.
+
 
 \todo{Corollary: collar and bicollar theorem. Milnor $h$-coboridsm.}
 \todo{Corollary: we can glue two cobordisms together and get a manifold un a unique way. Milnor $h$-coboridsm.}
 
-In the case in which $f$ does have a critical point $p$, the previous proof fails because $d_pf = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
+% In the case in which $f$ does have a critical point $p$, the previous proof fails because $d_pf = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
 
 
-\newthought{Let us now investigate} the situation when a Morse function $f$ does have a single critical point, say $p$ and assume $f(p) = 0$.
+\subsubsection*{Cobordisms with one critical point}
+Let us now investigate the situation when a Morse function $f$ does have a single critical point, say $p$ and assume $f(p) = 0$.
 Then we know $f$ is locally of the following form:
 \[
     f(x_1, \ldots, x_n) = - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
@@ -351,8 +355,11 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 
 
 
+\subsubsection*{Handle decomposition of closed manifolds}
 \newthought{If a Morse function} on a cobordism has multiple critical points, then we can always assume that the critical values are distinct and isolated.
 We can do this by adding a small perturbation to $f$.\todo{prove this}.
+
+
 Then we can split up the cobordism in parts having only one or zero critical points, and decompose each part in products and handles like before.
 
 As any closed manifold can be viewed as a cobordism from $\O$ to $\O$, we have proved the following:
