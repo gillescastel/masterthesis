@@ -135,6 +135,13 @@
     \import{./figures/}{#2.pdf_tex}
 }
 
+\newcommand{\fullwidthincfig}[2][0.90]{%
+    \ifworking {\color{gray}{\scriptsize\textsf{#2}}} \fi
+    \def\svgwidth{#1\paperwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+
 
 \newcommand{\minifig}[2]{%
     \def\svgwidth{#1}%

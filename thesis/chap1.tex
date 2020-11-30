@@ -399,9 +399,9 @@ Interestingly, the height function is Morse for all $t$, except at the exact mom
 A local model for this is $t\mapsto x^3 + tx$ as in Figure~\ref{fig:non-examples-of-morse-functions}.
 \begin{figure}[H]
     \centering
+    \fullwidthincfig{isotopy-between-circle-and-other-circle}
     \sidecaption{There exists an isotopy between the two handle decompositions described above.
     \label{fig:isotopy-between-circle-and-other-circle}}
-    \incfig{isotopy-between-circle-and-other-circle}
 \end{figure}
 
 
@@ -519,19 +519,15 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 & 0 & \frac{1}{2} & \frac{1}{2} & -5 & 1 \\
 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & -9 & 0 \\
     \end{array}\]
-    We conclude that we can decompose $T^3$ in one $0$-handle, three $1$-handles, three $2$-handles and one $3$-handle.
+    We conclude that we can decompose $T^3$ in one $0$-handle, three $1$-handles, three $2$-handles and one $3$-handle. We have illustrated the construction below.
+    % A natural question that arises is: `Can we build $T^{3}$ using less handles'?
 
-    A natural question that arises is: `Can we build $T^{3}$ using less handles'?
-    \todo{Mention that values of critical points are not distinct}
-
-
-    \todo{Explain and make full page width}
-    \begin{figure}[H]
+    \begin{figure*}[H]
     \centering
-    \incfig{three-torus-handle-decomposition}
-    \caption{
+    \includegraphics[width=0.90\paperwidth]{./notebooks/three-torus/output.png}
+    \sidecaption{
         Step by step construction of $T^{3}$ adding one handle at the time.
-        Here, $T^{3} = \R^3/ \Z^3$, and $\left[-\frac{1}{2}, \frac{1}{2}\right]^3$ is drawn.
+        Here, \mbox{$T^{3} = \R^3/ \Z^3$}, and $\left[-\frac{1}{2}, \frac{1}{2}\right]^3$ is drawn.
         The construction starts with a $0$-handle.
         In the first three steps, a $1$-handle is added.
         In the consequent steps,
@@ -539,8 +535,10 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
         leaving us with a single void we fill up with a $3$-handle.
     }
     \label{fig:three-torus-handle-decomposition}
-\end{figure}
+\end{figure*}
+\vspace*{-10ex}
 \end{eg}
+
 
 
 
