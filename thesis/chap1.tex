@@ -263,7 +263,7 @@ An important corollary is the existence of a so-called collar neighbourhood of $
 % In the case in which $f$ does have a critical point $p$, the previous proof fails because $d_pf = 0$, so $\grad f = (df)^{\sharp}$ vanishes at some point.
 
 
-\subsubsection*{Cobordisms with one critical point}
+\subsubsection*{Cobordisms with a single critical point}
 Let us now investigate the situation when a Morse function $f$ does have a single critical point, say $p$ and assume $f(p) = 0$.
 Then we know $f$ is locally of the following form:
 \[
@@ -351,22 +351,57 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 \end{itemize}
 
 
-
-
-
-
 \subsubsection*{Handle decomposition of closed manifolds}
-\newthought{If a Morse function} on a cobordism has multiple critical points, then we can always assume that the critical values are distinct and isolated.
-We can do this by adding a small perturbation to $f$.\todo{prove this}.
 
+Our goal now is to prove that any closed manifold $M$ admits a handle decomposition.
+We will do this by splitting $M$ in cobordisms that only have a single critical point.
+For this to work, we will need that the critical values are isolated.
 
-Then we can split up the cobordism in parts having only one or zero critical points, and decompose each part in products and handles like before.
+\begin{prop}
+    Let $f: M \to  \R$ be a Morse function on a closed manifold.
+    Then there exists another function $g$ arbitrary close to $f$ in $C^{1}$ sense that takes distinct values at all of its critical points.
+    Moreover, if $X$ is a pseudo-gradient field adapted to  $f$,
+    then we can choose $h$ such that $X$ is adapted to $g$ as well.
+\end{prop}
+\begin{proof}
+    We follow the proof of Audin and Damian\sidecite[40]{audin}.
+    Let $U = \bigcup_{p \in \Crit f} U_p$ be the union of Morse neighbourhoods of critical points.
+    Let $X$ be a pseudo-gradient field.
+    Then by compactness, $df(X) < - \epsilon_0$ for some $\epsilon_0>0$.
+    Let $h: M \to  \R$ be a function that satisfies the following properties:
+    \begin{itemize}
+        \item $h$ is constant on each Morse chart $U_p$
+        \item $|dh| < \frac{1}{2}\epsilon_0$.
+        \item $f(p) + h(p) \neq f(q) + h(q)$ where $p$ and  $q$ are distinct critical points.
+    \end{itemize}
+    Then $f + h$ is still a Morse function, with same critical points as  $f$, and the vector field $X$ is still adapted, but critical values are now distinct.
+    \todo{Make this more clear. What is $|dh|$?}
+\end{proof}
 
-As any closed manifold can be viewed as a cobordism from $\O$ to $\O$, we have proved the following:
+Now we are ready to prove one of the fundamental theorems in Morse theory.
 
 \begin{theorem}
     Any closed manifold has a handle decomposition.
 \end{theorem}
+\begin{proof}
+    We have proven earlier that any closed manifold admits a Morse function $f: M \to  \R$.
+    By the previous proposition, we may assume that the critical values of $f$ are distinct.
+    Splitting $M$ between critical values, we obtain a set of cobordisms with a single critical point.
+    More explicitly, let $p_i$ be the critical points of  $f$ and  $a_i = f(p_i)$.
+    As $a_i$ are distinct, we can choose regular values $b_i$ lying between $a_i$:
+     \[
+    a_0 < b_0 < a_1 < \cdots < a_n < b_n
+    .\] 
+    Then split $M = \bigcup M_i$ as follows:
+     \begin{align*}
+         M_0 &= f^{-1}(-\infty, b_0]\\
+         M_1 &= f^{-1}[b_0, b_1]\\
+             &\ \:\vdots\\
+         M_{n-1} &= f^{-1}[b_{n-1}, b_n]
+    .\end{align*} 
+    Each of these sets is a cobordism with exactly one critical value.
+    As we have seen earlier, we can split each of this cobordisms in product structures and handles, giving rise to a handle decomposition of the total manifold $M$.
+\end{proof}
 
 Before discussing some examples, let us first discus some of the different ways to look at handles.
 \todo{Add subtleties about corners, \ldots
