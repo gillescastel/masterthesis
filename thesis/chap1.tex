@@ -269,6 +269,12 @@ Then we know $f$ is locally of the following form:
 \[
     f(x_1, \ldots, x_n) = - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2
 .\] 
+\begin{figure}[H]
+    \centering
+    \sidecaption{Around a critical point of a Morse function, we can find a chart as on the left. The dark region corresponds to $f(x) < 0$, the light region to $f(x) >0$. The level set $f^{-1}(0)$ is not a manifold.
+    \label{fig:morse-chart}}
+\incfig{morse-chart}
+\end{figure}
 In Figure~\ref{fig:morse-chart}, we have plotted the first $k$ variables (the `downward directions') on the horizontal axis, and the last $n-k$ variables on the vertical axis.
 Then the level set $f^{-1}(0)$ is given by
 \[
@@ -278,12 +284,6 @@ which consists of the two crossing lines in the figure, corresponding to the cro
 Level sets of values slightly above an below $0$ look locally like hyperbolas on our figure, but remembering that that the axes consist of multiple dimensions, it would be more precise to call them hyperboloids.
 
 \todo{Add figure movie: two hyperbolas switching, hyperboloids, one handle in three dimensions that joins, \ldots}
-\begin{figure}[H]
-    \centering
-    \sidecaption{Around a critical point of a Morse function, we can find a chart as on the left. The dark region corresponds to $f(x) < 0$, the light region to $f(x) >0$. The level set $f^{-1}(0)$ is not a manifold.
-    \label{fig:morse-chart}}
-\incfig{morse-chart}
-\end{figure}
 
 To contain the behaviour of the critical point, it is useful to cut out the area bounded by the level sets $f = \pm \epsilon$ in order to make it compact.\todo{wording}.
 A natural way to do this, is to cut along gradient flow lines of $f$ (Figure~\ref{fig:morse-chart-flow-lines} and \ref{fig:morse-chart-zoomed-in}).
@@ -415,7 +415,8 @@ Embed attachment region in the manifold you already have.}
 
 In this section, we will consider some examples of handle decompositions in dimension one, two and three.
 
-\newthought{Handles in dimension one} are the most simple ones. We only have two types:
+\subsubsection*{Handles in dimension one}
+Handles in dimension one are the most simple ones. We only have two types:
 
 \begin{description}
     \item[0-handle] $\disk0 \times \disk{1} = [-1, 1]$, with attachment region $\O$. \hfill \minifig{1cm}{handle-1-0} 
@@ -447,10 +448,9 @@ A local model for this is $t\mapsto x^3 + tx$ as in Figure~\ref{fig:non-examples
 \end{figure}
 
 
-\paragraph{Handles in dimension two}
+\subsubsection*{Handles in dimension two}
 In dimension two, things get more interesting.
 We have three types of handles:
-\todo{Mention somewhere homology group changes when adding handles. But handle decomposition is not unique, if we could mod out these critical points which can cancel, then it is unique? Giving rise to Morse complex.}
 
 \begin{description}
     \item[0-handle] $\disk{0} \times \disk{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
@@ -482,7 +482,7 @@ We have three types of handles:
 
 
 
-\paragraph{Handles in dimension three}
+\subsubsection*{Handles in dimension three}
 
 \todo{Mention that sometimes you cannot attach handle before other one. When \emph{is} it possible? Hint to descending manifold, \ldots}
 
@@ -578,7 +578,7 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
     }
     \label{fig:three-torus-handle-decomposition}
 \end{figure*}
-\vspace*{-10ex}
+% \vspace*{-10ex}
 \end{eg}
 
 

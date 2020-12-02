@@ -42,9 +42,6 @@ We have obtained the following result:
 
 \todo{Here $\disk{k}$ is an open disk, earlier $\disk{1} = [-1, 1]$ was used as closed? Fix this!}
 
-
-
-
 \begin{eg}
     Let us consider $T^{2}$ embedded in $\R^3$ in the standard way and consider the height function. 
     This function has $4$ critical points and is clearly Morse.
@@ -116,16 +113,18 @@ We have obtained the following result:
     \end{definition}
     Later we will prove that this condition is not at all restricting: we can always perturbate the pseudo-gradient field such that it satisfies the Smale condition.
 
-    \begin{eg}
+    \begin{noneg}
         The gradient vector field in Example~\ref{eg:torus-stable-unstable-manifolds-standard-gradient} does not satisfy the Smale condition: the intersection of $\stable{b}$ and  $\unstable{c}$ is not transverse.
         Even more, if this condition would be true, there should be no trajectories connecting $b$ and $c$, because both have index $1$, so $\dim (\stable{b} \tcap \unstable{c}) = 0$.
-    \end{eg}
+    \end{noneg}
 
     \begin{eg}
-        Tilted torus. TODO
+        Instead of considering the embedding as in the previous example, we can embed the torus at a slight angle.
+        Then the gradient of the height function (by using the standard metric on $\R^3$) does satisfy the Smale condition.
+        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated this in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
     \end{eg}
     \begin{eg}
-        As illustrated in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}, other sphere with standard gradient $\R^3$ does satisfy Smale condition. TODO
+        As illustrated in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}, other sphere with gradient of the height function w.r.t the metric of $\R^3$ does satisfy Smale condition. 
     \end{eg}
 \begin{figure}[H]
     \centering
@@ -157,7 +156,7 @@ This submanifold contains of all points on the trajectories connecting $p$ to $q
 
 \begin{eg}
     Consider the other sphere. 
-    We have illustrated $\traj{p}{q}$ for some of the critical points of the height function.
+    We have illustrated $\traj{p}{q}$ below for some of the critical points of the height function.
     Here we see that these type of submanifolds do not need to be connected. For example, $\traj{b}{a}$ is diffeomorphic to the disjoint union of two open intervals.
 \end{eg}
 
@@ -177,9 +176,11 @@ More explicitly, we have the following:
 \begin{remark}
     If the index of two points only differs by one, say $\Ind p = \Ind q + 1$, then the dimension of $\L{p}{q}$ is $0$, so it is a discrete set.
     This proves that the number of trajectories from $p$ to $q$ is always finite, and the number is given by $| \L{p}{q}|$.
+    This will be important later when we are dealing with the Morse complex.
 \end{remark}
-
-\todo{We can view $\L{p}{q}$ as the intersection of $\traj{p}{q}$ and $f^{-1}(\alpha)$ where $\alpha$ is some regular value of  $f$ lying between $f(p)$ and $f(q)$}
+\begin{remark}
+    Another way to look at $\L{p}{q}$ is to consider an $a \in \R$ such that $f(p)<a<f(q)$. Then every flow line from $p$ to $q$  intersects $f^{-1}(a)$ exactly once (the value of $f$ is decreasing along the way), so we can identify  $\L{p}{q}$ with  $\traj{p}{q} \cap f^{-1}(a)$.
+\end{remark}
 
 
 
@@ -195,13 +196,12 @@ More explicitly, we have the following:
 
 
 
-\todo{Mention that handles are thickened up descending manifolds.}
+% \todo{Mention that handles are thickened up descending manifolds.}
 \todo{Also give examples in 3 dimensions}
 
 
-
+\filbreak
 \section{Reordering critical points}
-
 \todo{Theorem of Milnor $h$-cobordism:}
 \begin{theorem}
     Let $f: M \to  \R$ be a morse function on a cobordism $M = M_0 \sqcup M_1$ such that $ M_0 = f^{-1}(0)$ and $ M_1 = f^{-1}(1)$ with two critical points $p$ and  $p'$.
@@ -245,19 +245,46 @@ More explicitly, we have the following:
         \caption{Necessary properties of $G$ in the proof on reordering critical points are indicated in yellow.}
         \label{fig:proof-reordening-properties-of-g}
     \end{marginfigure}
-    \begin{enumerate}
+    \begin{enumerate}[(1)]
         \item For all $s$, $G_s' > 0$ and $G_s$ increases from $0$ to  $1$ as $x$ increases from  $0$ to  $1$
         \item  $G_0(f(p)) = a$\\ $G_1(f(p')) = a'$
         \item  $G_s(x) = x$ for $x$ near  $0$ or  $1$ and for all $s$ 
         \item  $G_0'(x) = 1$ for $x$  in a neighborhood of $f(p)$\\
         $G_1'(x) = 1$ for $x$  in a neighborhood of $f(p')$
     \end{enumerate}
-    \todo{Check that this $g$ works!}
+    Property (b) and (c) are clear: they follow immediately from (2), (3) and (4).
+    For (a), consider
+    \[
+        dG(\overline{\mu}, f) = \frac{\partial G}{\partial \overline{\mu}}  d\overline{\mu} + \frac{\partial G}{\partial f}  df
+    .\] 
+    Plugging in $X$, we have
+    \begin{align*}
+        dg(X) &= \frac{\partial G}{\partial \overline{\mu}}  d\overline{\mu}(X) + \frac{\partial G}{\partial f}  df(X)\\
+              &= \frac{\partial G}{\partial f}  df(X) < 0 \text{, except at critical points of $f$}
+    ,\end{align*} 
+    where we used that $d\overline{\mu}(X) = 0$ per construction of $\overline{\mu}$, $\frac{\partial G}{\partial f} > 0$ by (1) and $df(X) < 0$ everywhere except at critical points of $f$ by definition of pseudo-gradient field.
+    Because of (4), this implies that $g$ and $f$ share the same behaviour around their critical points, proving that $g$ is also Morse.
 \end{proof}
 
-\todo{Works for multiple!\\}
-\todo{Implies self indexing morse function if not intersecting!}
+\begin{remark}
+    This theorem can be extended to a more general setting. Suppose we have a set of points $\mathbf{p} = \{p_1, \cdots p_k\}$ and $\mathbf{p}' = \{p_1', \cdots p_\ell\}$, with all $p_i$ at the same level and all $p_i'$ at a single level.
+    Then the theorem remains valid, with exactly the same proof.
+\end{remark}
 
+If the pseudogradient vector field $X$ satisfies the Smale condition, then we know the intersection of stable and unstable manifolds very well.
+In particular, if $\Ind p \le  \Ind q$, the intersection of $\unstable{p}$ and  $\stable{q}$ is empty.
+Applying this reordering theorem multiple times, we have the following
+
+\begin{theorem}
+    Any closed manifold admits a Morse function such that for all critical points, $\Ind p < \Ind q \implies f(p) < f(q)$.
+    In particular, it admits a Morse function, which satisfies $ \Ind p  = f(p) $ for all critical points $p \in \Crit f$.
+\end{theorem}
+In other words, this asserts that lower index handles can always be attached before higher index ones.
+Morse functions as described in the second part have a name:
+
+\begin{definition}[Self-indexing Morse function]
+    A Morse function $f: M \to  \R$is \emph{self-indexing} if $\Ind p = f(p)$ for all critical points  $p$ of  $f$.
+\end{definition}
 
 
 % \section{Smale condition is generic (proof)}
