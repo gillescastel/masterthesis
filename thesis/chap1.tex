@@ -174,7 +174,7 @@ Many authors take this to be the definition of a Morse function.
 \section{Handle decompositions}
 \todo{Introduction}
 
-\todo{Check definition Milnor $h$-cobordism and fix definition Morse function}
+\todo{Check definition Milnor $h$-cobordism}
 \begin{definition}
 A cobordism between two compact manifolds $M_1$ and $M_2$ is a compact manifold $M$  with boundary $\partial M = M_1 \sqcup M_2$.
 \end{definition}
@@ -350,6 +350,19 @@ The advantage of cutting along gradient flow lines, is that we have split up the
         We call the bottom part of the border the \emph{attachment region}, which is homeomorphic to $S^{k-1} \times \disk{n-k}$.
 \end{itemize}
 
+\begin{definition}
+    A $k$-handle is a thickened up $k$-cell: $\disk{k} \times \disk{n-k}$.
+    We call $S_k = \sphere{k-1} \times \disk{n-k}$ the attachment region.
+
+    The act of attaching a $k$-handle to a manifold $M$ is glueing a handle $\disk{k} \times \disk{n-k}$ to the boundary of $M$ along its attachment region $S_k$ via a chosen embedding $S_k \to  \partial M$.
+\end{definition}
+
+\todo{Add subtleties about corners, \ldots
+Thickened up intervals.
+Instead of having morse function and decomposing, you can also ask question how you can build a manifold?
+
+Embed attachment region in the manifold you already have.}
+
 
 \subsubsection*{Handle decomposition of closed manifolds}
 
@@ -404,11 +417,6 @@ Now we are ready to prove one of the fundamental theorems in Morse theory.
 \end{proof}
 
 Before discussing some examples, let us first discus some of the different ways to look at handles.
-\todo{Add subtleties about corners, \ldots
-Thickened up intervals.
-Instead of having morse function and decomposing, you can also ask question how you can build a manifold?
-
-Embed attachment region in the manifold you already have.}
 
 
 \subsection*{Handles in low dimensions}
@@ -446,6 +454,7 @@ A local model for this is $t\mapsto x^3 + tx$ as in Figure~\ref{fig:non-examples
     \sidecaption{There exists an isotopy between the two handle decompositions described above.
     \label{fig:isotopy-between-circle-and-other-circle}}
 \end{figure}
+\todo{Fix this figure}
 
 
 \subsubsection*{Handles in dimension two}
@@ -509,7 +518,7 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
     An example of a handle decomposition of $S^{1} \times S^{2}$ is illustrated in Figure~\ref{fig:handles-in-dimension-three-s1-x-s2}.
     The construction starts with a $0$-handle, which is just a three dimensional ball.
     Then we glue on a $2$-handle.
-    The resulting manifold is then a thickened-up \todo{spelling}  two sphere, $I \times S^{2}$.
+    The resulting manifold is then a thickened up two sphere, $I \times S^{2}$.
     Then we add a $1$-handle connecting the inside to the outside and we cap of with a $3$-handle, which has the effect of identifying the end points of $I$, i.e. this transforms  $I \times S^{2}$ into $ S^1 \times S^{2}$.
 \end{eg}
 \begin{marginfigure}
@@ -613,12 +622,6 @@ The following theorem says that there is an abundance of Morse functions on any 
 
 First, let us give an example of when $f_p$ is \emph{not} a Morse function.
 
-\begin{marginfigure}
-    \centering
-    \incfig{example-when-fp-is-not-a-morse-function}
-    \caption{When $p$ is the center of a circle, $f_p$ is not a Morse function}
-    \label{fig:example-when-fp-is-not-a-morse-function}
-\end{marginfigure}
 \begin{eg}
     Let $V = S^1 = \{\|x\|^2 = 1  \mid  x \in \R^2\} $.
     Then $f_{(0, 0)}$ is not a Morse function.
@@ -642,6 +645,12 @@ Then Sard's theorem\sidecite{todo} will immediately imply that $f_p$ is Morse fo
     \incfig{existence-of-morse-functions-normal-bundle-map}
     \label{fig:existence-of-morse-functions-normal-bundle-map}
 \end{figure}
+\begin{marginfigure}
+    \centering
+    \incfig{example-when-fp-is-not-a-morse-function}
+    \caption{When $p$ is the center of a circle, $f_p$ is not a Morse function}
+    \label{fig:example-when-fp-is-not-a-morse-function}
+\end{marginfigure}
 
 \begin{proof}
     Given this insight, the proof now reduces to a straightforward calculation.
