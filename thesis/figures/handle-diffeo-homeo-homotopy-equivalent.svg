@@ -366,7 +366,7 @@
            sodipodi:cx="68.342949"
            sodipodi:type="arc"
            id="path1279"
-           style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2046954;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+           style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.2046954;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.53521553,1.53521553;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
            sodipodi:open="true" />
       </g>
     </g>
