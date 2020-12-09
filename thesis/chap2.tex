@@ -28,9 +28,9 @@ To answer these questions, we introduce the concept of stable and unstable manif
     \label{fig:stable-and-unstable-manifolds-are-manifiolds}
 \end{marginfigure}
 Let us first verify that these objects are indeed manifolds. 
-Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to $\disk{k}$.
-The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\disk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all, when gluing this to $\disk{k}$, we end up with something that is indeed a manifold, and diffeomorphic to $\disk{k}$.
-A similar reasoning for the stable manifold shows that $\stable{p} \cong \disk{n - k}$.
+Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to $\odisk{k}$.
+The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\odisk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all, when gluing this to $\odisk{k}$, we end up with something that is indeed a manifold, and diffeomorphic to $\odisk{k}$.
+A similar reasoning for the stable manifold shows that $\stable{p} \cong \odisk{n - k}$.
 We have obtained the following result:
 
 \begin{prop}
@@ -40,7 +40,7 @@ We have obtained the following result:
     .\] 
 \end{prop}
 
-\todo{Here $\disk{k}$ is an open disk, earlier $\disk{1} = [-1, 1]$ was used as closed? Fix this!}
+\todo{Here $\odisk{k}$ is an open disk, earlier $\cdisk{1} = [-1, 1]$ was used as closed? Fix this!}
 
 \begin{eg}
     Let us consider $T^{2}$ embedded in $\R^3$ in the standard way and consider the height function. 
@@ -54,7 +54,7 @@ We have obtained the following result:
         \incfig{torus-height-function-stable-and-unstable-manifolds}
         \caption{
         Stable and unstable manifolds for all critical points of the height function on the torus with the standard gradient on $\R^3$.
-    All of them are diffeomorphic to either $\disk{2}$, $\disk{1}$ or  $\disk{0}$.
+    All of them are diffeomorphic to either $\odisk{2}$, $\odisk{1}$ or  $\odisk{0}$.
     Note that $\stable{b}$ and  $\unstable{c}$ do not intersect transversally.
 }
         \label{fig:torus-height-function-stable-and-unstable-manifolds}
@@ -325,7 +325,7 @@ With these definitions, our findings can be summarized as follows:
 \end{proof}
 
 \begin{eg}
-    As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \disk{2} \cup \disk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
+    As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \cdisk{2} \cup \cdisk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
 \end{eg}
 \begin{eg}
     \begin{marginfigure}

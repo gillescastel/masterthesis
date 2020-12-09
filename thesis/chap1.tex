@@ -345,16 +345,17 @@ The advantage of cutting along gradient flow lines, is that we have split up the
 
 
 
-    \item[\circled{H}]  The yellow part is what we call a \emph{handle of index $k$}, and is homeomorphic to $\disk{k} \times \disk{n-k}$.
+    \item[\circled{H}]  The yellow part is what we call a \emph{handle of index $k$}, and is homeomorphic to $\cdisk{k} \times \cdisk{n-k}$.
         This is the only non-trivial part of our cobordism.
-        We call the bottom part of the border the \emph{attachment region}, which is homeomorphic to $S^{k-1} \times \disk{n-k}$.
+        We call the bottom part of the border the \emph{attachment region}, which is homeomorphic to $\sphere{k-1} \times \cdisk{n-k}$.
+        % TODO add terminology bottom, top, \ldots
 \end{itemize}
 
 \begin{definition}
-    A $k$-handle is a thickened up $k$-cell: $\disk{k} \times \disk{n-k}$.
-    We call $S_k = \sphere{k-1} \times \disk{n-k}$ the attachment region.
+    A $k$-handle is a thickened up $k$-cell: $\cdisk{k} \times \cdisk{n-k}$.
+    We call $S_k = \sphere{k-1} \times \cdisk{n-k}$ the attachment region.
 
-    The act of attaching a $k$-handle to a manifold $M$ is glueing a handle $\disk{k} \times \disk{n-k}$ to the boundary of $M$ along its attachment region $S_k$ via a chosen embedding $S_k \to  \partial M$.
+    The act of attaching a $k$-handle to a manifold $M$ is glueing a handle $\cdisk{k} \times \cdisk{n-k}$ to the boundary of $M$ along its attachment region $S_k$ via a chosen embedding $S_k \to  \partial M$.
 \end{definition}
 \begin{remark}
     The resulting manifold is not always smooth.
@@ -437,9 +438,9 @@ In this section, we will consider some examples of handle decompositions in dime
 Handles in dimension one are the most simple ones. We only have two types:
 
 \begin{description}
-    \item[0-handle] $\disk0 \times \disk{1} = [-1, 1]$, with attachment region $\O$. \hfill \minifig{1cm}{handle-1-0} 
+    \item[0-handle] $\cdisk0 \times \cdisk{1} = [-1, 1]$, with attachment region $\O$. \hfill \minifig{1cm}{handle-1-0} 
         
-    \item[1-handle]   $\disk{1} \times  \disk{0} = [-1, 1]$ with attachment region $S^{0} = \{-1, 1\}$.  \hfill \minifig{1cm}{handle-1-1}
+    \item[1-handle]   $\cdisk{1} \times  \cdisk{0} = [-1, 1]$ with attachment region $S^{0} = \{-1, 1\}$.  \hfill \minifig{1cm}{handle-1-1}
 \end{description}
 
 \begin{eg}
@@ -471,9 +472,9 @@ In dimension two, things get more interesting.
 We have three types of handles:
 
 \begin{description}
-    \item[0-handle] $\disk{0} \times \disk{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
-    \item[1-handle] $\disk{1} \times \disk{1}$ with attachment region $\disk1 \times S^{0}$. \hfill\minifig{1cm}{handle-2-1}
-    \item[2-handle] $\disk{2} \times \disk{0}$ with attachment region $\disk{0} \times S^1$. \hfill\minifig{1cm}{handle-2-2}
+    \item[0-handle] $\cdisk{0} \times \cdisk{2}$ with attachment region $\O$. \hfill \minifig{1cm}{handle-2-0}
+    \item[1-handle] $\cdisk{1} \times \cdisk{1}$ with attachment region $\cdisk1 \times S^{0}$. \hfill\minifig{1cm}{handle-2-1}
+    \item[2-handle] $\cdisk{2} \times \cdisk{0}$ with attachment region $\cdisk{0} \times S^1$. \hfill\minifig{1cm}{handle-2-2}
 \end{description}
 
 \begin{eg}[Handle decomposition of the torus]
@@ -505,13 +506,13 @@ We have three types of handles:
 \todo{Mention that sometimes you cannot attach handle before other one. When \emph{is} it possible? Hint to descending manifold, \ldots}
 
 \begin{description}
-    \item[0-handle] $ \disk0 \times \disk{3}$ with attachment region $\O$ 
+    \item[0-handle] $ \cdisk0 \times \cdisk{3}$ with attachment region $\O$ 
         \hfill\minifig{1cm}{handle-3-0}
-    \item[1-handle] $ \disk1 \times \disk{2}$ with attachment region $ \disk2 \times S^{0}$
+    \item[1-handle] $ \cdisk1 \times \cdisk{2}$ with attachment region $ \cdisk2 \times S^{0}$
         \hfill\minifig{1cm}{handle-3-1}
-    \item[2-handle] $ \disk2 \times \disk{1}$ with attachment region $ \disk1 \times S^1$
+    \item[2-handle] $ \cdisk2 \times \cdisk{1}$ with attachment region $ \cdisk1 \times S^1$
         \hfill\minifig{1cm}{handle-3-2}
-    \item[3-handle] $ \disk3 \times \disk{0}$ with attachment region $S^{2}$
+    \item[3-handle] $ \cdisk3 \times \cdisk{0}$ with attachment region $S^{2}$
         \hfill\minifig{1cm}{handle-3-3}
 \end{description}
 
@@ -520,7 +521,7 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 \begin{eg}[Handle decomposition of $S^{3}$]
     Consider $S^{3} \subset \R^{4}$ and the height function $f$, the projection on the last coordinate.
     Then $f$ has two critical points: $(0, 0, 0, \pm 1)$ of index $0$ and $3$.
-    Then handle decomposition is then a $0$-handle ($\disk{3}$) glued to a $3$-handle (which is also diffeomorphic to $\disk{3}$).
+    Then handle decomposition is then a $0$-handle ($\cdisk{3}$) glued to a $3$-handle (which is also diffeomorphic to $\cdisk{3}$).
 \end{eg}
 
 \begin{eg}[Handle decomposition of $ S^1\times S^{2}$]
