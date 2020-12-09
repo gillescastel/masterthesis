@@ -1,6 +1,6 @@
 \chapter{Morse theory}
 
-When studying manifolds is often proves useful to study simple structures that live on them. For example, studying differential forms gives rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study some of the most simple maps: maps from the manifold $M$ to $\R$. A prototypical example of such a map is a projection.
+When studying manifolds is often proves useful to examine simple structures that live on them. For example, differential forms give rise to the de Rham cohomology, which tells us something about the global structure of the manifold. In this thesis, we study some of the most simple maps: maps from the manifold $M$ to $\R$. A prototypical example of such a map is a projection.
 While these projections seem to lose much information, we will see that they actually can provide great insight in the structure of the manifold itself.
 
 \section{Definition of a Morse function}
@@ -79,7 +79,7 @@ This also immediately rules out the situation we had in the other example, where
 
 \section{Coordinate-free definition of a Morse function}
 
-The attentive reader will have noticed that the definition of the index of a critical point could possibly not be well defined.
+The attentive reader will have noticed that the notion of the index of a critical point could possibly be ill-defined.
 To show that it is and that $\Ind p$ does not depend on the choice of coordinates, we will will give a coordinate-free definition. For this, we first need to define the Hessian at a critical point.
 
 \begin{definition}
@@ -183,22 +183,23 @@ A cobordism between two compact manifolds $M_1$ and $M_2$ is a compact manifold 
 The term `cobordism' comes from the fact that $M_1 \sqcup M_2$ are the boundary of $M$, so we can think of $M$ as the `co-boundary' of $M_1$ and $M_2$.
 Cobordisms are an interesting topic in their own right.
 For example, they define an equivalence relation on all compact manifolds of same dimension. Two manifolds $ M_1$ and $M_2$ are then said to be equivalent (cobordant) if there exists a cobordism $M$ connecting the two.
-This equivalence relation is coarser than diffeomorphism and is generally easier to study.
+This equivalence relation is much coarser than diffeomorphism and is generally easier to study.
 Cobordisms also form a category where the objects are manifolds and the arrows are cobordisms.
 
 We have illustrated some examples below.
 Note that we may also take $M_1$ or $M_2 = \O$.
 In particular, any closed manifold is a cobordism from $\O$ to $\O$.
-\begin{figure}[H]
+\begin{figure*}[H]
     \centering
-    \sidecaption{Some examples of cobordisms. 
-        When the height function has a critical point, the topology changes from top to bottom.
+    \sidecaption[][-8ex]{Some examples of cobordisms. 
+        When the height function has a critical point, the topology can change from top to bottom.
     \label{fig:examples-of-cobordisms} }
-    \incfig{examples-of-cobordisms}
-\end{figure}
+    \fullwidthincfig{examples-of-cobordisms}
+\end{figure*}
 
 When we consider the height function $f: M \to  [0, 1]$ on these examples,
 we observe that the topology of the bottom is different than that of the top if the height function has critical points.
+\todo{Not in the case of the higher genus example \ldots Change wording!}
 This is indeed in general true.
 If $f$ is a Morse function (as is the case in our examples), it will turn out we can very concretely describe \emph{how} this topology changes.
 This will give rise to the concept of handle decompositions.
@@ -306,7 +307,7 @@ Of course, a gradient is only defined when we have a metric, and here we choose 
     The coloured area represents a handle. Its boundary consists of parts of level sets of $f$ and flow lines of $\grad f$.}
     \label{fig:morse-chart-flow-lines}
 \end{marginfigure}
-In Figure~\ref{fig:morse-chart-zoomed-in}, the cut out area is coloured in yellow.
+In Figure~\ref{fig:morse-chart-zoomed-in}, the cut out area is coloured in yellow and indicated with \circled{H}.
 The advantage of cutting along gradient flow lines, is that we have split up the cobordism in three parts which we understand well:
 \begin{marginfigure}
     \centering
@@ -378,14 +379,14 @@ Embed attachment region in the manifold you already have.}
 \subsubsection*{Handle decomposition of closed manifolds}
 
 Our goal now is to prove that any closed manifold $M$ admits a handle decomposition.
-We will do this by splitting $M$ in cobordisms that only have a single critical point.
+We will do this by splitting $M$ into cobordisms that only have a single critical point.
 For this to work, we will need that the critical values are isolated.
 
 \begin{prop}
     Let $f: M \to  \R$ be a Morse function on a closed manifold.
     Then there exists another function $g$ arbitrary close to $f$ in $C^{1}$ sense that takes distinct values at all of its critical points.
     Moreover, if $X$ is a pseudo-gradient field adapted to  $f$,
-    then we can choose $h$ such that $X$ is adapted to $g$ as well.
+    then we can choose $g$ such that $X$ is adapted to $g$ as well.
 \end{prop}
 \begin{proof}
     We follow the proof of Audin and Damian\sidecite[40]{audin}.
@@ -410,7 +411,7 @@ Now we are ready to prove one of the fundamental theorems in Morse theory.
 \begin{proof}
     We have proven earlier that any closed manifold admits a Morse function $f: M \to  \R$.
     By the previous proposition, we may assume that the critical values of $f$ are distinct.
-    Splitting $M$ between critical values, we obtain a set of cobordisms with a single critical point.
+    Splitting $M$ between critical values,\todo{Better wording} we obtain a set of cobordisms with a single critical point.
     More explicitly, let $p_i$ be the critical points of  $f$ and  $a_i = f(p_i)$.
     As $a_i$ are distinct, we can choose regular values $b_i$ lying between $a_i$:
      \[
@@ -427,7 +428,7 @@ Now we are ready to prove one of the fundamental theorems in Morse theory.
     As we have seen earlier, we can split each of this cobordisms in product structures and handles, giving rise to a handle decomposition of the total manifold $M$.
 \end{proof}
 
-Before discussing some examples, let us first discus some of the different ways to look at handles.
+Before discussing some examples, let us first discuss some of the different ways to look at handles.
 
 
 \subsection*{Handles in low dimensions}
@@ -435,7 +436,7 @@ Before discussing some examples, let us first discus some of the different ways 
 In this section, we will consider some examples of handle decompositions in dimension one, two and three.
 
 \subsubsection*{Handles in dimension one}
-Handles in dimension one are the most simple ones. We only have two types:
+Handles in dimension one are the simplest ones. We only have two types:
 
 \begin{description}
     \item[0-handle] $\cdisk0 \times \cdisk{1} = [-1, 1]$, with attachment region $\O$. \hfill \minifig{1cm}{handle-1-0} 
@@ -456,8 +457,8 @@ Handles in dimension one are the most simple ones. We only have two types:
     \incfig{one-dimensional-handle-decomposition-examples}
 \end{figure}
 This example illustrates that handle decompositions are not unique.
-However, we can construct an isotopy from the second to the first embedding that cancels the two critical points.
-Interestingly, the height function is Morse for all $t$, except at the exact moment when the cancellation happens.
+However, we can construct an isotopy from the second to the first embedding that cancels two critical points.
+Interestingly, the height function is Morse for all $t$, except at the exact moment when the cancellation happens, indicated in yellow in the below.
 A local model for this is $t\mapsto x^3 + tx$ as in Figure~\ref{fig:non-examples-of-morse-functions}.
 \begin{figure*}[H]
     \centering
@@ -608,8 +609,8 @@ Drawing three-dimensional handle decompositions is a bit harder. Most of the tim
 One might think that Morse functions are very specific functions and hence they form a small subset of all smooth maps $M \to  \R$.
 In this section we show that this is not the case. We will show that any manifold admits uncountably many Morse functions and that the set of Morse function form a dense subset of all smooth maps $M \to  \R$.
 
-Let us first recall the following result, due to Withney\sidecite{todo}.
-\begin{theorem}[Withney Embedding Theorem]
+Let us first recall the following result, due to Whitney\sidecite{todo}.
+\begin{theorem}[Whitney Embedding Theorem]
     Any smooth manifold $M$ of dimension $m$ can be embedded into  $\R^{2m+1}$
 \end{theorem}
 This allows us to assume that $M$ is diffeomorphic to a submanifold $V$ of $\R^{n}$, making the constructions  more straightforward.
@@ -735,19 +736,15 @@ Then Sard's theorem\sidecite{todo} will immediately imply that $f_p$ is Morse fo
     This concludes the proof.
 \end{proof}
 
-
-
-
 \begin{prop}
-    Let $V$ be a manifold that can be embedded as a submanifold into a Euclidean space.
-    Let $f: V \to  \R$ be a function.
+    Let $f: M \to  \R$ be a function.
     Let $k$ be an integer.
     Then $f$ and all its derivatives of order $\le k$ can be uniformly
     approximated by Morse functions on every compact subset.
 \end{prop}
 
 The idea of the proof goes as follows.
-We choose an embedding of $V$ where $f$ is the first coordinate on $V$, so we can think of $f$ as a simple projection: $x \mapsto x_1$.
+We choose an embedding of $M$ where $f$ is the first coordinate on $M$, so we can think of $f$ as a simple projection: $x \mapsto x_1$. \todo{Why is this possible?}
 Then this function can be approximated in the following way:
 \[
     x_1 \approx \frac{(x_1+c)^2 - c^2}{2c} \qquad \text{as $c \to  \infty$,}
@@ -759,7 +756,7 @@ and even when considering the other dimensions, the approximation still works:
 Note that the right hand side is almost always a Morse function.
 
 \begin{proof}
-    Embed $V$ in $\R^{n}$ for $n$ sufficiently large such that $f$ is the first coordinate:
+    Using the Whitney embedding theorem, embed $M$ in $\R^{n}$ for $n$ sufficiently large such that $f$ is the first coordinate:
     \[
         h(x) = (f(x), h_2(x), \ldots, h_n(x))
     .\] 
@@ -776,7 +773,7 @@ Note that the right hand side is almost always a Morse function.
     .\end{align*} 
 
     This concludes the proof.
-    Indeed, let $K$ be a compact subset of $V$.
+    Indeed, let $K$ be a compact subset of $M$.
     The functions $\frac{d^{j}}{dx^{j}} (f(x)^2 + \sum h_i(x)^2)$ for $j = 1, \ldots,k$ all attain their maximum on $K$, so by choosing $c$ big enough, we can make them simultaneously arbitrarily small in a uniform way. Similarly for the third term.
     Lastly, we can also $\epsilon_i$ arbitrarily small while still retaining that $g$ is a Morse function.
 \end{proof}

@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="381.30292mm"
-   height="49.44582mm"
-   viewBox="0 0 381.30291 49.445821"
+   height="59.187443mm"
+   viewBox="0 0 381.30291 59.187444"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -183,7 +183,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2639"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -206,9 +206,9 @@
        empspacing="4"
        dotted="false"
        originx="-10.993798"
-       originy="90.976323" />
+       originy="100.71794" />
     <sodipodi:guide
-       position="66.554852,25.110132"
+       position="66.554851,34.851748"
        orientation="0,1"
        id="guide2031"
        inkscape:locked="false" />
@@ -811,5 +811,63 @@
     <g
        transform="translate(117.15707,244.28563)"
        id="g2239" />
+    <g
+       id="g2639">
+      <text
+         y="397.22052"
+         x="35.291008"
+         style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"
+         id="text2601"><tspan
+           style="stroke-width:0.26458332"
+           y="397.22052"
+           x="35.291008"
+           sodipodi:role="line"
+           id="tspan2599">(a)</tspan></text>
+      <text
+         id="text2615"
+         xml:space="preserve"
+         style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="116.87607"
+         y="397.22052"><tspan
+           id="tspan2613"
+           sodipodi:role="line"
+           x="116.87607"
+           y="397.22052"
+           style="stroke-width:0.26458332">(b)</tspan></text>
+      <text
+         y="397.22052"
+         x="198.46114"
+         style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"
+         id="text2619"><tspan
+           style="stroke-width:0.26458332"
+           y="397.22052"
+           x="198.46114"
+           sodipodi:role="line"
+           id="tspan2617">(c)</tspan></text>
+      <text
+         id="text2623"
+         xml:space="preserve"
+         style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="280.0462"
+         y="397.22052"><tspan
+           id="tspan2621"
+           sodipodi:role="line"
+           x="280.0462"
+           y="397.22052"
+           style="stroke-width:0.26458332">(d)</tspan></text>
+      <text
+         y="397.22052"
+         x="361.63129"
+         style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"
+         id="text2627"><tspan
+           style="stroke-width:0.26458332"
+           y="397.22052"
+           x="361.63129"
+           sodipodi:role="line"
+           id="tspan2625">(e)</tspan></text>
+    </g>
   </g>
 </svg>

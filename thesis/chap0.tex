@@ -12,7 +12,7 @@
     $T_pM = T_pN_1 + T_p N_2$.
     We denote this by $ N_1 \tcap N_2$.\sidenotemark
 \end{definition}
-\sidenotetext{The notation is suggestive: the line $\cap$ intersects $|$ transversally: $\tcap$.}
+\sidenotetext{The notation is suggestive: the line $\cap$ intersects $|$ transversely $\tcap$.}
 Note in particular that this depends on the ambient manifold $M$, and that if $N_1$ and $N_2$ do not intersect, their intersection is vacuously transverse.
 We give some examples below.
 \begin{figure}[H]
@@ -26,12 +26,11 @@ We give some examples below.
 \end{figure}
 A useful result is that when two manifolds intersect transversely, the codimensions of their intersection is the sum of their codimensions.
 \begin{prop}
-    Let $M$ be a manifold and $N_1, N_2$ be two submanifold. If $ N_1 \tcap N_2$, then 
+    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds. If $ N_1 \tcap N_2$, then 
     \[
         \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
     ,\] 
-    where the codimensions relative to $M$.
-    \label{prop:transverse-codimensions-add}
+    where the codimensions with respect to $M$, i.e. $\codim N_i = \dim M - \dim N_i$.\label{prop:transverse-codimensions-add}
 \end{prop}
 \begin{proof}
     As this is a local statement, we prove it for $M = \R^{m}$.
