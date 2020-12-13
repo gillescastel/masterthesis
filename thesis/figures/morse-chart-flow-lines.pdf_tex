@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{218.56253076bp}%
+    \setlength{\unitlength}{217.24309005bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,15 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.94082272)%
+  \begin{picture}(1,0.85070889)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-chart-flow-lines.pdf}}%
-    \put(0.72508969,0.34431245){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1, \ldots, x_k$\end{tabular}}}}%
-    \put(0.37228027,0.85898443){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_{k+1}, \ldots, x_{n}$\end{tabular}}}}%
-    \put(0.69617649,0.65096263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = 0$\end{tabular}}}}%
-    \put(0.73963425,0.57022636){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = -\epsilon$\end{tabular}}}}%
-    \put(0.6178449,0.73655669){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = \epsilon$\end{tabular}}}}%
+    \put(0.72867386,0.30116087){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1, \ldots, x_k$\end{tabular}}}}%
+    \put(0.37372163,0.81895856){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_{k+1}, \ldots, x_{n}$\end{tabular}}}}%
+    \put(0.69958507,0.60967332){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = 0$\end{tabular}}}}%
+    \put(0.74330676,0.5284467){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = -\epsilon$\end{tabular}}}}%
+    \put(0.62077772,0.69578724){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p) = \epsilon$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{morse-chart-flow-lines.pdf}}%
   \end{picture}%
 \endgroup%

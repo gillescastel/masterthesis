@@ -58,6 +58,60 @@
        x2="44.817089"
        y2="261.55347"
        gradientUnits="userSpaceOnUse" />
+    <marker
+       markerWidth="0.911"
+       markerHeight="1.690"
+       style="overflow: visible; stroke: black"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       id="marker-arrow-0.5308-2">
+      <g
+         id="g885"
+         transform="scale(2.153529264004019)">
+        <path
+           id="path883"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
+      </g>
+    </marker>
+    <marker
+       markerWidth="0.911"
+       markerHeight="1.690"
+       style="overflow: visible; stroke: black"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       id="marker-arrow-1.0616">
+      <g
+         id="g926"
+         transform="scale(1.343431298668676)">
+        <path
+           id="path924"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
+      </g>
+    </marker>
+    <marker
+       markerWidth="0.911"
+       markerHeight="1.690"
+       style="overflow: visible; stroke: black"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       id="marker-arrow-1.5923999999999998">
+      <g
+         id="g968"
+         transform="scale(1.0733986435568954)">
+        <path
+           id="path966"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
+      </g>
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -160,7 +214,7 @@
          sodipodi:role="line"
          x="91.21627"
          y="236.77316"
-         style="stroke-width:0.26458332">$V = E(V, 0)$</tspan></text>
+         style="stroke-width:0.26458332">$M = E(M, 0)$</tspan></text>
     <text
        y="257.06772"
        x="81.179619"
@@ -323,7 +377,7 @@
          sodipodi:role="line"
          x="-53.693974"
          y="249.79884"
-         style="stroke-width:0.26458332">$NV$</tspan></text>
+         style="stroke-width:0.26458332">$NM$</tspan></text>
     <text
        id="text878"
        xml:space="preserve"

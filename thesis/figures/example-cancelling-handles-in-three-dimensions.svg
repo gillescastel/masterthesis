@@ -69,6 +69,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-60.489169,-219.00106)">
+    <path
+       style="color:#000000;overflow:visible;opacity:0.521;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044085;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+       d="m 89.213609,219.00106 c -9.836218,0.0324 -19.577828,1.41638 -28.72444,4.08089 v 30.72267 c 0,0.31094 0.178273,0.56121 0.399768,0.56121 h 68.384223 c 0.22149,0 0.40013,-0.25027 0.40013,-0.56121 v -31.58256 c -8.24967,-2.10967 -31.726769,-3.19808 -40.459681,-3.221 z"
+       id="path1408"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsssscc" />
     <g
        id="g1046"
        transform="translate(-82.019264,0.39912048)">
@@ -128,12 +134,6 @@
          d="m 180.78125,231.54424 c 0,0 -6.39885,-3.89143 -14.61408,-1.89582 -6.63808,2.18486 -6.38192,8.36948 -6.90517,8.30669"
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
     </g>
-    <path
-       style="color:#000000;overflow:visible;opacity:0.28600003;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044085;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="m 89.213609,219.00106 c -9.836218,0.0324 -19.577828,1.41638 -28.72444,4.08089 v 30.72267 c 0,0.31094 0.178273,0.56121 0.399768,0.56121 h 68.384223 c 0.22149,0 0.40013,-0.25027 0.40013,-0.56121 v -31.58256 c -8.24967,-2.10967 -31.726769,-3.19808 -40.459681,-3.221 z"
-       id="path1408"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccsssscc" />
     <g
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none"
        transform="rotate(3.9064944,-141.3602,-833.07295)"

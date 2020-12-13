@@ -2,6 +2,7 @@
 
 \input{preamble.tex}
 \input{symbols.tex}
+\usepackage{pdfpages}
 
 \usepackage{lipsum}
 \usepackage{parskip}
@@ -36,11 +37,14 @@
 %    }%
 % }
 
-\title{}
+\title{Morse theory}
+\date{Academic year 2020--2021}
 \begin{document}
     \renewcommand{\thepage}{\roman{page}}
+    \includepdf[pages=-, fitpaper=true]{./frontmatter.pdf}
+    \cleardoublepage
     \maketitle
-    \input{preface.tex}
+    % \input{preface.tex}
     \input{summary.tex}
     \listofsymbols
     \tableofcontents
@@ -52,9 +56,8 @@
     \input{chap0.tex}
     \input{chap1.tex}
     \input{chap2.tex}
-    % \input{randomtodos.tex}
-
-    \input{conclusion.tex}
+    \input{chap-outlook.tex}
+    % \input{conclusion.tex}
 
     \printbibliography
 \end{document}

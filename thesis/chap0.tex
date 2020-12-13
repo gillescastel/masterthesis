@@ -1,7 +1,7 @@
 \setcounter{chapter}{-1}
 \chapter{Preliminaries}
 
-In this thesis, we assume the reader is familiar with the basics of differential geometry such as the concept of a smooth manifold, vector fields, flows, bundles, differential forms, et cetera.
+In this thesis, we assume the reader is familiar with basic concepts of differential geometry such as smooth manifolds, vector fields, flows, bundles, differential forms, et cetera.
 In this chapter, we discuss some concepts that might be unfamiliar.
 
 \section*{Transversality}
@@ -29,8 +29,8 @@ We give some examples below.
     }
     \incfig{transversality-examples}
 \end{figure}
-If the intersection of two manifolds $ N_1, N_2$ is transverse, much more can be said about their intersection than in the general case.
-In particular, the we are guaranteed that $N_1 \tcap N_2$ is again a manifold, which as Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} shows it not always true.
+If the intersection of two manifolds $ N_1$ and $N_2$ is transverse, much more can be said about their intersection than in the general case.
+In particular, as the following proposition states, we are guaranteed that $N_1 \tcap N_2$ is again a manifold, which as Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} shows is not always true.
 \begin{marginfigure}
     \centering
     \incfig{intersection-of-manifolds-is-not-always-a-manifold}
@@ -42,7 +42,7 @@ In particular, the we are guaranteed that $N_1 \tcap N_2$ is again a manifold, w
     \[
         \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
     ,\] 
-    where the codimensions with respect to $M$, i.e. $\codim N_i = \dim M - \dim N_i$.
+    where the codimensions are to be taken with respect to $M$, by which we mean $\codim N_i = \dim M - \dim N_i$.
     Moreover, $T(N_1\tcap N_2) = TN_1 \tcap TN_2$.
 \label{prop:transverse-codimensions-add}
 \end{prop}

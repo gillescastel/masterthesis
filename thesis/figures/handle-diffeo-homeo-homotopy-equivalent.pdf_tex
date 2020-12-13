@@ -54,15 +54,15 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{handle-diffeo-homeo-homotopy-equivalent.pdf}}%
-    \put(0.39537749,0.09068826){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homeo\end{tabular}}}}%
-    \put(0.60508967,0.09068826){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homeo\end{tabular}}}}%
-    \put(0.81829634,0.09517843){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homotopy eq.\end{tabular}}}}%
+    \put(0.39937818,0.09016549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homeo\end{tabular}}}}%
+    \put(0.6010886,0.09016549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homeo\end{tabular}}}}%
+    \put(0.80616019,0.0944841){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}homotopy eq.\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{handle-diffeo-homeo-homotopy-equivalent.pdf}}%
-    \put(0.18455047,0.09068826){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}diffeo\end{tabular}}}}%
-    \put(0.06735497,0.00129435){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(a)\end{tabular}}}}%
-    \put(0.27964859,0.00129435){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(b)\end{tabular}}}}%
-    \put(0.49194224,0.00129435){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(c)\end{tabular}}}}%
-    \put(0.70423589,0.00129435){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(d)\end{tabular}}}}%
-    \put(0.91652957,0.00129435){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(e)\end{tabular}}}}%
+    \put(0.19659545,0.09016549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}diffeo\end{tabular}}}}%
+    \put(0.08387165,0.00418732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(a)\end{tabular}}}}%
+    \put(0.288065,0.00418732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(b)\end{tabular}}}}%
+    \put(0.49225838,0.00418732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(c)\end{tabular}}}}%
+    \put(0.69645176,0.00418732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(d)\end{tabular}}}}%
+    \put(0.90064517,0.00418732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}(e)\end{tabular}}}}%
   \end{picture}%
 \endgroup%
