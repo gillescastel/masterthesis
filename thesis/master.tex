@@ -1,9 +1,10 @@
-\documentclass[working]{tuftebook}
+\documentclass[]{tuftebook}
 
 \input{preamble.tex}
 \input{symbols.tex}
 
 \usepackage{lipsum}
+\usepackage{parskip}
 
 \newcommand\circled[1]{
     \begin{tikzpicture}[baseline=(char.base)]%
@@ -14,6 +15,26 @@
 
 \usepackage{cmbright}
 \usepackage{bm}
+
+% \usepackage{eso-pic}                % put things into background 
+% \usepackage{lipsum}                 % for sample text
+
+% \definecolor{reallylightgray}{HTML}{FAFAFA}
+% \AddToShipoutPicture{% from package eso-pic: put something to the background
+%     \ifthenelse{\isodd{\thepage}}{
+%           % ODD page: left bar
+%           \AtPageLowerLeft{% start the bar at the left bottom of the page
+%             \put(\LenToUnit{\dimexpr\paperwidth-222pt},0){% move it to the top right
+%                 \color{reallylightgray}\rule{222pt}{297mm}%
+%               }%
+%           }%
+%       }%
+%       {%
+%         \AtPageLowerLeft{% put it at the left bottom of the page
+%           \color{reallylightgray}\rule{222pt}{297mm}%
+%         }%
+%    }%
+% }
 
 \title{}
 \begin{document}
@@ -31,7 +52,7 @@
     \input{chap0.tex}
     \input{chap1.tex}
     \input{chap2.tex}
-    \input{randomtodos.tex}
+    % \input{randomtodos.tex}
 
     \input{conclusion.tex}
 

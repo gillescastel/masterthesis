@@ -1,6 +1,11 @@
 \setcounter{chapter}{-1}
 \chapter{Preliminaries}
+
+In this thesis, we assume the reader is familiar with the basics of differential geometry such as the concept of a smooth manifold, vector fields, flows, bundles, differential forms, et cetera.
+In this chapter, we discuss some concepts that might be unfamiliar.
+
 \section*{Transversality}
+The first concept we want to introduce is transversality.
 
 \todo{Interesting source appendix of Schultens\sidecite{schultens2014introduction}}
 
@@ -24,24 +29,27 @@ We give some examples below.
     }
     \incfig{transversality-examples}
 \end{figure}
-A useful result is that when two manifolds intersect transversely, the codimensions of their intersection is the sum of their codimensions.
+If the intersection of two manifolds $ N_1, N_2$ is transverse, much more can be said about their intersection than in the general case.
+In particular, the we are guaranteed that $N_1 \tcap N_2$ is again a manifold, which as Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} shows it not always true.
+\begin{marginfigure}
+    \centering
+    \incfig{intersection-of-manifolds-is-not-always-a-manifold}
+    \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and a closed interval.}
+    \label{fig:intersection-of-manifolds-is-not-always-a-manifold}
+\end{marginfigure}
 \begin{prop}
-    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds. If $ N_1 \tcap N_2$, then 
+    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds. If $ N_1 \tcap N_2$, then $ N_1 \tcap N_2$ is again a manifold and 
     \[
         \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
     ,\] 
-    where the codimensions with respect to $M$, i.e. $\codim N_i = \dim M - \dim N_i$.\label{prop:transverse-codimensions-add}
+    where the codimensions with respect to $M$, i.e. $\codim N_i = \dim M - \dim N_i$.
+    Moreover, $T(N_1\tcap N_2) = TN_1 \tcap TN_2$.
+\label{prop:transverse-codimensions-add}
 \end{prop}
 \begin{proof}
     As this is a local statement, we prove it for $M = \R^{m}$.
     We may assume that $N_1 = f_1^{-1}(0)$ and $ N_2 = f_2^{-1}(0)$ where $f_i$ are submersions from $\R^{m}$ to $\R^{n_i}$, where $n_i$ is the codimension of $N_i$.
     % i.e. $(f_i)_*$ has full rank everywhere.
-    \begin{marginfigure}
-        \centering
-        \incfig{codimensions-transverse}
-        \caption{When $N_1 \tcap N_2$, the codimension of the intersection is the sum of their codimensions. By using the implicit function theorem, we straighten the situation.}
-        \label{fig:codimensions-transverse}
-    \end{marginfigure}
     Then we can also consider $F= (f_1, f_2): \R^{m} \to  \R^{n_1} \times \R^{n_2}$.
     Notice that $ N_1 \cap N_2 = F^{-1}(0)$.
     Then
@@ -52,29 +60,34 @@ A useful result is that when two manifolds intersect transversely, the codimensi
                            &= (m - n_1) + (m - n_2) - m\\
                            &= m - (n_1 + n_2)
     .\end{align*} 
-    This completes the proof.
+    This also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which is not always the case when the intersection is not transverse.
 \end{proof}
-Note that this proof also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which is not always the case when the intersection is not transverse.
-
-\begin{marginfigure}
+\begin{marginfigure}[-5cm]
     \centering
-    \incfig{intersection-of-manifolds-is-not-always-a-manifold}
-    \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and a closed interval.}
-    \label{fig:intersection-of-manifolds-is-not-always-a-manifold}
+    \incfig{codimensions-transverse}
+    \caption{When $N_1 \tcap N_2$, the codimension of the intersection is the sum of their codimensions. By using the implicit function theorem, we straighten the situation.}
+    \label{fig:codimensions-transverse}
 \end{marginfigure}
 
+An interesting property of transversality is that it is both \emph{generic} and \emph{stable}.
+By generic we mean that any two manifolds intersecting can be made intersecting transversely by perturbing one of the manifolds.
+Stability on the other hand means that when we perturbate a transverse intersection, it stays transverse.
+At the core of the proof of stability and genericness of transversality lies the theorem of Sard:
+% In morse rigorous terms, we have the following:
+% \begin{definition}[Stable]
+%     A property $P$ is stable for a class $C$ of maps $f:M \to  N$ if for all $f \in C$ that satisfy $P$, we have that there any homotopy  $f_t$ with  $f_0 = f$ there exists an $\epsilon>0$ such that  $f_t$ satisfies $P$ for each  $t < \epsilon$.
+% \end{definition}
+% \begin{definition}[Generic]
+%     A property $P$ is generic for a class  $C$ of maps $f: M \to  N$ if the set of 
+% \end{definition}
 \begin{theorem}[Sard's theorem]
     Let $f: M \to  N$ be a $\Cinfty$ map. Then the set of critical values of  $f$ has measure zero in $N$.
 \end{theorem}
-\begin{proof}
-    Omitted.
-\end{proof}
+Note in particular that it is the set of critical \emph{values} that has measure zero, not the set of critical points. 
 
+% \begin{definition}[Isotopy]
+%     Two embeddings $f_0, f_1: M \to  N$ are \emph{isotopic} if there is a continuous map $H: M \times  [0, 1] \to  N$ such that $H(x, 0) = f_0$ and $H(x, 1) = f_1(x)$ for all $x \in M$ and such that for all $t \in [0, 1]$, the map $f_t$ defined by $H(\cdot , t)$ is an embedding. The map $H$ is called an \emph{isotopy between} $f_0$ and $f_1$.
 
-
-\begin{definition}[Isotopy\sidenotemark]
-    Two embeddings $f_0, f_1: M \to  N$ are \emph{isotopic} if there is a continuous map $H: M \times  [0, 1] \to  N$ such that $H(x, 0) = f_0$ and $H(x, 1) = f_1(x)$ for all $x \in M$ and such that for all $t \in [0, 1]$, the map $f_t$ defined by $H(\cdot , t)$ is an embedding. The map $H$ is called an \emph{isotopy between} $f_0$ and $f_1$.
-
-    Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
-\end{definition}
-\sidenotetext{\fullcite[23]{schultens2014introduction}}
+%     Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
+% \end{definition}
+% \sidenotetext{\fullcite[23]{schultens2014introduction}}

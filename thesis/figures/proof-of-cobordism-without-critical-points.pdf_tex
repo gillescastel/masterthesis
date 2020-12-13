@@ -56,7 +56,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{proof-of-cobordism-without-critical-points.pdf}}%
     \put(0.12180275,0.00272614){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_0$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{proof-of-cobordism-without-critical-points.pdf}}%
-    \put(0.39580057,0.35949396){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.39580057,0.37014091){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
     \put(0.31407442,0.1033329){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t=0$\end{tabular}}}}%
     \put(0.31407442,0.45599511){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t=1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{proof-of-cobordism-without-critical-points.pdf}}%

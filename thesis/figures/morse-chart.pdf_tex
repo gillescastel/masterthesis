@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{569.32670533bp}%
+    \setlength{\unitlength}{626.52827706bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,21 +50,21 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.40983216)%
+  \begin{picture}(1,0.32599937)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-chart.pdf}}%
-    \put(0.39154958,0.18100063){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1, \ldots, x_k$\end{tabular}}}}%
-    \put(0.18175743,0.39332513){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_{k+1}, \ldots, x_{n}$\end{tabular}}}}%
-    \put(0.32834664,0.29917731){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = 0$\end{tabular}}}}%
-    \put(0.34801482,0.26263712){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = -\epsilon$\end{tabular}}}}%
-    \put(0.2928953,0.33791599){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = \epsilon$\end{tabular}}}}%
+    \put(0.3918715,0.13739679){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1, \ldots, x_k$\end{tabular}}}}%
+    \put(0.20123321,0.33033622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_{k+1}, \ldots, x_{n}$\end{tabular}}}}%
+    \put(0.33443894,0.24478402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = 0$\end{tabular}}}}%
+    \put(0.35231143,0.21157993){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = -\epsilon$\end{tabular}}}}%
+    \put(0.30222427,0.27998589){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(x) = \epsilon$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{morse-chart.pdf}}%
-    \put(0.97664621,0.20329313){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
+    \put(0.92354923,0.157654){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{morse-chart.pdf}}%
-    \put(0.89675147,0.2040341){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
-    \put(0.68124767,0.22894158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$x_{k+1}, \ldots, x_n$\end{tabular}}}}%
-    \put(0.68846948,0.1459315){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$x_1, \ldots, x_k$\end{tabular}}}}%
+    \put(0.85094882,0.15832732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0.65512036,0.18096076){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$x_{k+1}, \ldots, x_n$\end{tabular}}}}%
+    \put(0.66168282,0.10552945){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$x_1, \ldots, x_k$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{morse-chart.pdf}}%
   \end{picture}%
 \endgroup%

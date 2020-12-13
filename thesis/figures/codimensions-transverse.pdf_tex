@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{231.56856987bp}%
+    \setlength{\unitlength}{221.72122985bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,30 +50,28 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.86893735)%
+  \begin{picture}(1,1.56837155)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{codimensions-transverse.pdf}}%
-    \put(0.59789371,1.8015379){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{m}$\end{tabular}}}}%
-    \put(0.67766259,1.610923){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N_1$\end{tabular}}}}%
-    \put(0.26929225,1.68398949){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N_2$\end{tabular}}}}%
+    \put(0.47865105,1.47062828){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{m}$\end{tabular}}}}%
+    \put(0.47855389,1.34370159){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N_1$\end{tabular}}}}%
+    \put(0.20160421,1.38754837){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N_2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{codimensions-transverse.pdf}}%
-    \put(0.51752576,1.0611181){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
-    \put(0.71919082,0.77567854){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_2}$\end{tabular}}}}%
-    \put(0.71408775,0.92709632){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 = f_2(N_2)$\end{tabular}}}}%
+    \put(0.63560408,0.75346682){\color[rgb]{0,0,0}\rotatebox{-30.00000035}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_2}$\end{tabular}}}}}%
+    \put(0.71005986,0.89308725){\color[rgb]{0,0,0}\rotatebox{-30.00000035}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 = f_2(N_2)$\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{codimensions-transverse.pdf}}%
-    \put(0.73855829,0.38659644){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_1}$\end{tabular}}}}%
-    \put(0.47647349,0.37857102){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.48892691,0.64365246){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_2}$\end{tabular}}}}%
+    \put(0.69171183,0.34088908){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_1}$\end{tabular}}}}%
+    \put(0.41798701,0.33250723){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
+    \put(0.43099353,0.60936177){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_2}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{codimensions-transverse.pdf}}%
-    \put(0.47620219,0.52734265){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F(N_1)$\end{tabular}}}}%
-    \put(0.57851651,0.30227402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F(N_2)$\end{tabular}}}}%
+    \put(0.41770366,0.48788627){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F(N_1)$\end{tabular}}}}%
+    \put(0.52456209,0.25282163){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$F(N_2)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{codimensions-transverse.pdf}}%
-    \put(0.27459576,0.77567854){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_1}$\end{tabular}}}}%
-    \put(0.26949269,0.92709632){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 = f_1(N_1)$\end{tabular}}}}%
+    \put(0.80861793,1.24799273){\color[rgb]{0,0,0}\rotatebox{29.99999985}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\R^{n_1}$\end{tabular}}}}}%
+    \put(0.7249309,1.38228348){\color[rgb]{0,0,0}\rotatebox{29.99999985}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0 = f_1(N_1)$\end{tabular}}}}}%
+    \put(0.60114822,1.38220683){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_1$\end{tabular}}}}%
+    \put(0.61983235,0.99604994){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{codimensions-transverse.pdf}}%
-    \put(0.11820324,1.23857316){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_1$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{codimensions-transverse.pdf}}%
-    \put(0.52709696,1.21900382){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

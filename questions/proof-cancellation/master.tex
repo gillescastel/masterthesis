@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand\R{\mathbb R}
+\pdfsuppresswarningpagegroup=1
+\input{../../thesis/symbols.tex}
+
+
+\begin{document}
+    Setup:
+    \begin{itemize}
+        \item manifold $M$ of dimension $n$
+        \item Morse function $M \to  \R$
+        \item Pseudo-gradient $X$
+        \item  $p$ and $q$ critical point s with following conditions:
+            \begin{enumerate}[i)]
+                \item $\unstable{p}$ and $\stable{q}$ intersect transversely and intersection is made of one orbit  $\ell$ of $X$ only, i.e.\ a single gradient flow line from  $p$ to  $q$. 
+                \item For some $\epsilon > 0$, all  gradient flow lines starting at $p$ (that are not  $\ell$) crosses the level set $f^{-1}(f(q) - \epsilon)$.
+            \end{enumerate}
+    \end{itemize}
+
+    \begin{itemize}
+        \item Say $\Ind p = k + 1$ and  $\Ind q = k$.
+        \item We are given an open neighborhood  $U$ of the closure of  $\unstable{p} \cap  \{f(q) \le  f \le f(p)\} $.
+        \item After looking at $U \cap \{f  = f(q)\} $, we may assume that the frontier of $U$ in  $M$ traces a cylinder  $C$ tangent to  $X$ in the domain  $ \{f(q) - \epsilon' \le  f \le  f(q) + \epsilon'\} $, where $\epsilon' > 0$ satisfies assumption ii) of our theorem.
+    \end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \incfig{setup}
+    \caption{TODO setup}
+    \label{fig:setup}
+\end{figure}
+\end{document}

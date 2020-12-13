@@ -1,16 +1,20 @@
 \chapter{Stable and unstable manifolds}
 
 
-In this chapter, we want to address some of the natural questions that came up when discussing some examples.
-Two important questions: `Can we attach handles in a different order' and `Can we find an isotopy that cancels two critical points'?
+In this chapter, we want to address two natural questions that came up when discussing examples of handle decompositions: `When can we reorder handles in a handle decomposition?' and `Under what conditions can we cancel two critical points via an isotopy?'
 To answer these questions, we introduce the concept of stable and unstable manifolds.
-\todo{They will allow us see handles not only as a local phenomenon but also how they interact.}
+While we previously viewed handles as a local phenomenon, these new concepts will allow us to understand how multiple handles can interact on a more global scale.
 
 \section{Stable and unstable manifolds}
-
-
+Let us get straight to the point and give the definition of (un)stable manifolds.
+\begin{marginfigure}
+    \centering
+    \incfig{stable-and-unstable-manifolds-are-manifiolds}
+    \caption{Locally in a Morse chart, stable and unstable manifolds are given by the horizontal and vertical axis, i.e.\ $ x_1= \cdots= x_k = 0$ and $x_{k+1}= \cdots= x_n = 0$.}
+    \label{fig:stable-and-unstable-manifolds-are-manifiolds}
+\end{marginfigure}
 \begin{definition}
-    Let $p$ be a critical point of a morse function $f$.
+    Let $p$ be a critical point of a Morse function $f$.
     Denote by $\psi^{t}$ the flow of a pseudo-gradient.
     Then the unstable manifold is defined as
     \[
@@ -21,17 +25,11 @@ To answer these questions, we introduce the concept of stable and unstable manif
         \stable{p} = \big\{x \in M  \mid  \lim_{t \to \infty} \psi^{t} (x)  = p\big\} 
     ,\] 
 \end{definition}
-\begin{marginfigure}
-    \centering
-    \incfig{stable-and-unstable-manifolds-are-manifiolds}
-    \caption{Locally in a Morse chart, stable and unstable manifolds are given by the horizontal and vertical axis, i.e.\ $ x_1= \cdots= x_k = 0$ and $x_{k+1}= \cdots= x_n = 0$.}
-    \label{fig:stable-and-unstable-manifolds-are-manifiolds}
-\end{marginfigure}
-Let us first verify that these objects are indeed manifolds. 
-Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to $\odisk{k}$.
-The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\odisk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all, when gluing this to $\odisk{k}$, we end up with something that is indeed a manifold, and diffeomorphic to $\odisk{k}$.
+Just like their names imply, these sets are indeed manifolds.
+Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to an open disk $\odisk{k}$.
+The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\odisk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all when gluing this to $\odisk{k}$, we end up with something that is indeed a manifold that is diffeomorphic to $\odisk{k}$.
 A similar reasoning for the stable manifold shows that $\stable{p} \cong \odisk{n - k}$.
-We have obtained the following result:
+In summary, we have obtained the following result:
 
 \begin{prop}
     Stable and unstable manifolds of a critical points are submanifolds diffeomorphic to open disks. Moreover,
@@ -40,15 +38,15 @@ We have obtained the following result:
     .\] 
 \end{prop}
 
-\todo{Here $\odisk{k}$ is an open disk, earlier $\cdisk{1} = [-1, 1]$ was used as closed? Fix this!}
-
 \begin{eg}
     Let us consider $T^{2}$ embedded in $\R^3$ in the standard way and consider the height function. 
     This function has $4$ critical points and is clearly Morse.
-    Let $X = \grad f$ be the gradient of $f$ w.r.t.\ standard metric on $\R^{3}$.
+    Let $X = \grad f$ be the gradient of $f$ w.r.t.\ the standard metric on $\R^{3}$.
     Then the stable and unstable manifolds of $X$ are illustrated in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
     \label{eg:torus-stable-unstable-manifolds-standard-gradient}
+    We have similarly done so for an embedding of $S^2$ in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}.
 \end{eg}
+
     \begin{figure}[H]
         \centering
         \incfig{torus-height-function-stable-and-unstable-manifolds}
@@ -83,7 +81,7 @@ We have obtained the following result:
     For example, consider the situation in Figure~\ref{fig:when-can-we-attach-multiple-handles-at-the-same-time}.
     Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
     Here, `flowing of handle structures' means flowing along unstable manifolds.
-    An obtrusion to attaching two handles at the same time would then be the intersection of stable and unstable manifolds. We will make this more precise later.
+    An obtrusion to attaching two handles at the same time would then that they intersect before reaching the bottom. We will make this more precise later, but it gives an idea as for why we might be interested in intersections of (un)stable manifolds.
     \section{Intersections of stable and unstable manifolds}
     %TODO: figure.
     %TODO: check for use of descending/ascending.
@@ -98,42 +96,45 @@ We have obtained the following result:
     ,\] 
     so we have
     \[
-        \dim \stable p \tcap \unstable q = \Ind q - \Ind p
+        \dim(\stable p \tcap \unstable q) = \Ind q - \Ind p
     .\]
     In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which will turn out to mean that we can always attach lower index handles before higher index ones.
 
 
     This transversality condition has a name:
-    \todo{History}
     \begin{definition}[Smale condition]
-        A pseudo-gradient field addapted to a Morse function $f$ is said to satisfie the \emph{Smale condition} if all for all pairs of critical points $ \{p, q\}  \subset \Crit f$, we have that $\stable{p}$ intersects  $\unstable{q}$ transversally, i.e. 
+        A pseudo-gradient field addapted to a Morse function $f$ is said to satisfy the \emph{Smale condition} if all for all pairs of critical points $ \{p, q\}  \subset \Crit f$, we have that $\stable{p}$ intersects  $\unstable{q}$ transversally, i.e. 
         \[
             \stable{q} \tcap  \unstable{p} \text{ for all $p, q \in \Crit f$}
         .\] 
     \end{definition}
-    Later we will prove that this condition is not at all restricting: we can always perturb the pseudo-gradient field such that it satisfies the Smale condition.
+    It turns out that this condition is not at all restricting: we can always perturb the pseudo-gradient field such that it satisfies the Smale condition. The proof of this is rather technical and we refer the reader to Audin and Damian\sidecite{audin}.
+    \begin{theorem}
+        Any Morse function $f:M \to  \R$ admits a pseudo-gradient field that satisfies the Smale condition
+    \end{theorem}
 
+    Almost all of the previous examples we have given satisfy the Smale condition with the one exception being the torus.
     \begin{noneg}
         The gradient vector field in Example~\ref{eg:torus-stable-unstable-manifolds-standard-gradient} does not satisfy the Smale condition: the intersection of $\stable{b}$ and  $\unstable{c}$ is not transverse.
-        Even more, if this condition would be true, there should be no trajectories connecting $b$ and $c$, because both have index $1$, so $\dim (\stable{b} \tcap \unstable{c}) = 0$.
+        Even more, if the condition would be satisfied, there should be no trajectories connecting $b$ and $c$, because both have index $1$, so $\dim (\stable{b} \tcap \unstable{c}) = 0$. However, as illustrated in the figure, we have two.
     \end{noneg}
-
     \begin{eg}
         Instead of considering the embedding as in the previous example, we can embed the torus at a slight angle.
         Then the gradient of the height function (by using the standard metric on $\R^3$) does satisfy the Smale condition.
-        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated this in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
+        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated below in Figure~\ref{fig:torus-tilted-height-function-stable-and-unstable-manifolds}.
     \end{eg}
+    \begin{figure}[H]
+        \centering
+        \sidecaption{
+            When embedding the torus in $\R^3$ tilted, the Smale condition is satisfied: all stable and unstable manifolds intersect transversally.
+            Indeed, stable and unstable manifolds of $c$ and $b$ don't intersect at all.
+        \label{fig:torus-tilted-height-function-stable-and-unstable-manifolds}
+        }
+        \incfig{torus-tilted-height-function-stable-and-unstable-manifolds}
+    \end{figure}
     \begin{eg}
         As illustrated in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}, other sphere with gradient of the height function w.r.t the metric of $\R^3$ does satisfy Smale condition. 
     \end{eg}
-\begin{figure}[H]
-    \centering
-    \incfig{torus-tilted-height-function-stable-and-unstable-manifolds}
-    \caption{
-        When embedding the torus in $\R^3$ tilted, the Smale condition is satisfied. All stable and unstable manifolds intersect transversally, which per definition also includes not intersecting at all.
-    }
-    \label{fig:torus-tilted-height-function-stable-and-unstable-manifolds}
-\end{figure}
 
 The Smale condition also has another interesting consequence, which we have not touched upon.
 If stable and unstable manifolds intersect transversely, we know that the intersection is again a submanifold.
@@ -197,12 +198,11 @@ More explicitly, we have the following:
 
 
 % \todo{Mention that handles are thickened up descending manifolds.}
-\todo{Also give examples in 3 dimensions}
 
 
 \filbreak
 \section{Reordering critical points}
-\todo{Theorem of Milnor $h$-cobordism:}
+Now that we have introduced the (un)stable manifolds, we are ready to prove a rist reordering theorem. The statement and proof can be found in notes of `Lectures on the $h$-Cobordism Theorem' by Milnor\sidecite{hcobord}.
 \begin{theorem}
     Let $f: M \to  \R$ be a Morse function on a cobordism $M$ from $M_0$ to $M_1$ such that $ M_0 = f^{-1}(0)$ and $ M_1 = f^{-1}(1)$ with two critical points $p$ and  $p'$.
     Suppose that for some choice of pseudo-gradient field $X$, the stable and unstable manifolds do not intersect.
@@ -223,11 +223,11 @@ More explicitly, we have the following:
     \label{fig:reordening-theorem-milnor-h-cobordism}
 \end{marginfigure}
 \begin{proof}
-    We want to mask out the area around the descending and ascending manifold of one of the critical points.
+    We want to mask out the area around the stable and unstable manifolds of one of the critical points.
     Let $\mu: M_0 \to  [0,1]$ be a smooth map that is $0$ around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
-    Then we can smoothly extend this to a function on the whole manifold $M$.
+    Then we can smoothly extend this to a function on the whole manifold $M$ as follows.
     Define $\pi: M \to  M_0$ by flowing along the pseudo-gradient field until we reach $M_0$.
-    Then we can extend $\mu$ uniquely to a smooth function that is constant on each trajectory as follows:
+    Then we can extend $\mu$ uniquely to a smooth function that is constant on each trajectory by defining
     \begin{align*}
         \overline{\mu}: M &\longrightarrow [0,1] \\
         x &\longmapsto \begin{cases}
@@ -236,7 +236,7 @@ More explicitly, we have the following:
             \mu(\pi(x)) & \text{else}
         \end{cases}
     .\end{align*}
-    We have illustrated this in the figure by colouring regions where $\mu$ is high with red.
+    We have illustrated this in the figure by colouring regions where $\mu$ is large red.
 
     Define a new Morse function $g: M \to  [0,1]$ by $g(q) = G_{\overline{\mu}(q)}(f(q))$, where $G_{s}(x)$ is a smooth family of smooth functions $G_s: [0,1] \to  [0,1]$ with $s \in [0,1]$ that has the following properties, also indicated in Figure~\ref{fig:proof-reordening-properties-of-g}.
     \begin{marginfigure}
@@ -255,7 +255,7 @@ More explicitly, we have the following:
     Property (b) and (c) are clear: they follow immediately from (2), (3) and (4).
     For (a), consider
     \[
-        dG(\overline{\mu}, f) = \frac{\partial G}{\partial \overline{\mu}}  d\overline{\mu} + \frac{\partial G}{\partial f}  df
+        dG = \frac{\partial G}{\partial \overline{\mu}}  d\overline{\mu} + \frac{\partial G}{\partial f}  df
     .\] 
     Plugging in $X$, we have
     \begin{align*}
@@ -272,7 +272,7 @@ More explicitly, we have the following:
 \end{remark}
 
 If the pseudogradient vector field $X$ satisfies the Smale condition, then we know the intersection of stable and unstable manifolds very well.
-In particular, if $\Ind p \le  \Ind q$, the intersection of $\unstable{p}$ and  $\stable{q}$ is empty.
+For example, if $\Ind p \le  \Ind q$, the intersection of $\unstable{p}$ and  $\stable{q}$ is empty.
 Applying this reordering theorem multiple times, we have the following
 
 \begin{theorem}
@@ -280,21 +280,89 @@ Applying this reordering theorem multiple times, we have the following
     In particular, it admits a Morse function, which satisfies $ \Ind p  = f(p) $ for all critical points $p \in \Crit f$.
 \end{theorem}
 In other words, this asserts that lower index handles can always be attached before higher index ones.
-Morse functions as described in the second part have a name:
-
+Morse functions as described in the second part of the theorem have a name:
+\begin{marginfigure}
+    \centering
+    \incfig{self-indexing-morse-function-torus-tilted}
+    \caption{When tilting the torus to the right angle, the height function becomes self-indexing.}
+    \label{fig:self-indexing-morse-function-torus-tilted}
+\end{marginfigure}
 \begin{definition}[Self-indexing Morse function]
     A Morse function $f: M \to  \R$ is \emph{self-indexing} if $\Ind p = f(p)$ for all critical points  $p$ of  $f$.
 \end{definition}
-\todo{Add example of self-indexing morse function of torus}
+\begin{eg}
+    Consider $T^2 \subset \R^3$ embedded at an angle. We have illustrated the side view in Figure~\ref{fig:self-indexing-morse-function-torus-tilted}.
+    Then the height function is a self-indexing Morse function.
+\end{eg}
 
 
 % \section{Smale condition is generic (proof)}
 \section{Cancellation of critical points}
-\todo{$h$-cobordism Milnor page 37}
+The second question that arose, was `Under what conditions can we cancel a pair of critical points'.
+The answer to this question is more complicated than the previous one.
+We will first state the theorem and then investigate the conditions it imposes.
+\begin{marginfigure}
+    \centering
+    \incfig{canellation-of-critical-points-situation}
+    \caption{A situation where we can cancel two critical points. $\ell$ is the unique gradient line between $p$ and $q$ and any other gradient line starting around $p$ reaches $f^{-1}(f(q) - \epsilon)$.}
+    \label{fig:canellation-of-critical-points-situation}
+\end{marginfigure}
+\begin{theorem}[Francois Laudenbach\sidenotemark]
+    Let $f: M \to  \R$ be a Morse function and $X$ be pseudo-gradient field.
+    Let $p$ and $q$ be two critical points such that
+    \begin{enumerate}[(i)]
+        \item $p$ and $q$ are connected by a unique gradient line  $\ell := \traj{p}{q}$.
+        \item For some $\epsilon>0$, each gradient flow line starting in $\unstable{p}$ distinct from $ \ell$ crosses the level set $f^{-1}(f(q) - \epsilon)$
+    \end{enumerate}
+    Then these two points are cancelable.
+More precisely, there exists an isotopy of functions $f_t$ starting at $f_0=f$ supported in an open neighborhood of the closure of  $\unstable{p} \cap  \{f \ge  f(q) - \epsilon\} $ such that
+\begin{itemize}
+    \item $f_t|_U$ is Morse with two critical points when  $0 \le t\le \frac{1}{2}$;
+    \item $f_t|_U$ has a cubic singularity when $t=\frac{1}{2}$
+    \item $f_t|_U$ has no critical points when $\frac{1}{2}<t\le 1$.
+\end{itemize}
+\end{theorem}
+\sidenotetext[][0.0cm]{\fullcite{laudenbach2013proof}}
 
+\begin{remark}
+    The first condition implies $\dim \traj{p}{q} = 1$, so $\Ind p = \Ind q + 1$.  This means we can only cancel critical points if their indices differ by one.
+\end{remark}
+The proof of this theorem is somewhat technical but nonetheless it is quite transparent and reduces the general case to dimension one, where the situation is simple.
+Let us show in this one dimensional context why the two conditions of the theorem are important.
+
+Suppose we have two critical points, one of index $0$ and one of index $1$ and have a look at the figure below.
+If the conditions of the theorem are satisfied, we are in the situation on the left. There is a unique flow line and other flow lines leaving $p$ eventually going lower than $q$. It is quite intuitive that we can construct a cancellation, as illustrated.
+
+If we have a unique flow line, but other flow lines leaving $p$ do not reach below $q$, then we cannot cancel $p$ and $q$, while fixing the end segments of the curve.
+This is the second situation below.
+Here, the reason that other flow lines than $\ell$ cannot reach below $q$ is the existence of an additional critical point $r$ nearby.
+We are required to fix the end segments, because otherwise we would change the behaviour at $r$, and while doing so, we simply cannot cancel $p$ and $q$.
+Note that in this specific situation, cancelling $r$ and $p$ does work.
+
+Lastly, if we do not have a unique flow line, the third situation in the figure could occur. It is clear that we cannot cancel $p$ and $q$.
+
+\begin{figure}[H]
+    \centering
+    \sidecaption{Three situations.
+        The first one satisfies the conditions of the theorem and we can cancel the critical points.
+        The second only satisfies (i), the third only (ii) and cancellation is impossible.  \label{fig:one-dimensional-reduction}}
+    \incfig{one-dimensional-reduction}
+\end{figure}
+
+\begin{marginfigure}
+    \centering
+    \incfig{other-sphere-cancelation-of-critical-points}
+    \caption{The other sphere with trajectories between critical points whose index differ by exactly one. We can only cancel $b$ and $c$ or $d$ and $b$. Cancelling $b$ and $a$ is impossible.}
+    \label{fig:other-sphere-cancelation-of-critical-points}
+\end{marginfigure}
+\begin{eg}
+    As an example, let us consider the `other sphere' as in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}.
+   We also added flow lines between critical points whose index differs by exactly one.
+   It is clear that the pairs $(c,b)$ and $(d, b)$ satisfy the conditions of the theorem, and so we can cancel them.
+   The pair $(b,a)$ does not, because there are two flow lines from $b$ to $a$. Intersecting the `other sphere' with a plane containing $\traj{b}{a}$, we see that we are exactly in the third situation discussed earlier.
+\end{eg}
 
 \section{Heegaard splittings}
-
 \begin{marginfigure}
     \centering
     \incfig{heegaard-splittings-schemattically}
@@ -303,21 +371,22 @@ Morse functions as described in the second part have a name:
     }
     \label{fig:heegaard-splittings-schemattically}
 \end{marginfigure}
-
-As we showed earlier, any $3$-manifold $M$ has a Morse function that is self-indexing, giving rise to a handle decomposition schematically shown in Figure~\ref{fig:heegaard-splittings-schemattically}. When splitting the manifold along $f^{-1}(\frac{3}{2})$, we decompose $M$ in two parts: a part that consists of $0$- and $1$-handles glued along its boundary to a part consisting only of $2$- and  $3$-handles.
+In the three dimensional setting, an important consequence of the existence of self-indexing Morse functions are so-called Heegaard splittings.
+Such a Morse function gives rise to a handle decomposition schematically shown in Figure~\ref{fig:heegaard-splittings-schemattically}. When splitting the manifold along $f^{-1}(\frac{3}{2})$, we decompose $M$ in two parts: a part that consists of $0$- and $1$-handles glued along its boundary to a part consisting only of $2$- and  $3$-handles.
 However the latter can also be seen as being constructed of $0$- and $1$-handles, simply by building $M$ from top to bottom by considering the Morse function $-f$ instead of $f$. This then interchanges $k$-and $n-k$-handles, or in the case of $n=3$, $2$-handles  become $1$-handles and $3$-handles become $0$-handles.
 All things considered, we have a decomposition of $M$ in two so-called handlebodies:
-\begin{definition}[Handlebody\sidenotemark]
-    A handlebody is a compact connected orientable $3$-manifold with boundary that possesses a handle decomposition consisting of $0$-handles and $1$-handles. The \emph{genus} of a handlebody is the genus of its boundary.
+\begin{definition}[Genus $k$ handlebody\sidenotemark]
+    A genus $k$ handlebody is a compact connected orientable $3$-manifold with boundary that possesses a handle decomposition consisting of $0$-handles and $1$-handles such that its boundary is a surface of genus $k$.
 \end{definition}
+A Heegaard splitting is then 
 \begin{definition}[Heegaard splitting\sidenotemark]
     A \emph{Heegaard splitting} of a closed $3$-manifold $M$ is a decomposition $M = V \cup _S W$ such that $V$ and $W$ are handlebodies and  $S = \partial V = \partial W$. Here  $S$ is called the \emph{splitting surface of $M$}.
     Two Heegaard splittings are considered \emph{equivalent} if their splitting surfaces are isotopic. The \emph{genus} of a Heegaard splitting is the genus of $S$.
 \end{definition}
-\sidenotetext[][-2cm]{\fullcite{schultens2014introduction}}
+\sidenotetext[][-5cm]{\fullcite{schultens2014introduction}}
 
-With these definitions, our findings can be summarized as follows:
-\begin{theorem}[Moise \todo{citation}]
+With these definitions, we can summarize our findings as follows:
+\begin{theorem}[Moise]
     Every closed orientable $3$-manifold admits a Heegaard splitting.
 \end{theorem}
 \begin{proof}
@@ -325,44 +394,31 @@ With these definitions, our findings can be summarized as follows:
     Then $M = f^{-1}\left[0, \tfrac{3}{2}\right] \cup f^{-1}\left[\tfrac{3}{2}, 3\right]$ is a Heegaard splitting of $M$ by duality of $k$- and $n-k$-handles.
 \end{proof}
 
+Let us start off with some examples.
+\begin{marginfigure}
+    \centering
+    \incfig{genus-four-heegaard-splitting-of-s3}
+    \caption{A genus four Heegaard splitting of $S^{3}$, seen as the one point compactification of $\R^3$.
+        This way, we can obtain a Heegaard splitting of $S^{3}$ of any genus.
+    }
+    \label{fig:genus-four-heegaard-splitting-of-s3}
+\end{marginfigure}
 \begin{eg}
     As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \cdisk{2} \cup \cdisk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
 \end{eg}
 \begin{eg}
-    \begin{marginfigure}
-        \centering
-        \incfig{genus-four-heegaard-splitting-of-s3}
-        \caption{A genus four Heegaard splitting of $S^{3}$, seen as the one point compactification of $\R^3$.
-            This way, we can obtain a Heegaard splitting of $S^{3}$ of any genus.
-        }
-        \label{fig:genus-four-heegaard-splitting-of-s3}
-    \end{marginfigure}
     The previous example is not the only way to decompose $S^{3}$.
     Indeed, we can arbitrarily add cancelable $1$- and $2$-handles to increase the genus. 
-    For example a genus four Heegaard splitting of $S^{3}$ is illustrated in Figure\ref{fig:genus-four-heegaard-splitting-of-s3}.
+    For example a genus four Heegaard splitting of $S^{3}$ is illustrated in Figure~\ref{fig:genus-four-heegaard-splitting-of-s3}.
     Here, we visualized $S^{3}$ as the one point compactification of $\R^3$.
     \label{eg:s3-heegaard-four-genus}
 \end{eg}
-\begin{marginfigure}
-    \centering
-    \incfig{three-torus-heegaard-splitting}
-    \caption{
-        Illustration of the splitting surface of the Morse function defined earlier.
-        Here we identify $T^{3} = \R^3 / \Z^3$ and draw $[0,1]^3$.
-        This Heegaard splitting has genus $3$.
-    }
-    \label{fig:three-torus-heegaard-splitting}
-\end{marginfigure}
+
 \begin{eg}
-    If we split the handle decomposition of $T^{3}$ given in Example~\ref{eg:handle-decomposition-three-torus} between index $1$ and $2$ critical points, then we find the surface illustrated in Figure~\ref{fig:three-torus-heegaard-splitting}, were we identified $T^{3} = \R^3 / \Z^{3}$.
-    We see that the splitting surface has genus three.
+    If we split the handle decomposition of $T^{3}$ given in Example~\ref{eg:handle-decomposition-three-torus} between index $1$ and $2$ critical points, then we find a splitting surface that has genus three.
 \end{eg}
 
 % \subsection{Stabilization and destabilization}
-
-The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
-It can be done in as in Figure~\ref{fig:stabilization}.
-
 \begin{marginfigure}
     \centering
     \incfig{stabilization}
@@ -370,3 +426,15 @@ It can be done in as in Figure~\ref{fig:stabilization}.
         The act of stabilization is replacing a ball near the boundary as illustrated, increasing the genus of the splitting surface by one.}
     \label{fig:stabilization}
 \end{marginfigure}
+\begin{remark}
+    The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
+    It can be done in as in Figure~\ref{fig:stabilization}.
+    The reverse procedure, called destabilization cannot be done in general.
+\end{remark}
+
+% \begin{definition}
+%     The Heegaard genus of a 3-manifold $M$ is the smallest possible genus of a Heegaard splitting.
+%     We then say the Heegaard slitting is \emph{minimal}.
+% \end{definition}
+
+

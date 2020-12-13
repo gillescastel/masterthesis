@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{221.33755181bp}%
+    \setlength{\unitlength}{266.27001184bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.48790331)%
+  \begin{picture}(1,1.131667)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{handles-in-dimension-three-s1-x-s2.pdf}}%
-    \put(0.66575468,1.45747469){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
+    \put(0.7000454,1.07632864){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
+    \put(0.7000454,0.46529445){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{handles-in-dimension-three-s1-x-s2.pdf}}%
-    \put(0.69676404,0.61035234){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\cup $ $3$-handle\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{handles-in-dimension-three-s1-x-s2.pdf}}%
   \end{picture}%
 \endgroup%

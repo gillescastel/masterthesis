@@ -56,8 +56,8 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{stable-and-unstable-manifolds-are-manifiolds.pdf}}%
     \put(0.87058523,0.40745065){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1, \ldots, x_k$\end{tabular}}}}%
     \put(0.38921279,0.86614064){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_{k+1}, \ldots, x_{n}$\end{tabular}}}}%
-    \put(0.53310279,0.44218962){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\unstable{p}$\end{tabular}}}}%
-    \put(0.43522169,0.60970795){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\stable{p}$\end{tabular}}}}%
+    \put(0.52023636,0.45321803){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\unstable{p}$\end{tabular}}}}%
+    \put(0.43522169,0.75094219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\stable{p}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{stable-and-unstable-manifolds-are-manifiolds.pdf}}%
   \end{picture}%
 \endgroup%
