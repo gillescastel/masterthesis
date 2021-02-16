@@ -1,0 +1,101 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'morse-homology-independence-partial-squared-zero-bis.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{701.46511288bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.37512967)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.31511174,0.34809628){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_0$\end{tabular}}}}%
+    \put(0.10591996,0.24216233){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_1$\end{tabular}}}}%
+    \put(0.42312654,0.23830677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
+    \put(0.32285794,0.02754359){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.18916483,0.26345583){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{F}$\end{tabular}}}}%
+    \put(0.25919655,0.28643077){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\partial_0$\end{tabular}}}}%
+    \put(0.34532902,0.26466149){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{H}$\end{tabular}}}}%
+    \put(0.29448051,0.20798026){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.14497812,0.19185311){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{F}(p)$\end{tabular}}}}%
+    \put(0.38757756,0.19808744){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{H}(p)$\end{tabular}}}}%
+    \put(0.28343999,0.10014375){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.24969269,0.23948167){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\partial_0(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.76885481,0.34578281){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_0$\end{tabular}}}}%
+    \put(0.56288875,0.23716073){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_1$\end{tabular}}}}%
+    \put(0.87955764,0.23868136){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
+    \put(0.75670888,0.00264993){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.73481474,0.19697723){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S$\end{tabular}}}}%
+    \put(0.82169738,0.22373022){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{H}(p)$\end{tabular}}}}%
+    \put(0.739607,0.11985681){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S(p)$\end{tabular}}}}%
+    \put(0.68408148,0.25840417){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\partial_0(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.59643473,0.13797981){\color[rgb]{0,0,0}\transparent{0.35686275}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\partial_1\Phi^{F}(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.6081965,0.06999001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^G \Phi^F(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.78858821,0.06999001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{H}(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.74126932,0.0334743){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\partial_1 S(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.67026737,0.0334743){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S \partial_0 (p)$\end{tabular}}}}%
+    \put(0.88730822,0.14571602){\color[rgb]{0,0,0}\transparent{0.35686275}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\partial_2\Phi^{H}(p)$\end{tabular}}}}%
+    \put(0.27504532,0.32735064){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.60341713,0.22375809){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{F}(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.66255539,0.16827524){\color[rgb]{0,0,0}\transparent{0.35686275}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{F}\partial_0(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+    \put(0.75743562,0.16827524){\color[rgb]{0,0,0}\transparent{0.35686275}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Phi^{H}\partial_0(p)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{morse-homology-independence-partial-squared-zero-bis.pdf}}%
+  \end{picture}%
+\endgroup%

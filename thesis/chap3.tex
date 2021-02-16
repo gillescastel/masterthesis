@@ -1,0 +1,210 @@
+\chapter{Morse homology}
+\label{chap:morse-homology}
+
+\section{Morse complex}
+\section{Morse complex is a complex}
+\section{Independence}
+\begin{theorem}
+    Let $M$ be a compact manifold and $ f_0, f_1: M \to  \R$ two Morse functions.
+    Let $X_0, X_1$ be pseudo-gradients adapted to $f_0$ and $ f_1$ respectively with the Smale property.
+    Then there exists a morphism of complexes
+    \[
+        \Phi_{\bul}:
+        (C_\bul(f_0), \partial_{X_0}) \to  
+        (C_\bul(f_1), \partial_{X_1})
+    ,\] 
+    that induces an isomorphism on the level of homology.
+\end{theorem}
+    
+\begin{proof}
+The proof of this theorem is truly something to behold: it features an intricate interplay between homological algebra and differential geometry.
+\paragraph{Construction of a morphism of complexes}
+In order to find a connection between the two complexes, we geometrically connect $f_0$ and $f_1$ via a stable interpolation by which we mean a smooth map
+\[
+    F: [0,1] \times M \to \R: (s, m) \mapsto F_s(m)
+,\] 
+such that $F_s = f_0$ for $s \in \left[0, \frac{1}{3}\right]$ and $F_s = f_1$ for $s \in \left[\frac{2}{3}, 1\right]$.
+On of the reasons of looking specifically at stable interpolations is that we can concatenate them and again get a $C^{\infty}$ map that is a stable interpolation.
+
+We can visualize an interpolation between two morse functions by embedding $[0,1] \times M$ in $\R^{n+1}$ in such a way that the height function in each slice corresponds to $F_s$.
+For example, doing this for the circle and the other circle, we get Figure~\ref{fig:morse-homology-independence-cilinder}.
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-cilinder}
+    \caption{TODO morse homology independence cilinder}
+    \label{fig:morse-homology-independence-cilinder}
+\end{marginfigure}
+
+Seen from a Morse perspective, the result is less than desirable: the function $F$ is not a Morse function: critical points in the stationary parts of $F$ are degenerate as $\frac{\partial F}{\partial s} = 0$.
+Furthermore, an interpolation of two Morse functions need not to be Morse at each point in time which gives even more degenerate critical points. We have highlighted an example of this in the figure.
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-tube}
+    \caption{TODO morse homology independence tube}
+    \label{fig:morse-homology-independence-tube}
+\end{marginfigure}
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-g-function}
+    \caption{TODO morse homology independence g function}
+    \label{fig:morse-homology-independence-g-function}
+\end{marginfigure}
+
+We can fix this problem by replacing the horizontal tube by a `slide', as seen in Figure~\ref{fig:morse-homology-independence-tube}.
+We do this by extending $F$ to $[-\frac{1}{3}, \frac{3}{4}]$ and adding a function $g$ (illustrated in Figure~\ref{fig:morse-homology-independence-g-function}) along the $s$-direction, i.e.\ $\tilde{F}_s(p) = F_s(p) + g(s)$.\sidenote{We extend the function such that the critical values of $\tilde{F}$ do not lie on the boundary.}
+Whatever kind of tube we start with, if we make the slide steep enough, we will always slide down and never have flat spots, except at the top and bottom of the slide.
+This means if we choose $g$ appropriately\sidenote{
+    More explicitly, we want $\frac{\partial F}{\partial s} (p, s) + g'(s) <0$ for all $p \in M, s \in (0,1)$.
+}, the only critical points lie in the slices $s=0$ and  $s=1$ and correspond to critical points of $f_0$ and $f_1$ respectively.
+Because $g$ is Morse, these critical points remain nondegenerate.
+We conclude that $\tilde{F}$ is in fact Morse with critical points $\Crit(\tilde{F}) = \{0\} \times \Crit(f_0) \cup \{1\} \times \Crit(f_1)$.
+
+We can also determine the index of these critical points.
+Because we have created an extra downward direction at the top of the slide, the indices of these critical points have increased by $1$.
+At the bottom, the indices stay the same, giving us
+\[
+    C_{k+1}(\tilde{F}) = C_k(f_0) \oplus C_{k+1}(f_1)
+.\] 
+
+Apart from the critical points, we are also interested in constructing a pseudo-gradient on $[0,1]\times M$, as this will give rise to a differential.
+ On $[-\frac{1}{3}, \frac{1}{3}] \times M$, we set $X = X_0 - \grad g$, and on $\left[\frac{2}{3}, \frac{4}{3}\right] \times M$ we set $X = X_1 - \grad g$.\sidenote{Here, $\grad g$ is the Euclidian gradient}
+A partition of unity argument then fills in the gaps.
+Note that this pseudo-gradient is transversal to the boundary of $\left[-\frac{1}{3}, \frac{4}{3}\right]$.
+We can slightly perturb $X$ to make it satisfy the Smale condition and we can furthermore assume that the resulting vector field, $\tilde{X}$ is transversal to $ \{s\} \times M$ for $s \in \left\{-\frac{1}{3}, \frac{1}{3}, \frac{2}{3}, \frac{4}{3}\right\}$.
+We can also make this perturbation small enough such that $\partial_{X} = \partial_{\tilde{X}}$, that is to say, the number of $X$-trajectories between critical points is the same as the number of $\tilde{X}$-trajectories.
+
+Having a Morse function $\tilde{F}$ and a pseudo-gadient $\tilde{X}$ that is adapted to $\tilde{F}$, we can consider the associated Morse complex $(C_\bul(\tilde{F}), \partial_{\tilde{X}})$.
+There are two types of trajectories connecting critical points of $\tilde{F}$: ones that stay in the same section ($s = 0$ or $s = 1$)  and ones that connect critical points of $f_0$ to critical points of $f_1$, i.e. ones that `slide down the slide'.
+This means we can decompose $\partial_{\tilde{X}}$ as follows:
+\begin{align*}
+    \partial_{\tilde{X}}: C_k(f_0) \oplus C_{k+1}(f_1) &\longrightarrow C_{k-1}(f_0) \oplus C_k(f_1) \\
+    (p_0, p_1) &\longmapsto (\partial_{X_0}(p_0), \partial_{X_1}(p_1)+ \Phi^{F}(p_0))
+,\end{align*}
+where $\Phi^{F}$ counts the trajectories connecting critical points of $f_0$ to ones of $f_1$. We can also write this as a matrix:
+\[
+\partial_{\tilde{X}} = \begin{pmatrix}
+    \partial_{X_0} & 0 \\
+     \Phi^{F}& \partial_{X_1}
+\end{pmatrix}
+.\] 
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-partial-squared-zero}
+    \caption{TODO morse homology independence partial squared zero}
+    \label{fig:morse-homology-independence-partial-squared-zero}
+\end{marginfigure}
+
+Let us now look at what the identity $\partial_{\tilde{X}}^2 = 0$ means in this context. Let $p \in C_k(f_0)$.
+Then
+\begin{align*}
+    \partial_{\tilde{X}}^2 (p, 0) &= \partial_{\tilde{X}}(\partial_{0}(p),  \Phi^{F}(p))\\
+                                                      &= (\partial_0^2(p), \Phi^{F}\partial_0(p)+ \partial_1 \Phi^{F}(p))\\
+                                                    &= (0, \Phi^{F}\partial_0(p)+ \partial_1 \Phi^{F}(p))
+.\end{align*} 
+Because we are working over $\Z_2$, this means that $\Phi^{F}  \circ  \partial_0 = \partial_1  \circ  \Phi^{F}$, i.e.\ the following diagram commutes for all $k$:
+\[
+    \begin{tikzcd}
+        C_k(f_0) \arrow[d, "\Phi^{F}"]\arrow[r, "\partial_0"] &C_{k-1}(f_0) \arrow[d, "\Phi^{F}"]\\
+        C_k(f_1) \arrow[r, "\partial_1"] &C_{k-1}(f_1)\\
+    \end{tikzcd}
+\]
+This proves that $\Phi^{F}$ is a morphism of complexes.
+
+\paragraph{$\Phi^{F}$ induces an isomorphism on the level on homology}
+
+We will now prove that prove that this map induces an isomorphism on the level of homology.
+Let $f_0, f_1, f_2$ be Morse functions $M \to  \R$.
+Suppose $F$ interpolates between $f_0$ and $f_1$,
+$G$ between $f_1$ and $f_2$ and $H$ between $f_0$ and $f_1$, i.e.\ we are in the following situation:
+\[
+    \begin{tikzcd}
+        f_0 \arrow[rr, "H"', bend right] \arrow[r, "F"] &f_1 \arrow[r, "G"] &f_2.
+    \end{tikzcd}
+\]
+We claim that the maps induced by $\Phi^{G} \circ \Phi^{F}$ and $\Phi^{H}$ on the level of homology coincide, or equivalently, they are chain homotopic, meaning that there exists an operator $S$ such that
+ \[
+\Phi^{G}  \circ  \Phi^{F} - \Phi^{H} = \partial S + S \partial
+.\] 
+This is sufficient to prove that $\Phi^{F}$ induces an isomorphism.
+Indeed, it is easy to check that if $I$ is a constant interpolation between  $(f_0, X_0)$ and itself, 
+\[
+    I: [0,1] \times M \to  \R: (s, p) \mapsto f_0(m),
+\] 
+then $\Phi^{I} = \operatorname{Id}$.
+So consider $F$ a stationary interpolation between $f_0$ and $f_1$ and $G$, the reverse interpolation from $f_1$ to $f_0$ and $H = I$. Then the induced homological maps $\Phi^{F}$ and $\Phi^{G}$ are inverses of each other.
+
+Let us prove that $\Phi^{G}  \circ  \Phi^{F}$ and $\Phi^{H}$ are chain homotopic.
+The idea of this part of the proof is very similar to the first part.
+Instead creating one slide from $f_0$ to $f_1$ by adding an extra dimension, we create a two dimensional slide with as sides four slides: $f_0 \xrightarrow{F} f_1$, $ f_1 \xrightarrow{G} f_2$, $f_0 \xrightarrow{H}  f_2$ and $ f_2 \xrightarrow{I} f_2$.
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-two-dimensional-slide}
+    \caption{TODO morse homology independence two dimensional slide}
+    \label{fig:morse-homology-independence-two-dimensional-slide}
+\end{marginfigure}
+
+More concretely, we create a map
+\[
+    K: \left[-\tfrac{1}{3}, \tfrac{4}{3}\right] \times \left[-\tfrac{1}{3}, \tfrac{4}{3}\right] \times M \to  \R:  (s, t, p) \mapsto K_{s, t}(p)
+,\] 
+with the following properties, as illustrated in Figure~\ref{fig:morse-homology-independence-two-dimensional-slide}:
+\begin{itemize}
+    \item $K_st = H_t$ for  $s \in \left[-\tfrac{1}{3}, \tfrac{1}{3}\right]$
+        \item $K_st = G_t$ for  $s \in \left[\tfrac{2}{3}, \tfrac{4}{3}\right]$
+        \item $K_{s, t} = F_s$ for $t \in \left[-\tfrac{1}{3}, \tfrac{1}{3}\right]$ 
+        \item $K_{s,t} = f_2$ for $t \in \left[\tfrac{2}{3}, \tfrac{4}{3}\right]$
+\end{itemize}
+Note that these properties are not contradictory because we are working with stationary interpolations.
+
+Now, to make a slide, we modify $K$ as follows:
+ \[
+     \tilde{K}_{s,t}(p) = K_{s,t}(p) + g(s) + g(t)
+,\] 
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-independence-two-dimensional-slide-three-d}
+    \caption{TODO morse homology independence two dimensional slide three d}
+    \label{fig:morse-homology-independence-two-dimensional-slide-three-d}
+\end{marginfigure}
+
+with $g$ defined similarly as before, making $\tilde{K}$ a Morse function with critical points in the yellow regions in the figure.
+The points correspond to critical points of $f_0$, $f_1$, $f_2$ and $f_2$ with indices raised by $2, 1, 1, 0$ respectively.
+Also similarly as before, we can construct a pseudo-gradient vector field $X$ adapted to $\tilde{K}$, by adding $-\grad g(s)$, $-\grad g(t)$ at the appropriate regions and perturbing it in order to have the Smale property, again making sure that the perturbation is small enough such that $\partial_X = \partial_{\tilde X}$, where $\tilde{X}$ is the perturbed vector field.
+
+While the resulting manifold $[-\frac{1}{3}, \frac{4}{3}]^2 \times M$ does not have a smooth boundary, the conditions (TODO add conditions) are still satisfied.
+In summary, we have
+\[
+    C_{k+1}(\tilde{K}) = C_{k-1}(f_0) \oplus C_k(f_1) \oplus C_k(f_2) \oplus C_{k+1}(f_2)
+,\] 
+and the differential can be written as
+\[
+\partial_{\tilde{X}} = \begin{pmatrix}
+    \partial_0 & 0 & 0 & 0\\
+    \Phi^{F} &\partial_1 & 0 & 0 \\
+    \Phi^{H} & 0 & \partial_2 & 0 \\
+    S & \Phi^{G} & \operatorname{Id} & \partial_2
+\end{pmatrix}
+.\] 
+Now, computing $\partial_{\tilde{X}}^2(p, 0, 0, 0)$ is like water trickling down four spillway bowls, as illustrated in Figure~\ref{fig:morse-homology-independence-partial-squared-zero-bis}. We get that
+\[
+\Phi^{G}  \circ  \Phi^{F} + \Phi^{H} + S \partial_0 + \partial_1 S = 0
+,\] 
+or as we are working over $\Z_2$,
+\[
+    \Phi^{G}  \circ \Phi^{F} - \Phi^{H} = S \partial_0 + \partial_1 S
+,\] 
+proving that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ induce the same map on the level of homology.
+
+\begin{figure*}
+    \centering
+    \fullwidthincfig{morse-homology-independence-partial-squared-zero-bis}
+    \caption{TODO morse homology independence partial squared zero bis}
+    \label{fig:morse-homology-independence-partial-squared-zero-bis}
+\end{figure*}
+\end{proof}
