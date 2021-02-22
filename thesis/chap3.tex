@@ -2,7 +2,103 @@
 \label{chap:morse-homology}
 
 \section{Morse complex}
-\section{Morse complex is a complex}
+In order to define the Morse complex, we need a sequence of modules over a certain ring and maps between these modules.
+Most of the time, we will be working over $\Z/2\Z$, which we will denote by $\Z_2$, but sometimes the ring $\Z$ will be used instead. As will turn out, working over $\Z_2$ will allow us not to worry about orientation and it being a field also has some advantages.
+
+The modules we will considering depend on a Morse function $f$ and consist of formal sums of critical points of a certain index:
+\[
+    C_k(f) = \Big\{ \sum_{p \in \Crit_k f} n_p p  \mid n_p \in \Z_2\Big\}  = \bigoplus_{p \in \Crit_k f} \Z_2 p
+.\] 
+Note that this implies that $C_{-1} = C_{-2} = \cdots = 0$ and $C_{n+1} = C_{n+2} = \cdots = 0$, where $n$ is the dimension of the manifold.
+
+
+\begin{marginfigure}
+    \centering
+    \incfig{other-sphere-morse-complex-modules}
+    \caption{The critical points of the height function can be split up depending on their index and form the generators of the modules in the Morse complex.}
+    \label{fig:other-sphere-morse-complex-modules}
+\end{marginfigure}
+
+\begin{eg}
+    Consider the other sphere in Figure~\ref{fig:other-sphere-morse-complex-modules}. We have
+    \[
+    C_0 = \{0, a\}  \qquad C_1 = \{0, b\}  \qquad C_2 = \{0, c, d, c+d\} 
+    .\] 
+\end{eg}
+
+To define the differential, we also need a pseudo-gradient $X$, because it is defined in such a way that it counts trajectories connecting critical points of lower index.
+Because critical points of index $k$ generate $C_k$, it suffices to define $\partial_{X,k}$ on these critical points and extend linearly:
+\begin{align*}
+    \partial_{X, k}: C_k &\longrightarrow C_{k-1} \\
+    p &\longmapsto \sum_{q \in \Crit_{k-1} f} \nX Xpq q
+,\end{align*}
+where $\nX Xpq$ is the number of trajectories of $X$ connecting $p$ and $q$, modulo $2$.
+If we require that $X$ satisfies the Smale condition, we will later show that this is well defined, by which we mean that $n_X(p,q)$ is an integer (see also Remark~\ref{remark:trajectories-finite}).
+If it is clear from the context, we will often drop $X$, $k$ or both from the notation.
+\begin{eg}
+    Consider again the other sphere with its height function.
+    Let $X$ be the gradient induced from the standard gradient in $\R^3$.
+    Then $\partial_X$ is defined as follows, keeping in mind that we are working over $\Z_2$ and that $C_{-1} = 0$:
+\begin{figure}[H]
+    \centering
+    \incfig{morse-homology-other-sphere-differential}
+    \caption{Definition of the differential $\partial_X$}
+    \label{fig:morse-homology-other-sphere-differential}
+\end{figure}
+\end{eg}
+
+With this information, we are ready to define the Morse complex and Morse homology.
+\begin{definition}[Morse complex]
+    Let $f:M \to \R$ be a Morse function and $X$ a pseudo-gradient with the Smale property.
+    Then the Morse complex is 
+    \[
+        \cdots \xrightarrow{\partial} C_2(f) \xrightarrow{\partial}  C_1(f) \xrightarrow{\partial} C_0(f) \textcolor{gray}{{} \xrightarrow{\partial}  0 \xrightarrow{\partial }0 \xrightarrow{\partial}  \cdots}
+    \] 
+    The Morse Homology $\HM{f}{X}$ is the homology of this chain complex.
+\end{definition}
+The attentive reader will have noticed that for this to be a chain complex, we need $\partial^2 = 0$, which is not obvious at all.
+Apart from this, we also would to like to prove that  this homology does not depend on the choice of the Morse function $f$ and the pseudo-gradient field $X$.
+We will address these topics in the two following sections, but let us first compute the Morse homology of the other sphere as an example.
+
+
+\begin{marginfigure}
+    \centering
+    \incfig{other-sphere-and-normal-sphere-morse-complex}
+    \caption{TODO other sphere and normal sphere morse complex}
+    \label{fig:other-sphere-and-normal-sphere-morse-complex}
+\end{marginfigure}
+
+\begin{eg}
+    We have already computed the differential in the previous example,
+    so computing the homology is just a matter of applying the definition.
+    \begin{itemize}
+        \item $\HM[0]{f}{X} = \dfrac{\Ker \partial: C_0 \to  C_{-1}}{\Im \partial: C_1 \to  C_0} = \dfrac{\{0, a\} }{\{0\} } \cong \Z_2$
+        \item $\HM[1]{f}{X} = \dfrac{\Ker \partial: C_1 \to  C_{0}}{\Im \partial: C_2 \to  C_1} = \dfrac{\{0, b\} }{\{0, b\} } \cong 0$
+        \item $\HM[2]{f}{X} = \dfrac{\Ker \partial: C_2 \to  C_{1}}{\Im \partial: C_3 \to  C_2} = \dfrac{\{0, c+d\}}{\{ 0\}} \cong \Z_2$
+    \end{itemize}
+    In summary, we have
+    \[
+        H_0 = \Z_2 \qquad H_1 = 0 \qquad H_2 = \Z_2
+    .\] 
+
+    Instead of embedding $S^2$ in this strange way, we can also repeat the same calculation with its standard embedding, illustrated in Figure~\ref{fig:other-sphere-and-normal-sphere-morse-complex}.
+    We have $ C_2 = \{0, b\} $, $ C_1 = \{0\} $  and $C_0 = \{0, a\}$, and $\partial(b) = 0$,  $\partial(a) = 0$.
+    This way, we obtain
+    \begin{itemize}
+        \item $\HM[0]{g}{Y} = \dfrac{\Ker \partial: C_0 \to  C_{-1}}{\Im \partial: C_1 \to  C_0} = \dfrac{\{0, a\} }{\{0\} } \cong \Z_0$  
+        \item $\HM[1]{g}{Y} = \dfrac{\Ker \partial: C_1 \to  C_{0}}{\Im \partial: C_2 \to  C_1} = \dfrac{\{0\} }{\{0\} } \cong 0$
+        \item $\HM[2]{g}{Y} = \dfrac{\Ker \partial: C_2 \to  C_{1}}{\Im \partial: C_3 \to  C_2} = \dfrac{\{0, b\} }{\{0\} } \cong \Z_2$
+    \end{itemize}
+    In summary, we have 
+    \[
+    H_0 = \Z_2 \qquad H_1 = 0 \qquad H_2 = \Z_2
+    ,\] 
+    exactly the same homology as with the other Morse function and other gradient.
+    As mentioned earlier, we will prove that this is in general the case.
+\end{eg}
+
+\section{The Morse complex is a complex: $\partial^2 = 0$}
+
 \section{Independence}
 \begin{theorem}
     Let $M$ be a compact manifold and $ f_0, f_1: M \to  \R$ two Morse functions.

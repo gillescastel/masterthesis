@@ -69,6 +69,7 @@
 \declaretheorem[sibling=definition, style=thmredbox, name=Lemma]{lemma}
 \declaretheorem[sibling=definition, style=thmbluebox,  name=Example]{eg}
 \declaretheorem[sibling=definition, style=thmbluebox,  name=Nonexample]{noneg}
+\declaretheorem[sibling=definition, style=thmblueline, name=Remark]{remark}
 
 
 
@@ -76,7 +77,6 @@
 \declaretheorem[numbered=no, style=thmexplanationbox, name=Proof]{explanation}
 \declaretheorem[numbered=no, style=thmproofbox, name=Proof]{replacementproof}
 \declaretheorem[style=thmbluebox,  numbered=no, name=Exercise]{ex}
-\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
 
 % \renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
@@ -130,13 +130,13 @@
 \makeatother
 
 \newcommand{\incfig}[2][1]{%
-    \ifworking {\color{gray}{\scriptsize\textsf{#2}}} \fi
+    \ifworking {\makebox[0pt][c]{\color{gray}{\scriptsize\textsf{#2}}}} \fi
     \def\svgwidth{#1\textwidth}
     \import{./figures/}{#2.pdf_tex}
 }
 
 \newcommand{\fullwidthincfig}[2][0.90]{%
-    % \ifworking {\color{gray}{\scriptsize\textsf{#2}}} \fi
+    \ifworking {\makebox[0pt][l]{\color{gray}{\scriptsize\textsf{#2}}}} \fi
     \def\svgwidth{#1\paperwidth}
     \import{./figures/}{#2.pdf_tex}
 }

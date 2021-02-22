@@ -4,7 +4,7 @@
 In this thesis, we assume the reader is familiar with basic concepts of differential geometry such as smooth manifolds, vector fields, flows, bundles, differential forms, et cetera.
 In this chapter, we discuss some concepts that might be unfamiliar.
 
-\section*{Transversality}
+\section*{Differential Geometry}
 The first concept we want to introduce is transversality.
 
 \todo{Interesting source appendix of Schultens\sidecite{schultens2014introduction}}
@@ -91,3 +91,89 @@ Note in particular that it is the set of critical \emph{values} that has measure
 %     Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
 % \end{definition}
 % \sidenotetext{\fullcite[23]{schultens2014introduction}}
+
+\section*{Homological Algebra}
+In this section, we will assume that the reader is familiar with modules over a ring $R$. If not, they can mentally substitute each occurence of `module' by `vector space'.
+
+\begin{definition}[Chain complex]
+    A chain complex of $R$-modules is a sequence $M_\bul$ of the form
+    \[
+    \cdots \to  M_2 \xrightarrow{d_2}  M_1 \xrightarrow{d_1} M_0 \xrightarrow{d_0} M_{-1} \xrightarrow{d_{-1}}   M_{-2} \to  \cdots
+    \] 
+    where each term $M_i$ is an $R$-module and $d_i: M_i \to  M_{i-1}$ is an $R$-module homomorphism such that $d_{i-1}  \circ  d_i = 0$  for all $i \in \Z$.
+\end{definition}
+We often suppress the indices of the maps $d_i$ and the last condition becomes then  $d^2 = 0$.
+
+\begin{marginfigure}
+    \centering
+    \incfig{homology-definition}
+    \caption{Homology measure exactness of a chain complex.}
+    \label{fig:homology-definition}
+\end{marginfigure}
+
+\begin{definition}[Homology]
+    Let $M_\bul$ be a chain complex of  $R$-modules. The $i$-th homology of $M_\bul$ is
+     \[
+         H_i(M_\bul) = \frac{\Ker d_i}{\Im d_{i+1}}
+    .\] 
+    This is well defined because $\Im(d_{i+1}) \subset \Ker (d_i)$.
+\end{definition}
+It is clear that this measure the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(M_\bul) = 0$.
+
+
+\begin{definition}[Chain map]
+    A chain map $f_\bul: M_\bul \to  N_\bul$ is a collection of $R$-module homomorphisms which makes the following diagram commute:
+    \[
+        \begin{tikzcd}
+            \cdots  \arrow[r, ""]&
+            M_{i+1} \arrow[r, "d_{i+1}^{M}"] \arrow[d, "f_{i+1}"]&
+            M_{i} \arrow[r, "d_{i}^{M}"] \arrow[d, "f_i"]&
+            M_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"]&
+            \cdots \\
+            \cdots  \arrow[r, ""]&
+            N_{i+1} \arrow[r, "d_{i+1}^{N}"] &
+            N_{i} \arrow[r, "d_{i}^{N}"] &
+            N_{i-1} \arrow[r, ""] &
+            \cdots \\
+        \end{tikzcd}
+    \]
+    In other words, suppressing indices, $f  \circ  d^{M} = d^{N}  \circ f$.
+\end{definition}
+
+It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(M_\bul) \to  H_i(N_\bul)$, proving that $H_i$ is a functor. 
+
+The following is a useful criterion for determining whether two chain maps induce the same maps on the level on homology.
+\begin{definition}[Chain homotopic]
+    Let $f_\bul, g_\bul$ be chain maps between  $M_\bul$ and $N_\bul$.
+    A chain homotopy from  $f_\bul$ to  $g_\bul$ is a collection of  $R$-module homomorphisms $h_i: M_i \to  N_{i+1}$ such that $g_i - f_i = d^{N}_{i+1}  \circ  h_i + h_{i-1}  \circ  d_i^{M}$ for all $i$.
+    If such a map exists, we say that $f_\bul$ and  $g_\bul$ are chain homotopic.
+    \[
+        \begin{tikzcd}[column sep=3em, row sep=3em]
+            \cdots  \arrow[r, ""]&
+            M_{i+1} \arrow[r, "d_{i+1}^{M}"] \arrow[d, "f_{i+1}"', shift right=2pt] \arrow[d, "g_{i+1}", shift left=2pt]&
+            M_{i} \arrow[r, "d_{i}^{M}"] \arrow[d, "f_i"', shift right=2pt] \arrow[d, "g_{i}", shift left=2pt] \arrow[dl, "h_i"', dashed]&
+            M_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"', shift right=2pt]\arrow[d, "g_{i-1}", shift left=2pt] \arrow[dl, "h_{i-1}"', dashed]&
+            \cdots \\
+            \cdots  \arrow[r, ""]&
+            N_{i+1} \arrow[r, "d_{i+1}^{N}"] &
+            N_{i} \arrow[r, "d_{i}^{N}"] &
+            N_{i-1} \arrow[r, ""] &
+            \cdots \\
+        \end{tikzcd}
+    \]
+    Suppressing indices, this becomes $g - f = dh + hd$.
+\end{definition}
+\begin{prop}
+    Let $f_\bul, g_\bul$ be two chain homotopic chain maps from $M_\bul$ to $N_\bul$. 
+    Then $H_i(f_\bul) = H_i(f_\bul)$, i.e.\ the maps induced on the level of homology are identical.
+\end{prop}
+\begin{proof}
+    Let $h_i$ be a chain homotopy between  $f_\bul$ and  $g_\bul$.
+    Let $x \in \Ker(d_i^{M})$.
+    Then, suppressing indices,
+    \begin{align*}
+        g(x) + \Im(d^{N}) &= f(x) + (h  \circ  d^{M})(x) + (d^{N}  \circ h)(x)  + \Im(d^{N})\\
+                          &= f(x) + h(0) + \Im(d^{N})\\
+                        &= f(x) + \Im(d^{N}).
+    \end{align*} 
+\end{proof}
