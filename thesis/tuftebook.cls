@@ -121,7 +121,7 @@ footskip=40pt,
 \renewcommand{\frontmatter}{\pagestyle{empty}}% the frontmatter is empty
 \renewcommand{\mainmatter}{\cleardoublepage\pagestyle{fancy}}% mainmatter with page numbering
 \RequirePackage{ragged2e} % \RaggedRight works better than \raggedright
-\newcommand{\marginparstyle}{\footnotesize\RaggedRight} % initialize style with start value
+\newcommand{\marginparstyle}{\footnotesize} % initialize style with start value
 \long\def\@ympar#1{% redefine margin par to avoid too many macros in the document
   \@savemarbox\@marbox{\marginparstyle#1}% marginparstyle is a prefix to the marginpar text now
   \global\setbox\@currbox\copy\@marbox % the rest of the definition is taken from original LaTeX
@@ -164,11 +164,11 @@ footskip=40pt,
 \ExplSyntaxOff
 
 \RequirePackage{caption}
-\RequirePackage[margincaption,outercaption,ragged,wide]{sidecap}
-\sidecaptionvpos{figure}{t} 
+% \RequirePackage[margincaption,outercaption,,wide]{sidecap}
+% \sidecaptionvpos{figure}{t} 
 \captionsetup{labelfont={sf,bf,footnotesize}}
-\DeclareCaptionStyle{marginfigure}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
-\DeclareCaptionStyle{sidecaption}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
+\DeclareCaptionStyle{marginfigure}[]{labelfont={sf,bf,footnotesize}, font=footnotesize, justification=justified}
+\DeclareCaptionStyle{sidecaption}[]{labelfont={sf,bf,footnotesize}, font=footnotesize, justification=justified, singlelinecheck=off}
 \DeclareCaptionStyle{widefigure}[]{labelfont={sf,bf,footnotesize}, font=footnotesize}
 
 \renewcommand{\normalsize}{\fontsize{10pt}{13pt}\selectfont}%
