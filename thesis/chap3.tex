@@ -58,7 +58,7 @@ With this information, we are ready to define the Morse complex and Morse homolo
 \end{definition}
 The attentive reader will have noticed that for this to be a chain complex, we need $\partial^2 = 0$, which is not obvious at all.
 Apart from this, we also would to like to prove that  this homology does not depend on the choice of the Morse function $f$ and the pseudo-gradient field $X$.
-We will address these topics in the two following sections, but let us first compute the Morse homology of the other sphere as an example.
+We will address these topics in the two following sections, but let us first compute the Morse homology of some examples.
 
 
 \begin{marginfigure}
@@ -68,7 +68,7 @@ We will address these topics in the two following sections, but let us first com
     \label{fig:other-sphere-and-normal-sphere-morse-complex}
 \end{marginfigure}
 
-\begin{eg}
+\begin{eg}[Homology of the (other) sphere]
     We have already computed the differential in the previous example,
     so computing the homology is just a matter of applying the definition.
     \begin{itemize}
@@ -95,6 +95,59 @@ We will address these topics in the two following sections, but let us first com
     ,\] 
     exactly the same homology as with the other Morse function and other gradient.
     As mentioned earlier, we will prove that this is in general the case.
+\end{eg}
+\begin{eg}[Homology of the three-torus]
+    Let us recall Example~\ref{eg:handle-decomposition-three-torus}, which discusses the three-torus $T^{3} = S^{1} \times S^{1} \times S^{1} = \R^3 / \Z^3$ and the following Morse function
+    \begin{marginfigure}
+        \centering
+        \incfig{morse-homology-three-torus-trajectories}
+        \caption{
+        Trajectories connecting critical points whose index differ by exactly $1$.
+        Here $T^{3} = \R^{3} / \Z^{3}$ and we have drawn $\big(-\frac{1}{2}, \frac{1}{2}\big]$ as representative cube.  }
+        \label{fig:morse-homology-three-torus-trajectories}
+    \end{marginfigure}
+    \begin{marginfigure}
+        \centering
+        \incfig{mores-homology-three-torus-critical-points-graph}
+        \caption{Graph of the critical points of $f$ on $T^{3}$.}
+        \label{fig:mores-homology-three-torus-critical-points-graph}
+    \end{marginfigure}
+    \begin{align*}
+        f: T^3 &\longrightarrow \R \\
+        (x,y,z) &\longmapsto 2 \cos(2 \pi x)+ 3 \cos(2 \pi y) + 4 \cos (2 \pi z),
+    \end{align*}
+    with critical values repeated here for convenience:
+    \[\begin{array}{cccccc}
+  & x & y  & z & f(x, y, z) & \text{Index}\\ \hline
+  & 0 & 0 & 0 & 9 & 3 \\
+& \frac{1}{2} & 0 & 0 & 5 & 2 \\
+& 0 & \frac{1}{2} & 0 & 3 & 2 \\
+& 0 & 0 & \frac{1}{2} & 1 & 2 \\
+& \frac{1}{2} & \frac{1}{2} & 0 & -1 & 1 \\
+& \frac{1}{2} & 0 & \frac{1}{2} & -3 & 1 \\
+& 0 & \frac{1}{2} & \frac{1}{2} & -5 & 1 \\
+& \frac{1}{2} & \frac{1}{2} & \frac{1}{2} & -9 & 0 \\
+    \end{array}\]
+    The differential equation for trajectories along $\grad f$ is 
+    \begin{align*}
+        \dot x &= -4 \pi \sin(2 \pi x)\\
+        \dot y &= -6 \pi \sin(2 \pi y)\\
+        \dot z &= -8 \pi \sin(2 \pi z)
+    .\end{align*} 
+
+
+    Note that $\dot x$ only depends on  $x$,  $\dot y$ on  $y$ and  $\dot z$ on $z$, so this is a decoupled system that is easy to solve.
+    Requiring that for $t \to  \pm\infty$ we end up in critical points, we find the trajectories in Figure~\ref{fig:morse-homology-three-torus-trajectories}.
+    To have a better overview, we can also make a graph of critical points and trajectories between them, as is done in Figure~\ref{fig:mores-homology-three-torus-critical-points-graph}.
+    This graph provides all the information we need to compute the Morse homology of $T^{3}$.
+    Note that all critical points are connected with two gradient lines, which means that each differential $\partial_3, \partial_{2}, \partial_1, \partial_0$ is the zero map, making it very easy to compute the homology. In the end, we get
+    \[
+    H_0 = \Z_2 \qquad 
+    H_1 = \Z_2^3 \qquad 
+    H_2 = \Z_2^3 \qquad 
+    H_3 = \Z_2
+    ,\] 
+    which corresponds to the usual homology.
 \end{eg}
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}

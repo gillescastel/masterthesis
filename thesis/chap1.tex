@@ -600,7 +600,7 @@ The first three examples will be (products of) spheres, i.e. $S^{3}$, $S^{1} \ti
     \includegraphics[width=0.90\paperwidth]{./notebooks/three-torus/output.png}
     \sidecaption{
         Step by step construction of $T^{3}$ adding one handle at the time.
-        Here, \mbox{$T^{3} = \R^3/ \Z^3$}, and $\left[-\frac{1}{2}, \frac{1}{2}\right]^3$ is drawn.
+        Here, $T^{3} = \R^3/ \Z^3$, and $\left[-\frac{1}{2}, \frac{1}{2}\right]^3$ is drawn.\\
         The construction starts with a $0$-handle.
         In the first three steps, a $1$-handle is added.
         In the consequent steps,
@@ -609,6 +609,11 @@ The first three examples will be (products of) spheres, i.e. $S^{3}$, $S^{1} \ti
     }
     \label{fig:three-torus-handle-decomposition}
 \end{figure*}
+While this choice of Morse function may seem unmotivated, it is actually based on an example we saw before, namely $S^{1}$ with its height function.
+Indeed, if we identify $S^{1} = \R / \Z$, then $g_r(x) = r\cos(2 \pi x)$ is exactly the height function of a sphere of radius $r$.
+Taking the product of $S^{1}$ three times and adding their corresponding Morse functions (with carefully chosen coefficients in order to have distinct critical values), we end up with the given example: $S^{1}\times S^{1} \times S^{1}$ and $f = g_2(x) + g_3(y) + g_4(z)$.
+This method of constructing a Morse function on the product is something that works in general and we will be considering this in more detail later on.
+
 % \vspace*{-10ex}
 \end{eg}
 
