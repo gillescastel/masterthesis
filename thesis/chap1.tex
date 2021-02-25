@@ -774,7 +774,11 @@ Apart from the abundance of Morse functions, we also have that any smooth functi
 \end{prop}
 
 The idea of the proof goes as follows.
-We choose an embedding of $M$ where $f$ is the first coordinate on $M$, so we can think of $f$ as a simple projection: $x \mapsto x_1$. \todo{Why is this possible?}
+We choose an embedding of $M$ where $f$ is the first coordinate on $M$, so we can think of $f$ as a simple projection: $x \mapsto x_1$.\sidenote{
+    Start with an embedding $\phi: M \hookrightarrow \R^{n}$ for large enough $n$.
+    Then consider  $\psi: M \to  \R^{n+1}: x\mapsto (f(x), \Phi(x))$.
+    Then the height function of this embedding corresponds is exactly $f$.
+}
 Then this function can be approximated in the following way:
 \[
     x_1 \approx \frac{(x_1+c)^2 - c^2}{2c} \qquad \text{as $c \to  \infty$,}
