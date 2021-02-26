@@ -153,6 +153,85 @@ We will address these topics in the two following sections, but let us first com
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}
 
+\begin{theorem}
+    $\Lb ab$ is compact
+\end{theorem}
+\begin{proof}
+    Let $ \ell_n$ be a sequence of trajectories in $\L ab$.\sidenote{Note that we first consider a sequence of \emph{unbroken} trajectories.}
+    Let $\Omega(a)$ be a Morse chart around $a$.
+    Consider the points where $\ell_n$ exits the Morse chart $a$, call them $\ell_n^{-}$.
+    Extract a subsequence of $\ell_n$ such that $\ell_{n_k}^{-}$ converges\sidenote{\todo{This uses compactness of sphere.}} and call the point of convergence $a^{-}$.
+    We will denote the extracted subsequence again by $\ell_n$ and will do so continuously in the proof.
+    Similarly, extract a subsequence such that $\ell_n^{+}$, defined as the entry point in the Morse chart of $b$ converges to a point $b^{+}$.
+    So we have a subsequence whose exit point in $\Omega(a)$  converges to $a^{-}$ and whose entrance in $\Omega(b)$ converges to  $b^{+}$.
+
+    Let us now try to construct a trajectory that is the limit of $\ell_n$ (or rather of a subsequence of $ \ell_n$.)
+    An obvious starting point would be to consider the unique trajectory $\gamma_1$ passing through $a^{-}$ going from $a$ to another critical point.
+    Suppose for a moment that this other critical points is in fact $b$, so $\gamma_1$ connects  $a$ and  $b$.
+    The \todo{following lemma} implies that the entry points of $\ell_n$ in $\Omega(b)$ converge to the entry point of $\gamma_1$. This then proves that $\ell_n \to  \gamma_1$\sidenote{
+        By definition of our topology, a sequence of unbroken trajectories connecting $a$ to  $b$ ($\ell_n$) converges to an unbroken trajectory ($\gamma_1$) if entry and exit points converge.
+    }, and we are done.
+
+    Now, what about the other case, when $\gamma_1$ connects $a$ and another critical point $c \neq b$?
+    We claim that $\ell_n$ will converge\sidenote{Again, after extracting some subsequences} to trajectory that is at least broken in $c$.
+We have again that the entry points of $\ell_n$ in $\Omega(c)$ (call them $c_n^{+}$) converge to the entry point of $\gamma_1$, so the first segment of the limit trajectory will be $\gamma_1$.\sidenote{Note that we are still not sure that $ \ell_n$ converges, so talking about `the limit trajectory' is a bit dangerous. Here we mean that the first segment of the limit of the subsequence we will extract will be $\gamma_1$.}
+To find the second segment of the limit, we would again want a starting point (like we had $a^{-}$ before) in the unstable manifold of $c$ to flow from in order to find $\gamma_{2}$.
+For this, extract a subsequence of $\ell_n$ such that their exit points $c^{-}_n$ in $\Omega(c)$ converge to a point $c^{-}$.
+We claim that $c^{-}$ lies in the unstable manifold of $c$.\sidenote{
+    Suppose that it does not.
+    Then we could flow back $c^{-}$ to a point $c^{\star}$ with $f(c^{\star}) = f(c^{+})$.
+    Note that $c^{\star}$ is not in the stable manifold of $c$. (Otherwise, flowing forward again we would end up in  $c$)
+    Applying the lemma again, $c_n^{+} \to  c^{\star}$ meaning that $c^{\star} = c^{+}$. This cannot be possibly right since $c^{\star}$ is not in the stable manifold of $c$, but $c^{+}$ is, by definition.
+}
+This means that when we flow back, we indeed get to $c$ like we wanted, and when we flow forward, we get to another critical point, which may be $b$, or $d$, yet another critical point. This way we go on and find a subsequence of $\ell_n$ that converges to $(\gamma_1, \gamma_2, \ldots, \gamma_k)$.
+
+In order to complete the proof for a sequence $\ell_n$ in $ \Lb ab$ (instead of $\L ab$), note that for sufficiently large $n$ and after extracting a subsequence, the critical points where $ \ell_n$ is broken do not change. Then apply the proof above to the first segment, then to the second, \ldots
+
+\todo{Introduce $\Omega(p)$ as notation for Morse chart around  $p$}
+
+\begin{figure}[H]
+    \centering
+    \incfig{partial-squared-zero-space-compact}
+    \caption{TODO partial squared zero space compact.
+        Note that the figure is somewhat misleading because of lack of dimensions.
+        Doesn't seem lik $b_n^{+}$ can move, but they in fact can.
+        We have drawn $a$ as a $2$-handle in order to make this freedom more clear.
+    }
+    \label{fig:partial-squared-zero-space-compact}
+\end{figure}
+\end{proof}
+
+The lemma used in the above proof says that points $y_n$ on trajectories that pass through a convergent sequence of points $x_n \to x$ also converge, at least if $y_n$ all lie on the same level.
+\begin{marginfigure}
+    \centering
+    \incfig{lemma-partial-squared-zero-proof}
+    \caption{DODO lemma partial squared zero proof}
+    \label{fig:lemma-partial-squared-zero-proof}
+\end{marginfigure}
+\begin{lemma}
+    Let $x$ be a regular point of $f$ and $x_n \to x$.
+    Let $y_n$ and  $y$ be points lying on the same trajectory of $X$ as  $x_n$ and  $x$.
+    Suppose all $y_n$ lie on the same level as  $y$, i.e.  $f(y_n) = f(y)$.
+    Then  $y_n \to  y$.
+\end{lemma}
+\begin{proof}
+    The idea of the proof is to flow $y_n$ to  $x_n$ and $y$ to $x$ so that convergence of $x_n$ implies convergence of $y_n$.
+    Let  $\psi_t$ be the flow of  $-\frac{1}{df (X)} X$ on a subset of $M$ that contains $x_n, y_n, x, y$ for large enough  $n$ and does not contain critical points.
+    Then $f(\psi_t(z)) = f(z) - t$, so
+     \[
+         y_n = \psi_{-f(y_n) + f(x_n)}(x_n) = \psi_{-f(y) + f(x_n)}(x_n) \xrightarrow{n \to \infty}   \psi_{-f(y) + f(x)}(x) = y
+    .\] 
+\end{proof}
+
+Note that the proof of the previous theorem also shows that $\Lb ab $ is actually the compactification of  $\Lb ab$, in the sense that there are elements of  $\L ab$ that are arbitrarily close to a fixed element of $\Lb ab$.
+\begin{prop}
+$\Lb ab$ is a compactification of $\L ab$
+\end{prop}
+\begin{prop}
+$\Lb ab $ is a $1$-dimensional manifold (if indices differ by $2$)
+\end{prop}
+
+
 \section{Morse homology is independent of the Morse function and gradient}
 \begin{theorem}
     Let $M$ be a compact manifold and $ f_0, f_1: M \to  \R$ two Morse functions.
