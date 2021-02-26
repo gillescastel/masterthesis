@@ -63,7 +63,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=3]{partial-squared-zero-space-compact.pdf}}%
     \put(0.15954304,0.37330555){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^{-}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{partial-squared-zero-space-compact.pdf}}%
-    \put(0.29480573,0.00020731){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Case 1\end{tabular}}}}%
+    \put(0.29197267,0.00020731){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Case 1\end{tabular}}}}%
     \put(-0.21953356,0.70215232){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.63943853\unitlength}\raggedright \end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{partial-squared-zero-space-compact.pdf}}%
     \put(0.80303077,0.21796229){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\small $c_n^-$\end{tabular}}}}%
@@ -83,5 +83,7 @@
     \put(0.73692327,0.00020731){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Case 2\end{tabular}}}}%
     \put(0.69802271,0.16803232){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{partial-squared-zero-space-compact.pdf}}%
+    \put(0.19473141,0.43668264){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\small $a^-_n$\end{tabular}}}}%
+    \put(0.24976848,0.3118843){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\small $b^+_n$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
