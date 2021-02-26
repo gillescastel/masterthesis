@@ -97,13 +97,14 @@ We will address these topics in the two following sections, but let us first com
     As mentioned earlier, we will prove that this is in general the case.
 \end{eg}
 \begin{eg}[Homology of the three-torus]
+    \label{eg:homology-of-the-three-torus}
     Let us recall Example~\ref{eg:handle-decomposition-three-torus}, which discusses the three-torus $T^{3} = S^{1} \times S^{1} \times S^{1} = \R^3 / \Z^3$ and the following Morse function
     \begin{marginfigure}
         \centering
         \incfig{morse-homology-three-torus-trajectories}
         \caption{
         Trajectories connecting critical points whose index differ by exactly $1$.
-        Here $T^{3} = \R^{3} / \Z^{3}$ and we have drawn $\big(-\frac{1}{2}, \frac{1}{2}\big]$ as representative cube.  }
+        Here $T^{3} = \R^{3} / \Z^{3}$ and we have drawn $\big(-\frac{1}{2}, \frac{1}{2}\big]^3$ as representative cube.  }
         \label{fig:morse-homology-three-torus-trajectories}
     \end{marginfigure}
     \begin{marginfigure}
@@ -152,7 +153,7 @@ We will address these topics in the two following sections, but let us first com
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}
 
-\section{Independence}
+\section{Morse homology is independent of the Morse function and gradient}
 \begin{theorem}
     Let $M$ be a compact manifold and $ f_0, f_1: M \to  \R$ two Morse functions.
     Let $X_0, X_1$ be pseudo-gradients adapted to $f_0$ and $ f_1$ respectively with the Smale property.
@@ -233,6 +234,7 @@ This means we can decompose $\partial_{\tilde{X}}$ as follows:
     (p_0, p_1) &\longmapsto (\partial_{X_0}(p_0), \partial_{X_1}(p_1)+ \Phi^{F}(p_0))
 ,\end{align*}
 where $\Phi^{F}$ counts the trajectories connecting critical points of $f_0$ to ones of $f_1$. We can also write this as a matrix:
+\todo{Talk about cone construction in homological algebra!}
 \[
 \partial_{\tilde{X}} = \begin{pmatrix}
     \partial_{X_0} & 0 \\
@@ -357,3 +359,64 @@ proving that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ induce the same map on th
     \label{fig:morse-homology-independence-partial-squared-zero-bis}
 \end{figure*}
 \end{proof}
+
+\section{The Künneth Formula}
+The Künneth Formula is a way to relate the homology of a product to the homology of its factors and it states the following:
+\begin{prop}[Künneth formula]
+    Let $M, N$ be two manifolds. Then
+    \[
+        \HMf[k]{M \times N} \cong
+        \bigoplus_{i+j  = k} \HMf[i]{M} \otimes \HMf[j]{N}
+    ,\] 
+where homology is taken with coefficients in $ \Z_2$.
+\end{prop}
+We can also express this in a different way using the Poincaré polynomial.
+For this, define $\beta_k(M) = \dim_{\Z_2} \HMf[k]{M;\Z_2}$, the $k$th Betti number and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
+Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
+\begin{eg}
+    We have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
+    More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
+\end{eg}
+\begin{proof}
+    Let $f, g$ and $X, Y$ be two Morse functions, resp.\ pseudo-gradient fields on  $M$ and  $N$.
+    Then $f + g$ is a Morse function and $(X, Y)$ is a pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
+    Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices. 
+    Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
+    Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
+    It's clear that the only way this can happen is when $a = c$ or $b = d$.\sidenote{
+        If $a\neq c$ and  $b \neq d$, then  $\Ind c \ge  \Ind a + 1$ and $\Ind d \ge  \Ind b + 1$, so $\Ind (c, d) \ge  \Ind (a, b) + 2$.
+    }
+
+    When we think about this in terms of directed graphs of critical points, like we did in the example of $T^{3}$, we find that the graph of $M \times N$ is the Cartesian product of the graph of $M$ and the graph of  $N$.
+    With these things in mind, it is easy to check that
+    \begin{align*}
+        \Phi: \bigoplus_{i+j = k} C_i(f) \otimes C_j(g) &\longrightarrow C_k(f+g) \\
+        a \otimes b &\longmapsto (a,b)
+    \end{align*}
+    is an isomorphism of complexes with the following differentials:
+    \[
+        (C_\bul(f) \otimes C_\bul(g), \partial_X \otimes 1 + 1 \otimes \partial_Y) \xrightarrow{\Phi}   (C_\bul(f+g), \partial_{(X,Y)})
+    ,\] 
+    where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
+    Now, taking the homology of both sides, and remembering that the homology of the tensor product complex is the tensor product of the homologies (Proposition~\ref{prop:hom-tensor-is-tensor-hom}), we get exactly what we want:
+    \[
+        \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
+    .\] 
+    Note that we take the homology with coefficients in $\Z_2$ in order to satisfy the conditions of Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
+\begin{marginfigure}
+    \centering
+    \incfig{kunneth-formula}
+    \caption{TODO kunneth formula}
+    \label{fig:kunneth-formula}
+\end{marginfigure}
+\end{proof}
+
+\todo{Talk about orientation and $\Z_2$ vs $ \Z$.}
+
+
+\todo{
+    Refer to example \ref{eg:homology-of-the-three-torus}.
+    Graph of critical points is `product' of graphs in some sense?
+    Just normal Cartesian product of graphs?
+}
+\todo{Question: graph of critical points, seems interesting? Homology of a directed graph? Hmm not really.}

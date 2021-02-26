@@ -177,3 +177,28 @@ The following is a useful criterion for determining whether two chain maps induc
                         &= f(x) + \Im(d^{N}).
     \end{align*} 
 \end{proof}
+\todo{Add source. Above: commutative algebra}
+\begin{definition}[Tensor product of complexes]
+    Let $C_\bul$ and  $D_\bul$ be two complexes over field. Their tensor product is defined as
+     \[
+         (C \otimes D)_k = \bigoplus_{i+j = k} C_i \otimes D_j
+    ,\] 
+    with boundary operator $\partial_C \otimes 1 + 1 \otimes\partial_D$.
+\end{definition}
+\todo{Add picture}
+\begin{prop}
+    Let $C_\bul$ and  $D_\bul$ be complexes over a field.
+    The homology of the tensor product complex is the tensor product of the homologies:
+    \[
+        H_\star(C_\bul \otimes D_\bul) = H_\star(C_\bul) \otimes H_\star(D_\bul)
+    .\] 
+    \label{prop:hom-tensor-is-tensor-hom}
+\end{prop}
+\begin{proof}
+    Omitted.
+\end{proof}
+\begin{remark}
+    This result is only true when we are working over a field, i.e.\ in the context of vector spaces.
+\end{remark}
+\todo{Add source (Audin)}
+
