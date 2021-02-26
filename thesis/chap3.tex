@@ -153,19 +153,27 @@ We will address these topics in the two following sections, but let us first com
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}
 
+\begin{enumerate}
+    \item Define $\Lb ab$ 
+    \item Define a topology on $\Lb ab$ that matches the topology on  $\L ab$
+    \item Prove that  $\Lb ab$ is the compactification of $\Lb ab$
+    \item Prove that if $\Ind a - \Ind b = 2$, $\Lb ab$ is a 1-dimensional manifold with as boundary broken trajectories between $a$ and  $b$
+\end{enumerate}
+
+
 \begin{theorem}
     $\Lb ab$ is compact
 \end{theorem}
 \begin{proof}
     Let $ \ell_n$ be a sequence of trajectories in $\L ab$.\sidenote{Note that we first consider a sequence of \emph{unbroken} trajectories.}
     Let $\Omega(a)$ be a Morse chart around $a$.
-    Consider the points where $\ell_n$ exits the Morse chart $a$, call them $\ell_n^{-}$.
-    Extract a subsequence of $\ell_n$ such that $\ell_{n_k}^{-}$ converges\sidenote{\todo{This uses compactness of sphere.}} and call the point of convergence $a^{-}$.
+    Consider the points where $\ell_n$ exits the Morse chart $a$, call them $a_n^{-}$.
+    Extract a subsequence of $\ell_n$ such that $a_{n}^{-}$ converges\sidenote{\todo{This uses compactness of sphere.}} and call the point of convergence $a^{-}$.
     We will denote the extracted subsequence again by $\ell_n$ and will do so continuously in the proof.
-    Similarly, extract a subsequence such that $\ell_n^{+}$, defined as the entry point in the Morse chart of $b$ converges to a point $b^{+}$.
+    Similarly, extract a subsequence such that $b_n^{+}$, defined as the entry point in the Morse chart of $b$ converges to a point $b^{+}$.
     So we have a subsequence whose exit point in $\Omega(a)$  converges to $a^{-}$ and whose entrance in $\Omega(b)$ converges to  $b^{+}$.
 
-    Let us now try to construct a trajectory that is the limit of $\ell_n$ (or rather of a subsequence of $ \ell_n$.)
+    Let us now try to construct a trajectory that is the `accumulation trajectory' of $\ell_n$.
     An obvious starting point would be to consider the unique trajectory $\gamma_1$ passing through $a^{-}$ going from $a$ to another critical point.
     Suppose for a moment that this other critical points is in fact $b$, so $\gamma_1$ connects  $a$ and  $b$.
     The \todo{following lemma} implies that the entry points of $\ell_n$ in $\Omega(b)$ converge to the entry point of $\gamma_1$. This then proves that $\ell_n \to  \gamma_1$\sidenote{
@@ -173,9 +181,9 @@ We will address these topics in the two following sections, but let us first com
     }, and we are done.
 
     Now, what about the other case, when $\gamma_1$ connects $a$ and another critical point $c \neq b$?
-    We claim that $\ell_n$ will converge\sidenote{Again, after extracting some subsequences} to trajectory that is at least broken in $c$.
-We have again that the entry points of $\ell_n$ in $\Omega(c)$ (call them $c_n^{+}$) converge to the entry point of $\gamma_1$, so the first segment of the limit trajectory will be $\gamma_1$.\sidenote{Note that we are still not sure that $ \ell_n$ converges, so talking about `the limit trajectory' is a bit dangerous. Here we mean that the first segment of the limit of the subsequence we will extract will be $\gamma_1$.}
-To find the second segment of the limit, we would again want a starting point (like we had $a^{-}$ before) in the unstable manifold of $c$ to flow from in order to find $\gamma_{2}$.
+    We claim that the accumulation trajectory of $\ell_n$ will be a trajectory that is at least broken in $c$.
+We have again that the entry points of $\ell_n$ in $\Omega(c)$ (call them $c_n^{+}$) converge to the entry point of $\gamma_1$, so the first segment of the accumulation trajectory will be $\gamma_1$.
+To find the second segment of the accumulation trajectory, we would again want a starting point (like we had $a^{-}$ before) in the unstable manifold of $c$ to flow from in order to find $\gamma_{2}$.
 For this, extract a subsequence of $\ell_n$ such that their exit points $c^{-}_n$ in $\Omega(c)$ converge to a point $c^{-}$.
 We claim that $c^{-}$ lies in the unstable manifold of $c$.\sidenote{
     Suppose that it does not.
