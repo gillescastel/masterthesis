@@ -26,7 +26,7 @@ Note that this implies that $C_{-1} = C_{-2} = \cdots = 0$ and $C_{n+1} = C_{n+2
     .\] 
 \end{eg}
 
-To define the differential, we also need a pseudo-gradient $X$, because it is defined in such a way that it counts trajectories connecting critical points of lower index.
+The definition of the differential is based on a pseudo-gradient $X$: it counts trajectories connecting critical points of lower index.
 Because critical points of index $k$ generate $C_k$, it suffices to define $\partial_{X,k}$ on these critical points and extend linearly:
 \begin{align*}
     \partial_{X, k}: C_k &\longrightarrow C_{k-1} \\
@@ -110,7 +110,9 @@ We will address these topics in the two following sections, but let us first com
     \begin{marginfigure}
         \centering
         \incfig{mores-homology-three-torus-critical-points-graph}
-        \caption{Graph of the critical points of $f$ on $T^{3}$.}
+        \caption{Graph of the critical points of $f$ on $T^{3}$.
+            Each edge represents a flow line between points whose indices differ by one.
+        }
         \label{fig:mores-homology-three-torus-critical-points-graph}
     \end{marginfigure}
     \begin{align*}
@@ -152,18 +154,106 @@ We will address these topics in the two following sections, but let us first com
 \end{eg}
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}
+In this section, we will prove that the Morse complex is actually a complex, by which we mean that $\partial^2 = 0$.
+The core idea of the proof is very geometrical and depends on the fact that compact manifolds with boundary have an even number of boundary points.\sidenote{TODO: reference or prove!}
+We will first make this core idea clear, and then make this argument exact.
+
+Let us first restate what we have to prove. Let $a \in \Crit_k f$ be a critical point of a Morse function $f: M \to  \R$.
+We need to prove that $\partial^2(a) = 0$, so\sidenote{
+    TODO will denote top middle and bottom point with $a, c, b$.
+    Strange maybe but useful later on.
+}
+\begin{align*}
+    \partial^2(a) &= \partial \Big(\sum_{c \in \Crit_{k-1} f} n_X(a, c) c\Big)\\
+                  &= \sum_{b \in \Crit_{k-1} f} \sum_{c \in \Crit_k f} n_X(a, c) n_X(c, b) b
+.\end{align*} 
+We see that $\partial^2(a)$ counts trajectories from $a$ to points of index $k-2$ that are once broken in a critical point of index $k-1$.
+Remember that we are working over $\Z_2$, so if we can prove that these once broken trajectories always occur in pairs, we are done.
+The core idea of the proof is to notice that these once broken trajectories together with the space of unbroken trajectories $\L ab$ form a compact 1-dimensional manifold with boundary exactly the broken trajectories. We have illustrated this in Figure~\ref{fig:morse-complex-is-a-complex-idea-of-proof}.
+In other words, we can compactify $\L ab$ by adding the once broken trajectories between $a$ and $c$, resulting in a space we will denote by $\Lb ab$.
+As previously remarked, this is sufficient to prove that $\partial^2(a) = 0$, because compact 1-dimensional manifolds always have an even number of boundary points.\sidenote{
+    TODO In the oriented context, the signed number of boundary points is zero.
+}
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-complex-is-a-complex-idea-of-proof}
+    \caption{
+        Core idea of the proof stating $\partial^2 = 0$.
+        There are two unbroken trajectories from $a$ to $b$, one passing through $c_1$ and one through $c_2$.
+        There is a one parameter family of unbroken trajectories interpolating between the two broken ones.
+        Together, they form a compact 1-dimensional manifold with boundary, which has an even number of boundary points.
+    }
+    \label{fig:morse-complex-is-a-complex-idea-of-proof}
+\end{marginfigure}
+
+Before we proceed with this idea, let us give an overview of the works that needs to be done.
 
 \begin{enumerate}
-    \item Define $\Lb ab$ 
-    \item Define a topology on $\Lb ab$ that matches the topology on  $\L ab$
+    \item Define $\Lb ab$, the space of all (broken and unbroken) trajectories.
+    \item Define a topology on $\Lb ab$ so that we are able to talk about compactness
     \item Prove that  $\Lb ab$ is the compactification of $\Lb ab$
-    \item Prove that if $\Ind a - \Ind b = 2$, $\Lb ab$ is a 1-dimensional manifold with as boundary broken trajectories between $a$ and  $b$
+    \item Prove that if $\Ind a - \Ind b = 2$, then $\Lb ab$ is a 1-dimensional manifold with as boundary the once broken trajectories between $a$ and  $b$
 \end{enumerate}
 
+\subsection{The space of broken trajectories}
+\begin{definition}
+    The space of broken trajectories between $a$ and  $b$ is
+     \[
+         \Lb ab = \bigcup_{c_i \in \Crit f} \L a{c_1} \times \L {c_1}{c_2} \times  \cdots \times \L {c_\ell}b
+    .\] 
+\end{definition}
 
+    Note that the number $\ell$ describes how many times the trajectory is broken.
+    In other words, each broken trajectory in $\L a{c_1} \times \L {c_1}{c_2} \times  \cdots \times \L {c_\ell}b$ has $ \ell+1$ segments,  and we will denote such a trajectory by $(\lambda_1, \lambda_2, \cdots, \lambda_{\ell+1})$.
+    In the case where $(\Ind a, \Ind c, \Ind b) = (k, k-1, k-2)$, this definition results in
+    \[
+        \Lb ab = \L ab \cup  \bigcup_{c \in \Crit_{k-1} f}  \L a{c} \times \L {c} b
+    ,\] 
+    which makes it clear it is the union of unbroken and once broken trajectories.
+    
+
+
+\subsection{Topology of $\Lb ab$}
+% Also remember that $\L ab$ is homeomorphic to $\traj ab \cap f^{-1}(\alpha)$ for some regular value $\alpha$ between $f(a)$ and $f(b)$,
+
+To define the topology on $\Lb ab$,
+we will describe a basis around a (possibly broken) trajectory.
+Let $(\lambda_1, \lambda_2, \ldots, \lambda_q)$ be a trajectory in $\Lb ab$.
+Consider Morse charts around each critical point  $a, c_1, c_2, \ldots, c_{q-1}, b$.
+Consider opens around entry and exit points of the trajectories, lying in level sets of $f$, indicated in the figure with thick black lines.
+We declare all trajectories passing through these opens to be in a open neighborhood of $(\lambda_1, \lambda_2, \ldots, \lambda_q)$.
+Doing this for all possible `entrance and exit opens' defines a basis of the topology.
+
+Remember that the topology of  $\L ab$ came from the one on $\traj ab \subset M$ using the projection map $\pi: \traj ab \to \L ab $.
+We also mentioned that $\L ab$ is homeomorphic to $\traj ab \cap  f^{-1}(\alpha)$ for some regular value $\alpha$, making it clear that the topology on $\Lb ab$ corresponds to the one  $\L ab$ for unbroken trajectories.
+
+So the essence of the topology on $\Lb ab$ is: `trajectories are nearby if entrance and exit points in Morse charts are nearby'.
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-definition-of-topology}
+    \caption{TODO morse homology definition of topology}
+    \label{fig:morse-homology-definition-of-topology}
+\end{marginfigure}
+
+\subsection{$\Lb ab$ is the compactification of $\L ab$}
+Now we are ready to prove that $\Lb ab$ is compact, and in fact a compactification of  $\L ab$.\sidenote{By this, we mean that there are points in $\L ab$ arbitrary close to ones in  $\Lb ab$.}
 \begin{theorem}
     $\Lb ab$ is compact
 \end{theorem}
+
+We will actually prove that $\Lb ab$ is sequentially compact, which will turn out to be enough for our needs, and is in this context actually equivalent with being compact.
+
+\begin{figure}[H]
+    \centering
+    \incfig{partial-squared-zero-space-compact}
+    \caption{TODO partial squared zero space compact.
+        Note that the figure is somewhat misleading because of lack of dimensions.
+        Doesn't seem lik $b_n^{+}$ can move, but they in fact can.
+        We have drawn $a$ as a $2$-handle in order to make this freedom more clear.
+    }
+    \label{fig:partial-squared-zero-space-compact}
+\end{figure}
 \begin{proof}
     Let $ \ell_n$ be a sequence of trajectories in $\L ab$.\sidenote{Note that we first consider a sequence of \emph{unbroken} trajectories.}
     Let $\Omega(a)$ be a Morse chart around $a$.
@@ -171,14 +261,20 @@ We will address these topics in the two following sections, but let us first com
     Extract a subsequence of $\ell_n$ such that $a_{n}^{-}$ converges\sidenote{\todo{This uses compactness of sphere.}} and call the point of convergence $a^{-}$.
     We will denote the extracted subsequence again by $\ell_n$ and will do so continuously in the proof.
     Similarly, extract a subsequence such that $b_n^{+}$, defined as the entry point in the Morse chart of $b$ converges to a point $b^{+}$.
-    So we have a subsequence whose exit point in $\Omega(a)$  converges to $a^{-}$ and whose entrance in $\Omega(b)$ converges to  $b^{+}$.
+    In conclusion, we have a subsequence whose exit point in $\Omega(a)$  converges to $a^{-}$ and whose entrance in $\Omega(b)$ converges to  $b^{+}$.
 
-    Let us now try to construct a trajectory that is the `accumulation trajectory'\sidenote{By which we simply mean an accumulation point of the sequence $\ell_n$, but this can be confusing because it is not a point in the geometrical sense of the word} of $\ell_n$.
+    Let us now try to construct a trajectory that is the `accumulation trajectory'\sidenote{By this, we simply mean an accumulation point of the sequence $\ell_n$, but this terminology can be confusing because it is not a point in the geometrical sense of the word.} of $\ell_n$.
     An obvious starting point would be to consider the unique trajectory $\gamma_1$ passing through $a^{-}$ going from $a$ to another critical point.
-    Suppose for a moment that this other critical points is in fact $b$, so $\gamma_1$ connects  $a$ and  $b$.
-    The \todo{following lemma} implies that the entry points of $\ell_n$ in $\Omega(b)$ converge to the entry point of $\gamma_1$. This then proves that $\ell_n \to  \gamma_1$\sidenote{
+    Suppose for a moment that this other critical points is in fact $b$, so $\gamma_1$ connects  $a$ and  $b$, as in case 1 in Figure~\ref{fig:partial-squared-zero-space-compact}.
+    Lemma~\ref{lemma:level-sets}, which we will prove later on\sidenote{
+        \textbf{Lemma~\ref{lemma:level-sets}.}
+        Let $x$ be a regular point of $f$ and $x_n \to x$.
+        Let $y_n$ and  $y$ be points lying on the same trajectory of $X$ as  $x_n$ and  $x$.
+        Suppose all $y_n$ lie on the same level as  $y$, i.e.  $f(y_n) = f(y)$.
+        Then  $y_n \to  y$.
+        }, implies that the entry points of $\ell_n$ in $\Omega(b)$ converge to the entry point of $\gamma_1$. This then proves that $\ell_n \to  \gamma_1$\sidenote{
         By definition of our topology, a sequence of unbroken trajectories connecting $a$ to  $b$ ($\ell_n$) converges to an unbroken trajectory ($\gamma_1$) if entry and exit points converge.
-    }, and we are done.
+    }.
 
     Now, what about the other case, when $\gamma_1$ connects $a$ and another critical point $c \neq b$?
     We claim that the accumulation trajectory of $\ell_n$ will be a trajectory that is at least broken in $c$.
@@ -194,20 +290,10 @@ We claim that $c^{-}$ lies in the unstable manifold of $c$.\sidenote{
 This means that when we flow back, we indeed get to $c$ like we wanted, and when we flow forward, we get to another critical point, which may be $b$, or $d$, yet another critical point. This way we go on and find a subsequence of $\ell_n$ that converges to $(\gamma_1, \gamma_2, \ldots, \gamma_k)$.
 
 In order to complete the proof for a sequence $\ell_n$ in $ \Lb ab$ (instead of $\L ab$), note that for sufficiently large $n$ and after extracting a subsequence, the critical points where $ \ell_n$ is broken do not change. Then apply the proof above to the first segment, then to the second, \ldots
-
-\todo{Introduce $\Omega(p)$ as notation for Morse chart around  $p$}
-
-\begin{figure}[H]
-    \centering
-    \incfig{partial-squared-zero-space-compact}
-    \caption{TODO partial squared zero space compact.
-        Note that the figure is somewhat misleading because of lack of dimensions.
-        Doesn't seem lik $b_n^{+}$ can move, but they in fact can.
-        We have drawn $a$ as a $2$-handle in order to make this freedom more clear.
-    }
-    \label{fig:partial-squared-zero-space-compact}
-\end{figure}
 \end{proof}
+
+% \todo{Introduce $\Omega(p)$ as notation for Morse chart around  $p$}
+
 
 The lemma used in the above proof says that points $y_n$ on trajectories that pass through a convergent sequence of points $x_n \to x$ also converge, at least if $y_n$ all lie on the same level.
 \begin{marginfigure}
@@ -221,6 +307,7 @@ The lemma used in the above proof says that points $y_n$ on trajectories that pa
     Let $y_n$ and  $y$ be points lying on the same trajectory of $X$ as  $x_n$ and  $x$.
     Suppose all $y_n$ lie on the same level as  $y$, i.e.  $f(y_n) = f(y)$.
     Then  $y_n \to  y$.
+    \label{lemma:level-sets}
 \end{lemma}
 \begin{proof}
     The idea of the proof is to flow $y_n$ to  $x_n$ and $y$ to $x$ so that convergence of $x_n$ implies convergence of $y_n$.
@@ -232,14 +319,104 @@ The lemma used in the above proof says that points $y_n$ on trajectories that pa
 \end{proof}
 
 Note that the proof of the previous theorem also shows that $\Lb ab $ is actually the compactification of  $\Lb ab$, in the sense that there are elements of  $\L ab$ that are arbitrarily close to a fixed element of $\Lb ab$.
-\begin{prop}
-$\Lb ab$ is a compactification of $\L ab$
-\end{prop}
-\begin{prop}
-$\Lb ab $ is a $1$-dimensional manifold (if indices differ by $2$)
-\end{prop}
+
+\subsection{$\Lb ab$ is a 1-dimensional manifold with boundary}
+With the preceding technical lemmas,
+we are ready to complete the proof stating that the Morse complex is actually a complex, i.e.\ $\partial^2 = 0$, with yet another technical lemma.
 
 
+\begin{theorem}
+    Let $a, b$ be critical points of  $M$ such that  $\Ind a - \Ind b = 2$. Then  $\Lb ab$ is a compact  $1$-dimensional manifold with boundary.
+\end{theorem}
+
+We already know that $\L ab$ is a 1-manifold, so the following proposition immediately implies the theorem.
+
+\begin{prop}
+    Let $M$ be a compact manifold and $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$ satisfying the Smale property. Let  $a,c,b$ be three critical points of indices  $k+1, k$ and $k-1$. Let $\lambda_1 \in \L ac$ and $\lambda_2 \in \L cb$.
+    There exists a continuous embedding $\psi$ from $[0, \delta)$ to a neighborhood of $(\lambda_1, \lambda_2)$ in $\Lb ab$ such that
+    \[
+    \begin{cases}
+        \psi(0) = (\lambda_1, \lambda_2) \in \Lb ab\\
+        \psi(s) \in \L ab \quad \text{ for } s \neq 0.
+    \end{cases}
+    \] 
+    Moreover if $(\ell_n)$ is a sequence in $\L ab$ that tends to $(\lambda_1, \lambda_2)$, then $ \ell_n$ is eventually contained in the image of $\psi$.
+\end{prop}
+
+The last part is important in order to show that broken trajectories actually form the boundary, as illustrated in Figure~\ref{fig:l-bar-last-condition-of-manifold-with-boundary}.
+\begin{marginfigure}
+    \centering
+    \incfig{l-bar-last-condition-of-manifold-with-boundary}
+    \caption{We can embed a half open interval $[a, b)$ in $\R$, but that does not mean that $a$ is a boundary point of $\R$. Clearly, there exists $x_n \to a$ that is not eventually contained in $[a,b)$.
+        Requiring that this last condition always holds ensures that $a$ is actually a boundary point.
+    }
+    \label{fig:l-bar-last-condition-of-manifold-with-boundary}
+\end{marginfigure}
+
+\begin{proof}
+    Let us first consider a $2$-dimensional manifold, where the only interesting case is $(\Ind a, \Ind c, \Ind b) = (2,1,0)$.
+
+    \begin{marginfigure}
+        \centering
+        \incfig{l-bar-manifold-2-dimensional-case}
+        \caption{TODO l bar manifold 2 dimensional case}
+        \label{fig:l-bar-manifold-2-dimensional-case}
+    \end{marginfigure}
+    Choose a Morse chart around $c$ that lies between level sets $\alpha \pm \epsilon$ where  $\alpha = f(c)$.
+    The trajectories starting in $a$ meet $f^{-1}(\alpha + \epsilon)$ transversely.
+    Let $P$ be their intersection, i.e. $\unstable{a} \cap  f^{-1}( \alpha + \epsilon)$.
+    Let $c^{+}$ be the entry point of $\lambda_1$ in  the Morse chart of $c$, which is contained in the $1$-manifold $P$.
+
+    The idea is that we will embed an interval $[0, \delta)$ as on the figure in the level set $\alpha + \epsilon$. Call this embedding $\chi$.
+    The problem is however, we have to find a way to determine in what direction the second part of the broken trajectory ($\lambda_2$) exits $c$ so that we embed this interval on the `correct side' in order for the trajectories passing through these points to lie in a neighbourhood of $(\lambda_1, \lambda_2)$.
+    In the figure, we need to embed it `on the right', because $\lambda_2$ exits on the right.
+
+    The map $\psi:(0, \delta) \to  \L ab$ will then map $t$ to the trajectory passing through the point $\chi(t)$.
+    Note that once again we have to be careful at the endpoint, but if we have found the `correct side', this will be no problem, and we will be able to extend $\psi$ to $[0, \delta)$ by mapping  $0 \mapsto (\lambda_1, \lambda_2)$.
+
+    In order to solve the problem, we first consider `all directions', by embedding an open interval $D^{1}$ that is small enough \emph{centred} around $c^{+}$, i.e. a map $\Psi: (D^{1}, 0) \to  (P, c^{+})$.
+    Now, flow $\psi(D^{1} \setminus \{0\} )$ along $X$ until it reaches the level set $\alpha - \epsilon$, as in Figure~\ref{fig:l-bar-manifold-2-dimensional-case-part-flow}.
+    \begin{marginfigure}
+        \centering
+        \incfig{l-bar-manifold-2-dimensional-case-part-flow}
+        \caption{TODO l bar manifold 2 dimensional case part flow}
+        \label{fig:l-bar-manifold-2-dimensional-case-part-flow}
+    \end{marginfigure}
+    This defines an embedding $\Psi: D^{1} \setminus \{0\} \to  f^{-1}(\alpha-\epsilon)$, which splits up $D^{1}$ into two parts.
+    If we add in $S^{-} := f^{-1}(\alpha-\epsilon) \cap \unstable{c}$, which in this case consists of two points, the result forms a one-dimensional manifold $Q$ (with boundary $S^{-}$).\sidenote{
+        This is intuitively clear and can be verified by doing this in local coordinates, computing the flow explicitly.
+        This also works in higher dimensions.
+    }
+
+    With this done, we are ready to determine the `correct direction'.
+    Because of the Smale condition $\stable b \tcap \Im \Phi$ and  $\stable b \tcap S^{-}$.
+    This means $\stable b \cap Q$ is a submanifold of dimension $1$ with boundary isomorphic to $\L cb$.
+    In the figure, this submanifold is the right part of $Q$, with boundary the right point of $S^{-}$, a single point representing the only trajectory from $c$ to $b$, i.e. representative for $\L c b$.
+    Now our problem is solved and we know the `right direction'.
+    Let $c^{-}$ be the exit point of $\lambda_2$ (intersection of $\lambda_2$ and $S^{-}$). 
+    Define a map $\chi:[0, \delta) \to  \stable b \cap  Q$ mapping $0$ to  $c^{-}$.\sidenote{TODO: this $\chi$ parametrizes a different manifold than before \ldots Fix this}
+    Similarly as before by applying the previous lemma, this defines a map $\psi: [0, \delta) \to  \Lb ab$ with $\psi(0) = (\lambda_1, \lambda_2)$.
+
+    For the last statement in the theorem, let $\ell_n \to  (\lambda_1, \lambda_2)$ be a sequence in $\L ab$. Let $ \ell^{\pm}_n$ denote entry and exit points. 
+    Eventually, $\ell_n^{+} \in \psi(D \setminus \{0\})$, hence $ \ell_n^{-} \in Q$. This implies that $ \ell_n^{-} \in Q \cap \stable b = \Im \chi$.
+    This proves that $ \ell_n \in \Im \psi$.
+
+    In higher dimensions, the proof is actually almost exactly the same.
+    While there are many more directions from which to enter or leave the Morse chart of $c$, the procedure outlined above works, with a few adjustments to be made.
+    The dimension of $P$ is $k$, which we parametrize around $c^{+}$ by $D^{k}$ instead of $D^{1}$. Flowing this along $X$ and adding $S^{+}$ we get a $k$-dimensional manifold with boundary.\sidenote{This time, the manifold does not split into two parts, but becomes an annulus} Taking the intersection with  $\stable b$, we get a one-dimensional manifold (by counting dimensions and using that codimensions add when intersection is transverse), and the proof finishes in the same way.
+    In Figure~\ref{fig:lbar-manifold-three-dimensional-case} we have illustrated the three dimensional case with $\Ind c=2$.
+
+\begin{marginfigure}
+    \centering
+    \incfig{lbar-manifold-three-dimensional-case}
+    \caption{TODO lbar manifold three dimensional case TODO: extremely ugly figure}
+    \label{fig:lbar-manifold-three-dimensional-case}
+\end{marginfigure}
+\end{proof}
+\subsection{Conclusion}
+
+
+\filbreak
 \section{Morse homology is independent of the Morse function and gradient}
 \begin{theorem}
     Let $M$ be a compact manifold and $ f_0, f_1: M \to  \R$ two Morse functions.
