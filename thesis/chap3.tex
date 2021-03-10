@@ -676,6 +676,7 @@ Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
 \end{proof}
 
 \todo{Talk about orientation and $\Z_2$ vs $ \Z$.}
+\todo{Discuss non orientable example }
 
 
 \todo{
@@ -684,3 +685,60 @@ Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
     Just normal Cartesian product of graphs?
 }
 \todo{Question: graph of critical points, seems interesting? Homology of a directed graph? Hmm not really.}
+
+\section{Morse inequalities}
+
+The Morse inequalities state that there is a lower bound on the number of critical points, which only depends on the homology of the manifold:
+\begin{theorem}
+    Let $f: M \to  \R$ a Morse function. Then
+    \[
+        \# \Crit f \ge \sum \dim \HMf[k]{M, \Z_2}
+    ,\] 
+    and more specifically,
+    \[
+        \# \Crit_k f \ge \dim \HMf[k]{M, \Z_2}
+    .\] 
+\end{theorem}
+\begin{proof}
+    This is actually a very straightforward result, following from the fact that \[
+    \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
+    \] so $\dim \HMf[k]{M, \Z_2} = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
+\end{proof}
+
+A result in similar vein is the following:
+\begin{theorem}
+    Let $f: M \to  \R$ be a Morse function. Then
+    \[
+        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2} 
+    .\] 
+    Considering this equality modulo $2$, we get
+    \[
+        \# \Crit f  \equiv \sum \dim \HMf[k]{M, \Z_2} \mod 2
+    .\] 
+\end{theorem}
+\begin{marginfigure}
+    \centering
+    \incfig{linear-map-rank-nullity-theorem}
+    \caption{TODO linear map rank nullity theorem}
+    \label{fig:linear-map-rank-nullity-theorem}
+\end{marginfigure}
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-chain-complex-visualized}
+    \caption{TODO morse chain complex visualized}
+    \label{fig:morse-chain-complex-visualized}
+\end{marginfigure}
+\begin{proof}
+    Use the fact that 
+    \[
+        \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
+    \]
+    together with rank-nullity theorem for vector spaces (we are working over $\Z_2$).
+
+    To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
+    Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top). We have highlighted the dimension of the homology spaces in orange, and we have indicated spaces of the same dimensions with the same type of black thick lines.
+    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating some of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
+\end{proof}
+
+
