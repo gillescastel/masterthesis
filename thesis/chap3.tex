@@ -1,6 +1,9 @@
 \chapter{Morse homology}
 \label{chap:morse-homology}
 
+% \startcontents[chapters]
+% \printcontents[chapters]{}{1}{}
+
 \section{Morse complex}
 In order to define the Morse complex, we need a sequence of modules over a certain ring and maps between these modules.
 Most of the time, we will be working over $\Z/2\Z$, which we will denote by $\Z_2$, but sometimes the ring $\Z$ will be used instead. As will turn out, working over $\Z_2$ will allow us not to worry about orientation and it being a field also has some advantages.
@@ -211,6 +214,11 @@ Before we proceed with this idea, let us give an overview of the works that need
         \Lb ab = \L ab \cup  \bigcup_{c \in \Crit_{k-1} f}  \L a{c} \times \L {c} b
     ,\] 
     which makes it clear it is the union of unbroken and once broken trajectories.
+
+    \todo{
+        If manifold with boundary, 
+        then $\partial \Lb ab = \bigcup_{c} \L a c \times  \L c b$ so $| \partial \Lb ab| = \sum n_X(a,c) n_X(c,b) b$.
+    }
     
 
 
@@ -242,7 +250,7 @@ Now we are ready to prove that $\Lb ab$ is compact, and in fact a compactificati
     $\Lb ab$ is compact
 \end{theorem}
 
-We will actually prove that $\Lb ab$ is sequentially compact, which will turn out to be enough for our needs, and is in this context actually equivalent with being compact.
+We will actually prove that $\Lb ab$ is sequentially compact, which will turn out to be enough for our needs, and is in this context actually equivalent with being compact.\todo{Second countability of ambient manifold \ldots }
 
 \begin{figure}[H]
     \centering
@@ -254,6 +262,9 @@ We will actually prove that $\Lb ab$ is sequentially compact, which will turn ou
     }
     \label{fig:partial-squared-zero-space-compact}
 \end{figure}
+
+
+
 \begin{proof}
     Let $ \ell_n$ be a sequence of trajectories in $\L ab$.\sidenote{Note that we first consider a sequence of \emph{unbroken} trajectories.}
     Let $\Omega(a)$ be a Morse chart around $a$.
@@ -276,8 +287,7 @@ We will actually prove that $\Lb ab$ is sequentially compact, which will turn ou
         By definition of our topology, a sequence of unbroken trajectories connecting $a$ to  $b$ ($\ell_n$) converges to an unbroken trajectory ($\gamma_1$) if entry and exit points converge.
     }.
 
-    Now, what about the other case, when $\gamma_1$ connects $a$ and another critical point $c \neq b$?
-    We claim that the accumulation trajectory of $\ell_n$ will be a trajectory that is at least broken in $c$.
+    In the other case , when $\gamma_1$ connects $a$ and another critical point $c \neq b$, the accumulation trajectory of $\ell_n$ will be a trajectory that is at least broken in $c$.
 We have again that the entry points of $\ell_n$ in $\Omega(c)$ (call them $c_n^{+}$) converge to the entry point of $\gamma_1$, so the first segment of the accumulation trajectory will be $\gamma_1$.
 To find the second segment of the accumulation trajectory, we would again want a starting point (like we had $a^{-}$ before) in the unstable manifold of $c$ to flow from in order to find $\gamma_{2}$.
 For this, extract a subsequence of $\ell_n$ such that their exit points $c^{-}_n$ in $\Omega(c)$ converge to a point $c^{-}$.
@@ -328,6 +338,10 @@ we are ready to complete the proof stating that the Morse complex is actually a 
 \begin{theorem}
     Let $a, b$ be critical points of  $M$ such that  $\Ind a - \Ind b = 2$. Then  $\Lb ab$ is a compact  $1$-dimensional manifold with boundary.
 \end{theorem}
+
+\begin{remark}
+    One can show that in general, when $\Ind a - \Ind b > 2$,  $\Lb ab$ is a compact manifold with corners.
+\end{remark}
 
 We already know that $\L ab$ is a 1-manifold, so the following proposition immediately implies the theorem.
 
@@ -688,6 +702,16 @@ Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
 
 \section{Morse inequalities}
 
+\todo{
+    There also exists inequalities over $ \Z$, were we have modules instead of vector spaces and need to talk about rank instead of dimension. Maybe add this as well?
+    What is derived here is called the weak morse inequalities. In Morse theory Shintaru Fushida-Hardy, strong ones are derived.
+    Mention that rank is stil additive functor.
+    
+    For this, we should have introduced morse homology over $\Z$ first!
+
+    Show that the strong ones are stronger
+}
+
 The Morse inequalities state that there is a lower bound on the number of critical points, which only depends on the homology of the manifold:
 \begin{theorem}
     Let $f: M \to  \R$ a Morse function. Then
@@ -709,13 +733,14 @@ A result in similar vein is the following:
 \begin{theorem}
     Let $f: M \to  \R$ be a Morse function. Then
     \[
-        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2} 
+        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2}  = \chi(M)
     .\] 
     Considering this equality modulo $2$, we get
     \[
         \# \Crit f  \equiv \sum \dim \HMf[k]{M, \Z_2} \mod 2
     .\] 
 \end{theorem}
+\todo{Mention the definition of $\xi(M)$}
 \begin{marginfigure}
     \centering
     \incfig{linear-map-rank-nullity-theorem}
@@ -742,3 +767,57 @@ A result in similar vein is the following:
 \end{proof}
 
 
+\todo{Discuss morse inequalities for $\Z$? Torsion rank and rank?}
+\todo{Add references to the above sections}
+
+sections
+
+\begin{remark}
+    The Morse equalities are strict when $M$ is closed and simply connected $n\ge 6$, meaning that there always exists a Morse function $f: M \to  \R$ such that $\# \Crit_k f = \dim \HMf[k]f$. This is called Smale's theorem \cite[p.~392]{smale2007generalized}.
+\end{remark}
+\begin{remark}
+    There also exists versions of the Morse inequalities when we are working over $\Z$. While $\Z$ is not a field,
+    so the dimension of $\Z$-modules is not well defined, it still is a PID, so we can talk about rank and torsion rank.
+    %https://encyclopediaofmath.org/wiki/Morse_inequalities
+\end{remark}
+
+
+\section{Morse homology over $\Z$}
+
+\todo{
+\begin{eg}
+    Tilted torus over $\Z_2$. We find $ \Z_2, \Z_2^2, \Z_2$.
+\end{eg}
+\begin{eg}
+    Klein bottle over $\Z_2$ We find the same
+\end{eg}
+
+Definition of the oriented complex
+\begin{eg}
+    Tilted torus over $ \Z$
+\end{eg}
+\begin{eg}
+    Klein bottle over $ \Z$
+\end{eg}
+\begin{remark}
+    Mention that $\partial^2$ is still zero because now we are counting \emph{signed} boundary points of a 1-dimensional oriented manifold.
+\end{remark}
+}
+
+\section*{Morse homology is singular homology}
+
+\todo{
+    \begin{itemize}
+        \item Do this via currents, i.e. linear functionals on differential forms?
+            \[
+                [[M]](\omega) := \int_M \omega \quad \partial[[M]](\omega) = [[M]](d \omega)
+            .\] 
+            This defines homology. And then homology axioms? Follows lecture notes on morse theory by Hutchings
+        \item Do this directly (currents are chains modded out by singular chains. (integrating over singular chain gives zero). Following Hutchings and Y-J Lee circle-values Morse theory
+        \item Follow A\&D which goes via cellular.
+            \begin{itemize}
+                \item Show $(f, X)$ induces cellular decomposition, i.e. unstable manifolds of each critical point (very hard apparently)
+                \item Show that complexes are isomorphic (easy)
+            \end{itemize}
+    \end{itemize}
+}
