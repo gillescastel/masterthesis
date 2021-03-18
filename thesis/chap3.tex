@@ -837,25 +837,45 @@ Similarly as before, we define
 
 
 
-    \todo{
-    \begin{eg}
-        Klein bottle over $\Z_2$ We find the same
-    \end{eg}
-    \begin{eg}
-        Tilted torus over $ \Z$
-    \end{eg}
-}
-
-\begin{eg}[Homology of $T^2$ over $\Z$]
-    We use the Morse function of Example~\ref{eg:tilted-torus}, where the torus is slightly tilted, as illustrated in Figure~\ref{fig:tilted-torus}.
+\begin{eg}[Homology of $T^2$ over  $\Z_2$]
     \begin{marginfigure}
         \centering
         \incfig{tilted-torus}
         \caption{TODO tilted torus}
         \label{fig:tilted-torus}
     \end{marginfigure}
+    We use the Morse function of Example~\ref{eg:tilted-torus}, where the torus is slightly tilted, as illustrated in Figure~\ref{fig:tilted-torus}, where we also added the graph of the critical points.
+    Remember that each edge represents a trajectory connecting two critical points of consecutive index.
+    The complex is given by $ \Z_2 \to  \Z_2^2 \to \Z_2$, and because each critical point is connected twice to any other critical point of consecutive index, $\partial_k = 0$ for all $k$. 
+    This means that we have
+    \[
+        \HMf[0]{T^2, \Z_2} = \Z_2 \qquad
+        \HMf[1]{T^2, \Z_2} = \Z_2^2 \qquad
+        \HMf[2]{T^2, \Z_2} = \Z_2
+    .\] 
+\end{eg}
+\begin{eg}[Homology of the Klein bottle over $\Z_2$]
+    \begin{marginfigure}
+        \centering
+        \incfig{tilted-klein-bottle-over-z}
+        \caption{TODO tilted klein bottle over Z}
+        \label{fig:tilted-klein-bottle-over-z}
+    \end{marginfigure}
+    The Klein bottle $K$ is a non-orientable surface. We cannot embed it in $\R^3$, but the strong version Withney's theorem shows that we are able to immerse it, which is what we have done in Figure~\ref{fig:tilted-klein-bottle-over-z}.
+    If we tilt the bottle, the height function $h$ is Morse\sidenote{If we did not, we could have a circle of critical points near the bottom of the bottle.}, and the gradient induced by the standard metric on $\R^3$ is adapted to $h$ and satisfies the Smale condition.
+    We have also included the graph of the critical points.
+    Disregarding sign differences (which will be important when discussing the complex over $\Z$), this graph is identical to the one we obtained for $T^2$. We conclude that the Morse homology of $K$ and  $T^2$ over $\Z_2$ are identical:
+    \[
+        \HMf[0]{K, \Z_2} = \Z_2 \qquad
+        \HMf[1]{K, \Z_2} = \Z_2^2 \qquad
+        \HMf[2]{K, \Z_2} = \Z_2
+    .\] 
+\end{eg}
+
+\begin{eg}[Homology of $T^2$ over $\Z$]
+    We use the Morse function of Example~\ref{eg:tilted-torus}, where the torus is slightly tilted, as illustrated in Figure~\ref{fig:tilted-torus}.
     We have indicated the chosen orientations as before and have assigned a positive orientation to the single point $\stable d = \{d\}$.
-    For each trajectory, the sign has been added as well.
+    For each trajectory, the sign has been added, both on the figure and on the graph.
 
     The complex is given by $\Z \xrightarrow{\partial} \Z^2 \xrightarrow{\partial}  \Z$, and because the signs of the trajectories cancel out, $\NX Xpq = 0$ for all $p$ and $q$, so each differential is zero.
     In the end, we have
@@ -865,17 +885,19 @@ Similarly as before, we define
         \HMf[2]{T^2, \Z} = \Z
     .\] 
 \end{eg}
-
-
-
-\todo{
 \begin{eg}
-    Klein bottle over $ \Z$
+    We have done the same for the Klein bottle, but notice that this time, the signs do not cancel out.
+    It is easy to check that $\partial_1 = 0$ and that  $\partial_2$ is defined by  $\partial_2(\ell d) = -2\ell b$, where $a,b,c,d$ are the critical points of $h$ with increasing height.
+    This means that $\Im \partial_2 = 2 \Z$. Summarizing, we have
+    \[
+        \HMf[0]{K, \Z} = \Z \qquad
+        \HMf[1]{K, \Z} = \Z \oplus \Z_2 \qquad
+        \HMf[2]{K, \Z} = 0
+    .\] 
+    The conclusion of this series of examples is that integral homology is less coarse than homology over $\Z_2$.
 \end{eg}
-\begin{remark}
-    Mention that $\partial^2$ is still zero because now we are counting \emph{signed} boundary points of a 1-dimensional oriented manifold.
-\end{remark}
-}
+
+
 
 \section*{Morse homology is singular homology}
 
