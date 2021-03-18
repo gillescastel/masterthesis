@@ -783,6 +783,54 @@ sections
 
 
 \section{Morse homology over $\Z$}
+In this section, we will defined Morse homology with coefficients in $\Z$.
+As is to be expected, this homology theory will be less coarse than the one over $\Z_2$. For example, as we will show next, Morse homology over $\Z_2$ cannot distinguish a torus from a Klein bottle, while homology over $\Z$ can.
+
+The main difficulty in defining homology over $\Z$ is keeping track of orientations.
+Similarly as before, we define
+    \[
+        C_k(f, \Z) = \Big\{ \sum_{p \in \Crit_k f} n_p p  \mid n_p \in \Z \Big\}  = \bigoplus_{p \in \Crit_k f} \Z p
+    ,\] 
+    with differentials
+    \begin{align*}
+        \partial_{X, k}: C_k &\longrightarrow C_{k-1} \\
+        p &\longmapsto \sum_{q \in \Crit_{k-1} f} \NX Xpq q
+    ,\end{align*}
+    where $\NX X pq$ is the \emph{signed} number of trajectories between  $p$ and $q$.
+    The fact $\partial^2 = 0$ follows from a similar reasoning as before, now depending on the fact the number of signed boundary points of a 1-manifold is zero.
+    The homology of the complex $C_\bullet$ is called the integral Morse homology, and the fact that it is independent of $f$ and $X$ also follows from the reasoning as before, taking in account the signs of the trajectories.
+
+    The signed number of trajectories $\NX pq$ between $p$ and $q$ is defined by orienting  $\L pq$. Since  $\L pq$ is a zero-dimensional manifold if  $\Ind p - \Ind q = 1$, this corresponds to assigning a sign, defining  $\NX Xpq$.
+    For this, first choose an orientation for each stable manifold $\stable c$.\sidenote{This is possible since stable manifolds are diffeomorphic to open disks.}
+    Let $x \in \traj p q$.
+    Then, because $\unstable p \tcap \stable q$,
+    \[
+    T_x \stable q = T_x \traj pq \oplus N_x \unstable p  \cong
+    T_x \traj pq \oplus T_x \stable p \quad \sidenotemark    \] 
+\sidenotetext{
+        The orientation on $\stable p$ coorients  $T_p \unstable p$, and because contractibility of the unstable manifolds, this coorients $\unstable p$ everywhere.
+    }
+    which defines an orientation on $T_x \traj p q$ as follows: a basis $v_i$ of $T_x \traj pq $ is said to be positively oriented if $(v_1, \ldots, v_\ell, w_1, \ldots, w_k)$ is a positive basis of  $T_x \stable q$, where $w_i$ is a positively oriented basis for $T_x \stable p$.
+    Now $\traj pq = \R \oplus \L pq$, so by choosing an orientation of $\R$, which represents time, this defines in a similar way an orientation on $\L pq$.
+    \begin{eg}
+        As an example, let us consider the other sphere and more specifically $\L pq$ with $p$ and  $q$ as in the figure. 
+        We start off with an orientation of $\stable q$ and  $\stable p$.
+        To orient  $\traj pq$, we use the orientation of  $\stable p$, which coorients $\traj pq$, indicated in the figure with the thick black horizontal arrows.
+        The orientation on $\traj pq$, given by the dashed arrow, is then defined by requiring that the vectors form a positively oriented basis for $\stable q$. (TODO wording)
+        Finally, the orientation on $\L pq$ is defined as follows: if the arrows are going up (i.e. in the negative time direction), the sign is positive, else it is negative.
+        \begin{figure}[H]
+    \centering
+    \incfig{orientation-example}
+    \caption{
+        Orienting $\L pq$ on the other sphere.
+    }
+    \label{fig:orientation-example}
+\end{figure}
+    \end{eg}
+
+    \begin{remark}
+        While we are free to choose the orientations of $\stable p$, reversing it only changes the sign of $\NX X pq$ and  $\NX X qp$ for any $q$, implying that the Morse homology is independent of the choice of orientation.
+    \end{remark}
 
 \todo{
 \begin{eg}
@@ -792,7 +840,7 @@ sections
     Klein bottle over $\Z_2$ We find the same
 \end{eg}
 
-Definition of the oriented complex
+
 \begin{eg}
     Tilted torus over $ \Z$
 \end{eg}
