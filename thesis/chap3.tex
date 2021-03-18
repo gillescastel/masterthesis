@@ -832,18 +832,43 @@ Similarly as before, we define
         While we are free to choose the orientations of $\stable p$, reversing it only changes the sign of $\NX X pq$ and  $\NX X qp$ for any $q$, implying that the Morse homology is independent of the choice of orientation.
     \end{remark}
 
+    To show that the homology over $\Z$ is -- as one would expect -- less coarse than the one over $\Z_2$, we will compute $\HMf{T^2, \Z_2}$, $\HMf{K, \Z_2}$
+    $\HMf{T^2, \Z}$ and $\HMf{K, \Z}$.
+
+
+
+    \todo{
+    \begin{eg}
+        Klein bottle over $\Z_2$ We find the same
+    \end{eg}
+    \begin{eg}
+        Tilted torus over $ \Z$
+    \end{eg}
+}
+
+\begin{eg}[Homology of $T^2$ over $\Z$]
+    We use the Morse function of Example~\ref{eg:tilted-torus}, where the torus is slightly tilted, as illustrated in Figure~\ref{fig:tilted-torus}.
+    \begin{marginfigure}
+        \centering
+        \incfig{tilted-torus}
+        \caption{TODO tilted torus}
+        \label{fig:tilted-torus}
+    \end{marginfigure}
+    We have indicated the chosen orientations as before and have assigned a positive orientation to the single point $\stable d = \{d\}$.
+    For each trajectory, the sign has been added as well.
+
+    The complex is given by $\Z \xrightarrow{\partial} \Z^2 \xrightarrow{\partial}  \Z$, and because the signs of the trajectories cancel out, $\NX Xpq = 0$ for all $p$ and $q$, so each differential is zero.
+    In the end, we have
+    \[
+        \HMf[0]{T^2, \Z} = \Z \qquad
+        \HMf[1]{T^2, \Z} = \Z^2 \qquad
+        \HMf[2]{T^2, \Z} = \Z
+    .\] 
+\end{eg}
+
+
+
 \todo{
-\begin{eg}
-    Tilted torus over $\Z_2$. We find $ \Z_2, \Z_2^2, \Z_2$.
-\end{eg}
-\begin{eg}
-    Klein bottle over $\Z_2$ We find the same
-\end{eg}
-
-
-\begin{eg}
-    Tilted torus over $ \Z$
-\end{eg}
 \begin{eg}
     Klein bottle over $ \Z$
 \end{eg}
