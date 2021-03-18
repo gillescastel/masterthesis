@@ -638,149 +638,6 @@ proving that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ induce the same map on th
 \end{figure*}
 \end{proof}
 
-\section{The Künneth Formula}
-The Künneth Formula is a way to relate the homology of a product to the homology of its factors and it states the following:
-\begin{prop}[Künneth formula]
-    Let $M, N$ be two manifolds. Then
-    \[
-        \HMf[k]{M \times N} \cong
-        \bigoplus_{i+j  = k} \HMf[i]{M} \otimes \HMf[j]{N}
-    ,\] 
-where homology is taken with coefficients in $ \Z_2$.
-\end{prop}
-We can also express this in a different way using the Poincaré polynomial.
-For this, define $\beta_k(M) = \dim_{\Z_2} \HMf[k]{M;\Z_2}$, the $k$th Betti number and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
-Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
-\begin{eg}
-    We have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
-    More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
-\end{eg}
-\begin{proof}
-    Let $f, g$ and $X, Y$ be two Morse functions, resp.\ pseudo-gradient fields on  $M$ and  $N$.
-    Then $f + g$ is a Morse function and $(X, Y)$ is a pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
-    Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices. 
-    Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
-    Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
-    It's clear that the only way this can happen is when $a = c$ or $b = d$.\sidenote{
-        If $a\neq c$ and  $b \neq d$, then  $\Ind c \ge  \Ind a + 1$ and $\Ind d \ge  \Ind b + 1$, so $\Ind (c, d) \ge  \Ind (a, b) + 2$.
-    }
-
-    When we think about this in terms of directed graphs of critical points, like we did in the example of $T^{3}$, we find that the graph of $M \times N$ is the Cartesian product of the graph of $M$ and the graph of  $N$.
-    With these things in mind, it is easy to check that
-    \begin{align*}
-        \Phi: \bigoplus_{i+j = k} C_i(f) \otimes C_j(g) &\longrightarrow C_k(f+g) \\
-        a \otimes b &\longmapsto (a,b)
-    \end{align*}
-    is an isomorphism of complexes with the following differentials:
-    \[
-        (C_\bul(f) \otimes C_\bul(g), \partial_X \otimes 1 + 1 \otimes \partial_Y) \xrightarrow{\Phi}   (C_\bul(f+g), \partial_{(X,Y)})
-    ,\] 
-    where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
-    Now, taking the homology of both sides, and remembering that the homology of the tensor product complex is the tensor product of the homologies (Proposition~\ref{prop:hom-tensor-is-tensor-hom}), we get exactly what we want:
-    \[
-        \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
-    .\] 
-    Note that we take the homology with coefficients in $\Z_2$ in order to satisfy the conditions of Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
-\begin{marginfigure}
-    \centering
-    \incfig{kunneth-formula}
-    \caption{TODO kunneth formula}
-    \label{fig:kunneth-formula}
-\end{marginfigure}
-\end{proof}
-
-\todo{Talk about orientation and $\Z_2$ vs $ \Z$.}
-\todo{Discuss non orientable example }
-
-
-\todo{
-    Refer to example \ref{eg:homology-of-the-three-torus}.
-    Graph of critical points is `product' of graphs in some sense?
-    Just normal Cartesian product of graphs?
-}
-\todo{Question: graph of critical points, seems interesting? Homology of a directed graph? Hmm not really.}
-
-\section{Morse inequalities}
-
-\todo{
-    There also exists inequalities over $ \Z$, were we have modules instead of vector spaces and need to talk about rank instead of dimension. Maybe add this as well?
-    What is derived here is called the weak morse inequalities. In Morse theory Shintaru Fushida-Hardy, strong ones are derived.
-    Mention that rank is stil additive functor.
-    
-    For this, we should have introduced morse homology over $\Z$ first!
-
-    Show that the strong ones are stronger
-}
-
-The Morse inequalities state that there is a lower bound on the number of critical points, which only depends on the homology of the manifold:
-\begin{theorem}
-    Let $f: M \to  \R$ a Morse function. Then
-    \[
-        \# \Crit f \ge \sum \dim \HMf[k]{M, \Z_2}
-    ,\] 
-    and more specifically,
-    \[
-        \# \Crit_k f \ge \dim \HMf[k]{M, \Z_2}
-    .\] 
-\end{theorem}
-\begin{proof}
-    This is actually a very straightforward result, following from the fact that \[
-    \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
-    \] so $\dim \HMf[k]{M, \Z_2} = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
-\end{proof}
-
-A result in similar vein is the following:
-\begin{theorem}
-    Let $f: M \to  \R$ be a Morse function. Then
-    \[
-        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2}  = \chi(M)
-    .\] 
-    Considering this equality modulo $2$, we get
-    \[
-        \# \Crit f  \equiv \sum \dim \HMf[k]{M, \Z_2} \mod 2
-    .\] 
-\end{theorem}
-\todo{Mention the definition of $\xi(M)$}
-\begin{marginfigure}
-    \centering
-    \incfig{linear-map-rank-nullity-theorem}
-    \caption{TODO linear map rank nullity theorem}
-    \label{fig:linear-map-rank-nullity-theorem}
-\end{marginfigure}
-
-\begin{marginfigure}
-    \centering
-    \incfig{morse-chain-complex-visualized}
-    \caption{TODO morse chain complex visualized}
-    \label{fig:morse-chain-complex-visualized}
-\end{marginfigure}
-\begin{proof}
-    Use the fact that 
-    \[
-        \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
-    \]
-    together with rank-nullity theorem for vector spaces (we are working over $\Z_2$).
-
-    To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
-    Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top). We have highlighted the dimension of the homology spaces in orange, and we have indicated spaces of the same dimensions with the same type of black thick lines.
-    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating some of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
-\end{proof}
-
-
-\todo{Discuss morse inequalities for $\Z$? Torsion rank and rank?}
-\todo{Add references to the above sections}
-
-sections
-
-\begin{remark}
-    The Morse equalities are strict when $M$ is closed and simply connected $n\ge 6$, meaning that there always exists a Morse function $f: M \to  \R$ such that $\# \Crit_k f = \dim \HMf[k]f$. This is called Smale's theorem \cite[p.~392]{smale2007generalized}.
-\end{remark}
-\begin{remark}
-    There also exists versions of the Morse inequalities when we are working over $\Z$. While $\Z$ is not a field,
-    so the dimension of $\Z$-modules is not well defined, it still is a PID, so we can talk about rank and torsion rank.
-    %https://encyclopediaofmath.org/wiki/Morse_inequalities
-\end{remark}
-
 
 \section{Morse homology over $\Z$}
 In this section, we will defined Morse homology with coefficients in $\Z$.
@@ -898,8 +755,13 @@ Similarly as before, we define
 \end{eg}
 
 
+\todo{
+\begin{remark}
+    Mention that $\partial^2$ is still zero because now we are counting \emph{signed} boundary points of a 1-dimensional oriented manifold.
+\end{remark}
+}
 
-\section*{Morse homology is singular homology}
+\section{Morse homology is singular homology}
 
 \todo{
     \begin{itemize}
