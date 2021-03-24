@@ -62,12 +62,12 @@
     \put(0.2201617,1.25363488){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_3$\end{tabular}}}}%
     \put(0.03577373,0.89879043){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_4 = 0$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{morse-chain-complex-visualized.pdf}}%
-    \put(0.40501438,0.00167869){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_2$\end{tabular}}}}%
-    \put(0.58986708,0.63636502){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_1$\end{tabular}}}}%
-    \put(0.77529919,0.00167869){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_0$\end{tabular}}}}%
-    \put(0.96015185,0.33951288){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_{-1}=0$\end{tabular}}}}%
-    \put(0.2201617,0.70110562){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_3$\end{tabular}}}}%
-    \put(0.03577373,0.33951288){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_4 = 0$\end{tabular}}}}%
+    \put(0.40631395,0.71827594){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_2$\end{tabular}}}}%
+    \put(0.59116665,0.08269988){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_1$\end{tabular}}}}%
+    \put(0.77659881,0.67812025){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_0$\end{tabular}}}}%
+    \put(0.96145146,0.37521038){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_{-1}=0$\end{tabular}}}}%
+    \put(0.22146125,0.01853865){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_3$\end{tabular}}}}%
+    \put(0.03707329,0.48081968){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_4 = 0$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{morse-chain-complex-visualized.pdf}}%
   \end{picture}%
 \endgroup%
