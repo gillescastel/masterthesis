@@ -1,0 +1,162 @@
+\documentclass[a4paper]{article}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{url}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand\R{\mathbb R}
+\newcommand\Z{\mathbb Z}
+\newcommand\Q{\mathbb Q}
+\newcommand\F{\mathbb F}
+\pdfsuppresswarningpagegroup=1
+\DeclareMathOperator{\Crit}{Crit}
+
+\DeclareMathOperator{\Ker}{ker}
+\renewcommand{\Im}{\operatorname{Im}}
+\DeclareMathOperator{\rank}{rank}
+
+\begin{document}
+
+\section{Ranks of Abelian groups}
+We know that for free $\Z$-modules, the rank-nullity theorem holds, e.g. tensor $H_n(M, \Z)$ by $\Q$ to only filter out the free part.
+This immediately allows us to prove the Morse inequalities for $H_k(M, \Z)$, taking only the rank of the free part of $H_k(M,\Z)$ into account.
+
+From now on, denote this notion of  rank of an abelian group $A$ by  $r_0(A)$.  $r_0(A)$ is the cardinality of a maximal set of free independent elements in $A$, i.e. independent elements of infinite order.
+
+Denote by $r_p(A)$ the cardinality of a maximal set of independent elements of order  $p$ in  $A$ ($p$ prime)
+, by $r(A)$ the cardinality of a maximal set of independent elements (of any order).
+$r(A)$,  $ r_0(A)$, $r_p(A)$ are all invariants of  $A$ and  $\tau(A) = r_0(A) + \sum_{p} r_p(A)$.
+We also write $r_t(A) = \sum_p r_p(A)$ and we call this the torsion rank.
+
+
+\section{Morse inequalities}
+Strong Morse inequalities over $\Z$ in the usual sense. Let $0 \le  m \le  n = \dim M$.
+\[
+    \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+1} r_0(H_k(M, \Z))
+.\] 
+In fact, we precisely get
+\[
+    \sum_{k=0}^{m} (-1)^{k+1} r_0(H_k(M, \Z)) = \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f - r_0 (\operatorname{Im} \partial_{m+1})
+.\] 
+where $\partial_k: C_k \to  C_{k-1}$. (Do this over $\Z$ if you haven't yet)
+
+In the Encyclopedia of Mathematics, we additionally find the following inequalities for critical points of a particular index:
+\[
+    \# \Crit_k (f) \ge  \underbrace{r_0(H_k(M, \Z) + r_t(H_k(M, \Z))}_{r(H_k(M, \Z))} + r_t(H_{k-1}(M, \Z))
+,\] 
+for all $k$.
+
+\begin{proof}
+    Here, it is important to note that the $C_k$ are all free abelian groups, as are  $\ker(\partial_k)$ and  $\Im(\partial_k)$. Only $H_k(M, \Z)$ are on occasion not free. We thus have 
+    \begin{align*}
+        \# \Crit_k(f) = r(C_k) = r_0(C_k)
+        &= r_0(\ker \partial_k) + r_0(\Im \partial_k))\\
+        &= r(\ker \partial_k) + r(\Im \partial_k) \tag{*}
+    .\end{align*}
+    Note that
+    \[
+        r(H_k(M, \Z)) = r\left( \frac{\ker (\partial_k)}{\Im (\partial_k+1)} \right) \le  r(\ker(\partial_k)) = r_0(\ker \partial_k)
+    .\] 
+    Also note that 
+    \[
+        r(H_k(M, \Z)) = (r_0 + r_t)(H_k(M, \Z))
+    ,\] 
+    and $H_{k-1}(M, \Z) = \frac{\Ker \partial_{k-1}}{\Im \partial_k}$.
+
+    Since $\ker \partial_{k-1}$ is a free abelian group, all torsion in $H_{k-1}(M, \Z)$ has to come from quotienting $\Im \partial_k$.
+    Clearly $r_t(H_{k-1}(M, \Z)) \le  r(\Im(\partial_k))$.
+    We thus have
+    \[
+        r(C_k) \ge  (r_0 + r_t)(H_k(M, \Z)) + r_t(H_{k-1}(M, \Z)),
+    \] 
+    completing the proof.
+\end{proof}
+
+Lastly, this allows us to get a stronger version of the weak Morse inequalities
+\begin{align*}
+    \# \Crit_f &= \sum_{k=0}^{n} r(C_k) \ge  \sum_{k=0}^{n} r_0(H_k(M, \Z)) + \sum_{k=0}^{n}r_t(H_k(M, \Z)) + r_t(H_{k-1}(M, \Z))\\
+               &= \sum_{k=0}^{n} r_0 (H_k(M, \Z)) + 2 \sum_{k=0}^{n-1} r_t(H_k(M, \Z))
+,\end{align*} 
+where we used that $H_n(M, \Z) = \ker \partial_n$. There is no $\partial_{n+1}$ thus $r_t(H_n(M, \Z)) = 0$.
+
+
+\section{Comparing homology over $\Z$ and $\Z / p \Z$}
+
+Denote by $C_k(\Z)$ the $k$-th Morse Chain group with coefficients in $\Z$, by $C_n(\frac{\Z}{n\Z})$ the $k$-th chain group with coefficients in  $\Z / n \Z$.
+We have the short exact sequence of chain complexes:
+\[
+    0 \to  C_k(\Z) \xrightarrow{\cdot n} C_k(\Z) \xrightarrow{p} C_k(\Z / n \Z) \to  0
+.\] 
+This gives rise to the long exact sequence in homology
+\[
+    \cdots \to  H_{i+1}(M, \Z / n \Z) \xrightarrow{\partial}  H_i(M, \Z) \xrightarrow{n} H_i(M, \Z) \xrightarrow{p_*} H_i(M, \Z / n \Z) \xrightarrow{\partial}  H_{i-1}(M, \Z) \to  \cdots
+.\] 
+Long exact sequences can always be truncated to short exact sequences. In this case, we want to truncate as follows:
+\[
+    0 \to  \Ker \partial \to  H_i(M, \Z / n \Z) \xrightarrow{\partial}  \Im (\partial) \times H_{i-1}(M, \Z) \to  0
+.\] 
+We can descripte the groups on the left and the right more precisely.
+\begin{description}
+    \item[$\ker \partial$ ]: The long sequence, exact, so $\Ker \partial = \Im(p_*) \subset  H_1(M, \Z / n\Z)$. Now,
+        \[
+            p_*: H_i(M, \Z) \to  H_i(M, \Z n \Z)
+        \] 
+        simply takes coefficients mod $n$, so the image is  $\Im(p_*) = H_i(M, \Z) \otimes \Z / n \Z$
+    \item $[\Im \partial$] Again, because of exactness of the long exact sequence,  $\Im \partial = \ker(n \cdot)$,
+        \[
+            n \cdot: H_{i-1}(M, \Z) \to  H_{i-1}(M, \Z)
+        .\] 
+        By definition, $\Ker(n \cdot) = H_{i-1}(M, \Z)_{\text{$n$-torsion}}$.
+\end{description}
+This means we obtain a short exact sequence
+\[
+    0 \to  H_i(M, \Z) \otimes \Z / n \Z \to  H_i(M, \Z / n \Z) \to  H_{i-1}(M, \Z)_{\text{$n$-torsion}} \to  0
+.\] 
+which allows us to compute $\Z / n \Z$ valued cohomology for all $n$.
+
+Furthermore, for primes $p$,  $\Z$-Morse inequalities immediately imply $\Z / p \Z$ morse inequalities for finitely many $p$.
+
+Get Morse inequalities for all  $p$ by direct calculation.
+
+\section{StackOverflow answer}
+
+Given a non-negative integer $n$ and a space $X$, there is a long exact sequence
+ \[
+     \cdots \to  H_{i+1}(X, \Z / n) \to  H_i(X, \Z) \xrightarrow{n \cdot}  H_i(X, \Z) \to  H_i(X, \Z / n) \to  H_{i-1}(X, \Z) \to  \cdots
+\] 
+and thus a short exact sequence
+\[
+    0 \to  H_i(X, \Z) \otimes \Z / n \to  H_i(X, \Z / n) \to  H_{i-1}(X, \Z)_\text{$n$-tors}  \to  0
+,\] 
+(where $M_{\text{$n$-torsion}}$ denotes the $n$-torsion elements in an abelian group $M$).
+If $X$ has the homotopy type of a finite CW complex, then the $H_i(X, \Z)$'s are trivial for all but finitely many indices $i$ and they are all of finite type. If  $p$ is a prime number, in the case where neither  $H_i(X, \Z)$ or $H_{i-1}(X, \Z)$ have $p$-torsion elements (which is the case for all but finitely many $p$), we have
+\[
+    \dim_{\Q} H_i(X, \Z) = \rank H_i(X, \Z) = \dim_{\F_p }H_i(X, \F_p)
+.\] 
+There fore, controlling ranks with coefficients in finite fields $\F_p$ for all but finitely many prime numbers  $p$ is the same as controlling the dimension with coefficients in  $\Q$ (or the rank with coefficients in $\Z$)
+The fact that these inequalities hold for all $p$ is thus stronger than having them only for all but finitely many of them, or just for  $p = 2$.
+
+The proof of Morse inequalities (weak or strong) just goes through for  $\F_p$-linear coefficients for all  $p$. There is no reason to focus on  $2$-torsion.
+
+If you work with $R$-linear coefficients for another commutative ring $R$, the same reasoning apply: you will be interested in fact by ranks with coefficients in  $K$ where  $K$ runs over all residu fields of  $R$. But for a field  $K$, you will have  $H_i(X, K) \cong H_i(X, \F) \otimes_\F K$ where $\F \subset K$ is the prime field contained in $K$. Therefore, knowing Morse inequalities for all  $p$ is the same as Morse inequalities for all coefficient rings for which the notion of rank makes sense.
+
+Finally, the original work of Morse and Smale is with  $\Z$-linear coefficients
+
+\end{document}

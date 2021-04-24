@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{url}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand\R{\mathbb R}
+% \newcommand\Z{\mathbb Z}
+\pdfsuppresswarningpagegroup=1
+
+
+\begin{document}
+The Morse inequalities relate the number of critial points to global invariants of the manifold $M$.
+The weak version states the following:
+\[
+    \# \operatorname{Crit}_k f \ge  \dim HM_k(M, \mathbb Z_2) = \dim H_k(M, \mathbb Z_2)
+,\] 
+where $f: M \to  \R$ is a Morse function, $\operatorname{Crit}_k$ is the set of critical points of index $k$, and $HM$ is the Morse homology over  $\mathbb Z_2 := \mathbb Z / 2 \mathbb Z$, and $H$ is singular homology. The last equality follows from the fact that Morse homology is isomorphic to singular homology.
+
+We often also consider Morse/singular homology over $\mathbb Z$ (this involves choosing orientations, but does not require $M$ itself being oriented), where we have
+\[ 
+    \# \operatorname{Crit}_k f \ge  \operatorname{rank} HM_k(M, \mathbb \mathbb Z) = \operatorname{rank} H_k(M, \mathbb Z)
+.\] 
+A natural question is to ask if these inequalities are equivalent. The klein bottle shows that this is not the case. The homology groups over $\mathbb Z_2$ are $HM(M, \mathbb Z_2) = (\mathbb Z_2, \mathbb Z_2^2, \mathbb Z_2)$, so $\dim HM(M, \mathbb Z_2) = (1, 2, 1)$, but over $ \mathbb Z$, we have $H(M, \mathbb Z) = (\mathbb Z, \mathbb Z \oplus \mathbb Z_2, 0)$, so $\operatorname{rank} H(M, \mathbb Z) = (1, 1, 0)$.
+In this case, the inequalities over $\mathbb Z_2$ are stronger, as they for example state $\# \operatorname{Crit}_1 f \ge  2$, while the inequalities over $\mathbb Z$ state $\# \operatorname{Crit}_1 f \ge  1$.
+
+This observation lead to related questions based on different versions of the Morse inequalities.
+
+Question 1: How do the (weak) Morse inequalities depend on the chosen ring ($\mathbb Z$ vs $\mathbb Z_2$)? Are those over $\mathbb Z_2$ always stronger than those over $\mathbb Z$?
+
+Question 2: How do the strong Morse inequalities, stating \[
+\sum_{k=0}^{m} (-1)^{k+m} \# \operatorname{Crit}_k f\ge  \sum_{k=0}^{m} (-1)^{k+m} \dim HM_k(M, \mathbb Z_2)
+\] depend on the chosen ring?
+
+Question 3: There exists versions of the Morse inequalities over $\mathbb Z$ taking torsion rank into account (\url{https://encyclopediaofmath.org/wiki/Morse_inequalities}). In the example of the klein bottle, these inequalities result in the same thing either way: it seems to be independent on whether we are working over $\mathbb Z$ or $\mathbb Z_2$. Is this is general true?
+
+As final related question:
+
+Question 4: Can we say something like $\# \operatorname{Crit}_k f \ge  \operatorname{rank} H_k(M, R)$ for other PIDs $R$, e.g. $\mathbb Z_p$ for some prime $p$? (Doing Morse homology over an arbitrary ring is not possible, but we can do this for singular homology. If we could something like this, can we get stronger equalities depending on $R$?)
+
+Question 5: Smales' theorem states that Morse inequalities are sharp in high enough dimensions on closed simply-connected manifolds. Does this refer to inequalities over $\mathbb Z$, $\mathbb Z_2$ or do they become the same under these assumptions?
+
+
+
+\end{document}
