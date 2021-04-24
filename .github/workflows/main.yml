@@ -9,7 +9,8 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: thesis/master.tex     
+          working_directory: thesis
+          root_file: master.tex     
       - uses: actions/upload-artifact@v2
         with:
           name: master.pdf
