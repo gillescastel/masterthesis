@@ -1,6 +1,6 @@
 # Master thesis
 
-## * Morse theory*: a visual guide from handlebodies to Floer homology
+## *Morse theory: a visual guide from handlebodies to Floer homology*
 
 
 I'm doing my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charltote Kirchhoff-Lukat.
