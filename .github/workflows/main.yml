@@ -1,0 +1,16 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: thesis/master.tex     
+      - uses: actions/upload-artifact@v2
+        with:
+          name: master.pdf
+          path: thesis/master.pdf
