@@ -1,0 +1,55 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nameref {ch:summary}}{iii}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {0}Preliminaries}{1}{chapter.0}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Morse theory}{5}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Definition of a Morse function}{5}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Coordinate-free definition of a Morse function}{6}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Handle decompositions}{7}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Existence and abundance of Morse functions}{15}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Stable and unstable manifolds}{19}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Definition of stable and unstable manifolds}{19}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Intersections of stable and unstable manifolds}{20}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Reordering critical points}{23}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Cancellation of critical points}{24}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Heegaard splittings}{25}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Morse homology}{27}{chapter.3}
+\ttl@starttoc {chapters@1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Morse complex}{27}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}The Morse complex is a complex: $\partial ^2 = 0$}{29}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}The space of broken trajectories}{30}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Topology of $\overline {\mathcal L}(a, b)$}{30}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}$\overline {\mathcal L}(a, b)$ is the compactification of $\mathcal L(a, b)$}{31}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.4}$\overline {\mathcal L}(a, b)$ is a 1-dimensional manifold with boundary}{32}{subsection.3.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.5}Conclusion}{33}{subsection.3.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Morse homology is independent of the Morse function and gradient}{34}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Construction of a morphism of complexes}{34}{paragraph*.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{$\Phi ^{F}$ induces an isomorphism on the level on homology}{35}{paragraph*.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}The K\IeC {\"u}nneth Formula}{36}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Morse inequalities}{38}{section.3.5}
+\contentsfinish 

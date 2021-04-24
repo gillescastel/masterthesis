@@ -1,0 +1,220 @@
+\chapter{$h$-cobordism theorem}
+
+TODO: we follow Milnor\sidecite{hcobord}.
+Let $f$ be a Morse function on  $(W, V_0, V_1)$ having critical points $p, p'$ of index $\lambda, \lambda+1$ such that  $f(p) < \frac{1}{2 } < f(p')$.
+A gradient-like vector field $\xi$ for  $f$ determins in  $V = f^{-1}(\frac{1}{2)}$ a right hand sphere $S_R$ of  $p$ and a left-hand sphere  $S_L'$ of  $p'$.
+Note that  $\dim S_R + \dim S_L' = \dim V$.
+
+\begin{theorem}[5.4 First Cancellation theorem]
+    TODO recap
+\end{theorem}
+
+
+
+\begin{definition}[Intersection number]
+    Let $M$ and  $M'$ be $r$- and  $s$- dimensional submanifolds of an $(r+s)$-dimensional manifold $V$.
+    Suppose $M$ is oriented and  $M'$ is cooriented and their intersection is transverse.
+    Let $p \in  M \tcap M'$.
+    Then $T_p M$ is oriented both by the orientation of  $M$ and the coorientation of  $M'$.
+    If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
+    The intersection number  $M' \cdot M$ is then defined as the sum of all the intersection numbers at the points in $M \tcap M'$.
+\end{definition}
+\begin{remark}
+    If we change the order, the intersection number might change signs: $M \cdot M' =  \pm M' \cdot M$.
+\end{remark}
+
+\begin{marginfigure}
+    \centering
+    \incfig{intersection-number}
+    \caption{
+        The intersection number is defined by comparing the orientation of $M$ with the coorientation of $M'$ at the points of transverse intersection. In this case $M' \cdot M = -1 + 1 = 0$.
+    }
+    \label{fig:intersection-number}
+\end{marginfigure}
+\begin{prop}
+    The intersection number $M \cdot M'$ does not change under deformations of $M$ or an ambient isotopy of  $M'$.
+\end{prop}
+\begin{proof}
+    See TODO
+\end{proof}
+\begin{eg}
+    Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and coorientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
+    It is also clear that the intersection number does not change under isotopies of the manifolds.
+\end{eg}
+
+Now that we have this definition, we are able to state a second stronger cancellation.
+It is essentially the same as theorem TODO which allows us to cancel two critical points of consecutive index under certain conditions, including that there is a unique flow line connecting the points.
+In the following theorem, we will allow for multiple flow lines connecting the critical points, but we will will assign signs to these trajectories and require that signed count is $\pm 1$.
+
+\begin{theorem}[6.4 Second Cancellation Theorem]
+    Let $M$ be a cobordism from  $M_0$ to $M_1$ and $f: M \to  [0,1]$ a Morse function.
+    Suppose $f$ has two critical points $p, q$ of index $k$ and $k+1$ with $k \ge  2$ and $k + 1 \le  n-3$.
+    Suppose furthermore that $M, M_0, M_1$ are simply connected.
+    Lastly, let $\alpha$ be a regular value between $f(p)$ and  $f(q)$, define $V = f^{-1}(\alpha)$ and assume that
+    \[
+        (\unstable q \cap V) \cdot
+        (\stable p \cap V) = \pm 1
+    .\] 
+    Then we can cancel $p$ and $q$.
+    \label{thm:cancel-second}
+\end{theorem}
+\begin{remark}
+    Note that the theorem assumes that $\unstable q$ and $\stable p$ are oriented. 
+    This is possible since TODO
+\end{remark}
+\begin{remark}
+    We can also interpret the requirement of having a single flow line (counting signs) as follows.
+    Let $M_k = \partial_k$ be the matrix associated to $\partial_k: C_{k} \to  C_{k-1}$ over $\Z$.
+    Then the condition is that there is a lonely $\pm 1$ with zeros in the column/row its in.
+    The conclusion of the theorem is then that there exists a $f', X'$ such that  $M_k' = \partial_k'$ is the same matrix with this row/column removed.
+
+\end{remark}
+
+\todo{find 2-dimensional example with -1 -1 +1 flowline sign!}
+\begin{marginfigure}
+    \centering
+    \incfig{second-cancellation-theorem-setup}
+    \caption{Illustration of symbols used in the statement of Theorem~\ref{thm:cancel-second}. Note the figure is somewhat misleading because of dimensionality reasons.}
+    \label{fig:second-cancellation-theorem-setup}
+\end{marginfigure}
+\begin{remark}
+    By changing $f \leadsto -f$, the theorem is also true if we replace the conditions with  $k \ge  3$ and $k + 1 \le  n-2$.
+\end{remark}
+
+\begin{remark}
+    TODO: The theorem holds even with the single dimension restriction $ n \ge  6$. (Need to check $k = 1$ and $k = n-2$)
+\end{remark}
+
+The proof of the second cancellation theorem will reduce the given situation with multiple flow lines connecting $p$ and  $q$ to a situation where there is only one flow line, by repeatedly applying the following theorem by Whitney \sidecite{whitney1944self}
+\begin{theorem}[Whitney]
+    Let $M$ and  $M'$ be smooth, closed, tranversely intersecting submanifolds of dimensions  $r$ and $s$ in a smooth  $(r+s)$-dimensional manifold $V$.
+    Suppose  $M$ is oriented and  $M'$ is cooriented.
+    Suppose $r+s \ge 5$, $s\ge 3$ and if $r<3$ suppose that $\pi_1(V - M') \hookrightarrow \pi_1(V)$ is an isomorphism.
+
+    Let $p, q \in  M \tcap M'$ points with opposite intersection number as in Figure~\ref{fig:intersection-points-cancellation} such that there exists a loop $L$ contractible in  $V$ connecting  $p$ smoothly to $q$ in  $M$  and then $q$ smoothly to  $p$ in $M'$ where both arcs miss other intersection points.
+
+    Then there exists an isotopy $h_t$ of the identity $V \to V$ such that
+    \begin{enumerate}[(i)]
+        \item The isotopy is locally the identity around other intersection points;
+        \item At time  $t = 1$,  $M'$ and  $M$ do not intersect in $p$ and $q$  any more.  In other words, $h_1(M) \cap M' = M \cap  M' \setminus \{ p, q\} $.
+    \end{enumerate}
+\end{theorem}
+\begin{marginfigure}
+    \centering
+    \incfig{intersection-points-cancellation}
+    \caption{
+    Under certain conditions, we can `cancel' intersection points of opposite intersection number by deforming the manifold $M$ by an isotopy.}
+    \label{fig:intersection-points-cancellation}
+\end{marginfigure}
+\begin{proof}[Proof of the second cancellation theorem]
+    Let $X$ be an adopted pseudo-gradient vector field adopted to  $f$ and satisfying the Smale condition.
+    Let $S^{u}(q) = \unstable q \cap V$ and $S^{s}(p) = \stable p \cap  V$.
+
+    We now that $S^{u}(q) \cdot S^{s}(p) = \pm 1$, which means that either there is only one flow line connecting $p$ and  $q$, in which case the proof reduces to the first cancellation theorem, or there are multiple flow lines with opposite signs.
+    If we can show that the conditions of the theorem of Whitney are satisfied, we can cancel these intersection points pair by pair (by altering $X$) until we have reached the situation of the first cancellation theorem.
+
+    Let $V = f^{-1}(\alpha)$.  If $M$ is simply connected, then $V$ is also simply connected.\sidenote{This follows from applying Seifert--Van Kampen theorem: $\pi_1(V) \cong \pi_1(\stable{p} \cup  V \cup \unstable{q})$ (here we use that $k > 2, n - k \ge 3$).
+    Then notice that $\stable{p} \cup V \cup \unstable{q}$ is homotopic to $M$ showing that $\pi_1(V) \cong \pi_1(M) = 1$.}
+    If $k \ge 3$, then all the conditions of the theorem are satisfied and we are done.
+    If $k = 2$, we need to show that  $\pi_1(V - S^{s}(p)) \cong \pi_1(V)$,
+    ore equivalently showing that $\pi_1(V - S^{s}(p))$ is trivial.
+    Let $S = \unstable q \cap f^{-1}(0)$.
+    Flowing $M_0 \setminus S$ via $X$ gives  $V - S^{s}(p)$, so we need to show that $M_0 \setminus S$ has trivial fundamental group.
+    For this we use Seifert--Van Kampen. Let $N$ be a product neighbourhood\sidenote{If the normal bundle of a submanifold is trivial, a tubular neighbourhood is called a product neighbourhood. TODO why does this exists?} of $S$ in $M_0$.
+    Note that $S$ is diffeomorphic to $S^{1}$, and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
+    As $k=2$, $n - 2 \ge 4$, so $\R^{n-2} \setminus \{ 0 \} $ has trivial fundamental group. Therefore $N \setminus S \cong S^{1} \times (\R^{n-2}\setminus \{0\})$ has the same fundamental group as $S^{1}$, which is $\Z$.
+    This allows us to use Seifert--Van Kampen in the following way:
+    $(M_0 \setminus S) \cup N = M_0$, and $\pi_1(M_0) = 1$ $\pi_1(N) = \Z$ $\pi_1(N \setminus S) = \Z$. This implies that $\pi_1(M_0 \setminus S) = 1$, completing the proof.
+\end{proof}
+
+Let us finally prove the theorem of Whitney.
+
+\begin{proof}[Proof of Whitney's theorem]
+    We will construct the isotopy of $M$ in a local model, constructed as follows.
+    \paragraph{Plane model}
+    Let $C, C'$ be the arcs in  $M$ and $M'$ connecting $p$ and  $q$ and extend them a little bit either way, as in Figure~\ref{fig:whitneys-theorem-proof-model}.
+    \begin{marginfigure}
+        \center
+        \incfig{whitneys-theorem-proof-model}
+        \caption{On the left: the plane model, on the right: the higher dimensional model.}
+        \label{fig:whitneys-theorem-proof-model}
+    \end{marginfigure}
+    For the plane model, let $C_0$ and $ C_1$ be open curves in the plane intersecting transversely in two points, call them $a$ and $b$.
+    Let $D$ be the disk with two corners enclosed by $C_0$ and $C_0'$.
+    Then there exists an embedding $\phi_1$ of these curves into $M \cup M'$ such that the following holds:
+     \begin{itemize}
+         \item $\phi_1(C_0) = C$, $\phi_1(C_0') = C'$
+         \item $\phi_1(a) = p$, $\phi_1(b) = q$
+    \end{itemize}
+    \paragraph{Model}
+    Now we claim that we can extend this embedding by adding extra dimensions such that the following conditions are satisfied:
+    \begin{itemize}
+        \item The new embedding $\phi: U \times \R^{r-1} \times \R^{s-1}$ is an extension of $\phi_1|_{U \cap (C_0 \cup C_0')}$.
+        \item $\phi^{-1}(M) = (U \cap C_0) \times \R^{r-1} \times 0$
+            \item $\phi^{-1}(M') = (U \cap C_0) \times 0\times \R^{s-1}$
+    \end{itemize}
+    For a detailed proof of this claim, we refer the reader to \sidecite[p.~75]{hcobord}.
+    \begin{marginfigure}
+        \centering
+        \incfig{whitneys-theorem-model-isotopy}
+        \caption{The isotopy $G_t$ in the plane model moves $C_0$ below $ C_0'$, i.e. $ G_1(U \cap C_0) \cap C_0' = \O$.}
+        \label{fig:whitneys-theorem-model-isotopy}
+    \end{marginfigure}
+    With this model, the proof of the theorem follows quite rapidly.
+    \paragraph{Isotopy in the plane model}
+    Let $G_t: U \to U$ be an isotopy in the plane model that when applied to $C_0$, moves it under $C_0'$ as in Figure~\ref{fig:whitneys-theorem-proof-model}.
+    More specifically, we require
+    \begin{itemize}
+        \item $G_0$ is the identity map
+        \item $G_t$ is the identity near the boundary of  $U$ for all $t$
+        \item  $ G_1(U \cap C_0) \cap C_0' = \O$.
+    \end{itemize}
+    \paragraph{Isotopy in the model}
+    To extend this isotopy to one on $U \times \R^{r-1} \times \R^{s-1}$, define a bump function $\rho: \R^{r-1}\times \R^{s-1} \to  [0,1]$ supported in $\{(x, y)  \mid |x|^2 + |y|^2 \le  1\}$ and set
+    \begin{align*}
+        H_t: U \times \R^{r-1}\times \R^{s-1} &\longrightarrow  U \times \R^{r-1} \times \R^{s-1}\\
+        (u, x, y) &\longmapsto (G_{t \rho(x, y)}, x, y)
+    .\end{align*}
+    \paragraph{Isotopy of $V$}
+    To finally find an isotopy of $V$, define $F_t: V\to V$ such that
+    $F_0$ is the identity, $F_t$ is the identity everywhere except away from  $\Im \phi$, and on  $\Im \phi$, define  $F_t = \phi  \circ  H-t  \circ  \phi^{-1}$.
+    This finishes the proof.
+\end{proof}
+
+Remember how the second cancellation theorem allows us to discard a row/column of the matrix $\partial_k$ under certain conditions.  This raises the question: can we do other row and column operations to this matrix in a geometric way, by which we mean finding a pair $(f', X')$ such that  $M_k'$ is $M_k$ after applying the operation?
+
+\begin{itemize}
+    \item Recording rows and columns: just relabelling of critical points
+    \item Multiplying a row with $-1$: this works, just change signs
+    \item Adding a column to another column ?
+        It turns out we can do this geometrically!
+\end{itemize}
+
+As starting from a basis we can reach any other basis by doing these row- and column operations, \ldots \sidecite{kosinski2013differential}
+
+\begin{theorem}
+    
+\end{theorem}
+
+\begin{theorem}[7.8]
+    Suppose $(W, V, V')$ is a triad of dimension  $n\ge 6$ with a Morse function with no critical points of indices $0, 1, n-1, n$. Furthermore assume that  $W, V, V'$ are all simply connected (hence orientable) an that  $H_{\bul}(W, V) = 0$.
+    Then $(W, V, V')$ is  a product cobordism.
+\end{theorem}
+
+\begin{theorem}[8.1]
+    \begin{itemize}
+        \item If $ H_0(W, V) = 0$, the critical points of index $0$ can be canceled against an equal number of critical points of index $1$
+\item Suppose $W$ and  $V$ are simply connected and  $n \ge  5$
+    If there are no critical points of index $0$, we can insert for each index  $1$ critical point a pair of auxiliary index  $2$ and  $3$ critical points and cancel the index  $1$ critical points against the auxiliary index  $2$ critical points. (We trade the critical points of index 1 for an equal number of critical points of index 3)
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[9.2 The $h$-cobordism theorem]
+    Suppose the triad $(W, V, V')$ has the properties
+     \begin{itemize}
+        \item $W, V, V'$ are simply connected
+        \item  $H_\bul(W, V) = 0$
+        \item  $\dim W = n \ge  6$
+    \end{itemize}
+    Then $W$ is diffeomorphic to  $V \times [0,1]$
+\end{theorem}
