@@ -16,17 +16,10 @@ But it can be nice to see this directly in Morse theory}
 
 
 \section{Morse inequalities}
-
-\todo{
-    There also exists inequalities over $ \Z$, were we have modules instead of vector spaces and need to talk about rank instead of dimension. Maybe add this as well?
-    What is derived here is called the weak morse inequalities. In Morse theory Shintaru Fushida-Hardy, strong ones are derived.
-    Mention that rank is stil additive functor.
-    
-    Show that the strong ones are stronger
-}
+\subsection{Morse inequalities over $\Z_2$}
 
 The Morse inequalities state that there is a lower bound on the number of critical points, which only depends on the homology of the manifold:
-\begin{theorem}
+\begin{theorem}[Weak Morse inequalities]
     Let $f: M \to  \R$ a Morse function. Then
     \[
         \# \Crit f \ge \sum \dim \HMf[k]{M, \Z_2}
@@ -43,7 +36,7 @@ The Morse inequalities state that there is a lower bound on the number of critic
 \end{proof}
 
 A result in similar vein is the following:
-\begin{theorem}[Weak Morse inequalities]
+\begin{theorem}
     Let $f: M \to  \R$ be a Morse function. Then
     \[
         \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2}  = \chi(M)
@@ -91,15 +84,15 @@ A result in similar vein is the following:
     \[
         \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
     \]
-    together with rank-nullity theorem for vector spaces (we are working over $\Z_2$).
+    together with rank-nullity theorem for vector spaces (we are working over $\Z_2$). A computation completes the proof.
 
     To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
     Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top). We have highlighted the dimension of the homology spaces in orange, and we have indicated spaces of the same dimensions with the same type of black thick lines.
-    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating some of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
+    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating sum of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
+    \end{proof}
 
     We can also truncate this argument, considering only a partial alternating sum, illustrated in Figure~\ref{fig:morse-chain-complex-visualized-truncated}.
     In this case, we do not have equality (the reason has been indicated in the figure), but we do have the following result:
-\end{proof}
 \begin{theorem}[Strong Morse inequalities]
     For any Morse function $f: M \to  \R$ and for any $m = 0, \ldots, n$, the following inequality holds:
     \[
@@ -107,17 +100,114 @@ A result in similar vein is the following:
     .\] 
 \end{theorem}
 
+It is easy to check that the strong Morse inequalities are in fact stronger:the weak version can be obtained by by subtracting the strong inequalities for $m$ and  $m+1$.
 
-\todo{Discuss morse inequalities for $\Z$? Torsion rank and rank?}
-\todo{Add references to the above sections}
+
+
+\begin{eg}
+    TODO example and say what this means.
+\end{eg}
+
+\subsection{Morse inequalities over $\Z$ and $\Z_p$}
+
+A natural question that arises when discussing these inequalities is: `Can we get stronger inequalities if we work over a different ring?' and `Can we find a Morse function $f$ that attains these inequalities?'
+
+For the first question, let us first have a look at how we can generalize the Morse inequalities to $\Z$ and $\Z_p$.
+Both of these options have their own difficulties.
+
+When working over $\Z$, the dimension of a $\Z$-module is not well defined, so we need to introduce new notions such as rank and torsion rank to replace the notion of dimension. Moreover, the rank-nullity theorem used in the proof is not obvious.
+
+For $\Z_p$, the difficulties lie on the other side of the inequality: how do we define Morse homology over $\Z_p$ for an arbitrary prime $p$?
+The answer to this question is that---just like in the case of $\Z$---we should take orientation into account and then everything works out.
+Also the proof of the Morse inequalities works out, because we are working over $\Z_p$ which is a field. We therefore have the following results:
+
+\begin{theorem}
+    The (weak and strong) Morse inequalities hold over $\Z_p$ for any prime $p$.
+\end{theorem}
+\begin{proof}
+    Exactly the same as before. As modules over $\Z_p$ are vector spaces, nothing changes.
+\end{proof}
+
+Let us now discuss the case for $\Z$.
+While we cannot define dimension, we can define different notions of ranks. Following `Infinite Abelian Groups' by Fuchs\sidecite{fuchs1970infinite}, we define the following invariants:
+\begin{definition}[Rank]
+    Let $A$ be a  $\Z$-module. Then the following notions of rank are invariants of $A$:
+    \begin{align*}
+        r_0(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of infinite order}\\[0.3em]
+            &= \dim_{\Q} A \otimes \Q\\
+        r_p(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of order $p^{k}$ for some $k$}\\[0.3em]
+        r_t(A) &:= \sum_{p} r_p(A)\\[0.3em]
+        r(A) &:= r_0(A) + \sum_{p}r_p(A)
+    .\end{align*}
+\end{definition}
+\begin{eg}
+    Let $A = \Z^2 \oplus \Z_4 \oplus \Z_3 \oplus \Z_2$.
+    Then
+    \[
+        r_0(A) = 2 \qquad
+        r_2(A) = 2 \qquad
+        r_3(A) = 1 \qquad
+    ,\] 
+    and therefore the torsion rank is $r_t(A) = 3$ and the total rank is $r(A) = 5$.
+\end{eg}
+We also have the following proposition\sidecite[p. 86]{fuchs1970infinite}
+\begin{lemma}
+    Let $A$ and $B$ be $\Z$ modules and suppose $A$ is  a submodule of $B$.
+    Then
+    \begin{enumerate}[(i)]
+        \item $r(B) \le  r(A)$
+        \item $r(A) \le  r(B) + r(A / B)$
+        \item $r(A) < r(A / B)$ can happen
+        \item  $ r_0(A) = r_0(B) + r_0(A/B)$ \label{label:zmodules-last}
+    \end{enumerate}
+\end{lemma}
+
+Note in particular identity~\ref{label:zmodules-last}, which is a rank-nullity theorem in the context of the $r_0$ rank.
+Also note that the modules $C_k(f, \Z)$ over $\Z$ with as generators the critical points of $f$, are free, so $\# \Crit_k f =r_0(C_k(f, \Z))$.
+These two facts combined give the following result:
+\begin{prop}
+    The (weak and strong) Morse inequalities hold over $\Z$, in the following sense:
+    \[
+        \# \Crit_k f \ge  r_0(\HMf[k]{M, \Z})
+    ,\] 
+    and for any $m = 0, \ldots, n$ we have
+        \[
+            \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} r_0(\HMf[k]{M, \Z})
+        .\] 
+\end{prop}
+\begin{proof}
+    Similar as before, replacing $\Z_2$ by $\Z$ and $\dim$ by $r_0$.
+\end{proof}
+
+\subsection{Comparing the Morse inequalities over $\Z$ and $\Z_p$}
+
+An interesting question is `Are the different version of the Morse inequalities equally strong?'
+The following example shows that this is not the case:
+
+\begin{eg}
+    Consider the Klein bottle $K$.
+    Remember that its homology over $\Z$ is given by $(\Z, \Z_2 \oplus \Z, 0)$ and over $ \Z_2$ by $(\Z_2, \Z_2^2, \Z_2)$.
+    Therefore, the weak Morse inequalities over $\Z$ give
+    \[
+    C_0 \ge 1 \qquad C_1 \ge 1 \qquad C_2 \ge 0
+    ,\] 
+    and those over $\Z_2$ give
+    \[
+    C_0 \ge  1 \qquad C_1 \ge  2 \qquad C_2 \ge  1
+    ,\] 
+    which are clearly stronger.
+    This is still the case when we consider the strong Morse equalities. Over $ \Z$ we have
+    \[
+    C_0 \ge  1 \qquad C_1 - C_0 \ge  0 \qquad C_2 - C_1 + C_0 \ge  0
+    ,\] 
+    while over $\Z_2$ we get
+    \[
+    C_0 \ge  1 \qquad C_1 - C_0 \ge  1 \qquad C_2 - C_1 + C_0 \ge  0
+    .\] 
+\end{eg}
 
 \begin{remark}
-    The Morse equalities are strict when $M$ is closed and simply connected $n\ge 6$, meaning that there always exists a Morse function $f: M \to  \R$ such that $\# \Crit_k f = \dim \HMf[k]f$. This is called Smale's theorem \cite[p.~392]{smale2007generalized}.
-\end{remark}
-\begin{remark}
-    There also exists versions of the Morse inequalities when we are working over $\Z$. While $\Z$ is not a field,
-    so the dimension of $\Z$-modules is not well defined, it still is a PID, so we can talk about rank and torsion rank.
-    %https://encyclopediaofmath.org/wiki/Morse_inequalities
+    The Morse equalities are strict when $M$ is closed and simply connected $n\ge 6$, meaning that there always exists a Morse function $f: M \to  \R$ such that $\# \Crit_k f = \dim \HMf[k]f$. This is called Smale's theorem \sidecite[p.~392]{smale2007generalized}.
 \end{remark}
 
 
