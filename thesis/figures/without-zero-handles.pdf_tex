@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'intersection-points-cancellation.pdf' (pdf, eps, ps)
+%% Accompanies image file 'without-zero-handles.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{227.90253166bp}%
+    \setlength{\unitlength}{431.11666462bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,19 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.63219911)%
+  \begin{picture}(1,0.34964828)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{intersection-points-cancellation.pdf}}%
-    \put(0.2354252,0.44271239){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
-    \put(0.54097152,0.46100128){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{intersection-points-cancellation.pdf}}%
-    \put(0.35048537,0.4447545){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$L$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{intersection-points-cancellation.pdf}}%
-    \put(1.01025854,0.43955883){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N'$\end{tabular}}}}%
-    \put(0.43977625,0.37804621){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N$\end{tabular}}}}%
-    \put(1.01025854,0.04290001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$N'$\end{tabular}}}}%
-    \put(0.32718555,-0.04593406){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h_1(N)$\end{tabular}}}}%
-    \put(0.00691069,0.59635021){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{without-zero-handles.pdf}}%
+    \put(0.03325036,0.00179183){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{without-zero-handles.pdf}}%
+    \put(-0.00095682,0.26647661){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{without-zero-handles.pdf}}%
+    \put(0.72478442,0.00179183){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{without-zero-handles.pdf}}%
+    \put(0.69057724,0.26647661){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{without-zero-handles.pdf}}%
+    \put(0.39884582,0.19525265){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$TODO$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

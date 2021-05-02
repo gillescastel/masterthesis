@@ -1,105 +1,160 @@
 \chapter{$h$-cobordism theorem}
+\section{Introduction}
 
-TODO: we follow Milnor\sidecite{hcobord}.
-Let $f$ be a Morse function on  $(W, V_0, V_1)$ having critical points $p, p'$ of index $\lambda, \lambda+1$ such that  $f(p) < \frac{1}{2 } < f(p')$.
-A gradient-like vector field $\xi$ for  $f$ determins in  $V = f^{-1}(\frac{1}{2)}$ a right hand sphere $S_R$ of  $p$ and a left-hand sphere  $S_L'$ of  $p'$.
-Note that  $\dim S_R + \dim S_L' = \dim V$.
+In this chapter, we will prove three important theorems that are all closely related.
+Let us first state them.
+The first one states that the Morse inequalities are in fact attainable under certain conditions.
+In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale\sidecite{smale1960generalized} in 1960.
+\begin{theorem}[Smale's theorem]
+    If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H(M, \Z))$ for all $k = 0, \ldots, n$.
+\end{theorem}
+Remember that we use $r_0(A)$ to denote the free rank of a $\Z$-module $A$.
+A closely related theorem is the $h$-cobordism theorem, stating
+\begin{theorem}[h-cobordism theorem]
+    If $M$ is a cobordism from $M_0$ to $M_1$ that is simply connected, $\dim M \ge 6$ and $H_{\bul}(M,M_0) = 0$, then $M$ is a trivial cobordism, i.e.\ diffeomorphic to  $ M_0 \times I$.
+\end{theorem}
+\todo{Introduce relative homology}
+The last theorem---and perhaps most famous one---we will prove is generalized Poincaré conjecture for dimensions $n \ge 5$.
+This conjecture (now a theorem) states that any homotopy sphere is a topological sphere. By this, we mean the following:
+% TODO spell check in [] of theorems1
+\begin{theorem}[Higher dimensional Poincaré conjecture]
+    If $M$ is a homotopy sphere of dimension  $n \ge 5$, then $M$ is homeomorphic to  $S^{n}$.
+\end{theorem}
+This theorem has a great historical significance, and the proofs for dimension $n = 3, 4$ are notoriously difficult and very subtle\sidecite{stallings2016not}. We will briefly 
 
-\begin{theorem}[5.4 First Cancellation theorem]
-    TODO recap
+These theorems are all closely related, and we will prove them using a handle cancelling approach which roughly goes as follows:
+\begin{enumerate}[(1)]
+    \item Let $f: M \to  \R$ be an arbitrary Morse function.
+    \item Under certain assumptions, we can cancel pairs of critical points.
+    \item Repeatedly cancelling critical points allows us to conclude that (depending on the assumptions):
+        \begin{itemize}
+            \item The resulting Morse function has no critical points (in the case of $M$ being a cobordism);
+            \item The resulting Morse function attains the Morse inequalities; or
+            \item The resulting Morse function has 2 critical points: a minimum and a maximum, which implies that $M \cong S^{n}$, as we will show.
+        \end{itemize}
+\end{enumerate}
+
+\todo{To this purpose, this chapter will mostly contain cancellation results.
+Because the proof in total is very lengthy,
+we will first give an overview, and we will later fill in details where needed.
+We follow Milnor, and also Antonio Kosinski}
+
+
+
+\section{Stronger cancellation result}
+Let us first recall the cancellation result we stated previously:
+
+\begin{theorem}[Francois Laudenbach\sidenotemark]
+    Let $f: M \to  \R$ be a Morse function and $X$ be a pseudo-gradient field.
+    Let $p$ and $q$ be two critical points such that
+    \begin{enumerate}[(i)]
+        \item $p$ and $q$ are connected by a unique gradient line  $\ell := \traj{p}{q}$.
+        \item For some $\epsilon>0$, each gradient flow line starting in $\unstable{p}$ distinct from $ \ell$ crosses the level set $f^{-1}(f(q) - \epsilon)$
+    \end{enumerate}
+    Then these two points are cancelable.
+More precisely, there exists an isotopy of functions $f_t$ starting at $f_0=f$ supported in an open neighbourhood of the closure of  $\unstable{p} \cap  \{f \ge  f(q) - \epsilon\} $ such that
+\begin{itemize}
+    \item $f_t|_U$ is Morse with two critical points when  $0 \le t\le \frac{1}{2}$;
+    \item $f_t|_U$ has a cubic singularity when $t=\frac{1}{2}$
+    \item $f_t|_U$ has no critical points when $\frac{1}{2}<t\le 1$.
+\end{itemize}
+\end{theorem}
+\sidenotetext[][0.0cm]{\fullcite{laudenbach2013proof}}
+
+In this chapter, we will mostly consider cobordisms, and in that context, the statement of this theorem can be expressed shortly as
+\begin{theorem}
+    Let $f: M \to  [0,1]$ be a Morse function on a cobordism with two critical points $p, q$.
+    If $|\L pq| = 1$, then $p$ and  $q$ are cancelable.
 \end{theorem}
 
+Phrased in this way, this theorem begs for a generalization.
+In the chapter on Morse homology, we have seen that we can orient $\L pq$.
+If $\L pq$ is a discrete space (as is the case when  $\Ind p - \Ind q = 1$), then this orientation assigns a sign to each of the points in  $\L pq$.
+Therefore, instead of considering the cardinality of $\L pq$, it would be interesting if the theorem still holds if we consider the signed count of the points in $\L pq$, i.e.\ if $\NX Xpq = \pm 1$.
+So instead of requiring that there is a single gradient flow line connecting $p$ and  $q$, we would have that the signed count of flow lines connecting  $p$ and  $q$ is  $\pm 1$.
+It turns out that this is indeed the case if we add some additional assumptions, giving the first strengthening of our cancellation result.
 
-
-\begin{definition}[Intersection number]
-    Let $M$ and  $M'$ be $r$- and  $s$- dimensional submanifolds of an $(r+s)$-dimensional manifold $V$.
-    Suppose $M$ is oriented and  $M'$ is cooriented and their intersection is transverse.
-    Let $p \in  M \tcap M'$.
-    Then $T_p M$ is oriented both by the orientation of  $M$ and the coorientation of  $M'$.
-    If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
-    The intersection number  $M' \cdot M$ is then defined as the sum of all the intersection numbers at the points in $M \tcap M'$.
-\end{definition}
-\begin{remark}
-    If we change the order, the intersection number might change signs: $M \cdot M' =  \pm M' \cdot M$.
-\end{remark}
-
-\begin{marginfigure}
-    \centering
-    \incfig{intersection-number}
-    \caption{
-        The intersection number is defined by comparing the orientation of $M$ with the coorientation of $M'$ at the points of transverse intersection. In this case $M' \cdot M = -1 + 1 = 0$.
-    }
-    \label{fig:intersection-number}
-\end{marginfigure}
-\begin{prop}
-    The intersection number $M \cdot M'$ does not change under deformations of $M$ or an ambient isotopy of  $M'$.
-\end{prop}
-\begin{proof}
-    See TODO
-\end{proof}
-\begin{eg}
-    Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and coorientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
-    It is also clear that the intersection number does not change under isotopies of the manifolds.
-\end{eg}
-
-Now that we have this definition, we are able to state a second stronger cancellation.
-It is essentially the same as theorem TODO which allows us to cancel two critical points of consecutive index under certain conditions, including that there is a unique flow line connecting the points.
-In the following theorem, we will allow for multiple flow lines connecting the critical points, but we will will assign signs to these trajectories and require that signed count is $\pm 1$.
-
-\begin{theorem}[6.4 Second Cancellation Theorem]
-    Let $M$ be a cobordism from  $M_0$ to $M_1$ and $f: M \to  [0,1]$ a Morse function.
-    Suppose $f$ has two critical points $p, q$ of index $k$ and $k+1$ with $k \ge  2$ and $k + 1 \le  n-3$.
-    Suppose furthermore that $M, M_0, M_1$ are simply connected.
-    Lastly, let $\alpha$ be a regular value between $f(p)$ and  $f(q)$, define $V = f^{-1}(\alpha)$ and assume that
+\begin{theorem}[Second Cancellation Theorem]
+    Let $f: M \to  [0,1]$ be a Morse function on a cobordism $M$ (from $M_0$ to $M_1$) with two critical points $p, q$.
+    Suppose furthermore that $M, M_0, M_1$ are simply connected and that
     \[
-        (\unstable q \cap V) \cdot
-        (\stable p \cap V) = \pm 1
+    2 \le \Ind q = k  \qquad \Ind p = k+1 \le  n-3
     .\] 
-    Then we can cancel $p$ and $q$.
+    % Let $X$ be a pseudo-gradient vector field adapted to $f$ satisfying the Smale condition.
+    If $\NX X p q = \pm 1$, then  $p$ and  $q$ are cancelable.
     \label{thm:cancel-second}
 \end{theorem}
 \begin{remark}
-    Note that the theorem assumes that $\unstable q$ and $\stable p$ are oriented. 
-    This is possible since TODO
-\end{remark}
-\begin{remark}
-    We can also interpret the requirement of having a single flow line (counting signs) as follows.
-    Let $M_k = \partial_k$ be the matrix associated to $\partial_k: C_{k} \to  C_{k-1}$ over $\Z$.
-    Then the condition is that there is a lonely $\pm 1$ with zeros in the column/row its in.
-    The conclusion of the theorem is then that there exists a $f', X'$ such that  $M_k' = \partial_k'$ is the same matrix with this row/column removed.
-
+    By changing $f$ to $-f$, the theorem is also true if we replace the conditions with  $k \ge  3$ and $k + 1 \le  n-2$.
+    This means that the theorem is true for 
+    \[
+    2 \le  \Ind q = k \quad \Ind p = k + 1 \le n-2
+    .\] 
 \end{remark}
 
-\todo{find 2-dimensional example with -1 -1 +1 flowline sign!}
+Before giving an idea of how we will prove this result, let us first give some examples.
+\begin{eg}
+    The following examples should be taken with a grain of salt, because the conditions of the theorem are actually not satisfied (in particular the dimension is too low).
+    However, they are still helpful as they express the idea of the theorem.
+    We will consider a $3$-dimensional manifold $M$ with a Morse function $f$ and let $\alpha$ be a regular value such that  $f^{-1}((-\infty, \alpha])$ consists of a $0$, $1$ and  $2$ handle as in the figures below.
+    Let us the four situations from left to right.
+    \begin{enumerate}[(i)]
+        \item The first figure shows the $2$- and  $1$- handle and their corresponding critical points $p$ and  $q$.
+            It is visually clear that these two critical are cancelable.
+        \item The second figure shows the same situation, but we have hidden the $2$-handle and indicated the so-called belt sphere $S^{s}(q)$ and the attaching sphere $S^{u}(p)$. Their intersection consists of a single point, corresponding to a single flow line from $p$ to $q$. 
+            By the first cancellation theorem, we can confirm that $p$ and  $q$ are indeed cancelable.
+        \item Next, we have drawn a situation where the number of intersection points is $3$, but the intersection number (which corresponds to $\NX Xpq$, as we will expand upon later) is $1$. It is clear that we can isotope the attaching sphere such that it only intersects once with the belt sphere.
+            This reduces the situation to (ii), so $p$ and  $q$ are cancellable, as is also clear from the figure. 
+        \item The last figure shows a situation where the number of intersections points is $2$ and the intersection number is $0$. In this situation, we cannot cancel the two critical points.
+    \end{enumerate}
+    \begin{figure}[H]
+    \centering
+    \incfig{second-cancellation-theorem-example}
+    \caption{TODO second cancellation theorem example}
+    \label{fig:second-cancellation-theorem-example}
+\end{figure}
+\end{eg}
+
 \begin{marginfigure}
     \centering
     \incfig{second-cancellation-theorem-setup}
-    \caption{Illustration of symbols used in the statement of Theorem~\ref{thm:cancel-second}. Note the figure is somewhat misleading because of dimensionality reasons.}
+    \caption{Setup of the second cancellation theorem in dimension two and three. Note the figure is somewhat misleading because of dimensionality reasons.}
     \label{fig:second-cancellation-theorem-setup}
 \end{marginfigure}
-\begin{remark}
-    By changing $f \leadsto -f$, the theorem is also true if we replace the conditions with  $k \ge  3$ and $k + 1 \le  n-2$.
-\end{remark}
+As already hinted at before in the example, the proof of this stronger cancellation result will reduce the given situation where $\NX X pq = \pm 1$ to one that satisfies the condition of the first cancellation theorem, i.e. $| \L pq | = 1$.
+In order to do this we want to `cancel' flow lines of opposite signs.
+We will do this by using a theorem of Whitney which allows to cancel intersection points of opposite intersection numbers.\sidenote{For a primer on intersection numbers, see Chapter 0.}
 
-\begin{remark}
-    TODO: The theorem holds even with the single dimension restriction $ n \ge  6$. (Need to check $k = 1$ and $k = n-2$)
-\end{remark}
+The correspondence goes as follows: we can interpret $\NX X pq$ as the intersection number of two submanifolds.
+Indeed, let $\alpha$ be a regular value between  $f(p)$ and  $f(q)$ and let $V = f^{-1}(\alpha)$.
+Let $S^{u}(p) = \unstable p \cap V$ and 
+$S^{s}(q) = \stable q \cap V$ be spheres inside $V$.
+Then we have noted before that $\L pq \cong S^{u}(p) \cap S^{s}(q)$ so that \[
+    | \L pq| = |S^{u}(p) \cap S^{s}(q)|.
+\]
+Moreover, we have that
+\[
+    \NX X pq = S^{u}(p) \cdot S^{s}(q)
+,\] 
+where we denote the intersection number of two manifolds $N$ and $N'$ by $N \cdot N'$.
+For this to be defined, we assign arbitrary orientations of the unstable manifolds in order to define $\NX X pq$, and we also use these orientations for calculating the intersection number$S^{u}(p)$ and $S^{s}(q)$.
+The orientation issues here are the same as those we discussed in the chapter on Morse homology.
 
-The proof of the second cancellation theorem will reduce the given situation with multiple flow lines connecting $p$ and  $q$ to a situation where there is only one flow line, by repeatedly applying the following theorem by Whitney \sidecite{whitney1944self}
+We now state the theorem of Whitney, prove the second cancellation theorem and end with the proof of Whitney's theorem.
 \begin{theorem}[Whitney]
-    Let $M$ and  $M'$ be smooth, closed, tranversely intersecting submanifolds of dimensions  $r$ and $s$ in a smooth  $(r+s)$-dimensional manifold $V$.
-    Suppose  $M$ is oriented and  $M'$ is cooriented.
-    Suppose $r+s \ge 5$, $s\ge 3$ and if $r<3$ suppose that $\pi_1(V - M') \hookrightarrow \pi_1(V)$ is an isomorphism.
+    Let $N$ and  $N'$ be smooth, closed, tranversely intersecting submanifolds of dimensions  $r$ and $s$ in a smooth  $(r+s)$-dimensional manifold $V$.
+    Suppose  $N$ is oriented and  $N'$ is cooriented.
+    Suppose $r+s \ge 5$, $s\ge 3$ and if $r<3$ suppose that $\pi_1(V - N') \hookrightarrow \pi_1(N)$ is an isomorphism.
 
-    Let $p, q \in  M \tcap M'$ points with opposite intersection number as in Figure~\ref{fig:intersection-points-cancellation} such that there exists a loop $L$ contractible in  $V$ connecting  $p$ smoothly to $q$ in  $M$  and then $q$ smoothly to  $p$ in $M'$ where both arcs miss other intersection points.
+    Let $p, q \in  M \tcap N'$ points with opposite intersection number as in Figure~\ref{fig:intersection-points-cancellation} such that there exists a loop $L$ contractible in  $V$ connecting  $p$ smoothly to $q$ in  $N$  and then $q$ smoothly to  $p$ in $N'$ where both arcs miss other intersection points.
 
     Then there exists an isotopy $h_t$ of the identity $V \to V$ such that
     \begin{enumerate}[(i)]
         \item The isotopy is locally the identity around other intersection points;
-        \item At time  $t = 1$,  $M'$ and  $M$ do not intersect in $p$ and $q$  any more.  In other words, $h_1(M) \cap M' = M \cap  M' \setminus \{ p, q\} $.
+        \item At time  $t = 1$,  $N'$ and  $N$ do not intersect in $p$ and $q$  any more.  In other words, $h_1(N) \cap N' = N \cap  N' \setminus \{ p, q\} $.
     \end{enumerate}
 \end{theorem}
-\begin{marginfigure}
+\begin{marginfigure}[-6.5cm]
     \centering
     \incfig{intersection-points-cancellation}
     \caption{
@@ -108,7 +163,7 @@ The proof of the second cancellation theorem will reduce the given situation wit
 \end{marginfigure}
 \begin{proof}[Proof of the second cancellation theorem]
     Let $X$ be an adopted pseudo-gradient vector field adopted to  $f$ and satisfying the Smale condition.
-    Let $S^{u}(q) = \unstable q \cap V$ and $S^{s}(p) = \stable p \cap  V$.
+    Let $N = S^{u}(q) = \unstable q \cap V$ and $N' = S^{s}(p) = \stable p \cap  V$.
 
     We now that $S^{u}(q) \cdot S^{s}(p) = \pm 1$, which means that either there is only one flow line connecting $p$ and  $q$, in which case the proof reduces to the first cancellation theorem, or there are multiple flow lines with opposite signs.
     If we can show that the conditions of the theorem of Whitney are satisfied, we can cancel these intersection points pair by pair (by altering $X$) until we have reached the situation of the first cancellation theorem.
@@ -116,8 +171,8 @@ The proof of the second cancellation theorem will reduce the given situation wit
     Let $V = f^{-1}(\alpha)$.  If $M$ is simply connected, then $V$ is also simply connected.\sidenote{This follows from applying Seifert--Van Kampen theorem: $\pi_1(V) \cong \pi_1(\stable{p} \cup  V \cup \unstable{q})$ (here we use that $k > 2, n - k \ge 3$).
     Then notice that $\stable{p} \cup V \cup \unstable{q}$ is homotopic to $M$ showing that $\pi_1(V) \cong \pi_1(M) = 1$.}
     If $k \ge 3$, then all the conditions of the theorem are satisfied and we are done.
-    If $k = 2$, we need to show that  $\pi_1(V - S^{s}(p)) \cong \pi_1(V)$,
-    ore equivalently showing that $\pi_1(V - S^{s}(p))$ is trivial.
+    If $k = 2$, we need to show that  $\pi_1(V - S^{s}(p)) \cong \pi_1(V) = 1$,
+    or equivalently we need to show that $\pi_1(V - S^{s}(p))$ is trivial.
     Let $S = \unstable q \cap f^{-1}(0)$.
     Flowing $M_0 \setminus S$ via $X$ gives  $V - S^{s}(p)$, so we need to show that $M_0 \setminus S$ has trivial fundamental group.
     For this we use Seifert--Van Kampen. Let $N$ be a product neighbourhood\sidenote{If the normal bundle of a submanifold is trivial, a tubular neighbourhood is called a product neighbourhood. TODO why does this exists?} of $S$ in $M_0$.
@@ -130,9 +185,9 @@ The proof of the second cancellation theorem will reduce the given situation wit
 Let us finally prove the theorem of Whitney.
 
 \begin{proof}[Proof of Whitney's theorem]
-    We will construct the isotopy of $M$ in a local model, constructed as follows.
+    We will construct the isotopy of $N$ in a local model.
     \paragraph{Plane model}
-    Let $C, C'$ be the arcs in  $M$ and $M'$ connecting $p$ and  $q$ and extend them a little bit either way, as in Figure~\ref{fig:whitneys-theorem-proof-model}.
+    Let $C, C'$ be the arcs in  $N$ and $N'$ connecting $p$ and  $q$ and extend them a little bit either way, as in Figure~\ref{fig:whitneys-theorem-proof-model}.
     \begin{marginfigure}
         \center
         \incfig{whitneys-theorem-proof-model}
@@ -141,32 +196,32 @@ Let us finally prove the theorem of Whitney.
     \end{marginfigure}
     For the plane model, let $C_0$ and $ C_1$ be open curves in the plane intersecting transversely in two points, call them $a$ and $b$.
     Let $D$ be the disk with two corners enclosed by $C_0$ and $C_0'$.
-    Then there exists an embedding $\phi_1$ of these curves into $M \cup M'$ such that the following holds:
+    Then there exists an embedding $\phi_1$ of these curves into $N \cup N'$ such that the following holds:
      \begin{itemize}
-         \item $\phi_1(C_0) = C$, $\phi_1(C_0') = C'$
-         \item $\phi_1(a) = p$, $\phi_1(b) = q$
+         \item $\phi_1(C_0) = C$, $\phi_1(C_0') = C'$,
+         \item $\phi_1(a) = p$, $\phi_1(b) = q$.
     \end{itemize}
     \paragraph{Model}
     Now we claim that we can extend this embedding by adding extra dimensions such that the following conditions are satisfied:
     \begin{itemize}
-        \item The new embedding $\phi: U \times \R^{r-1} \times \R^{s-1}$ is an extension of $\phi_1|_{U \cap (C_0 \cup C_0')}$.
-        \item $\phi^{-1}(M) = (U \cap C_0) \times \R^{r-1} \times 0$
-            \item $\phi^{-1}(M') = (U \cap C_0) \times 0\times \R^{s-1}$
+        \item The new embedding $\phi: U \times \R^{r-1} \times \R^{s-1}$ is an extension of $\phi_1|_{U \cap (C_0 \cup C_0')}$,
+        \item $\phi^{-1}(N) = (U \cap C_0) \times \R^{r-1} \times 0$,
+            \item $\phi^{-1}(N') = (U \cap C_0) \times 0\times \R^{s-1}$.
     \end{itemize}
-    For a detailed proof of this claim, we refer the reader to \sidecite[p.~75]{hcobord}.
+    This is actually quite subtle, and for a detailed proof of this claim, we refer the reader to the notes of Milnor\sidecite[p.~75]{hcobord}.
     \begin{marginfigure}
         \centering
         \incfig{whitneys-theorem-model-isotopy}
         \caption{The isotopy $G_t$ in the plane model moves $C_0$ below $ C_0'$, i.e. $ G_1(U \cap C_0) \cap C_0' = \O$.}
         \label{fig:whitneys-theorem-model-isotopy}
     \end{marginfigure}
-    With this model, the proof of the theorem follows quite rapidly.
+    With this model, the proof of the theorem follows quickly.
     \paragraph{Isotopy in the plane model}
     Let $G_t: U \to U$ be an isotopy in the plane model that when applied to $C_0$, moves it under $C_0'$ as in Figure~\ref{fig:whitneys-theorem-proof-model}.
-    More specifically, we require
+    More specifically, we require the following:
     \begin{itemize}
-        \item $G_0$ is the identity map
-        \item $G_t$ is the identity near the boundary of  $U$ for all $t$
+        \item $G_0$ is the identity map,
+        \item $G_t$ is the identity near the boundary of  $U$ for all $t$,
         \item  $ G_1(U \cap C_0) \cap C_0' = \O$.
     \end{itemize}
     \paragraph{Isotopy in the model}
@@ -177,24 +232,191 @@ Let us finally prove the theorem of Whitney.
     .\end{align*}
     \paragraph{Isotopy of $V$}
     To finally find an isotopy of $V$, define $F_t: V\to V$ such that
-    $F_0$ is the identity, $F_t$ is the identity everywhere except away from  $\Im \phi$, and on  $\Im \phi$, define  $F_t = \phi  \circ  H-t  \circ  \phi^{-1}$.
+    $F_0$ is the identity, $F_t$ is the identity everywhere except away from  $\Im \phi$, and on  $\Im \phi$, define  $F_t = \phi  \circ  H_t  \circ  \phi^{-1}$.
     This finishes the proof.
 \end{proof}
 
-Remember how the second cancellation theorem allows us to discard a row/column of the matrix $\partial_k$ under certain conditions.  This raises the question: can we do other row and column operations to this matrix in a geometric way, by which we mean finding a pair $(f', X')$ such that  $M_k'$ is $M_k$ after applying the operation?
+\section{Cancellation of points in the middle dimensions}
 
-\begin{itemize}
-    \item Recording rows and columns: just relabelling of critical points
-    \item Multiplying a row with $-1$: this works, just change signs
-    \item Adding a column to another column ?
-        It turns out we can do this geometrically!
-\end{itemize}
+The second cancellation theorem discussed in the previous section allows us to cancel two critical points if there is (counting with signs) a single flow line connecting them.
+In this section, we will show how we can reach that situation.
 
-As starting from a basis we can reach any other basis by doing these row- and column operations, \ldots \sidecite{kosinski2013differential}
+We can interpret the condition of the second cancellation theorem in another way, namely that the matrix of the differential $\partial_k$, whose entries are \[
+    [\partial_k]_{p, q} = \NX X p q \qquad (p,q) \in C_k(f, \Z) \times  C_{k-1}(f, \Z)
+\] has a row and a column that intersect in $\NX X p q = 1$ whose other entries are zeros. Then the theorem allows us remove this row and column, by which we mean that we can alter $X$ and $f$ such that $[\partial_{X', k}]$ is $[\partial_{X, k}]$ with this one row and column removed.
+For example, in the case of $|C_k| = 4, |C_{k-1}| = 5$, the reduction could look as follows:
+\[
+    \begin{pmatrix}
+        * & *&0 & *\\
+        * & *&0 & *\\
+        0 & 0&\pm 1 & 0 \\
+        * & *&0 & *\\
+        * & *&0 & *
+    \end{pmatrix}
+\leadsto
+\begin{pmatrix}
+    * & *& *\\
+    * & *& *\\
+    * & *& *\\
+    * & *& *
+\end{pmatrix}
+.\] 
+This restatement of the theorem leads us to our next goal: diagonalizing $[\partial_k]$ and showing that under certain conditions,  $[\partial_k]$ is a diagonal matrix with only $\pm 1$ on the diagonal. Then we can apply the second cancellation theorem multiple times, cancelling all the critical points (that lie in the middle dimensions, per assumption of the theorem).
 
+Let us make clear what we mean by diagonalizing.
+Starting off with a matrix $[\partial_k]$ based on $f$ and $X$, we want to change it step by step such that the resulting $[\partial_k']$ is diagonal (note that it does not need to be square). These changes are done by altering $f$ and $X$.
+
+We will consider the following elementary operations:
+\todo{In order to diagonalize a matrix over $\Z$, it suffices to be able to do three elementary row/column operations\sidecite[p.~682]{rotman2010advanced}:}
+\begin{enumerate}[E1]
+    \item Interchange two rows or columns
+    \item Multiplication of a row or column by $-1$
+    \item Addition of a row (resp.~column) to another row (resp.~column)
+\end{enumerate}
+
+It is clear that E1 and E2 can be done: we can just relabel the critical points for E1 and change the (arbitrary) orientation of the unstable manifolds for E2.
+For the third operation, consider the following figure:
+
+\begin{figure}[H]
+    \centering
+    \sidecaption{TODO addition of columns geometrically\label{fig:addition-of-columns-geometrically}}
+    \incfig{addition-of-columns-geometrically}
+\end{figure}
+This shows how such an addition operation can be performed geometrically: isotope the attachment sphere of the second $2$-handle$, i.e.\ S^{u}(p_2)$ to the sphere that is `$S^{u}(p_1)$ connected to $S^{u}(p_2)$ via a tube'. Note that this isotopy depends on the existence of the first $2$-handle.
+We have that $\partial'(p_2) = q_1 + q_2 = \partial(p_1) + \partial(p_2)$.
+
+To show that this works in general, we will use the following lemma:
+\begin{lemma}
+    Let $N$ be a connected closed manifold of dimension $m-1$ containing two embedded $(k-1)$-spheres $ S_1$, $S_2$ ($1 < k < m$).
+    Assume that $S_1$ bounds a $k$-disk $D$  disjoint from $ S_2$. Then there is an isotopy in $N$ of  $ S_2$ to a sphere $S$ that is `$S_1$ connected to $ S_2$' with a tube.
+    More explicitly, $S$ consists of $S_1$ and $ S_2$ with small discs removed and of a tube connecting these openings.
+
+    If $V$ is a submanifold of dimension $m-k$ that does not disconnect $N$,  then we can assume that the tube does not intersect $V$ such that
+     \[
+         V \cap S = (V \cap S_1) \cup (V \cap S_2)
+    .\] 
+\end{lemma}
+\begin{figure}[H]
+    \centering
+    \incfig{lemma-sphere-connect-with-tube}
+    \caption{TODO lemma sphere connect with tube}
+    \label{fig:lemma-sphere-connect-with-tube}
+\end{figure}
+\begin{proof}
+    \begin{marginfigure}
+        \centering
+        \incfig{lemma-sphere-connect-with-tube-proof}
+        \caption{TODO lemma sphere connect with tube proof}
+        \label{fig:lemma-sphere-connect-with-tube-proof}
+    \end{marginfigure}
+    Let $L$ be an arc in $N$ that is disjoint from  the interior of $K$ connecting  $s_1$ to $s_2$ points in $S_1$ and $S_2$.
+    Let $D_1, D_2$ be disks around $s_1$ and $ s_2$ in $ S_1$ and $S_2$.
+    First move $s_2$ along $L$ to  $ s_1$ and extend this to an isotopy that moves a smaller disk $D \subset D_2$ to $D_1$, and keeps $ S_2 - D_2$ fixed.
+    Then move $D_1$ `in' $D$ keeping its boundary fixed. Again extend to an isotopy of $N$.
+    Composing these isotopies, we get the result.
+\end{proof}
+
+\begin{remark}
+    It is also clear that $S\cdot V = S_1\cdot V \pm S_2 \cdot V$, because the tube misses the submanifold $V$.
+    If $k < m-1$ we can actually choose this sign freely by changing the first isotopy in the proof: we can either move $D$ to $ D_2$ with the same or the opposite orientation. If $k = m-1$, we do not have this freedom.
+\end{remark}
+
+This shows that we can perform E3 geometrically:
 \begin{theorem}
-    
+    Let $1 < k < m$. Then we can perform E1, E2, E3 geometrically on $[\partial_k]$, only affecting critical points of index $k$ and $k+1$.
 \end{theorem}
+\begin{proof}
+    Operations E1 and E2 are clear.
+    Assume the Morse function $f$ is self-indexing.
+    Let  $M^{t} = f^{-1}([-\infty, t))$ and let $V$ be the union of all belt spheres of critical points of index $k-1$,i.e. \[
+        V = \bigcup_{p \in \Crit_{k-1} f} S^{s}(p)
+    \]
+    Let $N = f^{-1}(k - \frac{1}{2})$.
+    For dimensional reasons, $V$ can only disconnect $N$ if  $k = 2$.
+    However, the $N \setminus V \cong f^{-1}(k - \frac{3}{2})$ with a finite set of points removed, namely the attaching spheres of the one-handles, as illustrated in Figure~\ref{fig:proof-e1-e2-e3-disconnect-case}.
+    Therefore, as $f^{-1}(k- \frac{3}{2})$ is connected\sidenote{\todo{Why}}, so is $N \setminus V$.
+    This means we can apply the previous lemma and we conclude that we can add/subtract one column to the other one.
+    If $k < m-1$, we have control over the sign (determining addition or subtraction), and if $k = m-1$, we may need to change the orientation of the attaching sphere of  $k$-handle first.
+    Notice that this does not only affect $[\partial_k]$ and also  $[\partial_{k+1}]$.\sidenote{\todo{How?}}
+\end{proof}
+
+In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the following fact:
+\begin{theorem}
+    Let $M$ be a connected cobordism from  $ M_0$ to $ M_1$.
+    If $ M_0 \neq \O$, there exists a handlebody decomposition with exactly one $0$-handle. In the other case, there exists one without $0$-handles.
+    In both cases, $[\partial_1]$ is trivial.
+\end{theorem}
+\begin{proof}
+    Suppose $M_0 \neq \O$, i.e.\ the cobordism has a bottom border and suppose $\# \Crit_0 f =1$, i.e.\ there is a single $0$-handle.
+    Then because $M$ is connected, there must exist an $1$-handle connecting the $0$-handle to another connected component of $f^{-1}((-\infty, \frac{1}{2}])$.
+    The first cancellation theorem allows us to cancel the $0$-and  $1$-handle.
+    It is clear how to extend this to multiple $0$-handles.
+
+    Next, suppose $M_0 = \O$ and $\# \Crit_0 f  = 2$. Then because $M$ is  connected, there must be a $1$-handle connecting the two components in $f^{-1}((-\infty, \frac{1}{2}])$. Again using the first cancellation theorem , we can cancel the $0$- and $1$-handle. A similar reasoning works if $\# \Crit_0 f > 2$.
+
+    For the last part of the theorem, stating that $[\partial_1]$ is trivial, consider the following. 
+    If there are no  $0$-handles, $\partial_1: C_1 \to  C_0$ is clearly trivial.
+    If there is a single $0$-handle, all $1-$ handles have both ends attached to the same sphere, so the intersection number is $0$, so $[\partial_1] = (0 \ \cdots \ 0)$.
+\begin{marginfigure}
+    \centering
+    \incfig{without-zero-handles}
+    \caption{TODO without zero handles}
+    \label{fig:without-zero-handles}
+\end{marginfigure}
+\end{proof}
+\begin{remark}
+    Again by turning the cobordism upside down, we can conclude the same for $n$-handles and $[\partial_n]$.
+\end{remark}
+
+The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultaneously}.
+\begin{theorem}
+    Let $M$ be a cobordism from  $ M_0$ to $M_{1}$.
+    Assume $M, M_0, M_1$ are connected and oriented.
+    Then there exists a Morse function such that $[\partial_k]$ is diagonal for all $k$.
+\end{theorem}
+
+
+\begin{proof}
+    Proof by induction.
+    Note that $[\partial_1]$ is diagonal by the previous theorem.
+    Suppose $[\partial_i]$ is diagonal for  $1 \le  i < k < n$.
+    We have shown that we can do operations E1--E3 on columns geometrically.
+    By turning the cobordism upside down, we can also do this for rows.
+    These six operations are all that is needed for the diagonalizing $[\partial_k]$ by using the algorithm of Smith\sidecite{rotman2010advanced}.
+
+    In order to see that this does not change the already diagonalized matrices, we use the fact that $\partial^2 = \partial_{k-1} \circ \partial_{k} = 0$.
+
+    Lastly $[\partial_n]$ is already diagonal by the previous theorem.
+    \todo{Finish proof}
+\end{proof}
+\todo{Here we care if we change $k-1$ when diagonalizing $k$, but in the previous theorem, it is diagonalizing $k$ and changing $k+1$?}
+\todo{Check if they use rows/columns differently. }
+\todo{Check prop, theorem, lemma throughout}
+
+\begin{marginfigure}
+    \centering
+    \incfig{proof-e1-e2-e3-disconnect-case}
+    \caption{In the case $k = 2$, the union of the belt spheres $V$ does disconnect $M^{3 / 2}$. However, it is diffeomorphic to $M^{ 1 / 2}$ with a finite set of points removed, and since $M^{ 1 / 2}$ is connected, so is  $M^{ 1 / 2} \setminus V$.}
+    \label{fig:proof-e1-e2-e3-disconnect-case}
+\end{marginfigure}
+
+
+\section{Cancelling $1$-handles}
+The previous theorems allow us to diagonalize $[\partial_k]$ for all $k$.
+Moreover, the second cancellation theorem allows remove columns and rows of $[\partial_k]$ under certain conditions.
+
+These conditions do not cover the case $[\partial_2]$ and it requires simply connectedness of $M$ for  $[\partial_3]$, which could be problematic if the handlebody decomposition contains  $1$-handles.
+In this section, we will show that we can eliminate $1$-handles by replacing them with $3$-handles.
+
+\todo{Here simply connectedness is still required?}
+\begin{prop}
+    Let $M$ be a cobordism from $M_0$ to $M_1$.
+    Assume that $M$ and  $M_0$ are connected, $M$ is simply connected and $\dim M \ge 5$.
+    Then there there exists a handlebody decomposition with $0$ (or  $1$) $0$-handles if $M_0 \neq \O$ (or $M_0 = \O$), without $1$-handles.
+    Moreover, starting from another handlebody decomposition, we can alter it such that it satisfies these conditions, without changing the number of handles of index greater than $3$.
+\end{prop}
+
+
 
 \begin{theorem}[7.8]
     Suppose $(W, V, V')$ is a triad of dimension  $n\ge 6$ with a Morse function with no critical points of indices $0, 1, n-1, n$. Furthermore assume that  $W, V, V'$ are all simply connected (hence orientable) an that  $H_{\bul}(W, V) = 0$.
@@ -218,3 +440,9 @@ As starting from a basis we can reach any other basis by doing these row- and co
     \end{itemize}
     Then $W$ is diffeomorphic to  $V \times [0,1]$
 \end{theorem}
+
+\todo{
+    \begin{itemize}
+        \item Fix notation for cardinality
+    \end{itemize}
+}

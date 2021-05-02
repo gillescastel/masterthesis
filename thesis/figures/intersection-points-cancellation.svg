@@ -440,7 +440,7 @@
        sodipodi:role="line"
        x="81.223724"
        y="15.488076"
-       style="stroke-width:0.26458332">$M'$</tspan></text>
+       style="stroke-width:0.26458332">$N'$</tspan></text>
   <text
      id="text2106"
      xml:space="preserve"
@@ -451,7 +451,7 @@
        sodipodi:role="line"
        x="35.357548"
        y="20.433626"
-       style="stroke-width:0.26458332">$M$</tspan></text>
+       style="stroke-width:0.26458332">$N$</tspan></text>
   <text
      y="47.379028"
      x="81.223724"
@@ -462,7 +462,7 @@
        y="47.379028"
        x="81.223724"
        sodipodi:role="line"
-       id="tspan2118">$M'$</tspan></text>
+       id="tspan2118">$N'$</tspan></text>
   <text
      id="text2124"
      xml:space="preserve"
@@ -473,7 +473,7 @@
        sodipodi:role="line"
        x="26.305374"
        y="54.521194"
-       style="stroke-width:0.26458332">$h_1(M)$</tspan></text>
+       style="stroke-width:0.26458332">$h_1(N)$</tspan></text>
   <text
      id="text2138"
      xml:space="preserve"

@@ -138,7 +138,7 @@
          sodipodi:role="line"
          x="76.063377"
          y="211.07912"
-         style="stroke-width:0.26458332">$M'$</tspan></text>
+         style="stroke-width:0.26458332">$N'$</tspan></text>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.28088167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        d="m 53.083025,218.90542 c 0.198722,0.048 0.398327,0.0924 0.598681,0.13304 4.096128,0.83149 8.339063,0.0993 12.412347,-0.83776 4.073283,-0.93701 8.153456,-2.08586 12.333124,-2.08912 4.681068,-0.004 9.226635,1.42828 13.725873,2.72028 4.499237,1.29201 9.1626,2.46728 13.81344,1.93612 2.95316,-0.33727 5.82451,-1.37096 8.31501,-2.9934"
@@ -411,7 +411,7 @@
          sodipodi:role="line"
          x="82.660034"
          y="220.12039"
-         style="stroke-width:0.26458332">$M$</tspan></text>
+         style="stroke-width:0.26458332">$N$</tspan></text>
     <text
        id="text962"
        xml:space="preserve"

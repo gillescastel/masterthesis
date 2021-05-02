@@ -156,3 +156,8 @@
 \newcommand\todo[1]{\ifworking {{\color{red}{#1}}} \else {}\fi}
 
 \author{Gilles Castel}
+
+
+
+\usepackage{multirow}
+\def\block(#1,#2)#3{\multicolumn{#2}{c}{\multirow{#1}{*}{$ #3 $}}}

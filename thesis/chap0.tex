@@ -5,6 +5,7 @@ In this thesis, we assume the reader is familiar with basic concepts of differen
 In this chapter, we discuss some concepts that might be unfamiliar.
 
 \section*{Differential Geometry}
+\subsection*{Transversality}
 The first concept we want to introduce is transversality.
 
 \todo{Interesting source appendix of Schultens\sidecite{schultens2014introduction}}
@@ -91,6 +92,42 @@ Note in particular that it is the set of critical \emph{values} that has measure
 %     Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
 % \end{definition}
 % \sidenotetext{\fullcite[23]{schultens2014introduction}}
+
+
+\subsection*{Intersection number}
+
+\begin{marginfigure}
+    \centering
+    \incfig{intersection-number}
+    \caption{
+        The intersection number is defined by comparing the orientation of $N$ with the coorientation of $N'$ at the points of transverse intersection.
+        In this case, the ambient manifold $M = \R^2$, $N = (0,1)$ and $N' = S^1$ and $N' \cdot N = -1 + 1 = 0$.
+    }
+    \label{fig:intersection-number}
+\end{marginfigure}
+\begin{definition}[Intersection number]
+    Let $N$ and  $N'$ be $r$- and  $s$- dimensional submanifolds of an $(r+s)$-dimensional manifold $M$.
+    Suppose $N$ is oriented, $N'$ is cooriented and their intersection is transverse.
+    Let $p \in  N \tcap N'$.
+    Then $T_p N$ is oriented both by the orientation of  $N$ and the coorientation of  $N'$.
+    If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
+    The intersection number  $N' \cdot N$ is then defined as the sum of all the intersection numbers at the points in $N \tcap N'$.
+\end{definition}
+\begin{remark}
+    If we change the order, the intersection number might change sign: $N \cdot N' =  \pm N' \cdot N$.
+\end{remark}
+\begin{prop}
+    The intersection number $N \cdot N'$ does not change under ambient isotopies of $N$ or $N'$.
+    In particular, we can define the intersection number of two manifolds that do not intersect transversely.
+\end{prop}
+\begin{proof}
+    See `Differential Manifolds'\sidecite[p.~70]{kosinski2013differential}.
+\end{proof}
+\begin{eg}
+    Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and coorientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
+    It is also clear that the intersection number does not change under isotopies of the manifolds.
+\end{eg}
+
 
 \section*{Homological Algebra}
 In this section, we will assume that the reader is familiar with modules over a ring $R$. If not, they can mentally substitute each occurence of `module' by `vector space'.
