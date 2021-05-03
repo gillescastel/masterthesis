@@ -66,5 +66,6 @@
     \put(0,0){\includegraphics[width=\unitlength,page=5]{l-bar-manifold-2-dimensional-case.pdf}}%
     \put(0.60462382,1.07814678){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
     \put(0.66808111,1.07814678){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta$\end{tabular}}}}%
+    \put(0.51269165,0.97504025){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\chi$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

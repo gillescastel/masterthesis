@@ -102,7 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -418,5 +418,16 @@
          x="12.731426"
          sodipodi:role="line"
          id="tspan1090">$\delta$</tspan></text>
+    <text
+       id="text888"
+       xml:space="preserve"
+       style="font-size:1.32291663px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="3.5281758"
+       y="209.8826"><tspan
+         id="tspan886"
+         sodipodi:role="line"
+         x="3.5281758"
+         y="209.8826"
+         style="stroke-width:0.26458332">$\chi$</tspan></text>
   </g>
 </svg>
