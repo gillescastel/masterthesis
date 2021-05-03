@@ -84,7 +84,7 @@ footskip=40pt,
 
 %set up header, footer and page numbering
 \RequirePackage{fancyhdr}% helper package
-\renewcommand{\headrulewidth}{1pt}% The running heads and feet do not have rules
+\renewcommand{\headrulewidth}{0.4pt}% The running heads and feet do not have rules
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}% set up the page numbering 
 {\fancyfoot[LE,RO]{\thepage}}
