@@ -24,11 +24,11 @@
 paperwidth=215mm,
 paperheight=297mm,
 left=42pt,
-top=40pt,
+top=72pt,
 textwidth=340pt,
 marginparsep=20pt,
 marginparwidth=180pt,
-textheight=730pt,
+textheight=650pt,
 footskip=40pt,
 }
 %
@@ -84,10 +84,12 @@ footskip=40pt,
 
 %set up header, footer and page numbering
 \RequirePackage{fancyhdr}% helper package
-\renewcommand{\headrulewidth}{0pt}% The running heads and feet do not have rules
+\renewcommand{\headrulewidth}{1pt}% The running heads and feet do not have rules
 \renewcommand{\footrulewidth}{0pt}
 \fancyhf{}% set up the page numbering 
 {\fancyfoot[LE,RO]{\thepage}}
+\fancyhead[RO]{\rightmark}
+\fancyhead[LE]{\leftmark}
 \fancypagestyle{plain}{%
 	\fancyhf{}
 }
