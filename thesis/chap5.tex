@@ -6,7 +6,7 @@ Let us first state them.
 The first one states that the Morse inequalities are in fact attainable under certain conditions.
 In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale\sidecite{smale1960generalized} in 1960.
 \begin{theorem}[Smale's theorem]
-    If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H(M, \Z))$ for all $k = 0, \ldots, n$.
+    If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H_k(M, \Z))$ for all $k = 0, \ldots, n$.
 \end{theorem}
 Remember that we use $r_0(A)$ to denote the free rank of a $\Z$-module $A$.
 A closely related theorem is the $h$-cobordism theorem, stating
@@ -236,7 +236,7 @@ Let us finally prove the theorem of Whitney.
     This finishes the proof.
 \end{proof}
 
-\section{Cancellation of points in the middle dimensions}
+\section{Cancellation of points in the middle dimensions and diagonalizing $[\partial_k]$}
 
 The second cancellation theorem discussed in the previous section allows us to cancel two critical points if there is (counting with signs) a single flow line connecting them.
 In this section, we will show how we can reach that situation.
@@ -345,6 +345,7 @@ In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the
     Let $M$ be a connected cobordism from  $ M_0$ to $ M_1$.
     If $ M_0 \neq \O$, there exists a handlebody decomposition with exactly one $0$-handle. In the other case, there exists one without $0$-handles.
     In both cases, $[\partial_1]$ is trivial.
+    \label{thm:no-zero}
 \end{theorem}
 \begin{proof}
     Suppose $M_0 \neq \O$, i.e.\ the cobordism has a bottom border and suppose $\# \Crit_0 f =1$, i.e.\ there is a single $0$-handle.
@@ -403,10 +404,11 @@ The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultan
 
 \section{Cancelling $1$-handles}
 The previous theorems allow us to diagonalize $[\partial_k]$ for all $k$.
-Moreover, the second cancellation theorem allows remove columns and rows of $[\partial_k]$ under certain conditions.
+Moreover, the second cancellation theorem allows us to remove columns and rows of $[\partial_k]$ under certain conditions.
 
 These conditions do not cover the case $[\partial_2]$ and it requires simply connectedness of $M$ for  $[\partial_3]$, which could be problematic if the handlebody decomposition contains  $1$-handles.
-In this section, we will show that we can eliminate $1$-handles by replacing them with $3$-handles.
+Similar problems occur for $[\partial_{n-2}]$ and $[\partial_{n-3}]$.
+In this section, we will show that we can eliminate $1$-handles by replacing them with $3$-handles, solving these issues.
 
 \todo{Here simply connectedness is still required?}
 \begin{prop}
@@ -414,35 +416,150 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     Assume that $M$ and  $M_0$ are connected, $M$ is simply connected and $\dim M \ge 5$.
     Then there there exists a handlebody decomposition with $0$ (or  $1$) $0$-handles if $M_0 \neq \O$ (or $M_0 = \O$), without $1$-handles.
     Moreover, starting from another handlebody decomposition, we can alter it such that it satisfies these conditions, without changing the number of handles of index greater than $3$.
+    \label{thm:one-to-three}
 \end{prop}
+\begin{marginfigure}
+    \centering
+    \incfig{changing-one-handles-in-three-handles}
+    \caption{
+        To change a $1$-handle into a $3$-handle, we first introduce a pair of cancelling auxiliary handles of index $2$ and $3$. 
+        Then we cancel the $1$- and $2$-handle, leaving us with a  $3$-handle.
+    }
+    \label{fig:changing-one-handles-in-three-handles}
+\end{marginfigure}
+\begin{proof}
+    The idea of the proof goes as follows and is illustrated in Figure~\ref{fig:changing-one-handles-in-three-handles}.
+    In order to change a $1$-handle into a $3$-handle, we introduce an auxiliary cancelling pair of $2$- and $3$-handles.
+    Then we cancel the $1$- and $2$-handle, leaving us with a $3$-handle.
+    \paragraph{Adding a cancelling pair of $2$- and $3$-handles}
+    By the first cancellation theorem, we can decompose an $m$-dimensional disk $D^{m}$ as a $2$- and  $3$-handle. (The attachment sphere of the $3$-handle intersects the belt sphere of the $2$-handle once transversely.)
+    Therefore, we can remove a small disk from $M$ and fill it up with a $2$- and $3$-handle.
+    The attachment sphere $L$ of the $2$-handle bounds a $2$-dimensional disk in $f^{-1}(\frac{3}{2})$ and we can make sure that it does not intersect belt spheres of $1$-handles or attachment regions of other $2$-handles.
 
+    Our next goal is to isotope this $2$- and $3$-handle such that the attachment region $L$ of the $2$-handle crosses a $1$-handle exactly once. Then we will be able to cancel the $2$-handle against the $1$-handle.
 
+    \paragraph{Constructing the desired attachment region}
+    Let $L'$ a loop on top of a $1$-handle that intersects the belt sphere once transversely.
+    By Theorem~\ref{thm:no-zero}, we can assume that there are a minimum number of $0$-handles, implying that $f^{-1}(\frac{1}{2})$ is connected.
+    Hence we can connect the endpoints of $L'$ with a curve that lies in $f^{-1}(\frac{1}{2})$,
+    moreover missing the other attachment spheres of $1$- and $2$-handles.\sidenote{
+        The attachment spheres of the $1$-handles are a finite number of disjoint points, so it is easy to avoid them.
+        For the second claim, we can assume that the loop is smooth and transversal to the attachment region of the $2$-handles. Now note that transversal under these conditions means disjoint because of dimensional reasons.
+    }
+    Because $M$ is simply connected, $f^{-1}(\frac{3}{2})$ is as well, so this loop is null-homotopic.
+    \paragraph{Isotoping $L$ to $L'$}
+    Both $L$ and $L'$ are null-homotopic in  $f^{-1}(\frac{3}{2})$.
+    Because $\dim f^{-1}(\frac{3}{2}) \ge 4$, they are in fact isotopic, by a theorem of Withney.\sidecite{whitney1936differentiable}
+    It states that if $f, g: M \to N$ be two \emph{homotopic} embeddings of a compact manifold. If $\dim N \ge  2 \dim M + 2$, then $f$ and  $g$ are \emph{isotopic.}
+    Both embeddings of $L$ and  $L'$ are null homotopic, and  $\dim f^{-1}(\frac{3}{2}) \ge 4 \ge  2 \dim S^{1} +  2$, so the conditions are satisfied.
+    Hence, we can isotope $L$ to $L'$, and assume that the $2$- and  $3$-handle combination is actually attached along $L'$, i.e.\ the attachment region of the $2$-handle is $L'$.
 
-\begin{theorem}[7.8]
-    Suppose $(W, V, V')$ is a triad of dimension  $n\ge 6$ with a Morse function with no critical points of indices $0, 1, n-1, n$. Furthermore assume that  $W, V, V'$ are all simply connected (hence orientable) an that  $H_{\bul}(W, V) = 0$.
-    Then $(W, V, V')$ is  a product cobordism.
+    Because $L'$ crosses the  $1$-handle exactly one time, we can cancel the $1$- and $2$-handle as claimed before, ending the proof.
+\end{proof}
+\begin{remark}
+    This idea can be extended to higher index critical points as well, but we will not need that here.
+\end{remark}
+\begin{remark}
+    By reversing the cobordism ($f \leadsto -f$), we can do the same for $n-1$-handles.
+\end{remark}
+
+\section{Minimality of the Morse inequalities}
+\begin{theorem}
+    Let $M$ be a cobordism from $M_0$ to $M_1$.
+    Assume $M, M_0, M_1$ are connected and simply connected and $\dim M \ge 6$.
+    Assume moreover that the homology of $M$ is free, i.e.  $H_{\bul}(M, M_0)$ and $H_{\bul}(M, M_1)$ are free.
+    Then there exists a Morse function such that
+    \[
+        \# \Crit_k f = r_0(H_k(M, M_0, \Z))
+    .\] 
+    In other words, under these conditions, the Morse inequalities are attainable.
+\end{theorem}
+\begin{proof}
+    Let $f$ be an arbitrary Morse function on $M$.
+    We show inductively that $[\partial_k]$ is trivial.
+    Using Theorem~\ref{thm:no-zero}, we can alter $f$ such that the number of $0$-handles is minimized.
+    Theorem~\ref{thm:one-to-three} allows us to change $1$-handles into $3$-handles.
+    \begin{enumerate}
+        \item[$H_0$]
+            We have $C_{-1} = 0$, so $\Ker \partial_0 = C_0$.
+            As there are no $1$-handles, $\Im \partial_1 = 0$.
+            Hence  $H_0(M, M_0) = C_0$.
+        \item[$H_1$]
+            There are no $1$-handles.
+            Hence $\Ker \partial_1 = 0 = C_1$, and $\Im \partial_2 = 0$. Hence  $H_1(M, M_0) = C_1$.
+        \item[$ H_2$]
+            By definition, $H_2(M, M_0) = \frac{\Ker \partial_2}{\Im \partial_3}$.
+            However, there are no $1$-handles,
+            so $\Ker \partial_2 = C_2$.
+            By altering the Morse function and gradient, we can assume that $[\partial_3]$ is diagonal.
+            This combined with the fact that the homology is free allows us to conclude that $\Im \partial_3$ is matrix with as entries $\pm 1$.
+            (If it would contain e.g.\ a $2$, then the resulting quotient could be  $\Z / 2 \Z$, which has torsion.)
+            This allows us to cancel pairs of critical points removing rows and columns until $[\partial_3]$ is trivial.
+            We can do so without altering the triviality for $k = 1,2$.
+            We conclude that $H_2(M, M_0) = C_2 / 0 = C_2$.
+        \item [$H_k$]
+            By definition $H_k(M, M_0) = \frac{\Ker \partial_k}{\Im \partial_{k+1}}$.
+            We know that $[\partial_k]$ is trivial, hence  $\Ker \partial_k = C_k$.
+            Because $H_k$ does not have torsion, this does mean that $[\partial_{k+1}]$ only contains $\pm 1$'s, so we can cancel critical points until  $[\partial_{k+1}]$ is trivial. We can do this without changing the triviality of $[\partial_\ell]$ for $\ell < k$.
+            We conclude that $H_k(M, M_0) = C_k$.
+    \end{enumerate}
+    While the proof now seems finished, we should be careful when $k$ gets close to  $n$, because then the second cancellation does not apply any more.
+    We can fix this by first doing the previous process for $k = 1, \ldots, n-2$. 
+    Then we turn the cobordism upside down ($f \leadsto -f$), and repeat the procedure, eventually making all matrices trivial resulting in $H_k(M, M_0) \cong C_k$.
+\end{proof}
+\begin{remark}
+    If we do not assume that the homology is free, the weak Morse inequalities are not attainable.
+    However, we can prove that the Morse inequalities including torsion rank in fact are.
+\end{remark}
+\begin{corollary}
+    If $M$ is a simply connected closed manifold of dimension  $n \ge 6$ with free homology, then the Morse inequalities are attainable, i.e.\ there exists a Morse function such that
+    \[
+        \# \Crit_kf = r_0 (H_k(M, \Z))
+    .\] 
+\end{corollary}
+
+\begin{corollary}[$h$-cobordism theorem]
+    Let $M$ be a cobordism from  $M_0$ to $M_1$.
+    If $M, M_0, M_1$ are connected and simply connected, $\dim M \ge  6$ and $H_{\bul}(W, V_0) = 0$, then $M$ is a trivial cobordism, i.e.  $M \cong M_0 \times [0,1]$.
+\end{corollary}
+
+TODO: talk about name $h$-cobordism
+
+\begin{corollary}[Generalized Poincaré conjecture]
+    If $M$ is a homotopy sphere of dimension  $m \ge  6$, then $M$ is homeomorphic to  $S^{n}$.
+\end{corollary}
+\begin{proof}
+    By the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e. $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
+     \[
+    TODO
+    .\] 
+\end{proof}
+\begin{remark}
+    categories: homeomorphic, there are multiple differentiable structures on $S^{n}$ for high enough $n$.
+\end{remark}
+The next result shows that there is only one differential structure on disks:
+
+\begin{theorem}
+    
 \end{theorem}
 
-\begin{theorem}[8.1]
-    \begin{itemize}
-        \item If $ H_0(W, V) = 0$, the critical points of index $0$ can be canceled against an equal number of critical points of index $1$
-\item Suppose $W$ and  $V$ are simply connected and  $n \ge  5$
-    If there are no critical points of index $0$, we can insert for each index  $1$ critical point a pair of auxiliary index  $2$ and  $3$ critical points and cancel the index  $1$ critical points against the auxiliary index  $2$ critical points. (We trade the critical points of index 1 for an equal number of critical points of index 3)
-    \end{itemize}
+This allows us to strengthen the generalized Poincaré theorem:
+\begin{theorem}
+    Let $M$ be a homotopy sphere of dimension  $\ge  5$. Then $M \cong S^{n}$.
 \end{theorem}
+\begin{proof}
+    TODO
+\end{proof}
 
-\begin{theorem}[9.2 The $h$-cobordism theorem]
-    Suppose the triad $(W, V, V')$ has the properties
-     \begin{itemize}
-        \item $W, V, V'$ are simply connected
-        \item  $H_\bul(W, V) = 0$
-        \item  $\dim W = n \ge  6$
-    \end{itemize}
-    Then $W$ is diffeomorphic to  $V \times [0,1]$
-\end{theorem}
+
+\section{Historical aspects of the Poincaré conjecture}
+
+table of results, categories, \ldots
 
 \todo{
-    \begin{itemize}
+\begin{itemize}
+    \item Relative Morse homology
         \item Fix notation for cardinality
-    \end{itemize}
+        \item Spell check in brackets theorem
+\end{itemize}
 }
