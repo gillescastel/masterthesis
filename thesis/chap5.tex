@@ -473,6 +473,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
         \# \Crit_k f = r_0(H_k(M, M_0, \Z))
     .\] 
     In other words, under these conditions, the Morse inequalities are attainable.
+    \label{thm:minimal-cob}
 \end{theorem}
 \begin{proof}
     Let $f$ be an arbitrary Morse function on $M$.
@@ -526,30 +527,93 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
 TODO: talk about name $h$-cobordism
 
 \begin{corollary}[Generalized Poincaré conjecture]
-    If $M$ is a homotopy sphere of dimension  $m \ge  6$, then $M$ is homeomorphic to  $S^{n}$.
+    If $M$ is a homotopy sphere of dimension  $n \ge  6$, then $M$ is homeomorphic to  $S^{n}$.
 \end{corollary}
 \begin{proof}
     By the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e. $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
-     \[
-    TODO
-    .\] 
+    \begin{align*}
+        h: S^{n} = D_1^{n} \cup_\text{Id}  D_2^{n} &\longrightarrow D_1^{n} \cup_\phi D_2^{n} \\
+         x &\longmapsto 
+         \begin{cases}
+             x & \text{if $x \in D_1^{n}$}\\
+             \|x\| \phi\Big(\frac{x}{\|x\|}\Big) & \text{if $x \in D_2 ^{n} \setminus \{0\} $}\\
+             0 & \text{if $x = 0 \in D_2^{n}$.}
+         \end{cases}
+    \end{align*}
 \end{proof}
 \begin{remark}
-    categories: homeomorphic, there are multiple differentiable structures on $S^{n}$ for high enough $n$.
+    We cannot conclude that $M$ is \emph{diffeomorphic} to $S^{n}$.
+    Indeed, there are so-called exotic spheres, which are topological spheres with a differential structure that is not equivalent to the standard differential structure on $S^{n}$.
+    We will expand on this in the following section.
 \end{remark}
-The next result shows that there is only one differential structure on disks:
 
+The next result shows that there is only one differential structure on disks:
 \begin{theorem}
-    
+    If $M$ is contractible with a simply connected boundary and of dimension $n \ge  6$, then $M$ is diffeomorphic to $B^{n}$
 \end{theorem}
+\begin{proof}
+    Consider $M$ as a cobordism from  $\O$ to  $\partial M$.
+    We have that  $H_\bul(M) \cong H_\bul(M, \O)$.
+    By Poincaré duality, this is also isomorphic to  $H^\bul(M, \partial M)$.
+    Because  $H^{\bul}(M, \partial M)$ is finitely generated, it is isomorphic to $H_\bul(M, \partial M)$.\sidecite[Chapter 5, Section 5, Corollary 4]{spanier1989algebraic}
+    In conclusion, $H_\bul(M) \cong H_\bul(M, \O) \cong H_\bul(M, \partial M)$.
+    This means that $H_\bul(M, \O)$ and  $H_\bul(M, \partial M)$ are free.
+    Applying Theorem~\ref{thm:minimal-cob} gives, together with the fact that $M$ is contractible, a handlebody decomposition with exactly one $0$-handle.
+    Hence $M$ is diffeomorphic to a disk.
+\end{proof}
 
 This allows us to strengthen the generalized Poincaré theorem:
-\begin{theorem}
+\begin{theorem}[Generalized Poincaré conjecture for $n \ge  5$]
     Let $M$ be a homotopy sphere of dimension  $\ge  5$. Then $M \cong S^{n}$.
 \end{theorem}
 \begin{proof}
-    TODO
+    We claim that $M \# (-M)$ bounds a contractible manifold $W$ of dimension greater than or equal to $6$.
+    Indeed, consider the following figure.
+\begin{figure}[H]
+    \centering
+    \sidecaption{The connected sum of a manifold with itself bounds a manifold $W$ which deformation retracts on  $M \setminus D^{n}$.}
+    \incfig{connected-sum-homotopy-spheres}
+    \label{fig:connected-sum-homotopy-spheres}
+\end{figure}
+The two top rows show a local model of a connected sum, considering the connected sum of two copies of $\R^{n}$ with reversion orientation on one of the copies.
+The resulting manifold bounds a manifold $W$ and squashing in the vertical direction gives a deformation retract from $W$ to  $ \R^{n} \setminus D^{n}$.
+On the bottom, we use this local model for $ M \# (-M)$. This shows that $M \#(-M)$ bounds a manifold that is homotopy equivalent with  $M \setminus D^{n}$.
+Because $M$ is a homotopy sphere, we can easily use Mayer--Vietoris to compute that the homology of $M \setminus D^{n}$ is that of a contractible manifold.
+
+By the previous theorem, this implies that $W$ is diffeomorphic to $D^{n+1}$.
+Hence, $M \#(-M)$ is homeomorphic to $S^{n}$.
+If we can prove that the sphere $S^{n}$ is irreducible, this implies that $M$ is homeomorphic to $S^{n}$.
 \end{proof}
+
+\begin{lemma}[Irreducibility of the sphere]
+    If $S^{n} \cong M \# N$, then $M, N \cong S^{d}$.
+\end{lemma}
+\begin{proof}
+    We use a trick called Mazur's swindle.\sidecite{mazur1959embeddings}
+    It is based on the fact that the infinite connected sum $\#_{n=1}^{\infty} M_n$ is well defined and associative.
+    Suppose $M \# N \cong S^{n}$.
+    Consider
+    \[
+       C =  (M \# N) \# 
+        (M \# N) \#  \cdots
+    .\] 
+    This is an infinite connected sums of spheres, hence a half-open cylinder.
+    Pinching its boundary results in $S^{n}$.
+    Using associativity, this is also equal to
+    \[
+        C= M
+        \# (N \# M)
+        \# (N \# M)
+        \# \cdots
+    ,\] 
+    which is homeomorphic to $M$ with a small ball removed. Pinching its boundary, we get $M$.
+    This proves that $M$ is homeomorphic to $S^{n}$.
+\end{proof}
+\url{https://terrytao.wordpress.com/2009/10/05/mazurs-swindle/#irred}
+
+% TODO Firstly note that Σ is in particular a homology sphere by Hurewicz theorem (i.e. has homology isomorphic to that of a sphere) . 
+% TODO Next, it follows from the Hurewicz theorem (plus the fact that π1(Σ′)≅π1(Σ)={1}) that all of the homotopy groups πi(Σ′) are trivial. Finally, by Whiteheads theorem the inclusion of a point in Σ′ induces an isomorphism on all homotopy groups hence is a homotopy equivelance, i.e. Σ′ is a contractible space.
+% TODO https://math.stackexchange.com/questions/2987911/if-sigma-is-a-homotopy-sphere-then-sigma-sigma-bounds-a-contractible
 
 
 \section{Historical aspects of the Poincaré conjecture}
@@ -561,5 +625,6 @@ table of results, categories, \ldots
     \item Relative Morse homology
         \item Fix notation for cardinality
         \item Spell check in brackets theorem
+        \item Check $H_1 = 0$ does not imply simply connectedness \url{https://mathoverflow.net/questions/110158/what-if-i-want-to-look-for-a-space-with-vanishing-first-homology-but-nonzero-fun}
 \end{itemize}
 }
