@@ -42,20 +42,22 @@
 \title{Morse theory}
 \date{Academic year 2020--2021}
 \begin{document}
+    
     \renewcommand{\thepage}{\roman{page}}
-    \includepdf[pages=-, fitpaper=true]{./frontmatter.pdf}
-    \cleardoublepage
-    \maketitle
-    % \input{preface.tex}
+    \includepdf[pages=1, fitpaper=true]{./kuleuven-template/covers.pdf}
+    \thispagestyle{empty}
+    \input{copyright.tex}
+    \pagestyle{plain}
+    \setcounter{page}{0}
+    \input{preface.tex}
     \input{summary.tex}
     \listofsymbols
     \tableofcontents
     \cleardoublepage
-    \pagestyle{fancy}
     \renewcommand{\thepage}{\arabic{page}}
     \setcounter{page}{1}
     % \input{chaptest.tex}
-    % \input{introduction.tex}
+    \pagestyle{fancy}
     \input{chap0.tex}
     \input{chap1.tex}
     \input{chap2.tex}
@@ -63,8 +65,10 @@
     \input{chap4.tex}
     \input{chap5.tex}
     \input{todo.tex}
+    \input{conclusion.tex}
     % \input{chap-outlook.tex}
-    % \input{conclusion.tex}
+
 
     \printbibliography
+    \includepdf[pages=2, fitpaper=true]{./kuleuven-template/covers.pdf}
 \end{document}

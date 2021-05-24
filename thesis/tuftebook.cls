@@ -21,11 +21,11 @@
 %
 \RequirePackage{geometry}
 \geometry{
-paperwidth=215mm,
+paperwidth=210mm,
 paperheight=297mm,
 left=42pt,
 top=72pt,
-textwidth=340pt,
+textwidth=320pt,
 marginparsep=20pt,
 marginparwidth=180pt,
 textheight=650pt,
@@ -94,8 +94,6 @@ footskip=40pt,
 	\fancyhf{}
 }
 
-\RequirePackage{emptypage}
-
 % \makeatletter
 % \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 % \hbox{}
@@ -109,15 +107,23 @@ footskip=40pt,
 % \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 % \makeatother
 
+\RequirePackage{emptypage}
 
 
+
+% This is used for chapters
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LE, RO]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0pt}% Line at the footer visible
+}
 
 
 % Also show page numbers on first page of chapter
 % \usepackage{etoolbox} 
 % \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
-
-
 
 
 \renewcommand{\frontmatter}{\pagestyle{empty}}% the frontmatter is empty
