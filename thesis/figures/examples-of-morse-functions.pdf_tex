@@ -56,11 +56,6 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{examples-of-morse-functions.pdf}}%
     \put(0.7683378,0.56979062){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{examples-of-morse-functions.pdf}}%
-    \put(2.05653647,0.56979062){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{examples-of-morse-functions.pdf}}%
-    \put(1.7537132,0.85075355){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-x_1^2 -x_2^2$\end{tabular}}}}%
-    \put(1.77890147,0.2717936){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1^2 +x_2^2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{examples-of-morse-functions.pdf}}%
     \put(0.36828701,0.99553558){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$k=2$\end{tabular}}}}%
     \put(0.37464799,0.73982386){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$k=1$\end{tabular}}}}%
     \put(0.38355339,0.28946552){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$k=1$\end{tabular}}}}%
