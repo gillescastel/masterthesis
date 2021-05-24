@@ -67,7 +67,10 @@ We will address these topics in the two following sections, but let us first com
 \begin{marginfigure}
     \centering
     \incfig{other-sphere-and-normal-sphere-morse-complex}
-    \caption{TODO other sphere and normal sphere morse complex}
+    \caption{Two embeddings of the sphere in $\R^3$.
+        The corresponding height functions are Morse functions and give rise to a different Morse complex.
+        However, the resulting Morse homology is the same.
+    }
     \label{fig:other-sphere-and-normal-sphere-morse-complex}
 \end{marginfigure}
 
@@ -158,15 +161,13 @@ We will address these topics in the two following sections, but let us first com
 
 \section{The Morse complex is a complex: $\partial^2 = 0$}
 In this section, we will prove that the Morse complex is actually a complex, by which we mean that $\partial^2 = 0$.
-The core idea of the proof is very geometrical and depends on the fact that compact one-dimensional manifolds with boundary have an even number of boundary points.\sidenote{TODO: reference or prove!}
+The core idea of the proof is very geometrical and depends on the fact that compact one-dimensional manifolds with boundary have an even number of boundary points.\sidenote{
+    Compact one-dimensional manifolds consist of disjoint union of copies of $S^{1}$ and closed intervals, as proven in \fullcite[p.55]{milnor1997topology}
+}
 We will first make this core idea clear, and then make this argument precise.
 
 Let us first restate what we have to prove. Let $a \in \Crit_k f$ be a critical point of a Morse function $f: M \to  \R$.
-We need to prove that $\partial^2(a) = 0$, so\sidenote{
-    TODO will denote top middle and bottom point with $a, c, b$.
-    Strange maybe but useful later on.
-}
-\begin{align*}
+We need to prove that $\partial^2(a) = 0$, so\begin{align*}
     \partial^2(a) &= \partial \Big(\sum_{c \in \Crit_{k-1} f} n_X(a, c) c\Big)\\
                   &= \sum_{b \in \Crit_{k-1} f} \sum_{c \in \Crit_k f} n_X(a, c) n_X(c, b) b
 .\end{align*} 
@@ -215,16 +216,25 @@ Before we proceed with this idea, let us give an overview of the steps that need
     ,\] 
     which makes it clear it is the union of unbroken and once broken trajectories.
 
-    % \todo{
-    %     If manifold with boundary, 
-    %     then $\partial \Lb ab = \bigcup_{c} \L a c \times  \L c b$ so $| \partial \Lb ab| = \sum n_X(a,c) n_X(c,b) b$.
-    % }
+     \todo{
+         If manifold with boundary, 
+         then $\partial \Lb ab = \bigcup_{c} \L a c \times  \L c b$ so $| \partial \Lb ab| = \sum n_X(a,c) n_X(c,b) b$.
+     }
     
 
 
 \subsection{Topology of $\Lb ab$}
 % Also remember that $\L ab$ is homeomorphic to $\traj ab \cap f^{-1}(\alpha)$ for some regular value $\alpha$ between $f(a)$ and $f(b)$,
 
+
+\begin{marginfigure}
+    \centering
+    \incfig{morse-homology-definition-of-topology}
+    \caption{The topology on $\Lb ab $ is defined by looking at the entrance and exit points in the Morse charts.
+        Here we have shown in black paths that lie in a neighborhood of the broken path $(\lambda_1, \lambda_2) \in \Lb ab$.
+    }
+    \label{fig:morse-homology-definition-of-topology}
+\end{marginfigure}
 To define the topology on $\Lb ab$,
 we will describe a basis around a (possibly broken) trajectory.
 Let $(\lambda_1, \lambda_2, \ldots, \lambda_q)$ be a trajectory in $\Lb ab$.
@@ -237,12 +247,6 @@ Remember that the topology of  $\L ab$ came from the one on $\traj ab \subset M$
 We also mentioned that $\L ab$ is homeomorphic to $\traj ab \cap  f^{-1}(\alpha)$ for some regular value $\alpha$, making it clear that the topology on $\Lb ab$ corresponds to the one  $\L ab$ for unbroken trajectories.
 
 So the essence of the topology on $\Lb ab$ is: `trajectories are nearby if entrance and exit points in Morse charts are nearby'.
-\begin{marginfigure}
-    \centering
-    \incfig{morse-homology-definition-of-topology}
-    \caption{TODO morse homology definition of topology}
-    \label{fig:morse-homology-definition-of-topology}
-\end{marginfigure}
 
 \subsection{$\Lb ab$ is the compactification of $\L ab$}
 Now we are ready to prove that $\Lb ab$ is compact, and in fact a compactification of  $\L ab$.\sidenote{By this, we mean that there are points in $\L ab$ arbitrary close to ones in  $\Lb ab$.\charlotte{Express this in terms of topology}}
@@ -254,13 +258,13 @@ We will actually prove that $\Lb ab$ is sequentially compact, which will turn ou
 
 \begin{figure}[H]
     \centering
-    \incfig{partial-squared-zero-space-compact}
-    \caption{TODO partial squared zero space compact.
-        Note that the figure is somewhat misleading because of lack of dimensions.
-        Doesn't seem lik $b_n^{+}$ can move, but they in fact can.
-        We have drawn $a$ as a $2$-handle in order to make this freedom more clear.
-    }
+    \sidecaption{
+        To show that $\Lb ab$ is compact, we consider a sequence of paths $\ell_n$ in $\L ab$ and find an accumulation trajectory, i.e.\ a limit of a subsequence.
+        In case 1, the accumulation trajectory lies in $\L ab$.
+        Case 2 shows the situation when accumulation trajectory is broken in  $c$ (and possibly in multiple other critical points).
     \label{fig:partial-squared-zero-space-compact}
+    }
+    \incfig{partial-squared-zero-space-compact}
 \end{figure}
 
 
@@ -269,8 +273,7 @@ We will actually prove that $\Lb ab$ is sequentially compact, which will turn ou
     Let us first consider a sequence of unbroken trajectories, i.e.\ a sequence $\ell_n$ in $\L ab$.
     Let $\Omega(a)$ be a Morse chart around $a$.
     Consider the points where $\ell_n$ exits the Morse chart $a$, call them $a_n^{-}$.
-    Extract a subsequence of $\ell_n$ such that $a_{n}^{-}$ converges and call the point of convergence $a^{-}$.
-    \todo{This is always possible because the sphere is compact.}
+    Using compactness of the sphere, extract a subsequence of $\ell_n$ such that $a_{n}^{-}$ converges and call the point of convergence $a^{-}$.
     We will denote the extracted subsequence again by $\ell_n$ and will do so continuously in the proof.
     Similarly, extract a subsequence such that $b_n^{+}$, defined as the entry point in the Morse chart of $b$ converges to a point $b^{+}$.
     In conclusion, we have a subsequence whose exit point in $\Omega(a)$  converges to $a^{-}$ and whose entrance in $\Omega(b)$ converges to  $b^{+}$.
@@ -311,7 +314,7 @@ The lemma used in the above proof says that points $y_n$ on trajectories that pa
 \begin{marginfigure}
     \centering
     \incfig{lemma-partial-squared-zero-proof}
-    \caption{TODO lemma partial squared zero proof}
+    \caption{A convergent sequence $x_n \to  x$ defines a sequence of trajectories. If $y_n$ is a sequence of points that lie on these trajectories, then it also converges to a point $y$ lying on the trajectory that passes through $x$.}
     \label{fig:lemma-partial-squared-zero-proof}
 \end{marginfigure}
 \begin{lemma}
@@ -334,9 +337,7 @@ Note that the proof of the previous theorem also shows that $\Lb ab $ is actuall
 
 \subsection{$\Lb ab$ is a 1-dimensional manifold with boundary}
 
-\todo{REWORD With the preceding technical lemmas,
-we are ready to complete the proof showing that the Morse complex is actually a complex, i.e.\ $\partial^2 = 0$, with yet another technical lemma.}
-
+The last thing we need to show is that the topological space $\Lb ab$ actually has the structure of a manifold:
 
 \begin{theorem}
     Let $a, b$ be critical points of  $M$ such that  $\Ind a - \Ind b = 2$. Then  $\Lb ab$ is a compact  $1$-dimensional manifold with boundary.
@@ -376,7 +377,7 @@ The last part is important in order to show that broken trajectories actually fo
     \begin{marginfigure}
         \centering
         \incfig{l-bar-manifold-2-dimensional-case}
-        \caption{TODO l bar manifold 2 dimensional case}
+        \caption{The map $\chi$ is an embedding of a half-open interval $[0, \delta)$ in the level set $\alpha+ \epsilon$. Considering the trajectories passing through these points, we get an embdding $\psi: [0, \delta) \to \Lb ab$.}
         \label{fig:l-bar-manifold-2-dimensional-case}
     \end{marginfigure}
     Choose a Morse chart around $c$ that lies between level sets $\alpha \pm \epsilon$ where  $\alpha = f(c)$.
@@ -396,7 +397,7 @@ The last part is important in order to show that broken trajectories actually fo
     \begin{marginfigure}
         \centering
         \incfig{l-bar-manifold-2-dimensional-case-part-flow}
-        \caption{TODO l bar manifold 2 dimensional case part flow}
+        \caption{An overview of the different submanifolds considered in the proof.}
         \label{fig:l-bar-manifold-2-dimensional-case-part-flow}
     \end{marginfigure}
     This defines an embedding $\Psi: D^{1} \setminus \{0\} \to  f^{-1}(\alpha-\epsilon)$, which splits up $D^{1}$ into two parts.
@@ -426,10 +427,12 @@ The last part is important in order to show that broken trajectories actually fo
 \begin{marginfigure}
     \centering
     \incfig{lbar-manifold-three-dimensional-case}
-    \caption{TODO lbar manifold three dimensional case TODO: extremely ugly figure}
+    \caption{The situation in three dimensions.}
     \label{fig:lbar-manifold-three-dimensional-case}
 \end{marginfigure}
 \end{proof}
+
+\todo{lots of greek letters!!}
 \subsection{Conclusion}
 
 \todo{again calculate the differential}
@@ -466,7 +469,9 @@ For example, doing this for the circle and the other circle, we get Figure~\ref{
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-cilinder}
-    \caption{TODO morse homology independence cilinder}
+    \caption{An interpolation between $f_0$ and $f_1$ can result in degenerate critical points, as shown in the figure in orange:
+        a homotopy between Morse functions is not necessarily Morse for all times $s$.
+    }
     \label{fig:morse-homology-independence-cilinder}
 \end{marginfigure}
 
@@ -476,14 +481,14 @@ Furthermore, an interpolation of two Morse functions need not to be Morse at eac
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-tube}
-    \caption{TODO morse homology independence tube}
+    \caption{Adding a function (illustrated below) in the $s$-direction creates a slide overcoming the problem of degenerate critical points.}
     \label{fig:morse-homology-independence-tube}
 \end{marginfigure}
 
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-g-function}
-    \caption{TODO morse homology independence g function}
+    \caption{The function $g$ used to transform the tube into a slide.}
     \label{fig:morse-homology-independence-g-function}
 \end{marginfigure}
 
@@ -518,18 +523,18 @@ This means we can decompose $\partial_{\tilde{X}}$ as follows:
     (p_0, p_1) &\longmapsto (\partial_{X_0}(p_0), \partial_{X_1}(p_1)+ \Phi^{F}(p_0))
 ,\end{align*}
 where $\Phi^{F}$ counts the trajectories connecting critical points of $f_0$ to ones of $f_1$. We can also write this as a matrix:
-\todo{Talk about cone construction in homological algebra!}
 \[
 \partial_{\tilde{X}} = \begin{pmatrix}
     \partial_{X_0} & 0 \\
      \Phi^{F}& \partial_{X_1}
 \end{pmatrix}
 .\] 
+Readers familiar with homological algebra will recognize this construction as the mapping cone of the map $\Phi^{F}: C_\bul(f_0) \to  C_\bul(f_1)$.
 
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-partial-squared-zero}
-    \caption{TODO morse homology independence partial squared zero}
+    \caption{A visual depiction of the calculation $\partial^2(p)$.}
     \label{fig:morse-homology-independence-partial-squared-zero}
 \end{marginfigure}
 
@@ -583,15 +588,15 @@ More concretely, we create a map
 ,\] 
 with the following properties, as illustrated in Figure~\ref{fig:morse-homology-independence-two-dimensional-slide}:
 \begin{itemize}
-    \item $K_st = H_t$ for  $s \in \left[-\tfrac{1}{3}, \tfrac{1}{3}\right]$
-        \item $K_st = G_t$ for  $s \in \left[\tfrac{2}{3}, \tfrac{4}{3}\right]$
+    \item $K_{s,t} = H_t$ for  $s \in \left[-\tfrac{1}{3}, \tfrac{1}{3}\right]$
+    \item $K_{s,t} = G_t$ for  $s \in \left[\tfrac{2}{3}, \tfrac{4}{3}\right]$
         \item $K_{s, t} = F_s$ for $t \in \left[-\tfrac{1}{3}, \tfrac{1}{3}\right]$ 
         \item $K_{s,t} = f_2$ for $t \in \left[\tfrac{2}{3}, \tfrac{4}{3}\right]$
 \end{itemize}
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-two-dimensional-slide}
-    \caption{TODO morse homology independence two dimensional slide}
+    \caption{The map $K_{s,t}$ is a two-dimensional homotopy between $f_0, f_1, f_2, f_2$.}
     \label{fig:morse-homology-independence-two-dimensional-slide}
 \end{marginfigure}
 Note that these properties are not contradictory because we are working with stationary interpolations.
@@ -604,7 +609,7 @@ Now, to make a slide, we modify $K$ as follows:
 \begin{marginfigure}
     \centering
     \incfig{morse-homology-independence-two-dimensional-slide-three-d}
-    \caption{TODO morse homology independence two dimensional slide three d}
+    \caption{By adding the slide function $g$ in $s$- and $t$-directions, we create a two-dimensional slide, eliminating the possibility of degenerate critical points.}
     \label{fig:morse-homology-independence-two-dimensional-slide-three-d}
 \end{marginfigure}
 
@@ -638,9 +643,14 @@ proving that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ induce the same map on th
 
 \begin{figure*}
     \centering
-    \fullwidthincfig{morse-homology-independence-partial-squared-zero-bis}
-    \caption{TODO morse homology independence partial squared zero bis}
-    \label{fig:morse-homology-independence-partial-squared-zero-bis}
+    \sidecaption{Calculating $\partial^2(p)$.
+        On the left we $\partial(p)$ is illustrated, and on the right  $\partial^2(p)$.
+        Because $\partial^2 = 0$, we find that $\Phi^{G}  \circ  \Phi^{F} + \Phi^{H} + S \partial_0 + \partial_1 S = 0$.
+        Considering this over $\Z_2$ implies that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ are chain homotopic.
+        \label{fig:morse-homology-independence-partial-squared-zero-bis}
+    }
+    \vspace*{2cm}
+\fullwidthincfig{morse-homology-independence-partial-squared-zero-bis}
 \end{figure*}
 \end{proof}
 
@@ -704,7 +714,10 @@ Similarly as before, we define
     \begin{marginfigure}
         \centering
         \incfig{tilted-torus}
-        \caption{TODO tilted torus}
+        \caption{The height function on a tilted torus is a Morse function giving rise to the illustrated flow lines.
+            On the right, an abstract depiction of the critical points and the signed flow lines connecting them.
+        }
+
         \label{fig:tilted-torus}
     \end{marginfigure}
     We use the Morse function of Example~\ref{eg:tilted-torus}, where the torus is slightly tilted, as illustrated in Figure~\ref{fig:tilted-torus}, where we also added the graph of the critical points.
@@ -721,7 +734,10 @@ Similarly as before, we define
     \begin{marginfigure}
         \centering
         \incfig{tilted-klein-bottle-over-z}
-        \caption{TODO tilted klein bottle over Z}
+        \caption{The height function of a tilted Klein bottle immersed in $\R^3$ is a Morse function.
+            We have illustrated the flow lines connecting critical points.
+            Not considering signs, we get the same complex as for the torus. If we do consider signs, we can distinguish one from another.
+        }
         \label{fig:tilted-klein-bottle-over-z}
     \end{marginfigure}
     The Klein bottle $K$ is a non-orientable surface. We cannot embed it in $\R^3$, but the strong version Withney's theorem shows that we are able to immerse it, which is what we have done in Figure~\ref{fig:tilted-klein-bottle-over-z}.
@@ -769,11 +785,13 @@ This approach consists of two steps: first proving that unstable manifolds form 
 While the first step is intuitive, the proof of it is actually very technical.
 The second step on the other hand, is the easy part of the proof.
 
-To mitigate these technical difficulties, many other authors \sidenote{
+To mitigate these technical difficulties, many other authors\sidenote{
     \fullcite[p. 195]{banyaga2013lectures}\\[0.3em]
     \fullcite[p. 13]{hutchings2002lecture}\\[0.3em]
 \fullcite[p. 66]{abbondandolo2006lectures}} follow a different approach, based on cellular filtrations, currents and other techniques.
 Here we opt for the proof by Hutchings based on currents.
+
+For a thorough introduction on currents, see `Differentiable manifolds' by de Rham.\sidecite{de2012differentiable}
 
 \begin{definition}[Current]
     A current is a continuous linear functional on the space of compactly supported $k$-forms on a manifold $M$.
@@ -804,10 +822,10 @@ Here we opt for the proof by Hutchings based on currents.
     When $T = [M]$, this can be written as $\partial [M] = [\partial M]$. 
 \end{definition}
 This differential clearly squares to zero, and hence defines a complex.
-\todo{Its homology is under mild conditions}\sidenote{When?} isomorphic to singular homology.\sidenote{
- One can prove this by verifying the Eilenberg--Steenrod axioms, which characterize singular homology.
+It turns out that its homology is actually isomorphic to singular homology.\sidenote{
+    See \fullcite[p.~89, Theorem~16]{de2012differentiable}, or \fullcite[p.~582, Theorem~2]{giaquinta1998cartesian}
 }
-With this setup, we are ready to prove the following theorem:
+With this set up, we are ready to prove the following theorem:
 
 \begin{theorem}
     Let $M$ be a closed manifold. Then
@@ -833,7 +851,7 @@ With this setup, we are ready to prove the following theorem:
     \label{fig:idea-of-the-proof-maps-a-and-d}
 \end{marginfigure}
 
-    Here we define $C_i(M)$ as the subspace of all  $i$-dimensional currents on $M$ generated by \emph{generic} $i$-simplices, by which we mean simplices that are smooth and whose faces are transverse to the ascending manifolds of all critical points.
+    Here we define $C_i(M)$ as the subspace of all  $i$-dimensional currents on $M$ generated by \emph{generic} $i$-simplices, by which we mean simplices that are smooth and whose faces are transverse to the stable manifolds of all critical points.
 
 
     Then $A  \circ D$ is the identity, and while $D  \circ  A$ is not, it is chain homotopy to the identity.
@@ -864,14 +882,14 @@ With this setup, we are ready to prove the following theorem:
         \caption{
             Two examples of compactifications of unstable manifolds in the other sphere.
             On top we consider the index 1 critical point and on the bottom the index 2 critical point.
-            Note that the compactifications are subtle  and in particular are not diffeomorphic $S^{1}$ and $B^{2}$ resp.
-        compactification of unstable manifolds}
+        Note that the compactifications are subtle  and in particular are not diffeomorphic to $S^{1}$ and $B^{2}$ resp.}
+        
         \label{fig:compactification-of-unstable-manifolds}
     \end{marginfigure}
     
     As an oriented manifold, its codimension-$1$ stratum\sidenote{
         The codimension $k$ stratum of a manifold with corners $M$ is the set of points $p$ in  $M$ such that there exists a chart  $f : U(p) \to \R^{n-k} \times [0, \infty)^{k}$ such that at least one of the last $k$ coordinates of $p$ is zero.
-        The codimension $0$ stratum is the interior of $M$, the codimension  $1$ stratum is its boundary, without the `higher order' corners. \todo{Check this}
+        The codimension $0$ stratum is the interior of $M$, the codimension $1$ stratum is its boundary, without the `higher order' corners, etc.
     } is given by
     \[
         \partial \unstableb c = \bigcup_{d \neq c}  (-1)^{\Ind d + \Ind c + 1} \Lb cd \times  \unstable d.
@@ -988,7 +1006,7 @@ While clearly $D  \circ  A \neq \operatorname{Id}$, these two maps are chain map
 \begin{marginfigure}
     \centering
     \incfig{chain-homotopy-between-d-na-a-and-id}
-    \caption{TODO chain homotopy between d na a and id}
+    \caption{A compactification of the forward orbit of a chain $\sigma$ forms a chain homotopy between $\sigma$ and  $(D  \circ  A)(\sigma)$.}
     \label{fig:chain-homotopy-between-d-na-a-and-id}
 \end{marginfigure}
 Intuitively, a chain homotopy is a chain of one dimension higher that connects $(D  \circ  A)(\sigma)$ and $\operatorname{Id} (\sigma) = \sigma$.
@@ -1027,8 +1045,6 @@ Calculating $\partial F$ and  $F \partial$, we have
 
     \begin{itemize}
         \item \todo{Specify summations more clearly. Sometimes only over specific index!}
-        \item \todo{Fix ugly figures. Maybe split in two figures}
-        \item \todo{Add end points of intervals for 1-simplexes in figures}
         \item Fix definition of Morse / partial k + 1
     \end{itemize}
 \end{proof}

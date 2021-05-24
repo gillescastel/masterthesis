@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{281.6941461bp}%
+    \setlength{\unitlength}{287.26055956bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,27 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.89048491)%
+  \begin{picture}(1,0.97591563)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{compactification-of-unstable-manifolds.pdf}}%
-    \put(0.47235333,0.68226886){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}compactify\end{tabular}}}}%
+    \put(0.35667879,0.24296285){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}compactify\end{tabular}}}}%
+    \put(0.06675081,0.46975137){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
+    \put(0.15841657,0.29824935){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
+    \put(0.14101519,0.01395225){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$e$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{compactification-of-unstable-manifolds.pdf}}%
-    \put(0.47235333,0.19629786){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}compactify\end{tabular}}}}%
-    \put(0.60378406,0.3802346){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$TODO$\end{tabular}}}}%
+    \put(0.82174085,0.00219321){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Lb ce \times \unstable e$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{compactification-of-unstable-manifolds.pdf}}%
+    \put(0.81132341,0.42237284){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Lb cd \times \unstable d$\end{tabular}}}}%
+    \put(0.12973377,0.38719752){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell$\end{tabular}}}}%
+    \put(0.13251893,0.16139068){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_1$\end{tabular}}}}%
+    \put(0.20608712,0.16139068){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_2$\end{tabular}}}}%
+    \put(0.56617354,0.35755135){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(\ell, \ell_1, e)$\end{tabular}}}}%
+    \put(0.87670164,0.35755135){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(\ell, \ell_2, e)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{compactification-of-unstable-manifolds.pdf}}%
+    \put(0.81655968,0.22559799){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
+    \put(0.81132341,0.14514732){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\unstable c$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{compactification-of-unstable-manifolds.pdf}}%
+    \put(0.37704853,0.72591367){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}compactify\end{tabular}}}}%
   \end{picture}%
 \endgroup%
