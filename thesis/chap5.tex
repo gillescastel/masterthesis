@@ -13,7 +13,6 @@ A closely related theorem is the $h$-cobordism theorem, stating
 \begin{theorem}[h-cobordism theorem]
     If $M$ is a cobordism from $M_0$ to $M_1$ that is simply connected, $\dim M \ge 6$ and $H_{\bul}(M,M_0) = 0$, then $M$ is a trivial cobordism, i.e.\ diffeomorphic to  $ M_0 \times I$.
 \end{theorem}
-\todo{Introduce relative homology}
 The last theorem---and perhaps most famous one---we will prove is generalized Poincaré conjecture for dimensions $n \ge 5$.
 This conjecture (now a theorem) states that any homotopy sphere is a topological sphere. By this, we mean the following:
 % TODO spell check in [] of theorems1
@@ -109,9 +108,10 @@ Before giving an idea of how we will prove this result, let us first give some e
     \end{enumerate}
     \begin{figure}[H]
     \centering
-    \incfig{second-cancellation-theorem-example}
-    \caption{TODO second cancellation theorem example}
+    \sidecaption{Examples illustrating the second cancellation theorem.
     \label{fig:second-cancellation-theorem-example}
+    }
+    \incfig{second-cancellation-theorem-example}
 \end{figure}
 \end{eg}
 
@@ -176,7 +176,7 @@ We now state the theorem of Whitney, prove the second cancellation theorem and e
     Let $S = \unstable q \cap f^{-1}(0)$.
     Flowing $M_0 \setminus S$ via $X$ gives  $V - S^{s}(p)$, so we need to show that $M_0 \setminus S$ has trivial fundamental group.
     For this we use Seifert--Van Kampen. Let $N$ be a product neighbourhood\sidenote{If the normal bundle of a submanifold is trivial, a tubular neighbourhood is called a product neighbourhood. TODO why does this exists?} of $S$ in $M_0$.
-    Note that $S$ is diffeomorphic to $S^{1}$, and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
+    Note that as $k=2$, $S$ is diffeomorphic to $S^{1}$, and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
     As $k=2$, $n - 2 \ge 4$, so $\R^{n-2} \setminus \{ 0 \} $ has trivial fundamental group. Therefore $N \setminus S \cong S^{1} \times (\R^{n-2}\setminus \{0\})$ has the same fundamental group as $S^{1}$, which is $\Z$.
     This allows us to use Seifert--Van Kampen in the following way:
     $(M_0 \setminus S) \cup N = M_0$, and $\pi_1(M_0) = 1$ $\pi_1(N) = \Z$ $\pi_1(N \setminus S) = \Z$. This implies that $\pi_1(M_0 \setminus S) = 1$, completing the proof.
@@ -266,20 +266,23 @@ This restatement of the theorem leads us to our next goal: diagonalizing $[\part
 Let us make clear what we mean by diagonalizing.
 Starting off with a matrix $[\partial_k]$ based on $f$ and $X$, we want to change it step by step such that the resulting $[\partial_k']$ is diagonal (note that it does not need to be square). These changes are done by altering $f$ and $X$.
 
-We will consider the following elementary operations:
-\todo{In order to diagonalize a matrix over $\Z$, it suffices to be able to do three elementary row/column operations\sidecite[p.~682]{rotman2010advanced}:}
+In order to diagonalize a matrix over $\Z$, it suffices to be able to do three elementary row and column operations, as explained in Advanced modern algebra by Rotman.\sidecite[p.~688]{rotman2010advanced}
+\begin{samepage}
 \begin{enumerate}[E1]
     \item Interchange two rows or columns
     \item Multiplication of a row or column by $-1$
     \item Addition of a row (resp.~column) to another row (resp.~column)
 \end{enumerate}
+\end{samepage}
 
 It is clear that E1 and E2 can be done: we can just relabel the critical points for E1 and change the (arbitrary) orientation of the unstable manifolds for E2.
 For the third operation, consider the following figure:
 
 \begin{figure}[H]
     \centering
-    \sidecaption{TODO addition of columns geometrically\label{fig:addition-of-columns-geometrically}}
+    \sidecaption{
+        By altering the attachment region of $p_2$, we can geometrically perform the addition of two columns in $[\partial]$.
+    \label{fig:addition-of-columns-geometrically}}
     \incfig{addition-of-columns-geometrically}
 \end{figure}
 This shows how such an addition operation can be performed geometrically: isotope the attachment sphere of the second $2$-handle$, i.e.\ S^{u}(p_2)$ to the sphere that is `$S^{u}(p_1)$ connected to $S^{u}(p_2)$ via a tube'. Note that this isotopy depends on the existence of the first $2$-handle.
@@ -299,14 +302,17 @@ To show that this works in general, we will use the following lemma:
 \begin{figure}[H]
     \centering
     \incfig{lemma-sphere-connect-with-tube}
-    \caption{TODO lemma sphere connect with tube}
+    \caption{The lemma allows us to connect $S_2$ to  $S_1$ via a tube, missing the submanifold $V$.}
     \label{fig:lemma-sphere-connect-with-tube}
 \end{figure}
 \begin{proof}
     \begin{marginfigure}
         \centering
         \incfig{lemma-sphere-connect-with-tube-proof}
-        \caption{TODO lemma sphere connect with tube proof}
+        \caption{
+            First we isotope $S_2$ by flowing along an extension of a vector field that is tangent to $L$.
+            Then we use the fact that  $S_1$ bounds a disk to move the end of the tube inside the disk until it reaches $S_1$.
+        }
         \label{fig:lemma-sphere-connect-with-tube-proof}
     \end{marginfigure}
     Let $L$ be an arc in $N$ that is disjoint from  the interior of $K$ connecting  $s_1$ to $s_2$ points in $S_1$ and $S_2$.
@@ -337,7 +343,7 @@ This shows that we can perform E3 geometrically:
     Therefore, as $f^{-1}(k- \frac{3}{2})$ is connected\sidenote{\todo{Why}}, so is $N \setminus V$.
     This means we can apply the previous lemma and we conclude that we can add/subtract one column to the other one.
     If $k < m-1$, we have control over the sign (determining addition or subtraction), and if $k = m-1$, we may need to change the orientation of the attaching sphere of  $k$-handle first.
-    Notice that this does not only affect $[\partial_k]$ and also  $[\partial_{k+1}]$.\sidenote{\todo{How?}}
+    Notice that this does only affect $[\partial_k]$ and $[\partial_{k+1}]$.
 \end{proof}
 
 In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the following fact:
@@ -347,6 +353,16 @@ In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the
     In both cases, $[\partial_1]$ is trivial.
     \label{thm:no-zero}
 \end{theorem}
+\begin{marginfigure}
+    \centering
+    \incfig{without-zero-handles}
+    \caption{
+        Assuming the manifold is connected, it cannot contain two zero handles without a one handle connecting them.
+        We can then cancel the zero and one handle lowering the number of $0$-handles by $1$.
+        Repeating this, we can find a handlebody decomposition with a minimal number of $0$-handles, that is, zero $0$-handles if $ M_0 \neq \O$, and one $0$-handles if $ M_0 = \O$.
+    }
+    \label{fig:without-zero-handles}
+\end{marginfigure}
 \begin{proof}
     Suppose $M_0 \neq \O$, i.e.\ the cobordism has a bottom border and suppose $\# \Crit_0 f =1$, i.e.\ there is a single $0$-handle.
     Then because $M$ is connected, there must exist an $1$-handle connecting the $0$-handle to another connected component of $f^{-1}((-\infty, \frac{1}{2}])$.
@@ -358,12 +374,6 @@ In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the
     For the last part of the theorem, stating that $[\partial_1]$ is trivial, consider the following. 
     If there are no  $0$-handles, $\partial_1: C_1 \to  C_0$ is clearly trivial.
     If there is a single $0$-handle, all $1-$ handles have both ends attached to the same sphere, so the intersection number is $0$, so $[\partial_1] = (0 \ \cdots \ 0)$.
-\begin{marginfigure}
-    \centering
-    \incfig{without-zero-handles}
-    \caption{TODO without zero handles}
-    \label{fig:without-zero-handles}
-\end{marginfigure}
 \end{proof}
 \begin{remark}
     Again by turning the cobordism upside down, we can conclude the same for $n$-handles and $[\partial_n]$.
@@ -390,9 +400,6 @@ The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultan
     Lastly $[\partial_n]$ is already diagonal by the previous theorem.
     \todo{Finish proof}
 \end{proof}
-\todo{Here we care if we change $k-1$ when diagonalizing $k$, but in the previous theorem, it is diagonalizing $k$ and changing $k+1$?}
-\todo{Check if they use rows/columns differently. }
-\todo{Check prop, theorem, lemma throughout}
 
 \begin{marginfigure}
     \centering
@@ -624,7 +631,6 @@ table of results, categories, \ldots
 \begin{itemize}
     \item Relative Morse homology
         \item Fix notation for cardinality
-        \item Spell check in brackets theorem
         \item Check $H_1 = 0$ does not imply simply connectedness \url{https://mathoverflow.net/questions/110158/what-if-i-want-to-look-for-a-space-with-vanishing-first-homology-but-nonzero-fun}
 \end{itemize}
 }
