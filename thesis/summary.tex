@@ -2,14 +2,48 @@
 \label{ch:summary}
 \addcontentsline{toc}{chapter}{\nameref{ch:summary}}
 
-Morse theory is the study of smooth functions from manifolds to $\R$. While these functions are some of the simplest structures that live on manifolds, it turns out that they can provide great insight in the structure of manifolds.
+Morse theory is the study of smooth functions from manifolds to $\R$ that satisfy some non-degeneracy conditions. While these functions are some of the simplest things that live on manifolds, it turns out that they can provide great insight in the structure of manifolds.
 
-In Chapter \ref{chap:morse-theory}, we talk about the basics of Morse theory.
+In \textbf{Chapter \ref{chap:morse-theory}}, we talk about the basics of Morse theory.
 We give several equivalent definitions of a Morse function and give some examples.
-We also show that Morse functions give rise to so-called handle decompositions and that any manifold admits (infinitely many) Morse functions.
-Lastly, we give some examples of handle decompositions in dimensions one, two and three.
+We also show that Morse functions give rise to so-called handle decompositions: there is a one to one correspondence between critical points of a Morse function and so-called handles, building blocks from which any manifold can be built.
+We give some very concrete examples of handle decompositions in dimensions one, two and three.
+We end the chapter by showing that any manifold admits (infinitely many) Morse functions.
+Even more, we show that they are generic and stable, meaning that any function can be approximated by a Morse function and if we perturb a Morse function, it stays Morse.
 
-In Chapter \ref{chap:stable-and-unstable-manifolds}, we answer two important questions concerning reordering and cancelling critical points.
-For this, we introduce the concept of stable and unstable manifolds and show that intersections of such manifolds are of particular interest.
-We prove the reordering theorem and give a sketch for the theorem about cancellations of critical points.
-Combining these results, we prove the existence of self-indexing Morse functions which give rise to Heegaard splittings, which we briefly discuss.
+
+In \textbf{Chapter \ref{chap:stable-and-unstable-manifolds}}, we introduce the concept of stable and unstable manifolds.
+They form a way of understanding interaction of handles.
+For example, two handles are `independent' if the intersection of their stable and unstable manifolds is empty, allowing us to reorder them, as we prove in Theorem~\label{thm:reordening}.
+This idea leads to the existence of self-indexing Morse functions, asserting that we can always build a manifold by first attaching $0$-handles, then $1$-handles, $2$-handles, etcetera, in that order.
+We end the chapter by proving a first cancellation theorem, stating that under certain circumstances, we can cancel pairs of critical points.
+
+\textbf{Chapter \ref{chap:morse-homology}} concerns Morse homology.
+We first define the Morse complex $C_k(f)$ and the Morse differential $\partial_X$, which is based on counting the number of trajectories along the gradient vector field $X$ between critical points of a Morse function $f$.
+As an illustration, we compute some examples in two and three dimensions.
+The rest of the chapter covers three important theorems in Morse theory.
+
+First, we prove that the Morse complex is actually a complex, i.e.\ $\partial_X^2=0$.
+We do this in a very detailed manner, as it is quite a subtle affair.
+The geometrical idea behind this proof has inspired many other theories, for example Floer theory.
+
+The second important result is that Morse homology is independent of the Morse function and gradient, the proof of which is arguably the most beautiful in this thesis.
+
+Lastly, we show that Morse homology is actually isomorphic to singular homology, following the proof by Hutchings based on currents.
+
+\textbf{Chapter~\ref{chap:app-morse-homology}} discusses some applications of Morse homology.
+While we have proven that it isomorphic to singular homology, and hence it obeys all the properties singular homology enjoys, it still can be interesting to derive these facts directly from Morse homology.
+For example, we can prove Poincaré duality by simply changing the Morse function $f \leadsto -f$, i.e.\ turning the manifold upside down.  This has the effect of $k$-handles becoming $n-k$-handles, flow lines reversing direction from which the desired result follows rapidly.
+We also discuss the famous Morse inequalities giving a lower bound for the number of critical points of a Morse function in terms of the homology of $M$:
+ \[
+     \# \Crit_k f \ge \operatorname{rank} H_k(M, \Z)
+.\] 
+We prove some related facts including a stronger version of these inequalities.
+
+In \textbf{Chapter~\ref{chap:h-cobord}}, we prove that under certain conditions, the Morse inequalities can be attained by some Morse function.
+We prove this by considering an arbitrary Morse function,
+and then cancelling pairs of critical points until the Morse inequalities have been reached.
+To this purpose, this chapter mostly contains stronger cancellation results.
+In Section~\ref{sec:minimality}, all these cancellation theorems come together and we prove the minimality of the Morse inequalities.
+This has as an immediate corollary some of the most important theorems in differential topology: the $h$-cobordism theorem and the generalized Poincaré conjecture in dimension $n \ge 5$, stating that a homotopy sphere is a topological sphere.
+Lastly, we also discuss some of the historical aspects of these theorems.
