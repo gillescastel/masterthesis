@@ -134,11 +134,11 @@ Note in particular that it is the set of critical \emph{values} that has measure
 In this section, we will assume that the reader is familiar with modules over a ring $R$. If not, they can mentally substitute each occurence of `module' by `vector space'.
 
 \begin{definition}[Chain complex]
-    A chain complex of $R$-modules is a sequence $M_\bul$ of the form
+    A chain complex of $R$-modules is a sequence $C_\bul$ of the form
     \[
-    \cdots \to  M_2 \xrightarrow{d_2}  M_1 \xrightarrow{d_1} M_0 \xrightarrow{d_0} M_{-1} \xrightarrow{d_{-1}}   M_{-2} \to  \cdots
+    \cdots \to  C_2 \xrightarrow{d_2}  C_1 \xrightarrow{d_1} C_0 \xrightarrow{d_0} C_{-1} \xrightarrow{d_{-1}}   C_{-2} \to  \cdots
     \] 
-    where each term $M_i$ is an $R$-module and $d_i: M_i \to  M_{i-1}$ is an $R$-module homomorphism such that $d_{i-1}  \circ  d_i = 0$  for all $i \in \Z$.
+    where each term $C_i$ is an $R$-module and $d_i: C_i \to  C_{i-1}$ is an $R$-module homomorphism such that $d_{i-1}  \circ  d_i = 0$  for all $i \in \Z$.
 \end{definition}
 We often suppress the indices of the maps $d_i$ and the last condition becomes then  $d^2 = 0$.
 
@@ -150,69 +150,69 @@ We often suppress the indices of the maps $d_i$ and the last condition becomes t
 \end{marginfigure}
 
 \begin{definition}[Homology]
-    Let $M_\bul$ be a chain complex of  $R$-modules. The $i$-th homology of $M_\bul$ is
+    Let $C_\bul$ be a chain complex of  $R$-modules. The $i$-th homology of $C_\bul$ is
      \[
-         H_i(M_\bul) = \frac{\Ker d_i}{\Im d_{i+1}}
+         H_i(C_\bul) = \frac{\Ker d_i}{\Im d_{i+1}}
     .\] 
     This is well defined because $\Im(d_{i+1}) \subset \Ker (d_i)$.
 \end{definition}
-It is clear that this measure the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(M_\bul) = 0$.
+It is clear that this measure the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
 
 
 \begin{definition}[Chain map]
-    A chain map $f_\bul: M_\bul \to  N_\bul$ is a collection of $R$-module homomorphisms which makes the following diagram commute:
+    A chain map $f_\bul: C_\bul \to  D_\bul$ is a collection of $R$-module homomorphisms which makes the following diagram commute:
     \[
         \begin{tikzcd}
             \cdots  \arrow[r, ""]&
-            M_{i+1} \arrow[r, "d_{i+1}^{M}"] \arrow[d, "f_{i+1}"]&
-            M_{i} \arrow[r, "d_{i}^{M}"] \arrow[d, "f_i"]&
-            M_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"]&
+            C_{i+1} \arrow[r, "d_{i+1}^{C}"] \arrow[d, "f_{i+1}"]&
+            C_{i} \arrow[r, "d_{i}^{C}"] \arrow[d, "f_i"]&
+            C_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"]&
             \cdots \\
             \cdots  \arrow[r, ""]&
-            N_{i+1} \arrow[r, "d_{i+1}^{N}"] &
-            N_{i} \arrow[r, "d_{i}^{N}"] &
-            N_{i-1} \arrow[r, ""] &
+            D_{i+1} \arrow[r, "d_{i+1}^{D}"] &
+            D_{i} \arrow[r, "d_{i}^{D}"] &
+            D_{i-1} \arrow[r, ""] &
             \cdots \\
         \end{tikzcd}
     \]
-    In other words, suppressing indices, $f  \circ  d^{M} = d^{N}  \circ f$.
+    In other words, suppressing indices, $f  \circ  d^{C} = d^{D}  \circ f$.
 \end{definition}
 
-It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(M_\bul) \to  H_i(N_\bul)$, proving that $H_i$ is a functor. 
+It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(C_\bul) \to  H_i(D_\bul)$, proving that $H_i$ is a functor. 
 
 The following is a useful criterion for determining whether two chain maps induce the same maps on the level on homology.
 \begin{definition}[Chain homotopic]
-    Let $f_\bul, g_\bul$ be chain maps between  $M_\bul$ and $N_\bul$.
-    A chain homotopy from  $f_\bul$ to  $g_\bul$ is a collection of  $R$-module homomorphisms $h_i: M_i \to  N_{i+1}$ such that $g_i - f_i = d^{N}_{i+1}  \circ  h_i + h_{i-1}  \circ  d_i^{M}$ for all $i$.
+    Let $f_\bul, g_\bul$ be chain maps between  $C_\bul$ and $D_\bul$.
+    A chain homotopy from  $f_\bul$ to  $g_\bul$ is a collection of  $R$-module homomorphisms $h_i: C_i \to  D_{i+1}$ such that $g_i - f_i = d^{D}_{i+1}  \circ  h_i + h_{i-1}  \circ  d_i^{C}$ for all $i$.
     If such a map exists, we say that $f_\bul$ and  $g_\bul$ are chain homotopic.
     \[
         \begin{tikzcd}[column sep=3em, row sep=3em]
             \cdots  \arrow[r, ""]&
-            M_{i+1} \arrow[r, "d_{i+1}^{M}"] \arrow[d, "f_{i+1}"', shift right=2pt] \arrow[d, "g_{i+1}", shift left=2pt]&
-            M_{i} \arrow[r, "d_{i}^{M}"] \arrow[d, "f_i"', shift right=2pt] \arrow[d, "g_{i}", shift left=2pt] \arrow[dl, "h_i"', dashed]&
-            M_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"', shift right=2pt]\arrow[d, "g_{i-1}", shift left=2pt] \arrow[dl, "h_{i-1}"', dashed]&
+            C_{i+1} \arrow[r, "d_{i+1}^{C}"] \arrow[d, "f_{i+1}"', shift right=2pt] \arrow[d, "g_{i+1}", shift left=2pt]&
+            C_{i} \arrow[r, "d_{i}^{C}"] \arrow[d, "f_i"', shift right=2pt] \arrow[d, "g_{i}", shift left=2pt] \arrow[dl, "h_i"', dashed]&
+            C_{i-1} \arrow[r, ""] \arrow[d, "f_{i-1}"', shift right=2pt]\arrow[d, "g_{i-1}", shift left=2pt] \arrow[dl, "h_{i-1}"', dashed]&
             \cdots \\
             \cdots  \arrow[r, ""]&
-            N_{i+1} \arrow[r, "d_{i+1}^{N}"] &
-            N_{i} \arrow[r, "d_{i}^{N}"] &
-            N_{i-1} \arrow[r, ""] &
+            D_{i+1} \arrow[r, "d_{i+1}^{D}"] &
+            D_{i} \arrow[r, "d_{i}^{D}"] &
+            D_{i-1} \arrow[r, ""] &
             \cdots \\
         \end{tikzcd}
     \]
     Suppressing indices, this becomes $g - f = dh + hd$.
 \end{definition}
 \begin{prop}
-    Let $f_\bul, g_\bul$ be two chain homotopic chain maps from $M_\bul$ to $N_\bul$. 
+    Let $f_\bul, g_\bul$ be two chain homotopic chain maps from $C_\bul$ to $D_\bul$. 
     Then $H_i(f_\bul) = H_i(f_\bul)$, i.e.\ the maps induced on the level of homology are identical.
 \end{prop}
 \begin{proof}
     Let $h_i$ be a chain homotopy between  $f_\bul$ and  $g_\bul$.
-    Let $x \in \Ker(d_i^{M})$.
+    Let $x \in \Ker(d_i^{C})$.
     Then, suppressing indices,
     \begin{align*}
-        g(x) + \Im(d^{N}) &= f(x) + (h  \circ  d^{M})(x) + (d^{N}  \circ h)(x)  + \Im(d^{N})\\
-                          &= f(x) + h(0) + \Im(d^{N})\\
-                        &= f(x) + \Im(d^{N}).
+        g(x) + \Im(d^{D}) &= f(x) + (h  \circ  d^{C})(x) + (d^{D}  \circ h)(x)  + \Im(d^{D})\\
+                          &= f(x) + h(0) + \Im(d^{D})\\
+                        &= f(x) + \Im(d^{D}).
     \end{align*} 
 \end{proof}
 

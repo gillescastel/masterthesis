@@ -54,13 +54,13 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{homology-definition.pdf}}%
-    \put(0.48990081,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_i$\end{tabular}}}}%
-    \put(0.12928045,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_{i+1}$\end{tabular}}}}%
+    \put(0.48990081,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C_i$\end{tabular}}}}%
+    \put(0.12928045,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C_{i+1}$\end{tabular}}}}%
     \put(0.28577296,0.22733002){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d_{i+1}$\end{tabular}}}}%
-    \put(0.85806555,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_{i-1}$\end{tabular}}}}%
+    \put(0.85806555,0.54691777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C_{i-1}$\end{tabular}}}}%
     \put(0.65279814,0.22733002){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d_{i}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{homology-definition.pdf}}%
-    \put(0.57072346,0.02290309){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$H_{i}(M_\bul)$\end{tabular}}}}%
+    \put(0.57072346,0.02290309){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$H_{i}(C_\bul)$\end{tabular}}}}%
     \put(0.57685859,0.16677808){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

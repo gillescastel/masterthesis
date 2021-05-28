@@ -119,7 +119,7 @@
          sodipodi:role="line"
          x="0.95919228"
          y="227.48151"
-         style="stroke-width:0.26458332">$M_i$</tspan></text>
+         style="stroke-width:0.26458332">$C_i$</tspan></text>
     <text
        y="227.48151"
        x="-53.059181"
@@ -130,7 +130,7 @@
          y="227.48151"
          x="-53.059181"
          sodipodi:role="line"
-         id="tspan1144">$M_{i+1}$</tspan></text>
+         id="tspan1144">$C_{i+1}$</tspan></text>
     <text
        id="text1150"
        xml:space="preserve"
@@ -152,7 +152,7 @@
          y="227.48151"
          x="56.107658"
          sodipodi:role="line"
-         id="tspan1162">$M_{i-1}$</tspan></text>
+         id="tspan1162">$C_{i-1}$</tspan></text>
     <text
        y="275.35349"
        x="25.360056"
@@ -257,7 +257,7 @@
          y="305.97519"
          x="13.065851"
          sodipodi:role="line"
-         id="tspan916">$H_{i}(M_\bul)$</tspan></text>
+         id="tspan916">$H_{i}(C_\bul)$</tspan></text>
     <text
        id="text922"
        xml:space="preserve"
