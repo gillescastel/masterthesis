@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'transversality-examples.pdf' (pdf, eps, ps)
+%% Accompanies image file 'definition-homotopy-groups.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{645.19365926bp}%
+    \setlength{\unitlength}{201.33503831bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.14858025)%
+  \begin{picture}(1,0.7814599)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{transversality-examples.pdf}}%
-    \put(0.09891516,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tcap$\end{tabular}}}}%
-    \put(0.3680634,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tcap$\end{tabular}}}}%
-    \put(0.62932645,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\not\tcap$\end{tabular}}}}%
-    \put(0.89398001,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\not\tcap$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{definition-homotopy-groups.pdf}}%
+    \put(0.33995803,0.21434425){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{definition-homotopy-groups.pdf}}%
+    \put(0.13135108,0.38068221){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.7900185,0.60063628){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\rho$\end{tabular}}}}%
+    \put(0.81253475,0.36553997){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\sigma$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

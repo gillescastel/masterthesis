@@ -4,42 +4,43 @@
 In this thesis, we assume the reader is familiar with basic concepts of differential geometry such as smooth manifolds, vector fields, flows, bundles, differential forms, et cetera.
 In this chapter, we discuss some concepts that might be unfamiliar.
 
+We will first discuss two concepts from differential geometry, namely transversality and intersection numbers.
+The second section is on algebraic topology, discussing homology, homotopy and their relation. We will use these concepts from Chapter~\ref{chap:morse-homology} and onwards.
+
 \section*{Differential Geometry}
 \subsection*{Transversality}
-The first concept we want to introduce is transversality.
+The first concept we want to introduce is transversality, introduced by Thom in 1954.\sidecite{thom1954quelques}
+For a more in depth overview, we refer the reader to `Differential Manifolds' by Kosinski.\sidecite[Chapter IV]{kosinski2013differential}
 
-\todo{Interesting source appendix of Schultens\sidecite{schultens2014introduction}}
-
-
-% TODO: spell check in brackets in vim!
 \begin{definition}[Transversality]
     Let $M$ be a manifold and $N_1, N_2$ be two submanifolds.
     Then $N_1$ intersects $N_2$ \emph{transversely} if and only if for all points of intersection $p \in N_1 \cap N_2$, we have
     $T_pM = T_pN_1 + T_p N_2$.
-    We denote this by $ N_1 \tcap N_2$.\sidenotemark[0]
+    We denote this by $ N_1 \tcap N_2$.\sidenotemark
 \end{definition}
-\sidenotetext[0]{The notation is suggestive: the line $\cap$ intersects $|$ transversely $\tcap$.}
+\sidenotetext{The notation is suggestive: the line $\cap$ intersects $|$ transversely $\tcap$.}
 Note in particular that this depends on the ambient manifold $M$, and that if $N_1$ and $N_2$ do not intersect, their intersection is vacuously transverse.
 We give some examples below.
 \begin{figure}[H]
-    \centering
     \sidecaption{
         Examples and non-examples of transverse intersections.
         Multiple configurations of two circles are shown: thrice with ambient manifold $\R^2$, and once embedded in $\R^3$.
     \label{fig:transversality-examples}
     }
+    \centering
     \incfig{transversality-examples}
 \end{figure}
-If the intersection of two manifolds $ N_1$ and $N_2$ is transverse, much more can be said about their intersection than in the general case.
-In particular, as the following proposition states, we are guaranteed that $N_1 \tcap N_2$ is again a manifold, which as Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} shows is not always true.
+If the intersection of two manifolds $ N_1$ and $N_2$ is transverse, it is more well-behaved than in the general case.
+For example, as the following proposition states, the transverse intersection $N_1 \tcap N_2$ is again a manifold.
+Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates that this is not true in general. Moreover, `codimensions add':
 \begin{marginfigure}
     \centering
     \incfig{intersection-of-manifolds-is-not-always-a-manifold}
-    \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and a closed interval.}
+    \caption{Let $M = \R^2$ and let $N_1$ and $N_2$ be submanifolds as in the figure. Then $N_1$ and $N_2$ do not intersect transversely and their intersection is not a manifold: it is the union of a point and an interval.}
     \label{fig:intersection-of-manifolds-is-not-always-a-manifold}
 \end{marginfigure}
 \begin{prop}
-    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds. If $ N_1 \tcap N_2$, then $ N_1 \tcap N_2$ is again a manifold and 
+    Let $M$ be a manifold and $N_1, N_2$ be two submanifolds. If $N_1$ intersects $N_2$ transversely, then $ N_1 \tcap N_2$ is again a manifold and 
     \[
         \codim (N_1 \tcap N_2) = \codim N_1 + \codim N_2
     ,\] 
@@ -72,7 +73,7 @@ In particular, as the following proposition states, we are guaranteed that $N_1 
 
 An interesting property of transversality is that it is both \emph{generic} and \emph{stable}.
 By generic we mean that any two manifolds intersecting can be made intersecting transversely by perturbing one of the manifolds.
-Stability on the other hand means that when we perturbate a transverse intersection, it stays transverse.
+Stability on the other hand means that when we perturb a transverse intersection, it stays transverse.
 At the core of the proof of stability and genericness of transversality lies the theorem of Sard:
 % In morse rigorous terms, we have the following:
 % \begin{definition}[Stable]
@@ -83,20 +84,31 @@ At the core of the proof of stability and genericness of transversality lies the
 % \end{definition}
 \begin{theorem}[Sard's theorem]
     Let $f: M \to  N$ be a $\Cinfty$ map. Then the set of critical values of  $f$ has measure zero in $N$.
+    The set of regular values of $f$ is open and dense.
 \end{theorem}
-Note in particular that it is the set of critical \emph{values} that has measure zero, not the set of critical points. 
+For a proof, see `Smooth manifolds and their applications in homotopy theory' by Pontrjagin.\sidenote[][1.2cm]{\fullcite{pontrjagin2007smooth}}
+Note that it is the set of critical \emph{values} that has measure zero, not the set of critical points. 
+Stability and genericness correspond to the set of regular values being open and dense respectively.
+We will use this theorem for showing that Morse functions exist, are abundant, and can be used to approximate any other function.
 
-% \begin{definition}[Isotopy]
-%     Two embeddings $f_0, f_1: M \to  N$ are \emph{isotopic} if there is a continuous map $H: M \times  [0, 1] \to  N$ such that $H(x, 0) = f_0$ and $H(x, 1) = f_1(x)$ for all $x \in M$ and such that for all $t \in [0, 1]$, the map $f_t$ defined by $H(\cdot , t)$ is an embedding. The map $H$ is called an \emph{isotopy between} $f_0$ and $f_1$.
-
-%     Two submanifolds $S_0, S_1$ of $M$ are \emph{isotopic} if their inclusion maps are isotopic.
-% \end{definition}
-% \sidenotetext{\fullcite[23]{schultens2014introduction}}
-
-
+\filbreak
 \subsection*{Intersection number}
 
-\begin{marginfigure}
+The second concept we want to introduce is the intersection number of two manifolds.
+We again follow `Differential Manifolds' by Kosinski.
+The idea is to count the number of intersection points with signs:
+
+\begin{definition}[Intersection number]
+    Let $N$ and  $N'$ be $r$- and  $s$-dimensional submanifolds of an $(r+s)$-dimensional manifold $M$.
+    Suppose $N$ is oriented, $N'$ is cooriented and their intersection is transverse.
+
+    Let $p \in  N \tcap N'$.
+    Then $T_p N$ is oriented both by the orientation of  $N$ and the coorientation of  $N'$.
+    If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
+
+    The intersection number  $N' \cdot N$ is then defined as the sum of all the intersection numbers at the points in $N \tcap N'$.
+\end{definition}
+\begin{marginfigure}[-4cm]
     \centering
     \incfig{intersection-number}
     \caption{
@@ -105,33 +117,35 @@ Note in particular that it is the set of critical \emph{values} that has measure
     }
     \label{fig:intersection-number}
 \end{marginfigure}
-\begin{definition}[Intersection number]
-    Let $N$ and  $N'$ be $r$- and  $s$- dimensional submanifolds of an $(r+s)$-dimensional manifold $M$.
-    Suppose $N$ is oriented, $N'$ is cooriented and their intersection is transverse.
-    Let $p \in  N \tcap N'$.
-    Then $T_p N$ is oriented both by the orientation of  $N$ and the coorientation of  $N'$.
-    If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
-    The intersection number  $N' \cdot N$ is then defined as the sum of all the intersection numbers at the points in $N \tcap N'$.
-\end{definition}
 \begin{remark}
     If we change the order, the intersection number might change sign: $N \cdot N' =  \pm N' \cdot N$.
 \end{remark}
+By counting the number of points in the intersection with signs,
+we have managed to associate a number to an intersection that is invariant under ambient isotopies, which is not true if we simply count the number of points in the intersection.
 \begin{prop}
     The intersection number $N \cdot N'$ does not change under ambient isotopies of $N$ or $N'$.
     In particular, we can define the intersection number of two manifolds that do not intersect transversely.
 \end{prop}
-\begin{proof}
-    See `Differential Manifolds'\sidecite[p.~70]{kosinski2013differential}.
-\end{proof}
 \begin{eg}
     Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and coorientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
-    It is also clear that the intersection number does not change under isotopies of the manifolds.
+    It is also clear that the intersection number does not change under isotopies of the manifolds, even though the number of intersection points does.
 \end{eg}
 
+We will use the concept of intersection numbers in the last chapter where we prove the generalized higher dimensional Poincaré conjecture.
 
 \section*{Algebraic topology}
+
+Roughly stated, algebraic topology is the study of functors from the category of topological spaces to the category of groups.
+In other words, we seek ways to associate groups to topological spaces in such a way that homeomorphisms give rise to homomorphisms.
+In this section, we will discuss two ways to do so, resulting in homology and homotopy groups.
+
 \subsection*{Homology theory}
-In this section, we will assume that the reader is familiar with modules over a ring $R$. If not, they can mentally substitute each occurence of `module' by `vector space'.
+
+In the context of topology, homology was constructed as a way to detect holes in topological spaces.
+However, the methods and ideas generalize to other settings as well, and we can for example define homology of groups.
+
+In its most general form, homology measures non-exactness of a chain complex.
+The following definitions can be found in any textbook on algebraic topology or homological algebra.
 
 \begin{definition}[Chain complex]
     A chain complex of $R$-modules is a sequence $C_\bul$ of the form
@@ -158,6 +172,7 @@ We often suppress the indices of the maps $d_i$ and the last condition becomes t
 \end{definition}
 It is clear that this measure the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
 
+A map between chain complexes is called a chain map:
 
 \begin{definition}[Chain map]
     A chain map $f_\bul: C_\bul \to  D_\bul$ is a collection of $R$-module homomorphisms which makes the following diagram commute:
@@ -178,9 +193,9 @@ It is clear that this measure the exactness of the sequence. Indeed, if the sequ
     In other words, suppressing indices, $f  \circ  d^{C} = d^{D}  \circ f$.
 \end{definition}
 
-It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(C_\bul) \to  H_i(D_\bul)$, proving that $H_i$ is a functor. 
+It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(C_\bul) \to  H_i(D_\bul)$.
 
-The following is a useful criterion for determining whether two chain maps induce the same maps on the level on homology.
+The following is a useful criterion for determining whether two different chain maps $f_\bul, g_\bul$ induce the same maps on the level on homology, i.e. $H_i(f_\bul) = H_i(g_\bul)$.
 \begin{definition}[Chain homotopic]
     Let $f_\bul, g_\bul$ be chain maps between  $C_\bul$ and $D_\bul$.
     A chain homotopy from  $f_\bul$ to  $g_\bul$ is a collection of  $R$-module homomorphisms $h_i: C_i \to  D_{i+1}$ such that $g_i - f_i = d^{D}_{i+1}  \circ  h_i + h_{i-1}  \circ  d_i^{C}$ for all $i$.
@@ -216,14 +231,26 @@ The following is a useful criterion for determining whether two chain maps induc
     \end{align*} 
 \end{proof}
 
-In Algebraic topology, the most important form of homology is singular homology:
+\subsection*{Singular homology}
+In Algebraic topology, the most important form of homology is singular homology.
+In order to define the chain complex, we first need to introduce the concept of a simplex.
 
-\begin{definition}[Standard $n$-symplex]
-    We define the standard $n$-symplex to be \[\Delta^{n} = \{(t_0, \ldots, t_n) \in \R^{n+1}  \mid  \sum_i t_i = 1 \text{ and }  t_i \ge  0\}.\]
-    A singular $n$-symplex is a continuous map $\phi: \Delta^{n} \to M$, where $M$ is a topological space. 
+\begin{definition}[Standard $n$-simplex]
+    We define the standard $n$-simplex to be \[\Delta^{n} = \{(t_0, \ldots, t_n) \in \R^{n+1}  \mid  \sum_i t_i = 1 \text{ and }  t_i \ge  0\}.\]
+    A singular $n$-simplex is a continuous map $\phi: \Delta^{n} \to M$, where $M$ is a topological space. 
 \end{definition}
-\begin{definition}[Boundary of a singular $n$-symplex]
-    Let $\phi: \Delta^{n} \to  M$ be a singular $n$-symplex.
+\begin{marginfigure}
+    \centering
+    \incfig{definition-symplex}
+    \caption{Top: Standard $n$-simplex for $n = 0, 1, 2, 3$. Bottom: a singular $n$-simplex in the torus.}
+    \label{fig:definition-simplex}
+\end{marginfigure}
+\begin{remark}
+    The name singular comes from the fact that $\phi$ does not need to be a homeomorphism.
+    Hence, $\phi$ can `squash' simplices, making them singular.
+\end{remark}
+\begin{definition}[Boundary of a singular $n$-simplex]
+    Let $\phi: \Delta^{n} \to  M$ be a singular $n$-simplex.
     We define the $i$-th boundary of $\phi$ to be
     \[
         \partial_i \phi: \Delta^{n-1} \to  X: (t_0, \ldots, t_{p-1}) \mapsto \phi(t_0, t_1, \ldots, t_{i-1}, 0, t_i, \ldots, t_{p-1})
@@ -233,40 +260,113 @@ In Algebraic topology, the most important form of homology is singular homology:
          \partial \phi = \sum (-1)^{i} \partial_i \phi
     .\] 
 \end{definition}
+\begin{figure}[H]
+    \centering
+    \sidecaption{Illustrating the definition of boundary of a singular $2$-simplex.}
+    \incfig{definition-boundary-singular-homology}
+\end{figure}
+
+One can show that $\partial^2 = 0$, which allows us to define singular homology as follows:
 \begin{definition}[Singular homology]
     Let $M$ be a manifold.
     Let $C_i(M)$ be the free abelian group generated by all singular  $n$-simplices.
+    Elements in $C_i(M)$ are called chains.
     Then the following sequence is a chain complex
     \[
         \cdots \xrightarrow{\partial} C_n(M) \xrightarrow{\partial}  C_{n-1}(M) \xrightarrow{\partial}  C_{n-2}(M) \xrightarrow{\partial}  \cdots
     ,\] 
     and its homology is called singular homology of $M$.
 \end{definition}
-
-\begin{definition}[Relative homology]
-    Let $A$ be a submanifold of $M$.
-    This induces an inclusion  $C_{\bul}(A) \hookrightarrow C_{\bul}(M)$.
-    Then the relative homology of $M$ w.r.t.\  $A$ is the homology of the chain complex  $C_\bullet(M) / C_\bullet(A)$ and is denoted with $H_{\bullet}(M, A)$.
-\end{definition}
-
-\begin{definition}[Singular cohomology]
-    Let $M$ be a manifold and let $R$ be a ring.
-    Its singular cohomology with coefficients in $A$ is defined to be the homology of the complex $C_{i}^{*} = \Hom_R(C_i, R)$.
-\end{definition}
 \begin{remark}
-    If $R$ is a field, the $\Hom_R(-, R)$-functor is exact, implying that TODO
+    We take $C_{-1}(M) = C_{-2}(M) = \cdots = 0$.
+    This implies that if $M$ is an $n$-dimensional manifold, then only $H_0(M), \ldots, H_n(M)$ can be non-zero.
 \end{remark}
+Let us give an interpretation of singular homology.
+The homology of the above chain complex is given by
+\[
+    H_k(M) = \frac{\{ \text{singular $k$-symplices without boundary}\}}{\{\text{singular $k$-symplices that bound a $k+1$-simplex}\}}
+.\] 
+So a non-trivial element in $H_k(M)$ is a cycle (a chain without boundary) that does not bound a $k+1$ simplex.
+This should make clear how singular homology finds holes in manifolds.
+\begin{eg}
+    \begin{marginfigure}
+        \centering
+        \incfig{finding-holes-using-singular-homology}
+        \caption{Some $1$-chains in $M = \R^2 \setminus D^2$.}
+        \label{fig:finding-holes-using-singular-homology}
+    \end{marginfigure}
 
-\todo{
+    Consider the situation in Figure~\ref{fig:finding-holes-using-singular-homology} with $M = \R^2 \setminus D^2$.
     \begin{itemize}
-        \item Example of singular homology
-        \item Relative homology
-        \item Cohomology via hom functor (exact if field)
-        \item Mayer vietoris
+        \item The chain $\rho$ (which is the sum of four $1$-simplices) has no boundary and bounds itself a $2$-chain (the sum of two $2$-simplices).
+            Therefore, $\rho$ is trivial in homology.
+        \item The chain $\sigma$ also has no boundary, but it does not bound a $2$-simplex. The chain $\sigma$ represents the hole in the plane and corresponds to a non-trivial element in homology.
+        \item The chain $\phi$ is similar to $\sigma$. It also represent the hole in the plane and corresponds to a non-trivial element in homology.
+            In fact, $\phi$ and  $\sigma$ represent the same element---we say that they are homologous.
+            Indeed, their difference $\phi - \sigma$ bounds the region between the hexagon and the pentagon and we can see this as a $2$-simplex by triangulating it.
     \end{itemize}
-}
+    Turning these ideas in a proof, one can show that
+    \[
+        H_0(M) = \Z \qquad 
+        H_1(M) = \Z \qquad 
+        H_2(M) = 0 \qquad
+        H_3(M) = 0 \qquad \cdots
+    \] 
+\end{eg}
+\begin{eg}
+    For a sphere, we have
+    \[
+        H_k(S^{n}) = \begin{cases}
+            \Z & \text{if $n = 0, k$}\\
+            0 & \text{else.}
+        \end{cases}
+    \] 
+\end{eg}
 
-\todo{Add source. Above: commutative algebra}
+\subsection*{Computing singular homology}
+
+Homology is in many cases not so difficult to compute because it is essentially a local, as the following theorem shows:
+\begin{theorem}[Mayer-Vietoris]
+    Let $M$ be a topological space covered by the interiors of two subspaces  $A, B$, i.e.\ $M = \mathring A \cup \mathring B$.
+    Then the following long exact sequence relates the homology of $M$ with that of  $A, B$ and  $A \cap B$:
+    \[
+        \begin{tikzcd}[column sep=1.4em, row sep=0.6em]
+            \cdots \arrow[r, "\partial_*"]&
+            H_n(A \cap B) \arrow[r, "{(i_*, j_*)}"] &
+            H_n(A) \oplus H_n(B) \arrow[r, "k_* - \ell_*"] &
+            H_{n}(M) \arrow[r, "\partial_*"] & {}\\
+            \arrow[r, "\partial_*"]&
+            H_{n-1}(A \cap B) \arrow[r, "{(i_*, j_*)}"] &
+            H_{n-1}(A) \oplus H_{n-1}(B) \arrow[r, "k_* - \ell_*"] &
+            H_{n-1}(M) \arrow[r, "\partial_*"] & \cdots
+        \end{tikzcd}
+    \]
+    where $i: A \cap  B \hookrightarrow A$; $j: A \cap B \hookrightarrow A$; $k: A \hookrightarrow M$;  $\ell: B \hookrightarrow M$ are inclusions and $\partial_*$ takes a chain in $M$, splits it up in a chain lying entirely in $A$ and one entirely in $B$ and then  takes the boundary of the chain lying in $A$.
+\end{theorem}
+\begin{eg}
+    \begin{marginfigure}
+        \centering
+        \incfig{mayer-vietoris-example}
+        \caption{TODO mayer vietoris example}
+        \label{fig:mayer-vietoris-example}
+    \end{marginfigure}
+
+    Let us illustrate the boundary map $\partial_*$.
+    Consider the torus $T^{2}$ and the open cover by cilinders $A$ and $B$ are in Figure~\ref{fig:mayer-vietoris-example}.
+    Consider the one-chain $\phi$ that goes around the hole once. We can split it up in two chains: $\phi = \rho + \sigma$ where  $\rho$ lies entirely in  $A$ and $\sigma$ lies entirely in  $B$.
+    Then  $\partial_* [x] = [\partial \rho]$, which in this case is the difference of the points indicated in the figure.
+    While we have made many choices, the end result is well-defined in homology.
+
+    Writing down the long exact sequence and using the fact that the homology of a cylinder is the same as that of $S^{1}$, we find
+    \[
+        H_0(T^2) = \Z \qquad 
+        H_1(T^2) = \Z^2 \qquad 
+        H_2(T^2) = \Z
+    .\] 
+\end{eg}
+
+Another tool for computing homology is the Künneth formula, allowing us to compute $H_\bul(M \times N)$.
+
 \begin{definition}[Tensor product of complexes]
     Let $C_\bul$ and  $D_\bul$ be two complexes over field. Their tensor product is defined as
      \[
@@ -274,7 +374,6 @@ In Algebraic topology, the most important form of homology is singular homology:
     ,\] 
     with boundary operator $\partial_C \otimes 1 + 1 \otimes\partial_D$.
 \end{definition}
-\todo{Add picture}
 \begin{prop}
     Let $C_\bul$ and  $D_\bul$ be complexes over a field.
     The homology of the tensor product complex is the tensor product of the homologies:
@@ -283,88 +382,155 @@ In Algebraic topology, the most important form of homology is singular homology:
     .\] 
     \label{prop:hom-tensor-is-tensor-hom}
 \end{prop}
-\begin{proof}
-    Omitted.
-\end{proof}
 \begin{remark}
     This result is only true when we are working over a field, i.e.\ in the context of vector spaces.
 \end{remark}
-\todo{Add source (Audin)}
 
+\begin{eg}
+    Applying this to $T^{n} = S^1 \times S^{1} \times \cdots\times S^{1}$, we get that
+    \[
+        H_k(T^n; \Q) = \Q^{\binom{n}{k}}
+    ,\] 
+    where we consider homology over $\Q$, which is defined similarly as over $\Z$, except we allow for formal rational sums of simplices.
+\end{eg}
+
+\subsection*{Relative homology and singular cohomology}
+
+Let us lastly discuss relative homology and singular cohomology.
+
+
+\begin{marginfigure}
+    \centering
+    \incfig{definition-relative-homology}
+    \caption{The chain $\sigma$ is an example of a  $1$-cycle in the relative homology $H(M, \partial M)$.}
+    \label{fig:definition-relative-homology}
+\end{marginfigure}
+\begin{definition}[Relative homology]
+    Let $A$ be a submanifold of $M$.
+    The inclusion of $A \hookrightarrow M$ induces an inclusion  $C_{\bul}(A) \hookrightarrow C_{\bul}(M)$.
+    Then the relative homology of $M$ w.r.t.\  $A$ is the homology of the chain complex  $C_\bullet(M) / C_\bullet(A)$ and is denoted with $H_{\bullet}(M, A)$.
+\end{definition}
+
+If $M$ and $A$ are `nice', you can think of the relative homology of $M$ w.r.t\  $A$ as the homology of  $M / A$.
+We will often be considering the relative homology $H(M, \partial M)$, where $M$ is a manifold with boundary as illustrated in Figure~\ref{fig:definition-relative-homology}.
+As an illustration, we have drawn a chain that is not a cycle in $M$, but is a cycle relative to $\partial M$. Indeed, relatively seen, it has no boundary, because its boundary forms a chain in $\partial M$.
+
+\bigskip
+
+Singular cohomology is the dual of singular homology in the following sense:
+\begin{definition}[Singular cohomology]
+    Let $M$ be a manifold and let $R$ be a ring.
+    The singular cohomology of $M$ with coefficients in $R$ is defined to be the homology of following complex
+    \[
+    \cdots \leftarrow C_{i+1}^{*} \xleftarrow{d_i^{*}}  
+    C_{i}^{*} \xleftarrow{d_{i-1}^{*}}  
+    C_{i-1}^{*} \leftarrow \cdots
+    \] 
+    where $C_{i}^{*} = \Hom_R(C_i, R)$ and $d^{*}(f) = f \circ  d$.
+    We denote singular cohomology with $H^{k}(M, R)$.
+\end{definition}
+\begin{remark}
+    If $R$ is a field then $H^{k}(M, R)$ is dual to $H_k(M, R)$.
+    In particular, if the homology is finite dimensional, we have $H^{k}(M, R) \cong H_k(M, R)$.
+\end{remark}
+\begin{remark}
+    Poincaré duality states that if $M$ is an  $n$-dimensional oriented closed manifolds, then $H_k(M, R) \cong H^{n-k}(M, R)$.
+\end{remark}
 
 \subsection*{Homotopy theory}
+Homotopy theory is similar to homology theory in the sense that it also is a way of capturing holes in a topological space.
+While the ideas are similar, homotopy turns out to be much harder to compute.
+For example, while the homology of $S^{n}$ is easily computed, the homotopy groups of spheres are surprisingly complex and we still do not understand them fully.
+
+Let us start by defining homotopy groups:
 
 \begin{definition}[Homotopy group]
     Choose a basepoint $x$ on $S^{n}$.
     Let $M$ be a manifold and choose a basepoint $p \in M$.
-    Then we define the $n$-th homotopy group $\pi_n(M, p)$ to be the set of homotopy classes of maps  $f: S^{n} \to  M$ that map the basepoint $x$ to $y$.
+    Then we define the $n$-th homotopy group $\pi_n(M, p)$ to be the set of homotopy classes of based maps  $f: (S^{n}, x) \to  (M, p)$, i.e.\ maps $f: S^{n} \to  M$ that map $x$ to $p$.
 \end{definition}
-\begin{remark}
-    We call $\pi_1(M, p)$ the fundamental group of $M$.
-\end{remark}
-\begin{remark}
-    We often forget about the basepoint and simply write $\pi_n(M)$.
-\end{remark}
+\begin{eg}
+    Consider the situation in Figure~\ref{fig:definition-homotopy-groups}.
+    The manifold $M$ is given by $\R^2 \setminus D^2$, and we have chosen a base point $x_0$.
+    The maps $\rho$ and  $\sigma$ are homotopic and capture the existence of the hole.
+    The map $\phi$ corresponds to a trivial element in the homotopy group  $\pi_1(\R^2 \setminus D^2)$.
+    One can prove that $\pi_1(M) \cong \Z$, where the isomorphism is defined by mapping a map $\phi$ to the number of times it wraps around the hole.
+\end{eg}
+\begin{marginfigure}
+    \centering
+    \incfig{definition-homotopy-groups}
+    \caption{TODO definition homotopy groups}
+    \label{fig:definition-homotopy-groups}
+\end{marginfigure}
 \begin{eg}
     If $M$ is connected, then  $\pi_0(M) = 0$.
     If  $M$ is simply connected, then  $\pi_1(M) = 0$.
 \end{eg}
-\begin{remark}
-    We only consider homotopies that fix the basepoint.
-\end{remark}
+
+If $n \ge  1$, $\pi_n(M)$ indeed forms a group:
 \begin{prop}
-    The homotopy group $\pi_n(S)$ is---as its name suggests--- a group with the following operation
+    The homotopy group $\pi_n(M)$ is---as its name suggests--- a group with the following operation
     \[
-        [f] + [g] = [h  \circ  \phi]
+        [\rho] + [\sigma] = [h  \circ  \phi]
     ,\] 
-    where $\phi : S^{n} \to  S^{n} \vee S^{n}$ is a map that collapses the equator of $S^{n}$ and $h : S^{n} \vee S^{n} \to  M$ is defined to be $f$ on the first copy of  $S^{n}$ and $g$ on the second copy.
+    where $\phi : S^{n} \to  S^{n} \vee S^{n}$ is a map that collapses the equator of $S^{n}$ and $h : S^{n} \vee S^{n} \to  M$ is defined to be $\rho$ on the first copy of  $S^{n}$ and $\sigma$ on the second copy.
 \end{prop}
+\begin{marginfigure}
+    \centering
+    \incfig{fundamental-group-operation}
+    \caption{The group operation for homotopy groups.}
+    \label{fig:fundamental-group-operation}
+\end{marginfigure}
+\begin{remark}
+    In the case of $n=1$, this is simply concatenation of paths.
+\end{remark}
 
-
-Homotopy groups are in general very hard to calculate, but we do have the following results for spheres:
+It is not hard to prove the following:
 \begin{prop}
     Let $S^{n}$ be an $n$-dimensional sphere.
     Then $\pi_n(S^{n}) = \Z$ and all the lower order homotopy groups are $0$.
 \end{prop}
-\begin{remark}
-    In contrast with homology,
-    the higher order homotopy groups do not vanish:
-    $k > n$ does not imply that $\pi_k(S^{n}) = 0$.
-\end{remark}
+While this seems contradictory to the claims made in the introduction of this section, we should note that higher order homotopy groups do not vanish: $k > n$ does not imply that $\pi_k(S^{n}) = 0$.
+Computing these higher order groups is where the difficulty lies.
 
 \begin{definition}
     A homotopy sphere is a manifold which has the homotopy groups of a sphere.
 \end{definition}
 
+An interesting question that arises is: `Is a homotopy sphere an actual sphere, i.e. homeomorphic to a sphere?' This is exactly what the Poincaré conjecture is about and in the last chapter of this thesis, we will prove that this is indeed the case if the dimension of the homotopy sphere is $\ge 5$.
+
+To do so, we will in fact only use that a homotopy sphere $S$ is a homology sphere that is connected and simply connected.
+The last two properties are clear as $\pi_0(S) = \pi_1(S) = 0$.
+In order to see that a homotopy sphere is a homology sphere, we introduce the following notion of connectedness:
+
 \begin{definition}[$k$-connected]
     A manifold $M$ with basepoint $p$ is $k$-connected if  $\pi_i(M, p) = 0$ for  $i \le  k$.
 \end{definition}
-\begin{remark}
-    Clearly, $k$-connectedness implies  $k-1$ connectedness.
-\end{remark}
-\begin{eg}
-    The sphere $S^{n}$ is $n-1$ connected.
-\end{eg}
-
-The following theorem relates homotopy groups with homology groups:\sidecite{hatcher2005algebraic}
+Clearly $k$-connectedness implies  $k-1$-connectedness and a $n$-dimensional homotopy sphere is $n-1$-connected.
+With this definition, we can state the relation between homotopy and homology as follows:\sidecite{hatcher2005algebraic}
 \begin{theorem}[Hurewicz theorem]
     Let $M$ be a manifold.
     Let $\alpha \in H_n(S^{n})$ be a canonical generator.
     Then we can define the Hurewicz homomorphism
     \begin{align*}
-        h_n: \pi_n(X) &\longrightarrow H_n(X) \\
+        h_n: \pi_n(M) &\longrightarrow H_n(M) \\
         [f] &\longmapsto [f_*(\alpha)]
     .\end{align*}
 
     If $M$ is  $k-1$ connected with  $k\ge 2$, then $h_k$ is an isomorphism and $h_{k+1}$ is an epimorphism.
 \end{theorem}
-
+% TODO what about h_1?
+\begin{remark}
+    In the case of $n=1$, $H_1(M)$ is the abelianization of $\pi_1(M)$.
+\end{remark}
+This allows us to prove the result we were after:
 \begin{prop}
     A homotopy sphere is a homology sphere.
 \end{prop}
 \begin{proof}
-    An $n$-dimensional homotopy sphere $S$ is $n-1$ connected, hence the morphisms $h_1, h_2, \ldots, h_{n-1}$ are isomorphisms and $h_n$ is an epimorphism.
-    Hence
+    An $n$-dimensional homotopy sphere $S$ is $n-1$-connected, hence the morphisms $h_1, h_2, \ldots, h_{n-1}$ are isomorphisms and $h_n$ is an epimorphism.
+    % TODO: not h1, and what about h0?
+    We conclude that 
     \[
         H_0(S) = \Z \qquad
         H_1(S) = 0 \qquad 
@@ -375,7 +541,7 @@ The following theorem relates homotopy groups with homology groups:\sidecite{hat
     so $S$ has the homology of a sphere  $S^{n}$.
 \end{proof}
 
-Contrary to general homotopy groups, the fundamental group $\pi_1(M)$ is more easily computable:\sidecite{hatcher2005algebraic}
+Let us end our short discussion of homotopy theory by stating the theorem of Van Kampen, showing that fundamental groups are in fact fairly easy computable (contrary to higher order homotopy groups).
 \begin{theorem}[Van Kampen]
     Let $A_\alpha$ be a cover of $M$ by path-connected open sets, all of which containing the basepoint $p$.
     If each double and triple intersection ($A_\alpha \cap A_\beta$ and $A_\alpha \cap A_\beta \cap A_\gamma)$ is path-connected, then
@@ -384,3 +550,5 @@ Contrary to general homotopy groups, the fundamental group $\pi_1(M)$ is more ea
     ,\] 
     where $N$ is the normal subgroup generated by all elements of the form  $i_{\alpha \beta}(\omega) i_{\beta \alpha}(\omega)^{-1}$ for $\omega \in \pi_1(A_\alpha \cap A_\beta)$, where $i_{\alpha\beta}: \pi_1(A_\alpha \cap A_\beta) \to  \pi_1(A_\alpha)$ is the morphism induced by the inclusion.
 \end{theorem}
+
+We will use this result in Chapter 5 to show that certain spaces are simply connected.

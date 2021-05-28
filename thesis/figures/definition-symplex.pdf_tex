@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'transversality-examples.pdf' (pdf, eps, ps)
+%% Accompanies image file 'definition-symplex.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{645.19365926bp}%
+    \setlength{\unitlength}{135.99126741bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,20 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.14858025)%
+  \begin{picture}(1,0.74502076)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{transversality-examples.pdf}}%
-    \put(0.09891516,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tcap$\end{tabular}}}}%
-    \put(0.3680634,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tcap$\end{tabular}}}}%
-    \put(0.62932645,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\not\tcap$\end{tabular}}}}%
-    \put(0.89398001,-0.01799937){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\not\tcap$\end{tabular}}}}%
+    \put(0.16241852,0.41820544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta^{0}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{definition-symplex.pdf}}%
+    \put(0.61252722,0.41820544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta^{2}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{definition-symplex.pdf}}%
+    \put(0.83758153,0.41820544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta^{3}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{definition-symplex.pdf}}%
+    \put(0.38747287,0.41820544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta^{1}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{definition-symplex.pdf}}%
+    \put(0.16241852,0.00724891){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta^{2}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{definition-symplex.pdf}}%
+    \put(0.34132928,0.20188645){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{definition-symplex.pdf}}%
   \end{picture}%
 \endgroup%
