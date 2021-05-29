@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'non-example-of-morse-function.pdf' (pdf, eps, ps)
+%% Accompanies image file 'morse-function-sphere-example.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{294.79030339bp}%
+    \setlength{\unitlength}{314.31421956bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,11 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.47293325)%
+  \begin{picture}(1,0.52369127)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{non-example-of-morse-function.pdf}}%
-    \put(0.60143704,0.40475595){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(x, y) \mapsto x^2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{non-example-of-morse-function.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-function-sphere-example.pdf}}%
+    \put(0.93240135,0.29736485){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0.7619369,0.0024577){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0.7619369,0.28412759){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
+    \put(0.66175154,0.50369531){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
+    \put(0.83872561,0.41850786){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{morse-function-sphere-example.pdf}}%
+    \put(0.35904756,0.30213708){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{morse-function-sphere-example.pdf}}%
+    \put(0.18145169,0.04277128){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.18145169,0.42360733){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

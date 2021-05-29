@@ -19,6 +19,22 @@
    sodipodi:docname="existence-of-morse-functions-normal-bundle-map.svg">
   <defs
      id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect967"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect963"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect959"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect919"
+       is_visible="true" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient955">
@@ -155,7 +171,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -313,19 +329,11 @@
          x="-13.8887"
          y="277.49744"
          style="stroke-width:0.26458332">$(x, 0)$</tspan></text>
-    <rect
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0.12000002;stroke:#000000;stroke-width:0.15022843;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       id="rect1493"
-       width="7.8371201"
-       height="7.0564256"
-       x="-8.2407789"
-       y="258.20764"
-       transform="matrix(0.87394176,-0.48603066,0,1,0,0)" />
     <ellipse
        id="circle1449"
        style="fill:#000000;stroke:none;stroke-width:1.01748526"
-       cx="-3.7924571"
-       cy="262.85501"
+       cx="-3.9507194"
+       cy="262.69647"
        rx="0.63617307"
        ry="0.61449599"
        transform="matrix(0.96592583,-0.25881905,0,1,0,0)" />
@@ -340,11 +348,6 @@
          x="-18.955458"
          sodipodi:role="line"
          id="tspan1451">$(x, v)$</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:0.12000002;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="m -7.20196,265.8046 6.84918404,-3.80908"
-       id="path1497"
-       inkscape:connector-curvature="0" />
     <circle
        id="circle901"
        style="fill:#000000;stroke:none;stroke-width:1"
@@ -363,8 +366,8 @@
        transform="matrix(0.96592583,-0.25881905,0,1,0,0)"
        ry="0.61449599"
        rx="0.63617307"
-       cy="262.4014"
-       cx="-2.1396573"
+       cy="262.34091"
+       cx="-2.2370493"
        style="fill:#000000;stroke:none;stroke-width:1.01748526"
        id="ellipse907" />
     <text
@@ -467,5 +470,21 @@
          x="11.857428"
          y="253.16933"
          style="stroke-width:0.26458332">$E:(x, v) \mapsto x + v$</tspan></text>
+    <path
+       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.22413649;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+       d="m -3.7056001,263.7842 v 6.65571"
+       id="path961"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect963"
+       inkscape:original-d="m -3.7056001,263.7842 c 2.645e-4,2.21831 2.645e-4,4.43688 0,6.65571"
+       transform="translate(-0.14967019,-0.04989006)" />
+    <path
+       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.22413649;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+       d="m -2.0122774,262.81995 v 6.65571"
+       id="path965"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect967"
+       inkscape:original-d="m -2.0122774,262.81995 c 2.646e-4,2.2183 2.646e-4,4.43687 0,6.65571"
+       transform="translate(-0.18293023,0.04989006)" />
   </g>
 </svg>

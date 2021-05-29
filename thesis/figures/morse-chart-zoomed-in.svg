@@ -14,9 +14,9 @@
    inkscape:version="0.92.4 (unknown)"
    id="svg8"
    version="1.1"
-   viewBox="0 0 125.42573 90.19484"
-   height="90.194839mm"
-   width="125.42569mm">
+   viewBox="0 0 127.1445 119.16205"
+   height="119.16205mm"
+   width="127.14445mm">
   <defs
      id="defs2">
     <marker
@@ -504,10 +504,10 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="-38.734477"
-       originy="155.13954" />
+       originx="-37.558104"
+       originy="156.04985" />
     <sodipodi:guide
-       position="9.9583431,232.43591"
+       position="11.134734,233.34624"
        orientation="1,0"
        id="guide822"
        inkscape:locked="false" />
@@ -520,7 +520,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -528,7 +528,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-38.734365,-361.94471)">
+     transform="translate(-37.557976,-333.88781)">
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044082;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        d="m 71.888761,386.3285 c -0.56945,-2.5463 -1.829007,-6.4008 -2.794614,-8.55209 -0.19871,-0.44271 -0.361294,-0.81757 -0.361294,-0.83302 0,-0.0873 2.882545,0.46353 4.107259,0.78489 1.29023,0.33854 2.893814,0.89869 3.762849,1.3144 1.911352,0.9143 2.885755,1.8647 2.960484,2.88755 0.111955,1.53243 -2.264225,3.14293 -6.240706,4.22976 -1.457635,0.39839 -1.384488,0.38979 -1.433978,0.16851 z"

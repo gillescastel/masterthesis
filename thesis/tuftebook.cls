@@ -60,9 +60,9 @@ footskip=40pt,
 \textls{\MakeUppercase{\chaptertitlename}} \expandafter\textls\expandafter{\NUMBERstring{chapter}}}
 {1.5ex}
 {\titlerule
-\vspace{1.5ex}%
+\vspace*{1.1ex}%
 \filright}
-[\vspace{1.5ex}%
+[\vspace*{1.5ex}%
 \titlerule]
 
 % \setcounter{secnumdepth}{-1}% no numbering at all
@@ -84,32 +84,14 @@ footskip=40pt,
 
 %set up header, footer and page numbering
 \RequirePackage{fancyhdr}% helper package
-\renewcommand{\headrulewidth}{0.4pt}% The running heads and feet do not have rules
-\renewcommand{\footrulewidth}{0pt}
-\fancyhf{}% set up the page numbering 
-{\fancyfoot[LE,RO]{\thepage}}
-\fancyhead[RO]{\rightmark}
-\fancyhead[LE]{\leftmark}
-\fancypagestyle{plain}{%
-	\fancyhf{}
+\fancypagestyle{normal}{
+    % \renewcommand{\headrulewidth}{0.4pt}% The running heads and feet do not have rules
+    % \renewcommand{\footrulewidth}{0pt}
+    \fancyhf{}% set up the page numbering 
+    \fancyfoot[LE,RO]{\thepage}
+    \fancyhead[RO]{\rightmark}
+    \fancyhead[LE]{\leftmark}
 }
-
-% \makeatletter
-% \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-% \hbox{}
-% \vspace*{\fill}
-% \begin{center}
-% This page intentionally contains only this sentence.
-% \end{center}
-% \vspace{\fill}
-% \thispagestyle{empty}
-% \newpage
-% \if@twocolumn\hbox{}\newpage\fi\fi\fi}
-% \makeatother
-
-\RequirePackage{emptypage}
-
-
 
 % This is used for chapters
 % Redefine the plain page style
@@ -119,6 +101,10 @@ footskip=40pt,
   \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
   \renewcommand{\footrulewidth}{0pt}% Line at the footer visible
 }
+
+\RequirePackage{emptypage}
+
+
 
 
 % Also show page numbers on first page of chapter

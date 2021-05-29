@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{355.53738812bp}%
+    \setlength{\unitlength}{360.40945699bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.71910977)%
+  \begin{picture}(1,0.93721787)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-chart-zoomed-in.pdf}}%
-    \put(0.86924724,0.54317213){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(\epsilon)$\end{tabular}}}}%
-    \put(0.86924724,0.24165817){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(-\epsilon)$\end{tabular}}}}%
+    \put(0.86674901,0.54298909){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(\epsilon)$\end{tabular}}}}%
+    \put(0.86674901,0.24555104){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(-\epsilon)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{morse-chart-zoomed-in.pdf}}%
   \end{picture}%
 \endgroup%

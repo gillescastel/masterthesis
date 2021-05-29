@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{237.23055141bp}%
+    \setlength{\unitlength}{277.44269664bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.9777444)%
+  \begin{picture}(1,0.84368301)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{non-examples-of-morse-functions.pdf}}%
-    \put(0.80623793,0.90090462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3$\end{tabular}}}}%
+    \put(0.76121042,0.77419231){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{non-examples-of-morse-functions.pdf}}%
-    \put(0.76064826,0.35595474){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3 + tx$\end{tabular}}}}%
+    \put(0.72222846,0.30822668){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^3 + tx$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{non-examples-of-morse-functions.pdf}}%
   \end{picture}%
 \endgroup%

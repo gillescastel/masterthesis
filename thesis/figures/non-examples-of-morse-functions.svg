@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="83.689667mm"
-   height="81.827103mm"
-   viewBox="0 0 83.689667 81.827103"
+   width="97.875618mm"
+   height="82.575996mm"
+   viewBox="0 0 97.875618 82.575997"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -104,10 +104,10 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="-29.730776"
-       originy="-31.460297" />
+       originx="-22.700619"
+       originy="-31.082152" />
     <sodipodi:guide
-       position="23.35225,46.966881"
+       position="30.382407,47.345025"
        orientation="0,1"
        id="guide1023"
        inkscape:locked="false" />
@@ -120,7 +120,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -128,7 +128,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-29.730776,-183.7126)">
+     transform="translate(-22.700619,-183.34185)">
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)"
        d="M 69.238171,264.82984 V 185.1837"
@@ -247,9 +247,9 @@
          style="stroke-width:0.26458332">$x^3 + tx$</tspan></text>
     <g
        id="g878"
-       style="stroke:#f9a30d;stroke-opacity:1;stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none">
+       style="stroke:#f9a30d;stroke-width:0.80000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <path
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
          d="m 69.238171,226.60621 c 18.367526,0.34527 24.90966,-17.39866 29.477632,-34.2423"
          id="path839"
          inkscape:connector-curvature="0"
@@ -259,7 +259,7 @@
          inkscape:connector-curvature="0"
          id="path908"
          d="m 69.238171,226.60621 c -18.367518,-0.34527 -24.909658,17.39866 -29.477628,34.2423"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.80000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
     </g>
     <circle
        id="path1059"

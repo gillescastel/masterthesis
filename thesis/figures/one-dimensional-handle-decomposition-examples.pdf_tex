@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{343.3880447bp}%
+    \setlength{\unitlength}{344.9474545bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,27 +50,27 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.49291842)%
+  \begin{picture}(1,0.4664829)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.22295452,0.40876233){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0.2239608,0.38050353){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.44770592,0.2564917){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
+    \put(0.44769616,0.22892127){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.69036125,0.2564917){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
+    \put(0.68925452,0.22892127){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.22295452,0.16943801){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g$\end{tabular}}}}%
+    \put(0.2239608,0.14226114){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.32195096,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
+    \put(0.32250971,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{one-dimensional-handle-decomposition-examples.pdf}}%
-    \put(0.50992035,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
-    \put(0.68357797,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
-    \put(0.89190799,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
-    \put(0.45616207,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
-    \put(0.63892303,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
-    \put(0.83721011,0.00224965){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
-    \put(0.60360515,0.2564917){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
+    \put(0.50962934,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$-handle\end{tabular}}}}%
+    \put(0.6825019,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
+    \put(0.88989012,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$-handle\end{tabular}}}}%
+    \put(0.45611409,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
+    \put(0.63804884,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
+    \put(0.83543952,-0.02417141){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
+    \put(0.60289062,0.22892127){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{one-dimensional-handle-decomposition-examples.pdf}}%
   \end{picture}%
 \endgroup%

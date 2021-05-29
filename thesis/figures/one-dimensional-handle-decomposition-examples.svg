@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="121.13967mm"
-   height="59.711975mm"
-   viewBox="0 0 121.13967 59.711975"
+   width="121.6898mm"
+   height="56.766209mm"
+   viewBox="0 0 121.6898 56.766209"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -71,15 +71,15 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="-19.441612"
-       originy="-19.309844" />
+       originx="-19.196505"
+       originy="-22.523776" />
     <sodipodi:guide
-       position="54.893462,31.071318"
+       position="55.138572,27.857387"
        orientation="0,1"
        id="guide1115"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="112.52527,28.062323"
+       position="112.77038,24.848392"
        orientation="0,1"
        id="guide1121"
        inkscape:locked="false" />
@@ -92,7 +92,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -100,7 +100,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-19.441612,-217.97818)">
+     transform="translate(-19.196505,-217.71001)">
     <path
        style="color:#000000;overflow:visible;opacity:0.28300003;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        d="m 139.46907,260.56369 c -10e-6,5.49417 -2.6181,10.9656 -5.45147,10.83256 -2.35468,-0.11056 -0.036,-10.9717 -3.37619,-10.95899 -2.34629,0.009 -3.18246,5.64495 -5.41213,5.71002 -1.88202,0.0549 -1.51715,-6.17034 -1.51715,-7.60617 0,-5.49418 2.76059,-8.91328 8.25476,-8.91328 5.49418,0 7.50218,5.44168 7.50218,10.93586 z"
