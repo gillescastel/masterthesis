@@ -44,25 +44,6 @@ We follow Milnor, and also Antonio Kosinski}
 
 \section{Stronger cancellation result}
 Let us first recall the cancellation result we stated previously:
-
-\begin{theorem}[Francois Laudenbach\sidenotemark]
-    Let $f: M \to  \R$ be a Morse function and $X$ be a pseudo-gradient field.
-    Let $p$ and $q$ be two critical points such that
-    \begin{enumerate}[(i)]
-        \item $p$ and $q$ are connected by a unique gradient line  $\ell := \traj{p}{q}$.
-        \item For some $\epsilon>0$, each gradient flow line starting in $\unstable{p}$ distinct from $ \ell$ crosses the level set $f^{-1}(f(q) - \epsilon)$
-    \end{enumerate}
-    Then these two points are cancelable.
-More precisely, there exists an isotopy of functions $f_t$ starting at $f_0=f$ supported in an open neighbourhood of the closure of  $\unstable{p} \cap  \{f \ge  f(q) - \epsilon\} $ such that
-\begin{itemize}
-    \item $f_t|_U$ is Morse with two critical points when  $0 \le t\le \frac{1}{2}$;
-    \item $f_t|_U$ has a cubic singularity when $t=\frac{1}{2}$
-    \item $f_t|_U$ has no critical points when $\frac{1}{2}<t\le 1$.
-\end{itemize}
-\end{theorem}
-\sidenotetext[][0.0cm]{\fullcite{laudenbach2013proof}}
-
-In this chapter, we will mostly consider cobordisms, and in that context, the statement of this theorem can be expressed shortly as
 \begin{theorem}
     Let $f: M \to  [0,1]$ be a Morse function on a cobordism with two critical points $p, q$.
     If $|\L pq| = 1$, then $p$ and  $q$ are cancelable.
@@ -629,11 +610,3 @@ If we can prove that the sphere $S^{n}$ is irreducible, this implies that $M$ is
 \section{Historical aspects of the Poincaré conjecture}
 
 table of results, categories, \ldots
-
-\todo{
-\begin{itemize}
-    \item Relative Morse homology
-        \item Fix notation for cardinality
-        \item Check $H_1 = 0$ does not imply simply connectedness \url{https://mathoverflow.net/questions/110158/what-if-i-want-to-look-for-a-space-with-vanishing-first-homology-but-nonzero-fun}
-\end{itemize}
-}

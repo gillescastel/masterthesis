@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="99.670319mm"
-   height="43.884666mm"
-   viewBox="0 0 99.670319 43.884665"
+   width="97.392807mm"
+   height="49.764423mm"
+   viewBox="0 0 97.392805 49.764422"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -264,8 +264,8 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="-14.15163"
-       originy="-58.608256" />
+       originx="-14.806661"
+       originy="-55.316582" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -283,10 +283,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-14.151627,-194.50707)">
+     transform="translate(-14.806657,-191.91899)">
     <g
        id="g1133"
-       transform="translate(8.6547716)">
+       transform="translate(8.6547716,3.104429)">
       <path
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.14044082;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
          d="m 89.275478,194.89417 a 4.6805757,1.6312501 0 0 0 -4.68033,1.63142 c -0.21764,2.64353 -0.31793,5.29646 -0.29973,7.94887 0.011,1.60266 0.0648,3.21303 -0.14624,4.80178 -0.21104,1.58875 -0.70455,3.17501 -1.68259,4.44469 -0.44805,0.58167 -0.9974,1.09246 -1.64124,1.44539 -0.64384,0.35293 -1.38534,0.54279 -2.11718,0.48369 -0.93313,-0.0754 -1.794108,-0.54441 -2.532147,-1.12035 -0.738037,-0.57594 -1.380739,-1.26381 -2.091344,-1.87327 -1.276509,-1.09482 -2.818386,-1.9462 -4.490167,-2.12855 -0.88868,-0.0969 -1.805048,4.1e-4 -2.632398,0.339 -0.827344,0.33858 -1.5608,0.92502 -2.023647,1.68982 -0.424238,0.701 -0.611169,1.52641 -0.64544,2.34507 -0.03427,0.81866 0.07728,1.63623 0.212907,2.4443 0.513893,3.06169 1.379202,6.05164 2.195217,9.04699 0.554148,2.03413 1.086154,4.07391 1.596284,6.11952 a 11.876792,4.1392382 0 0 0 11.876795,4.13929 11.876792,4.1392382 0 0 0 11.87679,-4.13929 c -0.0652,-13.60712 1.87991,-24.70803 1.90531,-35.98695 a 4.6805757,1.6312501 0 0 0 -4.68085,-1.63142 z"
@@ -465,12 +465,12 @@
     </g>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)"
-       d="m 59.448898,216.77678 h 5.321607"
+       d="m 59.448898,219.88121 h 5.321607"
        id="path1779"
        inkscape:connector-curvature="0" />
     <g
        id="g1216"
-       transform="translate(-4.0451649)">
+       transform="translate(-4.0451649,3.104429)">
       <text
          y="233.76993"
          x="56.013927"
@@ -713,5 +713,27 @@
            inkscape:connector-curvature="0" />
       </g>
     </g>
+    <text
+       id="text1109"
+       xml:space="preserve"
+       style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="41.138435"
+       y="225.81659"><tspan
+         id="tspan1107"
+         sodipodi:role="line"
+         x="41.138435"
+         y="225.81659"
+         style="stroke-width:0.26458332">$X$</tspan></text>
+    <text
+       y="225.81659"
+       x="92.126328"
+       style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       id="text1123"><tspan
+         style="stroke-width:0.26458332"
+         y="225.81659"
+         x="92.126328"
+         sodipodi:role="line"
+         id="tspan1121">$X'$</tspan></text>
   </g>
 </svg>

@@ -405,20 +405,28 @@ Let us give some examples.
 
 \section{Cancellation of critical points}
 
-Let us now answer the second question that came up when discussing examples: `When can we cancel a pair of critical points?'
-
-For the statement and proof, we follow notes of lectures by Milnor on the $h$-cobordism theorem.\sidecite{hcobord}
-The proof is based on the original proof by Milnor\sidecite{cairns2015differential,huebsch1964bowl}.
-For a proof more base on the handle attaching approach, we refer the reader to `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
-There is also a nice proof by Laudenbach reducing the general case to dimension one, where the problem is easy to solve.\sidecite{laudenbach2013proof}
-
-\begin{theorem}[Cancellation theorem]
+Let us now answer the second question that came up when discussing examples in the previous chapter: `When can we cancel a pair of critical points $p, q$?'
+It turns out that the existence of a unique trajectory connecting $p$ to  $q$ is a sufficient condition, as the following theorem states.
+\begin{theorem}[Cancellation theorem\sidenotemark]
     Let $M$ be a cobordism from $M_0$ to $M_1$.
-    Let $f: M \to  [0,1]$ be a morse exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
+    Let $f: M \to  [0,1]$ be a Morse exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
 
     If $|\L p q| = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
     More specifically, we can alter $X$ around  $\ell$ and $f$ away from  $M_0, M_1$ such that $f$ has no critical points.
 \end{theorem}
+\sidenotetext[][-3cm]{\fullcite{hcobord}}
+
+Below, we have illustrated the alteration of the pseudo-gradient $X$:
+\begin{figure}[H]
+    \centering
+    \sidecaption{The pseudo-gradient before and after the alteration.
+        Initially, $X$ vanishes twice (once at  $p$ and once at $q$).
+        After the alteration, $X'$ does vanishes nowhere.
+    \label{fig:alteration-of-pseudogradient-vector-field}}
+    \incfig{alteration-of-pseudogradient-vector-field}
+\end{figure}
+
+Before proving this theorem, let us give an example showing the importance of the conditions in the theorem.
 \begin{marginfigure}
     \centering
     \incfig{other-sphere-cancelation-of-critical-points}
@@ -426,19 +434,24 @@ There is also a nice proof by Laudenbach reducing the general case to dimension 
     \label{fig:other-sphere-cancelation-of-critical-points}
 \end{marginfigure}
 \begin{eg}
-    As an example, let us consider the `other sphere' as in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}.
-   We also added flow lines between critical points whose index differs by exactly one.
-   It is clear that the pairs $(c,b)$ and $(d, b)$ satisfy the conditions of the theorem, and so we can cancel them.
-   The pair $(b,a)$ does not, because there are two flow lines from $b$ to $a$.
+    Consider the `other sphere' as in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}, where we have also drawn trajectories between critical points of consecutive index. 
+
+    For the pair $(d, b)$, let $N = f^{-1}([f(b) - \epsilon, f(d) + \epsilon])$ be a cobordism containing only $b$ and $d$ as critical points.
+    There is a unique flow line connected $d$ to $b$, and the theorem allows us to cancel these two critical points.
+
+    At first glance, the theorem does not allow us to cancel $c$ and  $b$: while there is a unique trajectory connecting $c$ to  $b$, we cannot cut out a part of $M$ only containing $c$ and  $b$ as critical points.
+    This however turns out not be a problem, because we can lower $c$ and raise $d$ using methods discussed before such that $f(d) > f(c)$. Once that is done, we can consider $N = f^{-1}([f(b) - \epsilon, f(c) + \epsilon])$ and apply the theorem.
+
+    The last pair of critical points of adjacent index  is $(b, a)$.
+    In this case, there are two flow lines connecting  $b$ to $a$ and  we cannot cancel the critical points.
 \end{eg}
 
+
+
 \begin{proof}
-\begin{figure}[H]
-    \centering
-    \incfig{alteration-of-pseudogradient-vector-field}
-    \caption{TODO alteration of pseudogradient vector field}
-    \label{fig:alteration-of-pseudogradient-vector-field}
-\end{figure}
+    We will follow the proof given by Milnor which is based on the original proof by Morse.\sidecite{cairns2015differential,huebsch1964bowl}
+    For a proof focussing more on handles than on critical points, we refer the reader to `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
+    There is also a nice proof by Laudenbach\sidecite{laudenbach2013proof} reducing the general case to dimension one, where the problem is easy to solve, as we have seen in Example~\ref{eg:cube}.
 
 We prove the statement in a local model.
 Let $U_\ell$ be an open neighbourhood of $\ell$. 
@@ -446,104 +459,109 @@ We may assume that there are coordinates such that:
 \begin{itemize}
     \item  The critical points are given by $p = (0, \ldots, 0)$ and $q = (1, 0, \ldots, 0)$
     \item The pseudo-gradient is given by $X = (v(x_1), x_2, \ldots, x_k, -x_{k+1}, \ldots, -x_n)$ where $v(x_1)$ is a smooth function of $x_1$, such that  $v$ is positive on  $(0, 1)$, vanishes at $0$ and $1$ and is negative elsewhere.
-        Moreover, we assume that  $v'(x_1) = 1$ near $0$ and $1$
+        Moreover, we assume that  $v'(x_1) = 1$ near $0$ and $1$.
 \end{itemize}
-We have illustrated these properties in Figure~\ref{fig:local-model}.
+We have illustrated these properties in Figure~\ref{fig:local-model} and formal proof of this fact can be found in the notes by Milnor.
 \begin{marginfigure}
     \centering
     \incfig{local-model}
-    \caption{TODO local model}
+    \caption{Model of the pseudo-gradient vector field $X$. In local coordinates it is given by $X = (v(x_1), x_2, \ldots, x_k, -x_{k+1}, \ldots, -x_n)$, where $v$ is as illustrated above.
+    }
     \label{fig:local-model}
 \end{marginfigure}
 
 \renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
 
-\paragraph{Assertion 1}
+\paragraph{Assertion 1.}
 Given an open neighbourhood $U$ of  $ \ell$, we can find a smaller neighbourhood $U'$ such that no trajectory exiting $U'$ enters $U'$ again.
+
+Note that this can be false when there are multiple trajectories connecting $p$ to $q$, as is the case with $p = b, q = a$ in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}.
 \begin{proof}
     Suppose this was not the case.
     Then there would exists a sequence of trajectories $\ell_k$ that pass through points $r_k, s_k, t_k$ with $s_k \not\in U$ and $r_k$ and $t_k$ approaching $\ell$.
     We may assume that $s_k \to s$ because $M \setminus U$ is compact.
-    The trajectory through $s_k$, call it $ \ell_s$ comes from  $ M_0$ or reaches $ M_1$ (or both), as it would otherwise be a trajectory connecting $p$ and $q$ not equal to $\ell$.
+    The trajectory through $s$, call it $ \ell_\infty$ comes from  $ M_0$ or reaches $ M_1$ (or both), as it would otherwise be a trajectory connecting $p$ and $q$ not equal to $\ell$.
     Suppose without loss of generality that it comes from $M_1$.
     Then the tail of the sequence of trajectories $\ell_{k}$ passing through points $s_k$ near $s$ also originate in $M_1$.
-    This that the minimal distance between $\ell_{k}$ and $\ell$ is bounded from below by a positive number for all $k > m $ and $m$ big enough.
+    This means that the minimal distance between points on $\ell_{k}$ and points on $\ell$ is bounded from below by a positive number for $k$ big enough.
     Now, because $r_k \in \ell_k$, the points $r_k$ cannot approach  $\ell$. This is a contradiction.
 \end{proof}
 
 Let $U$ and $U'$ be neighbourhoods of $\ell$ such that $\ell \subset U' \subset U \subset \overline{U} \subset U_\ell$ such that $U'$ satisfies the conditions of the previous assertion.
 
-\paragraph{Assertion 2}
-We can alter $X$ on a compact subset of $U'$ such a way that point in $U$ will exit $U$ when flowing both backwards and forwards in time.
+\paragraph{Assertion 2.}
+We can alter $X$ on a compact subset of $U'$ in such a way that any point in $U$ will exit $U$ when flowing both backwards and forwards in time.
 In other words, any trajectory that contains a point in $U$ has entered $U$  and will exit $U$.
 
 \begin{proof}
     \begin{marginfigure}
         \centering
         \incfig{alteration-of-vector-field}
-        \caption{TODO alteration of vector field}
+        \caption{Alteration of the pseudo-gradient. In particular, notice that the alteration vanishes nowhere.}
         \label{fig:alteration-of-vector-field}
     \end{marginfigure}
     Replace $X$ by  $(w(x_1, \rho), x_2, \ldots, -x_n)$.
-    Here, $\rho = \sqrt{x_2^2 + \cdots + x_n^2}$ is the norm of the coordinates normal to $\ell$ and $w(x_1, \rho)$ satisfies the following properties:
+    Here, $\rho = \sqrt{x_2^2 + \cdots + x_n^2}$ is the norm of the coordinates normal to $\ell$ and $w(x_1, \rho)$ satisfies the following properties, also illustrated in Figure~\ref{fig:alteration-of-vector-field}.
     \begin{itemize}
-        \item It is equal to $v(x_1)$ outside a compact neighbourhood of  $ \ell$ in $U'$.
-        \item $w(x_1, 0)$ is everywhere negative.
+        \item The vector field $w(x_1, \rho(x))$ is equal to $v(x_1)$ outside a compact neighbourhood of  $ \ell$ in $U'$.
+        \item For $\rho = 0$, the vector field $w(x_1, 0)$ is everywhere negative.
     \end{itemize}
-    To prove the claim, let $x^0 = (x_1^{0}, \ldots, x_n^{0}) \in U$ and the initial condition of a trajectory $x(t)$.
+    To prove the claim, let $x^0 = (x_1^{0}, \ldots, x_n^{0}) \in U$ and let $x(t)$ the unique trajectory such that  $x(0) = x^{0}$.
     \begin{enumerate}[(a)]
         \item If one of $x_{k+2}^{0}, \ldots, x_n^{0}$ is non-zero, say $x_m$. Then $|x_m(t)|$ increases exponentially, so the trajectory leaves $U$.
         \item If all of $x_{k+2}^{0}, \ldots, x_n^{0}$ are zero, then $\rho$ decreases exponentially, so it gets closer to the $x_1$-axis.
-            Since $w(x_1, \rho(x))$ is strictly negative on the $ x_1$-axis is also negative on a compact set $K = \{ x \in U  \mid  \rho(x) \le  \delta\} $ for some small $\delta$.
+            Since $w(x_1, \rho(x))$ is strictly negative on the $ x_1$-axis, it is also negative on a compact set $K = \{ x \in U  \mid  \rho(x) \le  \delta\} $ for some small $\delta$.
             Therefore, $ w(x_1, \rho(x))$ has a negative upper bound $-\alpha < 0$ on $K$.
             As $\rho$ decreases exponentially, eventually  $x \in K$ and $x_1'(t) < -\alpha$ from then onwards.
             As $U$ is bounded, we conclude that $x$ leaves $U$. \qedhere
     \end{enumerate}
 \end{proof}
-\paragraph{Assertion 3}
+\paragraph{Assertion 3.}
 Every trajectory of $X'$ goes from $M_0$ to $M_1$.
 \begin{proof}
-    Integral curves that do not enter $U$ follow $X$ and hence always go from  $M_0$ to $M_1$.
+    Integral curves that do not enter $U$ follow $X$ and hence always go from  $M_1$ to $M_0$.
     Any integral curve through a point in $U$ eventually exits $U$ by Assertion 2. Moreover, it cannot re-enter $U$ by Assertion $1$, and hence once exited, it follows $X$.
 \end{proof}
 
-\paragraph{Assertion 4}
+\paragraph{Assertion 4.}
 The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M$ that maps $0 \times M_0$ to $M_0$ and $1 \times M_0$ to $ M_1$.
 \begin{proof}
     \begin{marginfigure}
         \centering
         \incfig{assertion-4}
-        \caption{TODO assertion 4}
+        \caption{The nowhere vanishing vector field $X'$ determines a diffeomorphism between  $[0,1] \times M_0$ and the manifold $M$.}
         \label{fig:assertion-4}
     \end{marginfigure}
-    We want to normalize $X'$ such that flowing along for time $1$, it it sends a point in  $M_0$ to a point in $M_1$.
+    We will reverse $X'$ and normalize it such that flowing along it for time $1$, it it sends a point in  $M_0$ to a point in $M_1$.
     Let $\tau_0(q)$ be the time needed to flow $q$ back to $M_0$ along $-X'$ and similarly define $\tau_1(q)$. The maps $\tau_0$ and $\tau_1$ depend smoothly on $q$.
     Let $\pi_0$ be the projection  $M \to M_0$ by flowing along $-X'$ and similarly define $\pi_1$.
     Then the vector field $Y(q) = -\tau_1(\pi_0(q)) X'(q)$ has flow lines that go from $ M_0$ to $M_1$ in unit time.
     This defines a diffeomorphism in the following way:
     \begin{align*}
         \phi: [0, 1] \times M_0 &\longrightarrow M \\
-        (t, q) &\longmapsto \psi^{t}_Y q
+        (t, q) &\longmapsto \psi^{t}_Y (q)
     ,\end{align*}
     where $\psi^{t}_Y$ is the flow of $Y$.
-    The inverse of $\psi$ is $q \mapsto (\tau_0(q), \pi_0(q))$.
+    The inverse of $\phi$ is $q \mapsto (\tau_0(q), \pi_0(q))$.
 \end{proof}
 
-\paragraph{Assertion 5}
+\paragraph{Assertion 5.}
 The vector field $X'$ is a pseudo-gradient vector field for some morse function  $g$ on $M$ that agrees with $f$ near  $M_0$ and $M_1$.
 Moreover, $g$ has no critical points.
 \begin{proof}
     By using the previous assertion,
     it suffices to define a Morse function $g$ on $[0, 1] \times M_0$ such that $\frac{\partial g}{\partial t} > 0$ and $g$ corresponds to  $ f_1 = f  \circ  \phi$ around $0 \times M_1$ and $1 \times M$.
-    To make sure that $\frac{\partial g}{\partial t} > 0$ we will define $g$ as the integral of a positive function,
+    To make sure that $\frac{\partial g}{\partial t} > 0$, we will define $g$ as the integral of a positive function,
     and to make sure it corresponds to $f_1$ around the boundary of $[0,1] \times M_0$, we will define $g$ in the following way:
      \[
          g(u, q) = \int_0^{u} \lambda(t) \frac{\partial f_1}{\partial t} + (1-\lambda(t))\: k(q) \: dt
-    ,\] 
-    where $\lambda: [0,1] \to  [0,1]$ is a bump function supported in the interior of $[0, \delta) \cup (1-\delta, 1]$, with $\delta$ small enough such that $\frac{\partial f_1}{\partial t}\big|_{[0, \delta) \cup (1-\delta, 1]} < 0$ and $k: M_0 \to [0,1]$ is some yet unknown function, as illustrated below.
+    .\] 
+    Here, $\lambda: [0,1] \to  [0,1]$ is a bump function supported in the interior of $[0, \delta) \cup (1-\delta, 1]$, with $\delta$ small enough such that $\frac{\partial f_1}{\partial t}<0$ in $[0, \delta) \cup (1-\delta, 1]$ and $k: M_0 \to [0,1]$ is some yet unknown function that only depends on $q$.
+    We have illustrated the situation below.
     \begin{figure}[H]
         \centering
-        \sidecaption{TODO assertion 5
+        \sidecaption{Construction of a Morse function that is adapted to $X'$ and equals $f$ in a neighbourhood of the boundary of $[0,1] \times M_0$.
+            Here $\phi$ is the diffeomorphism obtained in Assertion 4.
         \label{fig:assertion-5}
         }
         \incfig{assertion-5}
@@ -552,12 +570,12 @@ Moreover, $g$ has no critical points.
     The idea is to integrate the derivative of the original Morse function near the bottom and the top, and in the middle we will integrate an appropriately large function $k(q)$ such that  $g(1, q) = 1$ for all $q$, i.e. the speed is adjusted so that at $t=1$, we reach the top of $[0,1] \times M_0$.
     Expanding this condition and solving for $k(q)$, we get
      \begin{align*}
-         g(u, q) = \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}  + \int_{0}^{1}  (1-\lambda(t)) k(q) dt &= 1\\
+         g(1, q) = \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}  + \int_{0}^{1}  (1-\lambda(t)) k(q) dt &= 1\\
           \int_{0}^{1}  (1-\lambda(t))  dt \  k(q)&= 1 - \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}\\
           k(q)&= \frac{1 - \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}}{\int_{0}^{1}  (1-\lambda(t))  dt}
     .\end{align*} 
 
-    Taking $\delta$ small enough ensures that  $k(q) > 0$, concluding the proof.
+    Taking $\delta$ small enough ensures that  $k(q) > 0$, hence $\frac{\partial g}{\partial t}>0$, concluding the proof of the last assertion.
 \end{proof}
 
 This finishes the proof of the first cancellation theorem.

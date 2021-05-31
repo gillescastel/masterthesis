@@ -82,7 +82,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -93,7 +93,7 @@
      transform="translate(14.789662,-191.86606)">
     <g
        style="opacity:0.74500002;stroke-width:1.09179938"
-       transform="matrix(1.4618242,0,0,1.4616975,-119.08928,-118.01062)"
+       transform="matrix(1.4618242,0,0,1.4616975,-119.08928,-118.95136)"
        id="g1365">
       <path
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:#000000;stroke-width:0.1533332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
@@ -128,7 +128,7 @@
     </g>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.42132249;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="m 28.964212,207.15206 c -4.691076,0.69014 -4.455902,9.01347 -8.849813,9.6488 -4.455957,0.64429 -3.9003,-18.44276 -9.661772,-19.5136"
+       d="m 28.964212,206.21132 c -4.691076,0.69014 -4.455902,9.01347 -8.849813,9.6488 -4.455957,0.64429 -3.9003,-18.44276 -9.661772,-19.5136"
        id="path1373"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
@@ -136,33 +136,33 @@
        id="path24"
        style="fill:#000000;stroke:none;stroke-width:1"
        cx="9.9379883"
-       cy="197.2386"
+       cy="196.29787"
        r="0.8034156" />
     <circle
        id="circle28"
        style="fill:#000000;stroke:none;stroke-width:1"
        cx="28.964212"
-       cy="207.15205"
+       cy="206.21132"
        r="0.8034156" />
     <text
        id="text1867"
        xml:space="preserve"
        style="font-size:2.35550022px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
-       y="195.64929"
+       y="194.70856"
        x="11.047006"><tspan
          id="tspan1865"
          sodipodi:role="line"
          x="11.047006"
-         y="195.64929"
+         y="194.70856"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none">$c$</tspan></text>
     <text
        x="30.200985"
-       y="205.34099"
+       y="204.40025"
        style="font-size:2.35550022px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
        xml:space="preserve"
        id="text1871"><tspan
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
-         y="205.34099"
+         y="204.40025"
          x="30.200985"
          sodipodi:role="line"
          id="tspan1869">$d$</tspan></text>
@@ -170,29 +170,29 @@
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#f9a30d;stroke-width:0.42132249;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
        id="path923"
        cx="20.114399"
-       cy="231.59868"
+       cy="230.65794"
        rx="5.6978354"
        ry="14.79783" />
     <circle
        r="0.8034156"
-       cy="216.80086"
+       cy="215.86012"
        cx="20.114399"
        style="fill:#000000;stroke:none;stroke-width:1"
        id="circle26" />
     <text
-       x="22.40202"
-       y="219.73102"
+       x="18.942976"
+       y="213.33563"
        style="font-size:2.35550022px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
        xml:space="preserve"
        id="text1863"><tspan
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
-         y="219.73102"
-         x="22.40202"
+         y="213.33563"
+         x="18.942976"
          sodipodi:role="line"
          id="tspan1861">$b$</tspan></text>
     <circle
        r="0.8034156"
-       cy="246.39651"
+       cy="245.45578"
        cx="20.114399"
        style="fill:#000000;stroke:none;stroke-width:1"
        id="circle30" />
@@ -200,12 +200,12 @@
        id="text1833"
        xml:space="preserve"
        style="font-size:2.35550022px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none"
-       y="251.11595"
+       y="249.04634"
        x="22.311493"><tspan
          id="tspan1831"
          sodipodi:role="line"
          x="22.311493"
-         y="251.11595"
+         y="249.04634"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1;marker-start:none;marker-end:none">$a$</tspan></text>
   </g>
 </svg>
