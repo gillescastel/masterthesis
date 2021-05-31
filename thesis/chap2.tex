@@ -327,8 +327,82 @@ Morse functions as described in the second part of the theorem have a name:
     Then the height function is a self-indexing Morse function.
 \end{eg}
 
+\section{Heegaard splittings}
+\begin{marginfigure}
+    \centering
+    \incfig{heegaard-splittings-schemattically}
+    \caption{Schematic visualization of a self-indexing Morse function on a $3$-manifold $M$.
+        The manifold $S = f^{-1}(\frac{3}{2})$ is called the splitting surface of $M$.
+    }
+    \label{fig:heegaard-splittings-schemattically}
+\end{marginfigure}
+In the three dimensional setting, the existence of self-indexing Morse functions give rise so-called Heegaard splittings.
+Heegaard splittings form an essential tool for a low-dimensional topologist (studying manifolds of dimension $\le 4$) and give a way to understand $3$-manifolds.
+As Heegaard splittings will not play an important role in the upcoming chapters, we will only discuss them briefly.
 
-% \section{Smale condition is generic (proof)}
+
+
+A self-indexing Morse function gives rise to a handle decomposition schematically shown in Figure~\ref{fig:heegaard-splittings-schemattically}. When splitting the manifold along $f^{-1}(\frac{3}{2})$, we decompose $M$ in two parts: a part that consists of $0$- and $1$-handles and a part consisting only of $2$- and  $3$-handles.
+To build $M$ we glue these two parts along their boundary.
+The part consisting of $2$- and $3$-handles can also be seen as being constructed of $0$- and $1$-handles, simply by building $M$ from top to bottom by considering the Morse function $-f$ instead of $f$. This then interchanges $k$- and $n-k$-handles, which in the three-dimensional case results in $2 \leftrightarrow 1$ and  $3 \leftrightarrow 0$.
+All things considered, we have a decomposition of $M$ in two so-called handlebodies:
+\begin{definition}[Genus $k$ handlebody\sidenotemark]
+    A genus $k$ handlebody is a compact connected orientable $3$-manifold with boundary that possesses a handle decomposition consisting of $0$-handles and $1$-handles such that its boundary is a surface of genus $k$.
+\end{definition}
+A Heegaard splitting is then defined as follows.
+\begin{definition}[Heegaard splitting\sidenotemark]
+    A \emph{Heegaard splitting} of a closed $3$-manifold $M$ is a decomposition $M = V \cup _S W$ such that $V$ and $W$ are genus $k$ handlebodies and  $S = \partial V = \partial W$. Here  $S$ is called the \emph{splitting surface of $M$}.
+    Two Heegaard splittings are considered \emph{equivalent} if their splitting surfaces are isotopic. The \emph{genus} of a Heegaard splitting is the genus of $S$.
+\end{definition}
+\sidenotetext[][-5cm]{\fullcite{schultens2014introduction}}
+
+With these definitions, we can summarize our findings as follows:
+\begin{theorem}
+    Every closed orientable $3$-manifold admits a Heegaard splitting.
+\end{theorem}
+\begin{proof}
+    Let $f$ be a self-indexing Morse function on $M$.
+    Then $M = f^{-1}\left[0, \tfrac{3}{2}\right] \cup f^{-1}\left[\tfrac{3}{2}, 3\right]$ is a Heegaard splitting of $M$ by duality of $k$- and $n-k$-handles.
+\end{proof}
+
+Let us give some examples.
+\begin{marginfigure}
+    \centering
+    \incfig{genus-four-heegaard-splitting-of-s3}
+    \caption{A genus four Heegaard splitting of $S^{3}$, seen as the one point compactification of $\R^3$.
+        This way, we can obtain a Heegaard splitting of $S^{3}$ of any genus.
+    }
+    \label{fig:genus-four-heegaard-splitting-of-s3}
+\end{marginfigure}
+\begin{eg}
+    As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \cdisk{2} \cup \cdisk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
+\end{eg}
+\begin{eg}
+    The previous example is not the only way to decompose $S^{3}$.
+    Indeed, we can arbitrarily add cancelable $1$- and $2$-handles (as in Example~\ref{eg:cancel-three}) to increase the genus. 
+    For example a genus four Heegaard splitting of $S^{3}$ is illustrated in Figure~\ref{fig:genus-four-heegaard-splitting-of-s3}.
+    Here, we visualized $S^{3}$ as the one point compactification of $\R^3$.
+    \label{eg:s3-heegaard-four-genus}
+\end{eg}
+
+\begin{eg}
+    If we split the handle decomposition of $T^{3}$ given in Example~\ref{eg:handle-decomposition-three-torus} between index $1$ and $2$ critical points, then we find a splitting surface that has genus three, as illustrated in Figure~\ref{fig:three-torus-handle-decomposition}
+\end{eg}
+
+% \subsection{Stabilization and destabilization}
+\begin{marginfigure}
+    \centering
+    \incfig{stabilization}
+    \caption{
+        The act of stabilization is replacing a ball near the boundary as illustrated, increasing the genus of the splitting surface by one.}
+    \label{fig:stabilization}
+\end{marginfigure}
+\begin{remark}
+    The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
+    It can be done in as in Figure~\ref{fig:stabilization}.
+    The reverse procedure, called destabilization cannot be done in general.
+\end{remark}
+
 \section{Cancellation of critical points}
 
 Let us now answer the second question that came up when discussing examples: `When can we cancel a pair of critical points?'
@@ -345,13 +419,6 @@ There is also a nice proof by Laudenbach reducing the general case to dimension 
     If $|\L p q| = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
     More specifically, we can alter $X$ around  $\ell$ and $f$ away from  $M_0, M_1$ such that $f$ has no critical points.
 \end{theorem}
-
-\begin{marginfigure}
-    \centering
-    \incfig{canellation-of-critical-points-situation}
-    \caption{A situation where we can cancel two critical points: there is a unique trajectory $\ell$ between $p$ and $q$.}
-    \label{fig:canellation-of-critical-points-situation}
-\end{marginfigure}
 \begin{marginfigure}
     \centering
     \incfig{other-sphere-cancelation-of-critical-points}
@@ -404,8 +471,10 @@ Given an open neighbourhood $U$ of  $ \ell$, we can find a smaller neighbourhood
     Now, because $r_k \in \ell_k$, the points $r_k$ cannot approach  $\ell$. This is a contradiction.
 \end{proof}
 
+Let $U$ and $U'$ be neighbourhoods of $\ell$ such that $\ell \subset U' \subset U \subset \overline{U} \subset U_\ell$ such that $U'$ satisfies the conditions of the previous assertion.
+
 \paragraph{Assertion 2}
-We can alter $X$ such a way that point in $U$ will exit $U$ when flowing both backwards and forwards in time.
+We can alter $X$ on a compact subset of $U'$ such a way that point in $U$ will exit $U$ when flowing both backwards and forwards in time.
 In other words, any trajectory that contains a point in $U$ has entered $U$  and will exit $U$.
 
 \begin{proof}
@@ -457,7 +526,7 @@ The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M
         (t, q) &\longmapsto \psi^{t}_Y q
     ,\end{align*}
     where $\psi^{t}_Y$ is the flow of $Y$.
-    The inverse of $\psi$ is given by  $q \mapsto (\tau_0(q), \pi_0(q))$.
+    The inverse of $\psi$ is $q \mapsto (\tau_0(q), \pi_0(q))$.
 \end{proof}
 
 \paragraph{Assertion 5}
@@ -492,86 +561,6 @@ Moreover, $g$ has no critical points.
 \end{proof}
 
 This finishes the proof of the first cancellation theorem.
-
 \renewcommand{\qedsymbol}{\ensuremath{\square}}
-    
 \end{proof}
-
-\filbreak
-
-\section{Heegaard splittings}
-\begin{marginfigure}
-    \centering
-    \incfig{heegaard-splittings-schemattically}
-    \caption{Schematic visualization of a self-indexing Morse function on a $3$-manifold $M$.
-        The manifold $S = f^{-1}(\frac{3}{2})$ is called the splitting surface of $M$.
-    }
-    \label{fig:heegaard-splittings-schemattically}
-\end{marginfigure}
-In the three dimensional setting, an important consequence of the existence of self-indexing Morse functions are so-called Heegaard splittings.
-Such a Morse function gives rise to a handle decomposition schematically shown in Figure~\ref{fig:heegaard-splittings-schemattically}. When splitting the manifold along $f^{-1}(\frac{3}{2})$, we decompose $M$ in two parts: a part that consists of $0$- and $1$-handles glued along its boundary to a part consisting only of $2$- and  $3$-handles.
-However the latter can also be seen as being constructed of $0$- and $1$-handles, simply by building $M$ from top to bottom by considering the Morse function $-f$ instead of $f$. This then interchanges $k$- and $n-k$-handles, or in the case of $n=3$, $2$-handles  become $1$-handles and $3$-handles become $0$-handles.
-All things considered, we have a decomposition of $M$ in two so-called handlebodies:
-\begin{definition}[Genus $k$ handlebody\sidenotemark]
-    A genus $k$ handlebody is a compact connected orientable $3$-manifold with boundary that possesses a handle decomposition consisting of $0$-handles and $1$-handles such that its boundary is a surface of genus $k$.
-\end{definition}
-A Heegaard splitting is then defined in the following way:
-\begin{definition}[Heegaard splitting\sidenotemark]
-    A \emph{Heegaard splitting} of a closed $3$-manifold $M$ is a decomposition $M = V \cup _S W$ such that $V$ and $W$ are handlebodies and  $S = \partial V = \partial W$. Here  $S$ is called the \emph{splitting surface of $M$}.
-    Two Heegaard splittings are considered \emph{equivalent} if their splitting surfaces are isotopic. The \emph{genus} of a Heegaard splitting is the genus of $S$.
-\end{definition}
-\sidenotetext[][-5cm]{\fullcite{schultens2014introduction}}
-
-With these definitions, we can summarize our findings as follows:
-\begin{theorem}[Moise]
-    Every closed orientable $3$-manifold admits a Heegaard splitting.
-\end{theorem}
-\begin{proof}
-    Let $f$ be a self-indexing Morse function on $M$.
-    Then $M = f^{-1}\left[0, \tfrac{3}{2}\right] \cup f^{-1}\left[\tfrac{3}{2}, 3\right]$ is a Heegaard splitting of $M$ by duality of $k$- and $n-k$-handles.
-\end{proof}
-
-Let us start off with some examples.
-\begin{marginfigure}
-    \centering
-    \incfig{genus-four-heegaard-splitting-of-s3}
-    \caption{A genus four Heegaard splitting of $S^{3}$, seen as the one point compactification of $\R^3$.
-        This way, we can obtain a Heegaard splitting of $S^{3}$ of any genus.
-    }
-    \label{fig:genus-four-heegaard-splitting-of-s3}
-\end{marginfigure}
-\begin{eg}
-    As seen earlier, the `height' function on $S^{3}$ gives rise to a handle decomposition $S^{3} = \cdisk{2} \cup \cdisk{2}$. This is a Heegaard splitting of genus $0$ with splitting surface $S^{2}$.
-\end{eg}
-\begin{eg}
-    The previous example is not the only way to decompose $S^{3}$.
-    Indeed, we can arbitrarily add cancelable $1$- and $2$-handles to increase the genus. 
-    For example a genus four Heegaard splitting of $S^{3}$ is illustrated in Figure~\ref{fig:genus-four-heegaard-splitting-of-s3}.
-    Here, we visualized $S^{3}$ as the one point compactification of $\R^3$.
-    \label{eg:s3-heegaard-four-genus}
-\end{eg}
-
-\begin{eg}
-    If we split the handle decomposition of $T^{3}$ given in Example~\ref{eg:handle-decomposition-three-torus} between index $1$ and $2$ critical points, then we find a splitting surface that has genus three.
-\end{eg}
-
-% \subsection{Stabilization and destabilization}
-\begin{marginfigure}
-    \centering
-    \incfig{stabilization}
-    \caption{
-        The act of stabilization is replacing a ball near the boundary as illustrated, increasing the genus of the splitting surface by one.}
-    \label{fig:stabilization}
-\end{marginfigure}
-\begin{remark}
-    The act of increasing the genus, as done in Example~\ref{eg:s3-heegaard-four-genus} is called stabilization.
-    It can be done in as in Figure~\ref{fig:stabilization}.
-    The reverse procedure, called destabilization cannot be done in general.
-\end{remark}
-
-% \begin{definition}
-%     The Heegaard genus of a 3-manifold $M$ is the smallest possible genus of a Heegaard splitting.
-%     We then say the Heegaard slitting is \emph{minimal}.
-% \end{definition}
-
 

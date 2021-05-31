@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{127.38957803bp}%
+    \setlength{\unitlength}{137.87539024bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,19 +50,20 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.72350731)%
+  \begin{picture}(1,0.69416973)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{heegaard-splittings-schemattically.pdf}}%
-    \put(0.77540894,0.10357087){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.77540894,0.26929738){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
-    \put(0.77540894,0.43539194){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2$\end{tabular}}}}%
-    \put(0.77540894,0.60349146){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3$\end{tabular}}}}%
+    \put(0.8441346,0.08824185){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
+    \put(0.8441346,0.25220317){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
+    \put(0.8441346,0.41652839){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2$\end{tabular}}}}%
+    \put(0.8441346,0.58283721){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{heegaard-splittings-schemattically.pdf}}%
-    \put(0.778505,0.35298367){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tfrac{3}{2}$\end{tabular}}}}%
+    \put(0.84719769,0.33499791){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tfrac{3}{2}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{heegaard-splittings-schemattically.pdf}}%
-    \put(0.6246629,0.51200944){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
-    \put(0.10477797,0.63970188){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
-    \put(0.04746764,0.34375374){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S$\end{tabular}}}}%
+    \put(0.69499433,0.49232984){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0.180647,0.61866195){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M$\end{tabular}}}}%
+    \put(0.12394703,0.32586604){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{heegaard-splittings-schemattically.pdf}}%
   \end{picture}%
 \endgroup%

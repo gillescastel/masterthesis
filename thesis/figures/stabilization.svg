@@ -151,7 +151,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -217,13 +217,7 @@
          inkscape:connector-curvature="0"
          id="path874"
          d="m 18.310464,205.52208 c 5.456777,-2.40188 3.916102,-7.04415 10.658506,-8.76722"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.28088167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
-      <circle
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-         id="circle900"
-         cx="23.330254"
-         cy="200.73973"
-         r="6.9144101" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
     </g>
     <g
        id="g1047"
@@ -271,38 +265,32 @@
          d="m 41.004524,201.91438 a 6.9144101,2.2580042 0 0 1 6.91441,-2.258 6.9144101,2.2580042 0 0 1 6.91441,2.258"
          sodipodi:open="true" />
       <path
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.28088167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
          d="m 42.899146,206.69673 c 5.45677,-2.40188 3.9161,-7.04415 10.6585,-8.76722"
          id="path956"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cc" />
-      <circle
-         r="6.9144101"
-         cy="201.91438"
-         cx="47.918934"
-         id="circle958"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          sodipodi:nodetypes="csc"
          inkscape:connector-curvature="0"
          id="path960"
          d="m 49.074656,199.07642 c -0.67839,1.16164 2.70967,1.65324 1.98692,3.68484 -0.94457,2.65514 -4.16386,-1.24527 -4.98678,0.25345"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:#000000;stroke-width:0.28088164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:#000000;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          inkscape:connector-curvature="0"
          id="path966"
          d="m 48.675916,201.59422 0.40981,0.7113 0.74923,0.0783 -0.2327,-0.56771 z"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#eee5d4;fill-opacity:1;stroke:none;stroke-width:0.28088164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#eee5d4;fill-opacity:1;stroke:none;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          inkscape:connector-curvature="0"
          id="path962"
          d="m 48.617346,201.39406 c 0,0 0.10671,1.30871 1.50921,1.03576"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.28088164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          inkscape:connector-curvature="0"
          id="path964"
          d="m 48.675916,201.59422 c 0,0 0.89606,-0.25345 1.15904,0.7896"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.28088164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.181;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
     </g>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)"
