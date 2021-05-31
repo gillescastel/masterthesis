@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'self-indexing-morse-function-torus-tilted.pdf' (pdf, eps, ps)
+%% Accompanies image file 'local-model.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{136.13206758bp}%
+    \setlength{\unitlength}{168.5463204bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,19 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.68367693)%
+  \begin{picture}(1,0.98723558)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.89201127,0.11282119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.89201127,0.32318714){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
-    \put(0.89201127,0.53402015){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.71590553,0.46717259){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$f$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{self-indexing-morse-function-torus-tilted.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{local-model.pdf}}%
+    \put(0.19259509,0.03606783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{local-model.pdf}}%
+    \put(0.63258643,0.04496751){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{local-model.pdf}}%
+    \put(0.91053894,0.09153534){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1$\end{tabular}}}}%
+    \put(0.43277096,0.25357695){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$v(x_1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{local-model.pdf}}%
+    \put(0.91682634,0.65851403){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{local-model.pdf}}%
+    \put(0.2176184,0.96021705){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_2, \ldots x_n$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

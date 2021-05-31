@@ -63,7 +63,6 @@
     \put(0,0){\includegraphics[width=\unitlength,page=4]{canellation-of-critical-points-situation.pdf}}%
     \put(0.86833922,0.75278368){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p)$\end{tabular}}}}%
     \put(0.86833922,0.41797842){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(q)$\end{tabular}}}}%
-    \put(0.86833922,0.34533646){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(q)-\epsilon$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{canellation-of-critical-points-situation.pdf}}%
   \end{picture}%
 \endgroup%

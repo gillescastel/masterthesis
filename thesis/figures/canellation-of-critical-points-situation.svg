@@ -91,7 +91,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -188,12 +188,6 @@
          y="221.22517"
          style="stroke-width:0.26458332">$\ell$</tspan></text>
     <path
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.28088167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.28088167,0.70220417;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="m 21.827831,211.99573 c -4.333049,4.44845 -5.829751,20.01415 -4.76543,27.99656"
-       id="path906"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)"
        d="m 55.610788,232.20944 c -0.02264,0.0906 2.434306,-0.62397 5.122048,0"
        id="path942"
@@ -237,41 +231,6 @@
          x="66.786362"
          sodipodi:role="line"
          id="tspan1024">$f(q)$</tspan></text>
-    <text
-       id="text1032"
-       xml:space="preserve"
-       style="font-size:2.64583325px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       y="240.08989"
-       x="66.786362"><tspan
-         id="tspan1030"
-         sodipodi:role="line"
-         x="66.786362"
-         y="240.08989"
-         style="stroke-width:0.26458332">$f(q)-\epsilon$</tspan></text>
-    <path
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05330625, 1.05330625;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       id="path1034"
-       sodipodi:type="arc"
-       sodipodi:cx="32.632618"
-       sodipodi:cy="238.24338"
-       sodipodi:rx="20.989418"
-       sodipodi:ry="2.6286039"
-       sodipodi:start="3.1415927"
-       sodipodi:end="0"
-       d="m 11.6432,238.24338 a 20.989418,2.6286039 0 0 1 20.989418,-2.62861 20.989418,2.6286039 0 0 1 20.989418,2.62861"
-       sodipodi:open="true" />
-    <path
-       d="m 53.622036,238.24338 a 20.989418,2.6286039 0 0 1 -10.494709,2.27644 20.989418,2.6286039 0 0 1 -20.989419,0 20.989418,2.6286039 0 0 1 -10.494708,-2.27644"
-       sodipodi:end="3.1415927"
-       sodipodi:start="0"
-       sodipodi:ry="2.6286039"
-       sodipodi:rx="20.989418"
-       sodipodi:cy="238.24338"
-       sodipodi:cx="32.632618"
-       sodipodi:type="arc"
-       id="path1050"
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       sodipodi:open="true" />
     <circle
        id="circle832"
        style="fill:#000000;stroke:none;stroke-width:1"
@@ -294,10 +253,5 @@
        id="path860"
        d="m 64.284222,233.69235 h 1.810917"
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
-    <path
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="m 64.284222,238.45485 h 1.810917"
-       id="path862"
-       inkscape:connector-curvature="0" />
   </g>
 </svg>

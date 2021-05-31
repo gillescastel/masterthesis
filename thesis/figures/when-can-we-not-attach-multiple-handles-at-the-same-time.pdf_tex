@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'self-indexing-morse-function-torus-tilted.pdf' (pdf, eps, ps)
+%% Accompanies image file 'when-can-we-not-attach-multiple-handles-at-the-same-time.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{136.13206758bp}%
+    \setlength{\unitlength}{190.57347576bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,17 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.68367693)%
+  \begin{picture}(1,0.83603887)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.89201127,0.11282119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.89201127,0.32318714){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
-    \put(0.89201127,0.53402015){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.71590553,0.46717259){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$f$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{self-indexing-morse-function-torus-tilted.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{when-can-we-not-attach-multiple-handles-at-the-same-time.pdf}}%
+    \put(0.87623281,0.48339022){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{when-can-we-not-attach-multiple-handles-at-the-same-time.pdf}}%
+    \put(0.30988509,0.79437814){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{when-can-we-not-attach-multiple-handles-at-the-same-time.pdf}}%
+    \put(0.53525255,0.46899119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{when-can-we-not-attach-multiple-handles-at-the-same-time.pdf}}%
+    \put(0.20336081,0.33441896){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\unstable q$\end{tabular}}}}%
+    \put(0.44762254,0.58349051){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\stable p$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

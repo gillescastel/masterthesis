@@ -5,12 +5,13 @@
 % \printcontents[chapters]{}{1}{}
 
 
-In this chapter, we address two natural questions that came up when discussing examples of handle decompositions: `When can we reorder handles in a handle decomposition?' and `Under what conditions can we cancel two critical points via an isotopy?'
+In this chapter, we address two natural questions that came up when discussing examples of handle decompositions: `When can we reorder handles in a handle decomposition?' and `Under what conditions can we cancel two critical points?'
 To answer these questions, we introduce the concept of stable and unstable manifolds.
 While we previously viewed handles as a local phenomenon, these new concepts will allow us to understand how multiple handles can interact on a more global scale.
+Moreover, stable and unstable manifolds will give rise to trajectory spaces between critical points which will play a key role in the upcoming chapters.
 
 \section{Definition of stable and unstable manifolds}
-Let us get straight to the point and give the definition of (un)stable manifolds.
+Stable and unstable manifolds associated to a critical point $p$ consist of points that under the flow of the (negative) gradient reach $p$ in the limit.
 \begin{marginfigure}
     \centering
     \incfig{stable-and-unstable-manifolds-are-manifiolds}
@@ -31,7 +32,7 @@ Let us get straight to the point and give the definition of (un)stable manifolds
 \end{definition}
 Just like their names imply, these sets are indeed manifolds.
 Around a critical point $p$, the unstable manifold $\unstable{p}$ is in a Morse chart $U$ given by $x_{k+1} = \cdots = x_n = 0$, so it is diffeomorphic to an open disk $\odisk{k}$.
-The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\odisk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all when gluing this to $\odisk{k}$, we end up with something that is indeed a manifold that is diffeomorphic to $\odisk{k}$.
+The points in $\unstable{p}$ that lie outside $U$ can then be obtained by flowing the boundary of $\odisk{k}$ along the pseudo-gradient, which is diffeomorphic to $\sphere{k-1} \times \R$. All in all when gluing this to $\odisk{k}$, we end up with something that is indeed a manifold diffeomorphic to $\odisk{k}$.
 A similar reasoning for the stable manifold shows that $\stable{p} \cong \odisk{n - k}$.
 In summary, we have obtained the following result:
 
@@ -45,8 +46,8 @@ In summary, we have obtained the following result:
 \begin{eg}
     Let us consider $T^{2}$ embedded in $\R^3$ in the standard way and consider the height function. 
     This function has $4$ critical points and is clearly Morse.
-    Let $X = \grad f$ be the gradient of $f$ w.r.t.\ the standard metric on $\R^{3}$.
-    Then the stable and unstable manifolds of $X$ are illustrated in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
+    Let $X = -\grad f$ be the negative gradient of $f$ w.r.t.\ the standard metric on $\R^{3}$.
+    Then the stable and unstable manifolds of the critical points of $f$ are illustrated in Figure~\ref{fig:torus-height-function-stable-and-unstable-manifolds}.
     \label{eg:torus-stable-unstable-manifolds-standard-gradient}
     We have similarly done so for an embedding of $S^2$ in Figure~\ref{fig:other-sphere-definition-of-mathcal-m}.
 \end{eg}
@@ -66,11 +67,13 @@ In summary, we have obtained the following result:
         \centering
         \incfig{other-sphere-definition-of-mathcal-m}
         \caption{
-            Stable and unstable manifolds of the `other sphere' with standard gradient on $\R^3$.  Note that all of them intersect transversely.
+            Stable and unstable manifolds of the `other sphere'. Note that all of them intersect transversely.
         }
         \label{fig:other-sphere-definition-of-mathcal-m}
     \end{figure}
 
+
+    \section{Intersections of (un)stable manifolds}
 
     \begin{marginfigure}
         \centering
@@ -81,20 +84,29 @@ In summary, we have obtained the following result:
         }
         \label{fig:when-can-we-attach-multiple-handles-at-the-same-time}
     \end{marginfigure}
-    The stable and unstable manifolds give us information about interaction of handles.
+
+\begin{marginfigure}
+    \centering
+    \incfig{when-can-we-not-attach-multiple-handles-at-the-same-time}
+    \caption{The intersection of stable and unstable manifolds is not empty, indicating the dependence of the $2$-handle on the $1$-handle.}
+    \label{fig:when-can-we-not-attach-multiple-handles-at-the-same-time}
+\end{marginfigure}
+    Stable and unstable manifolds give us information about interaction of handles.
     For example, consider the situation in Figure~\ref{fig:when-can-we-attach-multiple-handles-at-the-same-time}.
-    Here, we can flow the two handle structures to the bottom without intersecting, which implies we can attach the two handles at the same time, i.e.\ one is not dependent on the other.
-    Here, `flowing of handle structures' means flowing along unstable manifolds.
-    An obtrusion to attaching two handles at the same time would then be that they intersect before reaching the bottom. We will make this more precise later, but it gives an idea as for why we might be interested in intersections of (un)stable manifolds.
-    \section{Intersections of stable and unstable manifolds}
-    %TODO: figure.
-    %TODO: check for use of descending/ascending.
-    Let us now investigate the condition under which stable and unstable manifolds do not intersect.
-    Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$.
-    Let's consider $\stable{p} \cap \unstable{q}$.
+    None of the stable and unstable manifolds intersect,
+    indicating the independence of the two handles.
+    This allows us attach both handles at the same time or attach them in a different order.
+    In terms of the Morse function,
+    this means we can modify $f$ such that  $f(p) > f(q)$.
+
+    In Figure~\ref{fig:when-can-we-not-attach-multiple-handles-at-the-same-time}, the situation is different. The intersection of $\stable p$ and  $\unstable q$ is not empty, indicating the dependence of the  $2$-handle associated to $q$ on the $1$-handle associated to $p$. We cannot first attach the $2$-handle first and then attach the $1$-handle.
+
+    This motivates us to in investigate necessary and sufficient conditions for the stable and unstable manifolds to intersect.
+    Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$ and let us consider $\stable{p} \cap \unstable{q}$.
     If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$.
-    What can we say if $f(p) \le  f(q)$?
-    If we assume that the intersection is transverse, Proposition~\ref{prop:transverse-codimensions-add} implies that the codimensions add in the following sense:
+    In the other case when $f(p) \le  f(q)$, the intersection $\stable p \unstable q$ can be non-empty.
+    Moreover, if we assume that the intersection is transverse, we can say something about its dimension.
+    Indeed, Proposition~\ref{prop:transverse-codimensions-add} implies that
     \[
         \codim(\stable{p} \tcap  \unstable{q}) = \codim \stable p + \codim \unstable q
     ,\] 
@@ -102,20 +114,23 @@ In summary, we have obtained the following result:
     \[
         \dim(\stable p \tcap \unstable q) = \Ind q - \Ind p
     .\]
-    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which will turn out to mean that we can always attach lower index handles before higher index ones.
+    In particular, we have that if $\Ind q < \Ind p$,  $\stable{p} \tcap \unstable{q} = \O$, which in other words means that lower index handles do not depend on higher index handles, i.e.\ we can always attach lower index handles before higher index ones.
 
 
-    This transversality condition has a name:
+    This transversality assumption has a name:
     \begin{definition}[Smale condition]
         A pseudo-gradient field addapted to a Morse function $f$ is said to satisfy the \emph{Smale condition} if for all pairs of critical points $ \{p, q\}  \subset \Crit f$, we have that $\stable{p}$ intersects  $\unstable{q}$ transversely, i.e. 
         \[
             \stable{q} \tcap  \unstable{p} \text{ for all $p, q \in \Crit f$}
         .\] 
     \end{definition}
-    It turns out that this condition is not at all restricting: we can always perturb the pseudo-gradient field such that it satisfies the Smale condition. The proof of this is rather technical and we refer the reader to Audin and Damian\sidecite{audin}.
+    It turns out that this condition is not at all restricting: we can always perturb the pseudo-gradient field such that it satisfies the Smale condition.
     \begin{theorem}
         Any Morse function $f:M \to  \R$ admits a pseudo-gradient field that satisfies the Smale condition
     \end{theorem}
+    This should be intuitively clear as transverse intersections are generic and stable.
+    This means that a small perturbation of $\stable q$ and  $\unstable p$ is enough to make their intersection transverse, and we can accomplish this perturbation by perturbing $X$.
+    A rigorous proof of this is rather technical and we refer the reader to Audin and Damian.\sidecite{audin}
 
     Almost all of the previous examples we have given satisfy the Smale condition with the one exception being the torus.
     \begin{noneg}
@@ -125,7 +140,7 @@ In summary, we have obtained the following result:
     \begin{eg}
         Instead of considering the embedding as in the previous example, we can embed the torus at a slight angle.
         Then the gradient of the height function (by using the standard metric on $\R^3$) does satisfy the Smale condition.
-        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated this below in Figure~\ref{fig:torus-tilted-height-function-stable-and-unstable-manifolds}.
+        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated this below.
         \label{eg:tilted-torus}
     \end{eg}
     \begin{figure}[H]
@@ -164,9 +179,16 @@ This submanifold consists of all points on the trajectories connecting $p$ to $q
     We have illustrated $\traj{p}{q}$ below for some of the critical points of the height function.
     Here we see that these type of submanifolds do not need to be connected. For example, $\traj{b}{a}$ is diffeomorphic to the disjoint union of two open intervals.
 \end{eg}
+\begin{figure}[H]
+    \centering
+    \sidecaption{Illustration of $\traj p q$ for critical points of the `other sphere'.
+    \label{fig:mathcal-m-trajectories-other-sphere-only-m}
+    }
+    \incfig{mathcal-m-trajectories-other-sphere-only-m}
+\end{figure}
 
-Instead of considering the set of points lying on all trajectories from $p$ to $q$, $\traj{p}{q}$, we can also construct a set where each point corresponds to exactly one trajectory.
-We do this by modding out $\traj{p}{q}$ by $\R$-action of translations in time. We denote the resulting space with $\L{p}{q}$.
+Instead of considering a manifold consisting of of points lying on all trajectories from $p$ to $q$, $\traj{p}{q}$, it is often more interesting to construct a manifold each point corresponds to exactly one trajectory, that is a so-called moduli space of trajectories.
+We can do this by modding out $\traj{p}{q}$ by $\R$-action of translations in time. We denote the resulting space with $\L{p}{q}$.
 More explicitly, we have the following:
 
 \begin{prop}
@@ -185,19 +207,22 @@ More explicitly, we have the following:
     \label{remark:trajectories-finite}
 \end{remark}
 \begin{remark}
-    Another way to look at $\L{p}{q}$ is to consider an $a \in \R$ such that $f(p)<a<f(q)$. Then every flow line from $p$ to $q$  intersects $f^{-1}(a)$ exactly once (the value of $f$ is decreasing along the way), so we can identify  $\L{p}{q}$ with  $\traj{p}{q} \cap f^{-1}(a)$.
+    Another way to look at $\L{p}{q}$ is to consider a regular value $a \in \R$ such that $f(p)<a<f(q)$. Then every flow line from $p$ to $q$  intersects $f^{-1}(a)$ exactly once (this is because the value of $f$ is decreasing along the way), so we can identify  $\L{p}{q}$ with  $\traj{p}{q} \cap f^{-1}(a)$.
 \end{remark}
 
 
-
-
+\begin{eg}
+    Below, we have illustrated the moduli space of trajectories for the `other sphere'.
+    When there is a single trajectory for example between $c$ and  $b$, $\L cb$ consist of a single point.
+    If the indices of critical points differ by two, as is the case for $d$ and  $a$,  $\L da$ is a one-dimensional manifold describing a one-paramter family of flow lines between  $d$ and  $a$.
+\end{eg}
 \begin{figure}[H]
     \centering
-    \incfig{mathcal-m-trajectories-other-sphere}
-    \caption{
+    \sidecaption{
         Illustration of $\traj{p}{q}$ and $\L{p}{q}$ for critical points of the `other sphere'.
-    }
     \label{fig:mathcal-m-trajectories-other-sphere}
+    }
+    \incfig{mathcal-m-trajectories-other-sphere}
 \end{figure}
 
 
@@ -207,9 +232,11 @@ More explicitly, we have the following:
 
 \filbreak
 \section{Reordering critical points}
-Now that we have introduced the (un)stable manifolds, we are ready to prove a first reordering theorem. The statement and proof can be found in notes of `Lectures on the $h$-Cobordism Theorem' by Milnor\sidecite{hcobord}.
+\mbox{}\\[-3em]
+
+Now that we have introduced the (un)stable manifolds, we are ready to prove a first reordering theorem. The statement and proof can be found in notes of `Lectures on the $h$-Cobordism Theorem' by Milnor.\sidecite{hcobord}
 \begin{theorem}
-    Let $f: M \to  \R$ be a Morse function on a cobordism $M$ from $M_0$ to $M_1$ such that $ M_0 = f^{-1}(0)$ and $ M_1 = f^{-1}(1)$ with two critical points $p$ and  $p'$.
+    Let $f: M \to  \R$ be a Morse function on a cobordism $M$ from $M_0$ to $M_1$ with two critical points $p$ and  $p'$.
     Suppose that for some choice of pseudo-gradient field $X$, the stable and unstable manifolds do not intersect.
     Let $a, a' \in (0,1)$ be arbitrary.
     Then there exists a new Morse function $g$ such that
@@ -230,7 +257,7 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
 \end{marginfigure}
 \begin{proof}
     We want to mask out the area around the stable and unstable manifolds of one of the critical points.
-    Let $\mu: M_0 \to  [0,1]$ be a smooth map that is $0$ around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
+    Let $\mu: M_0 \to  [0,1]$ be a smooth map that vanishes around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
     Then we can smoothly extend this to a function on the whole manifold $M$ as follows.
     Define $\pi: M \to  M_0$ by flowing along the pseudo-gradient field until we reach $M_0$.
     Then we can extend $\mu$ uniquely to a smooth function that is constant on each trajectory by defining
@@ -242,7 +269,8 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
             \mu(\pi(x)) & \text{else}
         \end{cases}
     .\end{align*}
-    We have illustrated this in the figure by colouring regions where $\mu$ is large red.
+    We have illustrated this in the figure by
+    indicating the value of $\overline{\mu}$ in red.
 
     Define a new Morse function $g: M \to  [0,1]$ by $g(q) = G_{\overline{\mu}(q)}(f(q))$, where $G_{s}(x)$ is a smooth family of smooth functions $G_s: [0,1] \to  [0,1]$ with $s \in [0,1]$ that has the following properties, also indicated in Figure~\ref{fig:proof-reordening-properties-of-g}.
     \begin{marginfigure}
@@ -252,13 +280,13 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
         \label{fig:proof-reordening-properties-of-g}
     \end{marginfigure}
     \begin{enumerate}[(1)]
-        \item For all $s$, $G_s' > 0$ and $G_s$ increases from $0$ to  $1$ as $x$ increases from  $0$ to  $1$
+        \item For all $s$, $G_s' > 0$ and $G_s(0) = 0, G_s(1) = 1$
         \item  $G_0(f(p)) = a$\\ $G_1(f(p')) = a'$
         \item  $G_s(x) = x$ for $x$ near  $0$ or  $1$ and for all $s$ 
         \item  $G_0'(x) = 1$ for $x$  in a neighbourhood of $f(p)$\\
         $G_1'(x) = 1$ for $x$  in a neighbourhood of $f(p')$
     \end{enumerate}
-    Property (b) and (c) in the statement of the theorem are clear: they follow immediately from (2), (3) and (4).
+    Claim (b) and (c) in the statement of the theorem are clear: they follow immediately from (2), (3) and (4).
     For (a), consider
     \[
         dG = \frac{\partial G}{\partial \overline{\mu}}  d\overline{\mu} + \frac{\partial G}{\partial f}  df
@@ -277,9 +305,7 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
     Then the theorem remains valid, with exactly the same proof.
 \end{remark}
 
-If the pseudo-gradient vector field $X$ satisfies the Smale condition, then we know the intersection of stable and unstable manifolds very well.
-For example, if $\Ind p \le  \Ind q$, the intersection of $\unstable{p}$ and  $\stable{q}$ is empty.
-Applying this reordering theorem multiple times, we have the following
+Applying the previous theorem repeatedly and using the fact that if $\Ind p \le  \Ind q$, the intersection of $\unstable{p}$ and  $\stable{q}$ is empty, we find the following result:
 
 \begin{theorem}
     Any closed manifold admits a Morse function such that for all critical points, $\Ind p < \Ind q \implies f(p) < f(q)$.
@@ -304,57 +330,28 @@ Morse functions as described in the second part of the theorem have a name:
 
 % \section{Smale condition is generic (proof)}
 \section{Cancellation of critical points}
-The second question that arose, was `Under what conditions can we cancel a pair of critical points'.
-The answer to this question is more complicated than the previous one.
-We will first state the theorem and then investigate the conditions it imposes.
+
+Let us now answer the second question that came up when discussing examples: `When can we cancel a pair of critical points?'
+
+For the statement and proof, we follow notes of lectures by Milnor on the $h$-cobordism theorem.\sidecite{hcobord}
+The proof is based on the original proof by Milnor\sidecite{cairns2015differential,huebsch1964bowl}.
+For a proof more base on the handle attaching approach, we refer the reader to `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
+There is also a nice proof by Laudenbach reducing the general case to dimension one, where the problem is easy to solve.\sidecite{laudenbach2013proof}
+
+\begin{theorem}[Cancellation theorem]
+    Let $M$ be a cobordism from $M_0$ to $M_1$.
+    Let $f: M \to  [0,1]$ be a morse exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
+
+    If $|\L p q| = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
+    More specifically, we can alter $X$ around  $\ell$ and $f$ away from  $M_0, M_1$ such that $f$ has no critical points.
+\end{theorem}
+
 \begin{marginfigure}
     \centering
     \incfig{canellation-of-critical-points-situation}
-    \caption{A situation where we can cancel two critical points. $\ell$ is the unique gradient line between $p$ and $q$ and any other gradient line starting around $p$ reaches $f^{-1}(f(q) - \epsilon)$.}
+    \caption{A situation where we can cancel two critical points: there is a unique trajectory $\ell$ between $p$ and $q$.}
     \label{fig:canellation-of-critical-points-situation}
 \end{marginfigure}
-\begin{theorem}[Francois Laudenbach\sidenotemark]
-    Let $f: M \to  \R$ be a Morse function and $X$ be a pseudo-gradient field.
-    Let $p$ and $q$ be two critical points such that
-    \begin{enumerate}[(i)]
-        \item $p$ and $q$ are connected by a unique gradient line  $\ell := \traj{p}{q}$.
-        \item For some $\epsilon>0$, each gradient flow line starting in $\unstable{p}$ distinct from $ \ell$ crosses the level set $f^{-1}(f(q) - \epsilon)$
-    \end{enumerate}
-    Then these two points are cancelable.
-More precisely, there exists an isotopy of functions $f_t$ starting at $f_0=f$ supported in an open neighbourhood of the closure of  $\unstable{p} \cap  \{f \ge  f(q) - \epsilon\} $ such that
-\begin{itemize}
-    \item $f_t|_U$ is Morse with two critical points when  $0 \le t\le \frac{1}{2}$;
-    \item $f_t|_U$ has a cubic singularity when $t=\frac{1}{2}$
-    \item $f_t|_U$ has no critical points when $\frac{1}{2}<t\le 1$.
-\end{itemize}
-\end{theorem}
-\sidenotetext[][0.0cm]{\fullcite{laudenbach2013proof}}
-
-\begin{remark}
-    The first condition implies $\dim \traj{p}{q} = 1$, so $\Ind p = \Ind q + 1$.  This means we can only cancel critical points if their indices differ by one.
-\end{remark}
-The proof of this theorem is somewhat technical but nonetheless it is quite transparent and reduces the general case to dimension one, where the situation is simple.
-Let us show in this one dimensional context why the two conditions of the theorem are important.
-
-Suppose we have two critical points, one of index $0$ and one of index $1$ and have a look at the figure below.
-If the conditions of the theorem are satisfied, we are in the situation on the left. There is a unique flow line and other flow lines leaving $p$ eventually going lower than $q$. It is quite intuitive that we can construct a cancellation, as illustrated.
-
-If we have a unique flow line, but other flow lines leaving $p$ do not reach below $q$, then we cannot cancel $p$ and $q$ while fixing the end segments of the curve.
-This is the second situation below.
-Here, the reason that other flow lines than $\ell$ cannot reach below $q$ is the existence of an additional critical point $r$ nearby.
-We are required to fix the end segments, because otherwise we would change the behaviour at $r$, and while doing so, we simply cannot cancel $p$ and $q$.
-Note that in this specific situation, cancelling $r$ and $p$ does work.
-
-Lastly, if we do not have a unique flow line, the third situation in the figure could occur. It is clear that we cannot cancel $p$ and $q$.
-
-\begin{figure}[H]
-    \centering
-    \sidecaption[][-1cm]{Three situations.
-        The first one satisfies the conditions of the theorem and we can cancel the critical points.
-        The second only satisfies (i), the third only (ii) and cancellation is impossible.  \label{fig:one-dimensional-reduction}}
-    \incfig{one-dimensional-reduction}
-\end{figure}
-
 \begin{marginfigure}
     \centering
     \incfig{other-sphere-cancelation-of-critical-points}
@@ -365,8 +362,142 @@ Lastly, if we do not have a unique flow line, the third situation in the figure 
     As an example, let us consider the `other sphere' as in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}.
    We also added flow lines between critical points whose index differs by exactly one.
    It is clear that the pairs $(c,b)$ and $(d, b)$ satisfy the conditions of the theorem, and so we can cancel them.
-   The pair $(b,a)$ does not, because there are two flow lines from $b$ to $a$. Intersecting the `other sphere' with a plane containing $\traj{b}{a}$, we see that we are exactly in the third situation discussed earlier.
+   The pair $(b,a)$ does not, because there are two flow lines from $b$ to $a$.
 \end{eg}
+
+\begin{proof}
+\begin{figure}[H]
+    \centering
+    \incfig{alteration-of-pseudogradient-vector-field}
+    \caption{TODO alteration of pseudogradient vector field}
+    \label{fig:alteration-of-pseudogradient-vector-field}
+\end{figure}
+
+We prove the statement in a local model.
+Let $U_\ell$ be an open neighbourhood of $\ell$. 
+We may assume that there are coordinates such that:
+\begin{itemize}
+    \item  The critical points are given by $p = (0, \ldots, 0)$ and $q = (1, 0, \ldots, 0)$
+    \item The pseudo-gradient is given by $X = (v(x_1), x_2, \ldots, x_k, -x_{k+1}, \ldots, -x_n)$ where $v(x_1)$ is a smooth function of $x_1$, such that  $v$ is positive on  $(0, 1)$, vanishes at $0$ and $1$ and is negative elsewhere.
+        Moreover, we assume that  $v'(x_1) = 1$ near $0$ and $1$
+\end{itemize}
+We have illustrated these properties in Figure~\ref{fig:local-model}.
+\begin{marginfigure}
+    \centering
+    \incfig{local-model}
+    \caption{TODO local model}
+    \label{fig:local-model}
+\end{marginfigure}
+
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+
+\paragraph{Assertion 1}
+Given an open neighbourhood $U$ of  $ \ell$, we can find a smaller neighbourhood $U'$ such that no trajectory exiting $U'$ enters $U'$ again.
+\begin{proof}
+    Suppose this was not the case.
+    Then there would exists a sequence of trajectories $\ell_k$ that pass through points $r_k, s_k, t_k$ with $s_k \not\in U$ and $r_k$ and $t_k$ approaching $\ell$.
+    We may assume that $s_k \to s$ because $M \setminus U$ is compact.
+    The trajectory through $s_k$, call it $ \ell_s$ comes from  $ M_0$ or reaches $ M_1$ (or both), as it would otherwise be a trajectory connecting $p$ and $q$ not equal to $\ell$.
+    Suppose without loss of generality that it comes from $M_1$.
+    Then the tail of the sequence of trajectories $\ell_{k}$ passing through points $s_k$ near $s$ also originate in $M_1$.
+    This that the minimal distance between $\ell_{k}$ and $\ell$ is bounded from below by a positive number for all $k > m $ and $m$ big enough.
+    Now, because $r_k \in \ell_k$, the points $r_k$ cannot approach  $\ell$. This is a contradiction.
+\end{proof}
+
+\paragraph{Assertion 2}
+We can alter $X$ such a way that point in $U$ will exit $U$ when flowing both backwards and forwards in time.
+In other words, any trajectory that contains a point in $U$ has entered $U$  and will exit $U$.
+
+\begin{proof}
+    \begin{marginfigure}
+        \centering
+        \incfig{alteration-of-vector-field}
+        \caption{TODO alteration of vector field}
+        \label{fig:alteration-of-vector-field}
+    \end{marginfigure}
+    Replace $X$ by  $(w(x_1, \rho), x_2, \ldots, -x_n)$.
+    Here, $\rho = \sqrt{x_2^2 + \cdots + x_n^2}$ is the norm of the coordinates normal to $\ell$ and $w(x_1, \rho)$ satisfies the following properties:
+    \begin{itemize}
+        \item It is equal to $v(x_1)$ outside a compact neighbourhood of  $ \ell$ in $U'$.
+        \item $w(x_1, 0)$ is everywhere negative.
+    \end{itemize}
+    To prove the claim, let $x^0 = (x_1^{0}, \ldots, x_n^{0}) \in U$ and the initial condition of a trajectory $x(t)$.
+    \begin{enumerate}[(a)]
+        \item If one of $x_{k+2}^{0}, \ldots, x_n^{0}$ is non-zero, say $x_m$. Then $|x_m(t)|$ increases exponentially, so the trajectory leaves $U$.
+        \item If all of $x_{k+2}^{0}, \ldots, x_n^{0}$ are zero, then $\rho$ decreases exponentially, so it gets closer to the $x_1$-axis.
+            Since $w(x_1, \rho(x))$ is strictly negative on the $ x_1$-axis is also negative on a compact set $K = \{ x \in U  \mid  \rho(x) \le  \delta\} $ for some small $\delta$.
+            Therefore, $ w(x_1, \rho(x))$ has a negative upper bound $-\alpha < 0$ on $K$.
+            As $\rho$ decreases exponentially, eventually  $x \in K$ and $x_1'(t) < -\alpha$ from then onwards.
+            As $U$ is bounded, we conclude that $x$ leaves $U$. \qedhere
+    \end{enumerate}
+\end{proof}
+\paragraph{Assertion 3}
+Every trajectory of $X'$ goes from $M_0$ to $M_1$.
+\begin{proof}
+    Integral curves that do not enter $U$ follow $X$ and hence always go from  $M_0$ to $M_1$.
+    Any integral curve through a point in $U$ eventually exits $U$ by Assertion 2. Moreover, it cannot re-enter $U$ by Assertion $1$, and hence once exited, it follows $X$.
+\end{proof}
+
+\paragraph{Assertion 4}
+The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M$ that maps $0 \times M_0$ to $M_0$ and $1 \times M_0$ to $ M_1$.
+\begin{proof}
+    \begin{marginfigure}
+        \centering
+        \incfig{assertion-4}
+        \caption{TODO assertion 4}
+        \label{fig:assertion-4}
+    \end{marginfigure}
+    We want to normalize $X'$ such that flowing along for time $1$, it it sends a point in  $M_0$ to a point in $M_1$.
+    Let $\tau_0(q)$ be the time needed to flow $q$ back to $M_0$ along $-X'$ and similarly define $\tau_1(q)$. The maps $\tau_0$ and $\tau_1$ depend smoothly on $q$.
+    Let $\pi_0$ be the projection  $M \to M_0$ by flowing along $-X'$ and similarly define $\pi_1$.
+    Then the vector field $Y(q) = -\tau_1(\pi_0(q)) X'(q)$ has flow lines that go from $ M_0$ to $M_1$ in unit time.
+    This defines a diffeomorphism in the following way:
+    \begin{align*}
+        \phi: [0, 1] \times M_0 &\longrightarrow M \\
+        (t, q) &\longmapsto \psi^{t}_Y q
+    ,\end{align*}
+    where $\psi^{t}_Y$ is the flow of $Y$.
+    The inverse of $\psi$ is given by  $q \mapsto (\tau_0(q), \pi_0(q))$.
+\end{proof}
+
+\paragraph{Assertion 5}
+The vector field $X'$ is a pseudo-gradient vector field for some morse function  $g$ on $M$ that agrees with $f$ near  $M_0$ and $M_1$.
+Moreover, $g$ has no critical points.
+\begin{proof}
+    By using the previous assertion,
+    it suffices to define a Morse function $g$ on $[0, 1] \times M_0$ such that $\frac{\partial g}{\partial t} > 0$ and $g$ corresponds to  $ f_1 = f  \circ  \phi$ around $0 \times M_1$ and $1 \times M$.
+    To make sure that $\frac{\partial g}{\partial t} > 0$ we will define $g$ as the integral of a positive function,
+    and to make sure it corresponds to $f_1$ around the boundary of $[0,1] \times M_0$, we will define $g$ in the following way:
+     \[
+         g(u, q) = \int_0^{u} \lambda(t) \frac{\partial f_1}{\partial t} + (1-\lambda(t))\: k(q) \: dt
+    ,\] 
+    where $\lambda: [0,1] \to  [0,1]$ is a bump function supported in the interior of $[0, \delta) \cup (1-\delta, 1]$, with $\delta$ small enough such that $\frac{\partial f_1}{\partial t}\big|_{[0, \delta) \cup (1-\delta, 1]} < 0$ and $k: M_0 \to [0,1]$ is some yet unknown function, as illustrated below.
+    \begin{figure}[H]
+        \centering
+        \sidecaption{TODO assertion 5
+        \label{fig:assertion-5}
+        }
+        \incfig{assertion-5}
+    \end{figure}
+
+    The idea is to integrate the derivative of the original Morse function near the bottom and the top, and in the middle we will integrate an appropriately large function $k(q)$ such that  $g(1, q) = 1$ for all $q$, i.e. the speed is adjusted so that at $t=1$, we reach the top of $[0,1] \times M_0$.
+    Expanding this condition and solving for $k(q)$, we get
+     \begin{align*}
+         g(u, q) = \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}  + \int_{0}^{1}  (1-\lambda(t)) k(q) dt &= 1\\
+          \int_{0}^{1}  (1-\lambda(t))  dt \  k(q)&= 1 - \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}\\
+          k(q)&= \frac{1 - \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}}{\int_{0}^{1}  (1-\lambda(t))  dt}
+    .\end{align*} 
+
+    Taking $\delta$ small enough ensures that  $k(q) > 0$, concluding the proof.
+\end{proof}
+
+This finishes the proof of the first cancellation theorem.
+
+\renewcommand{\qedsymbol}{\ensuremath{\square}}
+    
+\end{proof}
+
+\filbreak
 
 \section{Heegaard splittings}
 \begin{marginfigure}

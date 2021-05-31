@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'self-indexing-morse-function-torus-tilted.pdf' (pdf, eps, ps)
+%% Accompanies image file 'assertion-4.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{136.13206758bp}%
+    \setlength{\unitlength}{274.14115365bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,21 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.68367693)%
+  \begin{picture}(1,0.65080926)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.89201127,0.11282119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.89201127,0.32318714){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
-    \put(0.89201127,0.53402015){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{self-indexing-morse-function-torus-tilted.pdf}}%
-    \put(0.71590553,0.46717259){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$f$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{self-indexing-morse-function-torus-tilted.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{assertion-4.pdf}}%
+    \put(0.55475266,0.38487372){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{assertion-4.pdf}}%
+    \put(0.36359958,0.31877764){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-X'$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{assertion-4.pdf}}%
+    \put(0.51403873,0.02284227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi_0(q)$\end{tabular}}}}%
+    \put(0.53969435,0.54223121){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi_1(q)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{assertion-4.pdf}}%
+    \put(0.35908161,0.10036143){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$M_0$\end{tabular}}}}%
+    \put(0.37902849,0.5667061){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$M_1$\end{tabular}}}}%
+    \put(0.74696632,0.54223121){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t = \tau_1(q)$\end{tabular}}}}%
+    \put(0.74696632,0.38487372){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t=0$\end{tabular}}}}%
+    \put(0.74696632,0.02284227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t = -\tau_0(q)$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{173.06581032bp}%
+    \setlength{\unitlength}{176.36779665bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,26 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.16795065)%
+  \begin{picture}(1,1.15271048)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.28808844,0.37513672){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\unstable{p}$\end{tabular}}}}%
-    \put(0.2538447,0.88105466){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\stable{p}$\end{tabular}}}}%
+    \put(0.27996003,0.36991465){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\unstable{p}$\end{tabular}}}}%
+    \put(0.2463574,0.86636072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\stable{p}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.3647375,0.69960276){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.35517405,0.68830599){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.61869317,0.83003223){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p'$\end{tabular}}}}%
-    \put(0.65893152,0.93767714){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\stable{p'}$\end{tabular}}}}%
-    \put(0.4898246,0.3681466){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\unstable{p'}$\end{tabular}}}}%
+    \put(0.60437512,0.81629353){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p'$\end{tabular}}}}%
+    \put(0.64386013,0.92192311){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\stable{p'}$\end{tabular}}}}%
+    \put(0.47791925,0.36305541){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize$\unstable{p'}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.64866653,0.17989327){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mu:M_0 \to[0,1]$\end{tabular}}}}%
-    \put(0.74720248,0.5329061){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bar{\mu}:M \to[0,1]$\end{tabular}}}}%
+    \put(0.63378731,0.17832658){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mu:M_0 \to[0,1]$\end{tabular}}}}%
+    \put(0.73047846,0.52473025){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bar{\mu}:M \to[0,1]$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.19129159,0.81149963){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.19526488,0.24402971){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi(x)$\end{tabular}}}}%
+    \put(0.18497542,0.79810791){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.18887432,0.24126225){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\pi(x)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{reordening-theorem-milnor-h-cobordism.pdf}}%
-    \put(0.00597705,0.33692487){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_0$\end{tabular}}}}%
-    \put(0.0005294,1.03539284){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_1$\end{tabular}}}}%
+    \put(0.00313037,0.33241822){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_0$\end{tabular}}}}%
+    \put(-0.00221529,1.01780936){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M_1$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
