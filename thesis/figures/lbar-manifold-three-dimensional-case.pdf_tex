@@ -54,18 +54,15 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.76903356,0.26050301){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
+    \put(0.76839062,0.33380658){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.08638973,0.85040334){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D^{k}$\end{tabular}}}}%
-    \put(0.23794595,0.75211204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi$\end{tabular}}}}%
+    \put(0.76839062,0.398108){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.76839062,0.398108){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q = \Im \Phi \cup S^{-}$\end{tabular}}}}%
+    \put(0.49170358,0.28395588){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c^{-}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.50193394,0.29418609){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c^{-}$\end{tabular}}}}%
+    \put(0.76839062,0.25600195){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q \cap \stable b$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.06194648,0.46969911){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c^{+}$\end{tabular}}}}%
+    \put(0.76839062,0.55133369){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D^{k}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{lbar-manifold-three-dimensional-case.pdf}}%
-    \put(0.76839062,0.33354344){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q \cap \stable b$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=7]{lbar-manifold-three-dimensional-case.pdf}}%
   \end{picture}%
 \endgroup%

@@ -54,18 +54,21 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.338171,0.69518254){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
+    \put(0.36291651,0.72380098){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.72188843,0.78620472){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Psi(D^{1}\setminus \{0\})$\end{tabular}}}}%
-    \put(0.72197035,0.71942303){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
-    \put(0.41106455,1.07450544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\phi(D^{1})$\end{tabular}}}}%
+    \put(0.7218884,0.78620465){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
+    \put(0.72197038,0.719423){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
+    \put(0.47958836,1.10020089){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$D^{k}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.48868555,0.31937738){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Im \Psi = \Psi(D^{1}\setminus \{0\})$\end{tabular}}}}%
+    \put(0.48868555,0.31937747){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.4882136,0.22484211){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
+    \put(0.4882136,0.22484221){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{-}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.4882136,0.11741956){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
+    \put(0.4882136,0.11741939){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\overline{Q}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
-    \put(0.4882136,0.01451813){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q \cap \stable b$\end{tabular}}}}%
+    \put(0.4882136,0.01451791){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\overline{Q} \tcap \stable b$\end{tabular}}}}%
+    \put(0.41078232,1.0452552){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$c^+$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{l-bar-manifold-2-dimensional-case-part-flow.pdf}}%
+    \put(0.62807025,0.72125809){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$c^-$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

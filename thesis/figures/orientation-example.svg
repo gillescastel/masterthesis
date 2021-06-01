@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="217.50601mm"
-   height="60.016602mm"
-   viewBox="0 0 217.50602 60.016602"
+   width="201.69789mm"
+   height="61.186672mm"
+   viewBox="0 0 201.6979 61.186672"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -415,56 +415,56 @@
       </g>
     </marker>
     <marker
-       markerWidth="0.911"
-       markerHeight="1.690"
-       style="overflow: visible; stroke: black"
+       markerWidth="0.91100001"
+       markerHeight="1.6900001"
+       style="overflow:visible;stroke:#000000"
        refX="0"
        refY="0"
        orient="auto-start-reverse"
        id="marker-arrow-1.0616-22">
       <g
          id="g4175"
-         transform="scale(1.343431298668676)">
+         transform="scale(1.3434313)">
         <path
            id="path4173"
            inkscape:connector-curvature="0"
-           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
            d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
       </g>
     </marker>
     <marker
-       markerWidth="0.911"
-       markerHeight="1.690"
-       style="overflow: visible; stroke: black"
+       markerWidth="0.91100001"
+       markerHeight="1.6900001"
+       style="overflow:visible;stroke:#000000"
        refX="0"
        refY="0"
        orient="auto-start-reverse"
        id="marker-arrow-0.5308-9">
       <g
          id="g4477"
-         transform="scale(2.153529264004019)">
+         transform="scale(2.1535293)">
         <path
            id="path4475"
            inkscape:connector-curvature="0"
-           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
            d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
       </g>
     </marker>
     <marker
-       markerWidth="0.911"
-       markerHeight="1.690"
-       style="overflow: visible; stroke: black"
+       markerWidth="0.91100001"
+       markerHeight="1.6900001"
+       style="overflow:visible;stroke:#000000"
        refX="0"
        refY="0"
        orient="auto-start-reverse"
        id="marker-arrow-1.0616-73">
       <g
          id="g4708"
-         transform="scale(1.343431298668676)">
+         transform="scale(1.3434313)">
         <path
            id="path4706"
            inkscape:connector-curvature="0"
-           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
            d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
       </g>
     </marker>
@@ -702,6 +702,24 @@
            d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
       </g>
     </marker>
+    <marker
+       markerWidth="0.911"
+       markerHeight="1.690"
+       style="overflow: visible; stroke: black"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       id="marker-arrow-1.0616-3">
+      <g
+         id="g1688"
+         transform="scale(1.343431298668676)">
+        <path
+           id="path1686-6"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:black;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722" />
+      </g>
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -714,7 +732,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4950"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -736,10 +754,10 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="100.20177"
-       originy="-25.7376" />
+       originx="95.779384"
+       originy="-24.008069" />
     <sodipodi:guide
-       position="26.769382,0.66169215"
+       position="22.34699,2.3912207"
        orientation="0,1"
        id="guide3116"
        inkscape:locked="false" />
@@ -760,7 +778,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(100.20176,-211.2458)">
+     transform="translate(95.779368,-211.80525)">
     <g
        id="g1084"
        transform="matrix(1.3988057,0,0,1.3986845,-91.3585,-89.649453)"
@@ -834,12 +852,12 @@
        r="0.76878083" />
     <text
        x="-34.61768"
-       y="270.60071"
+       y="272.33023"
        style="font-size:3.10652947px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"
        id="text1162"><tspan
          style="stroke-width:0.26458332"
-         y="270.60071"
+         y="272.33023"
          x="-34.61768"
          sodipodi:role="line"
          id="tspan1160">Orient $\stable{p}$</tspan></text>
@@ -847,12 +865,12 @@
        id="text1099"
        xml:space="preserve"
        style="font-size:3.10495329px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       y="270.60071"
+       y="272.33023"
        x="-93.578163"><tspan
          id="tspan1097"
          sodipodi:role="line"
          x="-93.578163"
-         y="270.60071"
+         y="272.33023"
          style="stroke-width:0.26458332">Orient $\stable{q}$</tspan></text>
     <g
        id="g2001"
@@ -1007,7 +1025,7 @@
          inkscape:connector-curvature="0"
          id="path1597"
          d="m 29.859301,243.96193 v -6.10072"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.28088167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05330625, 1.05330625;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-1.0616)" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.28088167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-1.0616)" />
       <path
          sodipodi:open="true"
          transform="matrix(-0.96714952,-0.25420818,-0.26350137,0.96465902,0,0)"
@@ -1087,12 +1105,12 @@
        id="text4147"
        xml:space="preserve"
        style="font-size:3.10652947px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       y="270.60071"
+       y="272.33023"
        x="24.342802"><tspan
          id="tspan4145"
          sodipodi:role="line"
          x="24.342802"
-         y="270.60071"
+         y="272.33023"
          style="stroke-width:0.26458332">Orient $\traj pq$</tspan></text>
     <path
        inkscape:connector-curvature="0"
@@ -1101,12 +1119,12 @@
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)" />
     <text
        x="83.303284"
-       y="270.60071"
+       y="272.33023"
        style="font-size:3.10652947px;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"
        id="text4153"><tspan
          style="stroke-width:0.26458332"
-         y="270.60071"
+         y="272.33023"
          x="83.303284"
          sodipodi:role="line"
          id="tspan4151">Orient $\L pq$</tspan></text>
@@ -1248,11 +1266,5 @@
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044082;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308)"
          sodipodi:nodetypes="cc" />
     </g>
-    <path
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.53079998;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-0.5308-61)"
-       d="M 0.26691523,14.455089 C 2.5648567,9.1366135 5.0119118,4.1163426 8.2474747,0.67307958"
-       id="path4163-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
   </g>
 </svg>

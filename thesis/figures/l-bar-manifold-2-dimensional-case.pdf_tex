@@ -60,12 +60,13 @@
     \put(0,0){\includegraphics[width=\unitlength,page=3]{l-bar-manifold-2-dimensional-case.pdf}}%
     \put(0.36208184,0.62951583){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$c$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{l-bar-manifold-2-dimensional-case.pdf}}%
-    \put(0.34267304,0.88755293){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\small c^{+}$\end{tabular}}}}%
+    \put(0.52096589,0.62951583){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\small c^{-}$\end{tabular}}}}%
     \put(0.29025977,0.95839565){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\lambda_1$\end{tabular}}}}%
     \put(0.64684591,0.46997571){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\lambda_2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{l-bar-manifold-2-dimensional-case.pdf}}%
-    \put(0.60462382,1.07814678){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
-    \put(0.66808111,1.07814678){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta$\end{tabular}}}}%
-    \put(0.51269165,0.97504025){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\chi$\end{tabular}}}}%
+    \put(0.87979263,0.75271769){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
+    \put(0.87838869,0.82038689){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta$\end{tabular}}}}%
+    \put(0.72156401,0.76703741){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\chi$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{l-bar-manifold-2-dimensional-case.pdf}}%
   \end{picture}%
 \endgroup%

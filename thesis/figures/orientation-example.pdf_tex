@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{616.55247486bp}%
+    \setlength{\unitlength}{571.7420539bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,22 +50,22 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.27593077)%
+  \begin{picture}(1,0.30335802)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{orientation-example.pdf}}%
-    \put(0.30152767,0.00304219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\stable{p}$\end{tabular}}}}%
-    \put(0.03045248,0.00304219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\stable{q}$\end{tabular}}}}%
+    \put(0.30323415,0.00328061){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\stable{p}$\end{tabular}}}}%
+    \put(0.01091338,0.00328061){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\stable{q}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{orientation-example.pdf}}%
-    \put(0.88072885,0.13263209){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-$\end{tabular}}}}%
+    \put(0.92783037,0.15160198){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{orientation-example.pdf}}%
-    \put(0.93450183,0.15076458){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
+    \put(0.98581781,0.1711556){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{orientation-example.pdf}}%
-    \put(0.11589958,0.03971432){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
-    \put(0.34341213,0.17144538){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
-    \put(0.57260285,0.00304219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\traj pq$\end{tabular}}}}%
+    \put(0.10305742,0.05140175){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0.34840132,0.19345726){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.59555491,0.00328061){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\traj pq$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{orientation-example.pdf}}%
-    \put(0.84367803,0.00304219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\L pq$\end{tabular}}}}%
+    \put(0.88787568,0.00328061){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Orient $\L pq$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{orientation-example.pdf}}%
   \end{picture}%
 \endgroup%

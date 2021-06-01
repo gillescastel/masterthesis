@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="44.516731mm"
-   height="7.9306912mm"
-   viewBox="0 0 44.516731 7.9306912"
+   width="56.233643mm"
+   height="2.4507966mm"
+   viewBox="0 0 56.233642 2.4507966"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (unknown)"
@@ -39,7 +39,8 @@
      inkscape:window-height="995"
      inkscape:window-x="20"
      inkscape:window-y="65"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     inkscape:snap-page="true">
     <inkscape:grid
        type="xygrid"
        id="grid815"
@@ -48,8 +49,8 @@
        spacingy="10"
        empspacing="4"
        dotted="false"
-       originx="-30.059678"
-       originy="-88.530825" />
+       originx="-29.98847"
+       originy="-91.990391" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -59,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,68 +68,82 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-30.059678,-200.53848)">
+     transform="translate(-29.98847,-202.55881)">
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14044084;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-       d="M 36.119708,204.00492 H 70.391697"
+       d="M 30.059691,203.74406 H 86.150892"
        id="path816"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <g
        id="g847"
-       style="fill:none;fill-opacity:1;marker-end:none;marker-start:none;stroke:black;stroke-dasharray:none;stroke-opacity:1;stroke-width:0.14044083">
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.11060247;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none"
+       transform="matrix(1.2600027,0,0,1.2796339,-7.8155834,-57.307564)">
       <path
          inkscape:connector-curvature="0"
          id="path1060"
          d="m 50.945916,204.9379 h -0.274825 v -1.80321 h 0.282059"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.14044083;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.11060247;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          inkscape:connector-curvature="0"
          id="path1072"
          d="m 50.678325,204.0363 h 3.760758"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.14044083;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.11060247;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <path
          sodipodi:nodetypes="cc"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:black;stroke-width:0.14044083;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
+         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.11060247;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
          d="m 54.287204,204.9379 c 0.280999,-0.61072 0.297482,-1.21236 0,-1.80321"
          id="path1074"
          inkscape:connector-curvature="0" />
     </g>
-    <circle
+    <ellipse
        id="path849"
        style="fill:#000000;stroke:none;stroke-width:1"
-       cx="39.446407"
-       cy="204.00491"
-       r="0.5" />
-    <circle
-       r="0.5"
-       cy="204.00491"
-       cx="44.69101"
+       cx="41.886997"
+       cy="203.74403"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
+       cy="203.74403"
+       cx="48.495209"
        style="fill:#000000;stroke:none;stroke-width:1"
-       id="circle851" />
-    <circle
+       id="circle851"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
        id="circle853"
        style="fill:#000000;stroke:none;stroke-width:1"
-       cx="47.842476"
-       cy="204.00491"
-       r="0.5" />
-    <circle
-       r="0.5"
-       cy="204.00491"
-       cx="49.295155"
+       cx="52.466064"
+       cy="203.74403"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
+       cy="203.74403"
+       cx="54.296444"
        style="fill:#000000;stroke:none;stroke-width:1"
-       id="circle855" />
-    <circle
+       id="circle855"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
        id="circle857"
        style="fill:#000000;stroke:none;stroke-width:1"
-       cx="50.068451"
-       cy="204.00491"
-       r="0.5" />
-    <circle
-       r="0.5"
-       cy="204.00491"
-       cx="50.575668"
+       cx="55.270802"
+       cy="203.74403"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
+       cy="203.74403"
+       cx="55.909897"
        style="fill:#000000;stroke:none;stroke-width:1"
-       id="circle859" />
+       id="circle859"
+       rx="0.63000137"
+       ry="0.63981694" />
+    <ellipse
+       cy="203.74403"
+       cx="33.945286"
+       style="fill:#000000;stroke:none;stroke-width:1"
+       id="circle824"
+       rx="0.63000137"
+       ry="0.63981694" />
   </g>
 </svg>
