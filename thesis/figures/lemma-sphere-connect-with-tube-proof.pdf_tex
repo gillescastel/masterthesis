@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{207.99896bp}%
+    \setlength{\unitlength}{207.79406931bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,24 +50,24 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.46350644)%
+  \begin{picture}(1,1.53479583)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.34508159,1.30760935){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S_1$\end{tabular}}}}%
-    \put(0.66677755,1.31116882){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S_2$\end{tabular}}}}%
-    \put(0.29589313,1.15596453){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D$\end{tabular}}}}%
+    \put(0.34245264,1.37874512){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S_1$\end{tabular}}}}%
+    \put(0.6644658,1.3823081){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S_2$\end{tabular}}}}%
+    \put(0.29321568,1.22695078){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.46850975,1.21690701){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
+    \put(0.4660025,1.28795335){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.3265299,1.02147034){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_1$\end{tabular}}}}%
-    \put(0.6356625,1.01467123){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_2$\end{tabular}}}}%
+    \put(0.33522572,1.07531754){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_1$\end{tabular}}}}%
+    \put(0.58840564,1.07531754){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.60948564,1.09042329){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s_2$\end{tabular}}}}%
+    \put(0.6071174,1.16134491){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s_2$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.32215696,1.09147177){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s_1$\end{tabular}}}}%
+    \put(0.3195054,1.16239442){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s_1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{lemma-sphere-connect-with-tube-proof.pdf}}%
-    \put(0.49580204,1.00577436){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$L$\end{tabular}}}}%
+    \put(0.49118343,1.06164142){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{lemma-sphere-connect-with-tube-proof.pdf}}%
   \end{picture}%
 \endgroup%

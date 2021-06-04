@@ -1,18 +1,139 @@
 \chapter{Applications of Morse homology}
 \label{chap:app-morse-homology}
 
+This chapter discusses some applications of Morse homology.
+While we already now that it isomorphic to singular homology and hence it enjoys all the properties of singular homology, it can still be fruitful to derive these properties directly from the definitions of Morse homology.
+We will do this for two of those properties: Poincaré duality and the Künneth formula.
+The third and last section of this chapter discusses the Morse inequalities, giving a lower bound for the number of critical points of a Morse function $f: M \to  \R$ based on the homology of $M$.
+These inequalities will play a mayor role in the next chapter.
 
-\todo{Now  that we know it's isomorphic, we have some nice theorems: 
-    \begin{itemize}
-        \item Poincare duality
-        \item Mayer-Vietoris
-        \item Kunneth
-        \item Excision theorem (?)
-        \item Hurewicz theorem (?)
-        \item Universal coefficient theorem (?)
-    \end{itemize}
-But it can be nice to see this directly in Morse theory}
+\section{Poincaré duality}
+Let us state a first version of the Poincaré duality.
+\begin{theorem}[Poincaré duality]
+    Let $M$ be a compact manifold, $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$.
+    Then
+    \[
+        H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)
+    .\]
+    Moreover, if $M$ is oriented, then \[
+         H_{k}(M, \Z) \cong H^{n-k}(M, \Z)
+    .\]
+\end{theorem}
+\begin{myproof}
+    The idea of this proof is to turn the manifold upside down, i.e.\ $f\leadsto -f$.
+    Then critical points of index $k$ of $f$  become critical points of index $n-k$ of  $-f$.
+    Moreover $-X$ is an adapted pseudogradient for $-f$, unstable manifolds of critical points of $f$ become stable manifolds of corresponding critical points of $-f$ and vice versa.
+    This immediately gives that $H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)$.
 
+    Working over $\Z$, things are more subtle.
+    In particular, $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
+    What is true however, is that if $M$ is orientable, then  $r_0 H_k(M, \Z) = r_0 H_{n-k}(M, \Z)$, as is proven in `Morse theory and Floer homology' by Audin and Damian.\sidecite[p~84.]{audin}.
+
+    In order to get a more natural form of Poincaré duality, it is beneficial to consider Morse cohomology, as done in notes by Fushida-Hardy.\sidecite{fushidamorse}
+    Recall from Chapter~0 that singular cohomology is defined as the homology of the dual of the singular chain complex, i.e.\ the homology of $C^{k} = \Hom(C_k, \Z)$, with as differential the adjoint of $\partial$. The resulting homology is denoted with $H^{k}(M)$.
+
+    In Morse homology, it is more natural to define cohomology as follows:
+    \[
+        C^{k} = \Hom(C_{n-k}(-f), \Z)
+    ,\]
+    with differential $\partial^{k+1}:C^{k} \to  C^{k+1}$ the adjoint of $\partial_{k+1}$.
+    With these conventions, it is clear that there exists an isomorphism
+    \[
+    t_k: C_k \to  C^{n-k}
+    .\] 
+    Let us show that this is a chain map, from which the desired result follows, in other words we want to show that
+    \[
+    t_{k-1}  \circ  \partial_k = \partial^{n-k+1}  \circ  t_k
+    .\] 
+    Let $b \in C_k(f)$ and $a \in C_{n-k+1}(f)$.
+    Then the left hand side becomes
+    \begin{align*}
+        (t_{k-1}  \circ  \partial_k)(b)(a)
+        &= t_{k-1}\Big(\sum_{c \in \Crit_{k-1}f} \NX Xbc c\Big) a \\
+        &= \sum_{c \in \Crit_{k-1}f} \NX Xbc c^{*} a\\
+        &= \NX X b a
+    ,\end{align*} 
+    where $c^{*}$ is the dual of $c$ defined by $c^{*}(d) = \delta_{cd}$.
+    The right hand side becomes
+    \begin{align*}
+        (\partial^{n-k+1}  \circ  t_k)(b)(a) &= (\partial^{n-k+1}  b^{*})(a)\\
+                                          &= b^{*} \sum_{c \in \Crit_k f} \NX {-X} ac c\\
+                                          &= \NX {-X} a b
+    .\end{align*} 
+    Hence, the last step of the proof is to show that $\NX Xpq = \NX{-X}qp$.
+    If we would not count signs, this would be immediately clear.
+    However, when working over $\Z$ we need to check that the orientations work out.
+    If $M$ is oriented, then the orientations of the stable manifolds not only induce a coorientation of the unstable manifolds, but also an orientation.
+    Now it is just a matter of carefully checking the definition of the orientation we put on $\L pq$ to conclude that $\NX X pq = \NX{-X} qp$.
+    This finishes the proof.
+\end{myproof}
+
+Working with cobordisms, we find the following theorem:
+\begin{theorem}
+    Let $M$ be an oriented cobordism from  $M_0$ to $M_1$.
+    Let $f: M \to  [0,1]$ be a Morse function with adapted pseudo-gradient $X$.
+    Then
+     \[
+         H_k(M, M_0, \Z) \cong H^{n-k}(M, M_1, \Z)
+    .\] 
+\end{theorem}
+A proof of this fact can be found in `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
+
+\section{The Künneth Formula}
+The Künneth Formula is a way to relate the homology of a product to the homology of its factors. More explicitly, it states the following:
+\begin{prop}[Künneth formula]
+    Let $M, N$ be two manifolds. Then
+    \[
+        \HMf[k]{M \times N} \cong
+        \bigoplus_{i+j  = k} \HMf[i]{M} \otimes \HMf[j]{N}
+    ,\]
+where homology is taken with coefficients in $ \Z_2$.
+In other words,
+\[
+    \HMf[\bul]{M \times N} \cong \HMf[\bul]{M} \otimes \HMf[\bul] N
+,\] 
+with the tensor product of chain complexes as defined in Chapter~0.
+\end{prop}
+We can also express this in a different way using the Poincaré polynomial.
+For this, define $\beta_k(M) = \dim_{\Z_2} \HMf[k]{M;\Z_2}$ and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
+Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
+\begin{eg}
+    We have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
+    More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
+\end{eg}
+\begin{myproof}
+    Let $f, g$ and $X, Y$ be two Morse functions, resp.\ pseudo-gradient fields on  $M$ and  $N$.
+    Then $f + g$ is a Morse function and $(X, Y)$ is a pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
+    Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices.
+    Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
+    Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
+    It's clear that the only way this can happen is when $a = c$ or $b = d$.\sidenote{
+        If $a\neq c$ and  $b \neq d$, then  $\Ind c \ge  \Ind a + 1$ and $\Ind d \ge  \Ind b + 1$, so $\Ind (c, d) \ge  \Ind (a, b) + 2$.
+    }
+
+    When we think about this in terms of directed graphs of critical points, like we did in the example of $T^{3}$, we find that the graph of $M \times N$ is the Cartesian product of the graph of $M$ and the graph of  $N$.
+    With these things in mind, it is easy to check that
+    \begin{align*}
+        \Phi: \bigoplus_{i+j = k} C_i(f) \otimes C_j(g) &\longrightarrow C_k(f+g) \\
+        a \otimes b &\longmapsto (a,b)
+    \end{align*}
+    is an isomorphism of complexes with the following differentials:
+    \[
+        (C_\bul(f) \otimes C_\bul(g), \partial_X \otimes 1 + 1 \otimes \partial_Y) \xrightarrow{\Phi}   (C_\bul(f+g), \partial_{(X,Y)})
+    ,\]
+    where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
+    Now, taking the homology of both sides, and remembering that the homology of the tensor product complex is the tensor product of the homologies (Proposition~\ref{prop:hom-tensor-is-tensor-hom}), we get exactly what we want:
+    \[
+        \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
+    .\]
+    Note that we take the homology with coefficients in $\Z_2$ in order to satisfy the conditions of Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
+\begin{marginfigure}
+    \centering
+    \incfig{kunneth-formula}
+    \caption{TODO kunneth formula}
+    \label{fig:kunneth-formula}
+\end{marginfigure}
+\end{myproof}
 
 
 \section{Morse inequalities}
@@ -23,34 +144,34 @@ The Morse inequalities state that there is a lower bound on the number of critic
     Let $f: M \to  \R$ a Morse function. Then
     \[
         \# \Crit f \ge \sum \dim \HMf[k]{M, \Z_2}
-    ,\] 
+    ,\]
     and more specifically,
     \[
         \# \Crit_k f \ge \dim \HMf[k]{M, \Z_2}
-    .\] 
+    .\]
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     This is actually a very straightforward result, following from the fact that \[
     \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
     \] so $\dim \HMf[k]{M, \Z_2} = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
-\end{proof}
+\end{myproof}
 
 A result in similar vein is the following:
 \begin{theorem}
     Let $f: M \to  \R$ be a Morse function. Then
     \[
         \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2}  = \chi(M)
-    .\] 
+    .\]
     Considering this equality modulo $2$, we get
     \[
         \# \Crit f  \equiv \sum \dim \HMf[k]{M, \Z_2} \mod 2
-    .\] 
+    .\]
 \end{theorem}
 \begin{remark}
     This alternating sum is a generalization of the Euler characteristic of a manifold, defined to be
     \[
     \chi(M) = \sum (-1)^{k} \dim H_k(M, \Z_2)
-    .\] 
+    .\]
 
     In the case of polyhedra, this equation reduces to $2 = V - E + F$, where $V$, $E$ and  $F$ are the number of vertices, edges and faces in the polyhedron.
 \end{remark}
@@ -79,8 +200,8 @@ A result in similar vein is the following:
     }
     \label{fig:morse-chain-complex-visualized-truncated}
 \end{marginfigure}
-\begin{proof}
-    Use the fact that 
+\begin{myproof}
+    Use the fact that
     \[
         \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
     \]
@@ -89,7 +210,7 @@ A result in similar vein is the following:
     To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
     Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top). We have highlighted the dimension of the homology spaces in orange, and we have indicated spaces of the same dimensions with the same type of black thick lines.
     The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating sum of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
-    \end{proof}
+    \end{myproof}
 
     We can also truncate this argument, considering only a partial alternating sum, illustrated in Figure~\ref{fig:morse-chain-complex-visualized-truncated}.
     In this case, we do not have equality (the reason has been indicated in the figure), but we do have the following result:
@@ -97,7 +218,7 @@ A result in similar vein is the following:
     For any Morse function $f: M \to  \R$ and for any $m = 0, \ldots, n$, the following inequality holds:
     \[
         \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} \dim \HMf[k]{M, \Z_2}
-    .\] 
+    .\]
 \end{theorem}
 
 It is easy to check that the strong Morse inequalities are in fact stronger:the weak version can be obtained by by subtracting the strong inequalities for $m$ and  $m+1$.
@@ -124,9 +245,9 @@ Also the proof of the Morse inequalities works out, because we are working over 
 \begin{theorem}
     The (weak and strong) Morse inequalities hold over $\Z_p$ for any prime $p$.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Exactly the same as before. As modules over $\Z_p$ are vector spaces, nothing changes.
-\end{proof}
+\end{myproof}
 
 Let us now discuss the case for $\Z$.
 While we cannot define dimension, we can define different notions of ranks. Following `Infinite Abelian Groups' by Fuchs\sidecite{fuchs1970infinite}, we define the following invariants:
@@ -147,7 +268,7 @@ While we cannot define dimension, we can define different notions of ranks. Foll
         r_0(A) = 2 \qquad
         r_2(A) = 2 \qquad
         r_3(A) = 1 \qquad
-    ,\] 
+    ,\]
     and therefore the torsion rank is $r_t(A) = 3$ and the total rank is $r(A) = 5$.
 \end{eg}
 We also have the following proposition\sidecite[p. 86]{fuchs1970infinite}
@@ -169,15 +290,15 @@ These two facts combined give the following result:
     The (weak and strong) Morse inequalities hold over $\Z$, in the following sense:
     \[
         \# \Crit_k f \ge  r_0(\HMf[k]{M, \Z})
-    ,\] 
+    ,\]
     and for any $m = 0, \ldots, n$ we have
         \[
             \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} r_0(\HMf[k]{M, \Z})
-        .\] 
+        .\]
 \end{prop}
-\begin{proof}
+\begin{myproof}
     Similar as before, replacing $\Z_2$ by $\Z$ and $\dim$ by $r_0$.
-\end{proof}
+\end{myproof}
 
 \subsection{Comparing the Morse inequalities over $\Z$ and $\Z_p$}
 
@@ -190,20 +311,20 @@ The following example shows that this is not the case:
     Therefore, the weak Morse inequalities over $\Z$ give
     \[
     C_0 \ge 1 \qquad C_1 \ge 1 \qquad C_2 \ge 0
-    ,\] 
+    ,\]
     and those over $\Z_2$ give
     \[
     C_0 \ge  1 \qquad C_1 \ge  2 \qquad C_2 \ge  1
-    ,\] 
+    ,\]
     which are clearly stronger.
     This is still the case when we consider the strong Morse equalities. Over $ \Z$ we have
     \[
     C_0 \ge  1 \qquad C_1 - C_0 \ge  0 \qquad C_2 - C_1 + C_0 \ge  0
-    ,\] 
+    ,\]
     while over $\Z_2$ we get
     \[
     C_0 \ge  1 \qquad C_1 - C_0 \ge  1 \qquad C_2 - C_1 + C_0 \ge  0
-    .\] 
+    .\]
 \end{eg}
 
 \begin{remark}
@@ -215,69 +336,3 @@ The following example shows that this is not the case:
 
 
 
-\section{The Künneth Formula}
-The Künneth Formula is a way to relate the homology of a product to the homology of its factors and it states the following:
-\begin{prop}[Künneth formula]
-    Let $M, N$ be two manifolds. Then
-    \[
-        \HMf[k]{M \times N} \cong
-        \bigoplus_{i+j  = k} \HMf[i]{M} \otimes \HMf[j]{N}
-    ,\] 
-where homology is taken with coefficients in $ \Z_2$.
-\end{prop}
-We can also express this in a different way using the Poincaré polynomial.
-For this, define $\beta_k(M) = \dim_{\Z_2} \HMf[k]{M;\Z_2}$, the $k$th Betti number and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
-Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
-\begin{eg}
-    We have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
-    More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
-\end{eg}
-\begin{proof}
-    Let $f, g$ and $X, Y$ be two Morse functions, resp.\ pseudo-gradient fields on  $M$ and  $N$.
-    Then $f + g$ is a Morse function and $(X, Y)$ is a pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
-    Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices. 
-    Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
-    Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
-    It's clear that the only way this can happen is when $a = c$ or $b = d$.\sidenote{
-        If $a\neq c$ and  $b \neq d$, then  $\Ind c \ge  \Ind a + 1$ and $\Ind d \ge  \Ind b + 1$, so $\Ind (c, d) \ge  \Ind (a, b) + 2$.
-    }
-
-    When we think about this in terms of directed graphs of critical points, like we did in the example of $T^{3}$, we find that the graph of $M \times N$ is the Cartesian product of the graph of $M$ and the graph of  $N$.
-    With these things in mind, it is easy to check that
-    \begin{align*}
-        \Phi: \bigoplus_{i+j = k} C_i(f) \otimes C_j(g) &\longrightarrow C_k(f+g) \\
-        a \otimes b &\longmapsto (a,b)
-    \end{align*}
-    is an isomorphism of complexes with the following differentials:
-    \[
-        (C_\bul(f) \otimes C_\bul(g), \partial_X \otimes 1 + 1 \otimes \partial_Y) \xrightarrow{\Phi}   (C_\bul(f+g), \partial_{(X,Y)})
-    ,\] 
-    where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
-    Now, taking the homology of both sides, and remembering that the homology of the tensor product complex is the tensor product of the homologies (Proposition~\ref{prop:hom-tensor-is-tensor-hom}), we get exactly what we want:
-    \[
-        \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
-    .\] 
-    Note that we take the homology with coefficients in $\Z_2$ in order to satisfy the conditions of Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
-\begin{marginfigure}
-    \centering
-    \incfig{kunneth-formula}
-    \caption{TODO kunneth formula}
-    \label{fig:kunneth-formula}
-\end{marginfigure}
-\end{proof}
-
-\section{Poincaré duality}
-\todo{maybe follow shintaro?}
-
-\begin{theorem}
-    Let $M$ be an orientable cobordism from  $M_0$ to $M_1$.
-    Then
-    \[
-        H_k(M, M_1, \Z) \cong H^{n-k}(M,M_0, \Z) \qquad k = 0, \ldots, n
-    .\] 
-    Over $\Z_2$, this results in
-    \[
-        H_k(M, M_1, \Z_2) \cong H_{n-k}(M,M_0, \Z_2) \qquad k = 0, \ldots, n
-    .\] 
-\end{theorem}
-\todo{also on cobordisms (antonio p.136)}

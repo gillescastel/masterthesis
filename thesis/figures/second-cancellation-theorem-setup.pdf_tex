@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{187.81763753bp}%
+    \setlength{\unitlength}{157.61294508bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,28 +50,28 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.46884158)%
+  \begin{picture}(1,1.67019271)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.20211277,0.80285476){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
-    \put(0.43078715,0.47269342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0.20211276,0.80285461){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.43078722,0.47269331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.73311171,0.48730373){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
+    \put(0.73311173,0.48730381){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.87961331,0.74629204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p)$\end{tabular}}}}%
-    \put(0.87961331,0.4115064){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(q)$\end{tabular}}}}%
+    \put(0.87961339,0.7462919){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(p)$\end{tabular}}}}%
+    \put(0.87961339,0.4115065){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$f(q)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.88013849,0.58845251){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\alpha$\end{tabular}}}}%
+    \put(0.88013851,0.58845242){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\alpha$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{second-cancellation-theorem-setup.pdf}}%
-    \put(-0.00219628,0.58827886){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
+    \put(-0.00219629,0.58827898){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.36633663,0.67109832){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{s}(q)$\end{tabular}}}}%
-    \put(0.13915364,0.53335077){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{u}(p)$\end{tabular}}}}%
+    \put(0.36633664,0.67109833){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{s}(q)$\end{tabular}}}}%
+    \put(0.13915369,0.53335075){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{u}(p)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{second-cancellation-theorem-setup.pdf}}%
-    \put(0.49735782,0.89492874){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{u}(p)$\end{tabular}}}}%
-    \put(0.36668509,1.36745747){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{s}(q)$\end{tabular}}}}%
-    \put(0.62561627,1.27695487){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
+    \put(0.59267073,0.98629613){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{u}(p)$\end{tabular}}}}%
+    \put(0.43695609,1.54937952){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$S^{s}(q)$\end{tabular}}}}%
+    \put(0.74550842,1.44153315){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{second-cancellation-theorem-setup.pdf}}%
   \end{picture}%
 \endgroup%

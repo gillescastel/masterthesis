@@ -1,60 +1,64 @@
-\chapter{$h$-cobordism theorem}
+\chapter[Generalized Poincaré conjecture]{Generalized higher dimensional Poincaré conjecture}
 \label{chap:h-cobord}
 \section{Introduction}
-\todo{What books do we follow?}
 
 In this chapter, we will prove three important theorems that are all closely related.
-Let us first state them.
 The first one states that the Morse inequalities are in fact attainable under certain conditions.
-In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale\sidecite{smale1960generalized} in 1960.
-\begin{theorem}[Smale's theorem]
+In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale in 1960.
+\begin{theorem}[Smale's theorem\sidenotemark]
     If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H_k(M, \Z))$ for all $k = 0, \ldots, n$.
 \end{theorem}
-Remember that we use $r_0(A)$ to denote the free rank of a $\Z$-module $A$.
+\sidenotetext[][-6em]{\fullcite{smale1960generalized}}
+Recall that we use $r_0(A)$ to denote the free rank of a $\Z$-module $A$.
 A closely related theorem is the $h$-cobordism theorem, stating
-\begin{theorem}[h-cobordism theorem]
+\begin{theorem}[h-cobordism theorem\sidenotemark]
     If $M$ is a cobordism from $M_0$ to $M_1$ that is simply connected, $\dim M \ge 6$ and $H_{\bul}(M,M_0) = 0$, then $M$ is a trivial cobordism, i.e.\ diffeomorphic to  $ M_0 \times I$.
 \end{theorem}
-The last theorem---and perhaps most famous one---we will prove is generalized Poincaré conjecture for dimensions $n \ge 5$.
-This conjecture (now a theorem) states that any homotopy sphere is a topological sphere. By this, we mean the following:
-% TODO spell check in [] of theorems1
+\sidenotetext[][-5em]{\fullcite{hcobord}}
+The last---and perhaps most famous---theorem we will prove is the generalized Poincaré conjecture for dimensions $n \ge 5$.
+This conjecture (now a theorem) states that any homotopy sphere is a topological sphere.
 \begin{theorem}[Higher dimensional Poincaré conjecture]
     If $M$ is a homotopy sphere of dimension  $n \ge 5$, then $M$ is homeomorphic to  $S^{n}$.
 \end{theorem}
-This theorem has a great historical significance, and the proofs for dimension $n = 3, 4$ are notoriously difficult and very subtle\sidecite{stallings2016not}. We will briefly 
 
-These theorems are all closely related, and we will prove them using a handle cancelling approach which roughly goes as follows:
+This was proven by Smale and in fact almost immediately follows from the minimality of the Morse inequalities.
+We will discuss the historical significance in Section~\ref{sec:history}.
+The proof of these theorems follows a handle cancellation approach, which roughly goes as follows:
 \begin{enumerate}[(1)]
     \item Let $f: M \to  \R$ be an arbitrary Morse function.
     \item Under certain assumptions, we can cancel pairs of critical points.
     \item Repeatedly cancelling critical points allows us to conclude that (depending on the assumptions):
         \begin{itemize}
-            \item The resulting Morse function has no critical points (in the case of $M$ being a cobordism);
             \item The resulting Morse function attains the Morse inequalities; or
+            \item The resulting Morse function has no critical points (in the case of $M$ being a cobordism); or
             \item The resulting Morse function has 2 critical points: a minimum and a maximum, which implies that $M \cong S^{n}$, as we will show.
         \end{itemize}
 \end{enumerate}
 
-\todo{To this purpose, this chapter will mostly contain cancellation results.
-Because the proof in total is very lengthy,
-we will first give an overview, and we will later fill in details where needed.
-We follow Milnor, and also Antonio Kosinski}
+To this purpose, this chapter mostly contains cancellation results.
+The proof we give resembles the original proof of Smale but using concepts and notation introduced earlier in this thesis.
+Most of this chapter is based on the somewhat more modern treatments by Milnor\sidecite{hcobord} and Kosinski.\sidecite{kosinski2013differential}
+The book of Kosinski is very thorough and proves things from the viewpoint of handles, isotopies of attachment regions, etc.
+Milnor on other hand, does not even mention handle decompositions at all, and only works directly with the Morse function and its critical points.
+
 
 
 
 \section{Stronger cancellation result}
-Let us first recall the cancellation result we stated previously:
-\begin{theorem}
-    Let $f: M \to  [0,1]$ be a Morse function on a cobordism with two critical points $p, q$.
-    If $|\L pq| = 1$, then $p$ and  $q$ are cancelable.
-\end{theorem}
+Let us recall the first cancellation result we have proved in Chapter~\ref{chap:stable-and-unstable-manifolds}.
 
-Phrased in this way, this theorem begs for a generalization.
-In the chapter on Morse homology, we have seen that we can orient $\L pq$.
-If $\L pq$ is a discrete space (as is the case when  $\Ind p - \Ind q = 1$), then this orientation assigns a sign to each of the points in  $\L pq$.
-Therefore, instead of considering the cardinality of $\L pq$, it would be interesting if the theorem still holds if we consider the signed count of the points in $\L pq$, i.e.\ if $\NX Xpq = \pm 1$.
-So instead of requiring that there is a single gradient flow line connecting $p$ and  $q$, we would have that the signed count of flow lines connecting  $p$ and  $q$ is  $\pm 1$.
-It turns out that this is indeed the case if we add some additional assumptions, giving the first strengthening of our cancellation result.
+\begingroup
+\def\thetheorem{\ref{firstcancellation}}
+\begin{theorem}
+    Let $f: M \to  [0,1]$ be a Morse function on a cobordism with two critical points $p, q$ of index $k$ and  $k-1$. Let $X$ be an adapted pseudo-gradient satisfying the Smale condition.
+    If $|\L pq | = \nX Xpq = 1$, then $p$ and  $q$ are cancelable.
+\end{theorem}
+\addtocounter{theorem}{-1}
+\endgroup
+
+In the chapter on Morse homology, we have seen that by orienting $\L pq$, we can define a signed count $\NX Xpq$ of trajectories between $p$ and $q$.
+A natural generalization of this theorem then would be to consider cases where $\NX Xpq = \pm 1$, which is weaker than requiring $\nX Xpq = 1$.
+Together with some additional assumptions, this turns out to be sufficient for cancelling $p$ and  $q$, giving the first strengthening of our cancellation result.
 
 \begin{theorem}[Second Cancellation Theorem]
     Let $f: M \to  [0,1]$ be a Morse function on a cobordism $M$ (from $M_0$ to $M_1$) with two critical points $p, q$.
@@ -74,21 +78,9 @@ It turns out that this is indeed the case if we add some additional assumptions,
     .\] 
 \end{remark}
 
-Before giving an idea of how we will prove this result, let us first give some examples.
+Let us give some examples illustrating the idea of the theorem.
 \begin{eg}
-    The following examples should be taken with a grain of salt, because the conditions of the theorem are actually not satisfied (in particular the dimension is too low).
-    However, they are still helpful as they express the idea of the theorem.
-    We will consider a $3$-dimensional manifold $M$ with a Morse function $f$ and let $\alpha$ be a regular value such that  $f^{-1}((-\infty, \alpha])$ consists of a $0$, $1$ and  $2$ handle as in the figures below.
-    Let us the four situations from left to right.
-    \begin{enumerate}[(i)]
-        \item The first figure shows the $2$- and  $1$- handle and their corresponding critical points $p$ and  $q$.
-            It is visually clear that these two critical are cancelable.
-        \item The second figure shows the same situation, but we have hidden the $2$-handle and indicated the so-called belt sphere $S^{s}(q)$ and the attaching sphere $S^{u}(p)$. Their intersection consists of a single point, corresponding to a single flow line from $p$ to $q$. 
-            By the first cancellation theorem, we can confirm that $p$ and  $q$ are indeed cancelable.
-        \item Next, we have drawn a situation where the number of intersection points is $3$, but the intersection number (which corresponds to $\NX Xpq$, as we will expand upon later) is $1$. It is clear that we can isotope the attaching sphere such that it only intersects once with the belt sphere.
-            This reduces the situation to (ii), so $p$ and  $q$ are cancellable, as is also clear from the figure. 
-        \item The last figure shows a situation where the number of intersections points is $2$ and the intersection number is $0$. In this situation, we cannot cancel the two critical points.
-    \end{enumerate}
+    Consider a $3$-dimensional manifold $M$ with a Morse function $f$ and let $\alpha$ be a regular value such that  $f^{-1}(-\infty, \alpha]$ consists of a $0$, $1$ and  $2$ handle as in the figures below.
     \begin{figure}[H]
     \centering
     \sidecaption{Examples illustrating the second cancellation theorem.
@@ -96,34 +88,21 @@ Before giving an idea of how we will prove this result, let us first give some e
     }
     \incfig{second-cancellation-theorem-example}
 \end{figure}
+    Let us consider the four situations from left to right.
+    \begin{enumerate}[(i)]
+        \item The first figure shows the $2$- and  $1$- handle and their corresponding critical points $p$ and  $q$.
+            It is visually clear that these two critical points are cancelable.
+        \item The second figure shows the same situation, but we have hidden the $2$-handle and indicated the so-called belt sphere $S^{s}(q)$ and the attaching sphere $S^{u}(p)$. Their intersection consists of a single point, corresponding to a single flow line from $p$ to $q$. 
+            By the first cancellation theorem, we can confirm that $p$ and  $q$ are indeed cancelable.
+        \item Next, we have drawn a situation where the number of intersection points is $3$, but the intersection number (which corresponds to $\NX Xpq$, as we will expand upon later) is $1$. It is clear that we can isotope the attaching sphere such that it only intersects once with the belt sphere.
+            This reduces the situation to (ii), so $p$ and  $q$ are cancellable, as is also clear from the figure. 
+        \item The last figure shows a situation where the number of intersections points is $2$ and the intersection number is $0$. In this situation, we cannot cancel the two critical points. In fact, we can isotope the attaching sphere off the $1$-handle, showing that the two handles are completely independent.
+    \end{enumerate}
 \end{eg}
-
-\begin{marginfigure}
-    \centering
-    \incfig{second-cancellation-theorem-setup}
-    \caption{Setup of the second cancellation theorem in dimension two and three. Note the figure is somewhat misleading because of dimensionality reasons.}
-    \label{fig:second-cancellation-theorem-setup}
-\end{marginfigure}
-As already hinted at before in the example, the proof of this stronger cancellation result will reduce the given situation where $\NX X pq = \pm 1$ to one that satisfies the condition of the first cancellation theorem, i.e. $| \L pq | = 1$.
+As hinted at in the example, the proof of this stronger cancellation result will reduce the given situation where $\NX X pq = \pm 1$ to one that satisfies the condition of the first cancellation theorem, i.e. $\nX X pq = 1$.
 In order to do this we want to `cancel' flow lines of opposite signs.
-We will do this by using a theorem of Whitney which allows to cancel intersection points of opposite intersection numbers.\sidenote{For a primer on intersection numbers, see Chapter 0.}
+We will do this by using a theorem of Whitney which allows to cancel intersection points of opposite intersection numbers.\sidenote{For an introduction to the intersection number of two manifolds, we refer the reader to Chapter~0.}
 
-The correspondence goes as follows: we can interpret $\NX X pq$ as the intersection number of two submanifolds.
-Indeed, let $\alpha$ be a regular value between  $f(p)$ and  $f(q)$ and let $V = f^{-1}(\alpha)$.
-Let $S^{u}(p) = \unstable p \cap V$ and 
-$S^{s}(q) = \stable q \cap V$ be spheres inside $V$.
-Then we have noted before that $\L pq \cong S^{u}(p) \cap S^{s}(q)$ so that \[
-    | \L pq| = |S^{u}(p) \cap S^{s}(q)|.
-\]
-Moreover, we have that
-\[
-    \NX X pq = S^{u}(p) \cdot S^{s}(q)
-,\] 
-where we denote the intersection number of two manifolds $N$ and $N'$ by $N \cdot N'$.
-For this to be defined, we assign arbitrary orientations of the unstable manifolds in order to define $\NX X pq$, and we also use these orientations for calculating the intersection number$S^{u}(p)$ and $S^{s}(q)$.
-The orientation issues here are the same as those we discussed in the chapter on Morse homology.
-
-We now state the theorem of Whitney, prove the second cancellation theorem and end with the proof of Whitney's theorem.
 \begin{theorem}[Whitney]
     Let $N$ and  $N'$ be smooth, closed, tranversely intersecting submanifolds of dimensions  $r$ and $s$ in a smooth  $(r+s)$-dimensional manifold $V$.
     Suppose  $N$ is oriented and  $N'$ is cooriented.
@@ -137,6 +116,9 @@ We now state the theorem of Whitney, prove the second cancellation theorem and e
         \item At time  $t = 1$,  $N'$ and  $N$ do not intersect in $p$ and $q$  any more.  In other words, $h_1(N) \cap N' = N \cap  N' \setminus \{ p, q\} $.
     \end{enumerate}
 \end{theorem}
+\begin{myproof}
+    Postponed.
+\end{myproof}
 \begin{marginfigure}[-6.5cm]
     \centering
     \incfig{intersection-points-cancellation}
@@ -144,31 +126,54 @@ We now state the theorem of Whitney, prove the second cancellation theorem and e
     Under certain conditions, we can `cancel' intersection points of opposite intersection number by deforming the manifold $M$ by an isotopy.}
     \label{fig:intersection-points-cancellation}
 \end{marginfigure}
-\begin{proof}[Proof of the second cancellation theorem]
+
+\begin{marginfigure}
+    \centering
+    \incfig{second-cancellation-theorem-setup}
+    \caption{Setup of the second cancellation theorem in dimension two and three. Note the figure is somewhat misleading because of dimensionality reasons.}
+    \label{fig:second-cancellation-theorem-setup}
+\end{marginfigure}
+In order to use this theorem, we will interpret $\NX X pq$ as the intersection number of two submanifolds.
+Let $\alpha$ be a regular value between  $f(p)$ and  $f(q)$ and let $V = f^{-1}(\alpha)$.
+Let $S^{u}(p) = \unstable p \cap V$ and 
+$S^{s}(q) = \stable q \cap V$ be spheres inside $V$.
+Then we have noted before that $\L pq \cong S^{u}(p) \cap S^{s}(q)$ so that \[
+    \nX Xpq = |S^{u}(p) \cap S^{s}(q)|.
+\]
+Moreover, we have that
+\[
+    \NX X pq = S^{u}(p) \cdot S^{s}(q)
+,\] 
+where we denoted by $N \cdot N'$ the intersection number of two manifolds.
+Recall that for defining $\NX X pq$,
+we chose arbitrary orientations of the stable manifolds, inducing coorientations of the unstable manifolds.
+These chosen orientations allow us to talk about the intersection number of $S^{u}(p)$ and $S^{s}(q)$.
+With this insight, we are ready to prove the second cancellation theorem.
+
+\begin{myproof}[Proof of the second cancellation theorem]
     Let $X$ be an adopted pseudo-gradient vector field adopted to  $f$ and satisfying the Smale condition.
     Let $N = S^{u}(q) = \unstable q \cap V$ and $N' = S^{s}(p) = \stable p \cap  V$.
 
-    We now that $S^{u}(q) \cdot S^{s}(p) = \pm 1$, which means that either there is only one flow line connecting $p$ and  $q$, in which case the proof reduces to the first cancellation theorem, or there are multiple flow lines with opposite signs.
+    We know that $S^{u}(q) \cdot S^{s}(p) = \pm 1$, which means that either there is only one flow line connecting $p$ and  $q$, in which case the proof reduces to the first cancellation theorem, or there are multiple flow lines with opposite signs.
     If we can show that the conditions of the theorem of Whitney are satisfied, we can cancel these intersection points pair by pair (by altering $X$) until we have reached the situation of the first cancellation theorem.
 
     Let $V = f^{-1}(\alpha)$.  If $M$ is simply connected, then $V$ is also simply connected.\sidenote{This follows from applying Seifert--Van Kampen theorem: $\pi_1(V) \cong \pi_1(\stable{p} \cup  V \cup \unstable{q})$ (here we use that $k > 2, n - k \ge 3$).
     Then notice that $\stable{p} \cup V \cup \unstable{q}$ is homotopic to $M$ showing that $\pi_1(V) \cong \pi_1(M) = 1$.}
     If $k \ge 3$, then all the conditions of the theorem are satisfied and we are done.
-    If $k = 2$, we need to show that  $\pi_1(V - S^{s}(p)) \cong \pi_1(V) = 1$,
-    or equivalently we need to show that $\pi_1(V - S^{s}(p))$ is trivial.
+    If $k = 2$, we need to show that  $\pi_1(V - S^{s}(p)) \cong \pi_1(V) = 1$.
     Let $S = \unstable q \cap f^{-1}(0)$.
     Flowing $M_0 \setminus S$ via $X$ gives  $V - S^{s}(p)$, so we need to show that $M_0 \setminus S$ has trivial fundamental group.
-    For this we use Seifert--Van Kampen. Let $N$ be a product neighbourhood\sidenote{If the normal bundle of a submanifold is trivial, a tubular neighbourhood is called a product neighbourhood. TODO why does this exists?} of $S$ in $M_0$.
-    Note that as $k=2$, $S$ is diffeomorphic to $S^{1}$, and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
+    For this we use Seifert--Van Kampen. Let $N$ be a product neighbourhood of $S$ in $M_0$.
+    Note that $k=2$, $S$ is diffeomorphic to $S^{1}$ and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
     As $k=2$, $n - 2 \ge 4$, so $\R^{n-2} \setminus \{ 0 \} $ has trivial fundamental group. Therefore $N \setminus S \cong S^{1} \times (\R^{n-2}\setminus \{0\})$ has the same fundamental group as $S^{1}$, which is $\Z$.
     This allows us to use Seifert--Van Kampen in the following way:
-    $(M_0 \setminus S) \cup N = M_0$, and $\pi_1(M_0) = 1$ $\pi_1(N) = \Z$ $\pi_1(N \setminus S) = \Z$. This implies that $\pi_1(M_0 \setminus S) = 1$, completing the proof.
-\end{proof}
+    $(M_0 \setminus S) \cup N = M_0$, $\pi_1(M_0) = 1$,  $\pi_1(N) = \Z$,  $\pi_1(N \setminus S) = \Z$. This implies that $\pi_1(M_0 \setminus S) = 1$, completing the proof.
+\end{myproof}
 
-Let us finally prove the theorem of Whitney.
+Let us for completeness also give a proof of Whitney's theorem.
+\begin{myproof}[Proof of Whitney's theorem]
+    We will construct two local models of the situation, where it will be easy to perform the isotopy of $N$. We will end the proof by extending this isotopy to the whole of $V$.
 
-\begin{proof}[Proof of Whitney's theorem]
-    We will construct the isotopy of $N$ in a local model.
     \paragraph{Plane model}
     Let $C, C'$ be the arcs in  $N$ and $N'$ connecting $p$ and  $q$ and extend them a little bit either way, as in Figure~\ref{fig:whitneys-theorem-proof-model}.
     \begin{marginfigure}
@@ -191,7 +196,7 @@ Let us finally prove the theorem of Whitney.
         \item $\phi^{-1}(N) = (U \cap C_0) \times \R^{r-1} \times 0$,
             \item $\phi^{-1}(N') = (U \cap C_0) \times 0\times \R^{s-1}$.
     \end{itemize}
-    This is actually quite subtle, and for a detailed proof of this claim, we refer the reader to the notes of Milnor\sidecite[p.~75]{hcobord}.
+    This is actually quite subtle, and for a detailed proof of this claim, we refer the reader to the notes of Milnor.\sidecite[p.~75]{hcobord}
     \begin{marginfigure}
         \centering
         \incfig{whitneys-theorem-model-isotopy}
@@ -217,16 +222,19 @@ Let us finally prove the theorem of Whitney.
     To finally find an isotopy of $V$, define $F_t: V\to V$ such that
     $F_0$ is the identity, $F_t$ is the identity everywhere except away from  $\Im \phi$, and on  $\Im \phi$, define  $F_t = \phi  \circ  H_t  \circ  \phi^{-1}$.
     This finishes the proof.
-\end{proof}
+\end{myproof}
 
-\section{Cancellation of points in the middle dimensions and diagonalizing $[\partial_k]$}
+\section[Cancellation of points in the middle dimensions]{Cancellation of points in the middle dimensions and diagonalizing $[\partial_k]$}
 
-The second cancellation theorem discussed in the previous section allows us to cancel two critical points if there is (counting with signs) a single flow line connecting them.
-In this section, we will show how we can reach that situation.
-
-We can interpret the condition of the second cancellation theorem in another way, namely that the matrix of the differential $\partial_k$, whose entries are \[
-    [\partial_k]_{p, q} = \NX X p q \qquad (p,q) \in C_k(f, \Z) \times  C_{k-1}(f, \Z)
-\] has a row and a column that intersect in $\NX X p q = 1$ whose other entries are zeros. Then the theorem allows us remove this row and column, by which we mean that we can alter $X$ and $f$ such that $[\partial_{X', k}]$ is $[\partial_{X, k}]$ with this one row and column removed.
+If $M$ is a cobordism with exactly two critical points,
+the second cancellation theorem allows us to cancel them if there is among other conditions, a single connecting flow line (counting with signs).
+When $M$ has multiple critical points, we must also require that this pair does not interact with the other critical points.
+With this we mean the following.
+Let $[\partial_k]$ be the matrix associated to $\partial_k$ with entries \[
+    [\partial_k]_{p, q} = \NX X p q \qquad (p,q) \in C_k(f, \Z) \times  C_{k-1}(f, \Z).
+\]
+Suppose $[\partial_k]$ has a row and a column of zeros, except for their intersection, which we require to be $\NX X p q = \pm 1 $.
+Then it is easy to see that the conclusion of the second cancellation theorem still holds,  i.e.\ we can cancel $p$ and  $q$, which comes down to removing the corresponding row and column in the matrix $[\partial_k]$.
 For example, in the case of $|C_k| = 4, |C_{k-1}| = 5$, the reduction could look as follows:
 \[
     \begin{pmatrix}
@@ -244,12 +252,14 @@ For example, in the case of $|C_k| = 4, |C_{k-1}| = 5$, the reduction could look
     * & *& *
 \end{pmatrix}
 .\] 
-This restatement of the theorem leads us to our next goal: diagonalizing $[\partial_k]$ and showing that under certain conditions,  $[\partial_k]$ is a diagonal matrix with only $\pm 1$ on the diagonal. Then we can apply the second cancellation theorem multiple times, cancelling all the critical points (that lie in the middle dimensions, per assumption of the theorem).
+This generalization of the second cancellation theorem leads us to our next goal: creating as many zeros in $[\partial_k]$ as possible.
+In other words, diagonalizing $[\partial_k]$ and showing that under certain conditions,  $[\partial_k]$ is a diagonal matrix with only $\pm 1$ on the diagonal. Then we can apply the second cancellation theorem multiple times, cancelling all the critical points (that lie in the middle dimensions, per assumption of the theorem).
 
-Let us make clear what we mean by diagonalizing.
-Starting off with a matrix $[\partial_k]$ based on $f$ and $X$, we want to change it step by step such that the resulting $[\partial_k']$ is diagonal (note that it does not need to be square). These changes are done by altering $f$ and $X$.
+Let us make very clear what we mean by diagonalizing.
+Starting off with a matrix $[\partial_k]$ based on $f$ and $X$, we want to change it step by step such that the resulting $[\partial_k']$ is diagonal (note that it does not need to be square).
+To accomplish these algebraic manipulations, we alter $f$ and  $X$.
 
-In order to diagonalize a matrix over $\Z$, it suffices to be able to do three elementary row and column operations, as explained in Advanced modern algebra by Rotman.\sidecite[p.~688]{rotman2010advanced}
+We can diagonalize a matrix over $\Z$ by using three types of elementary row and column operations, as explained in Advanced modern algebra by Rotman.\sidecite[p.~688]{rotman2010advanced}
 \begin{samepage}
 \begin{enumerate}[E1]
     \item Interchange two rows or columns
@@ -257,10 +267,8 @@ In order to diagonalize a matrix over $\Z$, it suffices to be able to do three e
     \item Addition of a row (resp.~column) to another row (resp.~column)
 \end{enumerate}
 \end{samepage}
-
-It is clear that E1 and E2 can be done: we can just relabel the critical points for E1 and change the (arbitrary) orientation of the unstable manifolds for E2.
-For the third operation, consider the following figure:
-
+It is clear that E1 and E2 can be done geometrically: we can just relabel the critical points for E1 and change the (arbitrary) orientation of the stable manifolds for E2.
+For the third operation, consider the following figure.
 \begin{figure}[H]
     \centering
     \sidecaption{
@@ -268,27 +276,33 @@ For the third operation, consider the following figure:
     \label{fig:addition-of-columns-geometrically}}
     \incfig{addition-of-columns-geometrically}
 \end{figure}
-This shows how such an addition operation can be performed geometrically: isotope the attachment sphere of the second $2$-handle$, i.e.\ S^{u}(p_2)$ to the sphere that is `$S^{u}(p_1)$ connected to $S^{u}(p_2)$ via a tube'. Note that this isotopy depends on the existence of the first $2$-handle.
-We have that $\partial'(p_2) = q_1 + q_2 = \partial(p_1) + \partial(p_2)$.
+By isotoping the attachment sphere of the second $2$-handle, i.e.\ $S^{u}(p_2)$ over the first $2$-handle to the sphere that is `$S^{u}(p_1)$ connected to $S^{u}(p_2)$ via a tube', we can add the first column of $[\partial_2]$ to the second one. Indeed, counting the intersections in the figure, we have that $\partial'(p_2) = q_1 + q_2 = \partial(p_1) + \partial(p_2)$.
+
 
 To show that this works in general, we will use the following lemma:
 \begin{lemma}
-    Let $N$ be a connected closed manifold of dimension $m-1$ containing two embedded $(k-1)$-spheres $ S_1$, $S_2$ ($1 < k < m$).
+    Let $N$ be a connected closed manifold of dimension $n-1$ containing two embedded $(k-1)$-spheres $ S_1$, $S_2$ ($1 < k < n$).
     Assume that $S_1$ bounds a $k$-disk $D$  disjoint from $ S_2$. Then there is an isotopy in $N$ of  $ S_2$ to a sphere $S$ that is `$S_1$ connected to $ S_2$' with a tube.
     More explicitly, $S$ consists of $S_1$ and $ S_2$ with small discs removed and of a tube connecting these openings.
 
-    If $V$ is a submanifold of dimension $m-k$ that does not disconnect $N$,  then we can assume that the tube does not intersect $V$ such that
+    If $V$ is a submanifold of dimension $n-k$ that does not disconnect $N$,  then we can assume that the tube does not intersect $V$ such that
      \[
          V \cap S = (V \cap S_1) \cup (V \cap S_2)
     .\] 
 \end{lemma}
 \begin{figure}[H]
     \centering
-    \incfig{lemma-sphere-connect-with-tube}
-    \caption{The lemma allows us to connect $S_2$ to  $S_1$ via a tube, missing the submanifold $V$.}
+    \sidecaption{The lemma allows us to connect $S_2$ to  $S_1$ while missing the submanifold $V$.
     \label{fig:lemma-sphere-connect-with-tube}
+    }
+    \incfig{lemma-sphere-connect-with-tube}
 \end{figure}
-\begin{proof}
+\begin{myproof}
+    Let $L$ be an arc in $N$ that is disjoint from  the interior of $K$ connecting  $s_1$ to $s_2$ points in $S_1$ and $S_2$.
+    Let $D_1, D_2$ be disks around $s_1$ and $ s_2$ in $ S_1$ and $S_2$.
+    First move $s_2$ along $L$ to  $ s_1$ and extend this to an isotopy that moves a smaller disk $D \subset D_2$ to $D_1$, and keeps $ S_2 - D_2$ fixed.
+    Then move $D_1$ `in' $D$ keeping its boundary fixed. Again extend to an isotopy of $N$.
+    Composing these isotopies, we get the result.
     \begin{marginfigure}
         \centering
         \incfig{lemma-sphere-connect-with-tube-proof}
@@ -298,23 +312,18 @@ To show that this works in general, we will use the following lemma:
         }
         \label{fig:lemma-sphere-connect-with-tube-proof}
     \end{marginfigure}
-    Let $L$ be an arc in $N$ that is disjoint from  the interior of $K$ connecting  $s_1$ to $s_2$ points in $S_1$ and $S_2$.
-    Let $D_1, D_2$ be disks around $s_1$ and $ s_2$ in $ S_1$ and $S_2$.
-    First move $s_2$ along $L$ to  $ s_1$ and extend this to an isotopy that moves a smaller disk $D \subset D_2$ to $D_1$, and keeps $ S_2 - D_2$ fixed.
-    Then move $D_1$ `in' $D$ keeping its boundary fixed. Again extend to an isotopy of $N$.
-    Composing these isotopies, we get the result.
-\end{proof}
+\end{myproof}
 
 \begin{remark}
     It is also clear that $S\cdot V = S_1\cdot V \pm S_2 \cdot V$, because the tube misses the submanifold $V$.
-    If $k < m-1$ we can actually choose this sign freely by changing the first isotopy in the proof: we can either move $D$ to $ D_2$ with the same or the opposite orientation. If $k = m-1$, we do not have this freedom.
+    If $k < n-1$ we can actually choose this sign freely by changing the first isotopy in the proof: we can either move $D$ to $ D_2$ with the same or the opposite orientation. If $k = n-1$, we do not have this freedom.
 \end{remark}
 
-This shows that we can perform E3 geometrically:
+This lemma allows us to prove the following:
 \begin{theorem}
-    Let $1 < k < m$. Then we can perform E1, E2, E3 geometrically on $[\partial_k]$, only affecting critical points of index $k$ and $k+1$.
+    Let $1 < k < n$. Then we can perform E1, E2, E3 geometrically on $[\partial_k]$, only affecting critical points of index $k$ and $k+1$.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Operations E1 and E2 are clear.
     Assume the Morse function $f$ is self-indexing.
     Let  $M^{t} = f^{-1}([-\infty, t))$ and let $V$ be the union of all belt spheres of critical points of index $k-1$,i.e. \[
@@ -323,13 +332,19 @@ This shows that we can perform E3 geometrically:
     Let $N = f^{-1}(k - \frac{1}{2})$.
     For dimensional reasons, $V$ can only disconnect $N$ if  $k = 2$.
     However, the $N \setminus V \cong f^{-1}(k - \frac{3}{2})$ with a finite set of points removed, namely the attaching spheres of the one-handles, as illustrated in Figure~\ref{fig:proof-e1-e2-e3-disconnect-case}.
-    Therefore, as $f^{-1}(k- \frac{3}{2})$ is connected\sidenote{\todo{Why}}, so is $N \setminus V$.
+    \begin{marginfigure}
+        \centering
+        \incfig{proof-e1-e2-e3-disconnect-case}
+        \caption{In the case $k = 2$, the union of the belt spheres $V$ does disconnect $M^{3 / 2}$. However, it is diffeomorphic to $M^{ 1 / 2}$ with a finite set of points removed, and since $M^{ 1 / 2}$ is connected, so is  $M^{ 1 / 2} \setminus V$.}
+        \label{fig:proof-e1-e2-e3-disconnect-case}
+    \end{marginfigure}
+    Therefore, as $f^{-1}(k- \frac{3}{2})$ is connected, so is $N \setminus V$.
     This means we can apply the previous lemma and we conclude that we can add/subtract one column to the other one.
-    If $k < m-1$, we have control over the sign (determining addition or subtraction), and if $k = m-1$, we may need to change the orientation of the attaching sphere of  $k$-handle first.
+    If $k < n-1$, we have control over the sign (determining addition or subtraction), and if $k = n-1$, we may need to change the orientation of the attaching sphere of  $k$-handle first.
     Notice that this does only affect $[\partial_k]$ and $[\partial_{k+1}]$.
-\end{proof}
+\end{myproof}
 
-In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the following fact:
+In order to also diagonalize $[\partial_1]$ and $[\partial_n]$, we will use the following:
 \begin{theorem}
     Let $M$ be a connected cobordism from  $ M_0$ to $ M_1$.
     If $ M_0 \neq \O$, there exists a handlebody decomposition with exactly one $0$-handle. In the other case, there exists one without $0$-handles.
@@ -346,20 +361,20 @@ In order to also diagonalize $[\partial_1]$ and  $[\partial_m]$, we will use the
     }
     \label{fig:without-zero-handles}
 \end{marginfigure}
-\begin{proof}
+\begin{myproof}
     Suppose $M_0 \neq \O$, i.e.\ the cobordism has a bottom border and suppose $\# \Crit_0 f =1$, i.e.\ there is a single $0$-handle.
-    Then because $M$ is connected, there must exist an $1$-handle connecting the $0$-handle to another connected component of $f^{-1}((-\infty, \frac{1}{2}])$.
+    Then because $M$ is connected, there must exist an $1$-handle connecting the $0$-handle to another connected component of $f^{-1}(-\infty, \frac{1}{2}]$.
     The first cancellation theorem allows us to cancel the $0$-and  $1$-handle.
     It is clear how to extend this to multiple $0$-handles.
 
-    Next, suppose $M_0 = \O$ and $\# \Crit_0 f  = 2$. Then because $M$ is  connected, there must be a $1$-handle connecting the two components in $f^{-1}((-\infty, \frac{1}{2}])$. Again using the first cancellation theorem , we can cancel the $0$- and $1$-handle. A similar reasoning works if $\# \Crit_0 f > 2$.
+    Next, suppose $M_0 = \O$ and $\# \Crit_0 f  = 2$. Then because $M$ is  connected, there must be a $1$-handle connecting the two components in $f^{-1}(-\infty, \frac{1}{2}]$. Again using the first cancellation theorem , we can cancel the $0$- and $1$-handle. Repeatedly applying this reasoning handles the case where $\# \Crit_0 f > 2$.
 
     For the last part of the theorem, stating that $[\partial_1]$ is trivial, consider the following. 
     If there are no  $0$-handles, $\partial_1: C_1 \to  C_0$ is clearly trivial.
-    If there is a single $0$-handle, all $1-$ handles have both ends attached to the same sphere, so the intersection number is $0$, so $[\partial_1] = (0 \ \cdots \ 0)$.
-\end{proof}
+    If there is a single $0$-handle, all $1$-handles have both ends attached to the same sphere, so the intersection number is $0$, so $[\partial_1] = (0 \ \cdots \ 0)$.
+\end{myproof}
 \begin{remark}
-    Again by turning the cobordism upside down, we can conclude the same for $n$-handles and $[\partial_n]$.
+    By turning the cobordism upside down, we can conclude the same for $n$-handles and $[\partial_n]$.
 \end{remark}
 
 The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultaneously}.
@@ -368,46 +383,31 @@ The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultan
     Assume $M, M_0, M_1$ are connected and oriented.
     Then there exists a Morse function such that $[\partial_k]$ is diagonal for all $k$.
 \end{theorem}
-
-
-\begin{proof}
-    Proof by induction.
+\begin{myproof}[Proof by induction.]
     Note that $[\partial_1]$ is diagonal by the previous theorem.
     Suppose $[\partial_i]$ is diagonal for  $1 \le  i < k < n$.
     We have shown that we can do operations E1--E3 on columns geometrically.
     By turning the cobordism upside down, we can also do this for rows.
     These six operations are all that is needed for the diagonalizing $[\partial_k]$ by using the algorithm of Smith\sidecite{rotman2010advanced}.
-
-    In order to see that this does not change the already diagonalized matrices, we use the fact that $\partial^2 = \partial_{k-1} \circ \partial_{k} = 0$.
-
+    Diagonalizing $[\partial_k]$ does not change the already diagonalized matrices, because  $[\partial_{k-1}][\partial_k] = 0$.
     Lastly $[\partial_n]$ is already diagonal by the previous theorem.
-    \todo{Finish proof}
-\end{proof}
+\end{myproof}
 
-\begin{marginfigure}
-    \centering
-    \incfig{proof-e1-e2-e3-disconnect-case}
-    \caption{In the case $k = 2$, the union of the belt spheres $V$ does disconnect $M^{3 / 2}$. However, it is diffeomorphic to $M^{ 1 / 2}$ with a finite set of points removed, and since $M^{ 1 / 2}$ is connected, so is  $M^{ 1 / 2} \setminus V$.}
-    \label{fig:proof-e1-e2-e3-disconnect-case}
-\end{marginfigure}
 
 
 \section{Cancelling $1$-handles}
 The previous theorems allow us to diagonalize $[\partial_k]$ for all $k$.
 Moreover, the second cancellation theorem allows us to remove columns and rows of $[\partial_k]$ under certain conditions.
-
 These conditions do not cover the case $[\partial_2]$ and it requires simply connectedness of $M$ for  $[\partial_3]$, which could be problematic if the handlebody decomposition contains  $1$-handles.
-Similar problems occur for $[\partial_{n-2}]$ and $[\partial_{n-3}]$.
+Similar problems occur for $[\partial_{n-1}]$ and $[\partial_{n-2}]$.
 In this section, we will show that we can eliminate $1$-handles by replacing them with $3$-handles, solving these issues.
 
-\todo{Here simply connectedness is still required?}
-\begin{prop}
-    Let $M$ be a cobordism from $M_0$ to $M_1$.
-    Assume that $M$ and  $M_0$ are connected, $M$ is simply connected and $\dim M \ge 5$.
-    Then there there exists a handlebody decomposition with $0$ (or  $1$) $0$-handles if $M_0 \neq \O$ (or $M_0 = \O$), without $1$-handles.
-    Moreover, starting from another handlebody decomposition, we can alter it such that it satisfies these conditions, without changing the number of handles of index greater than $3$.
+\begin{theorem}
+    Let $f$ be a Morse function on $M$, a cobordism from $M_0$ to $M_1$.
+    Assume that $M, M_0, M_1$ are connected and simply connected,  and $\dim M \ge  5$.
+    Then we can alter $f$ such that  $1$-handles become $3$-handles without changing the number of handles of index greater than three.
     \label{thm:one-to-three}
-\end{prop}
+\end{theorem}
 \begin{marginfigure}
     \centering
     \incfig{changing-one-handles-in-three-handles}
@@ -417,7 +417,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     }
     \label{fig:changing-one-handles-in-three-handles}
 \end{marginfigure}
-\begin{proof}
+\begin{myproof}
     The idea of the proof goes as follows and is illustrated in Figure~\ref{fig:changing-one-handles-in-three-handles}.
     In order to change a $1$-handle into a $3$-handle, we introduce an auxiliary cancelling pair of $2$- and $3$-handles.
     Then we cancel the $1$- and $2$-handle, leaving us with a $3$-handle.
@@ -430,7 +430,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
 
     \paragraph{Constructing the desired attachment region}
     Let $L'$ a loop on top of a $1$-handle that intersects the belt sphere once transversely.
-    By Theorem~\ref{thm:no-zero}, we can assume that there are a minimum number of $0$-handles, implying that $f^{-1}(\frac{1}{2})$ is connected.
+    By Theorem~\ref{thm:no-zero}, we can assume that there are a minimal number of $0$-handles, implying that $f^{-1}(\frac{1}{2})$ is connected.
     Hence we can connect the endpoints of $L'$ with a curve that lies in $f^{-1}(\frac{1}{2})$,
     moreover missing the other attachment spheres of $1$- and $2$-handles.\sidenote{
         The attachment spheres of the $1$-handles are a finite number of disjoint points, so it is easy to avoid them.
@@ -445,9 +445,9 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     Hence, we can isotope $L$ to $L'$, and assume that the $2$- and  $3$-handle combination is actually attached along $L'$, i.e.\ the attachment region of the $2$-handle is $L'$.
 
     Because $L'$ crosses the  $1$-handle exactly one time, we can cancel the $1$- and $2$-handle as claimed before, ending the proof.
-\end{proof}
+\end{myproof}
 \begin{remark}
-    This idea can be extended to higher index critical points as well, but we will not need that here.
+    This idea can be extended to higher index critical points as well.
 \end{remark}
 \begin{remark}
     By reversing the cobordism ($f \leadsto -f$), we can do the same for $n-1$-handles.
@@ -455,7 +455,10 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
 
 \section{Minimality of the Morse inequalities}
 \label{sec:minimality}
-\begin{theorem}
+
+Having discussed a multitude of cancellation theorems, we are ready to prove the minimality of the Morse inequalities, as first proven by Smale.\sidecite{smale1960generalized}
+
+\begin{theorem}[Smale]
     Let $M$ be a cobordism from $M_0$ to $M_1$.
     Assume $M, M_0, M_1$ are connected and simply connected and $\dim M \ge 6$.
     Assume moreover that the homology of $M$ is free, i.e.  $H_{\bul}(M, M_0)$ and $H_{\bul}(M, M_1)$ are free.
@@ -466,43 +469,42 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     In other words, under these conditions, the Morse inequalities are attainable.
     \label{thm:minimal-cob}
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Let $f$ be an arbitrary Morse function on $M$.
     We show inductively that $[\partial_k]$ is trivial.
-    Using Theorem~\ref{thm:no-zero}, we can alter $f$ such that the number of $0$-handles is minimized.
-    Theorem~\ref{thm:one-to-three} allows us to change $1$-handles into $3$-handles.
+    This will then imply that $H_k = \frac{\Ker \partial_k}{\Im \partial_{k+1}} = \frac{C_k}{0} = C_k$, hence $\# \Crit_kf = r_0 H_k$.
+    Using Theorem~\ref{thm:no-zero}, we alter $f$ such that the number of $0$-handles is minimized. Theorem~\ref{thm:one-to-three} allows us to change $1$-handles into $3$-handles.
     \begin{enumerate}
         \item[$H_0$]
-            We have $C_{-1} = 0$, so $\Ker \partial_0 = C_0$.
-            As there are no $1$-handles, $\Im \partial_1 = 0$.
-            Hence  $H_0(M, M_0) = C_0$.
+            There are no $-1$-handles, so  $\partial_0$ is trivial, hence  $H_0 = C_0$.
         \item[$H_1$]
-            There are no $1$-handles.
-            Hence $\Ker \partial_1 = 0 = C_1$, and $\Im \partial_2 = 0$. Hence  $H_1(M, M_0) = C_1$.
+            There are no $1$-handles, so $\partial_1$ is trivial, hence  $H_1 = C_1$.
         \item[$ H_2$]
-            By definition, $H_2(M, M_0) = \frac{\Ker \partial_2}{\Im \partial_3}$.
+            By definition, $H_2 = \frac{\Ker \partial_2}{\Im \partial_3}$.
             However, there are no $1$-handles,
             so $\Ker \partial_2 = C_2$.
             By altering the Morse function and gradient, we can assume that $[\partial_3]$ is diagonal.
             This combined with the fact that the homology is free allows us to conclude that $\Im \partial_3$ is matrix with as entries $\pm 1$.
-            (If it would contain e.g.\ a $2$, then the resulting quotient could be  $\Z / 2 \Z$, which has torsion.)
-            This allows us to cancel pairs of critical points removing rows and columns until $[\partial_3]$ is trivial.
+            (If it would contain e.g.\ a $2$, then the resulting quotient would be  $\Z / 2 \Z$, which has torsion.)
+            This allows us to cancel pairs of critical points, removing rows and columns until $[\partial_3]$ is trivial.
             We can do so without altering the triviality for $k = 1,2$.
-            We conclude that $H_2(M, M_0) = C_2 / 0 = C_2$.
+            We conclude that $H_2 = C_2$.
         \item [$H_k$]
-            By definition $H_k(M, M_0) = \frac{\Ker \partial_k}{\Im \partial_{k+1}}$.
-            We know that $[\partial_k]$ is trivial, hence  $\Ker \partial_k = C_k$.
+            Suppose $[\partial_k]$ is trivial.
+            By definition $H_k = \frac{\Ker \partial_k}{\Im \partial_{k+1}} = \frac{C_k}{\Im \partial_{k+1}}$.
             Because $H_k$ does not have torsion, this does mean that $[\partial_{k+1}]$ only contains $\pm 1$'s, so we can cancel critical points until  $[\partial_{k+1}]$ is trivial. We can do this without changing the triviality of $[\partial_\ell]$ for $\ell < k$.
-            We conclude that $H_k(M, M_0) = C_k$.
+            We conclude that $H_k = C_k$.
     \end{enumerate}
-    While the proof now seems finished, we should be careful when $k$ gets close to  $n$, because then the second cancellation does not apply any more.
-    We can fix this by first doing the previous process for $k = 1, \ldots, n-2$. 
+    While the proof now seems finished, we should be careful when $k$ gets close to  $n$, because then the second cancellation no longer applies.
+    We can solve this by first doing the previous process for $k = 1, \ldots, n-2$. 
     Then we turn the cobordism upside down ($f \leadsto -f$), and repeat the procedure, eventually making all matrices trivial resulting in $H_k(M, M_0) \cong C_k$.
-\end{proof}
+\end{myproof}
 \begin{remark}
     If we do not assume that the homology is free, the weak Morse inequalities are not attainable.
-    However, we can prove that the Morse inequalities including torsion rank in fact are.
+    However, we can prove that the Morse inequalities including torsion rank in fact are.\sidecite{sharko1993functions}
 \end{remark}
+
+If we take $ M_0 = M_1 = \O$, we immediately have the following corollary,
 \begin{corollary}
     If $M$ is a simply connected closed manifold of dimension  $n \ge 6$ with free homology, then the Morse inequalities are attainable, i.e.\ there exists a Morse function such that
     \[
@@ -510,18 +512,21 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     .\] 
 \end{corollary}
 
+If we assume that the homology vanishes completely,
+Theorem~\ref{thm:minimal-cob} becomes
 \begin{corollary}[$h$-cobordism theorem]
     Let $M$ be a cobordism from  $M_0$ to $M_1$.
-    If $M, M_0, M_1$ are connected and simply connected, $\dim M \ge  6$ and $H_{\bul}(W, V_0) = 0$, then $M$ is a trivial cobordism, i.e.  $M \cong M_0 \times [0,1]$.
+    If $M, M_0, M_1$ are connected and simply connected, $\dim M \ge  6$ and $H_{\bul}(M, M_0) = 0$, then $M$ is a trivial cobordism, i.e.  $M$ is diffeomorphic to $M_0 \times [0,1]$.
 \end{corollary}
 
-TODO: talk about name $h$-cobordism
+Another direct corollary is the generalized higher dimensional Poincaré conjecture.
 
 \begin{corollary}[Generalized Poincaré conjecture]
     If $M$ is a homotopy sphere of dimension  $n \ge  6$, then $M$ is homeomorphic to  $S^{n}$.
 \end{corollary}
-\begin{proof}
-    By the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e. $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
+\begin{myproof}
+    A homotopy sphere is a homology sphere.
+    Hence, by the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e. $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
     \begin{align*}
         h: S^{n} = D_1^{n} \cup_\text{Id}  D_2^{n} &\longrightarrow D_1^{n} \cup_\phi D_2^{n} \\
          x &\longmapsto 
@@ -531,18 +536,18 @@ TODO: talk about name $h$-cobordism
              0 & \text{if $x = 0 \in D_2^{n}$.}
          \end{cases}
     \end{align*}
-\end{proof}
+\end{myproof}
 \begin{remark}
     We cannot conclude that $M$ is \emph{diffeomorphic} to $S^{n}$.
     Indeed, there are so-called exotic spheres, which are topological spheres with a differential structure that is not equivalent to the standard differential structure on $S^{n}$.
-    We will expand on this in the following section.
+    The first instance of such a sphere were constructed by Milnor in 1956.\sidecite{milnor1956manifolds}
 \end{remark}
 
-The next result shows that there is only one differential structure on disks:
+The next result shows that---contrary to spheres---there is only a unique differential structure on disks:
 \begin{theorem}
     If $M$ is contractible with a simply connected boundary and of dimension $n \ge  6$, then $M$ is diffeomorphic to $B^{n}$
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Consider $M$ as a cobordism from  $\O$ to  $\partial M$.
     We have that  $H_\bul(M) \cong H_\bul(M, \O)$.
     By Poincaré duality, this is also isomorphic to  $H^\bul(M, \partial M)$.
@@ -551,13 +556,13 @@ The next result shows that there is only one differential structure on disks:
     This means that $H_\bul(M, \O)$ and  $H_\bul(M, \partial M)$ are free.
     Applying Theorem~\ref{thm:minimal-cob} gives, together with the fact that $M$ is contractible, a handlebody decomposition with exactly one $0$-handle.
     Hence $M$ is diffeomorphic to a disk.
-\end{proof}
+\end{myproof}
 
 This allows us to strengthen the generalized Poincaré theorem:
 \begin{theorem}[Generalized Poincaré conjecture for $n \ge  5$]
-    Let $M$ be a homotopy sphere of dimension  $\ge  5$. Then $M \cong S^{n}$.
+    Let $M$ be a homotopy sphere of dimension  $\ge  5$. Then $M$ is homeomorphic to a sphere $S^{n}$.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     We claim that $M \# (-M)$ bounds a contractible manifold $W$ of dimension greater than or equal to $6$.
     Indeed, consider the following figure.
 \begin{figure}[H]
@@ -566,20 +571,20 @@ This allows us to strengthen the generalized Poincaré theorem:
     \incfig{connected-sum-homotopy-spheres}
     \label{fig:connected-sum-homotopy-spheres}
 \end{figure}
-The two top rows show a local model of a connected sum, considering the connected sum of two copies of $\R^{n}$ with reversion orientation on one of the copies.
-The resulting manifold bounds a manifold $W$ and squashing in the vertical direction gives a deformation retract from $W$ to  $ \R^{n} \setminus D^{n}$.
+The two top rows show a local model of a connected sum, considering the connected sum of two copies of $\R^{n}$ with reversed orientation on one of the copies.
+The resulting manifold bounds a manifold $W$ and scaling in the vertical direction gives a deformation retract from $W$ to  $ \R^{n} \setminus D^{n}$.
 On the bottom, we use this local model for $ M \# (-M)$. This shows that $M \#(-M)$ bounds a manifold that is homotopy equivalent with  $M \setminus D^{n}$.
 Because $M$ is a homotopy sphere, we can easily use Mayer--Vietoris to compute that the homology of $M \setminus D^{n}$ is that of a contractible manifold.
 
 By the previous theorem, this implies that $W$ is diffeomorphic to $D^{n+1}$.
 Hence, $M \#(-M)$ is homeomorphic to $S^{n}$.
-If we can prove that the sphere $S^{n}$ is irreducible, this implies that $M$ is homeomorphic to $S^{n}$.
-\end{proof}
+Now, $S^{n}$ is irreducible, meaning that $M \# N \cong S^{n} \implies M, N \cong S^{n}$. This proves that $M$ is homeomorphic to  $S^{n}$
+\end{myproof}
 
 \begin{lemma}[Irreducibility of the sphere]
-    If $S^{n} \cong M \# N$, then $M, N \cong S^{d}$.
+    If $M \# N$ is homeomorphic to $S^{n}$, then both $M$ and $N$ are homeomorphic to $S^{n}$.
 \end{lemma}
-\begin{proof}
+\begin{myproof}
     We use a trick called Mazur's swindle.\sidecite{mazur1959embeddings}
     It is based on the fact that the infinite connected sum $\#_{n=1}^{\infty} M_n$ is well defined and associative.
     Suppose $M \# N \cong S^{n}$.
@@ -599,14 +604,135 @@ If we can prove that the sphere $S^{n}$ is irreducible, this implies that $M$ is
     ,\] 
     which is homeomorphic to $M$ with a small ball removed. Pinching its boundary, we get $M$.
     This proves that $M$ is homeomorphic to $S^{n}$.
-\end{proof}
-\url{https://terrytao.wordpress.com/2009/10/05/mazurs-swindle/#irred}
+\end{myproof}
+
+% \url{https://terrytao.wordpress.com/2009/10/05/mazurs-swindle/#irred}
 
 % TODO Firstly note that Σ is in particular a homology sphere by Hurewicz theorem (i.e. has homology isomorphic to that of a sphere) . 
 % TODO Next, it follows from the Hurewicz theorem (plus the fact that π1(Σ′)≅π1(Σ)={1}) that all of the homotopy groups πi(Σ′) are trivial. Finally, by Whiteheads theorem the inclusion of a point in Σ′ induces an isomorphism on all homotopy groups hence is a homotopy equivelance, i.e. Σ′ is a contractible space.
 % TODO https://math.stackexchange.com/questions/2987911/if-sigma-is-a-homotopy-sphere-then-sigma-sigma-bounds-a-contractible
 
 
-\section{Historical aspects of the Poincaré conjecture}
+\section{Historical aspects}
+\label{sec:history}
 
-table of results, categories, \ldots
+Let us end this thesis by giving a historical overview of the (generalized) Poincaré conjecture and $h$-cobordism theorem.
+We will consider the developments of these conjectures/theorems for three categories, namely
+\begin{itemize}
+    \item $\mans$, the category of topological manifolds,
+    \item $\mant$, the category of smooth manifolds,
+    \item $\manp$, the category of piecewise linear manifolds.\sidenote{For an introduction on piecewise linear manifolds, see \fullcite{rourke2012introduction}}
+\end{itemize}
+For brevity, we will use $\cpoinc{n}$ (resp. $\ccob{n}$) for the Poincaré conjecture (resp. $h$-cobordism theorem) of dimension $n$ in category $C$.
+
+\paragraph{Dimensions 1, 2}
+In low dimensions, the categories \mans, \mant, \manp{} are equivalent, meaning for example that a topological $2$-manifold has a unique differential structure.\sidecite{moise2013geometric}
+The classification of one- and two-dimensional manifolds then immediately gives the Poincaré conjecture and $h$-cobordism theorem in all categories.
+
+\overview{1,2}{True}{True}{True}{True}{True}{True}
+
+\paragraph{Dimension 3}
+The original statement of the Poincaré conjecture concerned manifolds of dimension three.
+More precisely, Henri Poincaré conjectured the following in 1904:
+\begin{theorem}[Poincaré conjecture]
+    Every simply connected, closed $3$-manifold $M$ is homeomorphic to the $3$-sphere.
+\end{theorem}
+One can prove that these conditions imply that $M$ is a three-dimensional homotopy sphere.
+This rephrasing allows for an easy generalization to higher dimensions and other categories: `a homotopy sphere is homeomorphic/diffeomorphic/PL homeomorphic to a sphere'.
+
+The Poincaré conjecture in three dimensions was one of the most important open problems in topology, until it was proved by Perelman in 2006 in $\mant$.\sidecite{morgan2007poincare}
+For his work, Perelman was offered a Fields Medal and the Millennium prize worth \$1 million, but he declined both.
+
+His proof uses the concept of Ricci flow, introduced by Hamilton in 1982.\sidecite{hamilton1982three}
+The idea is to put an arbitrary metric on a homotopy sphere.
+Then the Ricci flow equations tend to `smoothen out' this metric, as illustrated in Figure~\ref{fig:ricci-flow}.
+If the metric can get improved enough such that it has constant positive curvature, then the manifold is diffeomorphic to a sphere.
+However, problems can arise in the form of certain singularities.
+Perelman studied these singularities and found a way to deal with them with manifold surgery, proving the Poincaré conjecture in $\mant$.
+\begin{marginfigure}
+    \centering
+    \incfig{ricci-flow}
+    \caption{An illustration of the the Ricci flow equations.}
+    \label{fig:ricci-flow}
+\end{marginfigure}
+The categories $\mant$,  $\mans$ and  $\manp$ are equivalent in dimension three, hence his proof implies $\spoinc 3$ and  $\ppoinc 3$.\sidecite{moise2013geometric}
+Moreover, it has been shown that $\ccob{3} \iff \cpoinc 3$, giving the following summary:
+
+
+\overview{3}{True}{True}{True}{True}{True}{True}
+
+
+\paragraph{Dimension 4}
+The $h$-cobordism theorem and Poincaré conjecture in dimension four are partly still an open problem.
+The Poincaré conjecture was proven by Freedman in 1982 in the category $\mant$, for which he received a Fields Medal.\sidecite{freedman2014topology}
+It was also proven that $\cpoinc 4 \iff \ccob 4$ for all categories $C$, hence the four-dimensional $h$-cobordism theorem is also true.
+As of today, $\spoinc 4$ and $\ppoinc 4$ (and hence $\scob 4$ and  $\pcob 4$) are still open and are tightly coupled to the unknown existence of exotic $4$-spheres.
+
+
+\overview{4}{True}{Open}{Open}{True}{Open}{Open}
+
+\paragraph{Dimension 5}
+In dimension $5$, the  Poincaré conjecture holds in $\mant$, as we have proven in this thesis.
+Moreover, it can be proven that a topological $5$-sphere has a unique smooth structure, implying $\spoinc 5$.\sidecite{wang2017triviality}
+A theorem of Whitehead\sidecite{whitehead1940c1} states that a smooth manifold has a canonical PL structure, hence  $\ppoinc 5$ follows as well.
+On the other hand, the $h$-cobordism theorem only holds in $\mant$ (see Freedman\sidecite{freedman2014topology}) and not in $\mans$ or $\manp$ (see Donaldson\sidecite{donaldson1986geometry}).
+
+
+
+\overview{5}{True}{True}{True}{True}{False}{False}
+
+\paragraph{Dimension 6}
+
+As we have shown in this thesis, the $h$-cobordism theorem in dimension six or greater is true in $\mans$ and this was first proven by Smale in 1960.
+It is also true in $\mant$, proven in the book by Kirby and Siebenmann.\sidecite{kirby2016foundational} and also holds in $\manp$, as discussed in `Introduction to piecewise-linear topology' by Rourke and Sanderson.\sidecite{rourke2012introduction}
+
+The Poincaré conjecture in $\mant$ is true in dimension 5 and higher as we have shown.
+It has been shown that the $h$-cobordism theorem $\pcob{>5}$ implies the Poincaré conjecture $\ppoinc{>5}$, hence $\ppoinc{>5}$ is true as well.
+The smooth Poincaré conjecture $\spoinc{>5}$ is in general not true, because of the existence of exotic spheres.
+In particular, it is conjectured that spheres of a sufficiently high dimension always admit exotic structures, hence $\spoinc{>5}$ would be usually false.\sidecite{wang2017triviality}
+
+\overview{6+}{True}{True}{Usually false}{True}{True}{True}
+
+\paragraph{Summary}
+Summarizing the current state of affairs, we find the following:
+
+\begin{center}
+    \begin{tabular}{
+            r
+            >{\centering\arraybackslash}p{1.1cm}%
+            >{\centering\arraybackslash}p{1.1cm}%
+            >{\centering\arraybackslash}p{1.8cm}%
+            >{\centering\arraybackslash}p{1.1cm}%
+            >{\centering\arraybackslash}p{1.1cm}%
+            >{\centering\arraybackslash}p{1.1cm}}
+            $n$& \tpoinc{} & \ppoinc{} & \spoinc{} & \tcob{} & \pcob{} & \scob{}\\ \midrule
+            1,2,3 &
+            True & 
+            True & 
+            True &  
+            True & 
+            True & 
+            True  \\
+            4 &
+            True & 
+            Open & 
+            Open&  
+            True & 
+            Open& 
+            Open \\
+            5 &
+            True & 
+            True & 
+            True &  
+            True & 
+            False& 
+            False \\
+            6+ &
+            True & 
+            True & 
+            Usually false&  
+            True & 
+            True& 
+            True\\
+    \end{tabular}
+\end{center}

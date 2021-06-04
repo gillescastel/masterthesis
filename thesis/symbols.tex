@@ -100,3 +100,35 @@
     \end{abbrv}
 }
 
+\newcommand{\tpoinc}[1]{\ensuremath{\mathrm P_{\text{top}}^{#1}}}
+\newcommand{\spoinc}[1]{\ensuremath{\mathrm P_{\infty}^{#1}}}
+\newcommand{\ppoinc}[1]{\ensuremath{\mathrm P_{\text{PL}}^{#1}}}
+\newcommand{\cpoinc}[1]{\ensuremath{\mathrm P_{C}^{#1}}}
+
+\newcommand{\tcob}[1]{\ensuremath{\mathrm H_{\text{top}}^{#1}}}
+\newcommand{\scob}[1]{\ensuremath{\mathrm H_{\infty}^{#1}}}
+\newcommand{\pcob}[1]{\ensuremath{\mathrm H_{\text{PL}}^{#1}}}
+\newcommand{\ccob}[1]{\ensuremath{\mathrm H_{C}^{#1}}}
+
+\newcommand{\mant}{\ensuremath{\textsf{Man}_{\text{top}}}}
+\newcommand{\mans}{\ensuremath{\textsf{Man}_{\infty}}}
+\newcommand{\manp}{\ensuremath{\textsf{Man}_{\text{PL}}}}
+
+\usepackage{booktabs}
+\usepackage{array}
+\newcommand{\overview}[7]{
+    \smallskip
+    \begin{center}
+        \begin{tabular}{
+                >{\centering\arraybackslash}p{1.3cm}%
+                >{\centering\arraybackslash}p{1.3cm}%
+                >{\centering\arraybackslash}p{1.3cm}%
+                >{}p{0.3cm}%
+                >{\centering\arraybackslash}p{1.3cm}%
+                >{\centering\arraybackslash}p{1.3cm}%
+                >{\centering\arraybackslash}p{1.3cm}}
+                \tpoinc{#1} & \ppoinc{#1} & \spoinc{#1} && \tcob{#1} & \pcob{#1} & \scob{#1}\\
+                #2   & #3 & #4 & & #5 & #6 & #7
+        \end{tabular}
+    \end{center}
+}

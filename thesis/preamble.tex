@@ -4,7 +4,10 @@
 
 \usepackage{url}
 
-\usepackage{biblatex}
+\usepackage[
+    sorting=nyt,
+    style=alphabetic
+]{biblatex}
 \addbibresource{bibliography.bib}
 
 \usepackage{hyperref}
@@ -45,6 +48,7 @@
 
 % theorems
 \usepackage{thmtools}
+\usepackage{thm-restate}
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{skipabove=1em,skipbelow=0em, innertopmargin=12pt, innerbottommargin=8pt}
 
@@ -164,4 +168,8 @@
 \usepackage{multirow}
 \def\block(#1,#2)#3{\multicolumn{#2}{c}{\multirow{#1}{*}{$ #3 $}}}
 
-% \overfullrule=1mm
+\overfullrule=1mm
+
+\newenvironment{myproof}[1][\proofname]{%
+  \proof[\rm \bf #1]%
+}{\endproof}
