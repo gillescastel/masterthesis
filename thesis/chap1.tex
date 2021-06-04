@@ -144,7 +144,7 @@ With our choice, the Morse lemma takes on the following form:
     Let $M$ be a manifold and $f: M \to  \R$ a smooth map.
     If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
 \end{lemma}
-\begin{proof}
+\begin{myproof}
     We follow the proof of Milnor\sidecite[6]{milnor}.
     We may assume that $M = \R^{n}$, $p$ is the origin and $f(p) = 0$.
     Then by a version of Taylor's theorem, we can write
@@ -187,7 +187,7 @@ With our choice, the Morse lemma takes on the following form:
     for some symmetric matrix $H_{ij}'$.
     By induction, we can find coordinates such that
     $f = \sum_{i=1}^{n} \pm v_i^2$, completing the proof.
-\end{proof}
+\end{myproof}
 
 \section{Handle decompositions}
 In this section we show how a Morse function $f: M \to  \R$ gives rise to a step by step guide on how to build the manifold $M$ out of basic building blocks.
@@ -239,7 +239,7 @@ Let us now prove our first observation:
     If $f$ has no critical points, then $M$ is diffeomorphic to $[a, b] \times  M_0$.
 \end{prop}
 
-\begin{proof}
+\begin{myproof}
     \begin{marginfigure}
         \centering
         \incfig{proof-of-cobordism-without-critical-points}
@@ -270,11 +270,11 @@ Let us now prove our first observation:
     Then $f(\phi(t, p)) = t$ for all $p \in M_0$, as $df(V) = 1$.
     The map $\phi$ is injective because of the uniqueness of flows, and surjective because given a point $p$ in $M$, we can always flow back along $V$ for a time $t$ to find a $p_0 \in M_0$ which then satisfies $\phi(t, p_0) = p$. 
     Because this is also smooth, this proves that $\phi$ is a diffeomorphism.
-\end{proof}
+\end{myproof}
 
 \begin{remark}
     While almost trivial, this result is very useful and lies at the basis of the proof of the $h$-cobordism theorem, stating that a cobordism satisfying certain properties is a trivial cobordism.\sidecite[p.~107]{hcobord}
-    We will prove this in Chapter~\ref{chp:h-cobord} by showing that an $h$-cobordism admits a Morse function without any critical points, implying the result.
+    We will prove this in Chapter~\ref{chap:h-cobord} by showing that an $h$-cobordism admits a Morse function without any critical points, implying the result.
 
     In general, this result can be used to show that two manifolds are diffeomorphic. If we can construct a cobordism from $M_0$ to $M_1$ and we can prove the existence of a Morse function without critical points, then $M_0 \cong M_1$.
 \end{remark}
@@ -401,7 +401,7 @@ For this to work, we will need that the critical values are isolated, which is e
     Moreover, if $X$ is a pseudo-gradient field adapted to  $f$,
     then we can choose $g$ such that $X$ is adapted to $g$ as well.
 \end{prop}
-\begin{proof}
+\begin{myproof}
     We follow the proof of Audin and Damian\sidecite[40]{audin}.
     Let $U = \bigcup_{p \in \Crit f} U_p$ be the union of Morse neighbourhoods of critical points.
     Let $X$ be a pseudo-gradient field.
@@ -417,14 +417,14 @@ For this to work, we will need that the critical values are isolated, which is e
         Conversely, if $p$ is a critical point of  $f$, then because  $h$ is constant on Morse charts,  it is also a critical point of $f + h$.
     }
     Furthermore the critical points of $f + h$ are distinct and the vector field $X$ is still adapted.
-\end{proof}
+\end{myproof}
 
 Now we are ready to prove one of the fundamental theorems in Morse theory.
 
 \begin{theorem}
     Any closed manifold has a handle decomposition.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     We will later prove that that any closed manifold admits a Morse function $f: M \to  \R$.
     By the previous proposition, we may assume that the critical values of $f$ are distinct.
     Then we can split $M$ in cobordisms each having a single critical point. 
@@ -449,7 +449,7 @@ Now we are ready to prove one of the fundamental theorems in Morse theory.
     .\] 
     Each of these sets is a cobordism with exactly one critical value.
     As we have seen earlier, we can split each of these cobordisms in product structures and handles, giving rise to a handle decomposition of the total manifold $M$.
-\end{proof}
+\end{myproof}
 
 
 \subsection*{Handles in low dimensions}
@@ -612,8 +612,8 @@ The first three examples will be (products of) spheres, i.e. $S^{3}$, $S^{1} \ti
         In the consequent steps,
         three holes are filled with $2$-handles,
         leaving us with a single void we fill up with a $3$-handle.
+        \label{fig:three-torus-handle-decomposition}
     }
-    \label{fig:three-torus-handle-decomposition}
 \end{figure*}
 While this choice of Morse function may seem unmotivated, it is actually based on an example we saw before, namely $S^{1}$ with its height function.
 Indeed, if we identify $S^{1} = \R / \Z$, then $g_r(x) = r\cos(2 \pi x)$ is exactly the height function of a sphere of radius $r$.
@@ -701,7 +701,7 @@ Then Sard's theorem will immediately imply that $f_p$ is Morse for almost all $p
     \label{fig:existence-of-morse-functions-normal-bundle-map}
 \end{figure}
 
-\begin{proof}
+\begin{myproof}
     With this idea, the proof reduces to a straightforward although tedious calculation.
     First note that $x$ is a critical point of $f_p$ only if $x-p \perp T_x M$.
     Indeed:
@@ -768,7 +768,7 @@ Then Sard's theorem will immediately imply that $f_p$ is Morse for almost all $p
     .\end{align*} 
     Therefore, $E_*$ is of full rank iff $H_p$ is of full rank.
     This concludes the proof.
-\end{proof}
+\end{myproof}
 
 Apart from the abundance of Morse functions, we also have that any smooth function can be approximated by a Morse function. By this we mean the following:
 \begin{prop}
@@ -794,7 +794,7 @@ and even when taking extra dimensions into account, the approximation still work
 }
 Now, note that the right hand side is almost always a Morse function.  Hence, we can the proposition as follows.
 
-\begin{proof}
+\begin{myproof}
     Using the Whitney embedding theorem, embed $M$ in $\R^{n}$ for $n$ sufficiently large such that $f$ is the first coordinate:
     \[
         h(x) = (f(x), h_2(x), \ldots, h_n(x))
@@ -815,7 +815,7 @@ Now, note that the right hand side is almost always a Morse function.  Hence, we
     Indeed, let $K$ be a compact subset of $M$.
     The functions $\frac{d^{j}}{dx^{j}} (f(x)^2 + \sum h_i(x)^2)$ for $j = 1, \ldots,k$ all attain their maximum on $K$, so by choosing $c$ big enough, we can make them simultaneously arbitrarily small in a uniform way. Similarly for the third term.
     Lastly, we can also make $\epsilon_i$ arbitrarily small while still retaining that $g$ is a Morse function.
-\end{proof}
+\end{myproof}
 
 \begin{figure}
     \centering

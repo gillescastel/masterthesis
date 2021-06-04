@@ -285,7 +285,7 @@ In the proof of this theorem, we will need the following lemma, stating that poi
     Then  $y_n \to  y$.
     \label{lemma:level-sets}
 \end{lemma}
-\begin{proof}
+\begin{myproof}
     The idea of the proof is to flow $y_n$ to  $x_n$ and $y$ to $x$ so that convergence of $x_n$ implies convergence of $y_n$.
     Let  $\psi_t$ be the flow of  $-\frac{1}{df (X)} X$ on a subset of $M$ that contains $x_n, y_n, x, y$ for large enough  $n$ and does not contain critical points.
     Then $f(\psi_t(z)) = f(z) - t$, so
@@ -295,7 +295,7 @@ In the proof of this theorem, we will need the following lemma, stating that poi
          & \qquad \tikz \draw[->]  (0,0) -- (0,-0.5) node[midway, right]{\footnotesize$n \to  \infty$};\\[-0.4em]
          &\mbox{}\phantom{{}={}}\psi_{-f(y) + f(x)}(x) = y
     .\end{align*} 
-\end{proof}
+\end{myproof}
 
 Let us now prove that $\Lb ab$ is compact.
 We will do this by proving that this space is sequentially compact. 
@@ -314,7 +314,7 @@ This is enough, because the topology on $\Lb ab$ is second countable (coming fro
 
 
 
-\begin{proof}
+\begin{myproof}
     Let us first consider a sequence of unbroken trajectories, i.e.\ a sequence $\ell_n$ in $\L ab$.
     Let $\Omega(a)$ be a Morse chart around $a$.
     Consider the points where $\ell_n$ exits the Morse chart $a$, call them $a_n^{-}$.
@@ -343,7 +343,7 @@ We claim that $c^{-}$ lies in the unstable manifold of $c$.\sidenote{
 This means that when we flow back, we indeed get to $c$ like we wanted, and when we flow forward, we get to another critical point, which may be $b$, or $d$, yet another critical point. This way we go on and find a subsequence of $\ell_n$ that converges to~$(\gamma_1, \gamma_2, \ldots, \gamma_k)$.
 
 In order to complete the proof for a sequence $\ell_n$ in $ \Lb ab$ (instead of $\L ab$), note that for sufficiently large $n$ and after extracting a subsequence, the critical points where $ \ell_n$ is broken do not change. Then apply the proof above to the first segment, then to the second, \ldots
-\end{proof}
+\end{myproof}
 
 Note that this proof also encapsulates the fact that $\Lb ab$ is actually the compactification of  $\Lb ab$, in the sense that there are elements of  $\L ab$ that are arbitrarily close to a fixed element of $\Lb ab$.
 
@@ -386,7 +386,7 @@ The last part is important in order to show that broken trajectories actually fo
     \label{fig:l-bar-last-condition-of-manifold-with-boundary}
 \end{marginfigure}
 
-\begin{proof}
+\begin{myproof}
     Let $a,b,c$ be critical points of index $(\Ind a, \Ind c, \Ind b) = (k+1,k,k-1)$.
     \begin{marginfigure}
         \centering
@@ -430,7 +430,7 @@ Let $D^{k}$ be a small $k$-dimensional disk around $c^{+}$ in $f^{-1}(\alpha+\ep
     Because of transversality, this intersection is in fact a manifold (with boundary $c^{-}$) and counting dimensions, we find that it has dimension $1$.
     Now it is easy to define the required embedding $\chi: [0, \delta) \to  f^{-1}(\alpha-\epsilon)$, which in turn gives rise to $\psi: [0, \delta) \to  \Lb ab$.
 
-\end{proof}
+\end{myproof}
 \subsection{Conclusion}
 
 Let us conclude this section by finally proving that $\partial^2 = 0$.
@@ -438,7 +438,7 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
     Let $X$ be a pseudo-gradient adapted to a Morse function  $f: M \to  \R$ that satisfies the Smale condition.
     Then the Morse differential $\partial_X$ squares to zero.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Let $a$ be a critical point of $f$.
     Then by definition of $\partial$,
     \begin{align*}
@@ -460,7 +460,7 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
         &= \sum_{b \in  \Crit_{k-2}f} \left|\partial \Lb a b \right|\:  b.
     \end{align*} 
     Now, $\Lb ab$ is a compact  $1$-manifold and hence has an even number of boundary points. Working over $ \Z_2$, this implies that $\partial^2(a) = 0$.
-\end{proof}
+\end{myproof}
 
 % \filbreak
 \section{Morse homology is independent of the Morse function and gradient}
@@ -476,7 +476,7 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
     that induces an isomorphism on the level of homology.
 \end{theorem}
     
-\begin{proof}
+\begin{myproof}
 The proof of this theorem features an intricate interplay between homological algebra and differential geometry and is truly something to behold. It is perhaps the most beautiful proof in this thesis.
 \paragraph{Construction of a morphism of complexes}
 In order to find a relation between the two complexes, we geometrically connect $f_0$ and $f_1$ via a particular type of homotopy, namely  a `stable interpolation' by which we mean a smooth map
@@ -663,7 +663,7 @@ or as we are working over $\Z_2$,
 ,\] 
 proving that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ induce the same map on the level of homology.
 This concludes the proof.
-\end{proof}
+\end{myproof}
 
 \begin{figure*}
     \centering
@@ -722,7 +722,7 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
         Let $X$ be a pseudo-gradient adapted to a Morse function  $f: M \to  \R$ that satisfies the Smale condition.
         Then the Morse differential $\partial_X$ of the integral Morse complex squares to zero.
     \end{theorem}
-    \begin{proof}
+    \begin{myproof}
         Let $a$ be a critical point of $f$.
         Then by definition of $\partial$,
         \begin{align*}
@@ -745,7 +745,7 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
         \end{align*} 
         Now, $\Lb ab$ is an oriented compact  $1$-manifold and hence $\sigma(\Lb ab) = 0$.
         This implies that $\partial^2(a) = 0$.
-    \end{proof}
+    \end{myproof}
     \begin{remark}
         While we are free to choose the orientations of $\stable p$, reversing it only changes the sign of $\NX X pq$ and  $\NX X qp$ for any $q$, implying that the Morse homology is independent of the choice of orientation.
     \end{remark}
@@ -895,7 +895,7 @@ With this set up, we are ready to prove the following theorem:
     where $H_{\bul}(M, \Z)$ denotes the singular homology of $M$.
 \end{theorem}
 
-\begin{proof}
+\begin{myproof}
     As stated before, we follow Hutchings.\sidecite{hutchings2002lecture}
     \paragraph{Idea of the proof}
     
@@ -1106,5 +1106,5 @@ Calculating $\partial F$ and  $F \partial$, we have
         &= \sum_d \# \L \sigma d \cdot e_*[\unstableb d] - e_*[\sigma]
     .\end{align*} 
     Keeping in mind that as currents $[\unstableb p] = [\unstable p]$, we find that $D  \circ  A - \operatorname{Id} = \partial F + F \partial$.
-\end{proof}
+\end{myproof}
 

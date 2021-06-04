@@ -48,7 +48,7 @@ Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates 
     Moreover, $T(N_1\tcap N_2) = TN_1 \tcap TN_2$.
 \label{prop:transverse-codimensions-add}
 \end{prop}
-\begin{proof}
+\begin{myproof}
     As this is a local statement, we prove it for $M = \R^{m}$.
     We may assume that $N_1 = f_1^{-1}(0)$ and $ N_2 = f_2^{-1}(0)$ where $f_i$ are submersions from $\R^{m}$ to $\R^{n_i}$, where $n_i$ is the codimension of $N_i$.
     % i.e. $(f_i)_*$ has full rank everywhere.
@@ -63,7 +63,7 @@ Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates 
                            &= m - (n_1 + n_2)
     .\end{align*} 
     This also shows that $T_p(N_1 \tcap N_2) = T_pN_1 \tcap T_pN_2$ and that $ N_1 \tcap N_2$ is a manifold, which is not always the case when the intersection is not transverse.
-\end{proof}
+\end{myproof}
 \begin{marginfigure}[-5cm]
     \centering
     \incfig{codimensions-transverse}
@@ -220,7 +220,7 @@ The following is a useful criterion for determining whether two different chain 
     Let $f_\bul, g_\bul$ be two chain homotopic chain maps from $C_\bul$ to $D_\bul$. 
     Then $H_i(f_\bul) = H_i(f_\bul)$, i.e.\ the maps induced on the level of homology are identical.
 \end{prop}
-\begin{proof}
+\begin{myproof}
     Let $h_i$ be a chain homotopy between  $f_\bul$ and  $g_\bul$.
     Let $x \in \Ker(d_i^{C})$.
     Then, suppressing indices,
@@ -229,7 +229,7 @@ The following is a useful criterion for determining whether two different chain 
                           &= f(x) + h(0) + \Im(d^{D})\\
                         &= f(x) + \Im(d^{D}).
     \end{align*} 
-\end{proof}
+\end{myproof}
 
 \subsection*{Singular homology}
 In Algebraic topology, the most important form of homology is singular homology.
@@ -527,7 +527,7 @@ This allows us to prove the result we were after:
 \begin{prop}
     A homotopy sphere is a homology sphere.
 \end{prop}
-\begin{proof}
+\begin{myproof}
     An $n$-dimensional homotopy sphere $S$ is $n-1$-connected, hence the morphisms $h_1, h_2, \ldots, h_{n-1}$ are isomorphisms and $h_n$ is an epimorphism.
     % TODO: not h1, and what about h0?
     We conclude that 
@@ -539,7 +539,7 @@ This allows us to prove the result we were after:
         H_{n}(S) = \Z
     ,\] 
     so $S$ has the homology of a sphere  $S^{n}$.
-\end{proof}
+\end{myproof}
 
 Let us end our short discussion of homotopy theory by stating the theorem of Van Kampen, showing that fundamental groups are in fact fairly easy computable (contrary to higher order homotopy groups).
 \begin{theorem}[Van Kampen]

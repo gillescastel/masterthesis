@@ -195,10 +195,10 @@ More explicitly, we have the following:
     Let $f: M \to  \R$ be a Morse function and $\psi^{t}$ the flow of a pseudo-gradient field satisfying the Smale condition.
     Then the group $(\R, +)$ of time translations acts on $\traj{p}{q}$ by  $t \cdot x = \psi^{t}(x)$.  If $p \neq q$ then the action is free and we can define $ \L{p}{q} = \traj{p}{q} / \R $. The dimension of $\L{p}{q}$ is $\Ind p - \Ind q - 1$.
 \end{prop}
-\begin{proof}
+\begin{myproof}
     It is clear that $\R$ acts on $\traj{p}{q}$ by time translations. 
     If $p \neq q$,  $\traj{p}{q}$ does not contain any critical point, so flowing along a pseudo-gradient field, the value of $f$ is strictly decreasing. This proves freeness.
-\end{proof}
+\end{myproof}
 
 \begin{remark}
     If the index of two points only differs by one, say $\Ind p = \Ind q + 1$, then the dimension of $\L{p}{q}$ is $0$, so it is a discrete set.
@@ -255,7 +255,7 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
     }
     \label{fig:reordening-theorem-milnor-h-cobordism}
 \end{marginfigure}
-\begin{proof}
+\begin{myproof}
     We want to mask out the area around the stable and unstable manifolds of one of the critical points.
     Let $\mu: M_0 \to  [0,1]$ be a smooth map that vanishes around  $ M_0 \cap \unstable p$ and $1$ around $M_0 \cap \unstable{p'}$, as illustrated in Figure~\ref{fig:reordening-theorem-milnor-h-cobordism}.
     Then we can smoothly extend this to a function on the whole manifold $M$ as follows.
@@ -298,7 +298,7 @@ Now that we have introduced the (un)stable manifolds, we are ready to prove a fi
     ,\end{align*} 
     where we used that $d\overline{\mu}(X) = 0$ by construction of $\overline{\mu}$, $\frac{\partial G}{\partial f} > 0$ by (1) and $df(X) < 0$ everywhere except at critical points of $f$ by definition of pseudo-gradient field.
     Because of (4), this implies that $g$ and $f$ share the same behaviour around their critical points, proving that $g$ is also Morse.
-\end{proof}
+\end{myproof}
 
 \begin{remark}
     This theorem can be extended to a more general setting. Suppose we have a set of points $\mathbf{p} = \{p_1, \ldots, p_k\}$ and $\mathbf{p}' = \{p_1', \ldots, p_\ell'\}$, with all $p_i$ at the same level and all $p_i'$ at a single level.
@@ -360,10 +360,10 @@ With these definitions, we can summarize our findings as follows:
 \begin{theorem}
     Every closed orientable $3$-manifold admits a Heegaard splitting.
 \end{theorem}
-\begin{proof}
+\begin{myproof}
     Let $f$ be a self-indexing Morse function on $M$.
     Then $M = f^{-1}\left[0, \tfrac{3}{2}\right] \cup f^{-1}\left[\tfrac{3}{2}, 3\right]$ is a Heegaard splitting of $M$ by duality of $k$- and $n-k$-handles.
-\end{proof}
+\end{myproof}
 
 Let us give some examples.
 \begin{marginfigure}
@@ -448,7 +448,7 @@ Before proving this theorem, let us give an example showing the importance of th
 
 
 
-\begin{proof}
+\begin{myproof}
     We will follow the proof given by Milnor which is based on the original proof by Morse.\sidecite{cairns2015differential,huebsch1964bowl}
     For a proof focussing more on handles than on critical points, we refer the reader to `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
     There is also a nice proof by Laudenbach\sidecite{laudenbach2013proof} reducing the general case to dimension one, where the problem is easy to solve, as we have seen in Example~\ref{eg:cube}.
@@ -476,7 +476,7 @@ We have illustrated these properties in Figure~\ref{fig:local-model} and formal 
 Given an open neighbourhood $U$ of  $ \ell$, we can find a smaller neighbourhood $U'$ such that no trajectory exiting $U'$ enters $U'$ again.
 
 Note that this can be false when there are multiple trajectories connecting $p$ to $q$, as is the case with $p = b, q = a$ in Figure~\ref{fig:other-sphere-cancelation-of-critical-points}.
-\begin{proof}
+\begin{myproof}
     Suppose this was not the case.
     Then there would exists a sequence of trajectories $\ell_k$ that pass through points $r_k, s_k, t_k$ with $s_k \not\in U$ and $r_k$ and $t_k$ approaching $\ell$.
     We may assume that $s_k \to s$ because $M \setminus U$ is compact.
@@ -485,7 +485,7 @@ Note that this can be false when there are multiple trajectories connecting $p$ 
     Then the tail of the sequence of trajectories $\ell_{k}$ passing through points $s_k$ near $s$ also originate in $M_1$.
     This means that the minimal distance between points on $\ell_{k}$ and points on $\ell$ is bounded from below by a positive number for $k$ big enough.
     Now, because $r_k \in \ell_k$, the points $r_k$ cannot approach  $\ell$. This is a contradiction.
-\end{proof}
+\end{myproof}
 
 Let $U$ and $U'$ be neighbourhoods of $\ell$ such that $\ell \subset U' \subset U \subset \overline{U} \subset U_\ell$ such that $U'$ satisfies the conditions of the previous assertion.
 
@@ -493,7 +493,7 @@ Let $U$ and $U'$ be neighbourhoods of $\ell$ such that $\ell \subset U' \subset 
 We can alter $X$ on a compact subset of $U'$ in such a way that any point in $U$ will exit $U$ when flowing both backwards and forwards in time.
 In other words, any trajectory that contains a point in $U$ has entered $U$  and will exit $U$.
 
-\begin{proof}
+\begin{myproof}
     \begin{marginfigure}
         \centering
         \incfig{alteration-of-vector-field}
@@ -515,17 +515,17 @@ In other words, any trajectory that contains a point in $U$ has entered $U$  and
             As $\rho$ decreases exponentially, eventually  $x \in K$ and $x_1'(t) < -\alpha$ from then onwards.
             As $U$ is bounded, we conclude that $x$ leaves $U$. \qedhere
     \end{enumerate}
-\end{proof}
+\end{myproof}
 \paragraph{Assertion 3.}
 Every trajectory of $X'$ goes from $M_0$ to $M_1$.
-\begin{proof}
+\begin{myproof}
     Integral curves that do not enter $U$ follow $X$ and hence always go from  $M_1$ to $M_0$.
     Any integral curve through a point in $U$ eventually exits $U$ by Assertion 2. Moreover, it cannot re-enter $U$ by Assertion $1$, and hence once exited, it follows $X$.
-\end{proof}
+\end{myproof}
 
 \paragraph{Assertion 4.}
 The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M$ that maps $0 \times M_0$ to $M_0$ and $1 \times M_0$ to $ M_1$.
-\begin{proof}
+\begin{myproof}
     \begin{marginfigure}
         \centering
         \incfig{assertion-4}
@@ -543,12 +543,12 @@ The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M
     ,\end{align*}
     where $\psi^{t}_Y$ is the flow of $Y$.
     The inverse of $\phi$ is $q \mapsto (\tau_0(q), \pi_0(q))$.
-\end{proof}
+\end{myproof}
 
 \paragraph{Assertion 5.}
 The vector field $X'$ is a pseudo-gradient vector field for some morse function  $g$ on $M$ that agrees with $f$ near  $M_0$ and $M_1$.
 Moreover, $g$ has no critical points.
-\begin{proof}
+\begin{myproof}
     By using the previous assertion,
     it suffices to define a Morse function $g$ on $[0, 1] \times M_0$ such that $\frac{\partial g}{\partial t} > 0$ and $g$ corresponds to  $ f_1 = f  \circ  \phi$ around $0 \times M_1$ and $1 \times M$.
     To make sure that $\frac{\partial g}{\partial t} > 0$, we will define $g$ as the integral of a positive function,
@@ -576,9 +576,9 @@ Moreover, $g$ has no critical points.
     .\end{align*} 
 
     Taking $\delta$ small enough ensures that  $k(q) > 0$, hence $\frac{\partial g}{\partial t}>0$, concluding the proof of the last assertion.
-\end{proof}
+\end{myproof}
 
 This finishes the proof of the first cancellation theorem.
 \renewcommand{\qedsymbol}{\ensuremath{\square}}
-\end{proof}
+\end{myproof}
 
