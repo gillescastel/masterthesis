@@ -14,7 +14,7 @@ We will end the chapter by showing that any manifold admits a Morse function, an
 
 \section{Definition of a Morse function}
 
-A Morse function $f: M \to \R$ is a `nice' real valued function on a manifold, which will in this context mean that $f$ behaves nicely around its critical points. Let us therefore first recall what a critical point is.
+A Morse function $f: M \to \R$ is a `nice' real valued function on a manifold, which will in this context mean that $f$ behaves nicely around its critical points. Let us first recall what a critical point is.
 
 \begin{definition}[Critical point]
     Let $M$ and $N$ be a manifolds and  $f$ a map from $M$ to $N$.
@@ -72,7 +72,8 @@ Let us give some examples of Morse functions.
 \begin{noneg}
     Let $M = \R^2$ and $f: \R^2 \to  \R: (x, y) \mapsto  x^2$.
     Then all points $(0, y)$ for  $y \in \R$ are critical points of this function.
-    In particular, $(0, 0)$ is a critical point. Locally, we cannot write $f$ as  $ \pm x_1^2 \pm x_2^2$ for some coordinates $(x_1, x_2)$, so $f$ is not Morse.
+    In particular, $(0, 0)$ is a critical point.
+    As it is impossible to find local coordinates $(x_1, x_2)$ for which $f$ can be written as $\pm x_1^2 \pm x_2^2$, we conclude that $f$ is not Morse.
 \end{noneg}
 \begin{marginfigure}
     \centering
@@ -141,7 +142,7 @@ Many authors take this to be the definition of a Morse function, and then prove 
 which is our definition of a Morse function. 
 With our choice, the Morse lemma takes on the following form:
 \begin{lemma}[Morse Lemma]
-    Let $M$ be a manifold and $f: M \to  \R$ a smooth map.
+    Let $M$ be a manifold and $f: M \to  \R$ a smooth function.
     If for all $p \in \Crit f$, the Hessian $H_p$ is non-degenerate, then $f$ is Morse.
 \end{lemma}
 \begin{myproof}
@@ -201,7 +202,7 @@ A cobordism between two compact manifolds $M_0$ and $M_1$ is a compact manifold 
 In this text, we will often say that $M$ is a cobordism \emph{from $M_0$ to $M_1$.}
 The term `cobordism' comes from the fact that $M_0 \sqcup M_1$ are the boundary of $M$, so we can think of $M$ as the `co-boundary' of $M_0$ and $M_1$.
 Cobordisms are an interesting topic in their own right.
-For example, they define an equivalence relation on all compact manifolds of same dimension. Two manifolds $ M_0$ and $M_1$ are then said to be equivalent (cobordant) if there exists a cobordism $M$ connecting the two.
+For example, they define an equivalence relation on all compact manifolds of the same dimension. Two manifolds $ M_0$ and $M_1$ are then said to be equivalent (cobordant) if there exists a cobordism $M$ connecting the two.
 This equivalence relation is much coarser than diffeomorphism and is generally easier to study.
 Cobordisms also form a category where the objects are manifolds and the morphisms are cobordisms.
 
@@ -413,7 +414,7 @@ For this to work, we will need that the critical values are isolated, which is e
     where $p \neq q$ are critical points.
     Then $f+h$ is still a Morse function, because it has exactly the same critical points as $f$.\sidenote{
         If $p$ is a critical point of $f + h$, then  $df(X) + dh(X) = 0$ in  $p$.
-        Outside of the Morse charts, $|df(X) + dh(X)| < 0$, so $p$ lies in a Morse chart. This implies that $df(X) + dh(X) = df(X) = 0$, so  $p$ is a critical point of $f$.
+        Outside of the Morse charts, $df(X) + dh(X) < 0$, so $p$ lies in a Morse chart. This implies that $df(X) + dh(X) = df(X) = 0$, so  $p$ is a critical point of $f$.
         Conversely, if $p$ is a critical point of  $f$, then because  $h$ is constant on Morse charts,  it is also a critical point of $f + h$.
     }
     Furthermore the critical points of $f + h$ are distinct and the vector field $X$ is still adapted.
@@ -685,7 +686,7 @@ Let us also give an example when $f_p$ is not a Morse function:
 
 More generally, $f_p$ is not a Morse function when infinitesimally close normals intersect in $p$, because then the distance (squared) to that point $f_p$ is constant up to second order.
 Such points $p$ are called focal points.
-To make this exact, we will show that $H_p$ is non-degenerate if $p$ is a critical value of the map
+To make this precise, we will show that $H_p$ is non-degenerate if $p$ is a critical value of the map
 \[
     E: NM \to  \R^{n}: (x, v) \mapsto x + v
 ,\]
