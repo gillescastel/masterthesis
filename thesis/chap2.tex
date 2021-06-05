@@ -104,7 +104,7 @@ In summary, we have obtained the following result:
     This motivates us to in investigate necessary and sufficient conditions for the stable and unstable manifolds to intersect.
     Suppose $p$ and $q$ are two critical points of a Morse function $f: M \to  \R$ and let us consider $\stable{p} \cap \unstable{q}$.
     If $f(p) > f(q)$, then  $\stable{p} \cap \unstable{q} = \O$, because $f(\stable{p}) > f(\unstable{q})$.
-    In the other case when $f(p) \le  f(q)$, the intersection $\stable p \unstable q$ can be non-empty.
+    In the other case when $f(p) \le  f(q)$, the intersection $\stable p \tcap \unstable q$ can be non-empty.
     Moreover, if we assume that the intersection is transverse, we can say something about its dimension.
     Indeed, Proposition~\ref{prop:transverse-codimensions-add} implies that
     \[
@@ -214,7 +214,7 @@ More explicitly, we have the following:
 \begin{eg}
     Below, we have illustrated the moduli space of trajectories for the `other sphere'.
     When there is a single trajectory for example between $c$ and  $b$, $\L cb$ consist of a single point.
-    If the indices of critical points differ by two, as is the case for $d$ and  $a$,  $\L da$ is a one-dimensional manifold describing a one-paramter family of flow lines between  $d$ and  $a$.
+    If the indices of critical points differ by two, as is the case for $d$ and  $a$,  $\L da$ is a one-dimensional manifold describing a one-parameter family of flow lines between  $d$ and  $a$.
 \end{eg}
 \begin{figure}[H]
     \centering
@@ -309,7 +309,7 @@ Applying the previous theorem repeatedly and using the fact that if $\Ind p \le 
 
 \begin{theorem}
     Any closed manifold admits a Morse function such that for all critical points, $\Ind p < \Ind q \implies f(p) < f(q)$.
-    In particular, it admits a Morse function, which satisfies $ \Ind p  = f(p) $ for all critical points $p \in \Crit f$.
+    In particular, it admits a Morse function which satisfies $ \Ind p  = f(p) $ for all critical points $p \in \Crit f$.
 \end{theorem}
 In other words, this asserts that lower index handles can always be attached before higher index ones.
 Morse functions as described in the second part of the theorem have a name:
@@ -336,7 +336,7 @@ Morse functions as described in the second part of the theorem have a name:
     }
     \label{fig:heegaard-splittings-schemattically}
 \end{marginfigure}
-In the three dimensional setting, the existence of self-indexing Morse functions give rise so-called Heegaard splittings.
+In the three-dimensional setting, the existence of self-indexing Morse functions give rise so-called Heegaard splittings.
 Heegaard splittings form an essential tool for a low-dimensional topologist (studying manifolds of dimension $\le 4$) and give a way to understand $3$-manifolds.
 As Heegaard splittings will not play an important role in the upcoming chapters, we will only discuss them briefly.
 
@@ -411,7 +411,7 @@ It turns out that the existence of a unique trajectory connecting $p$ to  $q$ is
 
 \begin{theorem}[Cancellation theorem\sidenotemark]
     Let $M$ be a cobordism from $M_0$ to $M_1$.
-    Let $f: M \to  [0,1]$ be a Morse exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
+    Let $f: M \to  [0,1]$ be a Morse function with exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
 
     If $|\L p q| = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
     More specifically, we can alter $X$ around  $\ell$ and $f$ away from  $M_0, M_1$ such that $f$ has no critical points.
@@ -495,6 +495,7 @@ Let $U$ and $U'$ be neighbourhoods of $\ell$ such that $\ell \subset U' \subset 
 \paragraph{Assertion 2.}
 We can alter $X$ on a compact subset of $U'$ in such a way that any point in $U$ will exit $U$ when flowing both backwards and forwards in time.
 In other words, any trajectory that contains a point in $U$ has entered $U$  and will exit $U$.
+Note that the altered vector field is not longer adapted to $f$.
 
 \begin{myproof}
     \begin{marginfigure}
