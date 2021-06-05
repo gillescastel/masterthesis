@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{478.49931371bp}%
+    \setlength{\unitlength}{479.29551973bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.66983076)%
+  \begin{picture}(1,0.63254613)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.39159361,0.62075509){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_2$\end{tabular}}}}%
-    \put(0.5693708,0.00559901){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_1$\end{tabular}}}}%
-    \put(0.74770526,0.58213642){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_0$\end{tabular}}}}%
-    \put(0.92548238,0.2891423){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_{-1}=0$\end{tabular}}}}%
+    \put(0.39177369,0.61832901){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_2$\end{tabular}}}}%
+    \put(0.56925556,0.00419492){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_1$\end{tabular}}}}%
+    \put(0.74729377,0.5797745){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_0$\end{tabular}}}}%
+    \put(0.92477557,0.28726719){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$C_{-1}=0$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{morse-chain-complex-visualized-truncated.pdf}}%
   \end{picture}%
 \endgroup%

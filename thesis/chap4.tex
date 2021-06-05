@@ -2,15 +2,17 @@
 \label{chap:app-morse-homology}
 
 This chapter discusses some applications of Morse homology.
-While we already now that it isomorphic to singular homology and hence it enjoys all the properties of singular homology, it can still be fruitful to derive these properties directly from the definitions of Morse homology.
-We will do this for two of those properties: Poincaré duality and the Künneth formula.
-The third and last section of this chapter discusses the Morse inequalities, giving a lower bound for the number of critical points of a Morse function $f: M \to  \R$ based on the homology of $M$.
+While we already know that it isomorphic to singular homology and hence it enjoys all the same properties, it can still be fruitful to derive these things directly from the definitions of Morse homology.
+We will do this for the Poincaré duality and the Künneth formula in the first two sections of this chapter.
+The third and last section discusses the Morse inequalities, giving a lower bound for the number of critical points of a Morse function $f: M \to  \R$ based on the homology of $M$.
 These inequalities will play a mayor role in the next chapter.
 
 \section{Poincaré duality}
-Let us state a first version of the Poincaré duality.
+The Poincaré duality was first stated by Henri Poincaré in his paper `Analysis Situs'.\sidecite{poincare1895analysis}
+In this seminal paper, Poincaré introduces furthermore the concepts of fundamental group, simplicial complex, generalized Euler characteristic, founding the field of algebraic topology. Let us state and prove a modern version of Poincaré duality.
+
 \begin{theorem}[Poincaré duality]
-    Let $M$ be a compact manifold, $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$.
+    Let $M$ be a compact manifold, and $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$.
     Then
     \[
         H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)
@@ -26,8 +28,9 @@ Let us state a first version of the Poincaré duality.
     This immediately gives that $H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)$.
 
     Working over $\Z$, things are more subtle.
-    In particular, $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
-    What is true however, is that if $M$ is orientable, then  $r_0 H_k(M, \Z) = r_0 H_{n-k}(M, \Z)$, as is proven in `Morse theory and Floer homology' by Audin and Damian.\sidecite[p~84.]{audin}.
+    In particular, in general $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
+    The best we can do is saying that if $M$ is orientable, then the ranks of  $H_k(M, \Z)$ and $H_{n-k}(M, \Z)$ agree,
+    as is proven in `Morse theory and Floer homology' by Audin and Damian.\sidecite[p~84.]{audin}.
 
     In order to get a more natural form of Poincaré duality, it is beneficial to consider Morse cohomology, as done in notes by Fushida-Hardy.\sidecite{fushidamorse}
     Recall from Chapter~0 that singular cohomology is defined as the homology of the dual of the singular chain complex, i.e.\ the homology of $C^{k} = \Hom(C_k, \Z)$, with as differential the adjoint of $\partial$. The resulting homology is denoted with $H^{k}(M)$.
@@ -37,11 +40,9 @@ Let us state a first version of the Poincaré duality.
         C^{k} = \Hom(C_{n-k}(-f), \Z)
     ,\]
     with differential $\partial^{k+1}:C^{k} \to  C^{k+1}$ the adjoint of $\partial_{k+1}$.
-    With these conventions, it is clear that there exists an isomorphism
-    \[
-    t_k: C_k \to  C^{n-k}
-    .\] 
-    Let us show that this is a chain map, from which the desired result follows, in other words we want to show that
+    With these conventions, it is clear that there exists an isomorphism $t_k: C_k \to  C^{n-k}$. 
+    Let us show that this is a chain map, from which the desired result follows.
+    In other words we need to show that
     \[
     t_{k-1}  \circ  \partial_k = \partial^{n-k+1}  \circ  t_k
     .\] 
@@ -63,12 +64,13 @@ Let us state a first version of the Poincaré duality.
     Hence, the last step of the proof is to show that $\NX Xpq = \NX{-X}qp$.
     If we would not count signs, this would be immediately clear.
     However, when working over $\Z$ we need to check that the orientations work out.
-    If $M$ is oriented, then the orientations of the stable manifolds not only induce a coorientation of the unstable manifolds, but also an orientation.
+    If $M$ is oriented, this form no problem.
+    Indeed, in that case, the orientations of the stable manifolds not only induce a coorientation of the unstable manifolds, but also an orientation.
     Now it is just a matter of carefully checking the definition of the orientation we put on $\L pq$ to conclude that $\NX X pq = \NX{-X} qp$.
     This finishes the proof.
 \end{myproof}
 
-Working with cobordisms, we find the following theorem:
+If $M$ is a cobordism, we need to take care of its boundary and we find the following theorem:
 \begin{theorem}
     Let $M$ be an oriented cobordism from  $M_0$ to $M_1$.
     Let $f: M \to  [0,1]$ be a Morse function with adapted pseudo-gradient $X$.
@@ -80,30 +82,35 @@ Working with cobordisms, we find the following theorem:
 A proof of this fact can be found in `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
 
 \section{The Künneth Formula}
-The Künneth Formula is a way to relate the homology of a product to the homology of its factors. More explicitly, it states the following:
+In homotopy theory, the homotopy groups of two spaces relate nicely to the homotopy group of their product: $\pi_n(X \times Y) = \pi_n(X) \times \pi_n(Y)$.
+In homology the Künneth formula plays a similar role in homology theory.
 \begin{prop}[Künneth formula]
     Let $M, N$ be two manifolds. Then
     \[
-        \HMf[k]{M \times N} \cong
-        \bigoplus_{i+j  = k} \HMf[i]{M} \otimes \HMf[j]{N}
-    ,\]
-where homology is taken with coefficients in $ \Z_2$.
+        H_k(M \times N, \Z_2) \cong
+        \bigoplus_{i+j  = k} H_i(M, \Z_2) \otimes H_j(N, \Z_2)
+    .\]
 In other words,
 \[
-    \HMf[\bul]{M \times N} \cong \HMf[\bul]{M} \otimes \HMf[\bul] N
+    H_{\bul}(M \times N, \Z_2) \cong H_{\bul}(M, \Z_2) \otimes H_\bul(N, \Z_2)
 ,\] 
 with the tensor product of chain complexes as defined in Chapter~0.
 \end{prop}
-We can also express this in a different way using the Poincaré polynomial.
-For this, define $\beta_k(M) = \dim_{\Z_2} \HMf[k]{M;\Z_2}$ and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
-Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
-\begin{eg}
-    We have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
+\begin{remark}
+    The Künneth formula as written above is not true when considering homology over $\Z$.
+\end{remark}
+\begin{remark}
+    We can also express this in a different way using the Poincaré polynomial.
+    For this, define $\beta_k(M) = \dim_{\Z_2} H_k(M;\Z_2)$ and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
+    Then the Künneth formula states that $P_{M \times N}(t) = P_M(t) P_N(t)$.
+
+
+    For example, we have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
     More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
-\end{eg}
+\end{remark}
 \begin{myproof}
-    Let $f, g$ and $X, Y$ be two Morse functions, resp.\ pseudo-gradient fields on  $M$ and  $N$.
-    Then $f + g$ is a Morse function and $(X, Y)$ is a pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
+    Let $f, g$ and $X, Y$ be two Morse functions, and pseudo-gradient fields on  $M$ and  $N$.
+    Then $f + g$ is a Morse function on $M \times N$ and $(X, Y)$ is an adapted pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
     Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices.
     Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
     Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
@@ -112,6 +119,12 @@ Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
     }
 
     When we think about this in terms of directed graphs of critical points, like we did in the example of $T^{3}$, we find that the graph of $M \times N$ is the Cartesian product of the graph of $M$ and the graph of  $N$.
+    \begin{marginfigure}
+        \centering
+        \incfig{kunneth-formula}
+        \caption{On top: the Morse complexes of $(f, X)$ and $(g, Y)$. On the bottom: the Morse complex of $(f+g, (X+Y))$.}
+        \label{fig:kunneth-formula}
+    \end{marginfigure}
     With these things in mind, it is easy to check that
     \begin{align*}
         \Phi: \bigoplus_{i+j = k} C_i(f) \otimes C_j(g) &\longrightarrow C_k(f+g) \\
@@ -122,94 +135,82 @@ Then the Künneth formula tells us that $P_{M \times N}(t) = P_M(t) P_N(t)$.
         (C_\bul(f) \otimes C_\bul(g), \partial_X \otimes 1 + 1 \otimes \partial_Y) \xrightarrow{\Phi}   (C_\bul(f+g), \partial_{(X,Y)})
     ,\]
     where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
-    Now, taking the homology of both sides, and remembering that the homology of the tensor product complex is the tensor product of the homologies (Proposition~\ref{prop:hom-tensor-is-tensor-hom}), we get exactly what we want:
+    Now, taking the homology of both sides, we find
     \[
         \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
-    .\]
-    Note that we take the homology with coefficients in $\Z_2$ in order to satisfy the conditions of Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
-\begin{marginfigure}
-    \centering
-    \incfig{kunneth-formula}
-    \caption{TODO kunneth formula}
-    \label{fig:kunneth-formula}
-\end{marginfigure}
+    ,\]
+    where we have used that the homology of a tensor product complex is the tensor product of the homologies per Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
 \end{myproof}
 
 
 \section{Morse inequalities}
-\subsection{Morse inequalities over $\Z_2$}
+The Morse inequalities give a lower bound for the number of critical points of a Morse function $f:M \to  \R$ in terms of the homology of $M$.
+In this section, we will discuss many different versions of the Morse inequalities, some stronger than others.
 
-The Morse inequalities state that there is a lower bound on the number of critical points, which only depends on the homology of the manifold:
+\subsection{Morse inequalities over $\Z_2$}
+Let us start with the most simple version of the Morse inequalities.
+
 \begin{theorem}[Weak Morse inequalities]
     Let $f: M \to  \R$ a Morse function. Then
     \[
-        \# \Crit f \ge \sum \dim \HMf[k]{M, \Z_2}
+        \# \Crit f \ge \sum \dim H_k(M, \Z_2)
     ,\]
     and more specifically,
     \[
-        \# \Crit_k f \ge \dim \HMf[k]{M, \Z_2}
+        \# \Crit_k f \ge \dim H_k(M, \Z_2)
     .\]
 \end{theorem}
 \begin{myproof}
-    This is actually a very straightforward result, following from the fact that \[
-    \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
-    \] so $\dim \HMf[k]{M, \Z_2} = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
+    With everything we have set up so far, this is actually a very straightforward result, following from the fact that \[
+    H_k(M, \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
+    \] so $\dim H_k(M, \Z_2) = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
 \end{myproof}
 
 A result in similar vein is the following:
 \begin{theorem}
     Let $f: M \to  \R$ be a Morse function. Then
     \[
-        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim \HMf[k]{M, \Z_2}  = \chi(M)
+        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim H_k(M, \Z_2)  =: \chi(M)
     .\]
     Considering this equality modulo $2$, we get
     \[
-        \# \Crit f  \equiv \sum \dim \HMf[k]{M, \Z_2} \mod 2
+        \# \Crit f  \equiv \sum \dim H_k(M, \Z_2) \mod 2
     .\]
 \end{theorem}
-\begin{remark}
-    This alternating sum is a generalization of the Euler characteristic of a manifold, defined to be
-    \[
-    \chi(M) = \sum (-1)^{k} \dim H_k(M, \Z_2)
-    .\]
-
-    In the case of polyhedra, this equation reduces to $2 = V - E + F$, where $V$, $E$ and  $F$ are the number of vertices, edges and faces in the polyhedron.
-\end{remark}
-% \todo{Mention the definition of $\chi(M) = \sum (-1)^{k} H_k$  and moreover that it doesn't depend on the field/ring we are working over!}
-\begin{marginfigure}
-    \centering
-    \incfig{linear-map-rank-nullity-theorem}
-    \caption{Visual depiction of the rank-nullity theorem stating that $\dim \Im T + \dim \Ker T = \dim V$.}
-    \label{fig:linear-map-rank-nullity-theorem}
-\end{marginfigure}
-
-\begin{marginfigure}
-    \centering
-    \incfig{morse-chain-complex-visualized}
-    \caption{
-        Top: same illustration as above, this time for the Morse complex with its differential.
-        Each orange lines corresponds to a homology group.
-        Bottom: The alternating sum of the dimensions of $C_k$ equals the alternating sum of the dimensions of $H_k$.
-    }
-    \label{fig:morse-chain-complex-visualized}
-\end{marginfigure}
-\begin{marginfigure}
-    \centering
-    \incfig{morse-chain-complex-visualized-truncated}
-    \caption{Truncating the above picture, we find that the alternating sum of the dimensions of $C_k$ is greater than the alternating sum of the dimensions of  $H_k$. All the thick black lines cancel, exert the one circled, giving rise to the inequality.
-    }
-    \label{fig:morse-chain-complex-visualized-truncated}
-\end{marginfigure}
 \begin{myproof}
-    Use the fact that
+    Use the fact that 
     \[
-        \HMf[k]{M, \Z_2} = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
+        H_k(M, \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
     \]
-    together with rank-nullity theorem for vector spaces (we are working over $\Z_2$). A computation completes the proof.
+    together with rank-nullity theorem for vector spaces.
+    A simple computation completes the proof.
 
     To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
-    Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top). We have highlighted the dimension of the homology spaces in orange, and we have indicated spaces of the same dimensions with the same type of black thick lines.
-    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating sum of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of $H_k$.
+    \begin{marginfigure}
+        \centering
+        \incfig{linear-map-rank-nullity-theorem}
+        \caption{Visual depiction of the rank-nullity theorem stating that $\dim \Im T + \dim \Ker T = \dim V$.}
+        \label{fig:linear-map-rank-nullity-theorem}
+    \end{marginfigure}
+    \begin{marginfigure}
+        \centering
+        \incfig{morse-chain-complex-visualized}
+        \caption{
+            Top: same illustration as above, this time for the Morse complex with its differential.
+            Each orange lines corresponds to a homology group.
+            Bottom: The alternating sum of the dimensions of $C_k$ equals the alternating sum of the dimensions of $H_k$.
+        }
+        \label{fig:morse-chain-complex-visualized}
+    \end{marginfigure}
+    \begin{marginfigure}
+        \centering
+        \incfig{morse-chain-complex-visualized-truncated}
+        \caption{Truncating the above picture, we find that the alternating sum of the dimensions of $C_k$ is greater than the alternating sum of the dimensions of  $H_k$. All the thick black lines cancel, exert the one circled, giving rise to the inequality.
+        }
+        \label{fig:morse-chain-complex-visualized-truncated}
+    \end{marginfigure}
+    Repeating this diagram for $\partial_k$, remembering that  $\partial_k^2 = 0$, gives Figure~\ref{fig:morse-chain-complex-visualized} (top), where we have highlighted the dimension of the homology spaces in orange.
+    The bottom part of Figure~\ref{fig:morse-chain-complex-visualized} shows that when we consider the alternating sum of the dimensions of $C_k$, the thick black lines cancel, leaving us with the alternating sum of the dimensions of the homology $H_k$.
     \end{myproof}
 
     We can also truncate this argument, considering only a partial alternating sum, illustrated in Figure~\ref{fig:morse-chain-complex-visualized-truncated}.
@@ -217,41 +218,30 @@ A result in similar vein is the following:
 \begin{theorem}[Strong Morse inequalities]
     For any Morse function $f: M \to  \R$ and for any $m = 0, \ldots, n$, the following inequality holds:
     \[
-        \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} \dim \HMf[k]{M, \Z_2}
+        \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} \dim H_k(M, \Z_2)
     .\]
 \end{theorem}
 
-It is easy to check that the strong Morse inequalities are in fact stronger:the weak version can be obtained by by subtracting the strong inequalities for $m$ and  $m+1$.
-
-
-
-\begin{eg}
-    TODO example and say what this means.
-\end{eg}
+It is easy to check that the strong Morse inequalities are in fact stronger: the weak version can be obtained by by subtracting the strong inequalities for $m$ and  $m+1$.
 
 \subsection{Morse inequalities over $\Z$ and $\Z_p$}
 
-A natural question that arises when discussing these inequalities is: `Can we get stronger inequalities if we work over a different ring?' and `Can we find a Morse function $f$ that attains these inequalities?'
+In this section, we will generalize the Morse inequalities by working over other rings than $\Z_2$. More specifically we will consider the Morse inequalities over $\Z$ and $\Z_p$.
 
-For the first question, let us first have a look at how we can generalize the Morse inequalities to $\Z$ and $\Z_p$.
-Both of these options have their own difficulties.
 
-When working over $\Z$, the dimension of a $\Z$-module is not well defined, so we need to introduce new notions such as rank and torsion rank to replace the notion of dimension. Moreover, the rank-nullity theorem used in the proof is not obvious.
-
-For $\Z_p$, the difficulties lie on the other side of the inequality: how do we define Morse homology over $\Z_p$ for an arbitrary prime $p$?
-The answer to this question is that---just like in the case of $\Z$---we should take orientation into account and then everything works out.
-Also the proof of the Morse inequalities works out, because we are working over $\Z_p$ which is a field. We therefore have the following results:
+Let us first consider the case of $\Z_p$ (or any other field for that matter).
+First of all,
+we should mention that defining Morse homology over $\Z_p$ gives no problems if we choose orientations of the stable manifolds, similarly as we have done for $\Z$. Moreover,
+because $\Z_p$ is a field,
+the proof given above can be simply repeated. In conclusion, we have the following:
 
 \begin{theorem}
     The (weak and strong) Morse inequalities hold over $\Z_p$ for any prime $p$.
 \end{theorem}
-\begin{myproof}
-    Exactly the same as before. As modules over $\Z_p$ are vector spaces, nothing changes.
-\end{myproof}
 
-Let us now discuss the case for $\Z$.
-While we cannot define dimension, we can define different notions of ranks. Following `Infinite Abelian Groups' by Fuchs\sidecite{fuchs1970infinite}, we define the following invariants:
-\begin{definition}[Rank]
+When working over $\Z$, it not immediately clear how we can generalize the Morse inequalities, because the dimension of a $ \Z$-module is ill-defined.
+Therefore, let us introduce some different notions of rank of a $\Z$-module, generalizing the concept of dimension.
+\begin{definition}[Rank\sidenotemark]
     Let $A$ be a  $\Z$-module. Then the following notions of rank are invariants of $A$:
     \begin{align*}
         r_0(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of infinite order}\\[0.3em]
@@ -261,19 +251,20 @@ While we cannot define dimension, we can define different notions of ranks. Foll
         r(A) &:= r_0(A) + \sum_{p}r_p(A)
     .\end{align*}
 \end{definition}
+\sidenotetext[][-6.2cm]{\fullcite{fuchs1970infinite}}
 \begin{eg}
     Let $A = \Z^2 \oplus \Z_4 \oplus \Z_3 \oplus \Z_2$.
     Then
     \[
         r_0(A) = 2 \qquad
         r_2(A) = 2 \qquad
-        r_3(A) = 1 \qquad
-    ,\]
-    and therefore the torsion rank is $r_t(A) = 3$ and the total rank is $r(A) = 5$.
+        r_3(A) = 1
+    .\]
+    The torsion rank is $r_t(A) = 3$ and the total rank is $r(A) = 5$.
 \end{eg}
-We also have the following proposition\sidecite[p. 86]{fuchs1970infinite}
+We have the following relations between ranks of submodules:
 \begin{lemma}
-    Let $A$ and $B$ be $\Z$ modules and suppose $A$ is  a submodule of $B$.
+    Let $A$ and $B$ be $\Z$ modules and suppose $B$ is a submodule of $A$.
     Then
     \begin{enumerate}[(i)]
         \item $r(B) \le  r(A)$
@@ -300,39 +291,39 @@ These two facts combined give the following result:
     Similar as before, replacing $\Z_2$ by $\Z$ and $\dim$ by $r_0$.
 \end{myproof}
 
-\subsection{Comparing the Morse inequalities over $\Z$ and $\Z_p$}
 
-An interesting question is `Are the different version of the Morse inequalities equally strong?'
-The following example shows that this is not the case:
 
-\begin{eg}
-    Consider the Klein bottle $K$.
-    Remember that its homology over $\Z$ is given by $(\Z, \Z_2 \oplus \Z, 0)$ and over $ \Z_2$ by $(\Z_2, \Z_2^2, \Z_2)$.
-    Therefore, the weak Morse inequalities over $\Z$ give
+
+\subsection{Morse inequalities with torsion rank}
+
+Let us lastly give a version of the Morse inequalities that makes less rough approximations by using the torsion rank.
+\begin{theorem}[Pitcher inequalities\sidenotemark]
+    Let $f: M \to  \R$ be a morse function.
+    Then
     \[
-    C_0 \ge 1 \qquad C_1 \ge 1 \qquad C_2 \ge 0
-    ,\]
-    and those over $\Z_2$ give
+    \# \Crit_k f \ge r( H_k(M, \Z)) + r_t(H_{k-1}(M, \Z)).
+\]
+\end{theorem}
+\sidenotetext[][-2cm]{\fullcite{Pitcher1958InequalitiesOC}}
+\begin{proof}
+    We use $H_k = H_k(M, \Z)$ for brevity.
+    \begin{align*}
+        r(H_k) + r_t(H_{k-1}) = r\left( \frac{\Ker \partial_k}{\Im \partial_{k+1}} \right) + r_t \left( \frac{\Ker \partial_{k-1}}{\Im \partial_k} \right) 
+    .\end{align*}
+    Now, note that $\Ker \partial_k$ and $\Im \partial_k$ are free. Hence $r_t\left(\frac{\Ker \partial_{k-1}}{\Im \partial_k}\right)\le  r (\Im \partial_k)$.
+    Moreover, $r\left( \frac{\Ker \partial_k}{\Im \partial_{k+1}} \right) \le r(\Ker \partial_k)$.
+    This gives
+    \begin{align*}
+        r(H_k) + r_t(H_{k-1})  &\le  r(\Im \partial_k) + r (\Ker \partial_k)\\
+                               &= r_0(\Im \partial_k) + r_0 (\Ker \partial_k),
+    \end{align*} 
+    again because $\Im \partial_k $ and  $\Ker \partial_k$ are free.
+    Now notice that $r_0(C_k) = r_0(\Im \partial_k) + r_0(\Ker \partial_k)$.
+    This proves that
     \[
-    C_0 \ge  1 \qquad C_1 \ge  2 \qquad C_2 \ge  1
-    ,\]
-    which are clearly stronger.
-    This is still the case when we consider the strong Morse equalities. Over $ \Z$ we have
-    \[
-    C_0 \ge  1 \qquad C_1 - C_0 \ge  0 \qquad C_2 - C_1 + C_0 \ge  0
-    ,\]
-    while over $\Z_2$ we get
-    \[
-    C_0 \ge  1 \qquad C_1 - C_0 \ge  1 \qquad C_2 - C_1 + C_0 \ge  0
-    .\]
-\end{eg}
-
-\begin{remark}
-    The Morse equalities are strict when $M$ is closed and simply connected $n\ge 6$, meaning that there always exists a Morse function $f: M \to  \R$ such that $\# \Crit_k f = \dim \HMf[k]f$. This is called Smale's theorem \sidecite[p.~392]{smale2007generalized}, and we will prove \todo{REFER}
-\end{remark}
-
-\todo{Talk about Morse inequalities with torsion! Pitchers equalities}
-
-
+        r(H_k) + r_t(H_{k-1}) \le  r_0 (C_k)
+    ,\] 
+    from which the desired result follows.
+\end{proof}
 
 
