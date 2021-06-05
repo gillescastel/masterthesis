@@ -4,7 +4,7 @@
 In this thesis, we assume the reader is familiar with basic concepts of differential geometry such as smooth manifolds, vector fields, flows, bundles, differential forms, et cetera.
 In this chapter, we discuss some concepts that might be unfamiliar.
 
-We will first discuss two concepts from differential geometry, namely transversality and intersection numbers.
+We will first focus on two concepts from differential geometry, namely transversality and intersection numbers.
 The second section is on algebraic topology, discussing homology, homotopy and their relation. We will use these concepts from Chapter~\ref{chap:morse-homology} and onwards.
 
 \section*{Differential Geometry}
@@ -31,8 +31,8 @@ We give some examples below.
     \incfig{transversality-examples}
 \end{figure}
 If the intersection of two manifolds $ N_1$ and $N_2$ is transverse, it is more well-behaved than in the general case.
-For example, as the following proposition states, the transverse intersection $N_1 \tcap N_2$ is again a manifold.
-Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates that this is not true in general. Moreover, `codimensions add':
+For example the transverse intersection $N_1 \tcap N_2$ is again a manifold, which is not true in general, as Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates.
+Moreover, we have the following:
 \begin{marginfigure}
     \centering
     \incfig{intersection-of-manifolds-is-not-always-a-manifold}
@@ -72,7 +72,7 @@ Figure~\ref{fig:intersection-of-manifolds-is-not-always-a-manifold} illustrates 
 \end{marginfigure}
 
 An interesting property of transversality is that it is both \emph{generic} and \emph{stable}.
-By generic we mean that any two manifolds intersecting can be made intersecting transversely by perturbing one of the manifolds.
+By generic we mean that any two manifolds intersecting can be made to intersect transversely by perturbing one of the manifolds.
 Stability on the other hand means that when we perturb a transverse intersection, it stays transverse.
 At the core of the proof of stability and genericness of transversality lies the theorem of Sard:
 % In morse rigorous terms, we have the following:
@@ -136,7 +136,7 @@ We will use the concept of intersection numbers in the last chapter where we pro
 \section*{Algebraic topology}
 
 Roughly stated, algebraic topology is the study of functors from the category of topological spaces to the category of groups.
-In other words, we seek ways to associate groups to topological spaces in such a way that homeomorphisms give rise to homomorphisms.
+In other words, we seek ways to associate groups (and often objects with even more structure such as $R$-modules) to topological spaces in such a way that homeomorphisms give rise to homomorphisms.
 In this section, we will discuss two ways to do so, resulting in homology and homotopy groups.
 
 \subsection*{Homology theory}
@@ -148,13 +148,14 @@ In its most general form, homology measures non-exactness of a chain complex.
 The following definitions can be found in any textbook on algebraic topology or homological algebra.
 
 \begin{definition}[Chain complex]
+    Let $R$ be a commutative ring.
     A chain complex of $R$-modules is a sequence $C_\bul$ of the form
     \[
     \cdots \to  C_2 \xrightarrow{d_2}  C_1 \xrightarrow{d_1} C_0 \xrightarrow{d_0} C_{-1} \xrightarrow{d_{-1}}   C_{-2} \to  \cdots
     \] 
     where each term $C_i$ is an $R$-module and $d_i: C_i \to  C_{i-1}$ is an $R$-module homomorphism such that $d_{i-1}  \circ  d_i = 0$  for all $i \in \Z$.
 \end{definition}
-We often suppress the indices of the maps $d_i$ and the last condition becomes then  $d^2 = 0$.
+We often suppress the indices of the maps $d_i$ and the last condition then becomes $d^2 = 0$.
 
 \begin{marginfigure}
     \centering
@@ -170,7 +171,7 @@ We often suppress the indices of the maps $d_i$ and the last condition becomes t
     .\] 
     This is well defined because $\Im(d_{i+1}) \subset \Ker (d_i)$.
 \end{definition}
-It is clear that this measure the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
+It is clear that this measures the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
 
 A map between chain complexes is called a chain map:
 
@@ -246,7 +247,7 @@ In order to define the chain complex, we first need to introduce the concept of 
     \label{fig:definition-simplex}
 \end{marginfigure}
 \begin{remark}
-    The name singular comes from the fact that $\phi$ does not need to be a homeomorphism.
+    The name `singular' comes from the fact that $\phi$ does not need to be a homeomorphism.
     Hence, $\phi$ can `squash' simplices, making them singular.
 \end{remark}
 \begin{definition}[Boundary of a singular $n$-simplex]
@@ -260,16 +261,27 @@ In order to define the chain complex, we first need to introduce the concept of 
          \partial \phi = \sum (-1)^{i} \partial_i \phi
     .\] 
 \end{definition}
-\begin{figure}[H]
-    \centering
-    \sidecaption{Illustrating the definition of boundary of a singular $2$-simplex.}
-    \incfig{definition-boundary-singular-homology}
-\end{figure}
+\begin{eg}
+    Consider the singular $2$-symplex $\phi: \Delta^{2} \to  \R^2$ defined by $\phi(t_0, t_1, t_2) = t_0 x_0 + t_1 x_1 + t_2 x_2$ where $x_0, x_1, x_2$ are points in $\R^2$ as indicated in the figure below.
+    Then $\partial_0 \phi$ is given by
+    \[
+        (\partial_0 \phi)(t_0, t_1) = \phi(0, t_0, t_1)
+    .\]
+    Viewing this singular $1$-simplex as a path via the homeomorphism $f: [0,1] \to  \Delta^{1}: t \mapsto (1-t, t)$, we can see that $\partial_0 \phi$ travels from $x_1$ to $ x_2$.
+    Similarly, $\partial_1 \phi$ travels from $x_0$ to $ x_2$ and $\partial_2 \phi$  from  $x_0$ to $ x_1$.
+    Combining these results with the correct signs, we get $\partial \phi = \partial_0\phi - \partial_1 \phi +\partial_2\phi$, a linear combination of three paths travelling counter-clockwise around $\phi$.
+
+    \begin{figure}[H]
+        \centering
+        \sidecaption{Illustrating the definition of boundary of a singular $2$-simplex.}
+        \incfig{definition-boundary-singular-homology}
+    \end{figure}
+\end{eg}
 
 One can show that $\partial^2 = 0$, which allows us to define singular homology as follows:
 \begin{definition}[Singular homology]
     Let $M$ be a manifold.
-    Let $C_i(M)$ be the free abelian group generated by all singular  $n$-simplices.
+    Let $C_i(M)$ be the free abelian group generated by all singular  $i$-simplices.
     Elements in $C_i(M)$ are called chains.
     Then the following sequence is a chain complex
     \[
@@ -305,7 +317,7 @@ This should make clear how singular homology finds holes in manifolds.
             In fact, $\phi$ and  $\sigma$ represent the same element---we say that they are homologous.
             Indeed, their difference $\phi - \sigma$ bounds the region between the hexagon and the pentagon and we can see this as a $2$-simplex by triangulating it.
     \end{itemize}
-    Turning these ideas in a proof, one can show that
+    Turning these ideas into a proof, one can show that
     \[
         H_0(M) = \Z \qquad 
         H_1(M) = \Z \qquad 
@@ -347,7 +359,7 @@ Homology is in many cases not so difficult to compute because it is essentially 
     \begin{marginfigure}
         \centering
         \incfig{mayer-vietoris-example}
-        \caption{TODO mayer vietoris example}
+        \caption{We can compute the homology of a torus by covering it with two open sets $A$ and  $B$.}
         \label{fig:mayer-vietoris-example}
     \end{marginfigure}
 
@@ -366,14 +378,16 @@ Homology is in many cases not so difficult to compute because it is essentially 
 \end{eg}
 
 Another tool for computing homology is the Künneth formula, allowing us to compute $H_\bul(M \times N)$.
+For this, let us introduce the tensor product of complexes.
 
 \begin{definition}[Tensor product of complexes]
-    Let $C_\bul$ and  $D_\bul$ be two complexes over field. Their tensor product is defined as
+    Let $C_\bul$ and  $D_\bul$ be two complexes. Their tensor product is defined as
      \[
          (C \otimes D)_k = \bigoplus_{i+j = k} C_i \otimes D_j
     ,\] 
     with boundary operator $\partial_C \otimes 1 + 1 \otimes\partial_D$.
 \end{definition}
+Under the condition that $C_\bul$ and $D_\bul$ are vector spaces, i.e.\ that we are working over a field, we have the following result:
 \begin{prop}
     Let $C_\bul$ and  $D_\bul$ be complexes over a field.
     The homology of the tensor product complex is the tensor product of the homologies:
@@ -382,9 +396,16 @@ Another tool for computing homology is the Künneth formula, allowing us to comp
     .\] 
     \label{prop:hom-tensor-is-tensor-hom}
 \end{prop}
-\begin{remark}
-    This result is only true when we are working over a field, i.e.\ in the context of vector spaces.
-\end{remark}
+The Künneth formula then states the following:
+\begin{theorem}[Künneth formula]
+    Let $X$ and $Y$ be topological spaces and $F$ a field.
+    Then
+    \[
+        H_\bul(X \times Y; F) = H_\bul(X; F) \otimes H_\bul(Y; F)
+    .\] 
+\end{theorem}
+A proof of this can be found in any textbook on algebraic topology.\sidecite{hatcher2005algebraic}
+
 
 \begin{eg}
     Applying this to $T^{n} = S^1 \times S^{1} \times \cdots\times S^{1}$, we get that
@@ -459,7 +480,7 @@ Let us start by defining homotopy groups:
 \begin{marginfigure}
     \centering
     \incfig{definition-homotopy-groups}
-    \caption{TODO definition homotopy groups}
+    \caption{Examples of paths in $\R^2 \setminus D^2$. The paths $\rho$ and $\sigma$ are homotopic. The path $\phi$ is null-homotopic.}
     \label{fig:definition-homotopy-groups}
 \end{marginfigure}
 \begin{eg}
