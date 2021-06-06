@@ -5,7 +5,7 @@ This chapter discusses some applications of Morse homology.
 While we already know that it isomorphic to singular homology and hence it enjoys all the same properties, it can still be fruitful to derive these things directly from the definitions of Morse homology.
 We will do this for the Poincaré duality and the Künneth formula in the first two sections of this chapter.
 The third and last section discusses the Morse inequalities, giving a lower bound for the number of critical points of a Morse function $f: M \to  \R$ based on the homology of $M$.
-These inequalities will play a mayor role in the next chapter.
+These inequalities will play a major role in the next chapter.
 
 \section{Poincaré duality}
 The Poincaré duality was first stated by Henri Poincaré in his paper `Analysis Situs'.\sidecite{poincare1895analysis}
@@ -28,7 +28,7 @@ In this seminal paper, Poincaré introduces furthermore the concepts of fundamen
     This immediately gives that $H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)$.
 
     Working over $\Z$, things are more subtle.
-    In particular, in general $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
+    In general $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
     The best we can do is saying that if $M$ is orientable, then the ranks of  $H_k(M, \Z)$ and $H_{n-k}(M, \Z)$ agree,
     as is proven in `Morse theory and Floer homology' by Audin and Damian.\sidecite[p~84.]{audin}.
 
@@ -64,8 +64,8 @@ In this seminal paper, Poincaré introduces furthermore the concepts of fundamen
     Hence, the last step of the proof is to show that $\NX Xpq = \NX{-X}qp$.
     If we would not count signs, this would be immediately clear.
     However, when working over $\Z$ we need to check that the orientations work out.
-    If $M$ is oriented, this form no problem.
-    Indeed, in that case, the orientations of the stable manifolds not only induce a coorientation of the unstable manifolds, but also an orientation.
+    If $M$ is oriented, this forms no problem.
+    Indeed, in that case, the orientations of the stable manifolds not only induce a co-orientation of the unstable manifolds, but also an orientation.
     Now it is just a matter of carefully checking the definition of the orientation we put on $\L pq$ to conclude that $\NX X pq = \NX{-X} qp$.
     This finishes the proof.
 \end{myproof}
@@ -106,11 +106,11 @@ with the tensor product of chain complexes as defined in Chapter~0.
 
 
     For example, we have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
-    More in general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
+    More general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
 \end{remark}
 \begin{myproof}
     Let $f, g$ and $X, Y$ be two Morse functions, and pseudo-gradient fields on  $M$ and  $N$.
-    Then $f + g$ is a Morse function on $M \times N$ and $(X, Y)$ is an adapted pseudo-gradient field. If we assume that $X$ and  $Y$ satisfies the Smale condition, then so does $(X,Y)$.
+    Then $f + g$ is a Morse function on $M \times N$ and $(X, Y)$ is an adapted pseudo-gradient field. If we assume that $X$ and  $Y$ satisfy the Smale condition, then so does $(X,Y)$.
     Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices.
     Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
     Now, in order to understand the differential $\partial_{(X, Y)}$ on $M \times N$, we are interested in gradient flow lines that connect critical points $(a,b)$ and  $(c,d)$ whose index differ by exactly one.
@@ -139,7 +139,7 @@ with the tensor product of chain complexes as defined in Chapter~0.
     \[
         \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
     ,\]
-    where we have used that the homology of a tensor product complex is the tensor product of the homologies per Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
+    where we have used that the homology of a tensor product complex is the tensor product of the homologies by Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
 \end{myproof}
 
 
@@ -148,10 +148,10 @@ The Morse inequalities give a lower bound for the number of critical points of a
 In this section, we will discuss many different versions of the Morse inequalities, some stronger than others.
 
 \subsection{Morse inequalities over $\Z_2$}
-Let us start with the most simple version of the Morse inequalities.
+Let us start with the simplest version of the Morse inequalities.
 
 \begin{theorem}[Weak Morse inequalities]
-    Let $f: M \to  \R$ a Morse function. Then
+    Let $f: M \to  \R$ be a Morse function. Then
     \[
         \# \Crit f \ge \sum \dim H_k(M, \Z_2)
     ,\]
@@ -182,10 +182,10 @@ A result in similar vein is the following:
     \[
         H_k(M, \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \qquad \# \Crit_k f = \dim C_k,
     \]
-    together with rank-nullity theorem for vector spaces.
+    together with the rank-nullity theorem for vector spaces.
     A simple computation completes the proof.
 
-    To represent this proof more visually, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
+    To visualize this proof, have a look at Figure~\ref{fig:linear-map-rank-nullity-theorem}, expressing the rank-nullity theorem, which in this context says that the two slanted lines are parallel, implying that $\dim V - \dim \Ker T = \dim \Im T$.
     \begin{marginfigure}
         \centering
         \incfig{linear-map-rank-nullity-theorem}
@@ -197,7 +197,7 @@ A result in similar vein is the following:
         \incfig{morse-chain-complex-visualized}
         \caption{
             Top: same illustration as above, this time for the Morse complex with its differential.
-            Each orange lines corresponds to a homology group.
+            Each orange line corresponds to a homology group.
             Bottom: The alternating sum of the dimensions of $C_k$ equals the alternating sum of the dimensions of $H_k$.
         }
         \label{fig:morse-chain-complex-visualized}
@@ -205,7 +205,7 @@ A result in similar vein is the following:
     \begin{marginfigure}
         \centering
         \incfig{morse-chain-complex-visualized-truncated}
-        \caption{Truncating the above picture, we find that the alternating sum of the dimensions of $C_k$ is greater than the alternating sum of the dimensions of  $H_k$. All the thick black lines cancel, exert the one circled, giving rise to the inequality.
+        \caption{Truncating the above picture, we find that the alternating sum of the dimensions of $C_k$ is greater than the alternating sum of the dimensions of  $H_k$. All the thick black lines cancel, except the one circled, giving rise to the inequality.
         }
         \label{fig:morse-chain-complex-visualized-truncated}
     \end{marginfigure}
@@ -264,7 +264,7 @@ Therefore, let us introduce some different notions of rank of a $\Z$-module, gen
 \end{eg}
 We have the following relations between ranks of submodules:
 \begin{lemma}
-    Let $A$ and $B$ be $\Z$ modules and suppose $B$ is a submodule of $A$.
+    Let $A$ and $B$ be $\Z$-modules and suppose $B$ is a submodule of $A$.
     Then
     \begin{enumerate}[(i)]
         \item $r(B) \le  r(A)$
@@ -298,7 +298,7 @@ These two facts combined give the following result:
 
 Let us lastly give a version of the Morse inequalities that makes less rough approximations by using the torsion rank.
 \begin{theorem}[Pitcher inequalities\sidenotemark]
-    Let $f: M \to  \R$ be a morse function.
+    Let $f: M \to  \R$ be a Morse function.
     Then
     \[
     \# \Crit_k f \ge r( H_k(M, \Z)) + r_t(H_{k-1}(M, \Z)).
