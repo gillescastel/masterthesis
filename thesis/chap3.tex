@@ -1,7 +1,7 @@
 \chapter{Morse homology}
 \label{chap:morse-homology}
 
-Morse homology is a way of associating global invariants to a manifolds equipped with a Morse function $f$ and an adapted pseudo-gradient $X$.
+Morse homology is a way of associating global invariants to a manifold equipped with a Morse function $f$ and an adapted pseudo-gradient $X$.
 In this long chapter, we will define Morse homology and prove three fundamental theorems. Let us give an outline.
 
 As with any homology theory, Morse homology is based on a chain complex, called the Morse complex, which we introduce in Section~1.
@@ -25,7 +25,7 @@ We will do this by showing that it is isomorphic to de Rham homology which is ba
 In order to define the Morse complex, we need a sequence of modules over a certain ring and maps between these modules.
 Most of the time, we will be working over $\Z/2\Z$, which we will denote by $\Z_2$, but sometimes the ring $\Z$ will be used instead. As will turn out, working over $\Z_2$ will allow us not to worry about orientation and it being a field also has some advantages.
 
-The modules we will considering depend on a Morse function $f$ and consist of formal sums of critical points of a certain index:
+The modules we will be considering depend on a Morse function $f$ and consist of formal sums of critical points of a certain index:
 \[
     C_k(f) = \Big\{ \sum_{p \in \Crit_k f} n_p p  \mid n_p \in \Z_2\Big\}  = \bigoplus_{p \in \Crit_k f} \Z_2 p
 .\] 
@@ -74,7 +74,7 @@ This allows us to define the Morse complex and Morse homology.
     \[
         \cdots \xrightarrow{\partial} C_2(f) \xrightarrow{\partial}  C_1(f) \xrightarrow{\partial} C_0(f) \textcolor{gray}{{} \xrightarrow{\partial}  0 \xrightarrow{\partial }0 \xrightarrow{\partial}  \cdots}
     \] 
-    The Morse Homology $\HM{f}{X}$ is the homology of this chain complex.
+    The Morse homology $\HM{f}{X}$ is the homology of this chain complex.
 \end{definition}
 The attentive reader will have noticed that for this to be a chain complex, we need $\partial^2 = 0$, which is not obvious at all.
 Apart from this, we also would to like to prove that  this homology does not depend on the choice of the Morse function $f$ and the pseudo-gradient field $X$.
@@ -179,9 +179,9 @@ We will address these topics in the two following sections, but let us first com
 \section{The Morse complex is a complex: $\partial^2 = 0$}
 In this section, we will prove that the Morse complex is actually a complex, by which we mean that $\partial^2 = 0$.
 The core idea of the proof is very geometrical and depends on the fact that compact one-dimensional manifolds with boundary have an even number of boundary points.\sidenote{
-    Compact one-dimensional manifolds consist of disjoint union of copies of $S^{1}$ and closed intervals, as proven in \fullcite[p.55]{milnor1997topology}
+    Compact one-dimensional manifolds consist of disjoint unions of copies of $S^{1}$ and closed intervals, as proven in \fullcite[p.55]{milnor1997topology}.
 }
-We will first make this core idea clear, and then make this argument precise.
+We will first clarify this core idea, and then make this argument precise.
 
 Let us first state clearly what we have to prove. Let $a \in \Crit_k f$ be a critical point of a Morse function $f: M \to  \R$.
 We need to prove that $\partial^2(a) = 0$, so\begin{align*}
@@ -203,20 +203,20 @@ The core idea of the proof is to notice that there is a one parameter family $\L
     }
     \label{fig:morse-complex-is-a-complex-idea-of-proof}
 \end{marginfigure}
-More specifically the space of unbroken trajectories $\L ab $ is a one-dimensional manifold, and by adding in the once broken trajectories between $a$ and $b$, we can compactify this space, resulting in the space which we will denote with $\Lb ab$:
+More specifically the space of unbroken trajectories $\L ab $ is a one-dimensional manifold, and by adding in the once broken trajectories between $a$ and $b$, we can compactify this manifold, resulting in the space which we will denote with $\Lb ab$:
 \[
 \Lb ab = \L ab \cup \bigcup_{c \in \Crit_{k-1} f} \L ac \times \L cb
 .\] 
-This turns out to be a compact $1$-manifold, and its boundary consist exactly of the broken trajectories.
+This turns out to be a compact $1$-manifold, and its boundary consists exactly of the broken trajectories.
 Because a $1$-manifold always has an even number of boundary points, this shows that once-broken trajectories come in pairs, proving that  $\partial^2 = 0$.
 
 Before we proceed with this idea, let us give an overview of the steps that need to be taken.
 
 \begin{enumerate}
     \item Define $\Lb ab$, the space of all (broken and unbroken) trajectories.
-    \item Define a topology on $\Lb ab$ in order to show that $\Lb ab$ is compact.
+    \item Define a topology on $\Lb ab$.
     \item Prove that  $\Lb ab$ is the compactification of $\L ab$.
-    \item Prove that if $\Ind a - \Ind b = 2$, then $\Lb ab$ is a 1-dimensional manifold with as boundary the once broken trajectories between $a$ and  $b$.
+    \item Prove that if $\Ind a - \Ind b = 2$, then $\Lb ab$ is a 1-dimensional manifold with boundary the once broken trajectories between $a$ and  $b$.
 \end{enumerate}
 
 \subsection{The space of broken trajectories}
@@ -250,25 +250,25 @@ Before we proceed with this idea, let us give an overview of the steps that need
     }
     \label{fig:morse-homology-definition-of-topology}
 \end{marginfigure}
-To define the topology on $\Lb ab$,
+To define a topology on $\Lb ab$,
 we will describe a basis around a (possibly broken) trajectory.
 Let $\lambda = (\lambda_1, \lambda_2, \ldots, \lambda_q)$ be a trajectory in $\Lb ab$.
 Consider Morse charts around each critical point  $a, c_1, c_2, \ldots, c_{q-1}, b$.
-Consider opens around entry and exit points of the trajectories, lying in level sets of $f$, indicated in the figure with thick black lines.
+Take opens around entry and exit points of the trajectories, lying in level sets of $f$, indicated in the figure with thick black lines.
 We declare all trajectories passing through these opens to be in a open neighborhood of $(\lambda_1, \lambda_2, \ldots, \lambda_q)$.
 Doing this for all possible `entrance and exit opens' defines a basis of the topology.
 
 \begin{remark}
-    If $\lambda$ is unbroken, we have $\L ab \cong \traj ab \cap  f^{-1}(\alpha)$ for some regular value, and the topology on $\L ab$ corresponds to the subspace topology on $\traj ab \cap  f^{-1}(\alpha) \subset M$.
+    If $\lambda$ is unbroken, we have $\L ab \cong \traj ab \cap  f^{-1}(\alpha)$ for some regular value $\alpha$, and topology on $\L ab$ corresponds to the subspace topology on $\traj ab \cap  f^{-1}(\alpha) \subset M$.
 \end{remark}
 
-In conclusion, the essence of the topology on $\Lb ab$ is: `trajectories are nearby if entrance and exit points in Morse charts are nearby'.
+In conclusion, the essence of this topology on $\Lb ab$ is: `trajectories are nearby if entrance and exit points in Morse charts are nearby'.
 
 \subsection{$\Lb ab$ is the compactification of $\L ab$}
 Now we are ready to prove that $\Lb ab$ is compact, and in fact a compactification of  $\L ab$. By this last statement, we mean that there are points in $\L ab$ arbitrary close to ones in  $\Lb ab$.
 In topological terms, any open around a broken trajectory in $\L ab$ contains unbroken trajectories, i.e.\ elements of $\L ab$.
 \begin{theorem}
-    $\Lb ab$ is compact
+    $\Lb ab$ is compact.
 \end{theorem}
 
 In the proof of this theorem, we will need the following lemma, stating that points $y_n$ on trajectories that pass through a convergent sequence of points $x_n \to x$ also converge, at least if $y_n$ all lie on the same level:
@@ -306,7 +306,7 @@ This is enough, because the topology on $\Lb ab$ is second countable (coming fro
     \sidecaption{
         To show that $\Lb ab$ is compact, we consider a sequence of paths $\ell_n$ in $\L ab$ and find an accumulation trajectory, i.e.\ a limit of a subsequence.
         In case 1, the accumulation trajectory lies in $\L ab$.
-        Case 2 shows the situation when accumulation trajectory is broken in  $c$ (and possibly in multiple other critical points).
+        Case 2 shows the situation when the accumulation trajectory is broken in  $c$ (and possibly in multiple other critical points).
     \label{fig:partial-squared-zero-space-compact}
     }
     \incfig{partial-squared-zero-space-compact}
@@ -338,14 +338,14 @@ We claim that $c^{-}$ lies in the unstable manifold of $c$.\sidenote{
     Suppose that it does not.
     Then we could flow back $c^{-}$ to a point $c^{\star}$ with $f(c^{\star}) = f(c^{+})$.
     Note that $c^{\star}$ is not in the stable manifold of $c$. (Otherwise, flowing forward again we would end up in  $c$)
-    Applying the lemma again, $c_n^{+} \to  c^{\star}$ meaning that $c^{\star} = c^{+}$. This cannot be possibly right since $c^{\star}$ is not in the stable manifold of $c$, but $c^{+}$ is, by definition.
+    Applying the lemma again, $c_n^{+} \to  c^{\star}$ meaning that $c^{\star} = c^{+}$. This cannot be right since $c^{\star}$ is not in the stable manifold of $c$, but $c^{+}$ is, by definition.
 }
 This means that when we flow back, we indeed get to $c$ like we wanted, and when we flow forward, we get to another critical point, which may be $b$, or $d$, yet another critical point. This way we go on and find a subsequence of $\ell_n$ that converges to~$(\gamma_1, \gamma_2, \ldots, \gamma_k)$.
 
 In order to complete the proof for a sequence $\ell_n$ in $ \Lb ab$ (instead of $\L ab$), note that for sufficiently large $n$ and after extracting a subsequence, the critical points where $ \ell_n$ is broken do not change. Then apply the proof above to the first segment, then to the second, \ldots
 \end{myproof}
 
-Note that this proof also encapsulates the fact that $\Lb ab$ is actually the compactification of  $\Lb ab$, in the sense that there are elements of  $\L ab$ that are arbitrarily close to a fixed element of $\Lb ab$.
+Note that this proof also encapsulates the fact that $\Lb ab$ is actually the compactification of  $\L ab$, in the sense that there are elements of  $\L ab$ that are arbitrarily close to a fixed element of $\Lb ab$.
 
 
 \subsection{$\Lb ab$ is a 1-dimensional manifold with boundary}
@@ -365,7 +365,7 @@ More specifically if $\Ind a - \Ind = 2$, then it is a one-manifold with boundar
 We already know that $\L ab$ is a 1-manifold, so the following proposition immediately implies the theorem.
 
 \begin{prop}
-    Let $M$ be a compact manifold and $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$ satisfying the Smale property. Let  $a,c,b$ be three critical points of index $k+1, k$ and $k-1$. Let $\lambda_1 \in \L ac$ and $\lambda_2 \in \L cb$.
+    Let $M$ be a compact manifold and $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$ satisfying the Smale condition. Let  $a,c,b$ be three critical points of index $k+1, k$ and $k-1$. Let $\lambda_1 \in \L ac$ and $\lambda_2 \in \L cb$.
     There exists a continuous embedding $\psi$ from $[0, \delta)$ to a neighborhood of $(\lambda_1, \lambda_2)$ in $\Lb ab$ such that
     \[
     \begin{cases}
@@ -391,15 +391,15 @@ The last part is important in order to show that broken trajectories actually fo
     \begin{marginfigure}
         \centering
         \incfig{l-bar-manifold-2-dimensional-case}
-        \caption{The map $\chi$ is an embedding of a half-open interval $[0, \delta)$ in the level set $\alpha+ \epsilon$. Considering the trajectories passing through these points, we get an embdding $\psi: [0, \delta) \to \Lb ab$.}
+        \caption{The map $\chi$ is an embedding of a half-open interval $[0, \delta)$ in the level set $\alpha- \epsilon$. Considering the trajectories passing through these points, we get an embdding $\psi: [0, \delta) \to \Lb ab$.}
         \label{fig:l-bar-manifold-2-dimensional-case}
     \end{marginfigure}
     Consider a Morse chart around $c$ that lies between level sets $\alpha \pm \epsilon$ where  $\alpha = f(c)$.
     Let $c^{+}$ be the entry point of $\lambda_1$ in  the Morse chart of $c$.
 
-    The idea is to embed an interval $[0, \delta)$ as in Figure~\ref{fig:l-bar-manifold-2-dimensional-case} in the level set $\alpha + \epsilon$. Call this embedding $\chi$.
+    The idea is to embed an interval $[0, \delta)$ as in Figure~\ref{fig:l-bar-manifold-2-dimensional-case} in the level set $\alpha - \epsilon$. Call this embedding $\chi$.
     We will then define $\psi(t)$ as the trajectory passing through $\chi(t)$ (for $t>0$) and  $\psi(0) = (\lambda_1, \lambda_2)$.
-    The difficulty lies in determining how to embed $[0, \delta)$ inside the level set $\alpha + \epsilon$ such that $\psi$ is continuous at  $0$.
+    The difficulty lies in determining how to embed $[0, \delta)$ inside the level set $\alpha - \epsilon$ such that $\psi$ is continuous at  $0$.
     \begin{marginfigure}
         \centering
         \incfig{l-bar-manifold-2-dimensional-case-part-flow}
@@ -478,7 +478,7 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
     
 \begin{myproof}
 The proof of this theorem features an intricate interplay between homological algebra and differential geometry and is truly something to behold. It is perhaps the most beautiful proof in this thesis.
-\paragraph{Construction of a morphism of complexes}
+\paragraph{Construction of a morphism of complexes.}
 In order to find a relation between the two complexes, we geometrically connect $f_0$ and $f_1$ via a particular type of homotopy, namely  a `stable interpolation' by which we mean a smooth map
 \[
     F: [0,1] \times M \to \R: (s, m) \mapsto F_s(m)
@@ -486,7 +486,7 @@ In order to find a relation between the two complexes, we geometrically connect 
 such that $F_s = f_0$ for $s \in \left[0, \frac{1}{3}\right]$ and $F_s = f_1$ for $s \in \left[\frac{2}{3}, 1\right]$.
 On of the reasons of looking specifically at stable interpolations is that we can concatenate them and again get a $C^{\infty}$ map that is a stable interpolation.
 
-We can visualize an interpolation between two morse functions by embedding $[0,1] \times M$ in $\R^{n+1}$ in such a way that the height function in each slice corresponds to $F_s$.
+We can visualize an interpolation between two Morse functions by embedding $[0,1] \times M$ in $\R^{\ell}$ in such a way that the height function in each slice corresponds to $F_s$.
 For example, doing this for the circle and the other circle, we get Figure~\ref{fig:morse-homology-independence-cilinder}.
 
 \begin{marginfigure}
@@ -499,7 +499,7 @@ For example, doing this for the circle and the other circle, we get Figure~\ref{
 \end{marginfigure}
 
 Seen from a Morse perspective, the result is less than desirable: the function $F$ is not a Morse function: critical points in the stationary parts of $F$ are degenerate as $\frac{\partial F}{\partial s} = 0$.
-Furthermore, an interpolation of two Morse functions need not to be Morse at each point in time which gives even more degenerate critical points. We have highlighted an example of this in the figure.
+Furthermore, an interpolation of two Morse functions need not be Morse at each point in time which gives even more degenerate critical points. We have highlighted an example of this in the figure.
 
 \begin{marginfigure}
     \centering
@@ -516,7 +516,7 @@ Furthermore, an interpolation of two Morse functions need not to be Morse at eac
 \end{marginfigure}
 
 We can fix this problem by replacing the horizontal tube by a `slide', as seen in Figure~\ref{fig:morse-homology-independence-tube}.
-We do this by extending $F$ to $\left[-\frac{1}{3}, \frac{3}{4}\right]$ and adding a function $g$ (illustrated in Figure~\ref{fig:morse-homology-independence-g-function}) along the $s$-direction, i.e.\ $\tilde{F}_s(p) = F_s(p) + g(s)$.\sidenote{We extend the function to the interval $\left[-\frac{1}{3}, \frac{4}{3}\right]$ to make sure that the critical values of $\tilde{F}$ do not lie on the boundary.}
+We do this by extending $F$ to $\left[-\frac{1}{3}, \frac{4}{3}\right]$ and adding a function $g$ (illustrated in Figure~\ref{fig:morse-homology-independence-g-function}) along the $s$-direction, i.e.\ $\tilde{F}_s(p) = F_s(p) + g(s)$.\sidenote{We extend the function to the interval $\left[-\frac{1}{3}, \frac{4}{3}\right]$ to make sure that the critical values of $\tilde{F}$ do not lie on the boundary.}
 Whatever kind of tube we start with, if we make the slide steep enough, we will always slide down and never have flat spots, except at the top and bottom of the slide.
 This means if we choose $g$ appropriately\sidenote{More explicitly, we want $\frac{\partial F}{\partial s} (p, s) + g'(s) <0$ for all $p \in M, s \in (0,1)$.
 }, the only critical points lie in the slices $s=0$ and  $s=1$ and correspond to critical points of $f_0$ and $f_1$ respectively.
@@ -531,7 +531,7 @@ At the bottom, the indices stay the same, giving us
 .\] 
 
 Apart from the critical points, we are also interested in constructing a pseudo-gradient on $[0,1]\times M$, as this will give rise to a differential.
- On $[-\frac{1}{3}, \frac{1}{3}] \times M$, we set $X = X_0 - \grad g$, and on $\left[\frac{2}{3}, \frac{4}{3}\right] \times M$ we set $X = X_1 - \grad g$.\sidenote{Here, $\grad g$ is the Euclidian gradient}
+ On $[-\frac{1}{3}, \frac{1}{3}] \times M$, we set $X = X_0 - \grad g$, and on $\left[\frac{2}{3}, \frac{4}{3}\right] \times M$ we set $X = X_1 - \grad g$.\sidenote{Here, $\grad g$ is the Euclidian gradient.}
 A partition of unity argument then fills in the gaps.
 Note that this pseudo-gradient is transverse to the boundary of $\left[-\frac{1}{3}, \frac{4}{3}\right] \times M$.
 We can slightly perturb $X$ to make it satisfy the Smale condition and we can furthermore assume that the resulting vector field, $\tilde{X}$ is transversal to $ \{s\} \times M$ for $s \in \left\{-\frac{1}{3}, \frac{1}{3}, \frac{2}{3}, \frac{4}{3}\right\}$.
@@ -576,12 +576,12 @@ Because we are working over $\Z_2$, this means that $\Phi^{F}  \circ  \partial_0
 \]
 This proves that $\Phi^{F}$ is a morphism of complexes.
 
-\paragraph{$\Phi^{F}$ induces an isomorphism on the level on homology}
+\paragraph{$\Phi^{F}$ induces an isomorphism on the level on homology.}
 
 We will now prove that this map induces an isomorphism on the level of homology.
 Let $f_0, f_1, f_2$ be Morse functions $M \to  \R$.
 Suppose $F$ interpolates between $f_0$ and $f_1$,
-$G$ between $f_1$ and $f_2$ and $H$ between $f_0$ and $f_1$, i.e.\ we are in the following situation:
+$G$ between $f_1$ and $f_2$ and $H$ between $f_0$ and $f_2$, i.e.\ we are in the following situation:
 \[
     \begin{tikzcd}
         f_0 \arrow[rr, "H"', bend right] \arrow[r, "F"] &f_1 \arrow[r, "G"] &f_2.
@@ -601,7 +601,7 @@ So consider $F$ a stationary interpolation between $f_0$ and $f_1$ and $G$, the 
 
 Let us prove that $\Phi^{G}  \circ  \Phi^{F}$ and $\Phi^{H}$ are chain homotopic.
 The idea of this part of the proof is very similar to the first part.
-Instead creating one slide from $f_0$ to $f_1$ by adding an extra dimension, we create a two dimensional slide with as sides four slides: $f_0 \xrightarrow{F} f_1$, $ f_1 \xrightarrow{G} f_2$, $f_0 \xrightarrow{H}  f_2$ and $ f_2 \xrightarrow{I} f_2$.
+Instead of creating one slide from $f_0$ to $f_1$ by adding an extra dimension, we create a two-dimensional slide with as sides four slides: $f_0 \xrightarrow{F} f_1$, $ f_1 \xrightarrow{G} f_2$, $f_0 \xrightarrow{H}  f_2$ and $ f_2 \xrightarrow{I} f_2$.
 
 
 More concretely, we create a map
@@ -668,7 +668,7 @@ This concludes the proof.
 \begin{figure*}
     \centering
     \sidecaption{Calculating $\partial^2(p)$.
-        On the left we $\partial(p)$ is illustrated, and on the right  $\partial^2(p)$.
+        On the left $\partial(p)$ is illustrated, and on the right  $\partial^2(p)$.
         Because $\partial^2 = 0$, we find that $\Phi^{G}  \circ  \Phi^{F} + \Phi^{H} + S \partial_0 + \partial_1 S = 0$.
         Considering this over $\Z_2$ implies that $\Phi^{G}  \circ \Phi^{F}$ and $\Phi^{H}$ are chain homotopic.
         \label{fig:morse-homology-independence-partial-squared-zero-bis}
@@ -685,7 +685,7 @@ As is to be expected, this homology theory will be less coarse than the one over
 The main difficulty in defining homology over $\Z$ is keeping track of signs and orientations.
 
 \begin{definition}[Integral Morse homology]
-    Let $f: M \to  \Z$ be a Morse function and $X$ an adapted pseudo-gradient satisfying the Smale conditions. Define
+    Let $f: M \to  \R$ be a Morse function and $X$ an adapted pseudo-gradient satisfying the Smale condition. Define
         \[
             C_k(f, \Z) = \Big\{ \sum_{p \in \Crit_k f} n_p p  \mid n_p \in \Z \Big\}  = \bigoplus_{p \in \Crit_k f} \Z p
         ,\] 
@@ -702,16 +702,16 @@ The main difficulty in defining homology over $\Z$ is keeping track of signs and
     Because $\L pq$ is discrete if the indices of $p$ and  $q$ differ by one, this orientation comes down to assigning a sign to each trajectory in  $\L pq$. We can then define $\NX X p q  = \sigma(\L pq)$ where $\sigma$ adds up the signs of the points in $\L pq$.
 
     The orientation of $\L pq$ is defined in the following way.
-    First choose an (arbitrary) orientation for each of the stable manifolds $\stable c$. This is possible since stable manifolds are diffeomorphic to open disks.
-    Orientation of stable manifolds induce coorientations of unstable manifolds, because $\unstable p \tcap \stable p$ and unstable manifolds are contractible.
-    Now, the transverse intersection of an oriented and a cooriented submanifold is also oriented, hence $\traj pq = \unstable p \tcap \stable q$ is oriented.
+    First choose an (arbitrary) orientation for each of the stable manifolds. This is possible since stable manifolds are diffeomorphic to open disks.
+    Orientations of stable manifolds induce co-orientations of unstable manifolds, because $\unstable p \tcap \stable q$ and unstable manifolds are contractible.
+    Now, the transverse intersection of an oriented and a co-oriented submanifold is also oriented, hence $\traj pq = \unstable p \tcap \stable q$ is oriented.
     Finally fix an orientation on $\R$.
     Because $\L pq = \traj pq / \R$, the orientation of $\traj pq$ induces an orientation on  $\L pq$.
 
 Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     \begin{prop}
         The space of broken trajectories $\Lb ab$ is orientable.
-        If $\Ind a = \Ind b - 2$,  the space $\Lb ab $ is one-dimensional and as oriented manifolds we have
+        If $\Ind a = \Ind b + 2$,  the space $\Lb ab $ is one-dimensional and as oriented manifolds we have
          \[
              \partial \Lb ab = \bigcup_{c \in \Crit_{k-1} f }  \L ac \times  \L cb
         .\] 
@@ -720,7 +720,7 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     This allows us to prove that $\partial^2 = 0$, using the fact that the signed number of boundary points of a compact oriented $1$-manifold is always zero.
     \begin{theorem}
         Let $X$ be a pseudo-gradient adapted to a Morse function  $f: M \to  \R$ that satisfies the Smale condition.
-        Then the Morse differential $\partial_X$ of the integral Morse complex squares to zero.
+        Then the differential $\partial_X$ of the integral Morse complex squares to zero.
     \end{theorem}
     \begin{myproof}
         Let $a$ be a critical point of $f$.
@@ -752,14 +752,14 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
 
 
     Let us end this section with some examples.
-    We will give an example on how to calculate the signs of trajectories, and discuss Morse homology of the torus and the Klein bottle both over $ \Z_2$ and $\Z$ to show that working over $ \Z$ can have its advantages.
+    We will illustrate the calculation for the signs of trajectories, and discuss Morse homology of the torus and the Klein bottle both over $ \Z_2$ and $\Z$ to show that working over $ \Z$ can have its advantages.
 
     \begin{eg}
         Consider the other sphere and more specifically $\L pq$ with $p$ and  $q$ as in Figure~\ref{fig:orientation-example} below. 
         We start off with an orientation of $\stable q$ and  $\stable p$.
-        To orient  $\traj pq$, we use the orientation of  $\stable p$, which coorients $\unstable p$, indicated in the figure with the thick black horizontal arrows.
+        To orient  $\traj pq$, we use the orientation of  $\stable p$, which co-orients $\unstable p$, indicated in the figure with the thick black horizontal arrows.
         The orientation of $\traj pq$ is indicated with the vertical arrows tangent to  $\traj pq$ and is defined by requiring that the horizontal and vertical vectors form a positive basis w.r.t.\ the orientation of  $\stable q$.
-        Finally, the orientation on $\L pq$ is defined as follows: if the arrows are going up (i.e.\ in the negative time direction), the sign is positive, else it is negative.
+        Finally, the orientation on $\L pq$ is defined as follows: if the arrows are going up (i.e.\ in the negative time direction), the sign is negative, else it is positive.
         \begin{figure}[H]
     \centering
     \sidecaption{
@@ -857,10 +857,10 @@ For a thorough introduction on currents, see `Differentiable manifolds' by de Rh
     A current is a continuous linear functional on the space of compactly supported $k$-forms on a manifold $M$.
 \end{definition}
 \begin{remark}
-    One should think of currents like distributions on manifolds. For example, the Dirac delta distribution is a current acting on $0$-forms on $\R$ as follows: $f \mapsto  f(0)$, where $f$ is a $0$-form, i.e. a function.
+    One should think of currents as distributions on manifolds. For example, the Dirac delta distribution is a current acting on $0$-forms on $\R$ as follows: $f \mapsto  f(0)$, where $f$ is a $0$-form, i.e. a function.
 \end{remark}
 \begin{eg}
-    Any compact submanifold (with boundary) $M$ of dimension $n$ defines a current $[M]$ on $n$-forms in the following way:
+    Any compact manifold (with boundary) $M$ of dimension $n$ defines a current $[M]$ on $n$-forms in the following way:
     \[
         [M](\omega) := \int_M \omega
     .\] 
@@ -897,7 +897,7 @@ With this set up, we are ready to prove the following theorem:
 
 \begin{myproof}
     As stated before, we follow Hutchings.\sidecite{hutchings2002lecture}
-    \paragraph{Idea of the proof}
+    \paragraph{Idea of the proof.}
     
     We define two chain maps:
     \begin{align*}
@@ -906,7 +906,7 @@ With this set up, we are ready to prove the following theorem:
          \shortintertext{and}
         A: C_\bul^{\text{c}}(M) &\longrightarrow C_\bul \\
          \text{generic simplex} &\longmapsto 
-         \parbox[t][][t]{5cm}{sum of critical points on which the simplex hangs on by flowing via $X$.}
+         \parbox[t][][t]{5cm}{sum of critical points on which the simplex hangs by flowing via $X$.}
     \end{align*}
 \begin{marginfigure}
     \centering
@@ -918,7 +918,7 @@ With this set up, we are ready to prove the following theorem:
     Here we define $C_i^{\text{c}}(M)$ as the subspace of all  $i$-dimensional currents on $M$ generated by \emph{generic} $i$-simplices, by which we mean simplices that are smooth and whose faces are transverse to the stable manifolds of all critical points.
 
 
-    Then $A  \circ D$ is the identity, and while $D  \circ  A$ is not, it is chain homotopy to the identity.
+    Then $A  \circ D$ is the identity, and while $D  \circ  A$ is not, it is chain homotopic to the identity.
     The chain homotopy sends a singular chain to its entire forward orbit under the flow of $X$.
     This proves the theorem.
 
@@ -933,7 +933,7 @@ With this set up, we are ready to prove the following theorem:
         \item  $D  \circ A \cong \operatorname{Id}$
     \end{enumerate}
 
-    \paragraph{1. Compactification of $\bm{\unstable c}$}
+    \paragraph{1. Compactification of $\bm{\unstable c}$.}
     We can compactify $\unstable c$ into a manifold with corners as follows:
      \[
          \unstableb c = \unstable c \cup  \bigcup_{d \neq c} \Lb cd \times  \unstable d
@@ -959,7 +959,7 @@ With this set up, we are ready to prove the following theorem:
         \partial \unstableb c = \bigcup_{d \neq c}  (-1)^{\Ind d + \Ind c + 1} \Lb cd \times  \unstable d.
     \]
 
-    \paragraph{2. Defining $\bm{D}$}
+    \paragraph{2. Defining $\bm{D}$.}
     Let $e: \unstableb c \to  M$ be the inclusion extending the inclusion of $\unstable c \to  M$.\sidenote{Note that by previous remarks, this extension is not necessarily injective}
     Then we define the current $D(c) := e_* \left[\unstableb c\right]$, i.e.\ integration over $\unstableb c$:
     \[
@@ -967,7 +967,7 @@ With this set up, we are ready to prove the following theorem:
     .\] 
     This current is an element of $C_{\bul}(M)$ because of the Smale condition.
 
-    \paragraph{3. The map $\bm{D}$ is a chain map:  $\bm{\partial D = D \partial^{\text{Morse}}}$ }
+    \paragraph{3. The map $\bm{D}$ is a chain map:  $\bm{\partial D = D \partial^{\text{Morse}}}$.}
     We have
 
     \[
@@ -989,7 +989,7 @@ With this set up, we are ready to prove the following theorem:
         \item[$\Ind d = \Ind c-1$]: We get a term of the form \[
             e_* \left[\Lb cd \times \unstableb d\right] = \# \L cd \cdot e_*[\unstable d],\]
             because $\L cd = \Lb cd$ is  $0$-dimensional.
-        \item[$\Ind d < \Ind -1$]: In this case, the term corresponds to a current of dimension less than $\Ind c - 2$, hence zero in $C_{\Ind c - 1}^{c}(M)$.
+        \item[$\Ind d < \Ind c-1$]: In this case, the term corresponds to a current of dimension less than $\Ind c - 2$, hence zero in $C_{\Ind c - 1}^{c}(M)$.
     \end{description}
     Summarizing, we have
     \begin{align*}
@@ -997,9 +997,9 @@ With this set up, we are ready to prove the following theorem:
                       &= D(\partial^{\text{Morse}}(c))
     .\end{align*} 
 
-    \paragraph{4. Defining $\bm{A}$}
+    \paragraph{4. Defining $\bm{A}$.}
 
-    The map $A$ is defined by mapping a generic simplex $\sigma$ to the sum of critical points on which the simplex hangs on by flowing via $X$.
+    The map $A$ is defined by mapping a generic simplex $\sigma$ to the sum of critical points on which the simplex hangs by flowing via $X$.
     Some examples of this vague definition are illustrated in Figure~\ref{fig:morse-homology-is-singular-homology-defining-map-a}.
     \begin{marginfigure}
         \centering
@@ -1011,7 +1011,7 @@ With this set up, we are ready to prove the following theorem:
         \label{fig:morse-homology-is-singular-homology-defining-map-a}
     \end{marginfigure}
     More rigorously, we denote with $\L \sigma d$ the moduli space of gradient flow lines starting in the $i$-simplex $\sigma$ and ending in $d$.
-    This space has a natural orientation and further more a compactification $\Lb \sigma d$, such that
+    This space has a natural orientation and furthermore a compactification $\Lb \sigma d$, such that
     \[
     \partial \Lb \sigma d = \Lb {\partial \sigma} d \cup \bigcup_{c \neq d}  (-1)^{i + \Ind d} \L \sigma c \times \L c d
     .\] 
@@ -1023,7 +1023,7 @@ With this set up, we are ready to prove the following theorem:
     which corresponds to the intuitive definition given earlier.
 
 
-    \paragraph{5. The map  $\bm A$ is a chain map:  $\bm{A \partial = \partial^{\text{Morse}} A}$ }
+    \paragraph{5. The map  $\bm A$ is a chain map:  $\bm{A \partial = \partial^{\text{Morse}} A}$.}
     We will show that $A \partial = \partial^{\text{Morse}} A$ component by component. To this purpose, we introduce the inner product on the space of critical points, defined on a basis as follows:
     \[
         \left<c, d \right> = \begin{cases}
@@ -1048,23 +1048,23 @@ With this set up, we are ready to prove the following theorem:
     showing that $A \partial = \partial^{\text{Morse}} A$.
 
 
-\paragraph{6. The map $\bm{A}$ is left inverse to $\bm{D}$: $\bm{A  \circ D = \text{Id}}$}
+\paragraph{6. The map $\bm{A}$ is left inverse to $\bm{D}$: $\bm{A  \circ D = \text{Id}}$.}
     This immediately follows from the definitions of $A$ and $D$.
-    $\L {D(c)} c = \{c\}$ and $\L {D(c)} d = \O$ for any other critical point $d$.
+    Indeed, $\L {D(c)} c = \{c\}$ and $\L {D(c)} d = \O$ for any other critical point $d$.
 \begin{marginfigure}
     \centering
     \incfig{a-is-left-inverse-to-d}
-    \caption{The map $A$ forms a left inverse to $D$}
+    \caption{The map $A$ forms a left inverse to $D$.}
     \label{fig:a-is-left-inverse-to-d}
 \end{marginfigure}
 
 
-\paragraph{7. The composition $\bm{D  \circ A}$ is chain homotopic to Id}
+\paragraph{7. The composition $\bm{D  \circ A}$ is chain homotopic to Id.}
 While clearly $D  \circ  A \neq \operatorname{Id}$, these two maps are chain map homotopic, meaning that there exists a map $F: C_i(M) \to  C_{i+1}(X)$ such that $\partial F + F \partial = D  \circ  A - \operatorname{Id}$.
 \begin{marginfigure}
     \centering
     \incfig{d-na-a-is-not-identity}
-    \caption{$D  \circ  A \neq  \operatorname{Id}$}
+    \caption{$D  \circ  A \neq  \operatorname{Id}$.}
     \label{fig:d-na-a-is-not-identity}
 \end{marginfigure}
 \begin{marginfigure}
@@ -1078,7 +1078,7 @@ The intuitive choice in this case would be the so-called forward orbit of $\sigm
 \[
     G(\sigma) := [0, \infty) \times \sigma
 ,\] with the map $e: G(\sigma) \to  M: (s, x) \mapsto \psi_s (\sigma(x))$.
-This set can be compactified to a smooth manifold with corners with boundary
+This set can be compactified to a smooth manifold with boundary
 \[
     \partial \overline{G(\sigma)} = - \sigma \cup - G(\partial \sigma) \cup \bigcup_{d}  \L \sigma d \times \unstable d
 .\] 
@@ -1087,7 +1087,7 @@ We can extend $e$ to a smooth map and define
     F: C_i^{c}(M) &\longrightarrow C_{i+1}^{c}(X) \\
     \sigma &\longmapsto e_* \left[ \overline{G(\sigma)} \right] 
 .\end{align*}
-While intuitively, this is a chain map between $\sigma$ and  $(D  \circ A)(\sigma)$, we can similarly as before, we should check that $\partial F + F \partial = D  \circ  A - \operatorname{Id}$.
+While intuitively, this is a chain map between $\sigma$ and  $(D  \circ A)(\sigma)$, we should check that $\partial F + F \partial = D  \circ  A - \operatorname{Id}$.
 Calculating $\partial F$ and  $F \partial$, we have
 \begin{align*}
     (\partial F)(\sigma) &= -e_*[\sigma] - e_*[G(\partial \sigma)] + \sum_{d} e_*\left[\L \sigma d \times \unstable d\right]\\
