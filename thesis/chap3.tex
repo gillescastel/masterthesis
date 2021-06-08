@@ -40,7 +40,7 @@ Note that this implies that $C_{-1} = C_{-2} = \cdots = 0$ and $C_{n+1} = C_{n+2
 \end{marginfigure}
 
 \begin{eg}
-    Consider the other sphere in Figure~\ref{fig:other-sphere-morse-complex-modules}. We have
+    Consider the `other sphere' in Figure~\ref{fig:other-sphere-morse-complex-modules}. We have
     \[
     C_0 = \{0, a\}  \qquad C_1 = \{0, b\}  \qquad C_2 = \{0, c, d, c+d\} 
     .\] 
@@ -56,7 +56,7 @@ where $\nX Xpq$ is the number of trajectories of $X$ connecting $p$ and $q$, mod
 If we require that $X$ satisfies the Smale condition, we will later show that this is well defined, by which we mean that $n_X(p,q)$ is an integer (see also Remark~\ref{remark:trajectories-finite}).
 If it is clear from the context, we will often drop $X$, $k$ or both from the notation.
 \begin{eg}
-    Consider again the other sphere with its height function.
+    Consider again the `other sphere' with its height function.
     Let $X$ be the gradient induced from the standard gradient in $\R^3$.
     Then $\partial_X$ is defined as follows, keeping in mind that we are working over $\Z_2$ and that $C_{-1} = 0$:
 \begin{figure}[H]
@@ -228,7 +228,7 @@ Before we proceed with this idea, let us give an overview of the steps that need
 \end{definition}
 \begin{remark}
     Notice that $\L p q = \O$ if $\Ind p \le \Ind q$, so the only broken trajectories that contribute to the union satisfy $\Ind a > \Ind c_1 > \cdots >\Ind c_\ell > \Ind b$.
-    Moreover, note that this set also contains the `zero-times' broken trajectories,  i.e. $\L ab$ itself.
+    Moreover, note that this set also contains the `zero-times' broken trajectories,  i.e.\ $\L ab$ itself.
 \end{remark}
     The number $\ell$ describes how many times the trajectory is broken.
     In other words, each broken trajectory in $\L a{c_1} \times \L {c_1}{c_2} \times  \cdots \times \L {c_\ell}b$ has $ \ell+1$ segments,  and we will denote such a trajectory by $(\lambda_1, \lambda_2, \cdots, \lambda_{\ell+1})$.
@@ -281,7 +281,7 @@ In the proof of this theorem, we will need the following lemma, stating that poi
 \begin{lemma}
     Let $x$ be a regular point of $f$ and $x_n \to x$.
     Let $y_n$ and  $y$ be points lying on the same trajectory of $X$ as  $x_n$ and  $x$.
-    Suppose all $y_n$ lie on the same level as  $y$, i.e.  $f(y_n) = f(y)$.
+    Suppose all $y_n$ lie on the same level as  $y$, i.e.\ $f(y_n) = f(y)$.
     Then  $y_n \to  y$.
     \label{lemma:level-sets}
 \end{lemma}
@@ -413,7 +413,7 @@ The last part is important in order to show that broken trajectories actually fo
     \label{fig:lbar-manifold-three-dimensional-case}
 \end{marginfigure}
 
-\paragraph{Parametrizing trajectories near $\lambda_1$.}
+\paragraph{Parametrizing trajectories near $\bm{\lambda_1}$}
 Let $D^{k}$ be a small $k$-dimensional disk around $c^{+}$ in $f^{-1}(\alpha+\epsilon)$, parametrizing trajectories starting in $a$ near $\lambda_1$.
     Now consider $D^{k} \setminus c^{+}$ and flow this punctured disk along $X$ until it reaches the level set  $\alpha - \epsilon$.
     Points in the resulting manifold $Q \subset f^{-1}(\alpha - \epsilon)$ parametrize trajectories near $\lambda_1$ but not $\lambda_1$ itself.
@@ -421,16 +421,14 @@ Let $D^{k}$ be a small $k$-dimensional disk around $c^{+}$ in $f^{-1}(\alpha+\ep
     This submanifold $\overline{Q}$ of $f^{-1}(\alpha-\epsilon)$ parametrizes trajectories near $\lambda_1$ (but notice that $\lambda_1$ itself is represented multiple times).
 
 
-    \paragraph{Parametrizing trajectories ending in $b$.}
+    \paragraph{Parametrizing trajectories ending in $\bm{b}$}
     Let $P = f^{-1}(\alpha - \epsilon) \tcap \stable b$.
     This is again a subspace of $f^{-1}(\alpha-\epsilon)$ that parametrizes trajectories going to $b$.
 
-    \paragraph{Parametrizing trajectories near $(\lambda_1, \lambda_2)$.}
+    \paragraph{Parametrizing trajectories near $\bm{(\lambda_1, \lambda_2)}$}
     The intersection of $P$ and  $\overline{Q}$ is transverse (because of the Smale conditions) and parametrizes (broken and unbroken) trajectories near $(\lambda_1, \lambda_2)$.
     Because of transversality, this intersection is in fact a manifold (with boundary $c^{-}$) and counting dimensions, we find that it has dimension $1$.
-    Now it is easy to define the required embedding $\chi: [0, \delta) \to  f^{-1}(\alpha-\epsilon)$, which in turn gives rise to $\psi: [0, \delta) \to  \Lb ab$.
-
-\end{myproof}
+    Now it is easy to define the required embedding $\chi: [0, \delta) \to  f^{-1}(\alpha-\epsilon)$, which in turn gives rise to $\psi: [0, \delta) \to  \Lb ab$.\end{myproof}
 \subsection{Conclusion}
 
 Let us conclude this section by finally proving that $\partial^2 = 0$.
@@ -451,13 +449,13 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
         &= 
         \sum_{b \in  \Crit_{k-2}f}
         \sum_{c \in  \Crit_{k-1}f}
-        |\L ac \times \L cb |\:  b\\
+        \# (\L ac \times \L cb) \:  b\\
         &= 
         \sum_{b \in  \Crit_{k-2}f}
-        \left| \bigcup_{c \in  \Crit_{k-1}f}
-        \L ac \times \L cb \right|\:  b.\\
+        \# \Bigg(\bigcup_{c \in  \Crit_{k-1}f}
+        \L ac \times \L cb\Bigg) \:  b.\\
         \shortintertext{By definition of $\Lb ab$}
-        &= \sum_{b \in  \Crit_{k-2}f} \left|\partial \Lb a b \right|\:  b.
+        &= \sum_{b \in  \Crit_{k-2}f} \# (\partial \Lb a b)\:  b.
     \end{align*} 
     Now, $\Lb ab$ is a compact  $1$-manifold and hence has an even number of boundary points. Working over $ \Z_2$, this implies that $\partial^2(a) = 0$.
 \end{myproof}
@@ -478,7 +476,7 @@ Let us conclude this section by finally proving that $\partial^2 = 0$.
     
 \begin{myproof}
 The proof of this theorem features an intricate interplay between homological algebra and differential geometry and is truly something to behold. It is perhaps the most beautiful proof in this thesis.
-\paragraph{Construction of a morphism of complexes.}
+\paragraph{Construction of a morphism of complexes}
 In order to find a relation between the two complexes, we geometrically connect $f_0$ and $f_1$ via a particular type of homotopy, namely  a `stable interpolation' by which we mean a smooth map
 \[
     F: [0,1] \times M \to \R: (s, m) \mapsto F_s(m)
@@ -538,7 +536,7 @@ We can slightly perturb $X$ to make it satisfy the Smale condition and we can fu
 We can also make this perturbation small enough such that $\partial_{X} = \partial_{\tilde{X}}$, that is to say, the number of $X$-trajectories between critical points is the same as the number of $\tilde{X}$-trajectories.
 
 Having a Morse function $\tilde{F}$ and a pseudo-gadient $\tilde{X}$ that is adapted to $\tilde{F}$, we can consider the associated Morse complex $(C_\bul(\tilde{F}), \partial_{\tilde{X}})$.
-There are two types of trajectories connecting critical points of $\tilde{F}$: ones that stay in the same section ($s = 0$ or $s = 1$)  and ones that connect critical points of $f_0$ to critical points of $f_1$, i.e. ones that `slide down the slide'.
+There are two types of trajectories connecting critical points of $\tilde{F}$: ones that stay in the same section ($s = 0$ or $s = 1$)  and ones that connect critical points of $f_0$ to critical points of $f_1$, i.e.\ ones that `slide down the slide'.
 This means we can decompose $\partial_{\tilde{X}}$ as follows:
 \begin{align*}
     \partial_{\tilde{X}}: C_k(f_0) \oplus C_{k+1}(f_1) &\longrightarrow C_{k-1}(f_0) \oplus C_k(f_1) \\
@@ -576,7 +574,7 @@ Because we are working over $\Z_2$, this means that $\Phi^{F}  \circ  \partial_0
 \]
 This proves that $\Phi^{F}$ is a morphism of complexes.
 
-\paragraph{$\Phi^{F}$ induces an isomorphism on the level on homology.}
+\paragraph{$\bm{\Phi^{F}}$ induces an isomorphism on the level on homology}
 
 We will now prove that this map induces an isomorphism on the level of homology.
 Let $f_0, f_1, f_2$ be Morse functions $M \to  \R$.
@@ -755,7 +753,7 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     We will illustrate the calculation for the signs of trajectories, and discuss Morse homology of the torus and the Klein bottle both over $ \Z_2$ and $\Z$ to show that working over $ \Z$ can have its advantages.
 
     \begin{eg}
-        Consider the other sphere and more specifically $\L pq$ with $p$ and  $q$ as in Figure~\ref{fig:orientation-example} below. 
+        Consider the `other sphere' and more specifically $\L pq$ with $p$ and  $q$ as in Figure~\ref{fig:orientation-example} below. 
         We start off with an orientation of $\stable q$ and  $\stable p$.
         To orient  $\traj pq$, we use the orientation of  $\stable p$, which co-orients $\unstable p$, indicated in the figure with the thick black horizontal arrows.
         The orientation of $\traj pq$ is indicated with the vertical arrows tangent to  $\traj pq$ and is defined by requiring that the horizontal and vertical vectors form a positive basis w.r.t.\ the orientation of  $\stable q$.
@@ -763,7 +761,7 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
         \begin{figure}[H]
     \centering
     \sidecaption{
-        Orienting $\L pq$ on the other sphere.
+        Orienting $\L pq$ on the `other sphere'.
     \label{fig:orientation-example}
     }
     \incfig{orientation-example}
@@ -776,9 +774,9 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     The complex is given by $ \Z_2 \to  \Z_2^2 \to \Z_2$, and because each critical point is connected twice to any other critical point of consecutive index, $\partial_k = 0$ for all $k$. 
     This means that we have
     \[
-        \HMf[0]{T^2, \Z_2} = \Z_2 \qquad
-        \HMf[1]{T^2, \Z_2} = \Z_2^2 \qquad
-        \HMf[2]{T^2, \Z_2} = \Z_2
+        \HMf[0]{T^2; \Z_2} = \Z_2 \qquad
+        \HMf[1]{T^2; \Z_2} = \Z_2^2 \qquad
+        \HMf[2]{T^2; \Z_2} = \Z_2
     .\] 
 \end{eg}
 \begin{marginfigure}
@@ -805,9 +803,9 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     We have also included the graph of the critical points.
     Disregarding sign differences (which will only be important when discussing the complex over $\Z$), this graph is identical to the one we obtained for $T^2$. We conclude that the Morse homology of $K$ and  $T^2$ over $\Z_2$ are identical:
     \[
-        \HMf[0]{K, \Z_2} = \Z_2 \qquad
-        \HMf[1]{K, \Z_2} = \Z_2^2 \qquad
-        \HMf[2]{K, \Z_2} = \Z_2
+        \HMf[0]{K; \Z_2} = \Z_2 \qquad
+        \HMf[1]{K; \Z_2} = \Z_2^2 \qquad
+        \HMf[2]{K; \Z_2} = \Z_2
     .\] 
 \end{eg}
 
@@ -819,9 +817,9 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     The complex is given by $\Z \xrightarrow{\partial} \Z^2 \xrightarrow{\partial}  \Z$, and because the signs of the trajectories cancel, $\NX Xpq = 0$ for all $p$ and $q$, so each differential is zero.
     In the end, we have
     \[
-        \HMf[0]{T^2, \Z} = \Z \qquad
-        \HMf[1]{T^2, \Z} = \Z^2 \qquad
-        \HMf[2]{T^2, \Z} = \Z
+        \HMf[0]{T^2; \Z} = \Z \qquad
+        \HMf[1]{T^2; \Z} = \Z^2 \qquad
+        \HMf[2]{T^2; \Z} = \Z
     .\] 
 \end{eg}
 \begin{eg}
@@ -829,9 +827,9 @@ Moreover, we have the following:\sidecite[p.~ 10]{hutchings2002lecture}
     It is easy to check that $\partial_1 = 0$ and that  $\partial_2$ is defined by  $\partial_2(d) = -2b$, where $a,b,c,d$ are the critical points of $h$ with increasing height.
     This means that $\Im \partial_2 = 2 \Z$. Summarizing, we have
     \[
-        \HMf[0]{K, \Z} = \Z \qquad
-        \HMf[1]{K, \Z} = \Z \oplus \Z_2 \qquad
-        \HMf[2]{K, \Z} = 0
+        \HMf[0]{K; \Z} = \Z \qquad
+        \HMf[1]{K; \Z} = \Z \oplus \Z_2 \qquad
+        \HMf[2]{K; \Z} = 0
     .\] 
     The conclusion of this series of examples is that integral homology is less coarse than homology over $\Z_2$.
 \end{eg}
@@ -857,7 +855,7 @@ For a thorough introduction on currents, see `Differentiable manifolds' by de Rh
     A current is a continuous linear functional on the space of compactly supported $k$-forms on a manifold $M$.
 \end{definition}
 \begin{remark}
-    One should think of currents as distributions on manifolds. For example, the Dirac delta distribution is a current acting on $0$-forms on $\R$ as follows: $f \mapsto  f(0)$, where $f$ is a $0$-form, i.e. a function.
+    One should think of currents as distributions on manifolds. For example, the Dirac delta distribution is a current acting on $0$-forms on $\R$ as follows: $f \mapsto  f(0)$, where $f$ is a $0$-form, i.e.\ a function.
 \end{remark}
 \begin{eg}
     Any compact manifold (with boundary) $M$ of dimension $n$ defines a current $[M]$ on $n$-forms in the following way:
@@ -890,14 +888,14 @@ With this set up, we are ready to prove the following theorem:
 \begin{theorem}
     Let $M$ be a closed manifold. Then
      \[
-         \HMf[\bul]{M, \Z} = H_{\bul}(M, \Z)
+         \HMf[\bul]{M; \Z} = H_{\bul}(M; \Z)
     ,\] 
-    where $H_{\bul}(M, \Z)$ denotes the singular homology of $M$.
+    where $H_{\bul}(M; \Z)$ denotes the singular homology of $M$.
 \end{theorem}
 
 \begin{myproof}
     As stated before, we follow Hutchings.\sidecite{hutchings2002lecture}
-    \paragraph{Idea of the proof.}
+    \paragraph{Idea of the proof}
     
     We define two chain maps:
     \begin{align*}
@@ -933,7 +931,7 @@ With this set up, we are ready to prove the following theorem:
         \item  $D  \circ A \cong \operatorname{Id}$
     \end{enumerate}
 
-    \paragraph{1. Compactification of $\bm{\unstable c}$.}
+    \paragraph{1. Compactification of $\bm{\unstable c}$}
     We can compactify $\unstable c$ into a manifold with corners as follows:
      \[
          \unstableb c = \unstable c \cup  \bigcup_{d \neq c} \Lb cd \times  \unstable d
@@ -944,7 +942,7 @@ With this set up, we are ready to prove the following theorem:
         \centering
         \incfig{compactification-of-unstable-manifolds}
         \caption{
-            Two examples of compactifications of unstable manifolds in the other sphere.
+            Two examples of compactifications of unstable manifolds in the `other sphere'.
             On top we consider the index 1 critical point and on the bottom the index 2 critical point.
         Note that the compactifications are subtle  and in particular are not diffeomorphic to $S^{1}$ and $B^{2}$ resp.}
         
@@ -959,7 +957,7 @@ With this set up, we are ready to prove the following theorem:
         \partial \unstableb c = \bigcup_{d \neq c}  (-1)^{\Ind d + \Ind c + 1} \Lb cd \times  \unstable d.
     \]
 
-    \paragraph{2. Defining $\bm{D}$.}
+    \paragraph{2. Defining $\bm{D}$}
     Let $e: \unstableb c \to  M$ be the inclusion extending the inclusion of $\unstable c \to  M$.\sidenote{Note that by previous remarks, this extension is not necessarily injective}
     Then we define the current $D(c) := e_* \left[\unstableb c\right]$, i.e.\ integration over $\unstableb c$:
     \[
@@ -967,7 +965,7 @@ With this set up, we are ready to prove the following theorem:
     .\] 
     This current is an element of $C_{\bul}(M)$ because of the Smale condition.
 
-    \paragraph{3. The map $\bm{D}$ is a chain map:  $\bm{\partial D = D \partial^{\text{Morse}}}$.}
+    \paragraph{3. The map $\bm{D}$ is a chain map:  $\bm{\partial D = D \partial^{\text{Morse}}}$}
     We have
 
     \[
@@ -997,7 +995,7 @@ With this set up, we are ready to prove the following theorem:
                       &= D(\partial^{\text{Morse}}(c))
     .\end{align*} 
 
-    \paragraph{4. Defining $\bm{A}$.}
+    \paragraph{4. Defining $\bm{A}$}
 
     The map $A$ is defined by mapping a generic simplex $\sigma$ to the sum of critical points on which the simplex hangs by flowing via $X$.
     Some examples of this vague definition are illustrated in Figure~\ref{fig:morse-homology-is-singular-homology-defining-map-a}.
@@ -1023,7 +1021,7 @@ With this set up, we are ready to prove the following theorem:
     which corresponds to the intuitive definition given earlier.
 
 
-    \paragraph{5. The map  $\bm A$ is a chain map:  $\bm{A \partial = \partial^{\text{Morse}} A}$.}
+    \paragraph{5. The map  $\bm A$ is a chain map:  $\bm{A \partial = \partial^{\text{Morse}} A}$}
     We will show that $A \partial = \partial^{\text{Morse}} A$ component by component. To this purpose, we introduce the inner product on the space of critical points, defined on a basis as follows:
     \[
         \left<c, d \right> = \begin{cases}
@@ -1048,7 +1046,7 @@ With this set up, we are ready to prove the following theorem:
     showing that $A \partial = \partial^{\text{Morse}} A$.
 
 
-\paragraph{6. The map $\bm{A}$ is left inverse to $\bm{D}$: $\bm{A  \circ D = \text{Id}}$.}
+\paragraph{6. The map $\bm{A}$ is left inverse to $\bm{D}$: $\bm{A  \circ D = \text{Id}}$}
     This immediately follows from the definitions of $A$ and $D$.
     Indeed, $\L {D(c)} c = \{c\}$ and $\L {D(c)} d = \O$ for any other critical point $d$.
 \begin{marginfigure}
@@ -1059,7 +1057,7 @@ With this set up, we are ready to prove the following theorem:
 \end{marginfigure}
 
 
-\paragraph{7. The composition $\bm{D  \circ A}$ is chain homotopic to Id.}
+\paragraph{7. The composition $\bm{D  \circ A}$ is chain homotopic to Id}
 While clearly $D  \circ  A \neq \operatorname{Id}$, these two maps are chain map homotopic, meaning that there exists a map $F: C_i(M) \to  C_{i+1}(X)$ such that $\partial F + F \partial = D  \circ  A - \operatorname{Id}$.
 \begin{marginfigure}
     \centering

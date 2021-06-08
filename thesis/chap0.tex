@@ -100,10 +100,10 @@ The idea is to count the number of intersection points with signs:
 
 \begin{definition}[Intersection number]
     Let $N$ and  $N'$ be $r$- and  $s$-dimensional submanifolds of an $(r+s)$-dimensional manifold $M$.
-    Suppose $N$ is oriented, $N'$ is cooriented and their intersection is transverse.
+    Suppose $N$ is oriented, $N'$ is co-oriented and their intersection is transverse.
 
     Let $p \in  N \tcap N'$.
-    Then $T_p N$ is oriented both by the orientation of  $N$ and the coorientation of  $N'$.
+    Then $T_p N$ is oriented both by the orientation of  $N$ and the co-orientation of  $N'$.
     If these orientations match, we define the intersection number at $p$ to be $+1$, otherwise we define it to be $-1$.
 
     The intersection number  $N' \cdot N$ is then defined as the sum of all the intersection numbers at the points in $N \tcap N'$.
@@ -112,7 +112,7 @@ The idea is to count the number of intersection points with signs:
     \centering
     \incfig{intersection-number}
     \caption{
-        The intersection number is defined by comparing the orientation of $N$ with the coorientation of $N'$ at the points of transverse intersection.
+        The intersection number is defined by comparing the orientation of $N$ with the co-orientation of $N'$ at the points of transverse intersection.
         In this case, the ambient manifold $M = \R^2$, $N = (0,1)$ and $N' = S^1$ and $N' \cdot N = -1 + 1 = 0$.
     }
     \label{fig:intersection-number}
@@ -127,7 +127,7 @@ we have managed to associate a number to an intersection that is invariant under
     In particular, we can define the intersection number of two manifolds that do not intersect transversely.
 \end{prop}
 \begin{eg}
-    Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and coorientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
+    Consider the intersection of $M  = S^{1}$ and an interval embedded in $\R^2$. Consider the orientation of $M$ and co-orientation of $M$ as defined in Figure~\ref{fig:intersection-number}. Then $M' \cdot M  = -1 + 1 = 0$.
     It is also clear that the intersection number does not change under isotopies of the manifolds, even though the number of intersection points does.
 \end{eg}
 
@@ -171,7 +171,7 @@ We often suppress the indices of the maps $d_i$ and the last condition then beco
     .\] 
     This is well defined because $\Im(d_{i+1}) \subset \Ker (d_i)$.
 \end{definition}
-It is clear that this measures the exactness of the sequence. Indeed, if the sequence is exact, i.e. $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
+It is clear that this measures the exactness of the sequence. Indeed, if the sequence is exact, i.e.\ $\Im d_{i+1} = \Ker d_i$, then $H_i(C_\bul) = 0$.
 
 A map between chain complexes is called a chain map:
 
@@ -196,7 +196,7 @@ A map between chain complexes is called a chain map:
 
 It is easy to check that chain maps induce a map on the level on homology which we denote by $H_i(f_\bul): H_i(C_\bul) \to  H_i(D_\bul)$.
 
-The following is a useful criterion for determining whether two different chain maps $f_\bul, g_\bul$ induce the same maps on the level on homology, i.e. $H_i(f_\bul) = H_i(g_\bul)$.
+The following is a useful criterion for determining whether two different chain maps $f_\bul, g_\bul$ induce the same maps on the level on homology, i.e.\ $H_i(f_\bul) = H_i(g_\bul)$.
 \begin{definition}[Chain homotopic]
     Let $f_\bul, g_\bul$ be chain maps between  $C_\bul$ and $D_\bul$.
     A chain homotopy from  $f_\bul$ to  $g_\bul$ is a collection of  $R$-module homomorphisms $h_i: C_i \to  D_{i+1}$ such that $g_i - f_i = d^{D}_{i+1}  \circ  h_i + h_{i-1}  \circ  d_i^{C}$ for all $i$.
@@ -451,8 +451,8 @@ Singular cohomology is the dual of singular homology in the following sense:
     We denote singular cohomology with $H^{k}(M, R)$.
 \end{definition}
 \begin{remark}
-    If $R$ is a field then $H^{k}(M, R)$ is dual to $H_k(M, R)$.
-    In particular, if the homology is finite dimensional, we have $H^{k}(M, R) \cong H_k(M, R)$.
+    If $R$ is a field then $H^{k}(M; R)$ is dual to $H_k(M; R)$.
+    In particular, if the homology is finite dimensional, we have $H^{k}(M; R) \cong H_k(M; R)$.
 \end{remark}
 \begin{remark}
     Poincaré duality states that if $M$ is an  $n$-dimensional oriented closed manifolds, then $H_k(M, R) \cong H^{n-k}(M, R)$.
@@ -518,7 +518,7 @@ Computing these higher order groups is where the difficulty lies.
     A homotopy sphere is a manifold which has the homotopy groups of a sphere.
 \end{definition}
 
-An interesting question that arises is: `Is a homotopy sphere an actual sphere, i.e. homeomorphic to a sphere?' This is exactly what the Poincaré conjecture is about and in the last chapter of this thesis, we will prove that this is indeed the case if the dimension of the homotopy sphere is $\ge 5$.
+An interesting question that arises is: `Is a homotopy sphere an actual sphere, i.e.\ homeomorphic to a sphere?' This is exactly what the Poincaré conjecture is about and in the last chapter of this thesis, we will prove that this is indeed the case if the dimension of the homotopy sphere is $\ge 5$.
 
 To do so, we will in fact only use that a homotopy sphere $S$ is a homology sphere that is connected and simply connected.
 The last two properties are clear as $\pi_0(S) = \pi_1(S) = 0$.

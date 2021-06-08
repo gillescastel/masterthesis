@@ -140,7 +140,7 @@ In summary, we have obtained the following result:
     \begin{eg}
         Instead of considering the embedding as in the previous example, we can embed the torus at a slight angle.
         Then the gradient of the height function (by using the standard metric on $\R^3$) does satisfy the Smale condition.
-        The intersection of $\stable{b}$ and  $\unstable{c}$ is not tangent any more: indeed, they do not even intersect at all. We have illustrated this below.
+        The intersection of $\stable{b}$ and  $\unstable{c}$ is no longer tangent: indeed, they do not even intersect at all. We have illustrated this below.
         \label{eg:tilted-torus}
     \end{eg}
     \begin{figure}[H]
@@ -226,8 +226,6 @@ More explicitly, we have the following:
 \end{figure}
 
 
-
-% \todo{Mention that handles are thickened up descending manifolds.}
 
 
 \filbreak
@@ -413,7 +411,7 @@ It turns out that the existence of a unique trajectory connecting $p$ to  $q$ is
     Let $M$ be a cobordism from $M_0$ to $M_1$.
     Let $f: M \to  [0,1]$ be a Morse function with exactly two critical points $p, q$ of index  $k+1$ and  $k$ and let $X$ be a pseudo-gradient adapted to $M$.
 
-    If $|\L p q| = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
+    If $\# \L p q = 1$, that is if there is a single trajectory $\ell = \traj p q$ connecting $p$ and  $q$, then we can cancel $p$ and  $q$.
     More specifically, we can alter $X$ around  $\ell$ and $f$ away from  $M_0, M_1$ such that $f$ has no critical points.
     \label{firstcancellation}
 \end{theorem}
@@ -550,7 +548,7 @@ The vector field $X'$ determines a diffeomorphism $\phi: [0, 1] \times M_0 \to M
 \end{myproof}
 
 \paragraph{Assertion 5.}
-The vector field $X'$ is a pseudo-gradient vector field for some morse function  $g$ on $M$ that agrees with $f$ near  $M_0$ and $M_1$.
+The vector field $X'$ is a pseudo-gradient vector field for some Morse function  $g$ on $M$ that agrees with $f$ near  $M_0$ and $M_1$.
 Moreover, $g$ has no critical points.
 \begin{myproof}
     By using the previous assertion,
@@ -571,7 +569,7 @@ Moreover, $g$ has no critical points.
         \incfig{assertion-5}
     \end{figure}
 
-    The idea is to integrate the derivative of the original Morse function near the bottom and the top, and in the middle we will integrate an appropriately large function $k(q)$ such that  $g(1, q) = 1$ for all $q$, i.e. the speed is adjusted so that at $t=1$, we reach the top of $[0,1] \times M_0$.
+    The idea is to integrate the derivative of the original Morse function near the bottom and the top, and in the middle we will integrate an appropriately large function $k(q)$ such that  $g(1, q) = 1$ for all $q$, i.e.\ the speed is adjusted so that at $t=1$, we reach the top of $[0,1] \times M_0$.
     Expanding this condition and solving for $k(q)$, we get
      \begin{align*}
          g(1, q) = \int_{0}^{1} \lambda(t) \frac{\partial f_1}{\partial t}  + \int_{0}^{1}  (1-\lambda(t)) k(q) dt &= 1\\

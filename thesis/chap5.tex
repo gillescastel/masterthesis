@@ -6,12 +6,12 @@ In this chapter, we will prove three important theorems that are all closely rel
 The first one states that the Morse inequalities are in fact attainable under certain conditions.
 In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale in 1960.
 \begin{theorem}[Smale's theorem\sidenotemark]
-    If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H_k(M, \Z))$ for all $k = 0, \ldots, n$.
+    If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H_k(M; \Z))$ for all $k = 0, \ldots, n$.
 \end{theorem}
 \sidenotetext[][-6em]{\fullcite{smale1960generalized}}
 Recall that we use $r_0(A)$ to denote the free rank of a $\Z$-module $A$.
 A closely related theorem is the $h$-cobordism theorem, stating
-\begin{theorem}[h-cobordism theorem\sidenotemark]
+\begin{theorem}[$h$-cobordism theorem\sidenotemark]
     If $M$ is a cobordism from $M_0$ to $M_1$ that is simply connected, $\dim M \ge 6$ and $H_{\bul}(M,M_0) = 0$, then $M$ is a trivial cobordism, i.e.\ diffeomorphic to  $ M_0 \times I$.
 \end{theorem}
 \sidenotetext[][-5em]{\fullcite{hcobord}}
@@ -50,7 +50,7 @@ Let us recall the first cancellation result we have proved in Chapter~\ref{chap:
 \def\thetheorem{\ref{firstcancellation}}
 \begin{theorem}
     Let $f: M \to  [0,1]$ be a Morse function on a cobordism with two critical points $p, q$ of index $k$ and  $k-1$. Let $X$ be an adapted pseudo-gradient satisfying the Smale condition.
-    If $|\L pq | = \nX Xpq = 1$, then $p$ and  $q$ can be cancelled.
+    If $\# \L pq  = \nX Xpq = 1$, then $p$ and  $q$ can be cancelled.
 \end{theorem}
 \addtocounter{theorem}{-1}
 \endgroup
@@ -101,13 +101,13 @@ Let us give some examples illustrating the idea of the theorem.
         \item The last figure shows a situation where the number of intersections points is $2$ and the intersection number is $0$. In this situation, we cannot cancel the two critical points. In fact, we can isotope the attaching sphere off the $1$-handle, showing that the two handles are completely independent.
     \end{enumerate}
 \end{eg}
-As hinted at in the example, the proof of this stronger cancellation result will reduce the given situation where $\NX X pq = \pm 1$ to one that satisfies the condition of the first cancellation theorem, i.e. $\nX X pq = 1$.
+As hinted at in the example, the proof of this stronger cancellation result will reduce the given situation where $\NX X pq = \pm 1$ to one that satisfies the condition of the first cancellation theorem, i.e.\ $\nX X pq = 1$.
 In order to do this we want to `cancel' flow lines of opposite signs.
 We will do this by using a theorem of Whitney which allows to cancel intersection points of opposite intersection numbers.\sidenote{For an introduction to the intersection number of two manifolds, we refer the reader to Chapter~0.}
 
 \begin{theorem}[Whitney]
     Let $N$ and  $N'$ be smooth, closed, tranversely intersecting submanifolds of dimensions  $r$ and $s$ in a smooth  $(r+s)$-dimensional manifold $V$.
-    Suppose  $N$ is oriented and  $N'$ is cooriented.
+    Suppose  $N$ is oriented and  $N'$ is co-oriented.
     Suppose $r+s \ge 5$, $s\ge 3$ and if $r<3$ suppose that $\pi_1(V - N') \hookrightarrow \pi_1(N)$ is an isomorphism.
 
     Let $p, q \in  M \tcap N'$ points with opposite intersection number as in Figure~\ref{fig:intersection-points-cancellation} such that there exists a loop $L$ contractible in  $V$ connecting  $p$ smoothly to $q$ in  $N$  and then $q$ smoothly to  $p$ in $N'$ where both arcs miss other intersection points.
@@ -115,7 +115,7 @@ We will do this by using a theorem of Whitney which allows to cancel intersectio
     Then there exists an isotopy $h_t$ of the identity $V \to V$ such that
     \begin{enumerate}[(i)]
         \item The isotopy is locally the identity around other intersection points;
-        \item At time  $t = 1$,  $N'$ and  $N$ do not intersect in $p$ and $q$  any more.  In other words, $h_1(N) \cap N' = N \cap  N' \setminus \{ p, q\} $.
+        \item At time  $t = 1$,  $N'$ and  $N$ no longer intersect in $p$ and $q$.  In other words, $h_1(N) \cap N' = N \cap  N' \setminus \{ p, q\} $.
     \end{enumerate}
 \end{theorem}
 \begin{myproof}
@@ -140,7 +140,7 @@ Let $\alpha$ be a regular value between  $f(p)$ and  $f(q)$ and let $V = f^{-1}(
 Let $S^{u}(p) = \unstable p \cap V$ and 
 $S^{s}(q) = \stable q \cap V$ be spheres inside $V$.
 Then we have noted before that $\L pq \cong S^{u}(p) \cap S^{s}(q)$ so that \[
-    \nX Xpq = |S^{u}(p) \cap S^{s}(q)|.
+    \nX Xpq = \# (S^{u}(p) \cap S^{s}(q)).
 \]
 Moreover, we have that
 \[
@@ -148,7 +148,7 @@ Moreover, we have that
 ,\] 
 where we denoted by $N \cdot N'$ the intersection number of two manifolds.
 Recall that for defining $\NX X pq$,
-we chose arbitrary orientations of the stable manifolds, inducing coorientations of the unstable manifolds.
+we chose arbitrary orientations of the stable manifolds, inducing co-orientations of the unstable manifolds.
 These chosen orientations allow us to talk about the intersection number of $S^{u}(p)$ and $S^{s}(q)$.
 With this insight, we are ready to prove the second cancellation theorem.
 
@@ -203,7 +203,7 @@ Let us for completeness also give a proof of Whitney's theorem.
     \begin{marginfigure}
         \centering
         \incfig{whitneys-theorem-model-isotopy}
-        \caption{The isotopy $G_t$ in the plane model moves $C_0$ below $ C_0'$, i.e. $ G_1(U \cap C_0) \cap C_0' = \O$.}
+        \caption{The isotopy $G_t$ in the plane model moves $C_0$ below $ C_0'$, i.e.\ $ G_1(U \cap C_0) \cap C_0' = \O$.}
         \label{fig:whitneys-theorem-model-isotopy}
     \end{marginfigure}
     With this model, the proof of the theorem follows quickly.
@@ -221,7 +221,7 @@ Let us for completeness also give a proof of Whitney's theorem.
         H_t: U \times \R^{r-1}\times \R^{s-1} &\longrightarrow  U \times \R^{r-1} \times \R^{s-1}\\
         (u, x, y) &\longmapsto (G_{t \rho(x, y)}, x, y)
     .\end{align*}
-    \paragraph{Isotopy of $V$}
+    \paragraph{Isotopy of $\bm{V}$}
     To finally find an isotopy of $V$, define $F_t: V\to V$ such that
     $F_0$ is the identity, $F_t$ is the identity everywhere except away from  $\Im \phi$, and on  $\Im \phi$, define  $F_t = \phi  \circ  H_t  \circ  \phi^{-1}$.
     This finishes the proof.
@@ -424,7 +424,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     The idea of the proof goes as follows and is illustrated in Figure~\ref{fig:changing-one-handles-in-three-handles}.
     In order to change a $1$-handle into a $3$-handle, we introduce an auxiliary cancelling pair of $2$- and $3$-handles.
     Then we cancel the $1$- and $2$-handle, leaving us with a $3$-handle.
-    \paragraph{Adding a cancelling pair of $2$- and $3$-handles}
+    \paragraph{Adding a cancelling pair of 2- and 3-handles}
     Assume that $f$ is self-indexing.
     By the first cancellation theorem, we can decompose an $m$-dimensional disk $D^{m}$ as a $2$- and  $3$-handle. (The attachment sphere of the $3$-handle intersects the belt sphere of the $2$-handle once transversely.)
     Therefore, we can remove a small disk from $M$ and fill it up with a $2$- and $3$-handle.
@@ -441,7 +441,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
         For the second claim, we can assume that the loop is smooth and transversal to the attachment region of the $2$-handles. Now note that transversal under these conditions means disjoint because of dimensional reasons.
     }
     Because $M$ is simply connected, $f^{-1}(\frac{3}{2})$ is as well, so this loop is null-homotopic.
-    \paragraph{Isotoping $L$ to $L'$}
+    \paragraph{Isotoping $\bm{L}$ to $\bm{L'}$}
     Both $L$ and $L'$ are null-homotopic in  $f^{-1}(\frac{3}{2})$.
     Because $\dim f^{-1}(\frac{3}{2}) \ge 4$, they are in fact isotopic, by a theorem of Withney.\sidecite{whitney1936differentiable}
     It states that if $f, g: M \to N$ be two \emph{homotopic} embeddings of a compact manifold. If $\dim N \ge  2 \dim M + 2$, then $f$ and  $g$ are \emph{isotopic.}
@@ -465,10 +465,10 @@ Having discussed a multitude of cancellation theorems, we are ready to prove the
 \begin{theorem}[Smale]
     Let $M$ be a cobordism from $M_0$ to $M_1$.
     Assume $M, M_0, M_1$ are connected and simply connected and $\dim M \ge 6$.
-    Assume moreover that the homology of $M$ is free, i.e.  $H_{\bul}(M, M_0)$ and $H_{\bul}(M, M_1)$ are free.
+    Assume moreover that the homology of $M$ is free, i.e.\ $H_{\bul}(M, M_0)$ and $H_{\bul}(M, M_1)$ are free.
     Then there exists a Morse function such that
     \[
-        \# \Crit_k f = r_0(H_k(M, M_0, \Z))
+        \# \Crit_k f = r_0(H_k(M, M_0; \Z))
     .\] 
     In other words, under these conditions, the Morse inequalities are attainable.
     \label{thm:minimal-cob}
@@ -512,7 +512,7 @@ If we take $ M_0 = M_1 = \O$, we immediately have the following corollary,
 \begin{corollary}
     If $M$ is a simply connected closed manifold of dimension  $n \ge 6$ with free homology, then the Morse inequalities are attainable, i.e.\ there exists a Morse function such that
     \[
-        \# \Crit_kf = r_0 (H_k(M, \Z))
+        \# \Crit_kf = r_0 (H_k(M; \Z))
     .\] 
 \end{corollary}
 
@@ -520,7 +520,7 @@ If we assume that the homology vanishes completely,
 Theorem~\ref{thm:minimal-cob} becomes
 \begin{corollary}[$h$-cobordism theorem]
     Let $M$ be a cobordism from  $M_0$ to $M_1$.
-    If $M, M_0, M_1$ are connected and simply connected, $\dim M \ge  6$ and $H_{\bul}(M, M_0) = 0$, then $M$ is a trivial cobordism, i.e.  $M$ is diffeomorphic to $M_0 \times [0,1]$.
+    If $M, M_0, M_1$ are connected and simply connected, $\dim M \ge  6$ and $H_{\bul}(M, M_0) = 0$, then $M$ is a trivial cobordism, i.e.\ $M$ is diffeomorphic to $M_0 \times [0,1]$.
 \end{corollary}
 
 Another direct corollary is the generalized higher dimensional Poincaré conjecture.
@@ -530,7 +530,7 @@ Another direct corollary is the generalized higher dimensional Poincaré conject
 \end{corollary}
 \begin{myproof}
     A homotopy sphere is a homology sphere.
-    Hence, by the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e. $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
+    Hence, by the previous theorem, there exists a Morse function with exactly one $0$-handle and one $n$-handle, i.e.\ $M$ consists of two disks glued along their boundary. This is homeomorphic to a sphere, as the following explicit homeomorphism shows:
     \begin{align*}
         h: S^{n} = D_1^{n} \cup_\text{Id}  D_2^{n} &\longrightarrow D_1^{n} \cup_\phi D_2^{n} \\
          x &\longmapsto 

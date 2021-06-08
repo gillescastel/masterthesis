@@ -15,21 +15,21 @@ In this seminal paper, Poincaré introduces furthermore the concepts of fundamen
     Let $M$ be a compact manifold, and $f: M \to  \R$ a Morse function with adapted pseudo-gradient $X$.
     Then
     \[
-        H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)
+        H_k(M; \Z_2) \cong H_{n-k}(M; \Z_2)
     .\]
     Moreover, if $M$ is oriented, then \[
-         H_{k}(M, \Z) \cong H^{n-k}(M, \Z)
+         H_{k}(M; \Z) \cong H^{n-k}(M; \Z)
     .\]
 \end{theorem}
 \begin{myproof}
     The idea of this proof is to turn the manifold upside down, i.e.\ $f\leadsto -f$.
     Then critical points of index $k$ of $f$  become critical points of index $n-k$ of  $-f$.
-    Moreover $-X$ is an adapted pseudogradient for $-f$, unstable manifolds of critical points of $f$ become stable manifolds of corresponding critical points of $-f$ and vice versa.
-    This immediately gives that $H_k(M, \Z_2) \cong H_{n-k}(M, \Z_2)$.
+    Moreover $-X$ is an adapted pseudo-gradient for $-f$, unstable manifolds of critical points of $f$ become stable manifolds of corresponding critical points of $-f$ and vice versa.
+    This immediately gives that $H_k(M; \Z_2) \cong H_{n-k}(M; \Z_2)$.
 
     Working over $\Z$, things are more subtle.
-    In general $H_k(M, \Z) \not \cong H_{n-k}(M, \Z)$.
-    The best we can do is saying that if $M$ is orientable, then the ranks of  $H_k(M, \Z)$ and $H_{n-k}(M, \Z)$ agree,
+    In general $H_k(M; \Z) \not \cong H_{n-k}(M; \Z)$.
+    The best we can do is saying that if $M$ is orientable, then the ranks of  $H_k(M; \Z)$ and $H_{n-k}(M; \Z)$ agree,
     as is proven in `Morse theory and Floer homology' by Audin and Damian.\sidecite[p~84.]{audin}.
 
     In order to get a more natural form of Poincaré duality, it is beneficial to consider Morse cohomology, as done in notes by Fushida-Hardy.\sidecite{fushidamorse}
@@ -62,7 +62,7 @@ In this seminal paper, Poincaré introduces furthermore the concepts of fundamen
                                           &= \NX {-X} a b
     .\end{align*} 
     Hence, the last step of the proof is to show that $\NX Xpq = \NX{-X}qp$.
-    If we would not count signs, this would be immediately clear.
+    If we did not count signs, this would be immediately clear.
     However, when working over $\Z$ we need to check that the orientations work out.
     If $M$ is oriented, this forms no problem.
     Indeed, in that case, the orientations of the stable manifolds not only induce a co-orientation of the unstable manifolds, but also an orientation.
@@ -70,13 +70,13 @@ In this seminal paper, Poincaré introduces furthermore the concepts of fundamen
     This finishes the proof.
 \end{myproof}
 
-If $M$ is a cobordism, we need to take care of its boundary and we find the following theorem:
+If $M$ is a cobordism we find the following theorem:
 \begin{theorem}
     Let $M$ be an oriented cobordism from  $M_0$ to $M_1$.
     Let $f: M \to  [0,1]$ be a Morse function with adapted pseudo-gradient $X$.
     Then
      \[
-         H_k(M, M_0, \Z) \cong H^{n-k}(M, M_1, \Z)
+         H_k(M, M_0; \Z) \cong H^{n-k}(M, M_1; \Z)
     .\] 
 \end{theorem}
 A proof of this fact can be found in `Differential Geometry' by Kosinski.\sidecite{kosinski2013differential}
@@ -84,24 +84,24 @@ A proof of this fact can be found in `Differential Geometry' by Kosinski.\sideci
 \section{The Künneth Formula}
 In homotopy theory, the homotopy groups of two spaces relate nicely to the homotopy group of their product: $\pi_n(X \times Y) = \pi_n(X) \times \pi_n(Y)$.
 In homology the Künneth formula plays a similar role in homology theory.
-\begin{prop}[Künneth formula]
+\begin{theorem}[Künneth formula]
     Let $M, N$ be two manifolds. Then
     \[
-        H_k(M \times N, \Z_2) \cong
-        \bigoplus_{i+j  = k} H_i(M, \Z_2) \otimes H_j(N, \Z_2)
+        H_k(M \times N; \Z_2) \cong
+        \bigoplus_{i+j  = k} H_i(M; \Z_2) \otimes H_j(N; \Z_2)
     .\]
 In other words,
 \[
-    H_{\bul}(M \times N, \Z_2) \cong H_{\bul}(M, \Z_2) \otimes H_\bul(N, \Z_2)
+    H_{\bul}(M \times N; \Z_2) \cong H_{\bul}(M; \Z_2) \otimes H_\bul(N; \Z_2)
 ,\] 
 with the tensor product of chain complexes as defined in Chapter~0.
-\end{prop}
+\end{theorem}
 \begin{remark}
     The Künneth formula as written above is not true when considering homology over $\Z$.
 \end{remark}
 \begin{remark}
     We can also express this in a different way using the Poincaré polynomial.
-    For this, define $\beta_k(M) = \dim_{\Z_2} H_k(M;\Z_2)$ and let $P_M(t) = \sum_k \beta_k(M) ^{k}$.
+    For this, define $\beta_k(M) = \dim_{\Z_2} H_k(M;\Z_2)$ and let $P_M(t) = \sum_k \beta_k(M) t^{k}$.
     Then the Künneth formula states that $P_{M \times N}(t) = P_M(t) P_N(t)$.
 
 
@@ -109,7 +109,7 @@ with the tensor product of chain complexes as defined in Chapter~0.
     More general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
 \end{remark}
 \begin{myproof}
-    Let $f, g$ and $X, Y$ be two Morse functions, and pseudo-gradient fields on  $M$ and  $N$.
+    Let $f, g$  be two Morse functions and $X, Y$ two pseudo-gradient fields on  $M$ and  $N$.
     Then $f + g$ is a Morse function on $M \times N$ and $(X, Y)$ is an adapted pseudo-gradient field. If we assume that $X$ and  $Y$ satisfy the Smale condition, then so does $(X,Y)$.
     Critical points of $f+g$ are pairs of critical points of $f$ and $g$ and their indices are sums of the original indices.
     Furthermore, trajectories of $(X, Y)$ correspond exactly to pairs of trajectories of $X$ and $Y$.
@@ -137,7 +137,7 @@ with the tensor product of chain complexes as defined in Chapter~0.
     where $(C_\bul(f) \otimes C_\bul(g))_k := \bigoplus_{i+j = k} C_i(f) \otimes C_j(g)$.
     Now, taking the homology of both sides, we find
     \[
-        \bigoplus_{i+j = k} \HMf[i]{M; \Z_2} \otimes \HMf[j]{N; \Z_2} \cong \HMf[k]{M \times N; \Z_2}
+        \bigoplus_{i+j = k} H_i(M; \Z_2) \otimes H_j(N; \Z_2) \cong H_k(M \times N; \Z_2)
     ,\]
     where we have used that the homology of a tensor product complex is the tensor product of the homologies by Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
 \end{myproof}
@@ -153,34 +153,34 @@ Let us start with the simplest version of the Morse inequalities.
 \begin{theorem}[Weak Morse inequalities]
     Let $f: M \to  \R$ be a Morse function. Then
     \[
-        \# \Crit f \ge \sum \dim H_k(M, \Z_2)
+        \# \Crit f \ge \sum \dim H_k(M; \Z_2)
     ,\]
     and more specifically,
     \[
-        \# \Crit_k f \ge \dim H_k(M, \Z_2)
+        \# \Crit_k f \ge \dim H_k(M; \Z_2)
     .\]
 \end{theorem}
 \begin{myproof}
     With everything we have set up so far, this is actually a very straightforward result, following from the fact that \[
-    H_k(M, \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
-    \] so $\dim H_k(M, \Z_2) = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
+    H_k(M; \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}},
+    \] so $\dim H_k(M; \Z_2) = \dim \frac{\Ker \partial_k}{\Im \partial_{k-1}} \le  \dim C_k = \# \Crit_k f$.
 \end{myproof}
 
 A result in similar vein is the following:
 \begin{theorem}
     Let $f: M \to  \R$ be a Morse function. Then
     \[
-        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim H_k(M, \Z_2)  =: \chi(M)
+        \sum (-1)^{k} \# \Crit_k f = \sum (-1)^{k} \dim H_k(M; \Z_2)  =: \chi(M)
     .\]
     Considering this equality modulo $2$, we get
     \[
-        \# \Crit f  \equiv \sum \dim H_k(M, \Z_2) \mod 2
+        \# \Crit f  \equiv \sum \dim H_k(M; \Z_2) \mod 2
     .\]
 \end{theorem}
 \begin{myproof}
     Use the fact that 
     \[
-        H_k(M, \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \quad \text{and} \quad \# \Crit_k f = \dim C_k,
+        H_k(M; \Z_2) = \frac{\Ker \partial_k}{\Im \partial_{k-1}} \quad \text{and} \quad \# \Crit_k f = \dim C_k,
     \]
     together with the rank-nullity theorem for vector spaces.
     A simple computation completes the proof.
@@ -218,7 +218,7 @@ A result in similar vein is the following:
 \begin{theorem}[Strong Morse inequalities]
     For any Morse function $f: M \to  \R$ and for any $m = 0, \ldots, n$, the following inequality holds:
     \[
-        \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} \dim H_k(M, \Z_2)
+        \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} \dim H_k(M; \Z_2)
     .\]
 \end{theorem}
 
@@ -226,7 +226,7 @@ It is easy to check that the strong Morse inequalities are in fact stronger: the
 
 \subsection{Morse inequalities over $\Z$ and $\Z_p$}
 
-In this section, we will generalize the Morse inequalities by working over other rings than $\Z_2$. More specifically we will consider the Morse inequalities over $\Z$ and $\Z_p$.
+In this section, we will generalize the Morse inequalities by working over other rings than $\Z_2$. More specifically we will consider the Morse inequalities over $\Z$ and $\Z_p$, where $p$ is any prime.
 
 
 Let us first consider the case of $\Z_p$ (or any other field for that matter).
@@ -239,16 +239,19 @@ the proof given above can be simply repeated. In conclusion, we have the followi
     The (weak and strong) Morse inequalities hold over $\Z_p$ for any prime $p$.
 \end{theorem}
 
-When working over $\Z$, it not immediately clear how we can generalize the Morse inequalities, because the dimension of a $ \Z$-module is ill-defined.
+When working over $\Z$, it not immediately clear how we can generalize the Morse inequalities: $ \Z$ is not a field so the dimension of a $\Z$-module is not defined.
 Therefore, let us introduce some different notions of rank of a $\Z$-module, generalizing the concept of dimension.
 \begin{definition}[Rank\sidenotemark]
-    Let $A$ be a  $\Z$-module. Then the following notions of rank are invariants of $A$:
+    Let $A$ be a  $\Z$-module, and $p$ be a prime.
+    Then the following notions of rank are invariants of $A$:
     \begin{align*}
         r_0(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of infinite order}\\[0.3em]
-            &= \dim_{\Q} A \otimes \Q\\
-        r_p(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of order $p^{k}$ for some $k$}\\[0.3em]
-        r_t(A) &:= \sum_{p} r_p(A)\\[0.3em]
-        r(A) &:= r_0(A) + \sum_{p}r_p(A)
+            &= \dim_{\Q}(A \otimes_{\Z} \Q) \tag{free rank}
+            \\
+        r_p(A) &:= \parbox[t]{6.2cm}{cardinality of a maximal set of independent elements of order $p^{k}$ for any $k$}\\[0.3em]
+        r_t(A) &:= \sum_{p} r_p(A) \tag{torsion rank}
+        \\[0.3em]
+        r(A) &:= r_0(A) + \sum_{p}r_p(A) \tag{total rank}
     .\end{align*}
 \end{definition}
 \sidenotetext[][-6.2cm]{\fullcite{fuchs1970infinite}}
@@ -277,16 +280,16 @@ We have the following relations between ranks of submodules:
 Note in particular identity~\ref{label:zmodules-last}, which is a rank-nullity theorem in the context of the $r_0$ rank.
 Also note that the modules $C_k(f, \Z)$ over $\Z$ with as generators the critical points of $f$, are free, so $\# \Crit_k f =r_0(C_k(f, \Z))$.
 These two facts combined give the following result:
-\begin{prop}
+\begin{theorem}
     The (weak and strong) Morse inequalities hold over $\Z$, in the following sense:
     \[
-        \# \Crit_k f \ge  r_0(\HMf[k]{M, \Z})
+        \# \Crit_k f \ge  r_0(H_k(M; \Z))
     ,\]
     and for any $m = 0, \ldots, n$ we have
         \[
-            \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} r_0(\HMf[k]{M, \Z})
+            \sum_{k=0}^{m} (-1)^{k+m} \# \Crit_k f \ge  \sum_{k=0}^{m} (-1)^{k+m} r_0(H_k(M; \Z))
         .\]
-\end{prop}
+\end{theorem}
 \begin{myproof}
     Similar as before, replacing $\Z_2$ by $\Z$ and $\dim$ by $r_0$.
 \end{myproof}
@@ -296,17 +299,17 @@ These two facts combined give the following result:
 
 \subsection{Morse inequalities with torsion rank}
 
-Let us lastly give a version of the Morse inequalities that makes less rough approximations by using the torsion rank.
+Let us lastly give a stronger version of the Morse inequalities by using the torsion rank.
 \begin{theorem}[Pitcher inequalities\sidenotemark]
     Let $f: M \to  \R$ be a Morse function.
     Then
     \[
-    \# \Crit_k f \ge r( H_k(M, \Z)) + r_t(H_{k-1}(M, \Z)).
+    \# \Crit_k f \ge r( H_k(M; \Z)) + r_t(H_{k-1}(M; \Z)).
 \]
 \end{theorem}
 \sidenotetext[][-2cm]{\fullcite{Pitcher1958InequalitiesOC}}
 \begin{proof}
-    We use $H_k = H_k(M, \Z)$ for brevity.
+    We use $H_k = H_k(M; \Z)$ for brevity.
     \begin{align*}
         r(H_k) + r_t(H_{k-1}) = r\left( \frac{\Ker \partial_k}{\Im \partial_{k+1}} \right) + r_t \left( \frac{\Ker \partial_{k-1}}{\Im \partial_k} \right) 
     .\end{align*}
