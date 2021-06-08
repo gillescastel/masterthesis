@@ -4,7 +4,7 @@
 
 In this chapter, we will prove three important theorems that are all closely related.
 The first one states that the Morse inequalities are in fact attainable under certain conditions.
-In other words, under these assumptions, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale in 1960.
+In other words, the bound on $\# \Crit_k f$ given by the (weak) Morse inequalities is in fact the best bound possible. This was first proven by Smale in 1960.
 \begin{theorem}[Smale's theorem\sidenotemark]
     If $M$ is a simply connected closed manifold of dimension  $m \ge  6$ and $H_\bul(M)$ is free, then there exists a Morse function on  $M$ such that  $\# \Crit_k f = r_0(H_k(M; \Z))$ for all $k = 0, \ldots, n$.
 \end{theorem}
@@ -92,12 +92,12 @@ Let us give some examples illustrating the idea of the theorem.
         \item The first figure shows the $2$- and  $1$- handle and their corresponding critical points $p$ and  $q$.
             The configuration is the same as in Figure~\ref{fig:example-cancelling-handles-in-three-dimensions}, but from a different perspective.
             The 1-handle is a solid tube and the $2$-handle is a dome (a thickened up disk) that rests on top of the $1$-handle.
-            It should visually clear that these two critical points are cancelable as already discussed in Example~\ref{eg:cancel-three}.
+            It should be visually clear that these two critical points are cancelable as already discussed in Example~\ref{eg:cancel-three}.
 
         \item The second figure shows the same situation, but we have hidden the $2$-handle and indicated the so-called belt sphere $S^{s}(q)$ and the attaching sphere $S^{u}(p)$. Their intersection consists of a single point, corresponding to a single flow line from $p$ to $q$. 
             By the first cancellation theorem, we can confirm that $p$ and  $q$ are indeed cancelable.
         \item Next, we have drawn a situation where the number of intersection points is $3$, but the intersection number (which corresponds to $\NX Xpq$, as we will expand upon later) is $1$. It is clear that we can isotope the attaching sphere such that it only intersects once with the belt sphere.
-            This reduces the situation to (ii), so $p$ and  $q$ are cancellable, as is also clear from the figure. 
+            This reduces the situation to (ii), so $p$ and  $q$ are cancelable, as is also clear from the figure. 
         \item The last figure shows a situation where the number of intersections points is $2$ and the intersection number is $0$. In this situation, we cannot cancel the two critical points. In fact, we can isotope the attaching sphere off the $1$-handle, showing that the two handles are completely independent.
     \end{enumerate}
 \end{eg}
@@ -166,7 +166,7 @@ With this insight, we are ready to prove the second cancellation theorem.
     Let $S = \unstable q \cap f^{-1}(0)$.
     Flowing $M_0 \setminus S$ via $X$ gives  $V - S^{s}(p)$, so we need to show that $M_0 \setminus S$ has trivial fundamental group.
     For this we use the Seifert--Van Kampen theorem. Let $N$ be a product neighbourhood of $S$ in $M_0$.
-    Note that $k=2$, $S$ is diffeomorphic to $S^{1}$ and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
+    Note that $k=2$, so $S$ is diffeomorphic to $S^{1}$ and $\dim M_0 = n-1$, so the product neighbourhood is diffeomorphic to $ S^1 \times \R^{n-2}$.
     As $k=2$, $n - 2 \ge 4$, so $\R^{n-2} \setminus \{ 0 \} $ has trivial fundamental group. Therefore $N \setminus S \cong S^{1} \times (\R^{n-2}\setminus \{0\})$ has the same fundamental group as $S^{1}$, which is $\Z$.
     This allows us to use the Seifert--Van Kampen theorem in the following way:
     $(M_0 \setminus S) \cup N = M_0$, $\pi_1(M_0) = 1$,  $\pi_1(N) = \Z$,  $\pi_1(N \setminus S) = \Z$. This implies that $\pi_1(M_0 \setminus S) = 1$, completing the proof.
@@ -262,7 +262,7 @@ Let us make very clear what we mean by diagonalizing.
 Starting off with a matrix $[\partial_k]$ based on $f$ and $X$, we want to change it step by step such that the resulting $[\partial_k']$ is diagonal (note that it does not need to be square).
 To accomplish these algebraic manipulations, we alter $f$ and  $X$.
 
-We can diagonalize a matrix over $\Z$ by using three types of elementary row and column operations, as explained in Advanced modern algebra by Rotman.\sidecite[p.~688]{rotman2010advanced}
+We can diagonalize a matrix over $\Z$ by using three types of elementary row and column operations, as explained in Advanced modern algebra by Rotman.\sidenotemark
 \begin{samepage}
 \begin{enumerate}[E1]
     \item Interchange two rows or columns
@@ -270,6 +270,7 @@ We can diagonalize a matrix over $\Z$ by using three types of elementary row and
     \item Addition of a row (resp.~column) to another row (resp.~column)
 \end{enumerate}
 \end{samepage}
+\sidenotetext[][-3cm]{\fullcite[p.~688]{rotman2010advanced}}
 It is clear that E1 and E2 can be done geometrically: we can just relabel the critical points for E1 and change the (arbitrary) orientation of the stable manifolds for E2.
 For the third operation, consider the following figure.
 \begin{figure}[H]
@@ -329,12 +330,12 @@ This lemma allows us to prove the following:
 \begin{myproof}
     Operations E1 and E2 are clear.
     Assume the Morse function $f$ is self-indexing.
-    Let  $M^{t} = f^{-1}([-\infty, t))$ and let $V$ be the union of all belt spheres of critical points of index $k-1$,i.e. \[
+    Let  $M^{t} = f^{-1}(-\infty, t]$ and let $V$ be the union of all belt spheres of critical points of index $k-1$,i.e. \[
         V = \bigcup_{p \in \Crit_{k-1} f} S^{s}(p)
     \]
-    Let $N = f^{-1}(k - \frac{1}{2})$.
+    Suppose $f$ is self-indexing and let $N = f^{-1}(k - \frac{1}{2})$.
     For dimensional reasons, $V$ can only disconnect $N$ if  $k = 2$.
-    However, the $N \setminus V \cong f^{-1}(k - \frac{3}{2})$ with a finite set of points removed, namely the attaching spheres of the one-handles, as illustrated in Figure~\ref{fig:proof-e1-e2-e3-disconnect-case}.
+    However, $N \setminus V$ is diffeomorphic to $f^{-1}(k - \frac{3}{2})$ with a finite set of points removed, namely the attaching spheres of the one-handles, as illustrated in Figure~\ref{fig:proof-e1-e2-e3-disconnect-case}.
     \begin{marginfigure}
         \centering
         \incfig{proof-e1-e2-e3-disconnect-case}
@@ -617,7 +618,8 @@ This proves that $M$ is homeomorphic to  $S^{n}$.
 % TODO https://math.stackexchange.com/questions/2987911/if-sigma-is-a-homotopy-sphere-then-sigma-sigma-bounds-a-contractible
 
 
-\section{Historical aspects}
+\section[Developments and state of art]{Developments and state of art of the Poincaré conjecture and $\bm{h}$-cobordism theorem}
+
 \label{sec:history}
 
 Let us end this thesis by giving an overview of the history of the (generalized) Poincaré conjecture and $h$-cobordism theorem.
@@ -648,7 +650,7 @@ More precisely, Henri Poincaré conjectured the following in 1904:
 One can prove that these conditions imply that $M$ is a three-dimensional homotopy sphere.
 This rephrasing allows for an easy generalization to higher dimensions and other categories: `a homotopy sphere is homeomorphic/diffeomorphic/PL homeomorphic to a sphere'.
 
-The Poincaré conjecture in three dimensions was one of the most important open problems in topology, until it was proved by Perelman in 2006 in $\mant$.\sidecite{morgan2007poincare}
+The Poincaré conjecture in three dimensions was one of the most important open problems in topology, until it was proved to be true by Perelman in 2006 in $\mant$.\sidecite{morgan2007poincare}
 For his work, Perelman was offered a Fields Medal and the Millennium prize worth \$1 million, but he declined both.
 
 His proof uses the concept of Ricci flow, introduced by Hamilton in 1982.\sidecite{hamilton1982three}
