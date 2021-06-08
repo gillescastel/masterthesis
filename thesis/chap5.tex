@@ -35,10 +35,10 @@ The proof of these theorems follows a handle cancellation approach, which roughl
 \end{enumerate}
 
 To this purpose, this chapter mostly contains cancellation results.
-The proof we give resembles the original proof of Smale but using concepts and notation introduced earlier in this thesis.
+The proof we give resembles the original proof of Smale but uses concepts and notation introduced earlier in this thesis.
 Most of this chapter is based on the somewhat more modern treatments by Milnor\sidecite{hcobord} and Kosinski.\sidecite{kosinski2013differential}
 The book of Kosinski is very thorough and proves things from the viewpoint of handles, isotopies of attachment regions, etc.
-Milnor on other hand, does not even mention handle decompositions at all, and only works directly with the Morse function and its critical points.
+Milnor on the other hand, does not even mention handle decompositions at all, and only works directly with the Morse function and its critical points.
 
 
 
@@ -450,7 +450,7 @@ In this section, we will show that we can eliminate $1$-handles by replacing the
     Because $L'$ crosses the  $1$-handle exactly one time, we can cancel the $1$- and $2$-handle as claimed before, ending the proof.
 \end{myproof}
 \begin{remark}
-    This idea can be extended to higher index critical points as well.
+    This idea can be extended to higher index critical points.
 \end{remark}
 \begin{remark}
     By reversing the cobordism ($f \leadsto -f$), we can do the same for $n-1$-handles.
@@ -536,7 +536,7 @@ Another direct corollary is the generalized higher dimensional Poincaré conject
          \begin{cases}
              x & \text{if $x \in D_1^{n}$}\\
              \|x\| \phi\Big(\frac{x}{\|x\|}\Big) & \text{if $x \in D_2 ^{n} \setminus \{0\} $}\\
-             0 & \text{if $x = 0 \in D_2^{n}$.}
+             0 & \text{if $x = 0 \in D_2^{n}$.} 
          \end{cases}
     \end{align*}
 \end{myproof}
@@ -581,33 +581,34 @@ Because $M$ is a homotopy sphere, we can easily use Mayer--Vietoris to compute t
 
 By the previous theorem, this implies that $W$ is diffeomorphic to $D^{n+1}$.
 Hence, $M \#(-M)$ is homeomorphic to $S^{n}$.
-Now, $S^{n}$ is irreducible, meaning that $M \# N \cong S^{n} \implies M, N \cong S^{n}$. This proves that $M$ is homeomorphic to  $S^{n}$
+Now, $S^{n}$ is irreducible, meaning that if $M \# N$ is homeomorphic to  $S^{n}$ then both $M$ and $N$ are homeomorphic to $S^{n}$.\sidecite{mazur1959embeddings}
+This proves that $M$ is homeomorphic to  $S^{n}$.
 \end{myproof}
 
-\begin{lemma}[Irreducibility of the sphere]
-    If $M \# N$ is homeomorphic to $S^{n}$, then both $M$ and $N$ are homeomorphic to $S^{n}$.
-\end{lemma}
-\begin{myproof}
-    We use a trick called Mazur's swindle.\sidecite{mazur1959embeddings}
-    It is based on the fact that the infinite connected sum $\#_{n=1}^{\infty} M_n$ is well defined and associative.
-    Suppose $M \# N \cong S^{n}$.
-    Consider
-    \[
-       C =  (M \# N) \# 
-        (M \# N) \#  \cdots
-    .\] 
-    This is an infinite connected sums of spheres, hence a half-open cylinder.
-    Pinching its boundary results in $S^{n}$.
-    Using associativity, this is also equal to
-    \[
-        C= M
-        \# (N \# M)
-        \# (N \# M)
-        \# \cdots
-    ,\] 
-    which is homeomorphic to $M$ with a small ball removed. Pinching its boundary, we get $M$.
-    This proves that $M$ is homeomorphic to $S^{n}$.
-\end{myproof}
+% \begin{lemma}[Irreducibility of the sphere]
+%     If $M \# N$ is homeomorphic to $S^{n}$, then both $M$ and $N$ are homeomorphic to $S^{n}$.
+% \end{lemma}
+% \begin{myproof}
+%     We use a trick called Mazur's swindle.\sidecite{mazur1959embeddings}
+%     It is based on the fact that the infinite connected sum $\#_{n=1}^{\infty} M_n$ is well defined and associative.
+%     Suppose $M \# N \cong S^{n}$.
+%     Consider
+%     \[
+%        C =  (M \# N) \# 
+%         (M \# N) \#  \cdots
+%     .\] 
+%     This is an infinite connected sums of spheres, hence a half-open cylinder.
+%     Pinching its boundary results in $S^{n}$.
+%     Using associativity, this is also equal to
+%     \[
+%         C= M
+%         \# (N \# M)
+%         \# (N \# M)
+%         \# \cdots
+%     ,\] 
+%     which is homeomorphic to $M$ with a small ball removed. Pinching its boundary, we get $M$.
+%     This proves that $M$ is homeomorphic to $S^{n}$.
+% \end{myproof}
 
 % \url{https://terrytao.wordpress.com/2009/10/05/mazurs-swindle/#irred}
 
@@ -622,8 +623,8 @@ Now, $S^{n}$ is irreducible, meaning that $M \# N \cong S^{n} \implies M, N \con
 Let us end this thesis by giving an overview of the history of the (generalized) Poincaré conjecture and $h$-cobordism theorem.
 We will consider the developments of these conjectures/theorems for three categories, namely
 \begin{itemize}
-    \item $\mans$, the category of topological manifolds,
-    \item $\mant$, the category of smooth manifolds,
+    \item $\mant$, the category of topological manifolds,
+    \item $\mans$, the category of smooth manifolds,
     \item $\manp$, the category of piecewise linear manifolds.\sidenote{
             Piecewise linear manifolds are manifolds whose transition maps are piecewise linear.
             By this we mean a continuous map $\phi$ such that its domain can be split up in polytopes such that $\phi$ restricted to a single polytope is affine. 
