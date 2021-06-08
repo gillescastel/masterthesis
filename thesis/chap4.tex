@@ -104,7 +104,6 @@ with the tensor product of chain complexes as defined in Chapter~0.
     For this, define $\beta_k(M) = \dim_{\Z_2} H_k(M;\Z_2)$ and let $P_M(t) = \sum_k \beta_k(M) t^{k}$.
     Then the Künneth formula states that $P_{M \times N}(t) = P_M(t) P_N(t)$.
 
-
     For example, we have $P_{S^{1}}(t) = 1 + t$, so $P_{S^{1}\times S^{1}\times S^{1}} = (1 + t)^3 = 1 + 3t + 3t^2 + 1t^3$, exactly the result we found in Example~\ref{eg:homology-of-the-three-torus}.
     More general, we have that $\beta_k(T^{n})$ is the $k$th coefficient of $(1+t)^{n}$, i.e.\ $\binom{n}{k}$.
 \end{remark}
@@ -141,6 +140,23 @@ with the tensor product of chain complexes as defined in Chapter~0.
     ,\]
     where we have used that the homology of a tensor product complex is the tensor product of the homologies by Proposition~\ref{prop:hom-tensor-is-tensor-hom}.
 \end{myproof}
+\begin{eg}
+    Let us illustrate the proof with a concrete example.
+    Consider the height function $f$ of $S^{1}$. The graph of critical points is illustrated below.
+    There are two trajectories from the index $1$ critical point the index $0$ critical point, so $\partial = 0$. This means that $H_0(S^{1}; \Z_2) = H_1(S^{1}; \Z_2) = \Z_2$.
+
+    To find the homology of $T^2 = S^{1} \times S^{1}$, we consider the Morse function $(\theta_1, \theta_2) \mapsto f(\theta_1) + f(\theta_2)$.
+    We have illustrated the resulting graph of critical points below, which is just the Cartesian product of the graph associated to $S^{1}$. 
+    We have also done this for $T^{3} = S^{1} \times S^{1} \times S^{1}$.
+    Because all the trajectories occur in pairs, the differential $\partial$ vanishes. We conclude that $H_k(T^{n}; \Z_2) = \Z_2^{\binom{n}{k}}$.
+\begin{figure}[H]
+    \centering
+    \sidecaption{Graph of critical points of the Morse functions on $S^{1}$, $T^2$ and $T^3$.
+    \label{fig:torus-homology}
+    }
+    \incfig{torus-homology}
+\end{figure}
+\end{eg}
 
 
 \section{Morse inequalities}
@@ -272,7 +288,6 @@ We have the following relations between ranks of submodules:
     \begin{enumerate}[(i)]
         \item $r(B) \le  r(A)$
         \item $r(A) \le  r(B) + r(A / B)$
-        \item $r(A) < r(A / B)$ can happen
         \item  $ r_0(A) = r_0(B) + r_0(A/B)$ \label{label:zmodules-last}
     \end{enumerate}
 \end{lemma}
