@@ -392,7 +392,7 @@ The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultan
     We have shown that we can do operations E1--E3 on columns geometrically.
     By turning the cobordism upside down, we can also do this for rows.
     These six operations are all that is needed for the diagonalizing $[\partial_k]$ by using the algorithm of Smith\sidecite{rotman2010advanced}.
-    \todo{Diagonalizing $[\partial_k]$ does not change the already diagonalized matrices, because  $[\partial_{k-1}][\partial_k] = 0$.}
+    Diagonalizing $[\partial_k]$ does not change the already diagonalized matrices, because  $[\partial_{k-1}][\partial_k] = 0$. Each column of $[\partial_k]$ with a non-zero element corresponds to a row of zeros in  $[\partial_{k-1}]$.
     Lastly $[\partial_n]$ is already diagonal by the previous theorem.
 \end{myproof}
 
@@ -401,8 +401,7 @@ The two previous theorems allow us diagonalize all $[\partial_k]$ \emph{simultan
 \section{Trading $1$-handles for $3$-handles}
 The previous theorems allow us to diagonalize $[\partial_k]$ for all $k$.
 Moreover, the second cancellation theorem allows us to remove columns and rows of $[\partial_k]$ under certain conditions.
-\todo{These conditions do not cover the case $[\partial_2]$ and it requires simply connectedness of $M$ for  $[\partial_3]$, which could be problematic if the handlebody decomposition contains  $1$-handles.}
-Similar problems occur for $[\partial_{n-1}]$ and $[\partial_{n-2}]$.
+These conditions do not cover the case $[\partial_2]$ and $[\partial_{n-1}]$.
 In this section, we will show that we can eliminate $1$-handles by replacing them with $3$-handles, solving these issues.
 
 \begin{theorem}

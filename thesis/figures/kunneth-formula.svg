@@ -169,7 +169,7 @@
      inkscape:cx="284.27627"
      inkscape:cy="182.72055"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1716"
      showgrid="false"
      showborder="true"
      width="200mm"
@@ -193,11 +193,6 @@
        dotted="false"
        originx="-3.2056951"
        originy="-16.580617" />
-    <sodipodi:guide
-       position="-0.52916401,51.385146"
-       orientation="1,0"
-       id="guide1507"
-       inkscape:locked="false" />
     <sodipodi:guide
        position="100.72553,19.881326"
        orientation="1,0"
@@ -460,19 +455,12 @@
        style="opacity:0.47099998;stroke-width:1.44726777"
        clip-path="url(#clipPath2062)">
       <rect
-         y="204.68192"
-         x="36.382637"
+         y="204.11253"
+         x="31.068548"
          height="320.73923"
          width="31.855247"
          id="rect1682"
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.20325547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
-      <rect
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#fccc6e;fill-opacity:1;stroke:none;stroke-width:0.20325547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-         id="rect1692"
-         width="12.106655"
-         height="121.89763"
-         x="64.282814"
-         y="302.95776" />
       <rect
          y="302.95776"
          x="76.389465"
@@ -481,26 +469,12 @@
          id="rect1694"
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.20325547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
       <rect
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#fccc6e;fill-opacity:1;stroke:none;stroke-width:0.20325547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
-         id="rect1696"
-         width="12.106655"
-         height="121.89763"
-         x="88.496124"
-         y="302.95776" />
-      <rect
          style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#feebc6;fill-opacity:1;stroke:none;stroke-width:0.20325547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none"
          id="rect1698"
          width="12.106655"
          height="121.89763"
          x="100.60278"
          y="302.95776" />
-      <rect
-         y="203.99686"
-         x="112.74706"
-         height="301.86972"
-         width="29.981161"
-         id="rect1700"
-         style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#fccc6e;fill-opacity:1;stroke:none;stroke-width:0.20325549;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:none;marker-end:none" />
     </g>
     <use
        x="0"
