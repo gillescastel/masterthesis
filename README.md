@@ -1,6 +1,6 @@
 # Master thesis
 
-## *Morse theory: a visual guide from handlebodies to Floer homology*
+## *A visual guide from handlebodies to the generalized Poincaré conjecture*
 
 
 I'm doing my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charltote Kirchhoff-Lukat.
@@ -16,7 +16,6 @@ The goal of the thesis is to state and prove some important results in classical
 * Morse homology is isomorphic to singular homology
 * Morse inequalities
 * h-cobordism theorem, from which the higher dimensional Poincaré conjecture follows
-* An introduction to Floer homology.
 
 ### Target audience
 
