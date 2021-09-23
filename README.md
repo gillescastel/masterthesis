@@ -3,7 +3,7 @@
 ## *A visual guide from handlebodies to the generalized Poincaré conjecture*
 
 
-I'm doing my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charltote Kirchhoff-Lukat.
+I'm doing my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charlotte Kirchhoff-Lukat.
 It is currently a work in progress and should be completed in the beginning of June 2021.
 
 ### Goal
