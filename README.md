@@ -1,10 +1,9 @@
-# Master thesis
+# Master thesis: Morse Theory
 
 ## *A visual guide from handlebodies to the generalized Poincaré conjecture*
 
 
-I'm doing my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charlotte Kirchhoff-Lukat.
-It is currently a work in progress and should be completed in the beginning of June 2021.
+I did my masters thesis at KU Leuven in Belgium on Morse theory under the supervision of Charlotte Kirchhoff-Lukat on Morse theory.
 
 ### Goal
 
@@ -24,6 +23,12 @@ The thesis should be accessible to mathematics master students with basic knowle
 ### Template
 
 Feel free to use this thesis as a template. It is inspired by the work of Edward Tufte.
+![2021_10_04_001](https://user-images.githubusercontent.com/7069691/135912959-b73f2080-ad53-40d3-bd45-ee54fac604d0.png)
+![2021_10_04_002](https://user-images.githubusercontent.com/7069691/135912965-37c8ddf9-4d93-4c59-9f89-a9fc03d4dd4a.png)
+![2021_10_04_003](https://user-images.githubusercontent.com/7069691/135912973-a7eaceff-9cb8-4dda-ab87-7a19f5358718.png)
+
+
+
 
 ### Compiling
 
@@ -34,8 +39,3 @@ latexmk master.tex
 ```
 
 Note that I use BibLaTeX (not BibTeX) so be aware of this if you're compiling this with something else than `latexmk`.
-You can also download the latest version as follows
-
-1. Click on Actions (located on the top)
-1. Click on the latest commit with a green checkmark
-1. Click on master.pdf to download the file
